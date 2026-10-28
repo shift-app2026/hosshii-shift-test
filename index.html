@@ -4824,5 +4824,59 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   initialize();
 })();
 </script>
+
+<!-- 2026-10-28: テスト版・固定ヘッダーと中央揃えの最終上書き -->
+<style id="hosshii-test-sticky-center-correction">
+/* Earlier rules set position:relative on this host, disabling sticky. */
+#appScroll { position:relative !important; isolation:isolate !important; }
+#appScroll > #itoStickyHeaderHost {
+  position:-webkit-sticky !important;
+  position:sticky !important;
+  top:0 !important;
+  z-index:1000 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  background:#fff !important;
+  isolation:isolate !important;
+  overflow:visible !important;
+  margin-top:0 !important;
+}
+#appScroll > #itoStickyHeaderHost::before {
+  content:"" !important; position:absolute !important;
+  inset:0 !important; background:#fff !important;
+  z-index:0 !important; pointer-events:none !important;
+}
+#appScroll > #itoStickyHeaderHost > .ito-pinned-heading {
+  position:relative !important; z-index:1 !important;
+  width:100% !important; flex:none !important;
+}
+#appScroll > #itoStickyHeaderHost > #hosshiiTrialBanner {
+  position:relative !important; z-index:1 !important;
+  display:block !important; flex:none !important;
+  width:calc(100% - 24px) !important;
+  margin:6px 12px 4px !important;
+}
+/* Only the salary tab may have the trial banner in the pinned host. */
+#appScroll > #itoStickyHeaderHost > .oct23-sticky-settings,
+#appScroll > #itoStickyHeaderHost > .ito-guide-heading {
+  justify-content:center !important; text-align:center !important;
+}
+#appScroll > #itoStickyHeaderHost > .oct23-sticky-settings > div,
+#appScroll > #itoStickyHeaderHost > .ito-guide-heading > p {
+  width:100% !important; text-align:center !important;
+}
+#appScroll > #itoStickyHeaderHost .wage-setting-title {
+  display:flex !important; width:100% !important;
+  justify-content:center !important; align-items:center !important;
+  gap:8px !important; text-align:center !important;
+}
+#appScroll > #itoStickyHeaderHost .wage-title-star {
+  color:#f4d28b !important; -webkit-text-fill-color:#f4d28b !important;
+}
+#appScroll > #itoStickyHeaderHost > .ito-guide-heading > p {
+  display:block !important; text-align:center !important;
+}
+</style>
+
 </body>
 </html>
