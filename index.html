@@ -69,6 +69,16 @@
     }
   }
   </style>
+<style id="hosshii-test-20261028-top-spacing-fix">
+@media(max-width:639px){
+ html,body{height:100%;min-height:100dvh!important;}
+ body{align-items:flex-start!important;justify-content:center!important;padding:0!important;}
+ #appCard{height:100dvh!important;max-height:100dvh!important;padding-top:env(safe-area-inset-top,0px);margin:0!important;}
+ #appScroll{min-height:0!important;}
+}
+#itoStickyHeaderHost::before{top:0!important;left:0!important;right:0!important;}
+#hosshiiTrialBanner{position:relative;z-index:2;}
+</style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -1002,9 +1012,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       <p class="small">利用規約・プライバシーポリシーを確認してからお進みください。</p>
       <p class="small" id="lineAuthDocumentNotice">※公開文書のURLが未設定です。URLを設定するまで同意開始はできません。</p>
       <p class="small"><a id="lineAuthTermsLink" target="_blank" rel="noopener noreferrer" hidden>利用規約を読む</a>　<a id="lineAuthPrivacyLink" target="_blank" rel="noopener noreferrer" hidden>プライバシーポリシーを読む</a></p>
-      <label><input id="lineAuthAgree" type="checkbox">利用規約とプライバシーポリシーを確認し、同意します。</label>
-      <label><input id="lineAuthAgeAgree" type="checkbox">18歳以上、または保護者の同意を得ています。</label>
-      <button type="button" id="lineAuthStart" disabled>21日間無料で試す</button>
+      <label><input id="lineAuthAgree" type="checkbox">上記の利用条件およびプライバシーポリシーを確認し、同意します。</label>
+      <label><input id="lineAuthAgeAgree" type="checkbox">私は18歳以上である、または18歳未満の場合は親権者（法定代理人）の同意を得ています。</label>
+      <p class="small">※同意した日時および同意した文面の版は、当方のサーバーに記録します。</p>
+      <button type="button" id="lineAuthStart" disabled>同意して利用を開始する</button>
     </div>
     <button type="button" id="lineAuthRetry" hidden>もう一度確認する</button>
   </div>
@@ -1372,7 +1383,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         </div>
       </div>
 
-      <!-- タブ4: はじめに -->
+      <!-- タブ4: はじめに（2026-10-28 校正版） -->
       <div id="tab-guide" class="tab-content hidden space-y-3">
         <div class="bg-gradient-to-br from-rose-950 via-rose-900 to-rose-950 text-rose-100 px-3 py-3 rounded-2xl text-center shadow-md border border-rose-800/40">
           <p class="text-base sm:text-lg font-bold text-white">📖 はじめに 📖　必ず読んでね♡</p>
@@ -1385,19 +1396,13 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             <p><b>②</b><span>時間帯ごとの時給や手当を設定します。</span></p>
             <p><b>③</b><span>「シフト登録」で勤務日時を登録します。</span></p></div>
             <div class="guide-extra"><p>※「予定表」からもシフト登録できます。</p>
-            <p>💡 詳しい使い方は、各画面の<br>　「見てね♡」「確認してね💡」をご覧ください。</p></div>
+            <p>💡 詳しい使い方は、各画面の「見てね♡」「確認してね💡」をご覧ください。</p></div>
           </section>
           <section class="space-y-3 border-t border-stone-200 pt-3"><h3 class="font-bold text-rose-900 text-base">🌷 その他のご案内</h3>
-            <div><h4 class="font-bold">📱 ホーム画面に追加すると便利です♪</h4><p>ホーム画面に追加すると、次回からすぐに開けます♪ ブラウザのメニューから「ホーム画面に追加」を選んでね。操作方法は端末によって異なります。</p></div>
-            <div><h4 class="font-bold">💾 データの保存・バックアップについて</h4><p>入力したデータはお使いの端末に保存されます。機種変更や万が一のデータ保護に備えて、「設定」画面から定期的に「書き出す」を行うことをおすすめします。</p><p class="mt-1">※LINEでログインしていても、シフトやお給料のデータが別の端末へ自動的に引き継がれることはありません。</p></div>
-            <div><h4 class="font-bold">🌸 無料お試し・ご利用料金について</h4><p>初回利用から21日間、無料でお試しいただけます。無料お試しを始める際に、クレジットカードの登録は必要ありません。</p><p class="mt-1">無料期間終了後も継続して利用する場合は、有料のお申し込みが必要です。料金やお支払い条件は、お申し込み画面でご確認ください。</p><p class="mt-1">無料期間終了後は新規登録・修正が制限されますが、登録済みデータの閲覧とバックアップは引き続きご利用いただけます。</p></div>
-          </section>
-          <section class="space-y-3 border-t border-stone-200 pt-3"><h3 class="font-bold text-rose-900 text-base">🔒 ご利用にあたっての大切な確認事項</h3>
-            <div><h4 class="font-bold">① 🔒 入力したデータの取り扱い</h4><p>シフトやお給料のデータは、現在のアプリではお使いの端末内に保存されます。Googleカレンダーへの登録は、利用者が操作したときにGoogleの画面が開きます。</p></div>
-            <div><h4 class="font-bold">② ⚠️ データが消えてしまうことがあります</h4><p>機種変更、端末の初期化、ブラウザのデータ削除、アプリの削除などで、保存したデータが消える場合があります。別の端末との自動同期はありません。消失したデータは運営では復元できませんので、「設定」の「書き出す」でバックアップを保存し、必要に応じて「読み込む」で復元してください。</p></div>
-            <div><h4 class="font-bold">③ 🛡️ 補償・責任の範囲について</h4><p>このアプリはシフト管理とお給料の見込みを確認するための補助ツールです。入力間違いや計算方法の違い、アプリ・端末・通信環境などの不具合によって、結果が実際の給与と異なる場合があります。給与明細や雇用契約の内容をご確認ください。損害への対応は、故意・重大な過失など法令上免責できない場合を除き、適用法令に従います。</p></div>
-            <div><h4 class="font-bold">④ ⚖️ 著作権・禁止事項について</h4><p>アプリのプログラム、デザイン、文章などの権利は制作者または正当な権利者に帰属します。権利者の許可のない転載、再配布、販売などは禁止します。ただし、法律で認められた利用を制限するものではありません。</p></div>
-            <div><h4 class="font-bold">⑤ 🌷 ご利用にあたって</h4><p>本アプリのご利用にあたっては、初回利用時に表示される利用規約・プライバシーポリシーをご確認ください。この「はじめに」では、アプリの使い方や注意事項をご案内しています。いつでも読み直すことができます。</p></div>
+            <div><h4 class="font-bold">【ホーム画面に追加すると便利です♪】</h4><p>ホーム画面に追加すると、次回からすぐに開けます♪</p><p>ブラウザのメニューから「ホーム画面に追加」を選んでね。</p><p>※操作方法は端末やブラウザによって異なります。</p></div>
+            <div><h4 class="font-bold">【データの保存・バックアップについて】</h4><p>入力したシフトや給与のデータは、お使いの端末・ブラウザ等の保存領域に保存されます。</p><p>当方のサーバーには保存されません。</p><p>機種変更やアプリ・ブラウザのデータ削除などによって、保存したデータが消える場合があります。</p><p>大切なデータを守るため、「設定」画面の「書き出す」から、定期的にバックアップを保存してね。</p><p>保存したデータは、必要に応じて「読み込む」から復元できます。</p><p>※別の端末との自動同期には対応していません。</p></div>
+            <div><h4 class="font-bold">【お給料の計算について】</h4><p>アプリに表示されるお給料は、税金や社会保険料などを差し引く前の総支給額の目安です。</p><p>実際のお給料とは異なる場合がありますので、勤務先の給与明細などで確認してね。</p></div>
+            <div><h4 class="font-bold">【利用規約・プライバシーポリシーについて】</h4><p>本アプリの利用条件や個人情報の取り扱いについては、「利用規約」と「プライバシーポリシー」に記載しています。</p><p>アプリの利用開始時に同意いただいた内容は、アプリ内からいつでも確認できます。</p><p><a href="./terms.html" target="_blank" rel="noopener noreferrer" style="color:#881337;text-decoration:underline;font-weight:bold">利用規約を読む</a></p></div>
           </section>
         </div>
       </div>
@@ -4278,7 +4283,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 }
 #itoStickyHeaderHost::before {
   content:""; position:absolute;
-  top:-12px; bottom:-1px; left:-24px; right:-24px;
+  top:0; bottom:-1px; left:0; right:0;
   background:#fff!important; z-index:0;
   pointer-events:none;
 }
@@ -4694,7 +4699,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   const agree=document.getElementById('lineAuthAgree');
   const ageAgree=document.getElementById('lineAuthAgeAgree');
   // 公開済みの正式なURLを設定してください（未設定時は同意開始不可）。
-  const TERMS_URL = '';
+  const TERMS_URL = 'https://shift-app2026.github.io/hosshii-shift-test/terms.html';
   const PRIVACY_URL = '';
   const docsReady = /^https:\/\//.test(TERMS_URL) && /^https:\/\//.test(PRIVACY_URL);
   if (docsReady) {
@@ -4714,18 +4719,25 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     let banner=document.getElementById('hosshiiTrialBanner');
     if(!banner){
       banner=document.createElement('div'); banner.id='hosshiiTrialBanner';
-      banner.style.cssText='background:#fff1f2;color:#881337;border:1px solid #fda4af;border-radius:12px;padding:9px 12px;margin:6px 0 8px;font-size:13px;font-weight:bold;text-align:center;flex-shrink:0';
-      const app=document.getElementById('appScroll')||document.getElementById('appCard')||document.body;
-      const sticky=app.querySelector('#itoStickyHeaderHost');
-      if(sticky)sticky.insertAdjacentElement('afterend',banner);
-      else app.prepend(banner);
+      banner.style.cssText='flex:none;background:#fff1f2;color:#881337;border:1px solid #fda4af;border-radius:12px;padding:9px 12px;margin:0 0 12px;font-size:13px;font-weight:bold;text-align:center;line-height:1.5';
+      const payTab=document.getElementById('tab-clock');
+      if(payTab)payTab.prepend(banner);
     }
+    const payTab=document.getElementById('tab-clock');
+    if(payTab && banner.parentNode!==payTab)payTab.prepend(banner);
     if(data.status==='paid')banner.textContent='ご契約期間中です';
-    else if(data.trialActive)banner.textContent='✨ 無料お試し終了まであと'+Math.max(0,Number(data.remainingDays)||0)+'日';
+    else if(data.trialActive===true || data.status==='trialing' || data.status==='active'){
+      let days=Number(data.remainingDays);
+      if(!Number.isFinite(days)){
+        const end=data.trial_ends_at||data.trialEndsAt||data.trialEndAt;
+        days=end?Math.ceil((new Date(end).getTime()-Date.now())/86400000):NaN;
+      }
+      banner.textContent=Number.isFinite(days)?'✨ 無料お試し終了まであと'+Math.max(0,days)+'日':'✨ 無料お試し期間中です';
+    }
     else banner.textContent='無料お試し期間が終了しました（閲覧・バックアップ可能）';
   }
   function applyStatus(data){
-    window.hosshiiReadOnly=!(data.status==='paid'||data.trialActive===true);
+    window.hosshiiReadOnly=!(data.status==='paid'||data.status==='trialing'||data.status==='active'||data.trialActive===true);
     setTrialBanner(data);
     // 既存の保存操作は安全な保存関数側でも拒否する。
     // 編集用ボタンを押しても誤操作しないようクリック時にも防ぐ。
