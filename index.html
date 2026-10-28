@@ -4278,7 +4278,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 }
 #itoStickyHeaderHost::before {
   content:""; position:absolute;
-  top:-160px; bottom:-1px; left:-24px; right:-24px;
+  top:-12px; bottom:-1px; left:-24px; right:-24px;
   background:#fff!important; z-index:0;
   pointer-events:none;
 }
@@ -4714,9 +4714,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     let banner=document.getElementById('hosshiiTrialBanner');
     if(!banner){
       banner=document.createElement('div'); banner.id='hosshiiTrialBanner';
-      banner.style.cssText='background:#fff1f2;color:#881337;border:1px solid #fda4af;border-radius:12px;padding:9px 12px;margin:8px 12px;font-size:13px;font-weight:bold;text-align:center';
+      banner.style.cssText='background:#fff1f2;color:#881337;border:1px solid #fda4af;border-radius:12px;padding:9px 12px;margin:6px 0 8px;font-size:13px;font-weight:bold;text-align:center;flex-shrink:0';
       const app=document.getElementById('appScroll')||document.getElementById('appCard')||document.body;
-      app.prepend(banner);
+      const sticky=app.querySelector('#itoStickyHeaderHost');
+      if(sticky)sticky.insertAdjacentElement('afterend',banner);
+      else app.prepend(banner);
     }
     if(data.status==='paid')banner.textContent='ご契約期間中です';
     else if(data.trialActive)banner.textContent='✨ 無料お試し終了まであと'+Math.max(0,Number(data.remainingDays)||0)+'日';
