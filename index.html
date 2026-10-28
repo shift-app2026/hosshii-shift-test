@@ -999,8 +999,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     <p id="lineAuthMessage">LINEの利用状況を確認しています…</p>
     <div id="lineAuthConsent" hidden>
       <p>初回利用から21日間、無料でお試しいただけます。カード登録は不要です。無料期間の開始日と利用状況をLINEアカウントにひも付けて管理します。</p>
-      <p class="small">ご利用前に、利用規約とプライバシーポリシーを確認し、同意してください。※規約・ポリシーの公開先と同意記録の保存は公開前に別途設定が必要です。</p>
-      <label><input id="lineAuthAgree" type="checkbox">上記の無料体験・利用情報の取り扱いを確認し、同意します。</label>
+      <p class="small">利用規約・プライバシーポリシーを確認してからお進みください。</p>
+      <p class="small" id="lineAuthDocumentNotice">※公開文書のURLが未設定です。URLを設定するまで同意開始はできません。</p>
+      <p class="small"><a id="lineAuthTermsLink" target="_blank" rel="noopener noreferrer" hidden>利用規約を読む</a>　<a id="lineAuthPrivacyLink" target="_blank" rel="noopener noreferrer" hidden>プライバシーポリシーを読む</a></p>
+      <label><input id="lineAuthAgree" type="checkbox">利用規約とプライバシーポリシーを確認し、同意します。</label>
+      <label><input id="lineAuthAgeAgree" type="checkbox">18歳以上、または保護者の同意を得ています。</label>
       <button type="button" id="lineAuthStart" disabled>21日間無料で試す</button>
     </div>
     <button type="button" id="lineAuthRetry" hidden>もう一度確認する</button>
@@ -1452,6 +1455,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       }
     }
     function safeWriteAppJSON(key, value) {
+      if (window.hosshiiReadOnly === true) {
+        if (typeof showToast === 'function') showToast('無料期間終了後は閲覧専用です。バックアップは利用できます。');
+        return false;
+      }
       if (storageWriteBlocked) {
         showStorageSafetyWarning();
         return false;
@@ -4685,19 +4692,64 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   const message=document.getElementById('lineAuthMessage');
   const consent=document.getElementById('lineAuthConsent');
   const agree=document.getElementById('lineAuthAgree');
+  const ageAgree=document.getElementById('lineAuthAgeAgree');
+  // 公開済みの正式なURLを設定してください（未設定時は同意開始不可）。
+  const TERMS_URL = '';
+  const PRIVACY_URL = '';
+  const docsReady = /^https:\/\//.test(TERMS_URL) && /^https:\/\//.test(PRIVACY_URL);
+  if (docsReady) {
+    document.getElementById('lineAuthTermsLink').href=TERMS_URL;
+    document.getElementById('lineAuthTermsLink').hidden=false;
+    document.getElementById('lineAuthPrivacyLink').href=PRIVACY_URL;
+    document.getElementById('lineAuthPrivacyLink').hidden=false;
+    document.getElementById('lineAuthDocumentNotice').hidden=true;
+  }
   const start=document.getElementById('lineAuthStart');
   const retry=document.getElementById('lineAuthRetry');
   let idToken=null;
   function showError(t){message.textContent=t;consent.hidden=true;retry.hidden=false;}
   function hideGate(){gate.hidden=true;}
   function consentView(){message.textContent='初回利用のご案内';consent.hidden=false;retry.hidden=true;}
+  function setTrialBanner(data){
+    let banner=document.getElementById('hosshiiTrialBanner');
+    if(!banner){
+      banner=document.createElement('div'); banner.id='hosshiiTrialBanner';
+      banner.style.cssText='background:#fff1f2;color:#881337;border:1px solid #fda4af;border-radius:12px;padding:9px 12px;margin:8px 12px;font-size:13px;font-weight:bold;text-align:center';
+      const app=document.getElementById('appScroll')||document.getElementById('appCard')||document.body;
+      app.prepend(banner);
+    }
+    if(data.status==='paid')banner.textContent='ご契約期間中です';
+    else if(data.trialActive)banner.textContent='✨ 無料お試し終了まであと'+Math.max(0,Number(data.remainingDays)||0)+'日';
+    else banner.textContent='無料お試し期間が終了しました（閲覧・バックアップ可能）';
+  }
+  function applyStatus(data){
+    window.hosshiiReadOnly=!(data.status==='paid'||data.trialActive===true);
+    setTrialBanner(data);
+    // 既存の保存操作は安全な保存関数側でも拒否する。
+    // 編集用ボタンを押しても誤操作しないようクリック時にも防ぐ。
+    if(window.hosshiiReadOnly && !window.hosshiiReadOnlyClickInstalled){
+      window.hosshiiReadOnlyClickInstalled=true;
+      document.addEventListener('click',function(ev){
+        if(!window.hosshiiReadOnly)return;
+        const b=ev.target.closest('button');if(!b)return;
+        const label=(b.textContent||'').trim();
+        const action=(b.getAttribute('onclick')||'');
+        if(/書き出す|バックアップ|読み込む|前月|翌月|お給料|予定表|はじめに|閉じる|戻る|OK|給与内訳/.test(label))return;
+        if(/登録|保存|削除|修正|追加|コピー|入力|更新/.test(label+' '+action)){
+          ev.preventDefault();ev.stopImmediatePropagation();
+          if(typeof window.showToast==='function')window.showToast('閲覧専用です。バックアップは利用できます。');
+        }
+      },true);
+    }
+  }
   function parseStatus(v){
     if(!v || typeof v!=='object')return null;
-    // 応答形式を推測して「利用可」とは判定しない。契約済みの形式だけ受理。
-    if(v.status==='active'||v.status==='paid'||v.status==='trialing')return 'active';
+    if(v.consentRequired===true||v.status==='new'||v.status==='not_started')return 'new';
+    if(v.status==='paid'||v.status==='trialing'||v.status==='active')return 'active';
     if(v.status==='expired'||v.status==='blocked'||v.status==='past_due')return 'expired';
-    if(v.status==='new'||v.status==='not_started')return 'new';
-    if(v.allowed===true && typeof v.trial_started_at==='string')return 'active';
+    // 旧APIの応答形式も認識。ただし不明な応答を利用可能扱いにはしない。
+    if(v.authenticated===true && v.trialActive===true)return 'active';
+    if(v.authenticated===true && v.trialActive===false)return 'expired';
     return null;
   }
   async function callStatus(accept){
@@ -4712,9 +4764,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     try{
       const data=await callStatus(accept);
       const state=parseStatus(data);
-      if(state==='active'){hideGate();return;}
+      if(state==='active'){applyStatus(data);hideGate();return;}
       if(state==='new'){consentView();return;}
-      if(state==='expired'){showError('無料体験期間が終了しています。現在は接続検証版のため、閲覧専用モードの実装・確認後にご利用いただけます。');return;}
+      if(state==='expired'){applyStatus(data);hideGate();return;}
       showError('サーバーからの利用状態を確認できませんでした。接続仕様を確認してください。');
       console.info('LINE status response keys:',Object.keys(data||{}));
     }catch(e){showError('LINE・無料体験の確認ができません。\n'+e.message);}
@@ -4730,8 +4782,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       await check(false);
     }catch(e){showError('LINE認証を確認できません。\n'+e.message);}
   }
-  agree.addEventListener('change',()=>start.disabled=!agree.checked);
-  start.addEventListener('click',async()=>{if(!agree.checked||!idToken)return;await check(true);});
+  function updateStart(){start.disabled=!(docsReady && agree.checked && ageAgree.checked);}
+  agree.addEventListener('change',updateStart);
+  ageAgree.addEventListener('change',updateStart);
+  updateStart();
+  start.addEventListener('click',async()=>{if(!docsReady||!agree.checked||!ageAgree.checked||!idToken)return;await check(true);});
   retry.addEventListener('click',initialize);
   initialize();
 })();
