@@ -1098,17 +1098,17 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 /* test⑦: 規約リンクの小さなひし形と注意書きの1行表示 */
 #lineAuthGate #lineAuthDocumentLinks a{
   position:relative;
-  padding-left:17px;
+  padding-left:24px;
   text-align:left!important;
 }
 #lineAuthGate #lineAuthDocumentLinks a::before{
-  content:"◇";
+  content:"📖";
   position:absolute;
   left:0;
   top:0.1em;
-  font-size:10px;
-  line-height:1.7;
-  color:#b89a56;
+  font-size:14px;
+  line-height:1.4;
+  color:#4c0519;
   -webkit-text-fill-color:#b89a56;
   font-weight:600;
 }
@@ -1119,6 +1119,16 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   font-weight:650!important;
   letter-spacing:-0.03em;
   line-height:1.6!important;
+}
+
+/* test⑧: 初回利用の見出しだけを強調。通信中表示は従来の大きさ。 */
+#lineAuthGate #lineAuthMessage.consent-heading{
+  font-size:20px!important;
+  font-weight:800!important;
+  text-align:center!important;
+  color:#4c0519!important;
+  -webkit-text-fill-color:#4c0519!important;
+  white-space:normal!important;
 }
 </style>
 </head>
@@ -4841,7 +4851,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   let idToken=null;
   function showError(t){message.textContent=t;consent.hidden=true;retry.hidden=false;}
   function hideGate(){gate.hidden=true;}
-  function consentView(){message.textContent='初回利用のご案内';consent.hidden=false;retry.hidden=true;}
+  function consentView(){message.classList.add('consent-heading');message.textContent='「初回利用のご案内」';consent.hidden=false;retry.hidden=true;}
   function setTrialBanner(data){
     let banner=document.getElementById('hosshiiTrialBanner');
     if(!banner){
