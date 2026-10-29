@@ -4123,8 +4123,18 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function importAppData(event) {
-      if (storageWriteBlocked) { showStorageSafetyWarning(); return; }
       const input = event.target;
+      // 無料体験終了後は書き出しのみ可能。ファイル選択からの直接実行も拒否する。
+      if (window.hosshiiReadOnly === true) {
+        if (input) input.value = '';
+        showToast('閲覧専用です。バックアップの書き出しは利用できます。');
+        return;
+      }
+      if (storageWriteBlocked) {
+        if (input) input.value = '';
+        showStorageSafetyWarning();
+        return;
+      }
       const file = input.files && input.files[0];
       if (!file) return;
 
@@ -4138,24 +4148,64 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             return;
           }
 
-          askConfirm('今のデータに、読み込んだバックアップの内容を上書きします。よろしいですか？', () => { try {
-            shiftsData = sanitizeShifts(data.mybasket_shifts_v23 || data.mybasket_shifts_v22 || data.mybasket_shifts_v21 || {});
-            let loadedWages = data.mybasket_wages_v77 || data.mybasket_wages_v76 || {};
-            monthlyGoal = Number(loadedWages.monthlyGoal) || 0;
-            configData = buildConfigData(loadedWages);
+          askConfirm('今のデータに、読み込んだバックアップの内容を上書きします。よろしいですか？', () => {
+            // 確認ダイアログを開いている間に閲覧専用へ切り替わった場合も拒否。
+            if (window.hosshiiReadOnly === true) {
+              showToast('閲覧専用です。バックアップの書き出しは利用できます。');
+              return;
+            }
+            const oldShifts = shiftsData;
+            const oldConfig = configData;
+            const oldGoal = monthlyGoal;
+            const shiftKey = 'mybasket_shifts_v23';
+            const wagesKey = 'mybasket_wages_v77';
+            const oldStoredShifts = localStorage.getItem(shiftKey);
+            const oldStoredWages = localStorage.getItem(wagesKey);
+            try {
+              const newShifts = sanitizeShifts(data.mybasket_shifts_v23 || data.mybasket_shifts_v22 || data.mybasket_shifts_v21 || {});
+              const loadedWages = data.mybasket_wages_v77 || data.mybasket_wages_v76 || {};
+              const newGoal = Number(loadedWages.monthlyGoal) || 0;
+              const newConfig = buildConfigData(loadedWages);
 
-            if (!safeWriteAppJSON('mybasket_shifts_v23', shiftsData)) return;
-            ensureValidSelectedJob();
-            renderSettingsJobTabs();
-            renderSettingsJobContent(currentSettingsJobKey);
-            saveAllDataStorage();
+              // 保存が完了するまで画面用のデータは確定させない。
+              if (!safeWriteAppJSON(shiftKey, newShifts)) return;
+              if (!safeWriteAppJSON(wagesKey, { ...newConfig, monthlyGoal: newGoal })) {
+                // 2件目が失敗した場合、1件目の保存を元に戻す。
+                try {
+                  if (oldStoredShifts === null) localStorage.removeItem(shiftKey);
+                  else localStorage.setItem(shiftKey, oldStoredShifts);
+                } catch (restoreError) {
+                  console.error('バックアップ読み込みの復元に失敗:', restoreError);
+                  showStorageSafetyWarning();
+                }
+                return;
+              }
 
-            renderCalendar();
-            renderStandaloneShiftList();
-            initOverviewPage();
-
-            showToast('バックアップから読み込みました♡');
-          } catch (e) { showAlertModal('ファイルを読み込めなかったよ。バックアップファイルか確認してね♡'); }
+              shiftsData = newShifts;
+              configData = newConfig;
+              monthlyGoal = newGoal;
+              ensureValidSelectedJob();
+              renderSettingsJobTabs();
+              renderSettingsJobContent(currentSettingsJobKey);
+              renderCalendar();
+              renderStandaloneShiftList();
+              initOverviewPage();
+              showToast('バックアップから読み込みました♡');
+            } catch (err) {
+              shiftsData = oldShifts;
+              configData = oldConfig;
+              monthlyGoal = oldGoal;
+              try {
+                if (oldStoredShifts === null) localStorage.removeItem(shiftKey);
+                else localStorage.setItem(shiftKey, oldStoredShifts);
+                if (oldStoredWages === null) localStorage.removeItem(wagesKey);
+                else localStorage.setItem(wagesKey, oldStoredWages);
+              } catch (restoreError) {
+                console.error('バックアップ読み込みの復元に失敗:', restoreError);
+                showStorageSafetyWarning();
+              }
+              showAlertModal('ファイルを読み込めなかったよ。バックアップファイルか確認してね♡');
+            }
           });
         } catch (err) {
           showAlertModal('ファイルを読み込めなかったよ。バックアップファイルか確認してね♡');
