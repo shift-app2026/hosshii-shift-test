@@ -3199,7 +3199,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             note.style.cssText='white-space:pre-line;margin-top:8px;padding:10px;border:1px solid #fda4af;border-radius:10px;background:#fff1f2;color:#881337;font-size:13px;font-weight:bold;text-align:center;line-height:1.6';
             box.appendChild(note);
           }
-          note.textContent='🌷 無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。\n引き続きご利用いただくには、月額プランをご利用ください♡';
+          note.textContent='無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。';
         }
         return false;
       }
@@ -4957,40 +4957,59 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   function showError(t){message.textContent=t;consent.hidden=true;retry.hidden=false;}
   function hideGate(){gate.hidden=true;}
   function consentView(){message.classList.add('consent-heading');message.textContent='「初回利用のご案内」';consent.hidden=false;retry.hidden=true;}
+  // test⑭: 購入状態に合わせた2行案内。決済連携は未設定のため購入操作は開始しない。
   function setTrialBanner(data){
     let banner=document.getElementById('hosshiiTrialBanner');
     if(!banner){
-      banner=document.createElement('div'); banner.id='hosshiiTrialBanner';
-      banner.style.cssText='flex:none;background:#fff1f2;color:#881337;border:1px solid #fda4af;border-radius:12px;padding:9px 12px;margin:0 0 12px;font-size:13px;font-weight:bold;text-align:center;line-height:1.5';
+      banner=document.createElement('div');banner.id='hosshiiTrialBanner';
+      banner.style.cssText='flex:none;background:#fff1f2;color:#881337;border:1px solid #fda4af;border-radius:12px;padding:9px 12px;margin:0 0 12px;font-size:14px;font-weight:bold;text-align:center;line-height:1.6';
       const payTab=document.getElementById('tab-clock');
       if(payTab)payTab.prepend(banner);
     }
     const payTab=document.getElementById('tab-clock');
     if(payTab && banner.parentNode!==payTab && banner.parentNode!==document.getElementById('itoStickyHeaderHost'))payTab.prepend(banner);
+    banner.replaceChildren();
     if(data.status==='paid'){
       banner.style.display='none';
-    } else if(data.trialActive===true || data.status==='trialing' || data.status==='active'){
+    }else{
       banner.style.display='block';
-      const end=data.trialExpiresAt||data.trial_ends_at||data.trialEndsAt||data.trialEndAt;
-      const dt=end?new Date(end):null;
-      if(dt && Number.isFinite(dt.getTime())){
-        const parts=new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric'}).formatToParts(dt);
-        const month=parts.find(p=>p.type==='month')?.value;
-        const day=parts.find(p=>p.type==='day')?.value;
-        banner.textContent='✨ 無料お試し終了は'+month+'月'+day+'日です♡';
-      } else {
-        banner.textContent='✨ 無料お試し期間中です';
+      const trialing=data.trialActive===true||data.status==='trialing'||data.status==='active';
+      const first=document.createElement('div');
+      first.className='hosshii-trial-status-line';
+      if(trialing){
+        const end=data.trialExpiresAt||data.trial_ends_at||data.trialEndsAt||data.trialEndAt;
+        const dt=end?new Date(end):null;
+        if(dt&&Number.isFinite(dt.getTime())){
+          const parts=new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric'}).formatToParts(dt);
+          const month=parts.find(p=>p.type==='month')?.value;
+          const day=parts.find(p=>p.type==='day')?.value;
+          first.append(document.createTextNode('無料お試し終了は'+month+'月'+day+'日です'));
+          const heart=document.createElement('span');
+          heart.textContent='♡';heart.style.cssText='color:#e02446;font-size:.82em;margin-left:2px';
+          first.append(heart);
+        }else{
+          first.textContent='無料お試し期間中です';
+        }
+      }else{
+        first.textContent='無料お試し期間が終了しました💕';
       }
-    } else {
-      banner.style.display='block';
-      banner.textContent='🌷 無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。\n引き続きご利用いただくには、月額プランをご利用ください♡';
+      banner.append(first);
+      const buy=document.createElement('button');
+      buy.type='button';buy.id='hosshiiSubscribeButton';
+      buy.textContent='月額150円（税込）で申し込む';
+      buy.style.cssText='display:block;max-width:100%;margin:5px auto 0;padding:5px 10px;background:#7d233e;color:#fff;border:1px solid #7d233e;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;';
+      buy.addEventListener('click',function(){
+        // Squareの購入URLと購入済み照合APIが揃うまで課金画面に遷移させない。
+        window.alert('月額プランのお申し込みは準備中です。ご案内までお待ちください♡');
+      });
+      banner.append(buy);
     }
     if(typeof window.updateItoStickyHeader==='function'){
       const active=document.querySelector('#appScroll > .tab-content:not(.hidden)');
       if(active)window.updateItoStickyHeader(active.id.replace(/^tab-/,''));
     }
   }
-  const hosshiiExpiredMessage = '🌷 無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。\n引き続きご利用いただくには、月額プランをご利用ください♡';
+  const hosshiiExpiredMessage = '無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。';
   function hosshiiSyncExpiredUI(){
     const readOnly = window.hosshiiReadOnly === true;
     for(const tab of document.querySelectorAll('#appScroll > .tab-content')){
@@ -4998,7 +5017,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if(readOnly && !note){
         note=document.createElement('div');note.className='hosshii-expired-permanent';
         note.setAttribute('role','status');
-        note.style.cssText='white-space:pre-line;background:#fff1f2;color:#881337;border:1px solid #fda4af;border-radius:12px;padding:10px 12px;margin:8px 0 12px;font-size:13px;font-weight:bold;text-align:center;line-height:1.7;';
+        note.style.cssText='white-space:pre-line;background:#fff1f2;color:#881337;border:1px solid #fda4af;border-radius:12px;padding:10px 12px;margin:8px 0 12px;font-size:15px;font-weight:bold;text-align:center;line-height:1.7;';
         const header=tab.querySelector(':scope > .oct23-sticky-month, :scope > .oct23-sticky-settings, :scope > .oct23-sticky-pay');
         if(header)header.insertAdjacentElement('afterend',note);else tab.prepend(note);
       }
@@ -5041,7 +5060,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const dateTarget=target.closest('[onclick*="selectCalendarDate("], [onclick*="openShiftInputModal("]');
         if(dateTarget){ev.preventDefault();ev.stopImmediatePropagation();return;}
         const b=target.closest('button');if(!b)return;
-        if(b.classList.contains('tab-btn') || b.id==='hosshiiExpiredTestButton')return;
+        if(b.classList.contains('tab-btn') || b.id==='hosshiiExpiredTestButton' || b.id==='hosshiiSubscribeButton')return;
         const label=(b.textContent||'').trim();
         const action=b.getAttribute('onclick')||'';
         const isCopy=action.includes('copyLastMonthShifts');
@@ -5076,7 +5095,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       applyStatus({status:'expired',trialActive:false});
       const expiredBanner=document.getElementById('hosshiiTrialBanner');
       if(expiredBanner){
-        expiredBanner.textContent='🧪【テスト中】\n🌷 無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。\n引き続きご利用いただくには、月額プランをご利用ください♡';
+        const marker=document.createElement('small');
+        marker.textContent='🧪【テスト中】';
+        marker.style.cssText='display:block;font-size:11px;margin-bottom:4px';
+        expiredBanner.prepend(marker);
       }
       window.alert('期限切れテスト状態になりました。シフトの登録・修正・削除を試してください。実際の無料体験記録は変更していません。');
     });
