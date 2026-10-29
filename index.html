@@ -1132,7 +1132,33 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 }
 </style>
 <style id="hosshii-tab-no-select">.tab-btn,#itoStickyHeaderHost button{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}</style>
-<style id="hosshii-test12-no-select">button,[role="button"]{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}</style></head>
+<style id="hosshii-test12-no-select">button,[role="button"]{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}</style>
+<style id="test15-small-readability-and-single-line-subscription">
+/* テスト⑮：ご指定の２か所だけ文字を少し大きく */
+#tab-clock .test8-goal-row #test8GoalLabel {font-size:clamp(15px,4.2vw,19px)!important;}
+#tab-clock .test8-goal-row #test30GoalDisplay,
+#tab-clock .test8-goal-row #test30Yen {font-size:clamp(17px,4.7vw,22px)!important;}
+#tab-clock #goalRing .t10-remaining-label {font-size:clamp(14px,3.9vw,17px)!important;}
+#tab-clock #goalRing #goalRemainText {font-size:clamp(17px,4.8vw,23px)!important;}
+@media(max-width:360px){
+ #tab-clock .test8-goal-row #test8GoalLabel {font-size:14px!important;}
+ #tab-clock .test8-goal-row #test30GoalDisplay,
+ #tab-clock .test8-goal-row #test30Yen {font-size:16px!important;}
+}
+#hosshiiTrialBanner {background:transparent!important;border:0!important;box-shadow:none!important;}
+#appScroll > #itoStickyHeaderHost > #hosshiiTrialBanner {
+  width:calc(100% - 12px)!important;
+  margin:3px 6px 4px!important;
+  padding:2px 0!important;
+}
+#hosshiiTrialBanner .hosshii-trial-status-line {min-width:0;white-space:nowrap;}
+@media(max-width:360px){
+ #hosshiiTrialBanner {font-size:12px!important;gap:5px!important;}
+ #hosshiiSubscribeButton {font-size:12px!important;padding:4px 7px!important;}
+}
+</style>
+
+</head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
   <div id="lineAuthCard">
@@ -4962,7 +4988,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     let banner=document.getElementById('hosshiiTrialBanner');
     if(!banner){
       banner=document.createElement('div');banner.id='hosshiiTrialBanner';
-      banner.style.cssText='flex:none;background:#fff1f2;color:#881337;border:1px solid #fda4af;border-radius:12px;padding:9px 12px;margin:0 0 12px;font-size:14px;font-weight:bold;text-align:center;line-height:1.6';
+      banner.style.cssText='flex:none;background:transparent;color:#881337;border:0;border-radius:0;padding:3px 5px;margin:0 0 6px;font-size:14px;font-weight:bold;text-align:center;line-height:1.35;white-space:nowrap;display:flex;align-items:center;justify-content:center;gap:7px';
       const payTab=document.getElementById('tab-clock');
       if(payTab)payTab.prepend(banner);
     }
@@ -4972,7 +4998,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     if(data.status==='paid'){
       banner.style.display='none';
     }else{
-      banner.style.display='block';
+      banner.style.display='flex';
       const trialing=data.trialActive===true||data.status==='trialing'||data.status==='active';
       const first=document.createElement('div');
       first.className='hosshii-trial-status-line';
@@ -4983,24 +5009,25 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           const parts=new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric'}).formatToParts(dt);
           const month=parts.find(p=>p.type==='month')?.value;
           const day=parts.find(p=>p.type==='day')?.value;
-          first.append(document.createTextNode('無料お試し終了は'+month+'月'+day+'日です'));
+          first.append(document.createTextNode('無料お試し終了日'));
           const heart=document.createElement('span');
-          heart.textContent='♡';heart.style.cssText='color:#e02446;font-size:.82em;margin-left:2px';
+          heart.textContent='♡';heart.style.cssText='color:#e02446;font-size:.82em;margin:0 2px';
           first.append(heart);
+          first.append(document.createTextNode(month+'月'+day+'日'));
         }else{
           first.textContent='無料お試し期間中です';
         }
       }else{
-        first.textContent='無料お試し期間が終了しました💕';
+        first.textContent='無料お試し期間終了';
       }
       banner.append(first);
       const buy=document.createElement('button');
       buy.type='button';buy.id='hosshiiSubscribeButton';
-      buy.textContent='月額150円（税込）で申し込む';
-      buy.style.cssText='display:block;max-width:100%;margin:5px auto 0;padding:5px 10px;background:#7d233e;color:#fff;border:1px solid #7d233e;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;';
+      buy.textContent='申込み';
+      buy.style.cssText='display:inline-flex;align-items:center;justify-content:center;margin:0;padding:5px 9px;background:#fce7ed;color:#881337;border:1px solid #f4c9d4;border-radius:7px;font-size:14px;font-weight:800;cursor:pointer;white-space:nowrap;flex:none;';
       buy.addEventListener('click',function(){
         // Squareの購入URLと購入済み照合APIが揃うまで課金画面に遷移させない。
-        window.alert('月額プランのお申し込みは準備中です。ご案内までお待ちください♡');
+        window.alert('月額150円（税込）のプランです。\n現在、お申込みは準備中です。ご案内までお待ちください♡');
       });
       banner.append(buy);
     }
@@ -5021,7 +5048,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const header=tab.querySelector(':scope > .oct23-sticky-month, :scope > .oct23-sticky-settings, :scope > .oct23-sticky-pay');
         if(header)header.insertAdjacentElement('afterend',note);else tab.prepend(note);
       }
-      if(note){if(note.textContent!==hosshiiExpiredMessage)note.textContent=hosshiiExpiredMessage;const visibility=(readOnly && tab.id!=='tab-clock')?'block':'none';if(note.style.display!==visibility)note.style.display=visibility;}
+      if(note){if(note.textContent!==hosshiiExpiredMessage)note.textContent=hosshiiExpiredMessage;const visibility=(readOnly && tab.id!=='tab-clock' && tab.id!=='tab-guide')?'block':'none';if(note.style.display!==visibility)note.style.display=visibility;}
     }
     // 設定の入力欄は閲覧専用。バックアップ書き出し・画面移動は妨げない。
     const settings=document.getElementById('tab-settings');
