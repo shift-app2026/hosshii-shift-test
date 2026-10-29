@@ -5335,5 +5335,48 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   #hosshiiTrialBanner #hosshiiSubscribeButton {font-size:13px !important;padding:4px 7px !important;}
 }
 </style>
+<!-- 2026-10-29: 無料お試し・申込みは1行目、動作テストは2行目だけに配置 -->
+<style id="hosshii-20261029-trial-test-second-row-only">
+#hosshiiTrialBanner,
+#appCard > #itoStickyHeaderHost > #hosshiiTrialBanner,
+#appScroll > #itoStickyHeaderHost > #hosshiiTrialBanner {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  column-gap: 11px !important;
+  row-gap: 5px !important;
+  white-space: normal !important;
+}
+#hosshiiTrialBanner .hosshii-trial-status-line {
+  order: 1;
+  flex: 0 1 auto !important;
+  white-space: nowrap !important;
+}
+#hosshiiTrialBanner #hosshiiSubscribeButton {
+  order: 2;
+  flex: 0 0 auto !important;
+  margin-left: 2px !important;
+  font-size: 16px !important;
+}
+#hosshiiTrialBanner #hosshiiExpiredTestButton {
+  order: 3;
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  margin-top: 3px !important;
+}
+@media (max-width: 360px) {
+  #hosshiiTrialBanner,
+  #appCard > #itoStickyHeaderHost > #hosshiiTrialBanner,
+  #appScroll > #itoStickyHeaderHost > #hosshiiTrialBanner {
+    column-gap: 7px !important;
+  }
+  #hosshiiTrialBanner #hosshiiSubscribeButton {
+    font-size: 14px !important;
+    padding: 4px 7px !important;
+  }
+}
+</style>
 </body>
 </html>
