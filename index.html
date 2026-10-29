@@ -1022,8 +1022,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       <p class="small"><a id="lineAuthTermsLink" target="_blank" rel="noopener noreferrer" hidden>利用規約を読む</a>　<a id="lineAuthPrivacyLink" target="_blank" rel="noopener noreferrer" hidden>プライバシーポリシーを読む</a></p>
       <label><input id="lineAuthAgree" type="checkbox">上記の利用条件およびプライバシーポリシーを確認し、同意します。</label>
       <label><input id="lineAuthAgeAgree" type="checkbox">私は18歳以上である、または18歳未満の場合は親権者（法定代理人）の同意を得ています。</label>
-      <p class="small">※同意した日時および同意した文面の版は、当方のサーバーに記録します。</p>
-      <button type="button" id="lineAuthStart" disabled>同意して利用を開始する</button>
+      <p class="small">※同意日時・規約の版のサーバー保存は、接続テストで確認します。</p>
+      <button type="button" id="lineAuthStart" disabled>同意して無料お試しを始める</button>
     </div>
     <button type="button" id="lineAuthRetry" hidden>もう一度確認する</button>
   </div>
@@ -4703,7 +4703,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 <script>document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!document.getElementById('t31GoalModal').hidden)closeMonthlyGoalDialog()});</script>
 
 <script id="line-auth-supabase-test-20261028">
-/* LINE版 接続検証: 既存のシフトデータは変更しない。公開前にサーバー側の同意記録・利用制限実装が必要。 */
+/* LINE版 初回同意画面テスト: サーバー側の同意日時・文書版の永続保存、利用制限は別途検証が必要。 */
 (function(){
   'use strict';
   const LIFF_ID = '2011929118-Fyk1pdlU';
@@ -4715,7 +4715,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   const ageAgree=document.getElementById('lineAuthAgeAgree');
   // 公開済みの正式なURLを設定してください（未設定時は同意開始不可）。
   const TERMS_URL = 'https://shift-app2026.github.io/hosshii-shift-test/terms.html';
-  const PRIVACY_URL = '';
+  const PRIVACY_URL = 'https://shift-app2026.github.io/hosshii-shift-test/privacy.html';
   const docsReady = /^https:\/\//.test(TERMS_URL) && /^https:\/\//.test(PRIVACY_URL);
   if (docsReady) {
     document.getElementById('lineAuthTermsLink').href=TERMS_URL;
