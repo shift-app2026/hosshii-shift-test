@@ -4955,7 +4955,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       banner.style.display='none';
     } else if(data.trialActive===true || data.status==='trialing' || data.status==='active'){
       banner.style.display='block';
-      const end=data.trial_ends_at||data.trialEndsAt||data.trialEndAt;
+      const end=data.trialExpiresAt||data.trial_ends_at||data.trialEndsAt||data.trialEndAt;
       const dt=end?new Date(end):null;
       if(dt && Number.isFinite(dt.getTime())){
         const parts=new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric'}).formatToParts(dt);
