@@ -1132,7 +1132,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 }
 </style>
 <style id="hosshii-tab-no-select">.tab-btn,#itoStickyHeaderHost button{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}</style>
-</head>
+<style id="hosshii-test12-no-select">button,[role="button"]{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}</style></head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
   <div id="lineAuthCard">
@@ -1597,10 +1597,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         notice = document.createElement('div');
         notice.id = 'hosshiiReadOnlyNotice';
         notice.setAttribute('role', 'status');
-        notice.style.cssText = 'position:fixed;top:24%;left:50%;transform:translateX(-50%);width:min(88vw,360px);z-index:2147483647;background:#fff9fa;border:2px solid #881337;border-radius:14px;padding:16px 18px;box-shadow:0 6px 25px #0004;color:#881337;font-size:15px;font-weight:bold;text-align:center;line-height:1.7;pointer-events:none';
+        notice.style.cssText = 'white-space:pre-line;position:fixed;top:24%;left:50%;transform:translateX(-50%);width:min(88vw,360px);z-index:2147483647;background:#fff9fa;border:2px solid #881337;border-radius:14px;padding:16px 18px;box-shadow:0 6px 25px #0004;color:#881337;font-size:15px;font-weight:bold;text-align:center;line-height:1.7;pointer-events:none';
         document.body.appendChild(notice);
       }
-      notice.textContent = '無料お試し期間が終了しました。閲覧とバックアップの書き出しはできます♡';
+      notice.textContent = '🌷 無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。\n引き続きご利用いただくには、月額プランをご利用ください♡';
       notice.style.display = 'block';
       clearTimeout(window.hosshiiReadOnlyNoticeTimer);
       window.hosshiiReadOnlyNoticeTimer = setTimeout(() => { notice.style.display = 'none'; }, 3500);
@@ -1916,6 +1916,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     let shiftOpenedFromCalendar = false;
     function openShiftInputModal(dateStr, fromCalendar = false) {
+      if (window.hosshiiReadOnly === true) return; // 期限切れ中は閲覧画面から入力画面へ遷移しない
       shiftOpenedFromCalendar = fromCalendar;
       selectedCalendarDateStr = dateStr;
       editingShift = null;
@@ -3816,6 +3817,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function selectCalendarDate(key) {
+      if (window.hosshiiReadOnly === true) return;
       calSelectedDateStr = key;
       renderCalendar();
       openShiftInputModal(key, true);
@@ -4072,6 +4074,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function saveAndCloseSettings() {
+      if (window.hosshiiReadOnly === true) { switchTab('clock'); return true; }
       if (hosshiiBlockEdit()) return false;
       try {
         if (saveSettings()) switchTab('clock');
@@ -4967,30 +4970,56 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       }
     } else {
       banner.style.display='block';
-      banner.textContent='無料お試し期間が終了しました（閲覧・バックアップ可能）';
+      banner.textContent='🌷 無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。\n引き続きご利用いただくには、月額プランをご利用ください♡';
     }
     if(typeof window.updateItoStickyHeader==='function'){
       const active=document.querySelector('#appScroll > .tab-content:not(.hidden)');
       if(active)window.updateItoStickyHeader(active.id.replace(/^tab-/,''));
     }
   }
+  const hosshiiExpiredMessage = '🌷 無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。\n引き続きご利用いただくには、月額プランをご利用ください♡';
+  function hosshiiSyncExpiredUI(){
+    const readOnly = window.hosshiiReadOnly === true;
+    for(const tab of document.querySelectorAll('#appScroll > .tab-content')){
+      let note=tab.querySelector('.hosshii-expired-permanent');
+      if(readOnly && !note){
+        note=document.createElement('div');note.className='hosshii-expired-permanent';
+        note.setAttribute('role','status');
+        note.style.cssText='white-space:pre-line;background:#fff1f2;color:#881337;border:1px solid #fda4af;border-radius:12px;padding:10px 12px;margin:8px 0 12px;font-size:13px;font-weight:bold;text-align:center;line-height:1.7;';
+        tab.prepend(note);
+      }
+      if(note){note.textContent=hosshiiExpiredMessage;note.style.display=(readOnly && tab.id!=='tab-clock')?'block':'none';}
+    }
+    // 設定の入力欄は閲覧専用。バックアップ書き出し・画面移動は妨げない。
+    const settings=document.getElementById('tab-settings');
+    if(settings){
+      for(const el of settings.querySelectorAll('input,select,textarea')){
+        if(readOnly){if(!el.hasAttribute('data-hosshii-original-disabled'))el.setAttribute('data-hosshii-original-disabled',el.disabled?'1':'0');el.disabled=true;}
+        else if(el.hasAttribute('data-hosshii-original-disabled')){el.disabled=el.getAttribute('data-hosshii-original-disabled')==='1';el.removeAttribute('data-hosshii-original-disabled');}
+      }
+    }
+  }
   function applyStatus(data){
     window.hosshiiReadOnly=!(data.status==='paid'||data.status==='trialing'||data.status==='active'||data.trialActive===true);
     setTrialBanner(data);
+    hosshiiSyncExpiredUI();
     // Save functions independently enforce read-only. Buttons also show clear feedback.
     if(!window.hosshiiReadOnlyClickInstalled){
       window.hosshiiReadOnlyClickInstalled=true;
       document.addEventListener('click',function(ev){
         if(!window.hosshiiReadOnly)return;
         const b=ev.target.closest('button');if(!b)return;
-        // Navigation and read-only viewing are always permitted.
-        if(b.classList.contains('tab-btn') || b.closest('#itoStickyHeaderHost') || b.id==='hosshiiExpiredTestButton')return;
+        if(b.classList.contains('tab-btn') || b.id==='hosshiiExpiredTestButton')return;
         const label=(b.textContent||'').trim();
         const action=(b.getAttribute('onclick')||'');
-        if(/書き出す|前月|翌月|お給料|予定表|はじめに|閉じる|戻る|OK|給与内訳|確認/.test(label))return;
-        if(/登録|保存|削除|修正|追加|コピー|読み込む|変更/.test(label+' '+action)){
+        const isCopy=action.includes('copyLastMonthShifts') || label.includes('一括コピー');
+        const inSettings=!!b.closest('#tab-settings');
+        if(isCopy){ev.preventDefault();ev.stopImmediatePropagation();hosshiiBlockEdit();return;}
+        // 書き出す・画面移動・閉じる・確認など閲覧用の操作は許可
+        if(/書き出す|前月|翌月|お給料|予定表|はじめに|閉じる|戻る|OK|給与内訳|確認/.test(label) && !/保存|登録|削除|修正|追加|読み込む/.test(label))return;
+        if(inSettings || /登録|保存|削除|修正|追加|コピー|読み込む|変更/.test(label+' '+action)){
           ev.preventDefault();ev.stopImmediatePropagation();
-          if(typeof hosshiiBlockEdit==='function')hosshiiBlockEdit();
+          // 画面内に共通文言を常時表示しているため、同じ案内を重ねて出さない
         }
       },true);
     }
@@ -5013,7 +5042,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       applyStatus({status:'expired',trialActive:false});
       const expiredBanner=document.getElementById('hosshiiTrialBanner');
       if(expiredBanner){
-        expiredBanner.textContent='🧪【テスト中】無料お試し期間が終了しました（閲覧・書き出しのみ）';
+        expiredBanner.textContent='🧪【テスト中】\n🌷 無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。\n引き続きご利用いただくには、月額プランをご利用ください♡';
       }
       window.alert('期限切れテスト状態になりました。シフトの登録・修正・削除を試してください。実際の無料体験記録は変更していません。');
     });
