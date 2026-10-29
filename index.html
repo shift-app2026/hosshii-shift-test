@@ -1094,6 +1094,32 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   white-space:nowrap!important;
   font-size:clamp(14px, 4vw, 18px)!important;
 }
+
+/* test⑦: 規約リンクの小さなひし形と注意書きの1行表示 */
+#lineAuthGate #lineAuthDocumentLinks a{
+  position:relative;
+  padding-left:17px;
+  text-align:left!important;
+}
+#lineAuthGate #lineAuthDocumentLinks a::before{
+  content:"◇";
+  position:absolute;
+  left:0;
+  top:0.1em;
+  font-size:10px;
+  line-height:1.7;
+  color:#b89a56;
+  -webkit-text-fill-color:#b89a56;
+  font-weight:600;
+}
+#lineAuthGate #lineAuthConsentNote{
+  text-align:center!important;
+  white-space:nowrap!important;
+  font-size:clamp(9px,2.8vw,12px)!important;
+  font-weight:650!important;
+  letter-spacing:-0.03em;
+  line-height:1.6!important;
+}
 </style>
 </head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
@@ -1108,7 +1134,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       <p class="small" id="lineAuthDocumentLinks"><a id="lineAuthTermsLink" target="_blank" rel="noopener noreferrer" hidden>利用規約を読む</a><a id="lineAuthPrivacyLink" target="_blank" rel="noopener noreferrer" hidden>プライバシーポリシーを読む</a></p>
       <label><input id="lineAuthAgree" type="checkbox">上記の利用条件およびプライバシーポリシーを確認し、同意します。</label>
       <label><input id="lineAuthAgeAgree" type="checkbox">私は18歳以上である、または18歳未満の場合は親権者（法定代理人）の同意を得ています。</label>
-      <p class="small" id="lineAuthConsentNote">※同意いただいた日付と時間を<br>記録いたします。</p>
+      <p class="small" id="lineAuthConsentNote">※同意いただいた日付と時間を記録いたします。</p>
       <button type="button" id="lineAuthStart" disabled>同意して無料お試しを始める</button>
     </div>
     <button type="button" id="lineAuthRetry" hidden>もう一度確認する</button>
