@@ -1015,6 +1015,22 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 #lineAuthCard a{color:#781331;text-decoration:underline;text-underline-offset:2px;font-weight:600}
 #lineAuthCard input[type="checkbox"]{accent-color:#881337}
 #lineAuthCard button:not(:disabled){background:#881337;color:#fff;opacity:1}
+/* test③: 初回同意画面のタイトル以外を高コントラスト化。アプリ本体は変更しない */
+#lineAuthGate #lineAuthCard{color:#4c0519}
+#lineAuthGate #lineAuthCard p,
+#lineAuthGate #lineAuthCard p.small,
+#lineAuthGate #lineAuthCard label,
+#lineAuthGate #lineAuthCard #lineAuthMessage{
+  color:#4c0519!important;
+  font-weight:600!important;
+  opacity:1!important;
+  -webkit-text-fill-color:#4c0519;
+}
+#lineAuthGate #lineAuthCard p.small{font-size:14px!important;line-height:1.7}
+#lineAuthGate #lineAuthCard a{color:#6d0f2b!important;font-weight:700!important;-webkit-text-fill-color:#6d0f2b}
+#lineAuthGate #lineAuthCard button{font-weight:800!important;opacity:1!important;text-shadow:none}
+#lineAuthGate #lineAuthCard button:disabled{background:#aa7184!important;color:#fff!important;-webkit-text-fill-color:#fff;opacity:1!important}
+#lineAuthGate #lineAuthCard button:not(:disabled){background:#881337!important;color:#fff!important;-webkit-text-fill-color:#fff;opacity:1!important}
 </style>
 </head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
