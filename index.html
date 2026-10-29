@@ -4947,6 +4947,29 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       },true);
     }
   }
+  // 【テスト⑩専用】実際のSupabaseの試用期間・契約情報は一切変更しない。
+  // 現在のページでのみ期限切れ表示を再現。再読み込みすると実際のサーバー状態に戻る。
+  function installExpiredTrialTestButton(){
+    if(document.getElementById('hosshiiExpiredTestButton'))return;
+    const banner=document.getElementById('hosshiiTrialBanner');
+    if(!banner)return;
+    const testButton=document.createElement('button');
+    testButton.type='button';
+    testButton.id='hosshiiExpiredTestButton';
+    testButton.textContent='🧪 無料期間終了の動作テスト';
+    testButton.style.cssText='display:block;width:100%;margin-top:8px;padding:10px;border:2px dashed #881337;border-radius:10px;background:#fff;color:#881337;font-size:14px;font-weight:700;cursor:pointer;';
+    banner.appendChild(testButton);
+    testButton.addEventListener('click',function(){
+      const confirmed=window.confirm('【テスト専用】この画面だけを「無料期間終了」の状態に切り替えます。Supabaseの無料体験日・購入情報は変更しません。テスト中は登録・修正を試し、保存できないことを確認してください。終了後はアプリを開き直してください。続けますか？');
+      if(!confirmed)return;
+      applyStatus({status:'expired',trialActive:false});
+      const expiredBanner=document.getElementById('hosshiiTrialBanner');
+      if(expiredBanner){
+        expiredBanner.textContent='🧪【テスト中】無料お試し期間が終了しました（閲覧・書き出しのみ）';
+      }
+      window.alert('期限切れテスト状態になりました。シフトの登録・修正・削除を試してください。実際の無料体験記録は変更していません。');
+    });
+  }
   function parseStatus(v){
     if(!v || typeof v!=='object')return null;
     if(v.consentRequired===true||v.status==='new'||v.status==='not_started')return 'new';
@@ -4969,7 +4992,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     try{
       const data=await callStatus(accept);
       const state=parseStatus(data);
-      if(state==='active'){applyStatus(data);hideGate();return;}
+      if(state==='active'){applyStatus(data);hideGate();installExpiredTrialTestButton();return;}
       if(state==='new'){consentView();return;}
       if(state==='expired'){applyStatus(data);hideGate();return;}
       showError('サーバーからの利用状態を確認できませんでした。接続仕様を確認してください。');
