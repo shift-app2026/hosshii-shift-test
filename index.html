@@ -1131,6 +1131,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   white-space:normal!important;
 }
 </style>
+<style id="hosshii-tab-no-select">.tab-btn,#itoStickyHeaderHost button{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}</style>
 </head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
@@ -1589,9 +1590,25 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         return {};
       }
     }
+    function hosshiiBlockEdit() {
+      if (window.hosshiiReadOnly !== true) return false;
+      let notice = document.getElementById('hosshiiReadOnlyNotice');
+      if (!notice) {
+        notice = document.createElement('div');
+        notice.id = 'hosshiiReadOnlyNotice';
+        notice.setAttribute('role', 'status');
+        notice.style.cssText = 'position:fixed;top:24%;left:50%;transform:translateX(-50%);width:min(88vw,360px);z-index:2147483647;background:#fff9fa;border:2px solid #881337;border-radius:14px;padding:16px 18px;box-shadow:0 6px 25px #0004;color:#881337;font-size:15px;font-weight:bold;text-align:center;line-height:1.7;pointer-events:none';
+        document.body.appendChild(notice);
+      }
+      notice.textContent = '無料お試し期間が終了しました。閲覧とバックアップの書き出しはできます♡';
+      notice.style.display = 'block';
+      clearTimeout(window.hosshiiReadOnlyNoticeTimer);
+      window.hosshiiReadOnlyNoticeTimer = setTimeout(() => { notice.style.display = 'none'; }, 3500);
+      return true;
+    }
     function safeWriteAppJSON(key, value) {
       if (window.hosshiiReadOnly === true) {
-        if (typeof showToast === 'function') showToast('無料期間終了後は閲覧専用です。バックアップは利用できます。');
+        hosshiiBlockEdit();
         return false;
       }
       if (storageWriteBlocked) {
@@ -1740,6 +1757,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function setDayShifts(dateStr, jobKey, shiftsArr) {
+      if (hosshiiBlockEdit()) return false;
       const nextData = JSON.parse(JSON.stringify(shiftsData));
       if (!nextData[dateStr]) nextData[dateStr] = {};
       if (shiftsArr.length === 0) {
@@ -1987,6 +2005,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function submitRenameJobModal() {
+      if (hosshiiBlockEdit()) return false;
       // 保存ボタン押下時の状態を確認し、失敗時も画面に理由を表示する
       const input = document.getElementById('renameJobInput');
       const jk = renamingJobKey;
@@ -2136,6 +2155,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function deleteJobShiftIndexModal(jobKey, idx) {
+      if (hosshiiBlockEdit()) return false;
       const dk = selectedCalendarDateStr;
       let shifts = getDayShifts(dk, jobKey);
       const removed = shifts[idx];
@@ -2234,6 +2254,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function editMonthlyGoal() {
+      if (hosshiiBlockEdit()) return false;
       const modal = document.getElementById('t31GoalModal');
       const field = document.getElementById('t31GoalInput');
       if (!modal || !field) return;
@@ -2249,6 +2270,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function registerMonthlyGoalDialog(event) {
+      if (hosshiiBlockEdit()) return false;
       if (event) event.preventDefault();
       const field = document.getElementById('t31GoalInput');
       const error = document.getElementById('t31GoalError');
@@ -2267,6 +2289,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function saveInlineMonthlyGoal(input) {
+      if (hosshiiBlockEdit()) return false;
       if (!input) return;
       const clean = parseFormattedNumber(input.value);
       monthlyGoal = clean;
@@ -2472,6 +2495,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function registerNewJob() {
+      if (hosshiiBlockEdit()) return false;
       const input = document.getElementById('newJobNameInput');
       const name = input ? input.value.trim() : '';
       if (!name) { showAlertModal('新しいバイト先名を入力してね♡'); return; }
@@ -2516,6 +2540,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function deleteJob(jk) {
+      if (hosshiiBlockEdit()) return false;
       const keys = getActiveJobKeys();
       const idx = keys.indexOf(jk);
       if (idx === -1) return;
@@ -2833,12 +2858,14 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function addSettingsWageSlot() {
+      if (hosshiiBlockEdit()) return false;
       syncSettingsFormToConfig(currentSettingsJobKey);
       configData[currentSettingsJobKey].wageSlots.push({ start: '', end: '', wage: 0, bType: 'weekday', bVal: 0 });
       renderWageSlotRows();
     }
 
     function removeSettingsWageSlot(i) {
+      if (hosshiiBlockEdit()) return false;
       syncSettingsFormToConfig(currentSettingsJobKey);
       configData[currentSettingsJobKey].wageSlots.splice(i, 1);
       saveAllDataStorage();
@@ -2865,6 +2892,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function saveSettingsWageSlotRow(i) {
+      if (hosshiiBlockEdit()) return false;
       const st = document.getElementById(`set_time_${i}_start`)?.value || '';
       const ed = document.getElementById(`set_time_${i}_end`)?.value || '';
       const wg = parseFormattedNumber(document.getElementById(`set_wage_${i}`)?.value);
@@ -2943,6 +2971,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function setModalShiftType(isPaid) {
+      if (hosshiiBlockEdit()) return false;
       setModalShiftTypeUIOnly(isPaid);
       if (isPaid) {
         if (!selectedCalendarDateStr) return;
@@ -3001,10 +3030,12 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
 
     function registerFromPresetList(start,end,breakMins) {
+      if (hosshiiBlockEdit()) return false;
       const ok = registerModalPresetTime(start,end,breakMins);
       if(ok) closePresetRegisterModal();
     }
     function deleteModalPresetRow(idx) {
+      if (hosshiiBlockEdit()) return false;
       const currentJob = configData[currentSelectedJobKey] || configData.job1;
       const p = currentJob && currentJob.presets && currentJob.presets[idx];
       if (!p) return;
@@ -3114,6 +3145,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       document.getElementById('pr_break_disp').textContent = '0分';
     }
     function submitPresetRegister() {
+      if (hosshiiBlockEdit()) return false;
       const start = document.getElementById('pr_start').value;
       const end = document.getElementById('pr_end').value;
       const breakMins = prBreakMins;
@@ -3132,6 +3164,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function registerNewPresetAndRegister() {
+      if (hosshiiBlockEdit()) return false;
       updateNewPresetForm();
       if (!newPresetForm.start || !newPresetForm.end) { showToast("開始と終了時間を入力してください"); return; }
       if (newPresetForm.start === newPresetForm.end) { showToast("開始と終了が同じ時間だよ。変えてね♡"); return; }
@@ -3151,6 +3184,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function registerModalPresetTime(start, end, breakMins) {
+      if (hosshiiBlockEdit()) return false;
       if (!selectedCalendarDateStr) { showToast("日付を選んでね♡"); return false; }
       const dup = findOverlap(selectedCalendarDateStr, start, end);
       if (dup) { showOverlapAlert(dup); return false; }
@@ -3163,6 +3197,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function copyLastMonthShifts() {
+      if (hosshiiBlockEdit()) return false;
       askConfirm('入力済みのシフトと有給休暇は\nコピーされません♡', () => {
         let y = currentPeriodDate.getFullYear();
         let m = currentPeriodDate.getMonth();
@@ -3993,6 +4028,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function removeJobShifts(jk) {
+      if (hosshiiBlockEdit()) return false;
       for (const dateKey of Object.keys(shiftsData)) {
         delete shiftsData[dateKey][jk];
         if (Object.keys(shiftsData[dateKey]).length === 0) delete shiftsData[dateKey];
@@ -4016,12 +4052,14 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function saveAllDataStorage() {
+      if (hosshiiBlockEdit()) return false;
       let payload = JSON.parse(JSON.stringify(configData));
       payload.monthlyGoal = monthlyGoal;
       return safeWriteAppJSON('mybasket_wages_v77', payload);
     }
 
     function saveSettings() {
+      if (hosshiiBlockEdit()) return false;
       syncSettingsFormToConfig(currentSettingsJobKey);
       if (!saveAllDataStorage()) return false;
       showToast("設定を保存しました");
@@ -4034,6 +4072,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function saveAndCloseSettings() {
+      if (hosshiiBlockEdit()) return false;
       try {
         if (saveSettings()) switchTab('clock');
       } catch (error) {
@@ -4127,7 +4166,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       // 無料体験終了後は書き出しのみ可能。ファイル選択からの直接実行も拒否する。
       if (window.hosshiiReadOnly === true) {
         if (input) input.value = '';
-        showToast('閲覧専用です。バックアップの書き出しは利用できます。');
+        hosshiiBlockEdit();
         return;
       }
       if (storageWriteBlocked) {
@@ -4912,16 +4951,24 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
     const payTab=document.getElementById('tab-clock');
     if(payTab && banner.parentNode!==payTab && banner.parentNode!==document.getElementById('itoStickyHeaderHost'))payTab.prepend(banner);
-    if(data.status==='paid')banner.textContent='ご契約期間中です';
-    else if(data.trialActive===true || data.status==='trialing' || data.status==='active'){
-      let days=Number(data.remainingDays);
-      if(!Number.isFinite(days)){
-        const end=data.trial_ends_at||data.trialEndsAt||data.trialEndAt;
-        days=end?Math.ceil((new Date(end).getTime()-Date.now())/86400000):NaN;
+    if(data.status==='paid'){
+      banner.style.display='none';
+    } else if(data.trialActive===true || data.status==='trialing' || data.status==='active'){
+      banner.style.display='block';
+      const end=data.trial_ends_at||data.trialEndsAt||data.trialEndAt;
+      const dt=end?new Date(end):null;
+      if(dt && Number.isFinite(dt.getTime())){
+        const parts=new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric'}).formatToParts(dt);
+        const month=parts.find(p=>p.type==='month')?.value;
+        const day=parts.find(p=>p.type==='day')?.value;
+        banner.textContent='✨ 無料お試し終了は'+month+'月'+day+'日です♡';
+      } else {
+        banner.textContent='✨ 無料お試し期間中です';
       }
-      banner.textContent=Number.isFinite(days)?'✨ 無料お試し終了まであと'+Math.max(0,days)+'日':'✨ 無料お試し期間中です';
+    } else {
+      banner.style.display='block';
+      banner.textContent='無料お試し期間が終了しました（閲覧・バックアップ可能）';
     }
-    else banner.textContent='無料お試し期間が終了しました（閲覧・バックアップ可能）';
     if(typeof window.updateItoStickyHeader==='function'){
       const active=document.querySelector('#appScroll > .tab-content:not(.hidden)');
       if(active)window.updateItoStickyHeader(active.id.replace(/^tab-/,''));
@@ -4930,24 +4977,25 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   function applyStatus(data){
     window.hosshiiReadOnly=!(data.status==='paid'||data.status==='trialing'||data.status==='active'||data.trialActive===true);
     setTrialBanner(data);
-    // 既存の保存操作は安全な保存関数側でも拒否する。
-    // 編集用ボタンを押しても誤操作しないようクリック時にも防ぐ。
-    if(window.hosshiiReadOnly && !window.hosshiiReadOnlyClickInstalled){
+    // Save functions independently enforce read-only. Buttons also show clear feedback.
+    if(!window.hosshiiReadOnlyClickInstalled){
       window.hosshiiReadOnlyClickInstalled=true;
       document.addEventListener('click',function(ev){
         if(!window.hosshiiReadOnly)return;
         const b=ev.target.closest('button');if(!b)return;
+        // Navigation and read-only viewing are always permitted.
+        if(b.classList.contains('tab-btn') || b.closest('#itoStickyHeaderHost') || b.id==='hosshiiExpiredTestButton')return;
         const label=(b.textContent||'').trim();
         const action=(b.getAttribute('onclick')||'');
-        if(/書き出す|バックアップ|読み込む|前月|翌月|お給料|予定表|はじめに|閉じる|戻る|OK|給与内訳/.test(label))return;
-        if(/登録|保存|削除|修正|追加|コピー|入力|更新/.test(label+' '+action)){
+        if(/書き出す|前月|翌月|お給料|予定表|はじめに|閉じる|戻る|OK|給与内訳|確認/.test(label))return;
+        if(/登録|保存|削除|修正|追加|コピー|読み込む|変更/.test(label+' '+action)){
           ev.preventDefault();ev.stopImmediatePropagation();
-          if(typeof window.showToast==='function')window.showToast('閲覧専用です。バックアップは利用できます。');
+          if(typeof hosshiiBlockEdit==='function')hosshiiBlockEdit();
         }
       },true);
     }
   }
-  // 【テスト⑩専用】実際のSupabaseの試用期間・契約情報は一切変更しない。
+  // 【テスト⑪専用】実際のSupabaseの試用期間・契約情報は一切変更しない。
   // 現在のページでのみ期限切れ表示を再現。再読み込みすると実際のサーバー状態に戻る。
   function installExpiredTrialTestButton(){
     if(document.getElementById('hosshiiExpiredTestButton'))return;
