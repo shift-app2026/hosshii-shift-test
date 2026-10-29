@@ -1060,13 +1060,47 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   -webkit-text-fill-color:#4c0519!important;
   opacity:1!important;
 }
+
+/* test⑥: 初回同意画面だけの仕上げ */
+#lineAuthGate #lineAuthDocumentLinks{
+  align-items:stretch!important;
+  width:max-content;
+  max-width:100%;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+#lineAuthGate #lineAuthDocumentLinks a{
+  text-align:left!important;
+}
+#lineAuthGate #lineAuthConsentNote{
+  font-size:15px!important;
+  font-weight:650!important;
+  line-height:1.7!important;
+  overflow-wrap:normal;
+}
+#lineAuthGate #lineAuthCard #lineAuthStart,
+#lineAuthGate #lineAuthCard #lineAuthStart:disabled,
+#lineAuthGate #lineAuthCard #lineAuthStart:not(:disabled){
+  background:#881337!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  opacity:1!important;
+  font-weight:800!important;
+}
+#lineAuthGate #lineAuthCard #lineAuthStart:disabled{
+  cursor:not-allowed;
+}
+#lineAuthGate #lineAuthMessage{
+  white-space:nowrap!important;
+  font-size:clamp(14px, 4vw, 18px)!important;
+}
 </style>
 </head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
   <div id="lineAuthCard">
     <h2 id="lineAuthTitle">ほっしーのシフトアプリ ♡</h2>
-    <p id="lineAuthMessage">LINEの利用状況を確認しています…</p>
+    <p id="lineAuthMessage">LINEの利用状況を確認中</p>
     <div id="lineAuthConsent" hidden>
       <p>初回利用から21日間、無料でお試しいただけます。無料お試しの開始時に、お支払い情報の登録は不要です。無料期間の開始日と利用状況をLINEアカウントにひも付けて管理します。</p>
       <p class="small">利用規約・プライバシーポリシーを確認してからお進みください。</p>
@@ -1074,7 +1108,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       <p class="small" id="lineAuthDocumentLinks"><a id="lineAuthTermsLink" target="_blank" rel="noopener noreferrer" hidden>利用規約を読む</a><a id="lineAuthPrivacyLink" target="_blank" rel="noopener noreferrer" hidden>プライバシーポリシーを読む</a></p>
       <label><input id="lineAuthAgree" type="checkbox">上記の利用条件およびプライバシーポリシーを確認し、同意します。</label>
       <label><input id="lineAuthAgeAgree" type="checkbox">私は18歳以上である、または18歳未満の場合は親権者（法定代理人）の同意を得ています。</label>
-      <p class="small" id="lineAuthConsentNote">※同意いただいた日付と時間を記録いたします。</p>
+      <p class="small" id="lineAuthConsentNote">※同意いただいた日付と時間を<br>記録いたします。</p>
       <button type="button" id="lineAuthStart" disabled>同意して無料お試しを始める</button>
     </div>
     <button type="button" id="lineAuthRetry" hidden>もう一度確認する</button>
@@ -4844,7 +4878,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     return data;
   }
   async function check(accept){
-    message.textContent=accept?'同意内容を保存しています…':'LINEの利用状況を確認しています…';
+    message.textContent=accept?'同意内容を保存しています…':'LINEの利用状況を確認中';
     consent.hidden=true;retry.hidden=true;
     try{
       const data=await callStatus(accept);
