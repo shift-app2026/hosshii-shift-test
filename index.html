@@ -5304,5 +5304,36 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 @media(min-width:640px){#appCard > #itoStickyHeaderHost{padding:16px 16px 7px !important;}}
 </style>
 
+
+<!-- テスト⑰：無料お試し終了日と申込みを横一列に表示する箇所だけ調整 -->
+<style id="hosshii-test17-trial-one-line-only">
+#hosshiiTrialBanner,
+#appCard > #itoStickyHeaderHost > #hosshiiTrialBanner,
+#appScroll > #itoStickyHeaderHost > #hosshiiTrialBanner {
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex-wrap:nowrap !important;
+  gap:9px !important;
+  white-space:nowrap !important;
+  font-size:15px !important;
+}
+#hosshiiTrialBanner .hosshii-trial-status-line {
+  flex:0 1 auto !important;
+  min-width:0 !important;
+  white-space:nowrap !important;
+}
+#hosshiiTrialBanner #hosshiiSubscribeButton {
+  flex:0 0 auto !important;
+  font-size:15px !important;
+}
+@media(max-width:360px){
+  #hosshiiTrialBanner,
+  #appCard > #itoStickyHeaderHost > #hosshiiTrialBanner,
+  #appScroll > #itoStickyHeaderHost > #hosshiiTrialBanner {font-size:13px !important;gap:7px !important;}
+  #hosshiiTrialBanner #hosshiiSubscribeButton {font-size:13px !important;padding:4px 7px !important;}
+}
+</style>
 </body>
 </html>
