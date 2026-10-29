@@ -1006,8 +1006,15 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 #lineAuthCard label{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.6;margin:14px 0}
 #lineAuthCard input{width:20px;height:20px;flex:none;margin-top:2px}
 #lineAuthCard button{width:100%;background:#881337;color:#fff;border:0;border-radius:12px;padding:13px;font-size:15px;font-weight:700}
-#lineAuthCard button:disabled{opacity:.5}
-#lineAuthCard .small{font-size:12px;color:#75656c}
+#lineAuthCard button:disabled{opacity:1;background:#c38a9c;color:#fff;cursor:not-allowed}
+#lineAuthCard .small{font-size:13px;color:#593140}
+/* 初回同意画面だけをくっきり表示（アプリ本体には影響させない） */
+#lineAuthGate{background:#fffafc}
+#lineAuthCard{background:#fff;border-color:#d9b8c4;box-shadow:0 8px 24px rgba(76,5,25,.12);color:#4c0519}
+#lineAuthCard p,#lineAuthCard label{color:#4c0519;opacity:1}
+#lineAuthCard a{color:#781331;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+#lineAuthCard input[type="checkbox"]{accent-color:#881337}
+#lineAuthCard button:not(:disabled){background:#881337;color:#fff;opacity:1}
 </style>
 </head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
@@ -1022,7 +1029,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       <p class="small"><a id="lineAuthTermsLink" target="_blank" rel="noopener noreferrer" hidden>利用規約を読む</a>　<a id="lineAuthPrivacyLink" target="_blank" rel="noopener noreferrer" hidden>プライバシーポリシーを読む</a></p>
       <label><input id="lineAuthAgree" type="checkbox">上記の利用条件およびプライバシーポリシーを確認し、同意します。</label>
       <label><input id="lineAuthAgeAgree" type="checkbox">私は18歳以上である、または18歳未満の場合は親権者（法定代理人）の同意を得ています。</label>
-      <p class="small">※同意日時・規約の版のサーバー保存は、接続テストで確認します。</p>
+      <p class="small">※同意日時と規約の版を記録します。</p>
       <button type="button" id="lineAuthStart" disabled>同意して無料お試しを始める</button>
     </div>
     <button type="button" id="lineAuthRetry" hidden>もう一度確認する</button>
@@ -4703,7 +4710,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 <script>document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!document.getElementById('t31GoalModal').hidden)closeMonthlyGoalDialog()});</script>
 
 <script id="line-auth-supabase-test-20261028">
-/* LINE版 初回同意画面テスト: サーバー側の同意日時・文書版の永続保存、利用制限は別途検証が必要。 */
+/* LINE版 初回同意: サーバーに同意日時・文書版を保存。利用制限の全経路検証は別途必要。 */
 (function(){
   'use strict';
   const LIFF_ID = '2011929118-Fyk1pdlU';
@@ -4786,13 +4793,13 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     return null;
   }
   async function callStatus(accept){
-    const r=await fetch(STATUS_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({idToken,...(accept?{consentAccepted:true}: {})})});
+    const r=await fetch(STATUS_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({idToken,...(accept?{consentAccepted:true,termsVersion:'2026-10-29',privacyVersion:'2026-10-29'}: {})})});
     let data;try{data=await r.json();}catch(_){throw Error('サーバーの応答を読み取れませんでした（HTTP '+r.status+'）。');}
     if(!r.ok)throw Error('接続に失敗しました（HTTP '+r.status+'：'+String(data.error||'確認できません')+'）。');
     return data;
   }
   async function check(accept){
-    message.textContent='LINEの利用状況を確認しています…';
+    message.textContent=accept?'同意内容を保存しています…':'LINEの利用状況を確認しています…';
     consent.hidden=true;retry.hidden=true;
     try{
       const data=await callStatus(accept);
@@ -4819,7 +4826,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   agree.addEventListener('change',updateStart);
   ageAgree.addEventListener('change',updateStart);
   updateStart();
-  start.addEventListener('click',async()=>{if(!docsReady||!agree.checked||!ageAgree.checked||!idToken)return;await check(true);});
+  start.addEventListener('click',async()=>{if(!docsReady||!agree.checked||!ageAgree.checked||!idToken)return;start.disabled=true;await check(true);updateStart();});
   retry.addEventListener('click',initialize);
   initialize();
 })();
