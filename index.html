@@ -1193,6 +1193,19 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 /* ⑤ 時給についての注意書き: 2行・左揃え、文字サイズはそのまま */
 #tab-settings .paid-note { text-align:left!important; }
 </style>
+
+<style id="hosshii-oct30-final-calendar-and-preset">
+/* ☆と●を同じ大きさで、日付の下に並べる */
+#calendarDays .hosshii-calendar-marks { min-height:16px; display:flex; justify-content:center; align-items:center; gap:2px; white-space:nowrap; max-width:100%; }
+#calendarDays .hosshii-calendar-mark { display:inline-flex; align-items:center; justify-content:center; font-size:13px!important; line-height:1!important; font-weight:800; width:13px; height:15px; flex:0 0 13px; }
+#calendarDays .hosshii-calendar-more { font-size:9px!important; line-height:1; font-weight:700; }
+/* ワンタッチ登録の説明は既存の後続CSSより優先する */
+#shiftInputModal .shift-preset-section .ito-preset-desc { font-size:clamp(13px,3.5vw,15px)!important; line-height:1.5!important; letter-spacing:normal!important; white-space:normal!important; overflow-wrap:break-word; margin-top:4px!important; margin-bottom:4px!important; }
+#shiftInputModal .shift-preset-section { padding-bottom:5px!important; }
+/* 警告文とボタンは必要な場合のみ表示 */
+#shiftInputModal #hosshiiShiftWageWarning { font-size:clamp(12px,3.35vw,14px)!important; line-height:1.5!important; }
+#shiftInputModal #hosshiiShiftWageWarning[hidden] { display:none!important; }
+</style>
 </head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
@@ -1322,7 +1335,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       <div id="shiftInputScrollArea" class="space-y-3 overflow-y-auto pr-1 flex-1 no-scrollbar" onscroll="updateShiftScrollHint()">
         <div class="space-y-2"><div class="flex space-x-2 pt-1"><button type="button" id="modalTypeWorkBtn" onclick="setModalShiftType(false)" class="flex-1 py-1.5 rounded-xl text-sm font-bold border bg-stone-100 border-stone-300">通常勤務</button><button type="button" id="modalTypePaidBtn" onclick="setModalShiftType(true)" class="flex-1 py-1.5 rounded-xl text-sm font-bold border bg-white border-stone-200">☆ 有給休暇</button></div></div>
         <div class="space-y-1.5 border-t border-stone-100 pt-2"><span id="modalShiftListHeading" class="shift-section-title">【シフト一覧】</span><div id="modalSelectedDateSummaryContent" class="space-y-2 pt-1"></div></div>
-        <div class="space-y-2 border-t border-stone-100 pt-2"><div class="flex items-center justify-between"><span class="shift-section-title">【勤務時間を登録】</span><button type="button" onclick="registerNewPresetAndRegister()" id="registerShiftButton" class="px-4 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold">登録</button></div><div id="modalCustomPresetContainer" class="space-y-2"></div><div id="hosshiiShiftWageWarning" class="t13-wage-notice" hidden>⚠️ 時給が設定されていない時間帯があります。<br>設定画面にお戻りください♡ <button type="button" onclick="hosshiiOpenWageSettings()">［設定画面］</button></div></div>
+        <div class="space-y-2 border-t border-stone-100 pt-2"><div class="flex items-center justify-between"><span class="shift-section-title">【勤務時間を登録】</span><button type="button" onclick="registerNewPresetAndRegister()" id="registerShiftButton" class="px-4 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold">登録</button></div><div id="modalCustomPresetContainer" class="space-y-2"></div><div id="hosshiiShiftWageWarning" class="t13-wage-notice" hidden>⚠️ 時給が未設定の時間帯があります。<br>設定画面で確認してね♡ <button type="button" onclick="hosshiiOpenWageSettings()">［設定画面］</button></div></div>
         <section class="shift-preset-section space-y-2 border-t border-stone-100 pt-2">
           <div class="flex items-center justify-between gap-2"><span class="shift-section-title preset-inline-heading">【ワンタッチ登録しましょ～♡】</span><button type="button" onclick="openPresetRegisterModal()" class="px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0">＋登録</button></div>
           <p class="ito-preset-desc font-bold text-stone-600">登録して時間を選択するだけなので楽になります。</p>
@@ -3831,29 +3844,30 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
         const dateStr = formatDateKey(d);
 
-        let activeJobKeys = getActiveJobKeys();
+        // 登録されたシフト1件につき記号1つ。バイト先の色を使う。
+        const activeJobKeys = getActiveJobKeys();
         let dotsHtml = '';
         let registeredJobs = [];
-
+        const calendarMarks = [];
         activeJobKeys.forEach(jk => {
-          let shifts = getDayShifts(dateStr, jk);
-          if (shifts.length > 0) {
-            registeredJobs.push(jk);
-            shifts.forEach(jobShift => {
-              const hasValidShift = (jobShift.start && jobShift.end) || (jobShift.isPaidLeave && ((Number(jobShift.hours) || Number(configData[jk].paidHours) || 0) > 0));
-              if (!hasValidShift) return;
-
-              let hasTime = !!(jobShift.start && jobShift.end);
-              if (hasTime) { 
-                const v = getJobVisual(jk); 
-                dotsHtml += `<span class="${v.orbClass || "glass-orb glass-orb-stone"}" style="width:10px; height:10px; margin:0 1px;"></span>`; 
-              }
-              if (!hasTime && jobShift.isPaidLeave) {
-                dotsHtml += `<span class="text-xs leading-none text-stone-700 font-bold">☆</span>`;
-              }
-            });
-          }
+          const shifts = getDayShifts(dateStr, jk);
+          if (!shifts.length) return;
+          registeredJobs.push(jk);
+          const palette = getJobPalette(jk);
+          shifts.forEach(jobShift => {
+            const hasTime = !!(jobShift.start && jobShift.end);
+            const hasPaidHours = jobShift.isPaidLeave && ((Number(jobShift.hours) || Number(configData[jk]?.paidHours) || 0) > 0);
+            if (!hasTime && !hasPaidHours) return;
+            // 有給の場合は時間指定の有無に関係なく☆を優先。
+            const isPaid = !!jobShift.isPaidLeave;
+            const glyph = isPaid ? '☆' : '●';
+            calendarMarks.push(`<span class="hosshii-calendar-mark" style="color:${palette.dot};" aria-label="${isPaid ? '有給休暇' : '通常勤務'}">${glyph}</span>`);
+          });
         });
+        dotsHtml = calendarMarks.slice(0, 3).join('');
+        if (calendarMarks.length > 3) {
+          dotsHtml += `<span class="hosshii-calendar-more" title="ほか${calendarMarks.length - 3}件">+${calendarMarks.length - 3}</span>`;
+        }
 
         let paydayJobs = getPaydayJobs(d);
         let isPayday = paydayJobs.length > 0;
@@ -3867,7 +3881,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           `;
         }
 
-        let iconHtml = `<div style="height: 14px;" class="flex items-center justify-center space-x-0.5">${dotsHtml}</div>`;
+        let iconHtml = `<div class="hosshii-calendar-marks">${dotsHtml}</div>`;
 
         const isToday = (dateStr === formatDateKey(new Date()));
         const isSunHol = (d.getDay() === 0 || isJapaneseHoliday(d));
