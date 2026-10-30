@@ -3860,7 +3860,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             if (!hasTime && !hasPaidHours) return;
             // 有給の場合は時間指定の有無に関係なく☆を優先。
             const isPaid = !!jobShift.isPaidLeave;
-            const glyph = isPaid ? '☆' : '●';
+            const glyph = isPaid ? '★' : '●';
             calendarMarks.push(`<span class="hosshii-calendar-mark" style="color:${palette.dot};" aria-label="${isPaid ? '有給休暇' : '通常勤務'}">${glyph}</span>`);
           });
         });
@@ -5499,6 +5499,20 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     padding: 4px 7px !important;
   }
 }
+</style>
+
+<style id="hosshii-oct30-paid-star-preset-text-final-fix">
+/* 最終指定: 後方の旧CSSによる文字縮小を上書き */
+#shiftInputModal .shift-preset-section .ito-preset-desc {
+  font-size:15px!important;
+  line-height:1.5!important;
+  letter-spacing:normal!important;
+  white-space:normal!important;
+  overflow-wrap:break-word!important;
+  margin:5px 0 7px!important;
+  color:#44403c!important;
+}
+#shiftInputModal .shift-preset-section {padding-bottom:8px!important;}
 </style>
 </body>
 </html>
