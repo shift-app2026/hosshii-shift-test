@@ -1173,6 +1173,26 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   -webkit-touch-callout: default;
 }
 </style>
+
+<style id="test2-oct30-small-readability-patch">
+/* ① お給料画面の警告: 文字を少し大きく */
+#tab-clock .t13-wage-notice { font-size:clamp(13px,3.5vw,15px)!important; line-height:1.65!important; }
+#tab-clock .t13-wage-notice button { font-size:inherit!important; }
+/* シフト登録画面の警告も読みやすい大きさに */
+#shiftInputModal .t13-wage-notice { font-size:clamp(13px,3.5vw,15px)!important; line-height:1.6!important; color:#7c2434; }
+#shiftInputModal .t13-wage-notice[hidden] { display:none!important; }
+#shiftInputModal .t13-wage-notice button { font-size:inherit!important; color:#8b0e33; font-weight:750; text-decoration:underline; text-underline-offset:3px; }
+/* ② ワンタッチ登録の説明文: 拡大し、幅が狭い画面では折り返す */
+#shiftInputModal .shift-preset-section .ito-preset-desc {
+  font-size:clamp(13px,3.5vw,14px)!important;
+  line-height:1.5!important;
+  letter-spacing:normal!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere;
+}
+/* ⑤ 時給についての注意書き: 2行・左揃え、文字サイズはそのまま */
+#tab-settings .paid-note { text-align:left!important; }
+</style>
 </head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
@@ -2718,7 +2738,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
                   <span class="font-bold text-stone-700 flex-1 min-w-0 whitespace-nowrap">有給休暇<span class="paid-sub ml-1.5 text-stone-500 font-bold">1時間あたり</span></span>
                   <div class="flex items-center gap-1 shrink-0"><input type="text" inputmode="numeric" id="set_wagePaid" oninput="formatInputNumber(this)" class="w-24 p-2 border rounded text-right font-bold bg-white text-sm"><span class="font-bold">円</span></div>
                 </div>
-                <p class="paid-note text-xs text-stone-500 font-medium text-center">※時給が異なる場合は、<br>よく働く時給か平均時給を入力してね♡</p>
+                <p class="paid-note text-xs text-stone-500 font-medium text-left">※時給が異なる場合は、<br>よく働く時給か平均時給を入力してね♡</p>
                 <div class="flex items-center justify-between gap-2 pt-1">
                   <span class="font-bold text-stone-700 flex-1 min-w-0">有給1日あたりの時間</span>
                   <div class="flex items-center gap-1 shrink-0"><input type="text" inputmode="decimal" id="set_paidHours" class="w-20 p-2 border rounded text-right font-bold bg-white text-sm" placeholder=""><span class="text-stone-700 font-bold text-xs">時間</span></div>
