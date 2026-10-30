@@ -5015,7 +5015,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     const field=document.createElement('input');field.type='text';field.readOnly=true;field.value=code;
     field.setAttribute('aria-label','お申込み番号');
     field.style.cssText='width:100%;box-sizing:border-box;font-size:15px!important;text-align:center;letter-spacing:.02em;padding:11px 5px;border:1px solid #d8a4b4;border-radius:9px;background:#fff;user-select:text;-webkit-user-select:text;';
-    const hint=document.createElement('p');hint.textContent='Squareのお申込み画面で、この番号を入力してね♡';hint.style.cssText='font-size:13px;line-height:1.6;margin:12px 0;';
+    const hint=document.createElement('p');hint.innerHTML='Squareのお申込み画面で<br>この番号を入力してね♡';hint.style.cssText='font-size:16px;line-height:1.55;margin:12px 0;text-align:center;';
     const actions=document.createElement('div');actions.style.cssText='display:flex;gap:10px;';
     const copy=document.createElement('button');copy.type='button';copy.textContent='番号をコピー';
     copy.style.cssText='flex:1;padding:11px 6px;background:#881337;color:#fff;border-radius:9px;font-weight:800;';
