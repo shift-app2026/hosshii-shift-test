@@ -1158,6 +1158,21 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 }
 </style>
 
+
+<!-- 2026-10-30: カレンダーなどの誤選択防止。入力欄の選択・コピーは維持 -->
+<style id="hosshii-20261030-selection-fix">
+#appCard, #calendarDays, #calendarDays *, #itoStickyHeaderHost, #itoStickyHeaderHost * {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+#appCard input, #appCard textarea, #appCard [contenteditable="true"],
+#hosshiiApplicationCodeDialog input {
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+</style>
 </head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
@@ -4984,6 +4999,39 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   function hideGate(){gate.hidden=true;}
   function consentView(){message.classList.add('consent-heading');message.textContent='「初回利用のご案内」';consent.hidden=false;retry.hidden=true;}
   // test⑭: 購入状態に合わせた2行案内。決済連携は未設定のため購入操作は開始しない。
+  // LINE本人確認後に取得した申込み番号のみ表示する（決済の認証には使用しない）。
+  function showApplicationCode(code){
+    const existing=document.getElementById('hosshiiApplicationCodeDialog');
+    if(existing)existing.remove();
+    const overlay=document.createElement('div');
+    overlay.id='hosshiiApplicationCodeDialog';
+    overlay.setAttribute('role','dialog');
+    overlay.setAttribute('aria-modal','true');
+    overlay.setAttribute('aria-label','お申込み番号');
+    overlay.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:18px;';
+    const card=document.createElement('div');
+    card.style.cssText='background:#fff;border-radius:16px;padding:20px;width:min(100%,390px);box-shadow:0 15px 40px #0003;color:#4c0519;text-align:center;';
+    const title=document.createElement('h3');title.textContent='お申込み番号';title.style.cssText='font-size:19px;font-weight:800;margin:0 0 12px;';
+    const field=document.createElement('input');field.type='text';field.readOnly=true;field.value=code;
+    field.setAttribute('aria-label','お申込み番号');
+    field.style.cssText='width:100%;box-sizing:border-box;font-size:15px!important;text-align:center;letter-spacing:.02em;padding:11px 5px;border:1px solid #d8a4b4;border-radius:9px;background:#fff;user-select:text;-webkit-user-select:text;';
+    const hint=document.createElement('p');hint.textContent='Squareのお申込み画面で、この番号を入力してね♡';hint.style.cssText='font-size:13px;line-height:1.6;margin:12px 0;';
+    const actions=document.createElement('div');actions.style.cssText='display:flex;gap:10px;';
+    const copy=document.createElement('button');copy.type='button';copy.textContent='番号をコピー';
+    copy.style.cssText='flex:1;padding:11px 6px;background:#881337;color:#fff;border-radius:9px;font-weight:800;';
+    copy.addEventListener('click',async()=>{
+      try{
+        if(navigator.clipboard && navigator.clipboard.writeText){await navigator.clipboard.writeText(code);}
+        else {field.focus();field.select();if(!document.execCommand('copy'))throw Error('copy failed');}
+        copy.textContent='コピーしました♡';
+      }catch(_){field.focus();field.select();copy.textContent='番号を選択しました';}
+    });
+    const close=document.createElement('button');close.type='button';close.textContent='閉じる';
+    close.style.cssText='flex:0 0 75px;padding:11px 6px;background:#fce7ed;color:#881337;border-radius:9px;font-weight:800;';
+    close.addEventListener('click',()=>overlay.remove());
+    overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.remove();});
+    actions.append(copy,close);card.append(title,field,hint,actions);overlay.append(card);document.body.append(overlay);
+  }
   function setTrialBanner(data){
     let banner=document.getElementById('hosshiiTrialBanner');
     if(!banner){
@@ -5027,7 +5075,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       buy.style.cssText='display:inline-flex;align-items:center;justify-content:center;margin:0;padding:5px 9px;background:#fce7ed;color:#881337;border:1px solid #f4c9d4;border-radius:7px;font-size:14px;font-weight:800;cursor:pointer;white-space:nowrap;flex:none;';
       buy.addEventListener('click',function(){
         // Squareの購入URLと購入済み照合APIが揃うまで課金画面に遷移させない。
-        window.alert('月額150円（税込）のプランです。\n現在、お申込みは準備中です。\nご案内までお待ちください♡');
+        const code=typeof data.applicationCode==='string'?data.applicationCode.trim():'';
+        if(code){showApplicationCode(code);}
+        else {window.alert('お申込み番号を取得できませんでした。アプリを開き直して確認してね♡');}
       });
       banner.append(buy);
     }
