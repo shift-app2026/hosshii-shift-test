@@ -1302,7 +1302,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       <div id="shiftInputScrollArea" class="space-y-3 overflow-y-auto pr-1 flex-1 no-scrollbar" onscroll="updateShiftScrollHint()">
         <div class="space-y-2"><div class="flex space-x-2 pt-1"><button type="button" id="modalTypeWorkBtn" onclick="setModalShiftType(false)" class="flex-1 py-1.5 rounded-xl text-sm font-bold border bg-stone-100 border-stone-300">通常勤務</button><button type="button" id="modalTypePaidBtn" onclick="setModalShiftType(true)" class="flex-1 py-1.5 rounded-xl text-sm font-bold border bg-white border-stone-200">☆ 有給休暇</button></div></div>
         <div class="space-y-1.5 border-t border-stone-100 pt-2"><span id="modalShiftListHeading" class="shift-section-title">【シフト一覧】</span><div id="modalSelectedDateSummaryContent" class="space-y-2 pt-1"></div></div>
-        <div class="space-y-2 border-t border-stone-100 pt-2"><div class="flex items-center justify-between"><span class="shift-section-title">【勤務時間を登録】</span><button type="button" onclick="registerNewPresetAndRegister()" id="registerShiftButton" class="px-4 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold">登録</button></div><div id="modalCustomPresetContainer" class="space-y-2"></div></div>
+        <div class="space-y-2 border-t border-stone-100 pt-2"><div class="flex items-center justify-between"><span class="shift-section-title">【勤務時間を登録】</span><button type="button" onclick="registerNewPresetAndRegister()" id="registerShiftButton" class="px-4 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold">登録</button></div><div id="modalCustomPresetContainer" class="space-y-2"></div><div id="hosshiiShiftWageWarning" class="t13-wage-notice" hidden>⚠️ 時給が設定されていない時間帯があります。<br>設定画面にお戻りください♡ <button type="button" onclick="hosshiiOpenWageSettings()">［設定画面］</button></div></div>
         <section class="shift-preset-section space-y-2 border-t border-stone-100 pt-2">
           <div class="flex items-center justify-between gap-2"><span class="shift-section-title preset-inline-heading">【ワンタッチ登録しましょ～♡】</span><button type="button" onclick="openPresetRegisterModal()" class="px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0">＋登録</button></div>
           <p class="ito-preset-desc font-bold text-stone-600">登録して時間を選択するだけなので楽になります。</p>
@@ -1427,7 +1427,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             <span id="monthlyReceiveTitle">【円グラフの詳細】</span>
           </div>
           <div id="itoReceiveTable" class="ito-receive-table" aria-label="今月の締め分の勤務時間とお給料見込額"></div>
-          <div id="test5RingWarning" class="t13-wage-notice" hidden>⚠️ 時給が設定されていない時間帯があります。<br>設定を確認してね♡ <button type="button" onclick="switchTab('settings')">［⚙ 設定する］</button></div>
+          <div id="test5RingWarning" class="t13-wage-notice" hidden>⚠️ 時給が設定されていない時間帯があります。<br>シフト登録画面にお戻りください♡ <button type="button" onclick="hosshiiOpenMissingShift()">［登録画面］</button></div>
         </div>
         <section class="t10-prev-card">
           <button type="button" class="t10-prev-toggle" id="t10PrevToggle" aria-expanded="false" aria-controls="t10PrevTable" onclick="t10TogglePrevious()">
@@ -2115,6 +2115,40 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (settings) settings.classList.toggle('hidden', !shiftOpenedFromCalendar);
     }
 
+    // 登録済みの勤務時間と入力中の勤務時間を、休憩を除いて時給設定と照合する。
+    function hosshiiShiftHasMissingRate(shift, jobKey, dateKey) {
+      if (!shift || shift.isPaidLeave || !shift.start || !shift.end || shift.start === shift.end) return false;
+      const job = configData[jobKey];
+      if (!job || !dateKey) return false;
+      const date = parseDateKey(dateKey);
+      let missing = false;
+      forEachWorkMinute(shift, min => {
+        if (!missing && getRateForMinuteDetailed(min, job, date, false).category === 'unconfigured') missing = true;
+      });
+      return missing;
+    }
+    function hosshiiUpdateShiftWageWarning() {
+      const notice = document.getElementById('hosshiiShiftWageWarning');
+      if (!notice) return;
+      const jk = currentSelectedJobKey;
+      const dateKey = selectedCalendarDateStr;
+      const saved = dateKey ? getDayShifts(dateKey, jk) : [];
+      const savedMissing = saved.some(sh => hosshiiShiftHasMissingRate(sh, jk, dateKey));
+      const draft = newPresetForm || {};
+      const draftMissing = draft.start && draft.end && draft.start !== draft.end &&
+        hosshiiShiftHasMissingRate(draft, jk, dateKey);
+      notice.hidden = !(savedMissing || draftMissing);
+    }
+    function hosshiiOpenWageSettings() {
+      closeShiftInputModal();
+      switchTab('settings');
+    }
+    function hosshiiOpenMissingShift() {
+      switchTab('calendar');
+      const day = selectedCalendarDateStr || formatDateKey(new Date());
+      openShiftInputModal(day, true);
+    }
+
     function updateModalSelectedDateSummary() {
       const summaryContent = document.getElementById('modalSelectedDateSummaryContent');
       if (!summaryContent) return;
@@ -2168,10 +2202,12 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
       if (html === '') {
         summaryContent.innerHTML = `<span class="text-stone-400 font-bold">シフト登録がまだされていません</span>`;
+        hosshiiUpdateShiftWageWarning();
         return;
       }
 
       summaryContent.innerHTML = html;
+      hosshiiUpdateShiftWageWarning();
     }
 
     function updatePaidHoursModal(jk, idx) {
@@ -2682,7 +2718,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
                   <span class="font-bold text-stone-700 flex-1 min-w-0 whitespace-nowrap">有給休暇<span class="paid-sub ml-1.5 text-stone-500 font-bold">1時間あたり</span></span>
                   <div class="flex items-center gap-1 shrink-0"><input type="text" inputmode="numeric" id="set_wagePaid" oninput="formatInputNumber(this)" class="w-24 p-2 border rounded text-right font-bold bg-white text-sm"><span class="font-bold">円</span></div>
                 </div>
-                <p class="paid-note text-xs text-stone-500 font-medium">※時給が異なる場合は、頻繁に入っている<br>時間帯の時給か、平均時給を入力してね</p>
+                <p class="paid-note text-xs text-stone-500 font-medium text-center">※時給が異なる場合は、<br>よく働く時給か平均時給を入力してね♡</p>
                 <div class="flex items-center justify-between gap-2 pt-1">
                   <span class="font-bold text-stone-700 flex-1 min-w-0">有給1日あたりの時間</span>
                   <div class="flex items-center gap-1 shrink-0"><input type="text" inputmode="decimal" id="set_paidHours" class="w-20 p-2 border rounded text-right font-bold bg-white text-sm" placeholder=""><span class="text-stone-700 font-bold text-xs">時間</span></div>
@@ -3099,6 +3135,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           <button type="button" onclick="openBreakSelectModal()" class="px-2.5 py-2 bg-stone-100 hover:bg-stone-200 border border-stone-200 rounded-lg font-bold text-xs text-stone-700 transition whitespace-nowrap">☕<span id="modalBreakDisplayVal">${breakMins}分</span></button>
         </div>
       `;
+      hosshiiUpdateShiftWageWarning();
     }
 
     const BREAK_CHOICES = [0, 10, 15, 20, 30, 45, 60, 90];
@@ -3214,6 +3251,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const e = document.getElementById('new_preset_end')?.value || '00:00';
       const b = newPresetForm.breakMins || 0;
       newPresetForm = { start: s, end: e, breakMins: b };
+      hosshiiUpdateShiftWageWarning();
     }
 
     function registerModalPresetTime(start, end, breakMins) {
