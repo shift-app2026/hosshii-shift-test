@@ -4252,10 +4252,14 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         area.appendChild(btn); return btn;
       };
       // 共有可能な環境では、Androidの「ファイルに保存」等を選べる。
-      if (navigator.share) {
+      {
         const shareBtn = makeButton('📤 共有して保存');
         shareBtn.addEventListener('click', async () => {
           try {
+            if (!navigator.share) {
+              msg.textContent = 'このLINE画面では共有機能を利用できません。コピーしてメモに保存してね。';
+              return;
+            }
             if (navigator.canShare && navigator.canShare({files:[file]})) {
               await navigator.share({files:[file], title:'シフトアプリのバックアップ'});
             } else {
@@ -4276,7 +4280,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const copyBtn = makeButton('📋 バックアップ内容をコピー');
       const selectBtn = makeButton('📝 内容を表示して選択');
       const help = document.createElement('div');
-      help.textContent = 'コピーした場合はメモ等に貼り付けて保存してね。復元時はJSONファイルが必要です。';
+      help.textContent = 'ファイル保存ができない場合は「バックアップ内容をコピー」→メモ等に貼り付けて保存してね。下の「コピーした内容を読み込む」で復元できます。';
       help.style.cssText = 'font-size:12px;text-align:left;margin-top:6px;';
       area.appendChild(help);
       const backupText = document.createElement('textarea');
@@ -4285,6 +4289,29 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       backupText.setAttribute('aria-label','バックアップデータ（長押しまたは選択ボタンでコピー）');
       backupText.style.cssText = 'display:none;width:100%;height:150px;margin-top:8px;font-size:14px;line-height:1.5;color:#292524;background:white;border:1px solid #e9bd9b;padding:8px;user-select:text;-webkit-user-select:text;touch-action:auto;';
       area.appendChild(backupText);
+      const pasteTitle = document.createElement('div');
+      pasteTitle.textContent = 'コピーしたバックアップを読み込む（無料期間中のみ）';
+      pasteTitle.style.cssText = 'margin-top:14px;font-size:13px;font-weight:bold;text-align:left;';
+      area.appendChild(pasteTitle);
+      const pasteInput = document.createElement('textarea');
+      pasteInput.placeholder = 'メモ等に保存したバックアップ内容をここに貼り付けてね';
+      pasteInput.setAttribute('aria-label','バックアップ復元用の貼り付け欄');
+      pasteInput.style.cssText = 'display:block;width:100%;height:76px;margin-top:6px;font-size:14px;color:#292524;background:white;border:1px solid #e9bd9b;padding:8px;user-select:text;-webkit-user-select:text;';
+      area.appendChild(pasteInput);
+      const pasteBtn = makeButton('⬆️ 貼り付けた内容を読み込む');
+      pasteBtn.addEventListener('click', () => {
+        if (window.hosshiiReadOnly === true) { hosshiiBlockEdit(); return; }
+        if (storageWriteBlocked) { showStorageSafetyWarning(); return; }
+        const pasted = pasteInput.value.trim();
+        if (!pasted) { showAlertModal('バックアップ内容を貼り付けてね♡'); return; }
+        processBackupText(pasted, null);
+      });
+      if (window.hosshiiReadOnly === true) {
+        pasteBtn.disabled = true;
+        pasteBtn.style.opacity = '0.5';
+        pasteInput.disabled = true;
+        pasteTitle.textContent = '読み込みは無料期間中のみ利用できます';
+      }
       const reveal = () => {backupText.style.display='block'; backupText.focus(); backupText.select(); backupText.setSelectionRange(0,backupText.value.length);};
       selectBtn.addEventListener('click', () => {
         reveal();
@@ -4363,9 +4390,16 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (!file) return;
 
       const reader = new FileReader();
-      reader.onload = function(e) {
+      reader.onload = function(e) { processBackupText(e.target.result, input); };
+      reader.onerror = function() { showAlertModal('ファイルを読み込めなかったよ。'); input.value = ''; };
+      reader.readAsText(file);
+    }
+
+    function processBackupText(backupText, input) {
+        if (window.hosshiiReadOnly === true) { hosshiiBlockEdit(); return; }
+        if (storageWriteBlocked) { showStorageSafetyWarning(); return; }
         try {
-          const data = JSON.parse(e.target.result);
+          const data = JSON.parse(backupText);
 
           if (!data.mybasket_shifts_v23 && !data.mybasket_shifts_v22 && !data.mybasket_shifts_v21) {
             showAlertModal('このファイルはバックアップとして読み込めなかったよ。');
@@ -4434,13 +4468,12 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         } catch (err) {
           showAlertModal('ファイルを読み込めなかったよ。バックアップファイルか確認してね♡');
         } finally {
-          input.value = '';
+          if (input) input.value = '';
         }
-      };
-      reader.readAsText(file);
     }
   </script>
 
+  <!-- test②-20261101-backup-paste-restore -->
   <!-- アプリ専用の24時間時計：完成した第4弾デザイン -->
   <div id="customTimePickerModal" style="z-index:9999;background:rgba(28,25,23,.75)" class="fixed inset-0 backdrop-blur-sm hidden items-center justify-center p-3" role="dialog" aria-modal="true" aria-labelledby="customTimePickerTitle" onclick="if(event.target===this)closeCustomTimePicker()">
     <div class="hclock-card">
