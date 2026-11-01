@@ -4210,8 +4210,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
     }
 
-    // LINEのアプリ内ブラウザでもバックアップを外部に保存できるようにする。
-    // 保存完了はブラウザ側から判定できないため、確認前に成功扱いしない。
+    // バックアップ: LINE内WebViewでダウンロード/Clipboard APIが無効な場合も
+    // 共有シート、従来のコピーAPI、選択可能なテキストを順番に利用できるようにする。
+    // 保存完了は自動判定しない。実際にファイル/貼り付け先で確認してもらう。
     function exportAppData(event) {
       if (event) event.preventDefault();
       if (storageWriteBlocked) { showStorageSafetyWarning(); return; }
@@ -4228,6 +4229,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const json = JSON.stringify(payload, null, 2);
       const filename = `maishift_backup_${formatDateKey(new Date()).replace(/-/g, '')}.json`;
       const blob = new Blob([json], {type:'application/json'});
+      const file = new File([blob], filename, {type:'application/json'});
       let area = document.getElementById('hosshiiBackupDownloadArea');
       if (!area) {
         area = document.createElement('div');
@@ -4240,58 +4242,67 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       window.hosshiiBackupObjectUrl = url;
       area.replaceChildren();
       const msg = document.createElement('div');
-      msg.textContent = '保存先を選んで、ファイルが保存されたか確認してね♡';
+      msg.setAttribute('role','status');
+      msg.textContent = 'バックアップを作成しました。保存方法を選んでね♡（まだ保存完了ではありません）';
       area.appendChild(msg);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = filename;
-      link.textContent = '⬇️ ファイルをダウンロード';
-      link.style.cssText = 'display:block;margin:8px auto;padding:9px;border:1px solid #e9bd9b;border-radius:8px;color:#881337;font-weight:bold;background:white;';
-      area.appendChild(link);
-      // Web Share APIはLINE内のblob:ダウンロードが使えない端末でも
-      // Androidの「ファイルに保存」などの共有先を選べる場合がある。
-      const shareBtn = document.createElement('button');
-      shareBtn.type = 'button';
-      shareBtn.textContent = '📤 共有・ファイルに保存';
-      shareBtn.style.cssText = 'display:block;width:100%;margin:8px auto;padding:10px;border-radius:8px;background:#881337;color:white;font-weight:bold;';
-      const file = new File([blob], filename, {type:'application/json'});
-      const canShareFile = !!(navigator.share && navigator.canShare && navigator.canShare({files:[file]}));
-      if (canShareFile) {
-        area.insertBefore(shareBtn, link);
+      const buttonStyle = 'display:block;width:100%;margin:8px auto;padding:10px;border:1px solid #e9bd9b;border-radius:8px;color:#881337;background:white;font-weight:bold;';
+      const makeButton = (label) => {
+        const btn = document.createElement('button');
+        btn.type = 'button'; btn.textContent = label; btn.style.cssText = buttonStyle;
+        area.appendChild(btn); return btn;
+      };
+      // 共有可能な環境では、Androidの「ファイルに保存」等を選べる。
+      if (navigator.share) {
+        const shareBtn = makeButton('📤 共有して保存');
         shareBtn.addEventListener('click', async () => {
           try {
-            await navigator.share({files:[file], title:'マイシフト＆給料 バックアップ'});
-            msg.textContent = '共有先で保存が完了したか、ファイルアプリで確認してね♡';
+            if (navigator.canShare && navigator.canShare({files:[file]})) {
+              await navigator.share({files:[file], title:'シフトアプリのバックアップ'});
+            } else {
+              await navigator.share({title:'シフトアプリのバックアップ', text:json});
+            }
+            msg.textContent = '共有先に保存されたか確認してね♡';
           } catch (err) {
             if (err && err.name === 'AbortError') return;
-            msg.textContent = '共有できませんでした。下のダウンロード、またはコピーを試してね。';
+            msg.textContent = 'このLINE画面では共有できませんでした。ほかの方法を試してね。';
           }
         });
       }
-      const copyBtn = document.createElement('button');
-      copyBtn.type = 'button';
-      copyBtn.textContent = '📋 バックアップ内容をコピー（予備）';
-      copyBtn.style.cssText = 'display:block;width:100%;margin:8px auto;padding:9px;border:1px solid #e9bd9b;border-radius:8px;color:#881337;background:white;font-weight:bold;';
-      area.appendChild(copyBtn);
+      const link = document.createElement('a');
+      link.href = url; link.download = filename;
+      link.textContent = '⬇️ ファイルをダウンロード';
+      link.style.cssText = buttonStyle + 'text-decoration:none;';
+      area.appendChild(link);
+      const copyBtn = makeButton('📋 バックアップ内容をコピー');
+      const selectBtn = makeButton('📝 内容を表示して選択');
+      const help = document.createElement('div');
+      help.textContent = 'コピーした場合はメモ等に貼り付けて保存してね。復元時はJSONファイルが必要です。';
+      help.style.cssText = 'font-size:12px;text-align:left;margin-top:6px;';
+      area.appendChild(help);
       const backupText = document.createElement('textarea');
-      backupText.readOnly = true;
       backupText.value = json;
-      backupText.setAttribute('aria-label','バックアップJSONデータ');
-      backupText.style.cssText = 'display:none;width:100%;height:90px;margin-top:8px;font-size:12px;';
+      backupText.readOnly = true;
+      backupText.setAttribute('aria-label','バックアップデータ（長押しまたは選択ボタンでコピー）');
+      backupText.style.cssText = 'display:none;width:100%;height:150px;margin-top:8px;font-size:14px;line-height:1.5;color:#292524;background:white;border:1px solid #e9bd9b;padding:8px;user-select:text;-webkit-user-select:text;touch-action:auto;';
       area.appendChild(backupText);
-      copyBtn.addEventListener('click', async () => {
-        backupText.style.display = 'block';
-        try {
-          if (!navigator.clipboard || !navigator.clipboard.writeText) throw Error('clipboard unavailable');
-          await navigator.clipboard.writeText(json);
-          msg.textContent = 'コピーしました。メモなどに貼り付けて大切に保存してね。復元にはJSONファイルが必要です。';
-        } catch (_) {
-          backupText.focus(); backupText.select();
-          msg.textContent = '下の文字を全選択してコピーし、メモなどに保存してね。復元にはJSONファイルが必要です。';
-        }
+      const reveal = () => {backupText.style.display='block'; backupText.focus(); backupText.select(); backupText.setSelectionRange(0,backupText.value.length);};
+      selectBtn.addEventListener('click', () => {
+        reveal();
+        msg.textContent = '文字を選択しました。表示された「コピー」を押してね。コピーが出ない場合は「バックアップ内容をコピー」を試してね。';
       });
-      // 共有機能が使えない通常ブラウザでは、従来のダウンロードを試す。
-      if (!canShareFile) link.click();
+      copyBtn.addEventListener('click', async () => {
+        reveal();
+        let copied = false;
+        // execCommandは一部のLINE WebViewでClipboard APIより利用できる。
+        try {copied = !!document.execCommand('copy');} catch (_) {}
+        if (!copied && navigator.clipboard && navigator.clipboard.writeText) {
+          try {await navigator.clipboard.writeText(json); copied = true;} catch (_) {}
+        }
+        msg.textContent = copied
+          ? 'コピー操作ができました。メモに貼り付けられるか確認してね♡'
+          : '自動コピーができませんでした。選択した文字を手動でコピーしてね。';
+      });
+      // 自動ダウンロードは行わない（LINE内で無反応でも成功と誤認しないため）。
     }
 
     const BACKUP_REMIND_DAYS = 30;
