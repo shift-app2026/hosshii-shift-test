@@ -1583,7 +1583,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
               <button type="button" onclick="exportAppData(event)" class="flex-1 bg-rose-50 hover:bg-rose-100 text-rose-900 font-bold py-3 rounded-xl text-xs sm:text-sm transition border border-rose-200 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">⬇️ 書き出す</button>
               <button type="button" onclick="if (!hosshiiBlockEdit()) document.getElementById('importFileInput').click()" class="flex-1 bg-rose-50 hover:bg-rose-100 text-rose-900 font-bold py-3 rounded-xl text-xs sm:text-sm transition border border-rose-200 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">⬆ 読み込む</button>
             </div>
-            <input type="file" id="importFileInput" accept="application/json" class="hidden" onchange="importAppData(event)">
+            <input type="file" id="importFileInput" accept=".json,application/json,text/plain" class="hidden" onchange="importAppData(event)">
           </div>
         </div>
       </div>
@@ -4210,10 +4210,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
     }
 
+    // LINEのアプリ内ブラウザでもバックアップを外部に保存できるようにする。
+    // 保存完了はブラウザ側から判定できないため、確認前に成功扱いしない。
     function exportAppData(event) {
       if (event) event.preventDefault();
       if (storageWriteBlocked) { showStorageSafetyWarning(); return; }
-      // 閲覧専用時は画面入力を設定データに反映しない。保存済みデータのみを出力する。
       if (window.hosshiiReadOnly !== true) syncSettingsFormToConfig(currentSettingsJobKey);
       const payload = {
         exportedAt: new Date().toISOString(),
@@ -4224,29 +4225,73 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           return p;
         })()
       };
-      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
+      const json = JSON.stringify(payload, null, 2);
       const filename = `maishift_backup_${formatDateKey(new Date()).replace(/-/g, '')}.json`;
-      // LINE内ブラウザで自動ダウンロードが失敗する場合にも、リンクから再操作できるようにする。
+      const blob = new Blob([json], {type:'application/json'});
       let area = document.getElementById('hosshiiBackupDownloadArea');
       if (!area) {
         area = document.createElement('div');
         area.id = 'hosshiiBackupDownloadArea';
-        area.style.cssText = 'margin-top:10px;padding:10px;border:1px solid #e9bd9b;border-radius:12px;background:#fff9fa;color:#881337;font-size:13px;line-height:1.6;text-align:center;';
+        area.style.cssText = 'margin-top:10px;padding:12px;border:1px solid #e9bd9b;border-radius:12px;background:#fff9fa;color:#881337;font-size:13px;line-height:1.7;text-align:center;';
         document.getElementById('importFileInput')?.parentElement?.appendChild(area);
       }
       if (window.hosshiiBackupObjectUrl) URL.revokeObjectURL(window.hosshiiBackupObjectUrl);
+      const url = URL.createObjectURL(blob);
       window.hosshiiBackupObjectUrl = url;
       area.replaceChildren();
       const msg = document.createElement('div');
-      msg.textContent = '保存されない場合は、下のリンクを長押しして保存してね♡';
-      const a = document.createElement('a');
-      a.href = url; a.download = filename; a.textContent = '⬇️ バックアップファイルを保存';
-      a.style.cssText = 'display:inline-block;margin-top:6px;color:#881337;font-weight:bold;text-decoration:underline;';
-      area.append(msg,a);
-      a.click();
-      try { localStorage.setItem('mybasket_last_backup', String(Date.now())); } catch (_) {}
-      // ブラウザによっては自動保存できないため、完了とは断定しない。
+      msg.textContent = '保存先を選んで、ファイルが保存されたか確認してね♡';
+      area.appendChild(msg);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      link.textContent = '⬇️ ファイルをダウンロード';
+      link.style.cssText = 'display:block;margin:8px auto;padding:9px;border:1px solid #e9bd9b;border-radius:8px;color:#881337;font-weight:bold;background:white;';
+      area.appendChild(link);
+      // Web Share APIはLINE内のblob:ダウンロードが使えない端末でも
+      // Androidの「ファイルに保存」などの共有先を選べる場合がある。
+      const shareBtn = document.createElement('button');
+      shareBtn.type = 'button';
+      shareBtn.textContent = '📤 共有・ファイルに保存';
+      shareBtn.style.cssText = 'display:block;width:100%;margin:8px auto;padding:10px;border-radius:8px;background:#881337;color:white;font-weight:bold;';
+      const file = new File([blob], filename, {type:'application/json'});
+      const canShareFile = !!(navigator.share && navigator.canShare && navigator.canShare({files:[file]}));
+      if (canShareFile) {
+        area.insertBefore(shareBtn, link);
+        shareBtn.addEventListener('click', async () => {
+          try {
+            await navigator.share({files:[file], title:'マイシフト＆給料 バックアップ'});
+            msg.textContent = '共有先で保存が完了したか、ファイルアプリで確認してね♡';
+          } catch (err) {
+            if (err && err.name === 'AbortError') return;
+            msg.textContent = '共有できませんでした。下のダウンロード、またはコピーを試してね。';
+          }
+        });
+      }
+      const copyBtn = document.createElement('button');
+      copyBtn.type = 'button';
+      copyBtn.textContent = '📋 バックアップ内容をコピー（予備）';
+      copyBtn.style.cssText = 'display:block;width:100%;margin:8px auto;padding:9px;border:1px solid #e9bd9b;border-radius:8px;color:#881337;background:white;font-weight:bold;';
+      area.appendChild(copyBtn);
+      const backupText = document.createElement('textarea');
+      backupText.readOnly = true;
+      backupText.value = json;
+      backupText.setAttribute('aria-label','バックアップJSONデータ');
+      backupText.style.cssText = 'display:none;width:100%;height:90px;margin-top:8px;font-size:12px;';
+      area.appendChild(backupText);
+      copyBtn.addEventListener('click', async () => {
+        backupText.style.display = 'block';
+        try {
+          if (!navigator.clipboard || !navigator.clipboard.writeText) throw Error('clipboard unavailable');
+          await navigator.clipboard.writeText(json);
+          msg.textContent = 'コピーしました。メモなどに貼り付けて大切に保存してね。復元にはJSONファイルが必要です。';
+        } catch (_) {
+          backupText.focus(); backupText.select();
+          msg.textContent = '下の文字を全選択してコピーし、メモなどに保存してね。復元にはJSONファイルが必要です。';
+        }
+      });
+      // 共有機能が使えない通常ブラウザでは、従来のダウンロードを試す。
+      if (!canShareFile) link.click();
     }
 
     const BACKUP_REMIND_DAYS = 30;
