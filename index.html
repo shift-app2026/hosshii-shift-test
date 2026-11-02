@@ -1491,15 +1491,15 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         </div>
 
-        <div class="bg-gradient-to-br from-rose-50/60 via-rose-50/30 to-amber-50/40 text-stone-900 p-4 rounded-2xl border border-rose-100 shadow-[0_1px_2px_rgba(0,0,0,0.05)] space-y-2.5">
+        <div class="hosshii-monthly-detail-card bg-gradient-to-br from-rose-50/60 via-rose-50/30 to-amber-50/40 text-stone-900 p-4 rounded-2xl border border-rose-100 shadow-[0_1px_2px_rgba(0,0,0,0.05)] space-y-2.5">
           <div class="text-sm font-bold text-rose-950 border-b border-rose-200/60 pb-2 flex justify-between items-center tracking-wide">
-            <span id="monthlyReceiveTitle">【円グラフの詳細】</span>
+            <span id="monthlyReceiveTitle">【円グラフ詳細】</span>
           </div>
           <div id="itoReceiveTable" class="ito-receive-table" aria-label="今月の締め分の勤務時間とお給料見込額"></div>
           <div id="test5RingWarning" class="t13-wage-notice" hidden>⚠️ 時給が設定されていない時間帯があります。<br>シフト登録画面にお戻りください♡ <button type="button" onclick="hosshiiOpenMissingShift()">［登録画面］</button></div>
         </div>
         <section class="t10-prev-card">
-          <div class="t10-prev-toggle t10-prev-static-title" aria-label="先月分の詳細">【先月分の詳細】</div>
+          <div class="t10-prev-toggle t10-prev-static-title" aria-label="先月分の詳細">【先月分詳細】</div>
           <div id="t10PrevTable" class="ito-receive-table" aria-label="先月分の勤務時間とお給料見込額"></div>
         </section>
 
@@ -2256,7 +2256,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         if (sh.isPaidLeave && !(sh.start && sh.end)) {
           const h = Number(sh.hours) > 0 ? Number(sh.hours) : (Number(jobConf.paidHours) || 0);
-          html += `<div class="bg-white p-2.5 border rounded-xl border-stone-200 flex justify-between items-center gap-1 text-xs sm:text-sm"><span class="font-bold text-stone-800">◎ 有給休暇（旧登録）</span><div class="flex items-center gap-1"><input type="text" inputmode="decimal" id="modal_paid_hours_${jk}_${idx}" value="${h || ''}" class="w-12 p-1 border rounded text-center font-bold text-xs" aria-label="有給時間"><span class="text-xs">時間</span><button type="button" onclick="updatePaidHoursModal('${jk}', ${idx})" class="bg-rose-900 text-white px-2 py-1.5 rounded-lg text-xs">変更</button><button type="button" onclick="confirmShiftDeletion('${jk}', ${idx})" class="bg-stone-200 text-stone-700 px-2 py-1.5 rounded-lg text-xs">削除</button></div></div>`;
+          html += `<div class="bg-white p-2.5 border rounded-xl border-stone-200 flex justify-between items-center gap-1 text-xs sm:text-sm"><span class="font-bold text-stone-800">◎ 有給休暇</span><div class="flex items-center gap-1"><input type="text" inputmode="decimal" id="modal_paid_hours_${jk}_${idx}" value="${h || ''}" class="w-12 p-1 border rounded text-center font-bold text-xs" aria-label="有給時間"><span class="text-xs">時間</span><button type="button" onclick="updatePaidHoursModal('${jk}', ${idx})" class="bg-rose-900 text-white px-2 py-1.5 rounded-lg text-xs">変更</button><button type="button" onclick="confirmShiftDeletion('${jk}', ${idx})" class="bg-stone-200 text-stone-700 px-2 py-1.5 rounded-lg text-xs">削除</button></div></div>`;
           return;
         }
         const breakMins = Number(sh.breakMins) || 0;
@@ -2783,7 +2783,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             <div class="grid grid-cols-1 gap-2">
               <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1.5">
                 <div class="flex items-center justify-between gap-2">
-                  <span class="font-bold text-stone-700 flex-1 min-w-0 whitespace-nowrap">有給休暇<span class="paid-sub ml-1.5 text-stone-500 font-bold">1時間あたり</span></span>
+                  <span class="hosshii-allowance-section-title flex-1 min-w-0 whitespace-nowrap">【有給休暇】<span class="paid-sub ml-1.5 text-stone-500 font-bold">1時間あたり</span></span>
                   <div class="flex items-center gap-1 shrink-0"><input type="text" inputmode="numeric" id="set_wagePaid" oninput="formatInputNumber(this)" class="w-24 p-2 border rounded text-right font-bold bg-white text-sm"><span class="font-bold">円</span></div>
                 </div>
                 <p class="paid-note text-xs text-stone-500 font-medium text-left">※時給が異なる場合は、<br>よく働く時給か平均時給を入力してね♡</p>
@@ -2793,14 +2793,14 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
             <div class="grid grid-cols-1 gap-2.5 pt-1">
               <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-2">
-                <span class="font-bold text-stone-700">交通費</span>
+                <span class="hosshii-allowance-section-title">【交通費】</span>
                 <div class="grid grid-cols-2 gap-3 allowance-period-grid">
                   <div class="flex items-center gap-1.5 text-xs min-w-0 font-bold text-stone-700"><span class="shrink-0 whitespace-nowrap">1か月</span><input type="text" inputmode="numeric" id="set_transMonth" oninput="formatInputNumber(this)" class="flex-1 min-w-0 w-full p-1.5 border rounded text-center bg-white font-bold text-sm"><span class="shrink-0">円</span></div>
                   <div class="flex items-center gap-1.5 text-xs min-w-0 font-bold text-stone-700"><span class="shrink-0 whitespace-nowrap">1日</span><input type="text" inputmode="numeric" id="set_transDay" oninput="formatInputNumber(this)" class="flex-1 min-w-0 w-full p-1.5 border rounded text-center bg-white font-bold text-sm"><span class="shrink-0">円</span></div>
                 </div>
               </div>
               <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-2">
-                <span class="font-bold text-stone-700">その他</span>
+                <span class="hosshii-allowance-section-title">【その他】</span>
                 <div class="grid grid-cols-2 gap-3 allowance-period-grid">
                   <div class="flex items-center gap-1.5 text-xs min-w-0 font-bold text-stone-700"><span class="shrink-0 whitespace-nowrap">1か月</span><input type="text" inputmode="numeric" id="set_allowanceMonth" oninput="formatInputNumber(this)" class="flex-1 min-w-0 w-full p-1.5 border rounded text-center bg-white font-bold text-sm"><span class="shrink-0">円</span></div>
                   <div class="flex items-center gap-1.5 text-xs min-w-0 font-bold text-stone-700"><span class="shrink-0 whitespace-nowrap">1日</span><input type="text" inputmode="numeric" id="set_allowanceDay" oninput="formatInputNumber(this)" class="flex-1 min-w-0 w-full p-1.5 border rounded text-center bg-white font-bold text-sm"><span class="shrink-0">円</span></div>
@@ -3655,13 +3655,13 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const wage = r.wageMissing ? '<span title="時給を設定してください" aria-label="時給未設定">⚠️</span>' : yen(r.wagePay);
         return `<div class="t19-job-row"><div class="t19-job-meta"><div class="t19-job-name"><i style="background:${dot}"></i><strong>${name}</strong></div><span class="t19-job-period">集計期間 ${md(r.start)}～${md(r.end)}</span></div><div class="t19-column-head"><span>勤務時間</span><span>お給料</span><span>その他</span></div><div class="t19-job-values"><span>${hm(r.mins)}</span><strong>${wage}</strong><strong>${yen(r.otherPay)}</strong></div></div>`;
       }).join('');
-      return `<div class="t19-summary">${rows}<div class="t19-total-label">✦ 合計 ✦</div><div class="t19-total"><strong>${hm(totalMins)}</strong><strong>${missing ? '⚠️' : yen(totalWage)}</strong><strong>${yen(totalOther)}</strong></div></div>`;
+      return `<div class="t19-summary">${rows}<div class="t19-total-label" aria-hidden="true"></div><div class="t19-total"><strong>${hm(totalMins)}</strong><strong>${missing ? '⚠️' : yen(totalWage)}</strong><strong>${yen(totalOther)}</strong></div></div>`;
     }
 
     function calculateMonthlyReceivePay() {
       const month = getPayViewMonthDate();
       const title = document.getElementById('monthlyReceiveTitle');
-      if (title) title.innerHTML = '【円グラフの詳細】';
+      if (title) title.innerHTML = '【円グラフ詳細】';
       const current = document.getElementById('itoReceiveTable');
       if (current) current.innerHTML = t10PayTable(month);
       // 注意文は今月の表の下にだけ表示。
@@ -5948,6 +5948,48 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 #tab-clock #itoReceiveTable .t19-total,
 #tab-clock #t10PrevTable .t19-total {
   padding-top:4px!important;
+}
+</style>
+
+<style id="hosshii-20261102-detail-final-adjustments">
+/* 今月・先月の詳細カードを同じ落ち着いたワインレッドの輪郭に */
+#tab-clock .hosshii-monthly-detail-card,
+#tab-clock .t10-prev-card {
+  border:1.5px solid #d4a8b2!important;
+  border-radius:18px!important;
+  box-shadow:0 2px 8px rgba(99,20,45,.07)!important;
+}
+/* 二重線を維持し、合計見出しは省略 */
+#tab-clock #itoReceiveTable .t19-total-label,
+#tab-clock #t10PrevTable .t19-total-label {
+  font-size:0!important;
+  line-height:0!important;
+  padding:0!important;
+  margin-top:7px!important;
+  height:0!important;
+  border-top:3px double #c5a36a!important;
+}
+#tab-clock #itoReceiveTable .t19-total,
+#tab-clock #t10PrevTable .t19-total {
+  font-size:clamp(16px,4.35vw,19px)!important;
+  font-weight:850!important;
+  padding-top:10px!important;
+  padding-bottom:6px!important;
+}
+#tab-clock #itoReceiveTable .t19-total strong,
+#tab-clock #t10PrevTable .t19-total strong {font-weight:850!important;}
+@media(max-width:360px){
+  #tab-clock #itoReceiveTable .t19-total,
+  #tab-clock #t10PrevTable .t19-total {font-size:clamp(15px,4.2vw,17px)!important;}
+}
+/* 設定：有給・交通費・その他の見出しを統一 */
+.hosshii-allowance-section-title {
+  display:block;
+  font-size:16px!important;
+  font-weight:800!important;
+  line-height:1.5!important;
+  color:#4b2331!important;
+  margin:0 0 6px!important;
 }
 </style>
 </body>
