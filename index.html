@@ -3659,9 +3659,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const name = esc(getJobDisplayName(jk));
         const dot = getJobPalette(jk).dot;
         const wage = r.wageMissing ? '<span title="時給を設定してください" aria-label="時給未設定">⚠️</span>' : yen(r.wagePay);
-        return `<div class="t19-job-row"><div class="t19-job-name"><i style="background:${dot}"></i><strong>${name}</strong></div><div class="t19-job-values"><span>${md(r.start)}～${md(r.end)}</span><span>${hm(r.mins)}</span><strong>${wage}</strong><strong>${yen(r.otherPay)}</strong></div></div>`;
+        return `<div class="t19-job-row"><div class="t19-job-meta"><div class="t19-job-name"><i style="background:${dot}"></i><strong>${name}</strong></div><span class="t19-job-period">集計期間 ${md(r.start)}～${md(r.end)}</span></div><div class="t19-column-head"><span>勤務時間</span><span>お給料</span><span>その他</span></div><div class="t19-job-values"><span>${hm(r.mins)}</span><strong>${wage}</strong><strong>${yen(r.otherPay)}</strong></div></div>`;
       }).join('');
-      return `<div class="t19-summary"><div class="t19-column-head"><span>集計期間</span><span>勤務時間</span><span>お給料</span><span>その他</span></div>${rows}<div class="t19-total"><strong>合計</strong><strong>${hm(totalMins)}</strong><strong>${missing ? '⚠️' : yen(totalWage)}</strong><strong>${yen(totalOther)}</strong></div></div>`;
+      return `<div class="t19-summary">${rows}<div class="t19-total-label">合計</div><div class="t19-column-head t19-total-head"><span>勤務時間</span><span>お給料</span><span>その他</span></div><div class="t19-total"><strong>${hm(totalMins)}</strong><strong>${missing ? '⚠️' : yen(totalWage)}</strong><strong>${yen(totalOther)}</strong></div></div>`;
     }
 
     function calculateMonthlyReceivePay() {
@@ -5819,6 +5819,99 @@ background:#881337!important;background-color:#881337!important;border-color:#88
  #tab-clock #t10PrevTable .t19-job-values,
  #tab-clock #itoReceiveTable .t19-total,
  #tab-clock #t10PrevTable .t19-total {font-size:12.5px !important;}
+}
+</style>
+
+<style id="hosshii-20261102-auto-fit-numbers">
+/* Four-column numeric cells keep one line; only long values shrink. */
+#tab-clock #itoReceiveTable .t19-job-values > *,
+#tab-clock #t10PrevTable .t19-job-values > *,
+#tab-clock #itoReceiveTable .t19-total > *,
+#tab-clock #t10PrevTable .t19-total > * {
+  min-width:0 !important;
+  white-space:nowrap !important;
+  overflow:visible;
+  font-variant-numeric:tabular-nums;
+}
+</style>
+<script id="hosshii-20261102-auto-fit-script">
+(function(){
+  'use strict';
+  var selectors = '#tab-clock #itoReceiveTable .t19-job-values, #tab-clock #itoReceiveTable .t19-total, #tab-clock #t10PrevTable .t19-job-values, #tab-clock #t10PrevTable .t19-total';
+  var queued = false;
+  function fit(){
+    queued=false;
+    document.querySelectorAll(selectors).forEach(function(row){
+      Array.prototype.forEach.call(row.children,function(cell){
+        // Remove previous shrink so a wider screen restores the original font size.
+        cell.style.removeProperty('font-size');
+        var base = parseFloat(getComputedStyle(row).fontSize) || 15;
+        var available = cell.clientWidth;
+        if(!available) return;
+        var size = base;
+        // scrollWidth includes text overflow, even when the cell is a grid item.
+        while(size > 9.5 && cell.scrollWidth > available + 1){
+          size = Math.max(9.5, +(size - .5).toFixed(1));
+          cell.style.setProperty('font-size',size+'px','important');
+        }
+      });
+    });
+  }
+  function schedule(){if(!queued){queued=true;requestAnimationFrame(fit);}}
+  function start(){
+    var host=document.getElementById('tab-clock');
+    if(!host)return;
+    var observer=new MutationObserver(schedule);
+    observer.observe(host,{subtree:true,childList:true,characterData:true});
+    window.addEventListener('resize',schedule,{passive:true});
+    if(window.ResizeObserver){
+      var resizeObserver=new ResizeObserver(schedule);
+      ['itoReceiveTable','t10PrevTable'].forEach(function(id){var el=document.getElementById(id);if(el)resizeObserver.observe(el);});
+    }
+    if(document.fonts && document.fonts.ready)document.fonts.ready.then(schedule);
+    schedule();
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);
+  else start();
+})();
+</script>
+<style id="hosshii-20261102-three-column-readable-final">
+/* Three columns, with a separate job name and period; preserve existing job-name font. */
+#tab-clock #itoReceiveTable .t19-column-head,
+#tab-clock #t10PrevTable .t19-column-head,
+#tab-clock #itoReceiveTable .t19-job-values,
+#tab-clock #t10PrevTable .t19-job-values,
+#tab-clock #itoReceiveTable .t19-total,
+#tab-clock #t10PrevTable .t19-total {
+ display:grid!important;
+ grid-template-columns:minmax(0,1.05fr) minmax(0,1.18fr) minmax(0,1fr)!important;
+ gap:5px!important;
+ text-align:center!important;
+ align-items:center!important;
+}
+#tab-clock #itoReceiveTable .t19-job-meta,
+#tab-clock #t10PrevTable .t19-job-meta {display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;padding:5px 2px 3px;}
+#tab-clock #itoReceiveTable .t19-job-period,
+#tab-clock #t10PrevTable .t19-job-period {font-size:clamp(13px,3.65vw,16px)!important;font-weight:650;color:#754357;white-space:nowrap;}
+#tab-clock #itoReceiveTable .t19-column-head,
+#tab-clock #t10PrevTable .t19-column-head {font-size:clamp(14px,3.9vw,17px)!important;letter-spacing:0!important;line-height:1.5!important;padding:5px 0 2px!important;border-bottom:0!important;}
+#tab-clock #itoReceiveTable .t19-job-values,
+#tab-clock #t10PrevTable .t19-job-values,
+#tab-clock #itoReceiveTable .t19-total,
+#tab-clock #t10PrevTable .t19-total {font-size:clamp(16px,4.5vw,19px)!important;letter-spacing:-.025em!important;line-height:1.5!important;}
+#tab-clock #itoReceiveTable .t19-total-label,
+#tab-clock #t10PrevTable .t19-total-label {font-size:clamp(15px,4.2vw,18px);font-weight:800;color:#8b1235;padding:8px 0 0 12%;}
+#tab-clock #itoReceiveTable .t19-total-head,
+#tab-clock #t10PrevTable .t19-total-head {padding-top:1px!important;}
+#tab-clock #itoReceiveTable .t19-total,
+#tab-clock #t10PrevTable .t19-total {padding:2px 0 6px!important;}
+#tab-clock #itoReceiveTable .t19-job-row,
+#tab-clock #t10PrevTable .t19-job-row {padding:6px 0 10px!important;}
+@media(max-width:360px){
+ #tab-clock #itoReceiveTable .t19-job-values,
+ #tab-clock #t10PrevTable .t19-job-values,
+ #tab-clock #itoReceiveTable .t19-total,
+ #tab-clock #t10PrevTable .t19-total {font-size:15px!important;}
 }
 </style>
 </body>
