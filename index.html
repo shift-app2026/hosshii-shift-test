@@ -3661,7 +3661,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const wage = r.wageMissing ? '<span title="時給を設定してください" aria-label="時給未設定">⚠️</span>' : yen(r.wagePay);
         return `<div class="t19-job-row"><div class="t19-job-meta"><div class="t19-job-name"><i style="background:${dot}"></i><strong>${name}</strong></div><span class="t19-job-period">集計期間 ${md(r.start)}～${md(r.end)}</span></div><div class="t19-column-head"><span>勤務時間</span><span>お給料</span><span>その他</span></div><div class="t19-job-values"><span>${hm(r.mins)}</span><strong>${wage}</strong><strong>${yen(r.otherPay)}</strong></div></div>`;
       }).join('');
-      return `<div class="t19-summary">${rows}<div class="t19-total-label">合計</div><div class="t19-column-head t19-total-head"><span>勤務時間</span><span>お給料</span><span>その他</span></div><div class="t19-total"><strong>${hm(totalMins)}</strong><strong>${missing ? '⚠️' : yen(totalWage)}</strong><strong>${yen(totalOther)}</strong></div></div>`;
+      return `<div class="t19-summary">${rows}<div class="t19-total-label">✦ 合計 ✦</div><div class="t19-total"><strong>${hm(totalMins)}</strong><strong>${missing ? '⚠️' : yen(totalWage)}</strong><strong>${yen(totalOther)}</strong></div></div>`;
     }
 
     function calculateMonthlyReceivePay() {
@@ -5912,6 +5912,28 @@ background:#881337!important;background-color:#881337!important;border-color:#88
  #tab-clock #t10PrevTable .t19-job-values,
  #tab-clock #itoReceiveTable .t19-total,
  #tab-clock #t10PrevTable .t19-total {font-size:15px!important;}
+}
+</style>
+
+<style id="hosshii-20261102-champagne-double-line-total">
+/* 合計の区切りを密着した細い二重線にし、見出しは繰り返さない。 */
+#tab-clock #itoReceiveTable .t19-job-row:last-of-type,
+#tab-clock #t10PrevTable .t19-job-row:last-of-type {
+  border-bottom:0!important;
+}
+#tab-clock #itoReceiveTable .t19-total-label,
+#tab-clock #t10PrevTable .t19-total-label {
+  border-top:3px double #c5a36a!important;
+  text-align:center!important;
+  padding:9px 0 2px!important;
+  margin-top:3px!important;
+  color:#8b1235!important;
+  font-weight:800!important;
+  letter-spacing:.06em!important;
+}
+#tab-clock #itoReceiveTable .t19-total,
+#tab-clock #t10PrevTable .t19-total {
+  padding-top:4px!important;
 }
 </style>
 </body>
