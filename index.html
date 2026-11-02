@@ -1195,7 +1195,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 </style>
 
 <style id="hosshii-oct30-final-calendar-and-preset">
-/* ☆と●を同じ大きさで、日付の下に並べる */
+/* ◎と●を同じ大きさで、日付の下に並べる */
 #calendarDays .hosshii-calendar-marks { min-height:16px; display:flex; justify-content:center; align-items:center; gap:2px; white-space:nowrap; max-width:100%; }
 #calendarDays .hosshii-calendar-mark { display:inline-flex; align-items:center; justify-content:center; font-size:13px!important; line-height:1!important; font-weight:800; width:13px; height:15px; flex:0 0 13px; }
 #calendarDays .hosshii-calendar-more { font-size:9px!important; line-height:1; font-weight:700; }
@@ -1348,7 +1348,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     </div>
   </div>
 
-  <div id="shiftUsageHelpModal" role="dialog" aria-modal="true" onclick="if(event.target===this)closeShiftHelp()" class="fixed inset-0 bg-stone-900/60 z-[80] flex items-center justify-center p-3 hidden"><div class="bg-white rounded-2xl p-4 w-full max-w-sm max-h-[90vh] overflow-y-auto"><h3 class="font-bold text-lg text-rose-900">🌷 シフト登録の使い方 ♡</h3><div class="shift-help-item"><strong>1 【日付の選択】について</strong><p>「前日」「翌日」を押すと、日付を切り替えられます。シフトを登録したい日付を選んでね♪</p></div><div class="shift-help-item"><strong>2 【バイト先を選択】について</strong><p>プルダウンから、シフトを登録したいバイト先を選んでね。選択中のバイト先名が表示されます。</p></div><div class="shift-help-item"><strong>3 【シフト一覧】について</strong><p>登録したシフトが表示されます。登録内容を確認できます。間違えた場合は該当するシフトを削除して、もう一度登録してね。</p></div><div class="shift-help-item"><strong>4 【勤務時間を登録】について</strong><p>出勤時間・退勤時間・休憩時間を入力して、「登録」を押してね。</p></div><div class="shift-help-item"><strong>5 【ワンタッチ時間登録】について</strong><p>「＋登録」を押して、よく使う勤務時間を登録してね。次回から時間を選ぶだけで入力が楽になるよ♪</p></div><div class="shift-help-item"><strong>6 【ワンタッチ時間登録一覧】について</strong><p>⑤で登録した勤務時間が表示されます。使いたい時間を選んで、その日のシフト登録に利用してね。</p></div><button onclick="closeShiftHelp()" class="w-full mt-3 p-3 bg-rose-900 text-white rounded-xl font-bold">閉じる</button></div></div>
+  <div id="shiftUsageHelpModal" role="dialog" aria-modal="true" onclick="if(event.target===this)closeShiftHelp()" class="fixed inset-0 bg-stone-900/60 z-[80] flex items-center justify-center p-3 hidden"><div class="bg-white rounded-2xl p-4 w-full max-w-sm max-h-[90vh] overflow-y-auto"><h3 class="font-bold text-lg text-rose-900">🌷 シフト登録の使い方 ♡</h3><div class="shift-help-item"><strong>1 【日付の選択】について</strong><p>「前日」「翌日」を押すと、日付を切り替えられます。シフトを登録したい日付を選んでね♪</p></div><div class="shift-help-item"><strong>2 【バイト先を選択】について</strong><p>プルダウンから、シフトを登録したいバイト先を選んでね。選択中のバイト先名が表示されます。</p></div><div class="shift-help-item"><strong>3 【シフト一覧】について</strong><p>登録したシフトが表示されます。有給ボタンで通常勤務と有給を切り替えられるよ。間違えた場合は削除して登録し直してね。</p></div><div class="shift-help-item"><strong>4 【勤務時間を登録】について</strong><p>出勤時間・退勤時間・休憩時間を入力してね。有給の場合は「有給」を選択してから「登録」を押してね。</p></div><div class="shift-help-item"><strong>5 【ワンタッチ時間登録】について</strong><p>「＋登録」を押して、よく使う勤務時間を登録してね。次回から時間を選ぶだけで入力が楽になるよ♪</p></div><div class="shift-help-item"><strong>6 【ワンタッチ時間登録一覧】について</strong><p>⑤で登録した勤務時間が表示されます。使いたい時間を選んで、その日のシフト登録に利用してね。</p></div><button onclick="closeShiftHelp()" class="w-full mt-3 p-3 bg-rose-900 text-white rounded-xl font-bold">閉じる</button></div></div>
   <!-- シフト入力・編集専用モーダル -->
   <div id="shiftInputModal" class="fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 hidden">
     <div class="bg-white rounded-3xl p-5 w-full max-w-sm shadow-2xl border border-stone-200 space-y-3.5 max-h-[92vh] flex flex-col overflow-hidden">
@@ -1356,9 +1356,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
       <div class="ito-modal-job-fixed shrink-0"><div class="ito-modal-job-row"><span class="shift-section-title">【バイト先選択】</span><div id="modalJobSelectContainer" class="min-w-0"></div></div></div>
       <div id="shiftInputScrollArea" class="space-y-3 overflow-y-auto pr-1 flex-1 no-scrollbar" onscroll="updateShiftScrollHint()">
-        <div class="space-y-2"><div class="flex space-x-2 pt-1"><button type="button" id="modalTypeWorkBtn" onclick="setModalShiftType(false)" class="flex-1 py-1.5 rounded-xl text-sm font-bold border bg-stone-100 border-stone-300">通常勤務</button><button type="button" id="modalTypePaidBtn" onclick="setModalShiftType(true)" class="flex-1 py-1.5 rounded-xl text-sm font-bold border bg-white border-stone-200">☆ 有給休暇</button></div></div>
+        
+        
+        <div class="space-y-2 border-t border-stone-100 pt-2"><div class="flex items-center justify-between"><span class="shift-section-title">【勤務時間を登録】</span><button type="button" onclick="registerNewPresetAndRegister()" id="registerShiftButton" class="px-4 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold">登録</button></div><div id="modalCustomPresetContainer" class="space-y-2"></div><p class="text-xs font-medium text-stone-600">※有給の場合は「有給」を選択してから登録してね。</p><div id="hosshiiShiftWageWarning" class="t13-wage-notice" hidden>⚠️ 時給が未設定の時間帯があります。<br>設定画面で確認してね♡ <button type="button" onclick="hosshiiOpenWageSettings()">［設定画面］</button></div></div>
         <div class="space-y-1.5 border-t border-stone-100 pt-2"><span id="modalShiftListHeading" class="shift-section-title">【シフト一覧】</span><div id="modalSelectedDateSummaryContent" class="space-y-2 pt-1"></div></div>
-        <div class="space-y-2 border-t border-stone-100 pt-2"><div class="flex items-center justify-between"><span class="shift-section-title">【勤務時間を登録】</span><button type="button" onclick="registerNewPresetAndRegister()" id="registerShiftButton" class="px-4 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold">登録</button></div><div id="modalCustomPresetContainer" class="space-y-2"></div><div id="hosshiiShiftWageWarning" class="t13-wage-notice" hidden>⚠️ 時給が未設定の時間帯があります。<br>設定画面で確認してね♡ <button type="button" onclick="hosshiiOpenWageSettings()">［設定画面］</button></div></div>
         <section class="shift-preset-section space-y-2 border-t border-stone-100 pt-2">
           <div class="flex items-center justify-between gap-2"><span class="shift-section-title preset-inline-heading">【ワンタッチ登録しましょ～♡】</span><button type="button" onclick="openPresetRegisterModal()" class="px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0">＋登録</button></div>
           <p class="ito-preset-desc font-bold text-stone-600">登録して時間を選択するだけなので楽になります。</p>
@@ -1888,7 +1889,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
     function paidLeaveAmount(job, sh){
-      const h = Number(sh && sh.hours) > 0 ? Number(sh.hours) : (Number(job.paidHours) || 0);
+      const h = sh && sh.start && sh.end ? forEachWorkMinute(sh, () => {}) / 60 : (Number(sh && sh.hours) > 0 ? Number(sh.hours) : (Number(job.paidHours) || 0));
       return (Number(job.paid) || 0) * h;
     }
     function calculateJobShiftMinutesAndPay(jobShift, job, dateObj) {
@@ -1953,7 +1954,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           for (let i = 0; i < shifts.length; i++) {
             if (off === 0 && jk === excludeJk && i === excludeIdx) continue;
             const sh = shifts[i];
-            if (!sh || sh.isPaidLeave || !sh.start || !sh.end) continue;
+            if (!sh || !sh.start || !sh.end) continue;
             let os = timeStrToMins(sh.start);
             let oe = timeStrToMins(sh.end);
             if (oe <= os) oe += 24 * 60;
@@ -2027,6 +2028,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       updateShiftEntryLayout();
       renderModalPresetButtons();
       newPresetForm = { start: '00:00', end: '00:00', breakMins: 0 };
+      setModalShiftTypeUIOnly(false);
       renderModalCustomPresets();
       updateModalSelectedDateSummary();
 
@@ -2231,8 +2233,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       }
 
       entries.sort((a, b) => {
-        const am = a.sh.isPaidLeave ? 99999 : timeStrToMins(a.sh.start);
-        const bm = b.sh.isPaidLeave ? 99999 : timeStrToMins(b.sh.start);
+        const am = a.sh.start ? timeStrToMins(a.sh.start) : 99999;
+        const bm = b.sh.start ? timeStrToMins(b.sh.start) : 99999;
         return am - bm;
       });
 
@@ -2240,30 +2242,13 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       entries.forEach(({ jk, idx, sh }) => {
         const jobConf = configData[jk];
 
-        if (sh.isPaidLeave) {
+        if (sh.isPaidLeave && !(sh.start && sh.end)) {
           const h = Number(sh.hours) > 0 ? Number(sh.hours) : (Number(jobConf.paidHours) || 0);
-          html += `
-            <div class="bg-white p-2.5 border rounded-xl border-stone-200 flex justify-between items-center gap-1 text-xs sm:text-sm">
-              <span class="font-bold text-stone-800 shrink-0">☆ 有給休暇</span>
-              <div class="flex items-center gap-1">
-                <input type="text" inputmode="decimal" id="modal_paid_hours_${jk}_${idx}" value="${h || ''}" class="w-14 p-1 border rounded text-center bg-white font-bold text-xs sm:text-sm" placeholder="0">
-                <span class="text-stone-600 text-xs">時間</span>
-                <button type="button" onclick="updatePaidHoursModal('${jk}', ${idx})" class="bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold px-2.5 py-1.5 rounded-lg text-xs transition">変更</button>
-                <button type="button" onclick="confirmShiftDeletion('${jk}', ${idx})" class="bg-stone-200 text-stone-700 hover:bg-stone-300 font-bold px-2.5 py-1.5 rounded-lg text-xs transition">削除</button>
-              </div>
-            </div>`;
+          html += `<div class="bg-white p-2.5 border rounded-xl border-stone-200 flex justify-between items-center gap-1 text-xs sm:text-sm"><span class="font-bold text-stone-800">◎ 有給休暇（旧登録）</span><div class="flex items-center gap-1"><input type="text" inputmode="decimal" id="modal_paid_hours_${jk}_${idx}" value="${h || ''}" class="w-12 p-1 border rounded text-center font-bold text-xs" aria-label="有給時間"><span class="text-xs">時間</span><button type="button" onclick="updatePaidHoursModal('${jk}', ${idx})" class="bg-rose-900 text-white px-2 py-1.5 rounded-lg text-xs">変更</button><button type="button" onclick="confirmShiftDeletion('${jk}', ${idx})" class="bg-stone-200 text-stone-700 px-2 py-1.5 rounded-lg text-xs">削除</button></div></div>`;
           return;
         }
-
         const breakMins = Number(sh.breakMins) || 0;
-
-        html += `
-          <div class="shift-registered-row bg-stone-50 p-2 border rounded-xl border-stone-200 flex items-center justify-between gap-1">
-            <span class="font-bold text-stone-800 job-time flex-1">${sh.start}〜${sh.end}</span>
-            <span class="font-bold text-stone-600 whitespace-nowrap">休憩${breakMins}分</span>
-            <button type="button" onclick="confirmShiftDeletion('${jk}', ${idx})" class="bg-stone-200 text-stone-700 hover:bg-stone-300 font-bold px-3 py-1.5 rounded-lg text-xs transition">削除</button>
-          </div>
-        `;
+        html += `<div class="shift-registered-row bg-stone-50 p-2 border rounded-xl border-stone-200 flex items-center justify-between gap-1"><span class="font-bold text-stone-800 job-time flex-1 min-w-0">${sh.start}〜${sh.end}</span><span class="font-bold text-stone-600 whitespace-nowrap">休憩${breakMins}分</span><button type="button" onclick="toggleRegisteredPaidLeave('${jk}', ${idx})" aria-pressed="${!!sh.isPaidLeave}" class="${sh.isPaidLeave ? 'bg-rose-900 text-white border-rose-900' : 'bg-white text-stone-700 border-stone-300'} border font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">有給</button><button type="button" onclick="confirmShiftDeletion('${jk}', ${idx})" class="bg-stone-200 text-stone-700 font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">削除</button></div>`;
       });
 
       if (html === '') {
@@ -2559,7 +2544,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           if (!sh) return;
           if (sh.isPaidLeave) {
             paidDays++; paidPay += paidLeaveAmount(job, sh);
-            paidHours += Number(sh.hours) > 0 ? Number(sh.hours) : (Number(job.paidHours) || 0);
+            paidHours += sh.start && sh.end ? forEachWorkMinute(sh, () => {}) / 60 : (Number(sh.hours) > 0 ? Number(sh.hours) : (Number(job.paidHours) || 0));
             return;
           }
           const dateObj = new Date(d);
@@ -2790,10 +2775,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
                   <div class="flex items-center gap-1 shrink-0"><input type="text" inputmode="numeric" id="set_wagePaid" oninput="formatInputNumber(this)" class="w-24 p-2 border rounded text-right font-bold bg-white text-sm"><span class="font-bold">円</span></div>
                 </div>
                 <p class="paid-note text-xs text-stone-500 font-medium text-left">※時給が異なる場合は、<br>よく働く時給か平均時給を入力してね♡</p>
-                <div class="flex items-center justify-between gap-2 pt-1">
-                  <span class="font-bold text-stone-700 flex-1 min-w-0">有給1日あたりの時間</span>
-                  <div class="flex items-center gap-1 shrink-0"><input type="text" inputmode="decimal" id="set_paidHours" class="w-20 p-2 border rounded text-right font-bold bg-white text-sm" placeholder=""><span class="text-stone-700 font-bold text-xs">時間</span></div>
-                </div>
+
               </div>
             </div>
 
@@ -3060,7 +3042,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       document.getElementById('set_closeDay').value = j.closeDay || '20';
       document.getElementById('set_payDay').value = j.payDay || '5';
       document.getElementById('set_wagePaid').value = j.paid ? j.paid.toLocaleString() : '';
-      document.getElementById('set_paidHours').value = j.paidHours > 0 ? String(j.paidHours) : '';
+      
 
       document.getElementById('set_transMonth').value = j.transMonth ? j.transMonth.toLocaleString() : '';
       document.getElementById('set_transDay').value = j.transDay ? j.transDay.toLocaleString() : '';
@@ -3078,7 +3060,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       j.closeDay = getVal('set_closeDay') || '20';
       j.payDay = getVal('set_payDay') || '5';
       j.paid = getNum('set_wagePaid');
-      j.paidHours = parseFloat(String(getVal('set_paidHours')).replace(/[^0-9.]/g, '')) || 0;
+      // 旧有給時間は既存データの互換性のため保持
 
       if (document.getElementById('setWageSlotsContainer')) {
         j.wageSlots = [...document.querySelectorAll('#setWageSlotsContainer [data-slot]')].map(r => {
@@ -3095,44 +3077,33 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function setModalShiftTypeUIOnly(isPaid) {
-      isPaidLeaveMode = isPaid;
-      const workBtn = document.getElementById('modalTypeWorkBtn');
-      const paidBtn = document.getElementById('modalTypePaidBtn');
-
-      if (paidBtn && workBtn) {
-        if (isPaid) {
-          paidBtn.className = "flex-1 py-2.5 rounded-xl text-sm font-bold border transition bg-stone-100 text-stone-900 border-stone-300 shadow-sm";
-          workBtn.className = "flex-1 py-2.5 rounded-xl text-sm font-bold border transition bg-white text-stone-700 border-stone-200 hover:bg-stone-50";
-        } else {
-          workBtn.className = "flex-1 py-2.5 rounded-xl text-sm font-bold border transition bg-stone-100 text-stone-900 border-stone-300 shadow-sm";
-          paidBtn.className = "flex-1 py-2.5 rounded-xl text-sm font-bold border transition bg-white text-stone-700 border-stone-200 hover:bg-stone-50";
-        }
-      }
+      isPaidLeaveMode = !!isPaid;
+      const btn = document.getElementById('modalNewPaidToggle');
+      if (!btn) return;
+      btn.setAttribute('aria-pressed', String(isPaidLeaveMode));
+      btn.className = isPaidLeaveMode
+        ? 'shrink-0 px-2 py-2 rounded-lg border border-rose-800 bg-rose-900 text-white font-bold text-xs whitespace-nowrap'
+        : 'shrink-0 px-2 py-2 rounded-lg border border-stone-200 bg-stone-100 text-stone-700 font-bold text-xs whitespace-nowrap';
     }
-
     function setModalShiftType(isPaid) {
       if (hosshiiBlockEdit()) return false;
       setModalShiftTypeUIOnly(isPaid);
-      if (isPaid) {
-        if (!selectedCalendarDateStr) return;
-        const paidHours = Number(configData[currentSelectedJobKey]?.paidHours) || 0;
-        if (paidHours <= 0) {
-          setModalShiftTypeUIOnly(false);
-          showAlertModal('有給休暇を登録する前に、「設定」タブで有給1日あたりの時間を入力してください。');
-          return;
-        }
-        let shifts = getDayShifts(selectedCalendarDateStr, currentSelectedJobKey);
-        if (shifts.some(s => s && s.isPaidLeave)) {
-          showToast("この日は既に有給休暇が登録されています");
-          setModalShiftTypeUIOnly(false);
-          return;
-        }
-        shifts.push({ start: '', end: '', breakMins: 0, isPaidLeave: true, hours: paidHours });
-        if (!setDayShifts(selectedCalendarDateStr, currentSelectedJobKey, shifts)) return;
-        updateModalSelectedDateSummary();
-        showToast("有給休暇を登録しました");
-        setModalShiftTypeUIOnly(false);
+    }
+    function toggleRegisteredPaidLeave(jk, idx) {
+      if (hosshiiBlockEdit()) return false;
+      const shifts = getDayShifts(selectedCalendarDateStr, jk);
+      const sh = shifts[idx];
+      if (!sh || !sh.start || !sh.end) return;
+      const next = !sh.isPaidLeave;
+      if (!next) {
+        const dup = findOverlap(selectedCalendarDateStr, sh.start, sh.end, jk, idx);
+        if (dup) { showOverlapAlert(dup); return; }
       }
+      sh.isPaidLeave = next;
+      if (!setDayShifts(selectedCalendarDateStr, jk, shifts)) return;
+      updateModalSelectedDateSummary();
+      refreshAll();
+      showToast(next ? '有給に変更しました♡' : '通常勤務に変更しました♡');
     }
 
     function renderModalPresetButtons() {
@@ -3203,9 +3174,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           <div class="time-field-wrap relative flex-1 min-w-0">
             <input type="text" readonly inputmode="none" step="60" onclick="triggerTimePicker(this.id)" autocomplete="off" id="new_preset_end" placeholder="00:00" value="${newPresetForm.end}" onchange="updateNewPresetForm()" class="wage-time clock-time w-full px-1.5 py-1.5 pr-7 border rounded-lg border-stone-200 bg-stone-50 font-bold text-center text-sm"><button type="button" aria-label="終了時間を選択" onclick="triggerTimePicker('new_preset_end')" class="time-clock-button absolute right-1 top-1/2 -translate-y-1/2 text-stone-500 text-xs w-5 h-6 flex items-center justify-center rounded-md bg-white/90">🕒</button>
           </div>
-          <button type="button" onclick="openBreakSelectModal()" class="px-2.5 py-2 bg-stone-100 hover:bg-stone-200 border border-stone-200 rounded-lg font-bold text-xs text-stone-700 transition whitespace-nowrap">☕<span id="modalBreakDisplayVal">${breakMins}分</span></button>
+          <button type="button" onclick="openBreakSelectModal()" class="px-1.5 py-2 bg-stone-100 hover:bg-stone-200 border border-stone-200 rounded-lg font-bold text-xs text-stone-700 transition whitespace-nowrap">☕<span id="modalBreakDisplayVal">${breakMins}分</span></button>
+          <button type="button" id="modalNewPaidToggle" onclick="setModalShiftType(!isPaidLeaveMode)" aria-pressed="false" class="shrink-0 px-2 py-2 rounded-lg border border-stone-200 bg-stone-100 text-stone-700 font-bold text-xs whitespace-nowrap">有給</button>
         </div>
       `;
+      setModalShiftTypeUIOnly(isPaidLeaveMode);
       hosshiiUpdateShiftWageWarning();
     }
 
@@ -3314,6 +3287,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       window.markRegisterSaved?.('registerShiftButton');
 
       newPresetForm = { start: '00:00', end: '00:00', breakMins: 0 };
+      setModalShiftTypeUIOnly(false);
       renderModalCustomPresets();
     }
 
@@ -3331,7 +3305,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const dup = findOverlap(selectedCalendarDateStr, start, end);
       if (dup) { showOverlapAlert(dup); return false; }
       const shifts = getDayShifts(selectedCalendarDateStr, currentSelectedJobKey);
-      shifts.push({ start, end, breakMins, isPaidLeave: false });
+      shifts.push({ start, end, breakMins, isPaidLeave: !!isPaidLeaveMode });
       if (!setDayShifts(selectedCalendarDateStr, currentSelectedJobKey, shifts)) return false;
       updateModalSelectedDateSummary();
       showToast("シフトに登録しました" + breakHint(start, end, breakMins));
@@ -3904,9 +3878,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             const hasTime = !!(jobShift.start && jobShift.end);
             const hasPaidHours = jobShift.isPaidLeave && ((Number(jobShift.hours) || Number(configData[jk]?.paidHours) || 0) > 0);
             if (!hasTime && !hasPaidHours) return;
-            // 有給の場合は時間指定の有無に関係なく☆を優先。
+            // 有給の場合は時間指定の有無に関係なく◎を優先。
             const isPaid = !!jobShift.isPaidLeave;
-            const glyph = isPaid ? '★' : '●';
+            const glyph = isPaid ? '◎' : '●';
             calendarMarks.push(`<span class="hosshii-calendar-mark" style="color:${palette.dot};" aria-label="${isPaid ? '有給休暇' : '通常勤務'}">${glyph}</span>`);
           });
         });
@@ -4018,7 +3992,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           let timeDisplay = '';
           let payVal = 0;
           if (jobShift.isPaidLeave) {
-            timeDisplay = '有給休暇';
+            timeDisplay = jobShift.start && jobShift.end ? `${jobShift.start}〜${jobShift.end} 有給休暇` : '有給休暇';
             payVal = paidLeaveAmount(jobConf, jobShift);
           } else if (jobShift.start && jobShift.end) {
             const res = calculateJobShiftMinutesAndPay(jobShift, jobConf, dateObj);
@@ -4092,9 +4066,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             const jName = getJobDisplayName(jk);
             
             if (jobShift.start && jobShift.end) {
-              const title = `${jName} ${jobShift.start}〜${jobShift.end}`;
+              const title = `${jName} ${jobShift.start}〜${jobShift.end}${jobShift.isPaidLeave ? ' 有給休暇' : ''}`;
               // 予定表の日付内はバイト先名を省き、色付き●と勤務時間だけを表示して時間幅を確保
-              lineItems.push({ order: timeStrToMins(jobShift.start), html: lineHtml(`${getJobLabelHtml(jk, "standalone-job-label", true)}<span class="job-time">${jobShift.start}〜${jobShift.end}</span>`, generateShiftGoogleCalendarUrl(title, dateStr, jobShift.start, jobShift.end)) });
+              lineItems.push({ order: timeStrToMins(jobShift.start), html: lineHtml(`${getJobLabelHtml(jk, "standalone-job-label", true)}<span class="job-time">${jobShift.start}〜${jobShift.end}${jobShift.isPaidLeave ? ' ◎' : ''}</span>`, generateShiftGoogleCalendarUrl(title, dateStr, jobShift.start, jobShift.end)) });
             } else if (jobShift.isPaidLeave) {
               const title = `${jName} 有給休暇`;
               lineItems.push({ order: 9000, html: lineHtml(`${getJobLabelHtml(jk, "standalone-job-label", true)}<span>有給休暇</span>`, generateAllDayGoogleCalendarUrl(title, dateStr)) });
