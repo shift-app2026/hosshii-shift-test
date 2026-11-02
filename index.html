@@ -4265,22 +4265,42 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             } else {
               await navigator.share({title:'シフトアプリのバックアップ', text:json});
             }
-            msg.textContent = '共有先に保存されたか確認してね♡';
+            msg.textContent = '共有先に保存されたか確認してね♡（保存完了は自動確認できません）';
           } catch (err) {
             if (err && err.name === 'AbortError') return;
             msg.textContent = 'このLINE画面では共有できませんでした。ほかの方法を試してね。';
           }
         });
       }
-      const link = document.createElement('a');
-      link.href = url; link.download = filename;
-      link.textContent = '⬇️ ファイルをダウンロード';
-      link.style.cssText = buttonStyle + 'text-decoration:none;';
-      area.appendChild(link);
+      // 保存先選択 API があるブラウザでは、実際に保存完了するまで成功扱いしない。
+      // LINE 内 WebView など非対応環境では、無反応のリンクを出さず代替手段を案内。
+      const saveBtn = makeButton('⬇️ 端末にファイル保存');
+      saveBtn.addEventListener('click', async () => {
+        if (typeof window.showSaveFilePicker === 'function') {
+          try {
+            const handle = await window.showSaveFilePicker({
+              suggestedName: filename,
+              types: [{description:'シフトアプリのバックアップ', accept:{'application/json':['.json']}}]
+            });
+            const writable = await handle.createWritable();
+            await writable.write(blob);
+            await writable.close();
+            try {localStorage.setItem('mybasket_last_backup', String(Date.now()));} catch (_) {}
+            msg.textContent = 'バックアップファイルを保存しました♡ 保存先を確認してね。';
+            return;
+          } catch (err) {
+            if (err && err.name === 'AbortError') {msg.textContent = '保存をキャンセルしました。'; return;}
+            console.warn('バックアップの保存に失敗',err);
+            msg.textContent = 'ファイルを保存できませんでした。別の方法を選んでね。';
+            return;
+          }
+        }
+        msg.textContent = 'このLINE画面では端末へのファイル保存に対応していません。共有またはコピーで保存してね。';
+      });
       const copyBtn = makeButton('📋 バックアップ内容をコピー');
       const selectBtn = makeButton('📝 内容を表示して選択');
       const help = document.createElement('div');
-      help.textContent = 'ファイル保存ができない場合は「バックアップ内容をコピー」→メモ等に貼り付けて保存してね。下の「コピーした内容を読み込む」で復元できます。';
+      help.textContent = 'LINE内でファイル保存に対応していない場合があります。その場合は「バックアップ内容をコピー」でメモ等に保存できます。保存を確認するまでアプリのデータを消さないでね。';
       help.style.cssText = 'font-size:12px;text-align:left;margin-top:6px;';
       area.appendChild(help);
       const backupText = document.createElement('textarea');
