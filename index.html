@@ -5557,6 +5557,15 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 })();
 </script>
 
+<!-- 2026-11-02: シフト登録モーダルを固定月表示バーより前面に表示 -->
+<style id="hosshii-shift-modal-layer-fix-20261102">
+/* 固定月表示バーは z-index:1000。モーダルをその上に重ね、
+   シフト登録画面の見出しと日付ナビが隠れないようにする。 */
+#shiftInputModal { z-index:1100 !important; }
+/* モーダル内から開く使い方・ワンタッチ説明はさらに前面に。 */
+#shiftUsageHelpModal, #presetHelpModal { z-index:1200 !important; }
+</style>
+
 <!-- 2026-10-28: テスト版・固定ヘッダーと中央揃えの最終上書き -->
 <style id="hosshii-test-sticky-center-correction">
 /* Earlier rules set position:relative on this host, disabling sticky. */
