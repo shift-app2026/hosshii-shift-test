@@ -1206,6 +1206,29 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 #shiftInputModal #hosshiiShiftWageWarning { font-size:clamp(12px,3.35vw,14px)!important; line-height:1.5!important; }
 #shiftInputModal #hosshiiShiftWageWarning[hidden] { display:none!important; }
 </style>
+
+<style id="test22-four-column-pay-details">
+/* 今月・先月の詳細を同じ4列に統一。小画面でも文字を極力維持する。 */
+#tab-clock #itoReceiveTable .t19-column-head,
+#tab-clock #t10PrevTable .t19-column-head,
+#tab-clock #itoReceiveTable .t19-job-values,
+#tab-clock #t10PrevTable .t19-job-values,
+#tab-clock #itoReceiveTable .t19-total,
+#tab-clock #t10PrevTable .t19-total {
+  grid-template-columns: 1.22fr .68fr 1fr 1fr !important;
+  column-gap: 2px !important;
+}
+#tab-clock #itoReceiveTable .t19-column-head,
+#tab-clock #t10PrevTable .t19-column-head {font-size:clamp(10px, 3.1vw, 13px)!important;letter-spacing:-.055em!important;}
+#tab-clock #itoReceiveTable .t19-job-values,
+#tab-clock #t10PrevTable .t19-job-values,
+#tab-clock #itoReceiveTable .t19-total,
+#tab-clock #t10PrevTable .t19-total {font-size:clamp(11px, 3.45vw, 16px)!important;letter-spacing:-.06em!important;}
+#tab-clock #itoReceiveTable .t19-job-values > *,
+#tab-clock #t10PrevTable .t19-job-values > *,
+#tab-clock #itoReceiveTable .t19-total > *,
+#tab-clock #t10PrevTable .t19-total > * {min-width:0;white-space:nowrap;}
+</style>
 </head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
@@ -3596,15 +3619,19 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const end = closingDate(year, month);
       const prevClose = closingDate(year, month - 1);
       const start = new Date(prevClose.getFullYear(), prevClose.getMonth(), prevClose.getDate() + 1);
-      let mins = 0, pay = 0, days = 0;
+      let mins = 0, pay = 0, days = 0, commutingDays = 0;
       for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
         const r = calcJobDay(formatDateKey(d), jk, new Date(d));
         mins += r.mins;
         pay += r.pay;
         if (r.worked) days++;
+        if (r.commuted) commutingDays++;
       }
+      const other = (days > 0 ? (job.transMonth || 0) + (job.allowanceMonth || 0) : 0)
+        + commutingDays * ((job.transDay || 0) + (job.allowanceDay || 0));
       if (days > 0) pay += (job.transMonth || 0) + (job.allowanceMonth || 0);
-      return { pay: Math.floor(Math.round(pay * 1000) / 1000), mins, days, start, end, wageMissing: test5HasMissingWage(jk, start, end) };
+      const roundPay = n => Math.floor(Math.round(n * 1000) / 1000);
+      return { pay: roundPay(pay), wagePay: roundPay(pay - other), otherPay: roundPay(other), mins, days, start, end, wageMissing: test5HasMissingWage(jk, start, end) };
     }
 
     function t10TogglePrevious() {
@@ -3620,21 +3647,23 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function t10PayTable(monthDate) {
       const jobs = getActiveJobKeys();
-      const hm = mins => `${Math.floor(mins / 60)}時間${mins % 60 ? String(mins % 60).padStart(2,'0') + '分' : ''}`;
+      const hm = mins => `${Math.floor(mins / 60)}:${String(mins % 60).padStart(2, '0')}`;
       const md = d => `${d.getMonth()+1}/${d.getDate()}`;
-      let totalMins = 0, totalPay = 0, missing = false;
+      const yen = n => `${n.toLocaleString('ja-JP')}円`;
+      let totalMins = 0, totalWage = 0, totalOther = 0, missing = false;
       if (!jobs.length) return '<p class="ito-compact-empty">バイト先が登録されていません</p>';
       const rows = jobs.map(jk => {
         const r = calcJobCalendarMonthPay(jk, monthDate);
         totalMins += r.mins;
-        totalPay += r.pay;
+        totalWage += r.wagePay;
+        totalOther += r.otherPay;
         missing = missing || r.wageMissing;
         const name = esc(getJobDisplayName(jk));
         const dot = getJobPalette(jk).dot;
-        const money = r.wageMissing ? '<span title="時給を設定してください" aria-label="時給未設定">⚠️</span>' : `${r.pay.toLocaleString('ja-JP')}円`;
-        return `<div class="t19-job-row"><div class="t19-job-name"><i style="background:${dot}"></i><strong>${name}</strong></div><div class="t19-job-values"><span>${md(r.start)}～${md(r.end)}</span><span>${hm(r.mins)}</span><strong>${money}</strong></div></div>`;
+        const wage = r.wageMissing ? '<span title="時給を設定してください" aria-label="時給未設定">⚠️</span>' : yen(r.wagePay);
+        return `<div class="t19-job-row"><div class="t19-job-name"><i style="background:${dot}"></i><strong>${name}</strong></div><div class="t19-job-values"><span>${md(r.start)}～${md(r.end)}</span><span>${hm(r.mins)}</span><strong>${wage}</strong><strong>${yen(r.otherPay)}</strong></div></div>`;
       }).join('');
-      return `<div class="t19-summary"><div class="t19-column-head"><span>集計期間</span><span>勤務時間計</span><span>お給料合計</span></div>${rows}<div class="t19-total"><strong>合計</strong><strong>${hm(totalMins)}</strong><strong>${missing ? '⚠️' : totalPay.toLocaleString('ja-JP') + '円'}</strong></div></div>`;
+      return `<div class="t19-summary"><div class="t19-column-head"><span>集計期間</span><span>勤務時間</span><span>お給料</span><span>その他</span></div>${rows}<div class="t19-total"><strong>合計</strong><strong>${hm(totalMins)}</strong><strong>${missing ? '⚠️' : yen(totalWage)}</strong><strong>${yen(totalOther)}</strong></div></div>`;
     }
 
     function calculateMonthlyReceivePay() {
