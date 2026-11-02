@@ -4256,7 +4256,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         };
         await hosshiiBackupRequest('save', backupData);
         localStorage.setItem('mybasket_last_backup', String(Date.now()));
-        showAlertModal('バックアップをSupabaseに保存しました♡\n同じLINEアカウントで復元できます。');
+        showAlertModal('バックアップをSupabaseに保存しました\n同じLINEアカウントで復元できます♡');
       } catch (err) {
         console.error('クラウドバックアップ保存エラー', err);
         showAlertModal('バックアップを保存できませんでした。\n' + (err.name === 'AbortError' ? '通信がタイムアウトしました。' : err.message));
@@ -4763,12 +4763,21 @@ background:#881337!important;background-color:#881337!important;border-color:#88
      const bar=pinned[tab];
      if(!bar)return;
      const banner=document.getElementById('hosshiiTrialBanner');
-     if(host.firstElementChild!==bar){host.replaceChildren(bar);}
+     // Keep the trial banner alive while switching pinned headings.
+     // replaceChildren(bar) otherwise detaches it and the old else branch
+     // only handled a banner still attached to host.
+     if(host.firstElementChild!==bar){
+       if(banner && banner.parentNode===host){
+         const payTab=document.getElementById('tab-clock');
+         if(payTab)payTab.prepend(banner);
+       }
+       host.replaceChildren(bar);
+     }
      if(tab==='clock' && banner){
        if(banner.parentNode!==host)host.appendChild(banner);
-     }else if(banner && banner.parentNode===host){
+     }else if(banner){
        const payTab=document.getElementById('tab-clock');
-       if(payTab)payTab.insertBefore(banner,payTab.children[1]||null);
+       if(payTab && banner.parentNode!==payTab)payTab.prepend(banner);
      }
    };
    const active=document.querySelector('#appScroll > .tab-content:not(.hidden)');
@@ -5692,6 +5701,15 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   color:#44403c!important;
 }
 #shiftInputModal .shift-preset-section {padding-bottom:8px!important;}
+</style>
+
+<!-- test② 20261102: trial banner persistence and transient notices -->
+<style id="hosshii-20261102-trial-toast-fix">
+#toastMessage { z-index: 12000 !important; top: calc(90px + env(safe-area-inset-top,0px)) !important; max-width: min(92vw, 420px) !important; box-sizing: border-box; white-space: normal; overflow-wrap: anywhere; }
+#toastMessage.settings-save-toast, #toastMessage.shift-register-toast { top:auto !important; }
+#alertModal { z-index: 13000 !important; }
+#alertModalText { overflow-wrap: anywhere; word-break: normal; }
+#hosshiiTrialBanner .hosshii-trial-status-line { white-space: nowrap !important; }
 </style>
 </body>
 </html>
