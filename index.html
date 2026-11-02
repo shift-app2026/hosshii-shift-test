@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>マイシフト＆給料</title>
+  <title>ほっしーシフト</title>
   <meta property="og:type" content="website">
-  <meta property="og:title" content="マイシフト＆給料">
+  <meta property="og:title" content="ほっしーシフト">
   <meta property="og:description" content="シフト管理とお給料の目安がわかるアプリ">
   <meta property="og:url" content="https://shift-app2026.github.io/hosshii-shift-line/">
   <meta property="og:image" content="https://shift-app2026.github.io/hosshii-shift-line/icon-512.png?v=20261019">
@@ -1233,7 +1233,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
   <div id="lineAuthCard">
-    <h2 id="lineAuthTitle">ほっしーのシフトアプリ ♡</h2>
+    <h2 id="lineAuthTitle">ほっしーシフト ♡</h2>
     <p id="lineAuthMessage">LINEの利用状況を確認中</p>
     <div id="lineAuthConsent" hidden>
       <p>初回利用から21日間、無料でお試しいただけます。無料お試しの開始時に、お支払い情報の登録は不要です。無料期間の開始日と利用状況をLINEアカウントにひも付けて管理します。</p>
@@ -2359,6 +2359,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
       const targetTab = document.getElementById(`tab-${tabName}`);
       if (targetTab) targetTab.classList.remove('hidden');
+      // タブを切り替えた時だけ、対象画面の表示位置を先頭に戻す。
+      if (targetTab && (tabName === 'clock' || tabName === 'calendar')) {
+        const appScroll = document.getElementById('appScroll');
+        if (appScroll) appScroll.scrollTop = 0;
+      }
       const fixedSave = document.getElementById('settingsFixedSave');
       if (fixedSave) fixedSave.hidden = tabName !== 'settings';
       const activeBtn = document.getElementById(`btn-${tabName}`);
