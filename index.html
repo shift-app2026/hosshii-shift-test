@@ -1486,10 +1486,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           <div id="test5RingWarning" class="t13-wage-notice" hidden>⚠️ 時給が設定されていない時間帯があります。<br>シフト登録画面にお戻りください♡ <button type="button" onclick="hosshiiOpenMissingShift()">［登録画面］</button></div>
         </div>
         <section class="t10-prev-card">
-          <button type="button" class="t10-prev-toggle" id="t10PrevToggle" aria-expanded="false" aria-controls="t10PrevTable" onclick="t10TogglePrevious()">
-            <span>【先月分の詳細】</span><span id="t10PrevChevron">⌄</span>
-          </button>
-          <div id="t10PrevTable" hidden class="ito-receive-table" aria-label="先月分の勤務時間とお給料見込額"></div>
+          <div class="t10-prev-toggle t10-prev-static-title" aria-label="先月分の詳細">【先月分の詳細】</div>
+          <div id="t10PrevTable" class="ito-receive-table" aria-label="先月分の勤務時間とお給料見込額"></div>
         </section>
 
         <div class="bg-white p-4 rounded-2xl border border-stone-100 shadow-[0_1px_2px_rgba(0,0,0,0.02)] space-y-2">
@@ -3647,7 +3645,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function t10PayTable(monthDate) {
       const jobs = getActiveJobKeys();
-      const hm = mins => `${Math.floor(mins / 60)}:${String(mins % 60).padStart(2, '0')}`;
+      const hm = mins => `${Math.floor(mins / 60)}h${mins % 60 ? `${mins % 60}m` : ""}`;
       const md = d => `${d.getMonth()+1}/${d.getDate()}`;
       const yen = n => `${n.toLocaleString('ja-JP')}円`;
       let totalMins = 0, totalWage = 0, totalOther = 0, missing = false;
@@ -5793,6 +5791,35 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 #tab-clock #t10PrevTable .t19-total > * {min-width:0 !important;white-space:nowrap !important;}
 #tab-clock #itoReceiveTable .t19-job-values > :first-child,
 #tab-clock #t10PrevTable .t19-job-values > :first-child {letter-spacing:-.06em !important;}
+</style>
+
+<style id="hosshii-20261102-readable-four-columns">
+/* 両詳細を常時4列表示し、スマホで文字を読みやすくする */
+#tab-clock #itoReceiveTable .t19-column-head,
+#tab-clock #t10PrevTable .t19-column-head {
+ font-size:clamp(12px,3.35vw,14px) !important;
+ letter-spacing:-.04em !important;
+}
+#tab-clock #itoReceiveTable .t19-job-values,
+#tab-clock #t10PrevTable .t19-job-values,
+#tab-clock #itoReceiveTable .t19-total,
+#tab-clock #t10PrevTable .t19-total {
+ font-size:clamp(13px,3.7vw,16px) !important;
+ letter-spacing:-.055em !important;
+}
+#tab-clock #itoReceiveTable .t19-total > :first-child,
+#tab-clock #t10PrevTable .t19-total > :first-child {
+ text-align:center !important;
+ padding-left:0 !important;
+}
+#tab-clock #t10PrevTable {display:block !important;}
+#tab-clock .t10-prev-static-title {cursor:default !important;}
+@media(max-width:360px){
+ #tab-clock #itoReceiveTable .t19-job-values,
+ #tab-clock #t10PrevTable .t19-job-values,
+ #tab-clock #itoReceiveTable .t19-total,
+ #tab-clock #t10PrevTable .t19-total {font-size:12.5px !important;}
+}
 </style>
 </body>
 </html>
