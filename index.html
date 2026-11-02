@@ -1578,10 +1578,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
           <div class="pt-2.5 border-t border-stone-200 space-y-2">
             <div class="text-base font-bold text-stone-800">【データのバックアップ】</div>
-            <p class="oct23-backup-note note-fit text-xs text-stone-500 font-bold leading-relaxed">※大切なデータは定期的に保存してね♡</p>
+            <p class="oct23-backup-note note-fit text-xs text-stone-500 font-bold leading-relaxed">※LINEで本人確認してクラウドに保存・復元するテスト機能です♡</p>
             <div class="flex space-x-2">
-              <button type="button" onclick="exportAppData(event)" class="flex-1 bg-rose-50 hover:bg-rose-100 text-rose-900 font-bold py-3 rounded-xl text-xs sm:text-sm transition border border-rose-200 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">⬇️ 書き出す</button>
-              <button type="button" onclick="if (!hosshiiBlockEdit()) document.getElementById('importFileInput').click()" class="flex-1 bg-rose-50 hover:bg-rose-100 text-rose-900 font-bold py-3 rounded-xl text-xs sm:text-sm transition border border-rose-200 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">⬆ 読み込む</button>
+              <button type="button" onclick="hosshiiCloudBackupSave(event)" class="flex-1 bg-rose-50 hover:bg-rose-100 text-rose-900 font-bold py-3 rounded-xl text-xs sm:text-sm transition border border-rose-200 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">⬇️ 書き出す</button>
+              <button type="button" onclick="hosshiiCloudBackupLoad(event)" class="flex-1 bg-rose-50 hover:bg-rose-100 text-rose-900 font-bold py-3 rounded-xl text-xs sm:text-sm transition border border-rose-200 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">⬆ 読み込む</button>
             </div>
             <input type="file" id="importFileInput" accept=".json,application/json,text/plain" class="hidden" onchange="importAppData(event)">
           </div>
@@ -1605,7 +1605,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           </section>
           <section class="space-y-3 border-t border-stone-200 pt-3"><h3 class="font-bold text-rose-900 text-base">🌷 その他のご案内</h3>
             <div><h4 class="font-bold">【ホーム画面に追加すると便利です♪】</h4><p>ホーム画面に追加すると、次回からすぐに開けます♪</p><p>ブラウザのメニューから「ホーム画面に追加」を選んでね。</p><p>※操作方法は端末やブラウザによって異なります。</p></div>
-            <div><h4 class="font-bold">【データの保存・バックアップについて】</h4><p>入力したシフトや給与のデータは、お使いの端末・ブラウザ等の保存領域に保存されます。</p><p>当方のサーバーには保存されません。</p><p>機種変更やアプリ・ブラウザのデータ削除などによって、保存したデータが消える場合があります。</p><p>大切なデータを守るため、「設定」画面の「書き出す」から、定期的にバックアップを保存してね。</p><p>保存したデータは、必要に応じて「読み込む」から復元できます。</p><p>※別の端末との自動同期には対応していません。</p></div>
+            <div><h4 class="font-bold">【データの保存・バックアップについて】</h4><p>入力したシフトや給与のデータは、お使いの端末・ブラウザ等の保存領域に保存されます。</p><p>【テスト中】「書き出す」を押すと、LINEで本人確認後、Supabaseのサーバーにバックアップを保存します。端末内にも元のデータが残ります。</p><p>機種変更やアプリ・ブラウザのデータ削除などによって、保存したデータが消える場合があります。</p><p>大切なデータを守るため、「設定」画面の「書き出す」から、定期的にバックアップを保存してね。保存したデータは同じLINEアカウントで復元できます。</p><p>保存したデータは、必要に応じて「読み込む」から復元できます。</p><p>※自動同期ではありません。保存・復元は手動で行います。テストが完了するまで一般公開しません。</p></div>
             <div><h4 class="font-bold">【お給料の計算について】</h4><p>アプリに表示されるお給料は、税金や社会保険料などを差し引く前の総支給額の目安です。</p><p>実際のお給料とは異なる場合がありますので、勤務先の給与明細などで確認してね。</p></div>
             <div><h4 class="font-bold">【利用規約・プライバシーポリシーについて】</h4><p>本アプリの利用条件や個人情報の取り扱いについては、「利用規約」と「プライバシーポリシー」に記載しています。</p><p>アプリの利用開始時に同意いただいた内容は、アプリ内からいつでも確認できます。</p><p><a href="./terms.html" target="_blank" rel="noopener noreferrer" style="color:#881337;text-decoration:underline;font-weight:bold">利用規約を読む</a></p></div>
           </section>
@@ -4210,6 +4210,76 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
     }
 
+    // 2026-11-02: テスト用のLINE認証付きSupabaseバックアップ。
+    // ブラウザからサービスキーは絶対に送らない。LINE IDトークンだけをサーバーで検証する。
+    const HOSSHII_BACKUP_ENDPOINT = 'https://urwmuafkmlgzanpiksfv.supabase.co/functions/v1/hosshii-backup';
+    let hosshiiCloudBackupBusy = false;
+    function hosshiiBackupToken() {
+      if (!window.liff || typeof window.liff.getIDToken !== 'function') {
+        throw new Error('LINEアプリから開いてください。');
+      }
+      const token = window.liff.getIDToken();
+      if (!token) throw new Error('LINEの本人確認ができません。②のLINEテスト版から開き直してください。');
+      return token;
+    }
+    async function hosshiiBackupRequest(action, backupData) {
+      const idToken = hosshiiBackupToken();
+      const body = {action, idToken};
+      if (action === 'save') body.backupData = backupData;
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 20000);
+      try {
+        const res = await fetch(HOSSHII_BACKUP_ENDPOINT, {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(body),
+          signal: controller.signal
+        });
+        let data;
+        try { data = await res.json(); } catch (_) { throw new Error('サーバーの応答を読み取れませんでした。'); }
+        if (!res.ok || !data.ok) throw new Error(String(data.error || data.message || '保存・復元に失敗しました。'));
+        return data;
+      } finally { clearTimeout(timeout); }
+    }
+    async function hosshiiCloudBackupSave(event) {
+      if (event) event.preventDefault();
+      if (hosshiiCloudBackupBusy) return;
+      if (storageWriteBlocked) { showStorageSafetyWarning(); return; }
+      hosshiiCloudBackupBusy = true;
+      showToast('バックアップを保存しています…');
+      try {
+        if (window.hosshiiReadOnly !== true) syncSettingsFormToConfig(currentSettingsJobKey);
+        const backupData = {
+          exportedAt: new Date().toISOString(),
+          mybasket_shifts_v23: shiftsData,
+          mybasket_wages_v77: {...JSON.parse(JSON.stringify(configData)), monthlyGoal}
+        };
+        await hosshiiBackupRequest('save', backupData);
+        localStorage.setItem('mybasket_last_backup', String(Date.now()));
+        showAlertModal('バックアップをSupabaseに保存しました♡\n同じLINEアカウントで復元できます。');
+      } catch (err) {
+        console.error('クラウドバックアップ保存エラー', err);
+        showAlertModal('バックアップを保存できませんでした。\n' + (err.name === 'AbortError' ? '通信がタイムアウトしました。' : err.message));
+      } finally { hosshiiCloudBackupBusy = false; }
+    }
+    async function hosshiiCloudBackupLoad(event) {
+      if (event) event.preventDefault();
+      if (hosshiiCloudBackupBusy) return;
+      if (window.hosshiiReadOnly === true) { hosshiiBlockEdit(); return; }
+      if (storageWriteBlocked) { showStorageSafetyWarning(); return; }
+      hosshiiCloudBackupBusy = true;
+      showToast('保存済みバックアップを確認しています…');
+      try {
+        const data = await hosshiiBackupRequest('load');
+        if (!data.backupData || typeof data.backupData !== 'object') throw new Error('保存データを読み取れませんでした。');
+        // 既存の確認ダイアログ、検証、ローカル保存とロールバック処理を再利用する。
+        processBackupText(JSON.stringify(data.backupData), null);
+      } catch (err) {
+        console.error('クラウドバックアップ復元エラー', err);
+        showAlertModal('バックアップを読み込めませんでした。\n' + (err.name === 'AbortError' ? '通信がタイムアウトしました。' : err.message));
+      } finally { hosshiiCloudBackupBusy = false; }
+    }
+
     // バックアップ: LINE内WebViewでダウンロード/Clipboard APIが無効な場合も
     // 共有シート、従来のコピーAPI、選択可能なテキストを順番に利用できるようにする。
     // 保存完了は自動判定しない。実際にファイル/貼り付け先で確認してもらう。
@@ -4368,7 +4438,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           lastBackup
             ? `最後のバックアップから${Math.floor((now - lastBackup) / DAY)}日たったよ。\nデータはこのブラウザにしか保存されていないので、今バックアップしておく？`
             : 'データはこのブラウザにしか保存されていないよ。\n機種変更やブラウザのデータ削除で消えないように、バックアップしておく？',
-          () => exportAppData(),
+          () => hosshiiCloudBackupSave(),
           'バックアップする'
         );
       }, 800);
