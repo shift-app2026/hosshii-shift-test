@@ -1229,6 +1229,18 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 #tab-clock #itoReceiveTable .t19-total > *,
 #tab-clock #t10PrevTable .t19-total > * {min-width:0;white-space:nowrap;}
 </style>
+<style id="hosshii-nov02-heading-layout">
+#shiftInputModal .shift-time-heading,
+#shiftInputModal #modalShiftListHeading{font-size:17px!important;font-weight:800!important;line-height:1.35;letter-spacing:-.035em}
+#shiftInputModal .shift-heading-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
+#shiftInputModal #modalPaidToggleHeaderSlot{display:flex;align-items:center}
+#shiftInputModal #modalCustomPresetContainer .time-field-wrap{min-width:0}
+@media(max-width:375px){
+ #shiftInputModal .shift-time-heading{font-size:16px!important;letter-spacing:-.065em}
+ #shiftInputModal .shift-heading-actions{gap:4px}
+ #shiftInputModal .shift-heading-actions button{padding-left:9px!important;padding-right:9px!important}
+}
+</style>
 </head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
@@ -1358,7 +1370,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       <div id="shiftInputScrollArea" class="space-y-3 overflow-y-auto pr-1 flex-1 no-scrollbar" onscroll="updateShiftScrollHint()">
         
         
-        <div class="space-y-2 border-t border-stone-100 pt-2"><div class="flex items-center justify-between"><span class="shift-section-title">【勤務時間を登録】</span><button type="button" onclick="registerNewPresetAndRegister()" id="registerShiftButton" class="px-4 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold">登録</button></div><div id="modalCustomPresetContainer" class="space-y-2"></div><p class="text-xs font-medium text-stone-600">※有給の場合は「有給」を選択してから登録してね。</p><div id="hosshiiShiftWageWarning" class="t13-wage-notice" hidden>⚠️ 時給が未設定の時間帯があります。<br>設定画面で確認してね♡ <button type="button" onclick="hosshiiOpenWageSettings()">［設定画面］</button></div></div>
+        <div class="space-y-2 border-t border-stone-100 pt-2"><div class="flex items-center justify-between"><span class="shift-section-title shift-time-heading">【勤務時間を登録】</span><div class="shift-heading-actions"><span id="modalPaidToggleHeaderSlot"></span><button type="button" onclick="registerNewPresetAndRegister()" id="registerShiftButton" class="px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold">登録</button></div></div><div id="modalCustomPresetContainer" class="space-y-2"></div><p class="text-xs font-medium text-stone-600">※有給の場合は「有給」を選択してから登録してね。</p><div id="hosshiiShiftWageWarning" class="t13-wage-notice" hidden>⚠️ 時給が未設定の時間帯があります。<br>設定画面で確認してね♡ <button type="button" onclick="hosshiiOpenWageSettings()">［設定画面］</button></div></div>
         <div class="space-y-1.5 border-t border-stone-100 pt-2"><span id="modalShiftListHeading" class="shift-section-title">【シフト一覧】</span><div id="modalSelectedDateSummaryContent" class="space-y-2 pt-1"></div></div>
         <section class="shift-preset-section space-y-2 border-t border-stone-100 pt-2">
           <div class="flex items-center justify-between gap-2"><span class="shift-section-title preset-inline-heading">【ワンタッチ登録しましょ～♡】</span><button type="button" onclick="openPresetRegisterModal()" class="px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0">＋登録</button></div>
@@ -3175,9 +3187,12 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             <input type="text" readonly inputmode="none" step="60" onclick="triggerTimePicker(this.id)" autocomplete="off" id="new_preset_end" placeholder="00:00" value="${newPresetForm.end}" onchange="updateNewPresetForm()" class="wage-time clock-time w-full px-1.5 py-1.5 pr-7 border rounded-lg border-stone-200 bg-stone-50 font-bold text-center text-sm"><button type="button" aria-label="終了時間を選択" onclick="triggerTimePicker('new_preset_end')" class="time-clock-button absolute right-1 top-1/2 -translate-y-1/2 text-stone-500 text-xs w-5 h-6 flex items-center justify-center rounded-md bg-white/90">🕒</button>
           </div>
           <button type="button" onclick="openBreakSelectModal()" class="px-1.5 py-2 bg-stone-100 hover:bg-stone-200 border border-stone-200 rounded-lg font-bold text-xs text-stone-700 transition whitespace-nowrap">☕<span id="modalBreakDisplayVal">${breakMins}分</span></button>
-          <button type="button" id="modalNewPaidToggle" onclick="setModalShiftType(!isPaidLeaveMode)" aria-pressed="false" class="shrink-0 px-2 py-2 rounded-lg border border-stone-200 bg-stone-100 text-stone-700 font-bold text-xs whitespace-nowrap">有給</button>
+          <button type="button" id="modalNewPaidToggle" onclick="setModalShiftType(!isPaidLeaveMode)" aria-pressed="false" class="shrink-0 px-3 py-1.5 rounded-lg border border-stone-200 bg-stone-100 text-stone-700 font-bold text-sm whitespace-nowrap">有給</button>
         </div>
       `;
+      const paidSlot = document.getElementById("modalPaidToggleHeaderSlot");
+      const paidButton = document.getElementById("modalNewPaidToggle");
+      if (paidSlot && paidButton) paidSlot.appendChild(paidButton);
       setModalShiftTypeUIOnly(isPaidLeaveMode);
       hosshiiUpdateShiftWageWarning();
     }
