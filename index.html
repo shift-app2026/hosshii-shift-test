@@ -5306,6 +5306,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   const start=document.getElementById('lineAuthStart');
   const retry=document.getElementById('lineAuthRetry');
   let idToken=null;
+  let statusBusy=false;
   function showError(t){message.textContent=t;consent.hidden=true;retry.hidden=false;}
   function hideGate(){gate.hidden=true;}
   function consentView(){message.classList.add('consent-heading');message.textContent='「初回利用のご案内」';consent.hidden=false;retry.hidden=true;}
@@ -5502,12 +5503,21 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     return null;
   }
   async function callStatus(accept){
+    // Always read the current LIFF token, including after consent is displayed.
+    const freshToken=window.liff?.getIDToken?.();
+    if(!freshToken)throw Error('LINEの認証情報を取得できません。②のLINEテスト用リンクから開き直してください。');
+    idToken=freshToken;
     const r=await fetch(STATUS_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({idToken,...(accept?{consentAccepted:true,termsVersion:'2026-10-29',privacyVersion:'2026-10-29'}: {})})});
     let data;try{data=await r.json();}catch(_){throw Error('サーバーの応答を読み取れませんでした（HTTP '+r.status+'）。');}
-    if(!r.ok)throw Error('接続に失敗しました（HTTP '+r.status+'：'+String(data.error||'確認できません')+'）。');
+    if(!r.ok){
+      if(r.status===401)throw Error('LINE認証がサーバーで拒否されました（401）。②のLINEテスト用リンクから開き直してください。繰り返す場合はサーバー側のLINEトークン検証を確認する必要があります。');
+      throw Error('接続に失敗しました（HTTP '+r.status+'：'+String(data.error||'確認できません')+'）。');
+    }
     return data;
   }
   async function check(accept){
+    if(statusBusy)return;
+    statusBusy=true;
     message.textContent=accept?'同意内容を保存しています…':'LINEの利用状況を確認中';
     consent.hidden=true;retry.hidden=true;
     try{
@@ -5519,6 +5529,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       showError('サーバーからの利用状態を確認できませんでした。接続仕様を確認してください。');
       console.info('LINE status response keys:',Object.keys(data||{}));
     }catch(e){showError('LINE・無料体験の確認ができません。\n'+e.message);}
+    finally{statusBusy=false;}
   }
   async function initialize(){
     consent.hidden=true;retry.hidden=true;
