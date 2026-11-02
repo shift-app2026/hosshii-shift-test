@@ -1438,7 +1438,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 <circle cx="150" cy="150" r="120.5" fill="none" stroke="#8f283d" stroke-opacity=".48" stroke-width="1.3"/>
 <circle id="goalProgressCircle" visibility="hidden" cx="150" cy="150" r="131" pathLength="100" fill="none" stroke="url(#t22Champagne)" stroke-width="23" stroke-linecap="butt" stroke-dasharray="0 100" transform="rotate(-90 150 150)"/>
 <g id="test27Ticks" aria-hidden="true"><line x1="150.00" y1="23.50" x2="150.00" y2="14.50" stroke="#ffe2a1" stroke-width="2.8" stroke-linecap="round"/><polygon points="242.63,52.87 247.13,57.37 242.63,61.87 238.13,57.37" fill="#ffe5aa" stroke="#c9954e" stroke-width=".7"/><line x1="276.50" y1="150.00" x2="285.50" y2="150.00" stroke="#ffe2a1" stroke-width="2.8" stroke-linecap="round"/><polygon points="242.63,238.13 247.13,242.63 242.63,247.13 238.13,242.63" fill="#ffe5aa" stroke="#c9954e" stroke-width=".7"/><line x1="150.00" y1="276.50" x2="150.00" y2="285.50" stroke="#ffe2a1" stroke-width="2.8" stroke-linecap="round"/><polygon points="57.37,238.13 61.87,242.63 57.37,247.13 52.87,242.63" fill="#ffe5aa" stroke="#c9954e" stroke-width=".7"/><line x1="23.50" y1="150.00" x2="14.50" y2="150.00" stroke="#ffe2a1" stroke-width="2.8" stroke-linecap="round"/><polygon points="57.37,52.87 61.87,57.37 57.37,61.87 52.87,57.37" fill="#ffe5aa" stroke="#c9954e" stroke-width=".7"/></g>
-<g id="test7Marble" style="display:none" filter="url(#t15GlassShadow)"><circle r="10.7" fill="url(#t26PearlGold)" stroke="#fff6da" stroke-width="1.25"/><ellipse cx="-3" cy="-4" rx="3.8" ry="2.7" fill="#fff" opacity=".93"/><path d="M -7 2.2 Q 0 9 7 1.4" fill="none" stroke="#f6fcd5" stroke-opacity=".65" stroke-width="1"/></g>
+<svg id="test7Marble" x="138" y="7" width="24" height="24" viewBox="-12 -12 24 24" overflow="visible" style="display:none"><g filter="url(#t15GlassShadow)"><circle r="10.7" fill="url(#t26PearlGold)" stroke="#fff6da" stroke-width="1.25"/><ellipse cx="-3" cy="-4" rx="3.8" ry="2.7" fill="#fff" opacity=".93"/><path d="M -7 2.2 Q 0 9 7 1.4" fill="none" stroke="#f6fcd5" stroke-opacity=".65" stroke-width="1"/></g></svg>
 </svg>
               <div class="absolute inset-0 flex flex-col items-center justify-center text-center t10-center">
                 <span class="goal-label-text">今月のお給料見込額</span>
@@ -3477,7 +3477,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const angle = (-90 + value * 3.6) * Math.PI / 180;
         const x = 150 + 131 * Math.cos(angle);
         const y = 150 + 131 * Math.sin(angle);
-        marble.setAttribute('transform', `translate(${x.toFixed(3)} ${y.toFixed(3)})`);
+        // ネストしたSVGの座標を直接動かす。CSS transformとの競合で左上に飛ぶのを防止。
+        marble.setAttribute('x', (x - 12).toFixed(3));
+        marble.setAttribute('y', (y - 12).toFixed(3));
         test7MarblePercent = value;
       }
       function tick(now) {
@@ -4246,7 +4248,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (hosshiiCloudBackupBusy) return;
       if (storageWriteBlocked) { showStorageSafetyWarning(); return; }
       hosshiiCloudBackupBusy = true;
-      showToast('バックアップを保存しています…');
+      const backupButton = event?.currentTarget;
+      const oldButtonText = backupButton?.textContent;
+      if (backupButton) { backupButton.disabled = true; backupButton.textContent = '保存中…'; }
       try {
         if (window.hosshiiReadOnly !== true) syncSettingsFormToConfig(currentSettingsJobKey);
         const backupData = {
@@ -4260,7 +4264,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       } catch (err) {
         console.error('クラウドバックアップ保存エラー', err);
         showAlertModal('バックアップを保存できませんでした。\n' + (err.name === 'AbortError' ? '通信がタイムアウトしました。' : err.message));
-      } finally { hosshiiCloudBackupBusy = false; }
+      } finally {
+        hosshiiCloudBackupBusy = false;
+        if (backupButton) { backupButton.disabled = false; backupButton.textContent = oldButtonText; }
+      }
     }
     async function hosshiiCloudBackupLoad(event) {
       if (event) event.preventDefault();
@@ -4268,7 +4275,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (window.hosshiiReadOnly === true) { hosshiiBlockEdit(); return; }
       if (storageWriteBlocked) { showStorageSafetyWarning(); return; }
       hosshiiCloudBackupBusy = true;
-      showToast('保存済みバックアップを確認しています…');
+      const backupButton = event?.currentTarget;
+      const oldButtonText = backupButton?.textContent;
+      if (backupButton) { backupButton.disabled = true; backupButton.textContent = '確認中…'; }
       try {
         const data = await hosshiiBackupRequest('load');
         if (!data.backupData || typeof data.backupData !== 'object') throw new Error('保存データを読み取れませんでした。');
@@ -4277,7 +4286,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       } catch (err) {
         console.error('クラウドバックアップ復元エラー', err);
         showAlertModal('バックアップを読み込めませんでした。\n' + (err.name === 'AbortError' ? '通信がタイムアウトしました。' : err.message));
-      } finally { hosshiiCloudBackupBusy = false; }
+      } finally {
+        hosshiiCloudBackupBusy = false;
+        if (backupButton) { backupButton.disabled = false; backupButton.textContent = oldButtonText; }
+      }
     }
 
     // バックアップ: LINE内WebViewでダウンロード/Clipboard APIが無効な場合も
@@ -4538,7 +4550,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
               renderCalendar();
               renderStandaloneShiftList();
               initOverviewPage();
-              showToast('バックアップから読み込みました♡');
+              showAlertModal('バックアップから読み込みました♡');
             } catch (err) {
               shiftsData = oldShifts;
               configData = oldConfig;
