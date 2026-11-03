@@ -1299,6 +1299,41 @@ background:#881337!important;background-color:#881337!important;border-color:#88
  document.addEventListener('DOMContentLoaded',function(){['itoReceiveTable','t10PrevTable'].forEach(function(id){var e=document.getElementById(id);if(e)observer.observe(e,{childList:true,subtree:true})})});
 })();
 </script>
+
+<style id="hosshii-nov3-reviewed-hotfix">
+/* 今日: 一重枠と薄いイエロー背景 */
+#calendarDays .today-champagne-gold,
+#calendarDays .today-champagne-gold.calendar-selected-date {background:#fff8d9!important;border:2px solid #c8a36b!important;box-shadow:none!important;}
+#calendarDays .today-champagne-gold::after {content:none!important;display:none!important;}
+/* 他の選択日は白背景 */
+#calendarDays .calendar-selected-date:not(.today-champagne-gold) {background:#fff!important;border:2px solid #c8a36b!important;}
+/* 凡例は月見出しの直下に置くが、日付のタップを遮らない */
+#tab-calendar .calendar-pinned-legend {position:static!important;top:auto!important;z-index:auto!important;}
+/* 有給の◎を通常勤務の●に近いサイズへ */
+#calendarDays .hosshii-calendar-mark {font-size:12px!important;line-height:1!important;}
+/* 詳細の金額: 大きさを保ちつつ横幅を超えたときのみJSで圧縮 */
+#tab-clock .t19-total.hosshii-total-formula {width:100%!important;max-width:100%!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:2px!important;padding:2px 2px 6px!important;overflow:hidden!important;}
+#tab-clock .t19-total.hosshii-total-formula > strong {flex:0 0 auto!important;font-size:clamp(15px,4.2vw,18px)!important;}
+#tab-clock .hosshii-formula-expression {display:inline-flex!important;flex:0 1 auto!important;min-width:0!important;gap:1px!important;white-space:nowrap!important;transform-origin:left center!important;}
+#tab-clock .hosshii-formula-expression strong,#tab-clock .hosshii-formula-expression b {font-size:inherit!important;}
+/* 交通費・その他: ラベルと入力枠を近づける */
+#tab-settings .allowance-period-grid > div {grid-template-columns:3.15em minmax(0,1fr) 1em!important;column-gap:2px!important;}
+#tab-settings .allowance-period-grid > div:nth-child(2) {grid-template-columns:2.15em minmax(0,1fr) 1em!important;}
+#tab-settings .allowance-period-grid input {height:40px!important;}
+#tab-settings #set_allowanceMemo::placeholder {color:#aaa4a0!important;opacity:1!important;font-weight:400!important;}
+/* シフト一覧の文字 */
+#calendarTodaySummaryContent .selected-job-heading .job-label-pill {font-size:17px!important;}
+#calendarTodaySummaryContent .selected-register-button {font-size:16px!important;}
+#calendarTodaySummaryContent .selected-shift-type {font-size:17px!important;}
+/* 無料体験の終了日と準備中の案内 */
+#hosshiiTrialBanner {flex-wrap:wrap!important;row-gap:1px!important;}
+#hosshiiTrialBanner .hosshii-payment-preparing {display:block;flex-basis:100%;text-align:center;}
+/* モーダルのタップ領域 */
+#breakSelectModal:not(.hidden) {pointer-events:auto!important;z-index:150!important;}
+#breakSelectModal button {pointer-events:auto!important;touch-action:manipulation;min-height:43px;}
+#presetRegisterModal:not(.hidden) {pointer-events:auto!important;}
+#presetRegisterModal #registerPresetButton {pointer-events:auto!important;touch-action:manipulation;}
+</style>
 </head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
@@ -2109,6 +2144,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function closeShiftInputModal() {
+      document.getElementById('breakSelectModal')?.classList.add('hidden');
       const modal = document.getElementById('shiftInputModal');
       if (modal) modal.classList.add('hidden');
       refreshAll();
@@ -3328,6 +3364,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       document.getElementById('presetRegisterModal').classList.remove('hidden');
     }
     function closePresetRegisterModal() {
+      document.getElementById('breakSelectModal')?.classList.add('hidden');
       document.getElementById('presetRegisterModal').classList.add('hidden');
       renderModalPresetButtons();
     }
@@ -5447,17 +5484,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         first.textContent='無料お試し期間終了';
       }
       banner.append(first);
-      const buy=document.createElement('button');
-      buy.type='button';buy.id='hosshiiSubscribeButton';
-      buy.textContent='申込み';
-      buy.style.cssText='display:inline-flex;align-items:center;justify-content:center;margin:0;padding:5px 9px;background:#fce7ed;color:#881337;border:1px solid #f4c9d4;border-radius:7px;font-size:14px;font-weight:800;cursor:pointer;white-space:nowrap;flex:none;';
-      buy.addEventListener('click',function(){
-        // Squareの購入URLと購入済み照合APIが揃うまで課金画面に遷移させない。
-        const code=typeof data.applicationCode==='string'?data.applicationCode.trim():'';
-        if(code){showApplicationCode(code);}
-        else {window.alert('お申込み番号を取得できませんでした。アプリを開き直して確認してね♡');}
-      });
-      banner.append(buy);
+      const notice=document.createElement('span');
+      notice.textContent='※有料プランのお申込みは準備中です';
+      notice.className='hosshii-payment-preparing';
+      notice.style.cssText='font-size:11px;color:#77666b;font-weight:500;line-height:1.3;white-space:normal;';
+      banner.append(notice);
     }
     if(typeof window.updateItoStickyHeader==='function'){
       const active=document.querySelector('#appScroll > .tab-content:not(.hidden)');
@@ -6216,5 +6247,33 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 #tab-clock .t19-total.hosshii-total-formula{gap:3px!important;padding-left:0!important;padding-right:0!important}
 #tab-clock .hosshii-formula-expression{gap:2px!important}
 </style>
+
+<script id="hosshii-nov3-safe-total-fit">
+(function(){
+ function fit(){
+  document.querySelectorAll('.hosshii-total-formula').forEach(function(row){
+   var expr=row.querySelector('.hosshii-formula-expression');
+   var hours=row.querySelector(':scope > strong');
+   if(!expr||!hours||!row.clientWidth)return;
+   expr.style.setProperty('transform','none','important');
+   expr.style.marginRight='0';
+   expr.style.setProperty('font-size','18px','important');
+   var available=row.clientWidth-hours.getBoundingClientRect().width-5;
+   if(available<=0)return;
+   var full=expr.scrollWidth;
+   if(full>available){
+    var scale=Math.max(.65,available/full);
+    expr.style.setProperty('transform','scaleX('+scale+')','important');
+    expr.style.marginRight=(-full*(1-scale))+'px';
+   }
+  });
+ }
+ function schedule(){requestAnimationFrame(function(){requestAnimationFrame(fit)})}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule);else schedule();
+ window.addEventListener('resize',schedule);
+ var observer=new MutationObserver(schedule);
+ document.addEventListener('DOMContentLoaded',function(){['itoReceiveTable','t10PrevTable'].forEach(function(id){var el=document.getElementById(id);if(el)observer.observe(el,{childList:true,subtree:true})})});
+})();
+</script>
 </body>
 </html>
