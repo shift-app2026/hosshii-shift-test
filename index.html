@@ -1609,7 +1609,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         <div class="bg-white border border-stone-100 rounded-3xl p-4 shadow-sm space-y-3">
           <div class="text-sm sm:text-base font-bold text-stone-900 border-b border-stone-200 pb-2 flex items-center justify-between tracking-wide">
-            <span>📌 今日のシフト (<span id="calendarTodayDateLabel"></span>)</span>
+            <span>📌 選択した日のシフト (<span id="calendarTodayDateLabel"></span>)</span>
           </div>
           <div id="calendarTodaySummaryContent" class="space-y-2 text-sm sm:text-base text-stone-700">
             <span class="text-stone-400">予定なし</span>
@@ -3094,7 +3094,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       document.getElementById(`set_reg_btn_${i}`)?.classList.remove("unsaved-registration");
       document.getElementById(`set_reg_btn_${i}`)?.classList.add("registration-saved");
       initOverviewPage();
-      showToast("時給設定を登録しました");
+      // 設定保存時の完了ポップは表示しない。
     }
 
     function loadSettingsToUIForTab(jk) {
@@ -4024,7 +4024,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     function selectCalendarDate(key) {
       calSelectedDateStr = key;
       renderCalendar();
-      openShiftInputModal(key, true);
+      renderCalendarTodayTomorrowSummary();
     }
 
     function renderCalendarTodayTomorrowSummary() {
@@ -4037,8 +4037,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
       const set = (id, html, isHtml) => { const el = document.getElementById(id); if (el) el[isHtml ? 'innerHTML' : 'innerText'] = html; };
 
-      set('calendarTodayDateLabel', `${today.getMonth()+1}/${today.getDate()}`);
-      set('calendarTodaySummaryContent', buildDaySummaryHtml(todayStr, today), true);
+      const selected = calSelectedDateStr || todayStr;
+      const [yy,mm,dd] = selected.split('-').map(Number);
+      const selectedDate = new Date(yy,mm-1,dd);
+      set('calendarTodayDateLabel', `${mm}/${dd}`);
+      set('calendarTodaySummaryContent', buildDaySummaryHtml(selected, selectedDate) + `<button type="button" onclick="openShiftInputModal(calSelectedDateStr || formatDateKey(new Date()), true)" class="mt-3 w-full rounded-xl bg-rose-900 text-white font-bold py-2.5">＋ シフトを登録する</button>`, true);
     }
 
     function buildDaySummaryHtml(dateStr, dateObj) {
@@ -4077,7 +4080,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         });
       });
 
-      return hasShift ? html : `<span class="text-stone-400 font-bold">予定なし</span>`;
+      return hasShift ? html : `<span class="text-stone-400 font-bold">シフトは登録されていません</span>`;
     }
 
     function changeListMonth(delta) {
@@ -4135,10 +4138,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             if (jobShift.start && jobShift.end) {
               const title = `${jName} ${jobShift.start}〜${jobShift.end}${jobShift.isPaidLeave ? ' 有給休暇' : ''}`;
               // 予定表の日付内はバイト先名を省き、色付き●と勤務時間だけを表示して時間幅を確保
-              lineItems.push({ order: timeStrToMins(jobShift.start), html: lineHtml(`${getJobLabelHtml(jk, "standalone-job-label", true)}<span class="job-time">${jobShift.start}〜${jobShift.end}${jobShift.isPaidLeave ? ' ◎' : ''}</span>`, generateShiftGoogleCalendarUrl(title, dateStr, jobShift.start, jobShift.end)) });
+              lineItems.push({ order: timeStrToMins(jobShift.start), html: lineHtml(`${(jobShift.isPaidLeave ? `<span class="standalone-job-label" style="color:${getJobPalette(jk).dot};font-weight:900">◎</span>` : getJobLabelHtml(jk, 'standalone-job-label', true))}<span class="job-time">${jobShift.start}〜${jobShift.end}</span>`, generateShiftGoogleCalendarUrl(title, dateStr, jobShift.start, jobShift.end)) });
             } else if (jobShift.isPaidLeave) {
               const title = `${jName} 有給休暇`;
-              lineItems.push({ order: 9000, html: lineHtml(`${getJobLabelHtml(jk, "standalone-job-label", true)}<span>有給休暇</span>`, generateAllDayGoogleCalendarUrl(title, dateStr)) });
+              lineItems.push({ order: 9000, html: lineHtml(`<span class="standalone-job-label" style="color:${getJobPalette(jk).dot};font-weight:900">◎</span><span class="job-time">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span>`, generateAllDayGoogleCalendarUrl(title, dateStr)) });
             }
           });
         });
@@ -4268,7 +4271,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (hosshiiBlockEdit()) return false;
       syncSettingsFormToConfig(currentSettingsJobKey);
       if (!saveAllDataStorage()) return false;
-      showToast("設定を保存しました");
+      // 設定保存時の完了ポップは表示しない。
       ensureValidSelectedJob();
       renderSettingsJobTabs();
       renderCalendar();
@@ -6107,5 +6110,21 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 #tab-settings .hosshii-allowance-section-title{font-weight:800!important;}
 </style>
 
+<style id="hosshii-nov3-calendar-and-input-fixes">
+/* 合計欄は可能な限り大きな文字で、狭い端末だけ横方向を調整 */
+#tab-clock .t19-total.hosshii-total-formula{font-size:17px!important}
+#tab-clock .hosshii-formula-expression,#tab-clock .hosshii-formula-expression strong,#tab-clock .hosshii-formula-expression b{font-size:17px!important}
+/* 「1日」と金額入力欄の隙間だけ詰める */
+#tab-settings .allowance-period-grid>div:nth-child(2){grid-template-columns:2em minmax(0,1fr) 1em!important;column-gap:2px!important}
+#tab-settings #set_allowanceMemo::placeholder{color:#a8a29e!important;opacity:1!important;font-weight:400!important}
+</style>
+<script>
+(function(){
+// 未入力時は必ずプレースホルダーを見せる。保存済みの名称は消さない。
+function updateMemo(){var el=document.getElementById('set_allowanceMemo');if(el)el.placeholder='例：役職手当';}
+new MutationObserver(updateMemo).observe(document.body,{childList:true,subtree:true});
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',updateMemo);else updateMemo();
+})();
+</script>
 </body>
 </html>
