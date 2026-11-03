@@ -1364,7 +1364,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   <!-- シフト入力・編集専用モーダル -->
   <div id="shiftInputModal" class="fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 hidden">
     <div class="bg-white rounded-3xl p-5 w-full max-w-sm shadow-2xl border border-stone-200 space-y-3.5 max-h-[92vh] flex flex-col overflow-hidden">
-      <div class="flex justify-between items-center gap-2 border-b border-stone-200 pb-2 shrink-0"><span class="font-bold text-stone-900">📅 シフト登録画面</span><button type="button" onclick="showShiftHelp()" class="px-2 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-xs">はじめに見てね♡</button></div><div class="shift-date-nav shrink-0"><button onclick="shiftModalChangeDay(-1)">◀ 前日</button><h3 id="modalDateTitle">日付</h3><button onclick="shiftModalChangeDay(1)">翌日 ▶</button></div>
+      <div class="flex justify-between items-center gap-2 border-b border-stone-200 pb-2 shrink-0"><span class="font-bold text-stone-900"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.12em;flex-shrink:0" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></svg> シフト登録画面</span><button type="button" onclick="showShiftHelp()" class="px-2 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-xs">はじめに見てね♡</button></div><div class="shift-date-nav shrink-0"><button onclick="shiftModalChangeDay(-1)">◀ 前日</button><h3 id="modalDateTitle">日付</h3><button onclick="shiftModalChangeDay(1)">翌日 ▶</button></div>
 
       <div class="ito-modal-job-fixed shrink-0"><div class="ito-modal-job-row"><span class="shift-section-title">【バイト先選択】</span><div id="modalJobSelectContainer" class="min-w-0"></div></div></div>
       <div id="shiftInputScrollArea" class="space-y-3 overflow-y-auto pr-1 flex-1 no-scrollbar" onscroll="updateShiftScrollHint()">
@@ -1579,7 +1579,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         <div class="bg-white p-3.5 rounded-2xl border border-stone-100 space-y-2.5 shadow-sm">
           <div class="text-xs sm:text-sm font-bold text-stone-700 border-b border-stone-100 pb-2 flex flex-col items-start tracking-wide leading-relaxed pl-1 space-y-1">
-            <span class="text-xs text-stone-700 font-bold">📅 タップするとGoogleカレンダーに登録されます</span>
+            <span class="text-xs text-stone-700 font-bold"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.12em;flex-shrink:0" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></svg> タップするとGoogleカレンダーに登録されます</span>
             <span class="t13 text-rose-900 font-bold">日付をタップすると、シフトを修正できます♡</span>
             <div id="standaloneJobLegend" class="flex flex-wrap items-center gap-2.5 pt-1.5 pb-0.5 text-xs font-bold text-stone-700"></div>
           </div>
@@ -4065,7 +4065,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const lineHtml = (label, url) => `
           <div class="standalone-shift-line flex items-center justify-between gap-2 text-sm sm:text-base py-1">
             <span class="font-bold text-stone-800 min-w-0 flex items-center gap-2">${label}</span>
-            <a href="${url.replace(/&/g, '&amp;')}" target="_blank" rel="noopener" onclick="event.stopPropagation();" class="text-xl hover:scale-110 transition shrink-0" title="Googleカレンダーに登録">📅</a>
+            <a href="${url.replace(/&/g, '&amp;')}" target="_blank" rel="noopener" onclick="event.stopPropagation();" class="text-xl hover:scale-110 transition shrink-0" title="Googleカレンダーに登録"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.12em;flex-shrink:0" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></svg></a>
           </div>`;
 
         activeKeys.forEach(jk => {
