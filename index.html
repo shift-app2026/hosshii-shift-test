@@ -1273,32 +1273,20 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 #tab-clock .hosshii-formula-expression strong,#tab-clock .hosshii-formula-expression b {font-size:inherit!important;}
 </style>
 
-<script id="hosshii-20261103-additional-fit-fix">
-(function(){
- function fit(){
-  document.querySelectorAll('.hosshii-total-formula').forEach(function(row){
-   var expr=row.querySelector('.hosshii-formula-expression');
-   var hours=row.querySelector(':scope > strong');
-   if(!expr||!hours)return;
-   expr.style.fontSize='16px';expr.style.transform='none';expr.style.marginRight='0';
-   var available=row.clientWidth-hours.getBoundingClientRect().width-7;
-   if(available<=0)return;
-   var full=expr.scrollWidth;
-   if(full>available){
-    var scale=Math.max(.55,available/full);
-    expr.style.transform='scaleX('+scale+')';
-    expr.style.marginRight=(-(full*(1-scale)))+'px';
-   }
-  });
- }
+<script id="hosshii-20261103-additional-fit-fix">(function(){
+ function fit(){document.querySelectorAll('.hosshii-total-formula').forEach(function(row){
+ var expr=row.querySelector('.hosshii-formula-expression'),hours=row.querySelector(':scope > strong');if(!expr||!hours)return;
+ expr.style.transform='none';expr.style.width='max-content';expr.style.flex='0 0 auto';expr.style.fontSize='16px';expr.style.marginRight='0';
+ var available=row.clientWidth-hours.getBoundingClientRect().width-9;
+ if(available<20)return;
+ var full=expr.scrollWidth;
+ if(full>available){var scale=Math.max(.35,available/full);expr.style.transformOrigin='left center';expr.style.transform='scaleX('+scale+')';expr.style.marginRight=(-(full*(1-scale)))+'px';}
+ });}
  window.hosshiiFitTotals=fit;
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){requestAnimationFrame(fit)});
- else requestAnimationFrame(fit);
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(fit,100)});else setTimeout(fit,100);
+ new MutationObserver(function(){requestAnimationFrame(fit)}).observe(document.body,{childList:true,subtree:true});
  window.addEventListener('resize',fit);
- var observer=new MutationObserver(function(){requestAnimationFrame(fit)});
- document.addEventListener('DOMContentLoaded',function(){['itoReceiveTable','t10PrevTable'].forEach(function(id){var e=document.getElementById(id);if(e)observer.observe(e,{childList:true,subtree:true})})});
-})();
-</script>
+ })();</script>
 
 <style id="hosshii-nov3-reviewed-hotfix">
 /* 今日: 一重枠と薄いイエロー背景 */
@@ -1334,7 +1322,27 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 #presetRegisterModal:not(.hidden) {pointer-events:auto!important;}
 #presetRegisterModal #registerPresetButton {pointer-events:auto!important;touch-action:manipulation;}
 </style>
-</head>
+<style id="hosshii-20261103-targeted-fixes">
+/* trial banner order */
+.hosshii-payment-preparing{order:2!important;font-size:11px!important;display:block!important;width:100%!important;text-align:center!important}
+/* today's day - yellow, single border; selected other days remain white */
+#calendarDays .today-champagne-gold,#calendarDays .today-champagne-gold.calendar-selected-date{background:#fff4c7!important;background-image:none!important;border:2px solid #d0a34f!important;box-shadow:none!important;outline:0!important}
+#calendarDays .today-champagne-gold:before,#calendarDays .today-champagne-gold:after{content:none!important;display:none!important}
+/* selected-day heading */
+#calendarTodaySummaryContent .selected-job-heading .job-label-pill{font-size:17px!important}
+#calendarTodaySummaryContent .selected-shift-row{font-size:17px!important}
+/* settings monthly/daily labels */
+#tab-settings .ito-settings-allowance-row{column-gap:4px!important}
+#tab-settings #set_allowanceMemo::placeholder{color:#a8a29e!important;font-weight:400!important;opacity:1!important}
+/* modal priority and click safety */
+#breakSelectModal:not(.hidden){z-index:9999!important;pointer-events:auto!important}
+#presetRegisterModal:not(.hidden){z-index:9000!important;pointer-events:auto!important}
+#breakSelectModal button,#presetRegisterModal button{pointer-events:auto!important;touch-action:manipulation!important}
+/* avoid sum clipping: leave hours separate and shrink only arithmetic */
+#tab-clock .hosshii-total-formula{display:flex!important;min-width:0!important;max-width:100%!important;overflow:hidden!important;gap:5px!important;padding-left:0!important;padding-right:0!important}
+#tab-clock .hosshii-total-formula>strong{flex:0 0 auto!important;font-size:16px!important}
+#tab-clock .hosshii-formula-expression{min-width:0!important;flex:0 1 auto!important;white-space:nowrap!important;transform-origin:left center!important}
+</style></head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
   <div id="lineAuthCard">
@@ -6275,5 +6283,15 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
  document.addEventListener('DOMContentLoaded',function(){['itoReceiveTable','t10PrevTable'].forEach(function(id){var el=document.getElementById(id);if(el)observer.observe(el,{childList:true,subtree:true})})});
 })();
 </script>
-</body>
+<script id="hosshii-20261103-modal-safety">
+(function(){
+ function hideOrphanBreak(){var b=document.getElementById('breakSelectModal');var shift=document.getElementById('shiftInputModal');var preset=document.getElementById('presetRegisterModal');if(b&&shift&&preset&&shift.classList.contains('hidden')&&preset.classList.contains('hidden'))b.classList.add('hidden');}
+ document.addEventListener('click',function(e){
+  var open=e.target.closest('[onclick*="openPresetRegisterModal"],[onclick*="openBreakSelectModal"]');
+  if(open){var name=open.getAttribute('onclick')||'';if(name.includes('openPresetRegisterModal')){setTimeout(function(){var m=document.getElementById('presetRegisterModal');if(m)m.classList.remove('hidden')},0);} }
+  if(e.target.closest('[onclick*="closeShiftInputModal"],[onclick*="closePresetRegisterModal"]'))setTimeout(hideOrphanBreak,0);
+ },true);
+ window.addEventListener('pageshow',hideOrphanBreak);
+})();
+</script></body>
 </html>
