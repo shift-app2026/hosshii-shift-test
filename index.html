@@ -3899,7 +3899,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const mm = mins % 1440;
         return `${dt.getFullYear()}${gcalPad(dt.getMonth() + 1)}${gcalPad(dt.getDate())}T${gcalPad(Math.floor(mm / 60))}${gcalPad(mm % 60)}00`;
       };
-      return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${toIso(sM)}/${toIso(eM)}`;
+      return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${toIso(sM)}/${toIso(eM)}&ctz=Asia/Tokyo`;
     }
 
     function generateAllDayGoogleCalendarUrl(title, dateStr) {
@@ -3907,7 +3907,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const next = new Date(y, m - 1, d + 1);
       const s = `${y}${gcalPad(m)}${gcalPad(d)}`;
       const e = `${next.getFullYear()}${gcalPad(next.getMonth() + 1)}${gcalPad(next.getDate())}`;
-      return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${s}/${e}`;
+      return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${s}/${e}&ctz=Asia/Tokyo`;
     }
 
     const JOB_VISUALS = {
@@ -6249,7 +6249,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
  function hideOrphanBreak(){var b=document.getElementById('breakSelectModal');var shift=document.getElementById('shiftInputModal');var preset=document.getElementById('presetRegisterModal');if(b&&shift&&preset&&shift.classList.contains('hidden')&&preset.classList.contains('hidden'))b.classList.add('hidden');}
  document.addEventListener('click',function(e){
   var open=e.target.closest('[onclick*="openPresetRegisterModal"],[onclick*="openBreakSelectModal"]');
-  if(open){var name=open.getAttribute('onclick')||'';if(name.includes('openPresetRegisterModal')){setTimeout(function(){var m=document.getElementById('presetRegisterModal');if(m)m.classList.remove('hidden')},0);} }
+  // モーダルの表示は元の openPresetRegisterModal() に任せる。
   if(e.target.closest('[onclick*="closeShiftInputModal"],[onclick*="closePresetRegisterModal"]'))setTimeout(hideOrphanBreak,0);
  },true);
  window.addEventListener('pageshow',hideOrphanBreak);
@@ -6293,7 +6293,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
    const width=row.clientWidth-hours.getBoundingClientRect().width-9;
    if(width<=0)return;
    // Adjust the text size first, never squash characters horizontally.
-   for(let size=16;size>=11;size-=.5){
+   for(let size=16;size>=14;size-=.5){
     expr.style.setProperty('font-size',size+'px','important');
     if(expr.scrollWidth<=width+1)break;
    }
@@ -6304,6 +6304,35 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
  window.addEventListener('resize',schedule);
  const ob=new MutationObserver(schedule);
  document.addEventListener('DOMContentLoaded',()=>{['itoReceiveTable','t10PrevTable'].forEach(id=>{const el=document.getElementById(id);if(el)ob.observe(el,{childList:true,subtree:true})});schedule()});
+})();
+</script>
+
+<style id="hosshii-20261103-careful-final-adjustments">
+/* 交通費・その他：左右のラベル幅を揃え、４つの入力枠を同じ寸法にする */
+#tab-settings .allowance-period-grid {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;}
+#tab-settings .allowance-period-grid > div,
+#tab-settings .allowance-period-grid > div:nth-child(2) {display:grid!important;grid-template-columns:3.2em minmax(0,1fr) 1em!important;column-gap:2px!important;align-items:center!important;min-width:0!important;}
+#tab-settings .allowance-period-grid input {width:100%!important;height:40px!important;min-width:0!important;box-sizing:border-box!important;}
+/* ◎ は文字の外接寸法が大きいので光学的に少し縮小 */
+#calendarDays .hosshii-calendar-mark {font-size:12px!important;line-height:14px!important;}
+/* 合計の文字は小さくしすぎず、必要な場合は計算式を次の行へ */
+#tab-clock .t19-total.hosshii-total-formula {flex-wrap:wrap!important;overflow:visible!important;row-gap:2px!important;}
+#tab-clock .t19-total .hosshii-formula-expression {font-size:16px!important;max-width:100%!important;}
+</style>
+<script id="hosshii-20261103-google-calendar-liff-open">
+(function(){
+  // Googleカレンダーのみ対象。他のリンクやアプリ内の操作は変更しない。
+  document.addEventListener('click', function(event){
+    var anchor=event.target.closest && event.target.closest('a[href^="https://calendar.google.com/calendar/render"]');
+    if(!anchor)return;
+    if(window.liff && typeof liff.isInClient==='function' && liff.isInClient() && typeof liff.openWindow==='function'){
+      event.preventDefault();
+      event.stopPropagation();
+      try {liff.openWindow({url:anchor.href,external:false});}
+      catch(error){window.open(anchor.href,'_blank','noopener');}
+    }
+    // LINE外では既存の target=_blank を維持。
+  },true);
 })();
 </script>
 </body>
