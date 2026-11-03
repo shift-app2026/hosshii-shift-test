@@ -1581,12 +1581,12 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         <div class="hosshii-monthly-detail-card bg-gradient-to-br from-rose-50/60 via-rose-50/30 to-amber-50/40 text-stone-900 p-4 rounded-2xl border border-rose-100 shadow-[0_1px_2px_rgba(0,0,0,0.05)] space-y-2.5">
           <div class="text-sm font-bold text-rose-950 border-b border-rose-200/60 pb-2 flex justify-between items-center tracking-wide">
-            <span id="monthlyReceiveTitle">【円グラフ詳細】</span>
+            <span id="monthlyReceiveTitle">【今月・前月の内訳】</span>
           </div>
           <div id="itoReceiveTable" class="ito-receive-table" aria-label="今月の締め分の勤務時間とお給料見込額"></div>
           <div id="test5RingWarning" class="t13-wage-notice" hidden>⚠️ 時給が設定されていない時間帯があります。<br>シフト登録画面にお戻りください♡ <button type="button" onclick="hosshiiOpenMissingShift()">［登録画面］</button></div>
         </div>
-        <section class="t10-prev-card">
+        <section class="t10-prev-card" hidden aria-hidden="true">
           <div class="t10-prev-toggle t10-prev-static-title" aria-label="先月分の詳細">【先月分詳細】</div>
           <div id="t10PrevTable" class="ito-receive-table" aria-label="先月分の勤務時間とお給料見込額"></div>
         </section>
@@ -3732,40 +3732,45 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (arrow) arrow.textContent = opening ? '⌃' : '⌄';
     }
 
-    function t10PayTable(monthDate) {
+    // 今月と前月を同じ列で比較。集計期間は各バイト先の今月分を表示。
+    function hosshiiComparePayTable(monthDate) {
       const jobs = getActiveJobKeys();
-      const hm = mins => `${Math.floor(mins / 60)}h${mins % 60 ? `${mins % 60}m` : ""}`;
-      const md = d => `${d.getMonth()+1}/${d.getDate()}`;
-      const yen = n => `${n.toLocaleString('ja-JP')}円`;
-      let totalMins = 0, totalWage = 0, totalOther = 0, missing = false;
       if (!jobs.length) return '<p class="ito-compact-empty">バイト先が登録されていません</p>';
-      const rows = jobs.map(jk => {
-        const r = calcJobCalendarMonthPay(jk, monthDate);
-        totalMins += r.mins;
-        totalWage += r.wagePay;
-        totalOther += r.otherPay;
-        missing = missing || r.wageMissing;
-        const name = esc(getJobDisplayName(jk));
-        const dot = getJobPalette(jk).dot;
-        const wage = r.wageMissing ? '<span title="時給を設定してください" aria-label="時給未設定">⚠️</span>' : yen(r.wagePay);
-        return `<div class="t19-job-row"><div class="t19-job-meta"><div class="t19-job-name"><i style="background:${dot}"></i><strong>${name}</strong></div><span class="t19-job-period">集計期間 ${md(r.start)}～${md(r.end)}</span></div><div class="t19-column-head"><span>勤務時間</span><span>時給・有給分</span><span>交通費・手当</span></div><div class="t19-job-values"><span>${hm(r.mins)}</span><strong>${wage}</strong><strong>${yen(r.otherPay)}</strong></div></div>`;
+      const prevMonth = new Date(monthDate.getFullYear(), monthDate.getMonth() - 1, 1);
+      const hm = mins => `${Math.floor(mins / 60)}h${String(mins % 60).padStart(2, '0')}m`;
+      const md = d => `${d.getMonth() + 1}/${d.getDate()}`;
+      const yen = n => `${Math.round(n).toLocaleString('ja-JP')}円`;
+      const current = jobs.map(jk => calcJobCalendarMonthPay(jk, monthDate));
+      const previous = jobs.map(jk => calcJobCalendarMonthPay(jk, prevMonth));
+      const summary = rows => ({mins: rows.reduce((a,r)=>a+r.mins,0), wage:rows.reduce((a,r)=>a+r.wagePay,0), other:rows.reduce((a,r)=>a+r.otherPay,0), missing:rows.some(r=>r.wageMissing)});
+      const totalNow = summary(current), totalPrev = summary(previous);
+      const rowsHtml = (a,b) => `
+        <div class="hc-row"><span>勤務時間</span><span>${hm(a.mins)}</span><span>${hm(b.mins)}</span></div>
+        <div class="hc-row"><span>時給・有給分</span><span>${a.wageMissing?'⚠️':yen(a.wage)}</span><span>${b.wageMissing?'⚠️':yen(b.wage)}</span></div>
+        <div class="hc-row"><span>交通費・手当</span><span>${yen(a.other)}</span><span>${yen(b.other)}</span></div>`;
+      const heading = '<div class="hc-cols"><span></span><strong>今月</strong><strong>先月</strong></div>';
+      const totals = `<div class="hc-summary" aria-label="今月と先月の全バイト先の集計">${heading}${rowsHtml(totalNow,totalPrev)}</div>`;
+      const cards = jobs.map((jk,i)=>{
+        const a=current[i], b=previous[i];
+        const color=getJobPalette(jk).dot;
+        const name=esc(getJobDisplayName(jk));
+        const period=`${md(a.start)}～${md(a.end)}`;
+        return `<div class="hc-job-card"><div class="hc-job-title"><i class="hc-dot" style="background:${color}"></i><strong>${name}</strong><span>${period}</span></div>${heading}${rowsHtml({mins:a.mins,wage:a.wagePay,other:a.otherPay,wageMissing:a.wageMissing},{mins:b.mins,wage:b.wagePay,other:b.otherPay,wageMissing:b.wageMissing})}</div>`;
       }).join('');
-      return `<div class="t19-summary">${rows}<div class="t19-total-label" aria-hidden="true"></div><div class="t19-total hosshii-total-formula" aria-label="勤務時間とお給料見込額"><strong>${hm(totalMins)}</strong><span class="hosshii-formula-expression"><span class="hosshii-formula-first"><strong>${missing ? '⚠️' : yen(totalWage)}</strong><b>＋</b><strong>${yen(totalOther)}</strong></span><span class="hosshii-formula-last"><b>＝</b><strong class="hosshii-grand-total">${missing ? '⚠️' : yen(totalWage + totalOther)}</strong></span></span></div></div>`;
+      return `<div class="hc-comparison">${totals}${cards}</div>`;
     }
 
     function calculateMonthlyReceivePay() {
       const month = getPayViewMonthDate();
       const title = document.getElementById('monthlyReceiveTitle');
-      if (title) title.innerHTML = '【円グラフ詳細】';
+      if (title) title.textContent = '【今月・前月の内訳】';
       const current = document.getElementById('itoReceiveTable');
-      if (current) current.innerHTML = t10PayTable(month);
-      // 注意文は今月の表の下にだけ表示。
+      if (current) current.innerHTML = hosshiiComparePayTable(month);
       const currentMissing = getActiveJobKeys().some(jk => calcJobCalendarMonthPay(jk, month).wageMissing);
       const notice = document.getElementById('test5RingWarning');
       if (notice) notice.hidden = !currentMissing;
       const previous = document.getElementById('t10PrevTable');
-      if (previous) previous.innerHTML = t10PayTable(new Date(month.getFullYear(), month.getMonth()-1, 1));
-      if (window.hosshiiFitTotals) requestAnimationFrame(window.hosshiiFitTotals);
+      if (previous) previous.innerHTML = '';
     }
 
     function updateItoWallSelection() {
@@ -3941,6 +3946,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       return jk === 'job1' ? 'バイト名1' : (jk === 'job2' ? 'バイト名2' : 'バイト名3');
     }
 
+    function hosshiiShiftTypeMark(jk, isPaid) {
+      const color = getJobPalette(jk).dot;
+      return `<span class="hosshii-shift-mark" style="color:${color}" aria-label="${isPaid ? '有給休暇' : '通常勤務'}"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="${isPaid ? 'none' : 'currentColor'}" stroke="currentColor" stroke-width="${isPaid ? '1.8' : '0'}"/></svg></span>`;
+    }
+
     function getJobLabelHtml(jk, extraClass = '', iconOnly = false) {
       const visual = getJobVisual(jk);
       const palette = getJobPalette(jk);
@@ -4109,7 +4119,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const activeKeys = getActiveJobKeys();
       let html = '';
       let hasShift = false;
-      const registerButton = `<button type="button" onclick="openShiftInputModal(calSelectedDateStr || formatDateKey(new Date()), true)" class="selected-register-button">＋ シフトの変更＆登録</button>`;
+      const registerButton = `<button type="button" onclick="openShiftInputModal(calSelectedDateStr || formatDateKey(new Date()), true)" class="selected-register-button">＋シフト変更＆登録</button>`;
       activeKeys.forEach(jk => {
         const shifts = getDayShifts(dateStr, jk);
         const valid = shifts.filter(sh => sh && ((sh.start && sh.end) || (sh.isPaidLeave && ((Number(sh.hours) || Number(configData[jk]?.paidHours) || 0) > 0))));
@@ -4185,9 +4195,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             
             if (jobShift.start && jobShift.end) {
               // 予定表の日付内はバイト先名を省き、色付き●と勤務時間だけを表示して時間幅を確保
-              lineItems.push({ order: timeStrToMins(jobShift.start), html: lineHtml(`${(jobShift.isPaidLeave ? `<span class="standalone-job-label" style="color:${getJobPalette(jk).dot};font-weight:900">○</span>` : getJobLabelHtml(jk, 'standalone-job-label', true))}<span class="job-time">${jobShift.start}〜${jobShift.end}</span>`) });
+              lineItems.push({ order: timeStrToMins(jobShift.start), html: lineHtml(`${hosshiiShiftTypeMark(jk, !!jobShift.isPaidLeave)}<span class="job-time">${jobShift.start}〜${jobShift.end}</span>`) });
             } else if (jobShift.isPaidLeave) {
-              lineItems.push({ order: 9000, html: lineHtml(`<span class="standalone-job-label" style="color:${getJobPalette(jk).dot};font-weight:900">○</span><span class="job-time">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span>`) });
+              lineItems.push({ order: 9000, html: lineHtml(`${hosshiiShiftTypeMark(jk, true)}<span class="job-time">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span>`) });
             }
           });
         });
@@ -6355,6 +6365,30 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
   #tab-clock .t19-total.hosshii-total-formula .hosshii-formula-expression,
   #tab-clock .t19-total.hosshii-total-formula .hosshii-formula-expression * {font-size:15px!important;}
 }
+</style>
+
+<style id="hosshii-20261104-comparison-and-markers">
+#tab-clock .hc-comparison{display:flex;flex-direction:column;gap:8px}
+#tab-clock .hc-summary{padding:3px 5px 8px;border-bottom:1px solid #d7c5c7}
+#tab-clock .hc-job-card{border:1px solid #e7e2e1;border-radius:12px;padding:8px 9px}
+#tab-clock .hc-job-title{display:flex;align-items:center;justify-content:flex-start;gap:6px;margin:0 0 5px;min-width:0;font-size:13px}
+#tab-clock .hc-job-title strong{font-weight:750;white-space:nowrap}
+#tab-clock .hc-job-title>span{color:#78716c;font-size:11px;white-space:nowrap}
+#tab-clock .hc-dot{display:inline-block;width:10px;height:10px;flex:0 0 10px;border-radius:50%}
+#tab-clock .hc-cols,#tab-clock .hc-row{display:grid;grid-template-columns:minmax(0,34%) minmax(0,33%) minmax(0,33%);align-items:center;gap:0}
+#tab-clock .hc-cols{padding:2px 0 3px;font-size:12px}
+#tab-clock .hc-cols strong{text-align:center}
+#tab-clock .hc-row{border-top:1px solid #ece7e7;padding:5px 0;min-height:28px;font-size:clamp(11px,3vw,13px);line-height:1.35}
+#tab-clock .hc-row>span:first-child{font-size:clamp(10px,2.75vw,12px);white-space:nowrap}
+#tab-clock .hc-row>span:not(:first-child){text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums}
+#tab-settings #set_wagePaid{width:80px!important;max-width:80px!important;flex:0 0 80px!important}
+#tab-settings .hosshii-allowance-section-title{font-size:clamp(12px,3.4vw,15px)!important}
+#tab-settings .paid-sub{font-size:clamp(11px,3.15vw,14px)!important;margin-left:4px!important}
+.hosshii-shift-mark{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;flex:0 0 14px;margin-right:3px;vertical-align:middle}
+.hosshii-shift-mark svg{width:14px;height:14px;display:block}
+/* All work/leave markers share identical geometry. */
+#calendarDays .hosshii-svg-mark,#calendarDays .hosshii-svg-mark svg{width:14px!important;height:14px!important;min-width:14px!important}
+#calendarTodaySummaryContent .hosshii-work-dot,#calendarTodaySummaryContent .hosshii-work-dot svg{width:14px!important;height:14px!important;flex:0 0 14px!important}
 </style>
 </body>
 </html>
