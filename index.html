@@ -1273,20 +1273,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 #tab-clock .hosshii-formula-expression strong,#tab-clock .hosshii-formula-expression b {font-size:inherit!important;}
 </style>
 
-<script id="hosshii-20261103-additional-fit-fix">(function(){
- function fit(){document.querySelectorAll('.hosshii-total-formula').forEach(function(row){
- var expr=row.querySelector('.hosshii-formula-expression'),hours=row.querySelector(':scope > strong');if(!expr||!hours)return;
- expr.style.transform='none';expr.style.width='max-content';expr.style.flex='0 0 auto';expr.style.fontSize='16px';expr.style.marginRight='0';
- var available=row.clientWidth-hours.getBoundingClientRect().width-9;
- if(available<20)return;
- var full=expr.scrollWidth;
- if(full>available){var scale=Math.max(.35,available/full);expr.style.transformOrigin='left center';expr.style.transform='scaleX('+scale+')';expr.style.marginRight=(-(full*(1-scale)))+'px';}
- });}
- window.hosshiiFitTotals=fit;
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(fit,100)});else setTimeout(fit,100);
- new MutationObserver(function(){requestAnimationFrame(fit)}).observe(document.body,{childList:true,subtree:true});
- window.addEventListener('resize',fit);
- })();</script>
+
 
 <style id="hosshii-nov3-reviewed-hotfix">
 /* 今日: 一重枠と薄いイエロー背景 */
@@ -3387,7 +3374,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const start = document.getElementById('pr_start').value;
       const end = document.getElementById('pr_end').value;
       const breakMins = prBreakMins;
-      if (!start || !end) { showToast("開始と終了時間を入力してください"); return; }
+      if (!start || !end) { showToast("開始時間と終了時間を\n入力してください"); return; }
       if (start === end) { showToast("開始と終了が同じ時間だよ。変えてね♡"); return; }
       const job = configData[currentSelectedJobKey] || configData.job1;
       if (!job.presets) job.presets = [];
@@ -3404,7 +3391,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     function registerNewPresetAndRegister() {
       if (hosshiiBlockEdit()) return false;
       updateNewPresetForm();
-      if (!newPresetForm.start || !newPresetForm.end) { showToast("開始と終了時間を入力してください"); return; }
+      if (!newPresetForm.start || !newPresetForm.end) { showToast("開始時間と終了時間を\n入力してください"); return; }
       if (newPresetForm.start === newPresetForm.end) { showToast("開始と終了が同じ時間だよ。変えてね♡"); return; }
 
       if (!registerModalPresetTime(newPresetForm.start, newPresetForm.end, newPresetForm.breakMins)) { renderModalPresetButtons(); return; }
@@ -6256,33 +6243,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 #tab-clock .hosshii-formula-expression{gap:2px!important}
 </style>
 
-<script id="hosshii-nov3-safe-total-fit">
-(function(){
- function fit(){
-  document.querySelectorAll('.hosshii-total-formula').forEach(function(row){
-   var expr=row.querySelector('.hosshii-formula-expression');
-   var hours=row.querySelector(':scope > strong');
-   if(!expr||!hours||!row.clientWidth)return;
-   expr.style.setProperty('transform','none','important');
-   expr.style.marginRight='0';
-   expr.style.setProperty('font-size','18px','important');
-   var available=row.clientWidth-hours.getBoundingClientRect().width-5;
-   if(available<=0)return;
-   var full=expr.scrollWidth;
-   if(full>available){
-    var scale=Math.max(.65,available/full);
-    expr.style.setProperty('transform','scaleX('+scale+')','important');
-    expr.style.marginRight=(-full*(1-scale))+'px';
-   }
-  });
- }
- function schedule(){requestAnimationFrame(function(){requestAnimationFrame(fit)})}
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule);else schedule();
- window.addEventListener('resize',schedule);
- var observer=new MutationObserver(schedule);
- document.addEventListener('DOMContentLoaded',function(){['itoReceiveTable','t10PrevTable'].forEach(function(id){var el=document.getElementById(id);if(el)observer.observe(el,{childList:true,subtree:true})})});
-})();
-</script>
+
 <script id="hosshii-20261103-modal-safety">
 (function(){
  function hideOrphanBreak(){var b=document.getElementById('breakSelectModal');var shift=document.getElementById('shiftInputModal');var preset=document.getElementById('presetRegisterModal');if(b&&shift&&preset&&shift.classList.contains('hidden')&&preset.classList.contains('hidden'))b.classList.add('hidden');}
@@ -6293,5 +6254,57 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
  },true);
  window.addEventListener('pageshow',hideOrphanBreak);
 })();
-</script></body>
+</script>
+<style id="hosshii-20261103-verified-layout-patch">
+/* Today stays a single outline with an unobtrusive pale-yellow background. */
+#calendarDays .today-champagne-gold,
+#calendarDays .today-champagne-gold.calendar-selected-date {background-color:#fff3c1!important;background-image:none!important;border:2px solid #d2a85d!important;box-shadow:none!important;}
+#calendarDays .today-champagne-gold::before,#calendarDays .today-champagne-gold::after{content:none!important;display:none!important}
+/* Use actual circle geometry for both normal and paid markers. */
+#calendarDays .hosshii-calendar-mark {font-size:13px!important;width:14px!important;height:14px!important;flex:0 0 14px!important;line-height:14px!important;letter-spacing:0!important}
+/* Align day labels close to their inputs without changing the outside card size. */
+#tab-settings .allowance-period-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important}
+#tab-settings .allowance-period-grid>div,
+#tab-settings .allowance-period-grid>div:nth-child(2){display:grid!important;grid-template-columns:max-content minmax(0,1fr) max-content!important;gap:3px!important;align-items:center!important;min-width:0!important}
+#tab-settings .allowance-period-grid input{height:40px!important;min-width:0!important;width:100%!important}
+#tab-settings #set_allowanceMemo::placeholder{color:#a8a29e!important;opacity:1!important;font-weight:400!important}
+/* Larger selected-day heading without overflow. */
+#tab-calendar #calendarTodaySummaryContent .selected-shift-type{font-size:17px!important}
+#tab-calendar #calendarTodaySummaryContent .job-time{font-size:18px!important}
+#tab-calendar #calendarTodayDateLabel{font-size:17px!important}
+/* Keep hours and formula together, with a small, controlled gap. */
+#tab-clock .t19-total.hosshii-total-formula{display:flex!important;justify-content:flex-start!important;align-items:center!important;gap:clamp(4px,1.6vw,9px)!important;width:100%!important;max-width:100%!important;overflow:hidden!important;box-sizing:border-box!important;padding:4px 0 6px!important;letter-spacing:0!important}
+#tab-clock .t19-total.hosshii-total-formula>strong{flex:0 0 auto!important;min-width:0!important;font-size:16px!important;white-space:nowrap!important}
+#tab-clock .t19-total .hosshii-formula-expression{display:inline-flex!important;flex:0 1 auto!important;min-width:0!important;gap:1px!important;align-items:baseline!important;white-space:nowrap!important;font-size:16px!important;letter-spacing:-.025em!important;transform:none!important;margin:0!important}
+#tab-clock .t19-total .hosshii-formula-expression>*{font-size:inherit!important;white-space:nowrap!important;letter-spacing:inherit!important}
+/* Toast line breaks should be readable. */
+#toastMessage #toastText{white-space:pre-line!important;text-align:center!important;line-height:1.45!important}
+</style>
+<script id="hosshii-20261103-single-total-fitter">
+(function(){
+ let scheduled=false;
+ function fit(){scheduled=false;
+  document.querySelectorAll('#itoReceiveTable .hosshii-total-formula,#t10PrevTable .hosshii-total-formula').forEach(row=>{
+   const expr=row.querySelector('.hosshii-formula-expression'),hours=row.querySelector(':scope > strong');
+   if(!expr||!hours||!row.clientWidth)return;
+   expr.style.setProperty('font-size','16px','important');
+   expr.style.setProperty('transform','none','important');
+   expr.style.removeProperty('margin-right');
+   const width=row.clientWidth-hours.getBoundingClientRect().width-9;
+   if(width<=0)return;
+   // Adjust the text size first, never squash characters horizontally.
+   for(let size=16;size>=11;size-=.5){
+    expr.style.setProperty('font-size',size+'px','important');
+    if(expr.scrollWidth<=width+1)break;
+   }
+  });
+ }
+ function schedule(){if(scheduled)return;scheduled=true;requestAnimationFrame(()=>requestAnimationFrame(fit));}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule);else schedule();
+ window.addEventListener('resize',schedule);
+ const ob=new MutationObserver(schedule);
+ document.addEventListener('DOMContentLoaded',()=>{['itoReceiveTable','t10PrevTable'].forEach(id=>{const el=document.getElementById(id);if(el)ob.observe(el,{childList:true,subtree:true})});schedule()});
+})();
+</script>
+</body>
 </html>
