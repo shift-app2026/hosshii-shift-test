@@ -6391,38 +6391,24 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 #calendarTodaySummaryContent .hosshii-work-dot,#calendarTodaySummaryContent .hosshii-work-dot svg{width:14px!important;height:14px!important;flex:0 0 14px!important}
 </style>
 <style id="hosshii-comparison-typography-canonical-20261104">
-/* Single final typography definition: replaces conflicting readable/final-tune overrides. */
+/* 今月・前月の内訳：3行だけ14px・濃い黒・通常の太さに統一 */
 #tab-clock .hc-cols, #tab-clock .hc-cols strong {
   font-size:16px!important; line-height:1.3!important; color:#171717!important;
 }
-#tab-clock .hc-row, #tab-clock .hc-row > span {
-  font-size:15px!important; line-height:1.35!important; color:#171717!important;
-}
-#tab-clock .hc-row > span:first-child {
-  font-size:15px!important; color:#171717!important; white-space:nowrap;
+#tab-clock .hc-comparison .hc-row,
+#tab-clock .hc-comparison .hc-row > span {
+  font-size:14px!important;
+  color:#171717!important;
+  font-weight:400!important;
+  line-height:1.35!important;
 }
 #tab-clock .hc-job-title, #tab-clock .hc-job-title strong {
   font-size:17px!important; line-height:1.3!important; color:#171717!important;
 }
 #tab-clock .hc-job-title > span {font-size:14px!important;color:#44403c!important;}
 @media(max-width:359px){
-  #tab-clock .hc-row, #tab-clock .hc-row > span {font-size:13px!important;}
-  #tab-clock .hc-row > span:first-child {font-size:13px!important;}
   #tab-clock .hc-job-title, #tab-clock .hc-job-title strong {font-size:16px!important;}
   #tab-clock .hc-job-title > span {font-size:13px!important;}
-}
-</style>
-<style id="hosshii-20261104-only-three-rows-font-fix">
-/* Only the three detail rows (labels, hours and amounts). */
-#tab-clock .hc-comparison .hc-row,
-#tab-clock .hc-comparison .hc-row > span,
-#tab-clock .hc-summary .hc-row,
-#tab-clock .hc-summary .hc-row > span,
-#tab-clock .hc-job-card .hc-row,
-#tab-clock .hc-job-card .hc-row > span {
-  font-size:14px !important;
-  color:#171717 !important;
-  font-weight:400 !important;
 }
 </style>
 </body>
