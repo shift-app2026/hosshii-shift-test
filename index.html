@@ -6301,5 +6301,18 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 /* 有給◎だけ少し小さくして●と視覚的な大きさを合わせる。 */
 #calendarDays .hosshii-calendar-mark[aria-label="有給休暇"]{font-size:10px!important;font-weight:700!important;}
 </style>
+
+<style id="hosshii-20261103-final-visual-adjustments">
+/* Selected-day paid-leave mark: optical alignment with regular-work mark */
+#calendarTodaySummaryContent .selected-shift-type{font-size:15px!important;line-height:1.25!important;min-width:2em!important;}
+/* Compact daily/monthly labels, consistently sized inputs */
+#tab-settings .allowance-period-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;}
+#tab-settings .allowance-period-grid > div{grid-template-columns:2.25em minmax(0,1fr) 1em!important;column-gap:2px!important;}
+#tab-settings .allowance-period-grid > div > input{height:38px!important;width:100%!important;min-width:0!important;box-sizing:border-box!important;}
+/* Allow formula to wrap rather than shrinking to unreadable type */
+#tab-clock .t19-total.hosshii-total-formula{display:flex!important;flex-wrap:wrap!important;justify-content:flex-start!important;gap:4px 9px!important;}
+#tab-clock .t19-total .hosshii-formula-expression{font-size:16px!important;white-space:normal!important;flex-wrap:wrap!important;max-width:100%!important;transform:none!important;gap:2px!important;}
+#tab-clock .t19-total .hosshii-formula-expression>*{font-size:inherit!important;}
+</style>
 </body>
 </html>
