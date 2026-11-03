@@ -2341,7 +2341,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (!toast || !toastText) return;
       toast.classList.toggle('settings-save-toast', msg === '設定を保存しました');
       toast.classList.toggle('shift-register-toast', !document.getElementById('shiftInputModal')?.classList.contains('hidden') && /登録しました/.test(msg));
-      toast.classList.toggle('hosshii-one-line-toast', ['有給の時間を変更しました♡', '有給に変更しました♡', '通常勤務に変更しました♡'].includes(msg));
+      toast.classList.toggle('hosshii-one-line-toast', ['有給の時間を変更しました♡', '有給に変更しました♡', '通常勤務に変更しました♡', '有給を選択しました♡', '有給を解除しました♡'].includes(msg));
       toastText.innerText = msg;
       if (undoFn) { const ub = document.createElement('button'); ub.textContent = '元に戻す'; ub.className = 'ml-3 underline font-bold text-rose-200'; ub.onclick = () => { undoFn(); toast.classList.remove('opacity-100'); toast.classList.add('opacity-0', 'pointer-events-none'); }; toastText.appendChild(ub); }
 
@@ -3108,6 +3108,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     function setModalShiftType(isPaid) {
       if (hosshiiBlockEdit()) return false;
       setModalShiftTypeUIOnly(isPaid);
+      showToast(isPaidLeaveMode ? '有給を選択しました♡' : '有給を解除しました♡');
     }
     function toggleRegisteredPaidLeave(jk, idx) {
       if (hosshiiBlockEdit()) return false;
@@ -3195,12 +3196,13 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             <input type="text" readonly inputmode="none" step="60" onclick="triggerTimePicker(this.id)" autocomplete="off" id="new_preset_end" placeholder="00:00" value="${newPresetForm.end}" onchange="updateNewPresetForm()" class="wage-time clock-time w-full px-1.5 py-1.5 pr-7 border rounded-lg border-stone-200 bg-stone-50 font-bold text-center text-sm"><button type="button" aria-label="終了時間を選択" onclick="triggerTimePicker('new_preset_end')" class="time-clock-button absolute right-1 top-1/2 -translate-y-1/2 text-stone-500 text-xs w-5 h-6 flex items-center justify-center rounded-md bg-white/90">🕒</button>
           </div>
           <button type="button" onclick="openBreakSelectModal()" class="px-1.5 py-2 bg-stone-100 hover:bg-stone-200 border border-stone-200 rounded-lg font-bold text-xs text-stone-700 transition whitespace-nowrap">☕<span id="modalBreakDisplayVal">${breakMins}分</span></button>
-          <button type="button" id="modalNewPaidToggle" onclick="setModalShiftType(!isPaidLeaveMode)" aria-pressed="false" class="shrink-0 px-3 py-1.5 rounded-lg border border-stone-200 bg-stone-100 text-stone-700 font-bold text-sm whitespace-nowrap">有給</button>
+
         </div>
       `;
       const paidSlot = document.getElementById("modalPaidToggleHeaderSlot");
-      const paidButton = document.getElementById("modalNewPaidToggle");
-      if (paidSlot && paidButton) paidSlot.appendChild(paidButton);
+      if (paidSlot) {
+        paidSlot.innerHTML = '<button type="button" id="modalNewPaidToggle" onclick="setModalShiftType(!isPaidLeaveMode)" aria-pressed="false" class="shrink-0 px-3 py-1.5 rounded-lg border border-stone-200 bg-stone-100 text-stone-700 font-bold text-sm whitespace-nowrap">有給</button>';
+      }
       setModalShiftTypeUIOnly(isPaidLeaveMode);
       hosshiiUpdateShiftWageWarning();
     }
@@ -6026,6 +6028,13 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   padding-right:14px!important;
 }
 #toastMessage.hosshii-one-line-toast #toastText {white-space:nowrap!important;}
+</style>
+<style id="hosshii-20261103-paid-toggle-toast-position">
+/* 有給関連の通知だけ、日付ナビゲーションに重ならない位置へ。 */
+#toastMessage.hosshii-one-line-toast {
+  top: 29vh !important;
+  bottom: auto !important;
+}
 </style>
 </body>
 </html>
