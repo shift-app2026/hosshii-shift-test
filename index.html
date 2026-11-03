@@ -236,7 +236,17 @@
   #calendarDays > div { min-height:56px; }
   #calendarDays > div > span, #calendarDays > div > div > span { font-size:17px !important; }
   #calendarTodaySummaryContent { font-size:15px; line-height:1.5; }
-  #calendarTodaySummaryContent .job-time { font-size:15px; font-weight:800; }
+  #calendarTodaySummaryContent .job-time { font-size:18px; font-weight:800; }
+  #calendarTodaySummaryContent .selected-shift-type { font-size:16px; font-weight:800; min-width:2.5em; }
+  #calendarTodaySummaryContent .selected-shift-break { font-size:14px; font-weight:700; color:#57534e; }
+  #calendarDays .calendar-selected-date { box-shadow:0 0 0 2px #9f1239 inset; background:#fff6f8 !important; }
+  #calendarTodaySummaryContent .selected-shift-row { display:flex; flex-wrap:wrap; align-items:baseline; column-gap:10px; row-gap:2px; padding:3px 0; }
+  #calendarTodaySummaryContent .selected-job-group { padding:8px 0; border-bottom:1px solid #f1f0ee; }
+  #calendarTodaySummaryContent .selected-job-group:last-child { border-bottom:0; }
+  #calendarTodaySummaryContent .selected-job-heading { display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:space-between; margin-bottom:6px; }
+  #calendarTodaySummaryContent .selected-job-heading .job-label-pill { font-size:16px; }
+  #calendarTodaySummaryContent .selected-register-button { font-size:15px; font-weight:800; color:#881337; background:#fff7f8; border:1px solid #e6b6c5; border-radius:10px; padding:6px 9px; }
+
   .settings-job-card button { min-height:32px; }
   @media (max-width: 380px) {
     .wage-rate-row { gap:4px; }
@@ -3980,7 +3990,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         if (isToday) dayClass += "today-champagne-gold border-2";
         else dayClass += "bg-stone-50/70 border border-stone-200/70";
         dayClass += " cursor-pointer";
-        // 選択した日付の強調枠は付けない（今日の表示だけ残す）
+        // 選択した日を見分けられるようにする（今日の強調は維持）
+        if (dateStr === calSelectedDateStr) dayClass += " calendar-selected-date";
 
         let dayNumDisplay = isPayday 
           ? `<div class="flex items-center justify-center"><span class="text-base font-bold leading-tight">${d.getDate()}</span>${paydayHtml}</div>`
@@ -4041,46 +4052,31 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const [yy,mm,dd] = selected.split('-').map(Number);
       const selectedDate = new Date(yy,mm-1,dd);
       set('calendarTodayDateLabel', `${mm}/${dd}`);
-      set('calendarTodaySummaryContent', buildDaySummaryHtml(selected, selectedDate) + `<button type="button" onclick="openShiftInputModal(calSelectedDateStr || formatDateKey(new Date()), true)" class="mt-3 w-full rounded-xl bg-rose-900 text-white font-bold py-2.5">＋ シフトを登録する</button>`, true);
+      set('calendarTodaySummaryContent', buildDaySummaryHtml(selected, selectedDate), true);
     }
 
     function buildDaySummaryHtml(dateStr, dateObj) {
       const activeKeys = getActiveJobKeys();
       let html = '';
       let hasShift = false;
-
+      const registerButton = `<button type="button" onclick="openShiftInputModal(calSelectedDateStr || formatDateKey(new Date()), true)" class="selected-register-button">＋ シフトの変更＆登録</button>`;
       activeKeys.forEach(jk => {
-        const jobConf = configData[jk];
         const shifts = getDayShifts(dateStr, jk);
-
-        shifts.forEach(jobShift => {
-          if (!jobShift) return;
-          const hasValidShift = (jobShift.start && jobShift.end) || (jobShift.isPaidLeave && ((Number(jobShift.hours) || Number(configData[jk].paidHours) || 0) > 0));
-          if (!hasValidShift) return;
-
-          hasShift = true;
-          let timeDisplay = '';
-          let payVal = 0;
-          if (jobShift.isPaidLeave) {
-            timeDisplay = jobShift.start && jobShift.end ? `${jobShift.start}〜${jobShift.end} 有給休暇` : '有給休暇';
-            payVal = paidLeaveAmount(jobConf, jobShift);
-          } else if (jobShift.start && jobShift.end) {
-            const res = calculateJobShiftMinutesAndPay(jobShift, jobConf, dateObj);
-            const breakText = (Number(jobShift.breakMins) > 0) ? ' 休憩あり' : '';
-            timeDisplay = `${jobShift.start}〜${jobShift.end}${breakText}`;
-            payVal = res.totalPay;
-          }
-
-          html += `
-            <div class="py-2 flex justify-between items-center text-sm sm:text-base">
-              <span class="font-bold text-stone-800 flex items-center gap-2">${getJobLabelHtml(jk)}<span class="text-stone-700 font-bold job-time ml-1">${timeDisplay}</span></span>
-              <span class="font-bold text-rose-950">${formatCurrency(payVal)}</span>
-            </div>
-          `;
-        });
+        const valid = shifts.filter(sh => sh && ((sh.start && sh.end) || (sh.isPaidLeave && ((Number(sh.hours) || Number(configData[jk]?.paidHours) || 0) > 0))));
+        if (!valid.length) return;
+        hasShift = true;
+        const palette = getJobPalette(jk);
+        const lines = valid.map(sh => {
+          const isPaid = !!sh.isPaidLeave;
+          const type = isPaid ? '有給' : '通常';
+          const times = sh.start && sh.end ? `${esc(sh.start)}～${esc(sh.end)}` : '時間未設定';
+          const breakMins = Number(sh.breakMins) || 0;
+          const breakHtml = breakMins > 0 ? `<span class="selected-shift-break">休憩${breakMins}分</span>` : '';
+          return `<div class="selected-shift-row"><span class="selected-shift-type">${type}</span><span class="job-time">${times}</span>${breakHtml}</div>`;
+        }).join('');
+        html += `<div class="selected-job-group"><div class="selected-job-heading">${getJobLabelHtml(jk)}${registerButton}</div>${lines}</div>`;
       });
-
-      return hasShift ? html : `<span class="text-stone-400 font-bold">シフトは登録されていません</span>`;
+      return hasShift ? html : `<div class="text-stone-500 font-bold py-2">シフトは登録されていません</div>${registerButton}`;
     }
 
     function changeListMonth(delta) {
