@@ -2341,6 +2341,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (!toast || !toastText) return;
       toast.classList.toggle('settings-save-toast', msg === '設定を保存しました');
       toast.classList.toggle('shift-register-toast', !document.getElementById('shiftInputModal')?.classList.contains('hidden') && /登録しました/.test(msg));
+      toast.classList.toggle('hosshii-one-line-toast', ['有給の時間を変更しました♡', '有給に変更しました♡', '通常勤務に変更しました♡'].includes(msg));
       toastText.innerText = msg;
       if (undoFn) { const ub = document.createElement('button'); ub.textContent = '元に戻す'; ub.className = 'ml-3 underline font-bold text-rose-200'; ub.onclick = () => { undoFn(); toast.classList.remove('opacity-100'); toast.classList.add('opacity-0', 'pointer-events-none'); }; toastText.appendChild(ub); }
 
@@ -6011,6 +6012,20 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   color:#4b2331!important;
   margin:0 0 6px!important;
 }
+</style>
+
+<style id="hosshii-20261103-one-line-toast">
+/* 有給関連の3つの通知だけを一行表示にする。他の通知は従来どおり。 */
+#toastMessage.hosshii-one-line-toast {
+  width:max-content!important;
+  max-width:calc(100vw - 16px)!important;
+  white-space:nowrap!important;
+  overflow-wrap:normal!important;
+  word-break:keep-all!important;
+  padding-left:14px!important;
+  padding-right:14px!important;
+}
+#toastMessage.hosshii-one-line-toast #toastText {white-space:nowrap!important;}
 </style>
 </body>
 </html>
