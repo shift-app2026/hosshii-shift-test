@@ -1241,7 +1241,13 @@ background:#881337!important;background-color:#881337!important;border-color:#88
  #shiftInputModal .shift-heading-actions button{padding-left:9px!important;padding-right:9px!important}
 }
 </style>
-</head>
+<style id="hosshii-readonly-view-css">
+#shiftInputModal.hosshii-view-only #shiftInputScrollArea button,
+#shiftInputModal.hosshii-view-only #shiftInputScrollArea input,
+#shiftInputModal.hosshii-view-only #shiftInputScrollArea select,
+#shiftInputModal.hosshii-view-only #shiftInputScrollArea textarea {pointer-events:none!important;opacity:.5!important;}
+#shiftInputModal.hosshii-view-only #shiftInputScrollArea .time-field-wrap {pointer-events:none!important;}
+</style></head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
   <div id="lineAuthCard">
@@ -2026,7 +2032,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     let shiftOpenedFromCalendar = false;
     function openShiftInputModal(dateStr, fromCalendar = false) {
-      if (window.hosshiiReadOnly === true) return; // 期限切れ中は閲覧画面から入力画面へ遷移しない
+      // 期限切れ中も登録済みシフトを閲覧できるよう画面を開く。
       shiftOpenedFromCalendar = fromCalendar;
       selectedCalendarDateStr = dateStr;
       editingShift = null;
@@ -2046,6 +2052,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
       const modal = document.getElementById('shiftInputModal');
       if (modal) modal.classList.remove('hidden');
+      if (typeof hosshiiSyncExpiredUI === 'function') hosshiiSyncExpiredUI();
       requestAnimationFrame(updateShiftScrollHint);
     }
 
@@ -3969,7 +3976,6 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function selectCalendarDate(key) {
-      if (window.hosshiiReadOnly === true) return;
       calSelectedDateStr = key;
       renderCalendar();
       openShiftInputModal(key, true);
@@ -4630,7 +4636,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 <div id="incomeWallHelp" class="fixed inset-0 bg-stone-900/60 z-[90] hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" onclick="if(event.target===this)this.classList.add('hidden')"><div class="bg-white rounded-2xl p-4 max-w-sm w-full text-sm text-stone-800 space-y-3"><h3 class="font-bold text-rose-900 text-lg">🌷 年収の壁について</h3><p>お給料の見込みは税金や社会保険料が引かれる前の金額で、実際の手取りとは異なります。端数の処理や締め日などは勤務先によって異なります。</p><p>「年収の壁」に関する制度や基準額は変わることがあります。扶養・税金・社会保険の詳しい条件は、勤務先や公的機関にご確認ください。</p><button type="button" onclick="document.getElementById('incomeWallHelp').classList.add('hidden')" class="w-full rounded-xl p-3 bg-rose-900 text-white font-bold">閉じる</button></div></div>
 <script id="oct19-enhancement-scripts">
 (function(){
- window.shiftModalChangeDay=function(offset){if(window.hosshiiReadOnly===true)return;if(!selectedCalendarDateStr)return;const [y,m,d]=selectedCalendarDateStr.split('-').map(Number);const next=new Date(y,m-1,d+offset);openShiftInputModal(formatDateKey(next));};
+ window.shiftModalChangeDay=function(offset){if(!selectedCalendarDateStr)return;const [y,m,d]=selectedCalendarDateStr.split('-').map(Number);const next=new Date(y,m-1,d+offset);openShiftInputModal(formatDateKey(next));};
  window.showShiftHelp=function(){document.getElementById('shiftUsageHelpModal')?.classList.remove('hidden');};
  window.closeShiftHelp=function(){document.getElementById('shiftUsageHelpModal')?.classList.add('hidden');};
  window.confirmShiftDeletion=function(jk,idx){deleteJobShiftIndexModal(jk,idx);};
@@ -5406,6 +5412,21 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       }
       if(note){if(note.textContent!==hosshiiExpiredMessage)note.textContent=hosshiiExpiredMessage;const visibility=(readOnly && tab.id!=='tab-clock' && tab.id!=='tab-guide')?'block':'none';if(note.style.display!==visibility)note.style.display=visibility;}
     }
+    // 期限切れ時も日付移動・バイト先切替・登録済みシフトの閲覧は許可。
+    const shiftModal=document.getElementById('shiftInputModal');
+    if(shiftModal){
+      shiftModal.classList.toggle('hosshii-view-only',readOnly);
+      let notice=shiftModal.querySelector('#hosshiiModalReadOnlyNotice');
+      if(!notice){
+        notice=document.createElement('p');notice.id='hosshiiModalReadOnlyNotice';
+        notice.setAttribute('role','status');
+        notice.style.cssText='color:#881337;background:#fff1f2;border:1px solid #fda4af;border-radius:9px;padding:8px;text-align:center;font-weight:700;font-size:13px;';
+        const area=document.getElementById('shiftInputScrollArea');
+        if(area)area.prepend(notice);
+      }
+      notice.textContent='無料期間終了のため閲覧のみできます。登録・変更・削除はできません。';
+      notice.style.display=readOnly?'block':'none';
+    }
     // 設定の入力欄は閲覧専用。バックアップ書き出し・画面移動は妨げない。
     const settings=document.getElementById('tab-settings');
     if(settings){
@@ -5430,7 +5451,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     setTrialBanner(data);
     hosshiiSyncExpiredUI();
     if (window.hosshiiReadOnly) {
-      document.getElementById('shiftInputModal')?.classList.add('hidden');
+      // 閲覧中のシフト画面は閉じない。
     }
     // Save functions independently enforce read-only. Buttons also show clear feedback.
     if(!window.hosshiiReadOnlyClickInstalled){
@@ -5439,11 +5460,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         if(!window.hosshiiReadOnly)return;
         const target=ev.target instanceof Element ? ev.target : null;
         if(!target)return;
-        // 日付はdiv要素。buttonだけの監視では防げないため明示的に遮断。
-        const dateTarget=target.closest('[onclick*="selectCalendarDate("], [onclick*="openShiftInputModal("]');
-        if(dateTarget){ev.preventDefault();ev.stopImmediatePropagation();return;}
+        // 日付の選択は閲覧操作なので遮断しない。
         const b=target.closest('button');if(!b)return;
         if(b.classList.contains('tab-btn') || b.id==='hosshiiExpiredTestButton' || b.id==='hosshiiSubscribeButton')return;
+        if(b.closest('#shiftInputModal') && /shiftModalChangeDay|closeShiftInputModal|showShiftHelp/.test(b.getAttribute('onclick')||''))return;
         const label=(b.textContent||'').trim();
         const action=b.getAttribute('onclick')||'';
         const isCopy=action.includes('copyLastMonthShifts');
