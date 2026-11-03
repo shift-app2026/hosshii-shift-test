@@ -1247,7 +1247,49 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 #shiftInputModal.hosshii-view-only #shiftInputScrollArea select,
 #shiftInputModal.hosshii-view-only #shiftInputScrollArea textarea {pointer-events:none!important;opacity:.5!important;}
 #shiftInputModal.hosshii-view-only #shiftInputScrollArea .time-field-wrap {pointer-events:none!important;}
-</style></head>
+</style>
+<style id="hosshii-20261103-additional-layout-fixes">
+/* Equal-size monetary input boxes across transport and other allowances. */
+#tab-settings .allowance-period-grid {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;}
+#tab-settings .allowance-period-grid > div {display:grid!important;grid-template-columns:3.35em minmax(0,1fr) 1em!important;column-gap:3px!important;align-items:center!important;min-width:0!important;}
+#tab-settings .allowance-period-grid > div > span:first-child {font-size:12px!important;white-space:nowrap!important;}
+#tab-settings .allowance-period-grid > div > input {width:100%!important;min-width:0!important;max-width:none!important;height:38px!important;box-sizing:border-box!important;padding:6px 2px!important;font-size:14px!important;}
+#tab-settings .allowance-period-grid > div > span:last-child {white-space:nowrap!important;}
+#tab-settings #set_allowanceMemo::placeholder {color:#a8a29e!important;opacity:1!important;font-weight:400!important;}
+/* Prefer legible type, compress horizontally only for unusually long sums. */
+#tab-clock .t19-total.hosshii-total-formula {font-size:16px!important;gap:5px!important;}
+#tab-clock .hosshii-total-formula > strong {font-size:16px!important;}
+#tab-clock .hosshii-formula-expression {font-size:16px!important;gap:3px!important;flex:0 0 auto!important;letter-spacing:-.035em!important;}
+#tab-clock .hosshii-formula-expression strong,#tab-clock .hosshii-formula-expression b {font-size:inherit!important;}
+</style>
+
+<script id="hosshii-20261103-additional-fit-fix">
+(function(){
+ function fit(){
+  document.querySelectorAll('.hosshii-total-formula').forEach(function(row){
+   var expr=row.querySelector('.hosshii-formula-expression');
+   var hours=row.querySelector(':scope > strong');
+   if(!expr||!hours)return;
+   expr.style.fontSize='16px';expr.style.transform='none';expr.style.marginRight='0';
+   var available=row.clientWidth-hours.getBoundingClientRect().width-7;
+   if(available<=0)return;
+   var full=expr.scrollWidth;
+   if(full>available){
+    var scale=Math.max(.55,available/full);
+    expr.style.transform='scaleX('+scale+')';
+    expr.style.marginRight=(-(full*(1-scale)))+'px';
+   }
+  });
+ }
+ window.hosshiiFitTotals=fit;
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){requestAnimationFrame(fit)});
+ else requestAnimationFrame(fit);
+ window.addEventListener('resize',fit);
+ var observer=new MutationObserver(function(){requestAnimationFrame(fit)});
+ document.addEventListener('DOMContentLoaded',function(){['itoReceiveTable','t10PrevTable'].forEach(function(id){var e=document.getElementById(id);if(e)observer.observe(e,{childList:true,subtree:true})})});
+})();
+</script>
+</head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
   <div id="lineAuthCard">
@@ -1380,7 +1422,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         <div class="space-y-1.5 border-t border-stone-100 pt-2"><span id="modalShiftListHeading" class="shift-section-title">【シフト一覧】</span><div id="modalSelectedDateSummaryContent" class="space-y-2 pt-1"></div></div>
         <section class="shift-preset-section space-y-2 border-t border-stone-100 pt-2">
           <div class="flex items-center justify-between gap-2"><span class="shift-section-title preset-inline-heading">【ワンタッチ登録しましょ～♡】</span><button type="button" onclick="openPresetRegisterModal()" class="px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0">＋登録</button></div>
-          <p class="ito-preset-desc font-bold text-stone-600">登録して時間を選択するだけなので楽になります。</p>
+          <p class="ito-preset-desc font-bold text-stone-600">※よく使う勤務時間を登録して、<br>次回からワンタッチで選べるよ♡</p>
 
         </section>
       </div>
@@ -2341,9 +2383,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (!toast || !toastText) return;
       toast.classList.toggle('settings-save-toast', msg === '設定を保存しました');
       toast.classList.toggle('shift-register-toast', !document.getElementById('shiftInputModal')?.classList.contains('hidden') && /登録しました/.test(msg));
-      toast.classList.toggle('hosshii-one-line-toast', ['有給の時間を変更しました♡', '有給に変更しました♡', '通常勤務に変更しました♡', '有給を選択しました♡', '有給を解除しました♡'].includes(msg));
+      toast.classList.toggle('hosshii-one-line-toast', ['有給の時間を変更しました♡', '有給に変更しました♡', '通常勤務に変更しました♡', '有給を選択しました♡', '有給を解除しました♡'].includes(msg) || !!undoFn);
       toastText.innerText = msg;
-      if (undoFn) { const ub = document.createElement('button'); ub.textContent = '元に戻す'; ub.className = 'ml-3 underline font-bold text-rose-200'; ub.onclick = () => { undoFn(); toast.classList.remove('opacity-100'); toast.classList.add('opacity-0', 'pointer-events-none'); }; toastText.appendChild(ub); }
+      if (undoFn) { const ub = document.createElement('button'); ub.textContent = '元に戻す'; ub.className = 'ml-2 underline font-bold text-rose-200 whitespace-nowrap'; ub.onclick = () => { undoFn(); toast.classList.remove('opacity-100'); toast.classList.add('opacity-0', 'pointer-events-none'); }; toastText.appendChild(ub); }
 
       toast.classList.remove('opacity-0', 'pointer-events-none');
       toast.classList.add('opacity-100');
@@ -2814,7 +2856,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
                   <div class="flex items-center gap-1.5 text-xs min-w-0 font-bold text-stone-700"><span class="shrink-0 whitespace-nowrap">1日</span><input type="text" inputmode="numeric" id="set_allowanceDay" oninput="formatInputNumber(this)" class="flex-1 min-w-0 w-full p-1.5 border rounded text-center bg-white font-bold text-sm"><span class="shrink-0">円</span></div>
                 </div>
                 <div>
-                  <input type="text" id="set_allowanceMemo" maxlength="7" class="w-full p-2 border rounded-lg bg-white font-medium text-sm" placeholder="手当のメモ（7文字以内）">
+                  <label for="set_allowanceMemo" class="block text-sm font-bold text-stone-700 mb-1">手当の名称</label><input type="text" id="set_allowanceMemo" maxlength="7" class="w-full p-2 border rounded-lg bg-white font-medium text-sm" placeholder="例：役職手当">
                 </div>
               </div>
             </div>
@@ -3663,9 +3705,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const name = esc(getJobDisplayName(jk));
         const dot = getJobPalette(jk).dot;
         const wage = r.wageMissing ? '<span title="時給を設定してください" aria-label="時給未設定">⚠️</span>' : yen(r.wagePay);
-        return `<div class="t19-job-row"><div class="t19-job-meta"><div class="t19-job-name"><i style="background:${dot}"></i><strong>${name}</strong></div><span class="t19-job-period">集計期間 ${md(r.start)}～${md(r.end)}</span></div><div class="t19-column-head"><span>勤務時間</span><span>お給料</span><span>その他</span></div><div class="t19-job-values"><span>${hm(r.mins)}</span><strong>${wage}</strong><strong>${yen(r.otherPay)}</strong></div></div>`;
+        return `<div class="t19-job-row"><div class="t19-job-meta"><div class="t19-job-name"><i style="background:${dot}"></i><strong>${name}</strong></div><span class="t19-job-period">集計期間 ${md(r.start)}～${md(r.end)}</span></div><div class="t19-column-head"><span>勤務時間</span><span>時給・有給分</span><span>交通費・手当</span></div><div class="t19-job-values"><span>${hm(r.mins)}</span><strong>${wage}</strong><strong>${yen(r.otherPay)}</strong></div></div>`;
       }).join('');
-      return `<div class="t19-summary">${rows}<div class="t19-total-label" aria-hidden="true"></div><div class="t19-total"><strong>${hm(totalMins)}</strong><strong>${missing ? '⚠️' : yen(totalWage)}</strong><strong>${yen(totalOther)}</strong></div></div>`;
+      return `<div class="t19-summary">${rows}<div class="t19-total-label" aria-hidden="true"></div><div class="t19-total hosshii-total-formula" aria-label="勤務時間とお給料見込額"><strong>${hm(totalMins)}</strong><span class="hosshii-formula-expression"><strong>${missing ? '⚠️' : yen(totalWage)}</strong><b>＋</b><strong>${yen(totalOther)}</strong><b>＝</b><strong class="hosshii-grand-total">${missing ? '⚠️' : yen(totalWage + totalOther)}</strong></span></div></div>`;
     }
 
     function calculateMonthlyReceivePay() {
@@ -3680,6 +3722,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (notice) notice.hidden = !currentMissing;
       const previous = document.getElementById('t10PrevTable');
       if (previous) previous.innerHTML = t10PayTable(new Date(month.getFullYear(), month.getMonth()-1, 1));
+      if (window.hosshiiFitTotals) requestAnimationFrame(window.hosshiiFitTotals);
     }
 
     function updateItoWallSelection() {
@@ -6036,5 +6079,33 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   bottom: auto !important;
 }
 </style>
+
+<style id="hosshii-20261103-six-final-fixes">
+/* 通知は操作を隠さないよう画面中央寄りへ。保存・登録専用通知の位置は維持。 */
+#toastMessage:not(.settings-save-toast):not(.shift-register-toast){top:39vh!important;bottom:auto!important;max-width:calc(100vw - 12px)!important;}
+#toastMessage.hosshii-one-line-toast{width:max-content!important;white-space:nowrap!important;}
+#toastMessage.hosshii-one-line-toast #toastText{white-space:nowrap!important;display:inline-flex;align-items:center;gap:0;}
+#toastMessage.hosshii-one-line-toast #toastText button{white-space:nowrap!important;flex-shrink:0;}
+/* 詳細欄の見出しは数字より控えめに。 */
+#tab-clock #itoReceiveTable .t19-column-head,#tab-clock #t10PrevTable .t19-column-head{font-size:clamp(9px,2.65vw,12px)!important;letter-spacing:-.04em!important;grid-template-columns:1fr 1fr 1fr!important;}
+/* 合計の計算式を1行で表示。サイズはJSで内容に応じて調整。 */
+#tab-clock .t19-total.hosshii-total-formula{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:6px!important;min-width:0!important;overflow:hidden!important;font-size:14px!important;white-space:nowrap!important;}
+#tab-clock .hosshii-total-formula>strong{flex:0 0 auto;text-align:left!important;}
+#tab-clock .hosshii-formula-expression{display:flex;align-items:center;gap:clamp(2px,1vw,6px);min-width:0;white-space:nowrap;flex-shrink:0;transform-origin:left center;}
+#tab-clock .hosshii-formula-expression strong,#tab-clock .hosshii-formula-expression b{white-space:nowrap;font-size:inherit;}
+#tab-clock .hosshii-grand-total{font-weight:900!important;color:#821332;}
+/* ワンタッチ説明文 */
+#shiftInputModal .shift-preset-section .ito-preset-desc{font-size:clamp(12px,3.35vw,14px)!important;line-height:1.45!important;}
+/* 有給と登録の見出しボタンの文字サイズ・太さを統一 */
+#shiftInputModal #modalPaidToggleHeaderSlot button,#shiftInputModal #registerShiftButton{font-size:14px!important;font-weight:800!important;line-height:1.3!important;}
+/* 交通費・その他の入力欄の幅と高さを同じにする */
+#tab-settings .allowance-period-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;}
+#tab-settings .allowance-period-grid>div{min-width:0!important;gap:4px!important;}
+#tab-settings .allowance-period-grid input{box-sizing:border-box!important;width:100%!important;min-width:0!important;flex:1 1 0!important;height:38px!important;padding:6px 3px!important;}
+#tab-settings #set_wagePaid{height:38px!important;box-sizing:border-box!important;}
+#tab-settings #set_allowanceMemo{height:38px!important;box-sizing:border-box!important;}
+#tab-settings .hosshii-allowance-section-title{font-weight:800!important;}
+</style>
+
 </body>
 </html>
