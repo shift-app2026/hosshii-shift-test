@@ -6122,5 +6122,48 @@ new MutationObserver(updateMemo).observe(document.body,{childList:true,subtree:t
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',updateMemo);else updateMemo();
 })();
 </script>
+
+<style id="hosshii-20261103-calendar-double-border-readable-headings">
+/* 今日: 白地・ワインレッド外枠・シャンパンゴールド内枠 */
+#calendarDays .today-champagne-gold,
+#calendarDays .today-champagne-gold.calendar-selected-date {
+  position:relative!important;
+  background:#fff!important;
+  border:2px solid #870b2d!important;
+  box-shadow:none!important;
+}
+#calendarDays .today-champagne-gold::after {
+  content:"";position:absolute;inset:3px;border:1.5px solid #c8a36b;
+  border-radius:9px;pointer-events:none;
+}
+/* 今日以外の選択日: 白地・シャンパンゴールド一重枠 */
+#calendarDays .calendar-selected-date:not(.today-champagne-gold) {
+  background:#fff!important;
+  border:2px solid #c8a36b!important;
+  box-shadow:none!important;
+}
+/* 今月・先月の見出し: 文字を縮めず必要なら折り返す */
+#tab-clock #itoReceiveTable .t19-column-head,
+#tab-clock #t10PrevTable .t19-column-head {
+  font-size:clamp(14px,3.8vw,16px)!important;
+  line-height:1.35!important;
+  letter-spacing:0!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.12fr) minmax(0,1.12fr)!important;
+  gap:4px!important;
+}
+#tab-clock #itoReceiveTable .t19-column-head > *,
+#tab-clock #t10PrevTable .t19-column-head > * {
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+}
+/* 選択した日のシフト: 項目名と操作リンクを読みやすく */
+#calendarTodaySummaryContent .selected-job-heading .job-label-pill,
+#calendarTodaySummaryContent .selected-job-heading strong {font-size:17px!important;}
+#calendarTodaySummaryContent .selected-register-button {font-size:16px!important;line-height:1.35!important;}
+#calendarTodaySummaryContent .selected-shift-type {font-size:17px!important;}
+#calendarTodaySummaryContent .job-time {font-size:18px!important;}
+#calendarTodaySummaryContent .selected-shift-break {font-size:15px!important;}
+</style>
 </body>
 </html>
