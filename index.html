@@ -1340,7 +1340,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   </div>
 
   <!-- 休憩時間選択モーダル -->
-  <div id="breakSelectModal" style="z-index:70" class="fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-[70] flex items-center justify-center p-4 hidden">
+  <div id="breakSelectModal" style="z-index:120" class="fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-[70] flex items-center justify-center p-4 hidden">
     <div class="bg-white rounded-3xl p-6 w-full max-w-xs shadow-2xl border border-stone-200 space-y-4">
       <h3 class="text-base font-bold text-stone-900 text-center tracking-wide">☕ 休憩時間</h3>
       <div id="breakChoiceChips" class="grid grid-cols-4 gap-2"></div>
@@ -1599,12 +1599,12 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         
 
+<div id="calendarPinnedLegend" class="calendar-pinned-legend"><div id="calendarJobLegend" class="w-full pt-2.5 text-xs font-bold text-stone-700"></div></div>
 <div class="bg-white border border-stone-100 rounded-3xl p-3 shadow-sm space-y-2">
           <div class="grid grid-cols-7 text-center text-sm sm:text-base font-bold text-stone-500 mb-1">
             <span class="text-rose-500">日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span class="text-sky-600">土</span>
           </div>
           <div id="calendarDays" class="grid grid-cols-7 gap-1 text-center text-sm"></div>
-          <div id="calendarJobLegend" class="w-full pt-2.5 text-xs font-bold text-stone-700"></div>
         </div>
 
         <div class="bg-white border border-rose-200 rounded-3xl px-3.5 py-2 shadow-sm space-y-2">
@@ -1619,7 +1619,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         <div class="bg-white border border-stone-100 rounded-3xl p-4 shadow-sm space-y-3">
           <div class="text-sm sm:text-base font-bold text-stone-900 border-b border-stone-200 pb-2 flex items-center justify-between tracking-wide">
-            <span>📌 選択した日のシフト (<span id="calendarTodayDateLabel"></span>)</span>
+            <span>【<span id="calendarTodayDateLabel"></span> シフト一覧】</span>
           </div>
           <div id="calendarTodaySummaryContent" class="space-y-2 text-sm sm:text-base text-stone-700">
             <span class="text-stone-400">予定なし</span>
@@ -2319,7 +2319,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           return;
         }
         const breakMins = Number(sh.breakMins) || 0;
-        html += `<div class="shift-registered-row bg-stone-50 p-2 border rounded-xl border-stone-200 flex items-center justify-between gap-1"><span class="font-bold text-stone-800 job-time flex-1 min-w-0">${sh.start}〜${sh.end}</span><span class="font-bold text-stone-600 whitespace-nowrap">休憩${breakMins}分</span><button type="button" onclick="toggleRegisteredPaidLeave('${jk}', ${idx})" aria-pressed="${!!sh.isPaidLeave}" class="${sh.isPaidLeave ? 'bg-rose-900 text-white border-rose-900' : 'bg-white text-stone-700 border-stone-300'} border font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">有給</button><button type="button" onclick="confirmShiftDeletion('${jk}', ${idx})" class="bg-stone-200 text-stone-700 font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">削除</button></div>`;
+        html += `<div class="shift-registered-row bg-stone-50 p-2 border rounded-xl border-stone-200 flex items-center justify-between gap-1"><span class="font-bold text-stone-800 job-time flex-1 min-w-0">${sh.start}〜${sh.end}</span>${breakMins > 0 ? `<span class="font-bold text-stone-600 whitespace-nowrap">休憩${breakMins}分</span>` : ''}<button type="button" onclick="toggleRegisteredPaidLeave('${jk}', ${idx})" aria-pressed="${!!sh.isPaidLeave}" class="${sh.isPaidLeave ? 'bg-rose-900 text-white border-rose-900' : 'bg-white text-stone-700 border-stone-300'} border font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">有給</button><button type="button" onclick="confirmShiftDeletion('${jk}', ${idx})" class="bg-stone-200 text-stone-700 font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">削除</button></div>`;
       });
 
       if (html === '') {
@@ -3196,7 +3196,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           container.innerHTML += `
             <div class="bg-white border border-stone-200 py-2.5 px-3 rounded-xl shadow-[0_1px_2px_rgba(0,0,0,0.05)] flex items-center gap-2 text-xs sm:text-sm">
               <span class="font-bold text-stone-800 job-time">${p.start} ～ ${p.end}</span>
-              <span class="font-bold text-stone-600 flex-1 text-center whitespace-nowrap">休憩${breakMins}分</span>
+              ${breakMins > 0 ? `<span class="font-bold text-stone-600 whitespace-nowrap">休憩${breakMins}分</span>` : ''}
               <div class="flex items-center gap-1.5 shrink-0">
                 <button type="button" onclick="registerFromPresetList('${p.start}', '${p.end}', ${breakMins})"
                         class="bg-rose-50 text-rose-900 border border-rose-200 hover:bg-rose-100 py-1.5 px-3 rounded-lg font-bold transition text-xs">登録</button>
@@ -3247,7 +3247,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           <div class="time-field-wrap relative flex-1 min-w-0">
             <input type="text" readonly inputmode="none" step="60" onclick="triggerTimePicker(this.id)" autocomplete="off" id="new_preset_end" placeholder="00:00" value="${newPresetForm.end}" onchange="updateNewPresetForm()" class="wage-time clock-time w-full px-1.5 py-1.5 pr-7 border rounded-lg border-stone-200 bg-stone-50 font-bold text-center text-sm"><button type="button" aria-label="終了時間を選択" onclick="triggerTimePicker('new_preset_end')" class="time-clock-button absolute right-1 top-1/2 -translate-y-1/2 text-stone-500 text-xs w-5 h-6 flex items-center justify-center rounded-md bg-white/90">🕒</button>
           </div>
-          <button type="button" onclick="openBreakSelectModal()" class="px-1.5 py-2 bg-stone-100 hover:bg-stone-200 border border-stone-200 rounded-lg font-bold text-xs text-stone-700 transition whitespace-nowrap">☕<span id="modalBreakDisplayVal">${breakMins}分</span></button>
+          <button type="button" onclick="openBreakSelectModal('new')" class="px-1.5 py-2 bg-stone-100 hover:bg-stone-200 border border-stone-200 rounded-lg font-bold text-xs text-stone-700 transition whitespace-nowrap">☕<span id="modalBreakDisplayVal">${breakMins}分</span></button>
 
         </div>
       `;
@@ -3309,6 +3309,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         return;
       }
       newPresetForm.breakMins = val;
+      const breakDisplay = document.getElementById('modalBreakDisplayVal');
+      if (breakDisplay) breakDisplay.textContent = val + '分';
       document.getElementById('registerShiftButton')?.classList.add('unsaved-registration');
       closeBreakSelectModal();
       renderModalCustomPresets();
@@ -3952,6 +3954,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           if (!shifts.length) return;
           registeredJobs.push(jk);
           const palette = getJobPalette(jk);
+          const markedTypes = new Set();
           shifts.forEach(jobShift => {
             const hasTime = !!(jobShift.start && jobShift.end);
             const hasPaidHours = jobShift.isPaidLeave && ((Number(jobShift.hours) || Number(configData[jk]?.paidHours) || 0) > 0);
@@ -3959,6 +3962,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             // 有給の場合は時間指定の有無に関係なく◎を優先。
             const isPaid = !!jobShift.isPaidLeave;
             const glyph = isPaid ? '◎' : '●';
+            if (markedTypes.has(glyph)) return;
+            markedTypes.add(glyph);
             calendarMarks.push(`<span class="hosshii-calendar-mark" style="color:${palette.dot};" aria-label="${isPaid ? '有給休暇' : '通常勤務'}">${glyph}</span>`);
           });
         });
@@ -4051,8 +4056,22 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const selected = calSelectedDateStr || todayStr;
       const [yy,mm,dd] = selected.split('-').map(Number);
       const selectedDate = new Date(yy,mm-1,dd);
-      set('calendarTodayDateLabel', `${mm}/${dd}`);
+      set('calendarTodayDateLabel', `${mm}月${dd}日（${['日','月','火','水','木','金','土'][selectedDate.getDay()]}）`);
       set('calendarTodaySummaryContent', buildDaySummaryHtml(selected, selectedDate), true);
+    }
+
+    function deleteSelectedDayShift(dateStr, jobKey, idx) {
+      if (hosshiiBlockEdit()) return false;
+      const shifts = getDayShifts(dateStr, jobKey);
+      if (!shifts[idx]) return;
+      askConfirm('このシフトを削除しますか？', () => {
+        const latest = getDayShifts(dateStr, jobKey);
+        if (!latest[idx]) return;
+        latest.splice(idx, 1);
+        if (!setDayShifts(dateStr, jobKey, latest)) return;
+        refreshAll();
+        renderCalendar();
+      });
     }
 
     function buildDaySummaryHtml(dateStr, dateObj) {
@@ -4072,7 +4091,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           const times = sh.start && sh.end ? `${esc(sh.start)}～${esc(sh.end)}` : '時間未設定';
           const breakMins = Number(sh.breakMins) || 0;
           const breakHtml = breakMins > 0 ? `<span class="selected-shift-break">休憩${breakMins}分</span>` : '';
-          return `<div class="selected-shift-row"><span class="selected-shift-type">${type}</span><span class="job-time">${times}</span>${breakHtml}</div>`;
+          const realIdx = shifts.indexOf(sh);
+          const deleteBtn = `<button type="button" class="selected-shift-delete" onclick="deleteSelectedDayShift('${dateStr}','${jk}',${realIdx})">削除</button>`;
+          return `<div class="selected-shift-row"><span class="selected-shift-type">${type}</span><span class="job-time">${times}</span>${breakHtml}${deleteBtn}</div>`;
         }).join('');
         html += `<div class="selected-job-group"><div class="selected-job-heading">${getJobLabelHtml(jk)}${registerButton}</div>${lines}</div>`;
       });
@@ -6164,6 +6185,36 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 #calendarTodaySummaryContent .selected-shift-type {font-size:17px!important;}
 #calendarTodaySummaryContent .job-time {font-size:18px!important;}
 #calendarTodaySummaryContent .selected-shift-break {font-size:15px!important;}
+</style>
+
+<style id="hosshii-nov3-consolidated-test-fixes">
+/* 今日の外側を薄いシャンパンゴールドに、内側も同系色に */
+#calendarDays .today-champagne-gold,#calendarDays .today-champagne-gold.calendar-selected-date{border-color:#d4b77e!important;background:#fff!important}
+#calendarDays .today-champagne-gold::after{border-color:#c8a36b!important}
+/* 同じ職場の●は一つ。◎と大きさを揃える */
+#calendarDays .hosshii-calendar-mark{font-size:12px!important;width:13px!important;flex-basis:13px!important}
+#calendarDays .hosshii-calendar-marks{gap:1px!important}
+/* 月見出し直下の凡例を固定 */
+#tab-calendar .calendar-pinned-legend{position:sticky;top:56px;z-index:25;background:#fff;border:1px solid #eee5e6;border-radius:12px;padding:4px 8px 8px;margin:3px 0 6px;box-shadow:0 2px 5px #0000000b}
+#tab-calendar .oct23-sticky-month{position:sticky;top:0;z-index:26}
+/* シフト一覧の文字と削除ボタン */
+#calendarTodaySummaryContent .selected-shift-row{gap:8px!important;flex-wrap:wrap!important}
+#calendarTodaySummaryContent .selected-shift-delete{margin-left:auto;background:#f5f5f4;border:1px solid #d6d3d1;border-radius:8px;color:#57534e;padding:5px 10px;font-size:14px;font-weight:800}
+#calendarTodaySummaryContent .selected-shift-type{font-size:17px!important}
+#calendarTodaySummaryContent .job-time{font-size:18px!important}
+/* ワンタッチ時間一覧は休憩0分を表示せず時間を大きく */
+#modalPresetContainer .job-time{font-size:clamp(16px,4.5vw,19px)!important;letter-spacing:-.03em}
+#modalPresetContainer>div{gap:5px!important}
+/* 休憩時間選択画面の改行を自然に */
+#breakSelectModal p{line-height:1.65!important;overflow-wrap:anywhere;text-wrap:pretty}
+/* 金額入力は4つとも同じ幅。外側カードはそのまま */
+#tab-settings .allowance-period-grid>div{display:grid!important;grid-template-columns:3.15em minmax(0,1fr) 1em!important;gap:3px!important;align-items:center!important}
+#tab-settings .allowance-period-grid>div:nth-child(2){grid-template-columns:3.15em minmax(0,1fr) 1em!important}
+#tab-settings .allowance-period-grid input{width:100%!important;height:40px!important;min-width:0!important}
+#tab-settings #set_allowanceMemo::placeholder{color:#a8a29e!important;font-weight:400!important;opacity:1!important}
+/* 合計式は可読性優先、はみ出す場合のみ既存JSで縮小 */
+#tab-clock .t19-total.hosshii-total-formula{gap:3px!important;padding-left:0!important;padding-right:0!important}
+#tab-clock .hosshii-formula-expression{gap:2px!important}
 </style>
 </body>
 </html>
