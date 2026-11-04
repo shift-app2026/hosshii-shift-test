@@ -6546,5 +6546,49 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
  #tab-settings #newJobNameInput {padding-right:42px!important;}
 }
 </style>
+<style id="hosshii-20261104-user-fixes">
+/* ①シフト登録：時間・有給・削除の間を詰めてバランスよく */
+#modalSelectedDateSummaryContent .shift-registered-row{justify-content:flex-start!important;gap:8px!important;}
+#modalSelectedDateSummaryContent .shift-registered-row .hosshii-shift-time-actions{gap:8px!important;}
+#modalSelectedDateSummaryContent .shift-registered-row .hosshii-shift-delete{margin-left:12px!important;}
+/* ②予定表のシフト一覧：同じく削除を右端に離さず近づける */
+#calendarTodaySummaryContent .selected-shift-row{justify-content:flex-start!important;gap:10px!important;}
+#calendarTodaySummaryContent .selected-shift-row .selected-shift-delete{margin-left:12px!important;}
+/* ③お給料の設定：選択中バイト先の枠を控えめに、文字は少し大きく濃く */
+#itoStickyHeaderHost .hosshii-settings-current-job,
+#tab-settings .hosshii-settings-current-job{
+  width:fit-content!important;max-width:90%!important;margin:0 auto!important;
+  min-height:26px!important;padding:3px 12px!important;gap:5px!important;
+}
+#itoStickyHeaderHost .hosshii-settings-pinned-select,
+#tab-settings .hosshii-settings-pinned-select{
+  font-size:17px!important;font-weight:800!important;color:#0c0a09!important;
+  -webkit-text-fill-color:#0c0a09!important;max-width:9em!important;
+}
+#itoStickyHeaderHost .hosshii-settings-current-job > span:last-child,
+#tab-settings .hosshii-settings-current-job > span:last-child{
+  font-size:14px!important;font-weight:700!important;color:#0c0a09!important;
+}
+/* ④バイト先登録：入力枠と登録ボタンを別々に、修正・削除は他の削除ボタンと同じ色に */
+#tab-settings .hosshii-register-input-wrap{display:flex!important;align-items:center!important;gap:6px!important;position:static!important;}
+#tab-settings #newJobNameInput{
+  flex:1 1 auto!important;width:auto!important;min-width:0!important;
+  padding:7px 10px!important;background:#fff!important;border:1px solid #d6d3d1!important;
+}
+#tab-settings .hosshii-register-input-wrap .ito-job-register-button{
+  position:static!important;transform:none!important;flex:0 0 auto!important;
+  height:46px!important;min-height:46px!important;padding:0 12px!important;
+  border-radius:12px!important;font-size:14px!important;
+}
+#tab-settings .hosshii-register-action{
+  background:#e7e5e4!important;border:1px solid #d6d3d1!important;color:#44403c!important;
+  min-height:46px!important;border-radius:12px!important;padding:7px 9px!important;
+}
+@media(max-width:360px){
+  #tab-settings .hosshii-register-input-wrap{gap:4px!important;}
+  #tab-settings .hosshii-register-input-wrap .ito-job-register-button{padding:0 8px!important;}
+  #tab-settings .hosshii-register-action{padding:7px 6px!important;}
+}
+</style>
 </body>
 </html>
