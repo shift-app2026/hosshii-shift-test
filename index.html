@@ -1329,7 +1329,22 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 #tab-clock .hosshii-total-formula{display:flex!important;min-width:0!important;max-width:100%!important;overflow:hidden!important;gap:5px!important;padding-left:0!important;padding-right:0!important}
 #tab-clock .hosshii-total-formula>strong{flex:0 0 auto!important;font-size:16px!important}
 #tab-clock .hosshii-formula-expression{min-width:0!important;flex:0 1 auto!important;white-space:nowrap!important;transform-origin:left center!important}
-</style></head>
+</style>
+<style id="hosshii-nov4-two-final-adjustments">
+/* 設定見出しの下に、選択中の職場を固定表示。登録フォームは従来通りスクロール */
+#itoStickyHeaderHost > .oct23-sticky-settings {display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:5px!important;padding:8px 12px!important;min-height:0!important;overflow:visible!important;}
+#itoStickyHeaderHost .hosshii-settings-current-job {display:flex;align-items:center;justify-content:center;gap:7px;min-height:29px;background:#fff8f9;color:#171717;border-radius:9px;padding:4px 8px;font-size:13px;line-height:1.4;}
+.hosshii-settings-current-job strong {font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:45%;}
+.hosshii-settings-current-job > span:last-child {font-size:12px;color:#44403c;white-space:nowrap;}
+.hosshii-settings-job-dot {display:inline-block;width:10px;height:10px;min-width:10px;border-radius:50%;}
+/* 登録済みシフト：時刻と有給にゆとりを持たせ、削除は右端 */
+#modalSelectedDateSummaryContent .shift-registered-row {gap:8px!important;min-width:0;}
+#modalSelectedDateSummaryContent .hosshii-shift-time-actions {display:flex;align-items:center;gap:9px;min-width:0;flex:1 1 auto;flex-wrap:wrap;}
+#modalSelectedDateSummaryContent .hosshii-shift-time-actions .job-time {white-space:nowrap;letter-spacing:0!important;font-size:16px!important;line-height:1.5;}
+#modalSelectedDateSummaryContent .hosshii-shift-delete {margin-left:auto;flex:0 0 auto;}
+@media(max-width:360px){#modalSelectedDateSummaryContent .hosshii-shift-time-actions {gap:5px;}#modalSelectedDateSummaryContent .hosshii-shift-time-actions .job-time{font-size:15px!important;}}
+</style>
+</head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
   <div id="lineAuthCard">
@@ -1687,6 +1702,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             <p class="text-base sm:text-lg font-bold tracking-wider text-white wage-setting-title"><span class="wage-title-star">✦</span><span>お給料の設定</span><span class="wage-title-star">✦</span></p>
             
           </div>
+          <div id="hosshiiSettingsPinnedJob" class="hosshii-settings-current-job" aria-live="polite"></div>
         </div>
 
         <div class="bg-white p-4 rounded-2xl border border-stone-100 shadow-sm space-y-3">
@@ -2354,7 +2370,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           return;
         }
         const breakMins = Number(sh.breakMins) || 0;
-        html += `<div class="shift-registered-row bg-stone-50 p-2 border rounded-xl border-stone-200 flex items-center justify-between gap-1"><span class="font-bold text-stone-800 job-time shrink-0">${sh.start}〜${sh.end}</span>${breakMins > 0 ? `<span class="font-bold text-stone-600 whitespace-nowrap">休憩${breakMins}分</span>` : ''}<button type="button" onclick="toggleRegisteredPaidLeave('${jk}', ${idx})" aria-pressed="${!!sh.isPaidLeave}" class="${sh.isPaidLeave ? 'bg-rose-900 text-white border-rose-900' : 'bg-white text-stone-700 border-stone-300'} border font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">有給</button><button type="button" onclick="confirmShiftDeletion('${jk}', ${idx})" class="bg-stone-200 text-stone-700 font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">削除</button></div>`;
+        html += `<div class="shift-registered-row bg-stone-50 p-2 border rounded-xl border-stone-200 flex items-center gap-1"><div class="hosshii-shift-time-actions"><span class="font-bold text-stone-800 job-time">${sh.start}〜${sh.end}</span>${breakMins > 0 ? `<span class="font-bold text-stone-600 whitespace-nowrap">休憩${breakMins}分</span>` : ''}<button type="button" onclick="toggleRegisteredPaidLeave('${jk}', ${idx})" aria-pressed="${!!sh.isPaidLeave}" class="${sh.isPaidLeave ? 'bg-rose-900 text-white border-rose-900' : 'bg-white text-stone-700 border-stone-300'} border font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">有給</button></div><button type="button" onclick="confirmShiftDeletion('${jk}', ${idx})" class="hosshii-shift-delete bg-stone-200 text-stone-700 font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">削除</button></div>`;
       });
 
       if (html === '') {
@@ -2715,6 +2731,19 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const bg = palette.bg || '#EAF2FC';
       const border = palette.border || '#BFD6F4';
       const dot = palette.dot || '#2563EB';
+      const pinnedJob = document.getElementById('hosshiiSettingsPinnedJob');
+      if (pinnedJob) {
+        const name = String(configData[jk]?.name || 'バイト先を選択してね');
+        pinnedJob.replaceChildren();
+        const mark = document.createElement('span');
+        mark.className = 'hosshii-settings-job-dot';
+        mark.style.backgroundColor = dot;
+        const label = document.createElement('strong');
+        label.textContent = name;
+        const suffix = document.createElement('span');
+        suffix.textContent = 'の時給を設定中';
+        pinnedJob.append(mark, label, suffix);
+      }
       const options = keys.map(key => `<option value="${key}" ${key === jk ? 'selected' : ''}>${String(configData[key]?.name || (key === 'job1' ? 'バイト名1' : key === 'job2' ? 'バイト名2' : 'バイト名3')).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}</option>`).join('');
       container.innerHTML = `<div class="ito-settings-job-row">
         <div class="ito-settings-job-select" style="background:${bg};border-color:${border}">
