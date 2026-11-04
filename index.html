@@ -2476,6 +2476,15 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       toast.classList.toggle('shift-register-toast', !document.getElementById('shiftInputModal')?.classList.contains('hidden') && /登録しました/.test(msg));
       toast.classList.toggle('hosshii-one-line-toast', ['有給の時間を変更しました♡', '有給に変更しました♡', '通常勤務に変更しました♡', '有給を選択しました♡', '有給を解除しました♡'].includes(msg) || !!undoFn);
       toastText.innerText = msg;
+      toast.style.removeProperty('top');
+      if (msg === '有給を選択しました♡' || msg === '有給を解除しました♡') {
+        const paidBtn = document.getElementById('modalNewPaidToggle');
+        if (paidBtn) {
+          const r = paidBtn.getBoundingClientRect();
+          const top = Math.max(8, r.top - toast.offsetHeight - 14);
+          toast.style.setProperty('top', top + 'px', 'important');
+        }
+      }
       if (undoFn) { const ub = document.createElement('button'); ub.textContent = '元に戻す'; ub.className = 'ml-2 underline font-bold text-rose-200 whitespace-nowrap'; ub.onclick = () => { undoFn(); toast.classList.remove('opacity-100'); toast.classList.add('opacity-0', 'pointer-events-none'); }; toastText.appendChild(ub); }
 
       toast.classList.remove('opacity-0', 'pointer-events-none');
@@ -4020,7 +4029,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function hosshiiShiftTypeMark(jk, isPaid) {
       const color = getJobPalette(jk).dot;
-      return `<span class="hosshii-shift-mark" style="color:${color}" aria-label="${isPaid ? '有給休暇' : '通常勤務'}"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="${isPaid ? 'none' : 'currentColor'}" stroke="currentColor" stroke-width="${isPaid ? '1.8' : '0'}"/></svg></span>`;
+      return `<span class="hosshii-shift-mark" style="color:${color}" aria-label="${isPaid ? '有給休暇' : '通常勤務'}"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="${isPaid ? '4.6' : '5.5'}" fill="${isPaid ? 'none' : 'currentColor'}" stroke="currentColor" stroke-width="${isPaid ? '1.8' : '0'}"/></svg></span>`;
     }
 
     function getJobLabelHtml(jk, extraClass = '', iconOnly = false) {
@@ -4077,7 +4086,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             const glyph = isPaid ? '○' : '●';
             if (markedTypes.has(glyph)) return;
             markedTypes.add(glyph);
-            calendarMarks.push(`<span class="hosshii-calendar-mark hosshii-svg-mark" style="color:${palette.dot};" aria-label="${isPaid ? '有給休暇' : '通常勤務'}"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">${isPaid ? `<circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/>` : `<circle cx="8" cy="8" r="5.5" fill="currentColor"/>`}</svg></span>`);
+            calendarMarks.push(`<span class="hosshii-calendar-mark hosshii-svg-mark" style="color:${palette.dot};" aria-label="${isPaid ? '有給休暇' : '通常勤務'}"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">${isPaid ? `<circle cx="8" cy="8" r="4.6" fill="none" stroke="currentColor" stroke-width="1.8"/>` : `<circle cx="8" cy="8" r="5.5" fill="currentColor"/>`}</svg></span>`);
           });
         });
         dotsHtml = calendarMarks.slice(0, 3).join('');
