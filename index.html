@@ -6506,31 +6506,43 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 </style>
 
 <style id="hosshii-20261104-shift-and-register-final-layout">
-/* シフト登録画面: 時間と有給は自然な間隔で並べ、削除を右端に */
-#modalSelectedDateSummaryContent .shift-registered-row {display:flex!important;align-items:center!important;gap:10px!important;min-width:0;flex-wrap:nowrap!important;}
-#modalSelectedDateSummaryContent .hosshii-shift-time-actions {display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;gap:10px!important;flex:0 1 auto!important;flex-wrap:nowrap!important;min-width:0;}
-#modalSelectedDateSummaryContent .hosshii-shift-time-actions .job-time {white-space:nowrap!important;}
-#modalSelectedDateSummaryContent .hosshii-shift-delete {margin-left:auto!important;flex-shrink:0!important;}
-/* 予定表側のシフト一覧も、時刻・有給を隣接させる */
+/* シフト登録：時間と有給を近づけ、削除は右端。既存の操作は変更しない。 */
+#modalSelectedDateSummaryContent .shift-registered-row {
+  display:flex!important;align-items:center!important;gap:6px!important;min-width:0;flex-wrap:nowrap!important;
+}
+#modalSelectedDateSummaryContent .hosshii-shift-time-actions {
+  display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;
+  gap:5px!important;flex:0 1 auto!important;flex-wrap:nowrap!important;min-width:0;width:auto!important;
+}
+#modalSelectedDateSummaryContent .hosshii-shift-time-actions .job-time {white-space:nowrap!important;flex:0 0 auto!important;}
+#modalSelectedDateSummaryContent .hosshii-shift-delete {margin-left:auto!important;flex:0 0 auto!important;}
+/* 予定表側は既存の見た目を維持 */
 #calendarTodaySummaryContent .selected-shift-row {gap:10px!important;}
 #calendarTodaySummaryContent .selected-shift-row .selected-shift-delete {margin-left:auto!important;}
-/* バイト先登録：見出しと件数上限／入力欄と操作ボタン／登録件数 */
-#tab-settings .hosshii-register-heading {display:flex;align-items:center;justify-content:space-between;gap:6px;min-width:0;}
-#tab-settings .hosshii-register-heading .ito-job-register-label {font-size:clamp(13px,3.8vw,16px)!important;}
-#tab-settings .hosshii-register-limit {color:#78716c;font-size:clamp(9px,2.55vw,11px);white-space:nowrap;}
+/* バイト先登録：見出し・案内文・操作ボタンの可読性 */
+#tab-settings .hosshii-register-heading {display:flex;align-items:center;justify-content:space-between;gap:6px;min-width:0;flex-wrap:wrap;}
+#tab-settings .hosshii-register-heading .ito-job-register-label {font-size:16px!important;line-height:1.4!important;font-weight:800!important;}
+#tab-settings .hosshii-register-limit {color:#292524!important;font-size:14px!important;font-weight:600!important;line-height:1.4!important;white-space:normal;text-align:right;}
 #tab-settings .hosshii-register-controls {display:flex;align-items:center;gap:6px;min-width:0;}
 #tab-settings .hosshii-register-input-wrap {position:relative;flex:1 1 auto;min-width:0;}
 #tab-settings #newJobNameInput {display:block;width:100%!important;min-width:0!important;min-height:46px!important;padding:7px 46px 7px 10px!important;border:1px solid #e7e5e4;border-radius:12px;box-sizing:border-box;}
 #tab-settings .hosshii-register-input-wrap .ito-job-register-button {position:absolute;right:4px;top:50%;transform:translateY(-50%);height:34px;min-height:34px;padding:0 7px!important;border-radius:8px;font-size:12px!important;}
 #tab-settings .hosshii-register-actions {flex:0 0 auto;min-width:0;}
 #tab-settings .hosshii-register-action-row {display:flex;align-items:center;gap:4px;}
-#tab-settings .hosshii-register-action {font-size:clamp(11px,3vw,13px);font-weight:700;white-space:nowrap;color:#292524;padding:6px 3px;min-height:38px;}
-#tab-settings .hosshii-register-count {font-size:11px!important;color:#78716c!important;line-height:1.4!important;}
+#tab-settings .hosshii-register-action {
+  display:inline-flex;align-items:center;justify-content:center;min-height:40px;
+  padding:7px 6px!important;font-size:14px!important;font-weight:700!important;line-height:1.3;
+  white-space:nowrap;color:#171717!important;background:#eaf3ff!important;
+  border:1px solid #bcd6f5!important;border-radius:9px!important;
+}
+#tab-settings .hosshii-register-count,#tab-settings .hosshii-register-count * {
+  font-size:14px!important;color:#292524!important;font-weight:600!important;line-height:1.5!important;
+}
 @media(max-width:360px){
- #modalSelectedDateSummaryContent .hosshii-shift-time-actions {gap:6px!important;}
+ #modalSelectedDateSummaryContent .hosshii-shift-time-actions {gap:4px!important;}
  #tab-settings .hosshii-register-controls {gap:3px;}
- #tab-settings .hosshii-register-action-row {gap:2px;}
- #tab-settings .hosshii-register-action {font-size:11px;padding:5px 1px;}
+ #tab-settings .hosshii-register-action-row {gap:3px;}
+ #tab-settings .hosshii-register-action {padding:7px 4px!important;}
  #tab-settings #newJobNameInput {padding-right:42px!important;}
 }
 </style>
