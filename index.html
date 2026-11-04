@@ -1734,7 +1734,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           <div class="space-y-2">
             <div class="hosshii-register-heading">
               <label for="newJobNameInput" class="ito-job-register-label">【バイト先登録】</label>
-              <span class="hosshii-register-limit">3件まで登録できます。</span>
+              <span id="hosshiiRegisteredJobCount" class="hosshii-register-limit"></span>
             </div>
             <div class="hosshii-register-controls">
               <div class="hosshii-register-input-wrap">
@@ -1743,7 +1743,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
               </div>
               <div id="settingsJobTabs" class="hosshii-register-actions"></div>
             </div>
-            <div class="friend-job-hint hosshii-register-count"><span id="hosshiiRegisteredJobCount"></span></div>
+            <div class="friend-job-hint hosshii-register-count"><span>※6文字以内で3件まで登録できます。</span></div>
           </div>
 
           <div id="settingsJobContentArea" class="pt-2 border-t border-stone-200 space-y-3"></div>
@@ -2762,7 +2762,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const border = palette.border || '#BFD6F4';
       const dot = palette.dot || '#2563EB';
       const countLabel = document.getElementById('hosshiiRegisteredJobCount');
-      if (countLabel) countLabel.textContent = `※現在、${keys.filter(key => configData[key]?.name).length}件登録中`;
+      if (countLabel) countLabel.textContent = `現在${keys.filter(key => configData[key]?.name).length}件登録中です`;
       const pinnedJob = document.getElementById('hosshiiSettingsPinnedJob');
       if (pinnedJob) {
         const name = String(configData[jk]?.name || 'バイト先を選択してね');
