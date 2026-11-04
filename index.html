@@ -1732,13 +1732,18 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         <div class="bg-white p-4 rounded-2xl border border-stone-100 shadow-sm space-y-3">
           <div class="space-y-2">
-            <div class="ito-job-register-row">
+            <div class="hosshii-register-heading">
               <label for="newJobNameInput" class="ito-job-register-label">【バイト先登録】</label>
-              <input id="newJobNameInput" type="text" maxlength="8" placeholder="例：ほっしー" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();registerNewJob();}">
-              <button type="button" onclick="registerNewJob()" class="ito-job-register-button">登録</button>
+              <span class="hosshii-register-limit">3件まで登録できます。</span>
             </div>
-            <div class="friend-job-hint font-bold text-stone-800">3件まで登録できます。 <span id="hosshiiRegisteredJobCount"></span></div>
-            <div id="settingsJobTabs" class="space-y-1.5"></div>
+            <div class="hosshii-register-controls">
+              <div class="hosshii-register-input-wrap">
+                <input id="newJobNameInput" type="text" maxlength="8" placeholder="例：ほっしー" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();registerNewJob();}">
+                <button type="button" onclick="registerNewJob()" class="ito-job-register-button">登録</button>
+              </div>
+              <div id="settingsJobTabs" class="hosshii-register-actions"></div>
+            </div>
+            <div class="friend-job-hint hosshii-register-count"><span id="hosshiiRegisteredJobCount"></span></div>
           </div>
 
           <div id="settingsJobContentArea" class="pt-2 border-t border-stone-200 space-y-3"></div>
@@ -2780,14 +2785,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         suffix.textContent = 'の時給を設定中';
         pinnedJob.append(mark, selector, suffix);
       }
-      const options = keys.map(key => `<option value="${key}" ${key === jk ? 'selected' : ''}>${String(configData[key]?.name || (key === 'job1' ? 'バイト名1' : key === 'job2' ? 'バイト名2' : 'バイト名3')).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}</option>`).join('');
-      container.innerHTML = `<div class="ito-settings-job-row">
-        <div class="ito-settings-job-select" style="background:${bg};border-color:${border}">
-          <span class="ito-settings-job-dot" style="background:${dot}"></span>
-          <select aria-label="登録済みバイト先" onchange="switchSettingsJobTab(this.value)">${options}</select>
-        </div>
-        <button type="button" class="ito-settings-job-action" style="background:${bg};border-color:${border}" onclick="renameJobPrompt(currentSettingsJobKey)">✏️修正</button>
-        <button type="button" class="ito-settings-job-action" style="background:${bg};border-color:${border}" onclick="deleteJob(currentSettingsJobKey)">削除</button>
+      container.innerHTML = `<div class="hosshii-register-action-row">
+        <button type="button" class="hosshii-register-action" onclick="renameJobPrompt(currentSettingsJobKey)">✏️修正</button>
+        <button type="button" class="hosshii-register-action" onclick="deleteJob(currentSettingsJobKey)">削除</button>
       </div>`;
     }
 
@@ -6503,6 +6503,36 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 #calendarTodaySummaryContent .selected-shift-row .selected-shift-break {order:2;min-width:0;}
 #calendarTodaySummaryContent .selected-shift-row .selected-shift-delete {order:3;margin-left:auto!important;flex:0 0 auto;}
 @media(max-width:370px){#calendarTodaySummaryContent .selected-shift-row{gap:4px!important;}#calendarTodaySummaryContent .selected-shift-row .job-time{font-size:16px!important;}#calendarTodaySummaryContent .selected-shift-row .selected-shift-delete{padding:5px 7px;}}
+</style>
+
+<style id="hosshii-20261104-shift-and-register-final-layout">
+/* シフト登録画面: 時間と有給は自然な間隔で並べ、削除を右端に */
+#modalSelectedDateSummaryContent .shift-registered-row {display:flex!important;align-items:center!important;gap:10px!important;min-width:0;flex-wrap:nowrap!important;}
+#modalSelectedDateSummaryContent .hosshii-shift-time-actions {display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;gap:10px!important;flex:0 1 auto!important;flex-wrap:nowrap!important;min-width:0;}
+#modalSelectedDateSummaryContent .hosshii-shift-time-actions .job-time {white-space:nowrap!important;}
+#modalSelectedDateSummaryContent .hosshii-shift-delete {margin-left:auto!important;flex-shrink:0!important;}
+/* 予定表側のシフト一覧も、時刻・有給を隣接させる */
+#calendarTodaySummaryContent .selected-shift-row {gap:10px!important;}
+#calendarTodaySummaryContent .selected-shift-row .selected-shift-delete {margin-left:auto!important;}
+/* バイト先登録：見出しと件数上限／入力欄と操作ボタン／登録件数 */
+#tab-settings .hosshii-register-heading {display:flex;align-items:center;justify-content:space-between;gap:6px;min-width:0;}
+#tab-settings .hosshii-register-heading .ito-job-register-label {font-size:clamp(13px,3.8vw,16px)!important;}
+#tab-settings .hosshii-register-limit {color:#78716c;font-size:clamp(9px,2.55vw,11px);white-space:nowrap;}
+#tab-settings .hosshii-register-controls {display:flex;align-items:center;gap:6px;min-width:0;}
+#tab-settings .hosshii-register-input-wrap {position:relative;flex:1 1 auto;min-width:0;}
+#tab-settings #newJobNameInput {display:block;width:100%!important;min-width:0!important;min-height:46px!important;padding:7px 46px 7px 10px!important;border:1px solid #e7e5e4;border-radius:12px;box-sizing:border-box;}
+#tab-settings .hosshii-register-input-wrap .ito-job-register-button {position:absolute;right:4px;top:50%;transform:translateY(-50%);height:34px;min-height:34px;padding:0 7px!important;border-radius:8px;font-size:12px!important;}
+#tab-settings .hosshii-register-actions {flex:0 0 auto;min-width:0;}
+#tab-settings .hosshii-register-action-row {display:flex;align-items:center;gap:4px;}
+#tab-settings .hosshii-register-action {font-size:clamp(11px,3vw,13px);font-weight:700;white-space:nowrap;color:#292524;padding:6px 3px;min-height:38px;}
+#tab-settings .hosshii-register-count {font-size:11px!important;color:#78716c!important;line-height:1.4!important;}
+@media(max-width:360px){
+ #modalSelectedDateSummaryContent .hosshii-shift-time-actions {gap:6px!important;}
+ #tab-settings .hosshii-register-controls {gap:3px;}
+ #tab-settings .hosshii-register-action-row {gap:2px;}
+ #tab-settings .hosshii-register-action {font-size:11px;padding:5px 1px;}
+ #tab-settings #newJobNameInput {padding-right:42px!important;}
+}
 </style>
 </body>
 </html>
