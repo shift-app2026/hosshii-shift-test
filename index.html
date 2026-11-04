@@ -1399,8 +1399,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     <div class="bg-white rounded-3xl p-6 w-full max-w-xs shadow-2xl border border-stone-200 space-y-4">
       <h3 class="text-base font-bold text-stone-900 text-center tracking-wide">バイト先の名称</h3>
       <div>
-        <input type="text" id="renameJobInput" maxlength="8" class="w-full p-3 border rounded-xl border-stone-300 bg-stone-50 text-center font-bold text-stone-900 text-base focus:outline-none focus:border-stone-500" placeholder="バイト名（8文字以内）" aria-describedby="renameJobHint">
-        <p id="renameJobHint" class="mt-1.5 text-xs text-stone-500 text-center">※ 8文字以内で入力してね</p>
+        <input type="text" id="renameJobInput" maxlength="6" class="w-full p-3 border rounded-xl border-stone-300 bg-stone-50 text-center font-bold text-stone-900 text-base focus:outline-none focus:border-stone-500" placeholder="バイト名（6文字以内）" aria-describedby="renameJobHint">
+        <p id="renameJobHint" class="mt-1.5 text-xs text-stone-500 text-center">※ 6文字以内で入力してね</p>
       </div>
       <div class="flex space-x-2">
         <button type="button" onclick="closeRenameJobModal()" class="flex-1 py-2.5 rounded-xl text-sm font-bold bg-stone-200 text-stone-700 hover:bg-stone-300 transition">キャンセル</button>
@@ -1738,7 +1738,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             </div>
             <div class="hosshii-register-controls">
               <div class="hosshii-register-input-wrap">
-                <input id="newJobNameInput" type="text" maxlength="8" placeholder="例：ほっしー" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();registerNewJob();}">
+                <input id="newJobNameInput" type="text" maxlength="6" placeholder="例：ほっしー" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();registerNewJob();}">
                 <button type="button" onclick="registerNewJob()" class="ito-job-register-button">登録</button>
               </div>
               <div id="settingsJobTabs" class="hosshii-register-actions"></div>
@@ -2271,8 +2271,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         showAlertModal("名称を入力してね♡");
         return;
       }
-      if (newName.length > 8) {
-        showAlertModal("バイト先の名称は8文字以内で入力してね♡");
+      if (newName.length > 6) {
+        showAlertModal("バイト先の名称は6文字以内で入力してね♡");
         return;
       }
 
@@ -2786,7 +2786,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         pinnedJob.append(mark, selector, suffix);
       }
       container.innerHTML = `<div class="hosshii-register-action-row">
-        <button type="button" class="hosshii-register-action" onclick="renameJobPrompt(currentSettingsJobKey)">✏️修正</button>
+        <button type="button" class="hosshii-register-action" onclick="renameJobPrompt(currentSettingsJobKey)">修正</button>
         <button type="button" class="hosshii-register-action" onclick="deleteJob(currentSettingsJobKey)">削除</button>
       </div>`;
     }
@@ -2796,7 +2796,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const input = document.getElementById('newJobNameInput');
       const name = input ? input.value.trim() : '';
       if (!name) { showAlertModal('新しいバイト先名を入力してね♡'); return; }
-      if (name.length > 8) { showAlertModal('バイト先の名称は8文字以内で入力してね♡'); return; }
+      if (name.length > 6) { showAlertModal('バイト先の名称は6文字以内で入力してね♡'); return; }
       const activeKeys = getActiveJobKeys();
       if (activeKeys.some(jk => configData[jk]?.name === name)) {
         showAlertModal('同じ名前のバイト先はすでに登録されています。'); return;
