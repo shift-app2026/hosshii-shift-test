@@ -8,7 +8,7 @@
   <meta property="og:title" content="ほっしーシフト">
   <meta property="og:description" content="シフト管理とお給料の目安がわかるアプリ">
   <meta property="og:url" content="https://shift-app2026.github.io/hosshii-shift-line/">
-<meta property="og:image" content="https://shift-app2026.github.io/hosshii-shift-test/icon-512.png?v=20261104b">
+  <meta property="og:image" content="https://shift-app2026.github.io/hosshii-shift-line/icon-512.png?v=20261104b">
   <meta property="og:image:width" content="512">
   <meta property="og:image:height" content="512">
   <meta name="twitter:card" content="summary">
@@ -1484,7 +1484,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     </div>
   </div>
 
-  <div id="shiftUsageHelpModal" role="dialog" aria-modal="true" onclick="if(event.target===this)closeShiftHelp()" class="fixed inset-0 bg-stone-900/60 z-[80] flex items-center justify-center p-3 hidden"><div class="bg-white rounded-2xl p-4 w-full max-w-sm max-h-[90vh] overflow-y-auto"><h3 class="font-bold text-lg text-rose-900">🌷 シフト登録の使い方 ♡</h3><div class="shift-help-item"><strong>1 【日付の選択】について</strong><p>「前日」「翌日」を押すと、日付を切り替えられます。シフトを登録したい日付を選んでね♪</p></div><div class="shift-help-item"><strong>2 【バイト先を選択】について</strong><p>プルダウンから、シフトを登録したいバイト先を選んでね。選択中のバイト先名が表示されます。</p></div><div class="shift-help-item"><strong>3 【シフト一覧】について</strong><p>登録したシフトが表示されます。有給ボタンで通常勤務と有給を切り替えられるよ。間違えた場合は削除して登録し直してね。</p></div><div class="shift-help-item"><strong>4 【勤務時間を登録】について</strong><p>出勤時間・退勤時間・休憩時間を入力してね。有給の場合は「有給」を選択してから「登録」を押してね。</p></div><div class="shift-help-item"><strong>5 【ワンタッチ時間登録】について</strong><p>「＋登録」を押して、よく使う勤務時間を登録してね。次回から時間を選ぶだけで入力が楽になるよ♪</p></div><div class="shift-help-item"><strong>6 【ワンタッチ時間登録一覧】について</strong><p>⑤で登録した勤務時間が表示されます。使いたい時間を選んで、その日のシフト登録に利用してね。</p></div><button onclick="closeShiftHelp()" class="w-full mt-3 p-3 bg-rose-900 text-white rounded-xl font-bold">閉じる</button></div></div>
+  <div id="shiftUsageHelpModal" role="dialog" aria-modal="true" onclick="if(event.target===this)closeShiftHelp()" class="fixed inset-0 bg-stone-900/60 z-[80] flex items-center justify-center p-3 hidden"><div class="bg-white rounded-2xl p-4 w-full max-w-sm max-h-[90vh] overflow-y-auto"><h3 class="font-bold text-lg text-rose-900">🌷 シフト登録の使い方 ♡</h3><div class="shift-help-item"><strong>1 【日付の選択】について</strong><p>「前日」「翌日」を押すと、日付を切り替えられます。シフトを登録したい日付を選んでね♪</p></div><div class="shift-help-item"><strong>2 【バイト先を選択】について</strong><p>プルダウンから、シフトを登録したいバイト先を選んでね。選択中のバイト先名が表示されます。</p></div><div class="shift-help-item"><strong>3 【シフト一覧】について</strong><p>登録したシフトが表示されます。有給ボタンで通常勤務と有給を切り替えられるよ。登録したシフトは「修正」から変更できます。</p></div><div class="shift-help-item"><strong>4 【勤務時間を登録】について</strong><p>出勤時間・退勤時間・休憩時間を入力してね。有給の場合は「有給」を選択してから「登録」を押してね。</p></div><div class="shift-help-item"><strong>5 【ワンタッチ時間登録】について</strong><p>「＋登録」を押して、よく使う勤務時間を登録してね。次回から時間を選ぶだけで入力が楽になるよ♪</p></div><div class="shift-help-item"><strong>6 【ワンタッチ時間登録一覧】について</strong><p>⑤で登録した勤務時間が表示されます。使いたい時間を選んで、その日のシフト登録に利用してね。</p></div><button onclick="closeShiftHelp()" class="w-full mt-3 p-3 bg-rose-900 text-white rounded-xl font-bold">閉じる</button></div></div>
   <!-- シフト入力・編集専用モーダル -->
   <div id="shiftInputModal" class="fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 hidden">
     <div class="bg-white rounded-3xl p-5 w-full max-w-sm shadow-2xl border border-stone-200 space-y-3.5 max-h-[92vh] flex flex-col overflow-hidden">
@@ -1746,7 +1746,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
           <div class="pt-2.5 border-t border-stone-200 space-y-2">
             <div class="text-base font-bold text-stone-800">【データのバックアップ】</div>
-            <p class="oct23-backup-note note-fit text-xs text-stone-500 font-bold leading-relaxed">※LINEで本人確認してクラウドに保存・復元するテスト機能です♡</p>
+            <p class="oct23-backup-note note-fit text-xs text-stone-500 font-bold leading-relaxed">※LINEで本人確認して、データをクラウドに保存・復元できます♡</p>
             <div class="flex space-x-2">
               <button type="button" onclick="hosshiiCloudBackupSave(event)" class="flex-1 bg-rose-50 hover:bg-rose-100 text-rose-900 font-bold py-3 rounded-xl text-xs sm:text-sm transition border border-rose-200 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">⬇️ 書き出す</button>
               <button type="button" onclick="hosshiiCloudBackupLoad(event)" class="flex-1 bg-rose-50 hover:bg-rose-100 text-rose-900 font-bold py-3 rounded-xl text-xs sm:text-sm transition border border-rose-200 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">⬆ 読み込む</button>
@@ -2185,6 +2185,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function closeShiftInputModal() {
+      editingShift = null;
       document.getElementById('breakSelectModal')?.classList.add('hidden');
       const modal = document.getElementById('shiftInputModal');
       if (modal) modal.classList.add('hidden');
@@ -2396,7 +2397,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           return;
         }
         const breakMins = Number(sh.breakMins) || 0;
-        html += `<div class="shift-registered-row bg-stone-50 p-2 border rounded-xl border-stone-200 flex items-center gap-1"><div class="hosshii-shift-time-actions"><span class="font-bold text-stone-800 job-time">${sh.start}〜${sh.end}</span>${breakMins > 0 ? `<span class="font-bold text-stone-600 whitespace-nowrap">休憩${breakMins}分</span>` : ''}<button type="button" onclick="toggleRegisteredPaidLeave('${jk}', ${idx})" aria-pressed="${!!sh.isPaidLeave}" class="${sh.isPaidLeave ? 'bg-rose-900 text-white border-rose-900' : 'bg-white text-stone-700 border-stone-300'} border font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">有給</button></div><button type="button" onclick="confirmShiftDeletion('${jk}', ${idx})" class="hosshii-shift-delete bg-stone-200 text-stone-700 font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">削除</button></div>`;
+        html += `<div class="shift-registered-row bg-stone-50 p-2 border rounded-xl border-stone-200 flex items-center gap-1"><div class="hosshii-shift-time-actions"><span class="font-bold text-stone-800 job-time">${sh.start}〜${sh.end}</span>${breakMins > 0 ? `<span class="font-bold text-stone-600 whitespace-nowrap">休憩${breakMins}分</span>` : ''}<button type="button" onclick="toggleRegisteredPaidLeave('${jk}', ${idx})" aria-pressed="${!!sh.isPaidLeave}" class="${sh.isPaidLeave ? 'bg-rose-900 text-white border-rose-900' : 'bg-white text-stone-700 border-stone-300'} border font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">有給</button></div><button type="button" onclick="editRegisteredShift('${jk}', ${idx})" class="hosshii-shift-edit bg-white text-rose-900 border border-rose-300 font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">修正</button><button type="button" onclick="confirmShiftDeletion('${jk}', ${idx})" class="hosshii-shift-delete bg-stone-200 text-stone-700 font-bold px-2 py-1.5 rounded-lg text-xs shrink-0">削除</button></div>`;
       });
 
       if (html === '') {
@@ -2407,6 +2408,21 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
       summaryContent.innerHTML = html;
       hosshiiUpdateShiftWageWarning();
+    }
+
+    function editRegisteredShift(jk, idx) {
+      if (hosshiiBlockEdit()) return false;
+      const sh = getDayShifts(selectedCalendarDateStr, jk)[idx];
+      if (!sh || !sh.start || !sh.end) return;
+      currentSelectedJobKey = jk;
+      editingShift = { date: selectedCalendarDateStr, jk, idx };
+      newPresetForm = {start: sh.start, end: sh.end, breakMins: Number(sh.breakMins)||0};
+      renderModalJobTabs();
+      setModalShiftTypeUIOnly(!!sh.isPaidLeave);
+      renderModalCustomPresets();
+      const button = document.getElementById('registerShiftButton');
+      if (button) { button.textContent = '修正を保存'; button.classList.add('unsaved-registration'); }
+      document.getElementById('new_preset_start')?.scrollIntoView({block:'center',behavior:'smooth'});
     }
 
     function updatePaidHoursModal(jk, idx) {
@@ -3487,6 +3503,23 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     function registerModalPresetTime(start, end, breakMins) {
       if (hosshiiBlockEdit()) return false;
       if (!selectedCalendarDateStr) { showToast("日付を選んでね♡"); return false; }
+      if (editingShift) {
+        const {date, jk, idx} = editingShift;
+        if (date !== selectedCalendarDateStr || jk !== currentSelectedJobKey) { showToast('修正対象を確認してください'); return false; }
+        const shifts = getDayShifts(date, jk);
+        if (!shifts[idx]) { showToast('修正対象が見つかりません'); return false; }
+        if (start === end) { showToast('開始と終了が同じ時間だよ。変えてね♡'); return false; }
+        // Preserve the original shift until the complete updated array saves successfully.
+        const old = shifts[idx];
+        shifts[idx] = { ...old, start, end, breakMins, isPaidLeave: !!isPaidLeaveMode };
+        if (!setDayShifts(date, jk, shifts)) return false;
+        editingShift = null;
+        const button = document.getElementById('registerShiftButton');
+        if (button) button.textContent = '登録';
+        updateModalSelectedDateSummary();
+        showToast('シフトを修正しました♡');
+        return true;
+      }
       const dup = findOverlap(selectedCalendarDateStr, start, end);
       if (dup) { showOverlapAlert(dup); return false; }
       const shifts = getDayShifts(selectedCalendarDateStr, currentSelectedJobKey);
@@ -3643,6 +3676,17 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     let test7MarblePercent = 0;
     let test7MarbleFrame = 0;
     let test7MarbleStarted = false;
+    // The LIFF verification overlay may hide the initial marble movement.
+    // Restart only once after the actual salary screen becomes visible.
+    window.hosshiiStartVisibleMarble = function() {
+      if (window.hosshiiMarbleVisibleStarted) return;
+      window.hosshiiMarbleVisibleStarted = true;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        test7MarbleStarted = false;
+        test7MarblePercent = 0;
+        updatePeriodProgressWidget();
+      }));
+    };
     function test7AnimateMarble(target, enabled) {
       const progress = document.getElementById('goalProgressCircle');
       const marble = document.getElementById('test7Marble');
@@ -4441,7 +4485,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         throw new Error('LINEアプリから開いてください。');
       }
       const token = window.liff.getIDToken();
-      if (!token) throw new Error('LINEの本人確認ができません。②のLINEテスト版から開き直してください。');
+      if (!token) throw new Error('LINEの本人確認ができません。LINE公式アカウントのトークからアプリを開き直してください。');
       return token;
     }
     async function hosshiiBackupRequest(action, backupData) {
@@ -5501,7 +5545,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   let idToken=null;
   let statusBusy=false;
   function showError(t){message.textContent=t;consent.hidden=true;retry.hidden=false;}
-  function hideGate(){gate.hidden=true;}
+  function hideGate(){gate.hidden=true; if(typeof window.hosshiiStartVisibleMarble === "function") window.hosshiiStartVisibleMarble();}
   function consentView(){message.classList.add('consent-heading');message.textContent='「初回利用のご案内」';consent.hidden=false;retry.hidden=true;}
   // test⑭: 購入状態に合わせた2行案内。決済連携は未設定のため購入操作は開始しない。
   // LINE本人確認後に取得した申込み番号のみ表示する（決済の認証には使用しない）。
@@ -5680,12 +5724,12 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   async function callStatus(accept){
     // Always read the current LIFF token, including after consent is displayed.
     const freshToken=window.liff?.getIDToken?.();
-    if(!freshToken)throw Error('LINEの認証情報を取得できません。②のLINEテスト用リンクから開き直してください。');
+    if(!freshToken)throw Error('LINEの認証情報を取得できません。LINE公式アカウントのトークからアプリを開き直してください。');
     idToken=freshToken;
     const r=await fetch(STATUS_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({idToken,...(accept?{consentAccepted:true,termsVersion:'2026-10-29',privacyVersion:'2026-10-29'}: {})})});
     let data;try{data=await r.json();}catch(_){throw Error('サーバーの応答を読み取れませんでした（HTTP '+r.status+'）。');}
     if(!r.ok){
-      if(r.status===401)throw Error('LINE認証がサーバーで拒否されました（401）。②のLINEテスト用リンクから開き直してください。繰り返す場合はサーバー側のLINEトークン検証を確認する必要があります。');
+      if(r.status===401)throw Error('LINE認証がサーバーで拒否されました（401）。LINE公式アカウントのトークからアプリを開き直してください。繰り返す場合はサーバー側のLINEトークン検証を確認する必要があります。');
       throw Error('接続に失敗しました（HTTP '+r.status+'：'+String(data.error||'確認できません')+'）。');
     }
     return data;
