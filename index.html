@@ -2226,7 +2226,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const keys=getActiveJobKeys();
       const modalJobDotColor = currentSelectedJobKey === 'job1' ? '#2875E7' : currentSelectedJobKey === 'job2' ? '#488E37' : '#B97461';
       const modalJobTint = currentSelectedJobKey === 'job1' ? '#edf5ff' : currentSelectedJobKey === 'job2' ? '#edf8ed' : '#fff4ee';
-      container.innerHTML=`<div class="friend-modal-job-choice" style="background:${modalJobTint};border-color:${modalJobDotColor}55"><span class="modal-job-color-dot" style="background:${modalJobDotColor}" aria-hidden="true"></span><div class="modal-job-chips" role="group" aria-label="バイト先を選択">${keys.map(jk=>{const sel=jk===currentSelectedJobKey;const nm=String(configData[jk]?.name||jk).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');return `<button type="button" class="modal-job-chip${sel?' selected':''}" style="--chip:${getJobPalette(jk).dot}" onclick="switchModalJobTab('${jk}')">${nm}</button>`;}).join('')}</div></div>`;
+      container.innerHTML=`<div class="friend-modal-job-choice" style="background:${modalJobTint};border-color:${modalJobDotColor}55"><span class="modal-job-color-dot" style="background:${modalJobDotColor}" aria-hidden="true"></span><button type="button" class="modal-job-trigger${keys.length>1?'':' single'}" aria-label="バイト先を選択" ${keys.length>1?'onclick="hosshiiOpenModalJobMenu(this)"':''}><span class="modal-job-trigger-name">${String(configData[currentSelectedJobKey]?.name||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span>${keys.length>1?'<span class="modal-job-trigger-arrow">⌄</span>':''}</button></div>`;
       const warnEl=document.getElementById('modalWageWarn');if(warnEl){const noWage=!jobHasWage(currentSelectedJobKey);warnEl.classList.toggle('hidden',!noWage);if(noWage)warnEl.textContent='⚠️ このバイト先は時給が未設定です。設定タブで時給を入力してね♡';}
     }
 
@@ -2336,6 +2336,49 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         showAlertModal(`バイト先名は保存されましたが、画面更新でエラーが発生しました（${detail}）。ページを再読み込みして名前をご確認ください。`);
       }
     }
+
+    // バイト先の切り替え用プルダウン（ボタンのすぐ下に小さく開く）
+    (function(){
+      let menu = null, cleanup = null;
+      function close() { if (menu) { menu.remove(); menu = null; } if (cleanup) { cleanup(); cleanup = null; } }
+      window.hosshiiCloseJobMenu = close;
+      window.hosshiiOpenJobMenu = function(trigger, keys, selectedKey, onPick) {
+        if (menu) { const same = menu._trigger === trigger; close(); if (same) return; }
+        const m = document.createElement('div');
+        m.id = 'hosshiiJobMenu'; m.setAttribute('role', 'listbox'); m._trigger = trigger;
+        keys.forEach(k => {
+          const b = document.createElement('button');
+          b.type = 'button'; b.setAttribute('role', 'option');
+          b.className = 'hosshii-job-menu-item' + (k === selectedKey ? ' selected' : '');
+          b.style.setProperty('--chip', getJobPalette(k).dot);
+          b.textContent = String(configData[k]?.name || 'バイト先');
+          b.addEventListener('click', () => { close(); if (k !== selectedKey) onPick(k); });
+          m.appendChild(b);
+        });
+        document.body.appendChild(m);
+        const r = trigger.getBoundingClientRect();
+        m.style.minWidth = Math.max(r.width, 150) + 'px';
+        const left = Math.max(8, Math.min(r.left, window.innerWidth - m.offsetWidth - 8));
+        m.style.left = left + 'px';
+        m.style.top = (r.bottom + 4) + 'px';
+        menu = m;
+        const onDown = e => { if (!m.contains(e.target) && !trigger.contains(e.target)) close(); };
+        const onKey = e => { if (e.key === 'Escape') close(); };
+        document.addEventListener('pointerdown', onDown, true);
+        document.addEventListener('keydown', onKey, true);
+        document.addEventListener('scroll', close, true);
+        window.addEventListener('resize', close);
+        cleanup = () => {
+          document.removeEventListener('pointerdown', onDown, true);
+          document.removeEventListener('keydown', onKey, true);
+          document.removeEventListener('scroll', close, true);
+          window.removeEventListener('resize', close);
+        };
+      };
+      window.hosshiiOpenModalJobMenu = function(btn) {
+        hosshiiOpenJobMenu(btn, getActiveJobKeys(), currentSelectedJobKey, k => switchModalJobTab(k));
+      };
+    })();
 
     function switchModalJobTab(jobKey) {
       currentSelectedJobKey = jobKey;
@@ -2833,20 +2876,26 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           none.textContent = 'バイト先を登録してね♡';
           pinnedJob.append(none);
         } else {
-          const chips = document.createElement('span');
-          chips.className = 'hosshii-pinned-chips';
-          keys.forEach(key => {
-            const chip = document.createElement('button');
-            chip.type = 'button';
-            chip.className = 'hosshii-pinned-chip' + (key === jk ? ' selected' : '');
-            chip.style.setProperty('--chip', getJobPalette(key).dot);
-            chip.textContent = String(configData[key]?.name || 'バイト先');
-            chip.addEventListener('click', () => { if (key !== jk) switchSettingsJobTab(key); });
-            chips.appendChild(chip);
-          });
+          const trigger = document.createElement('button');
+          trigger.type = 'button';
+          trigger.className = 'hosshii-pinned-trigger' + (keys.length > 1 ? '' : ' single');
+          const dotEl = document.createElement('span');
+          dotEl.className = 'hosshii-pinned-trigger-dot';
+          dotEl.style.background = dot;
+          const nameEl = document.createElement('span');
+          nameEl.className = 'hosshii-pinned-trigger-name';
+          nameEl.textContent = String(configData[jk]?.name || 'バイト先');
+          trigger.append(dotEl, nameEl);
+          if (keys.length > 1) {
+            const arrow = document.createElement('span');
+            arrow.className = 'hosshii-pinned-trigger-arrow';
+            arrow.textContent = '⌄';
+            trigger.append(arrow);
+            trigger.addEventListener('click', () => hosshiiOpenJobMenu(trigger, keys, jk, k => switchSettingsJobTab(k)));
+          }
           const suffix = document.createElement('span');
           suffix.textContent = 'の時給を設定中';
-          pinnedJob.append(chips, suffix);
+          pinnedJob.append(trigger, suffix);
         }
       }
       if (!keys.length) window.hosshiiJobEditMode = false;
@@ -6674,15 +6723,19 @@ p.hosshii-ring-note{font-size:13px!important;line-height:1.6!important;color:#11
 #itoStickyHeaderHost .hosshii-settings-pinned-select:disabled,
 #tab-settings .hosshii-settings-pinned-select:disabled{opacity:1!important;-webkit-appearance:none!important;appearance:none!important;color:#0c0a09!important;-webkit-text-fill-color:#0c0a09!important;padding:0 2px!important;}
 #modalJobSelectContainer select:disabled{opacity:1!important;-webkit-appearance:none!important;appearance:none!important;color:#242424!important;-webkit-text-fill-color:#242424!important;}
-/* バイト先の切り替え：ポップアップ（プルダウン）をやめて、ボタンで切り替える */
-#itoStickyHeaderHost .hosshii-settings-current-job,#tab-settings .hosshii-settings-current-job{flex-wrap:wrap!important;justify-content:center!important;row-gap:3px!important;}
-.hosshii-pinned-chips,.modal-job-chips{display:inline-flex;flex-wrap:wrap;align-items:center;gap:5px;min-width:0;}
-.hosshii-pinned-chip,.modal-job-chip{display:inline-flex;align-items:center;gap:5px;max-width:100%;border:1.5px solid #e7e5e4;background:#f5f5f4;color:#57534e;border-radius:999px;padding:3px 10px;font-size:15px;font-weight:800;line-height:1.3;outline:none!important;box-shadow:none;-webkit-tap-highlight-color:transparent;white-space:nowrap;}
-.hosshii-pinned-chip::before,.modal-job-chip::before{content:"";flex:0 0 9px;width:9px;height:9px;border-radius:50%;background:var(--chip,#999);}
-.hosshii-pinned-chip.selected,.modal-job-chip.selected{background:#fff;border-color:var(--chip,#881337);color:#0c0a09;}
-.hosshii-pinned-chip:focus,.modal-job-chip:focus{outline:none!important;}
-#modalJobSelectContainer .modal-job-color-dot{display:none!important;}
-#modalJobSelectContainer .friend-modal-job-choice{flex-wrap:wrap;}
+/* バイト先の切り替え：ボタンのすぐ下に小さく開くプルダウン */
+.hosshii-pinned-trigger,.modal-job-trigger{display:inline-flex;align-items:center;gap:5px;min-width:0;border:0;background:transparent;color:#0c0a09;font-weight:800;line-height:1.3;outline:none!important;box-shadow:none;-webkit-tap-highlight-color:transparent;}
+.hosshii-pinned-trigger{font-size:17px;padding:0 2px;max-width:9em;}
+.hosshii-pinned-trigger-dot{flex:0 0 11px;width:11px;height:11px;border-radius:50%;}
+.hosshii-pinned-trigger-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.hosshii-pinned-trigger-arrow,.modal-job-trigger-arrow{font-size:14px;color:#57534e;}
+.hosshii-pinned-trigger.single,.modal-job-trigger.single{pointer-events:none;}
+.modal-job-trigger{flex:1;justify-content:space-between;text-align:left;font-size:clamp(13px,3.6vw,15px);padding:6px 1px;}
+#hosshiiJobMenu{position:fixed;z-index:20000;display:flex;flex-direction:column;max-width:calc(100vw - 16px);background:#fff;border:1px solid #e7e5e4;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.18);padding:4px;}
+.hosshii-job-menu-item{display:flex;align-items:center;gap:8px;text-align:left;padding:10px 12px;border-radius:9px;font-size:16px;font-weight:700;color:#292524;white-space:nowrap;outline:none!important;}
+.hosshii-job-menu-item::before{content:"";flex:0 0 10px;width:10px;height:10px;border-radius:50%;background:var(--chip,#999);}
+.hosshii-job-menu-item.selected{background:#fff4f6;color:#881337;}
+.hosshii-job-menu-item.selected::after{content:"✓";margin-left:auto;padding-left:14px;}
 </style>
 </body>
 </html>
