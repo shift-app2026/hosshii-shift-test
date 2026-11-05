@@ -1365,6 +1365,12 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 #modalSelectedDateSummaryContent .hosshii-shift-delete {margin-left:auto!important;}
 @media(max-width:370px){#modalSelectedDateSummaryContent .hosshii-shift-time-actions{gap:5px!important;}}
 </style>
+<style id="hosshii-pay-nextmonth-20261105">
+#goalRing .goal-label-text{font-size:clamp(11px,3.15vw,14px)!important;white-space:nowrap;}
+.hosshii-ring-note{font-size:11px;line-height:1.55;color:#78716c;text-align:left;margin:5px 7px 12px;}
+#itoReceiveTable .hc-cols{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr);}
+#itoReceiveTable .hc-cols strong{font-size:clamp(10px,2.8vw,13px);white-space:nowrap;letter-spacing:-.04em;}
+</style>
 </head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
@@ -1601,7 +1607,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 <svg id="test7Marble" x="138" y="7" width="24" height="24" viewBox="-12 -12 24 24" overflow="visible" style="display:none"><g filter="url(#t15GlassShadow)"><circle r="10.7" fill="url(#t26PearlGold)" stroke="#fff6da" stroke-width="1.25"/><ellipse cx="-3" cy="-4" rx="3.8" ry="2.7" fill="#fff" opacity=".93"/><path d="M -7 2.2 Q 0 9 7 1.4" fill="none" stroke="#f6fcd5" stroke-opacity=".65" stroke-width="1"/></g></svg>
 </svg>
               <div class="absolute inset-0 flex flex-col items-center justify-center text-center t10-center">
-                <span class="goal-label-text">今月のお給料見込額</span>
+                <span class="goal-label-text">来月のお給料見込額</span>
                 <button type="button" id="goalCurrentPay" onclick="switchTab('settings')" aria-label="時給設定画面へ移動" disabled>0円</button>
                 <div class="test7-divider"></div>
                 <span class="t10-remaining-label">目標まで</span>
@@ -1615,11 +1621,13 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         </div>
 
+        <p class="hosshii-ring-note">※この円グラフは、各バイト先の締め日に合わせて計算した、お給料見込額の合計を表しています。</p>
+
         <div class="hosshii-monthly-detail-card bg-gradient-to-br from-rose-50/60 via-rose-50/30 to-amber-50/40 text-stone-900 p-4 rounded-2xl border border-rose-100 shadow-[0_1px_2px_rgba(0,0,0,0.05)] space-y-2.5">
           <div class="text-sm font-bold text-rose-950 border-b border-rose-200/60 pb-2 flex justify-between items-center tracking-wide">
-            <span id="monthlyReceiveTitle">【今月・前月の内訳】</span>
+            <span id="monthlyReceiveTitle">【来月・今月のお給料内訳】</span>
           </div>
-          <div id="itoReceiveTable" class="ito-receive-table" aria-label="今月の締め分の勤務時間とお給料見込額"></div>
+          <div id="itoReceiveTable" class="ito-receive-table" aria-label="来月と今月の入金予定に対応する勤務時間とお給料見込額"></div>
           <div id="test5RingWarning" class="t13-wage-notice" hidden>⚠️ 時給が設定されていない時間帯があります。<br>シフト登録画面にお戻りください♡ <button type="button" onclick="hosshiiOpenMissingShift()">［登録画面］</button></div>
         </div>
         <section class="t10-prev-card" hidden aria-hidden="true">
@@ -3772,15 +3780,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function calcJobCalendarMonthPay(jk, viewMonth) {
       const job = configData[jk];
-      const year = viewMonth.getFullYear();
-      const month = viewMonth.getMonth();
-      const closeInput = String(job.closeDay || '20').trim();
-      const closeNum = closeInput === '月末' ? 31 : (Number(closeInput) || 20);
-      const closingDate = (y, m) =>
-        new Date(y, m, Math.min(closeNum, new Date(y, m + 1, 0).getDate()));
-      const end = closingDate(year, month);
-      const prevClose = closingDate(year, month - 1);
-      const start = new Date(prevClose.getFullYear(), prevClose.getMonth(), prevClose.getDate() + 1);
+      // 表示月の翌月に入金される予定の締め期間を、バイト先別に求める。
+      const todayMonth = new Date();
+      const receiveMonthOffset = (viewMonth.getFullYear() - todayMonth.getFullYear()) * 12
+        + (viewMonth.getMonth() - todayMonth.getMonth()) + 1;
+      const {start, end} = getJobPayPeriodRangeForReceiveMonth(job, receiveMonthOffset);
       let mins = 0, pay = 0, days = 0, commutingDays = 0;
       for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
         const r = calcJobDay(formatDateKey(d), jk, new Date(d));
@@ -3823,7 +3827,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         <div class="hc-row"><span>勤務時間</span><span>${hm(a.mins)}</span><span>${hm(b.mins)}</span></div>
         <div class="hc-row"><span>時給・有給分</span><span>${a.wageMissing?'⚠️':yen(a.wage)}</span><span>${b.wageMissing?'⚠️':yen(b.wage)}</span></div>
         <div class="hc-row"><span>交通費・手当</span><span>${yen(a.other)}</span><span>${yen(b.other)}</span></div>`;
-      const heading = '<div class="hc-cols"><span></span><strong>今月</strong><strong>先月</strong></div>';
+      const heading = '<div class="hc-cols"><span></span><strong>来月入金予定</strong><strong>今月入金予定</strong></div>';
       const totalCell = r => r.missing ? '⚠️' : yen(r.wage + r.other);
        const totalRow = `<div class="hc-row hc-grand-total"><span>合計</span><span>${totalCell(totalNow)}</span><span>${totalCell(totalPrev)}</span></div>`;
        const totals = `<div class="hc-summary" aria-label="今月と先月の全バイト先の集計">${heading}${rowsHtml(totalNow,totalPrev)}${totalRow}</div>`;
@@ -3831,8 +3835,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const a=current[i], b=previous[i];
         const color=getJobPalette(jk).dot;
         const name=esc(getJobDisplayName(jk));
-        const period=`${md(a.start)}～${md(a.end)}`;
-        return `<div class="hc-job-card"><div class="hc-job-title"><i class="hc-dot" style="background:${color}"></i><strong>${name}</strong><span>${period}</span></div>${heading}${rowsHtml({mins:a.mins,wage:a.wagePay,other:a.otherPay,wageMissing:a.wageMissing},{mins:b.mins,wage:b.wagePay,other:b.otherPay,wageMissing:b.wageMissing})}</div>`;
+        const close = String(configData[jk]?.closeDay || '20').trim();
+        const closeNum = close === '月末' ? 31 : (Number(close) || 20);
+        const period = closeNum >= 31 ? '1日〜末日' : `${closeNum + 1}日〜翌月${closeNum}日`;
+        return `<div class="hc-job-card"><div class="hc-job-title"><i class="hc-dot" style="background:${color}"></i><strong>${name}</strong><span>${period}</span></div>${heading}${rowsHtml({mins:a.mins,wage:a.wagePay,other:a.otherPay,wageMissing:a.wageMissing},{mins:b.mins,wage:b.wagePay,other:b.otherPay,wageMissing:b.wageMissing})}<div class="hc-row hc-grand-total"><span>合計</span><span>${a.wageMissing?'⚠️':yen(a.pay)}</span><span>${b.wageMissing?'⚠️':yen(b.pay)}</span></div></div>`;
       }).join('');
       return `<div class="hc-comparison">${totals}${cards}</div>`;
     }
@@ -3840,7 +3846,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     function calculateMonthlyReceivePay() {
       const month = getPayViewMonthDate();
       const title = document.getElementById('monthlyReceiveTitle');
-      if (title) title.textContent = '【今月・前月の内訳】';
+      if (title) title.textContent = '【来月・今月のお給料内訳】';
       const current = document.getElementById('itoReceiveTable');
       if (current) current.innerHTML = hosshiiComparePayTable(month);
       const currentMissing = getActiveJobKeys().some(jk => calcJobCalendarMonthPay(jk, month).wageMissing);
