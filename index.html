@@ -1751,10 +1751,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             <div class="hosshii-job-modes"><button id="hosshiiModeNew" type="button" onclick="setHosshiiJobMode(false)">新規登録</button><button id="hosshiiModeEdit" type="button" onclick="setHosshiiJobMode(true)">修正＆削除</button></div>
             <div class="hosshii-register-controls">
               <div id="hosshiiNewJobRow" class="hosshii-register-input-wrap">
-                <input id="newJobNameInput" type="text" maxlength="6" placeholder="例：ほっしー" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();registerNewJob();}">
+                <span class="hosshii-input-with-drop"><input id="newJobNameInput" type="text" maxlength="6" placeholder="例：ほっしー" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();registerNewJob();}"><button type="button" id="hosshiiJobDropBtn" class="hosshii-job-drop" aria-label="登録済みのバイト先を選ぶ" onclick="hosshiiOpenJobPicker()" hidden>▼</button></span>
                 <button type="button" onclick="registerNewJob()" class="ito-job-register-button">登録</button>
               </div>
-              <div id="hosshiiJobEditRow" class="hosshii-register-input-wrap" hidden><select id="hosshiiJobEditSelect" aria-label="修正・削除するバイト先" onchange="window.hosshiiEditSelectedKey=this.value"></select></div>
+              <div id="hosshiiJobEditRow" class="hosshii-register-input-wrap" hidden><select id="hosshiiJobEditSelect" aria-label="修正・削除するバイト先" onchange="hosshiiJobSelectChanged(this)"></select></div>
               <div id="settingsJobTabs" class="hosshii-register-actions"></div>
             </div>
             <div class="friend-job-hint hosshii-register-count"><span>※6文字以内で3件まで登録できます。</span></div>
@@ -1982,6 +1982,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     window.onload = function() {
+      hosshiiPurgeOrphanShifts();
       // 新しく起動したときは「お給料」画面を表示
       switchTab('clock');
       renderSettingsJobTabs();
@@ -2225,7 +2226,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const keys=getActiveJobKeys();
       const modalJobDotColor = currentSelectedJobKey === 'job1' ? '#2875E7' : currentSelectedJobKey === 'job2' ? '#488E37' : '#B97461';
       const modalJobTint = currentSelectedJobKey === 'job1' ? '#edf5ff' : currentSelectedJobKey === 'job2' ? '#edf8ed' : '#fff4ee';
-      container.innerHTML=`<div class="friend-modal-job-choice" style="background:${modalJobTint};border-color:${modalJobDotColor}55"><span class="modal-job-color-dot" style="background:${modalJobDotColor}" aria-hidden="true"></span><select aria-label="バイト先を選択" onchange="switchModalJobTab(this.value)">${keys.map(jk=>`<option value="${jk}" ${jk===currentSelectedJobKey?'selected':''}>${(configData[jk]?.name||jk).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</option>`).join('')}</select></div>`;
+      container.innerHTML=`<div class="friend-modal-job-choice" style="background:${modalJobTint};border-color:${modalJobDotColor}55"><span class="modal-job-color-dot" style="background:${modalJobDotColor}" aria-hidden="true"></span><select aria-label="バイト先を選択" ${keys.length<=1?'disabled':''} onchange="this.blur();switchModalJobTab(this.value)">${keys.map(jk=>`<option value="${jk}" ${jk===currentSelectedJobKey?'selected':''}>${(configData[jk]?.name||jk).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</option>`).join('')}</select></div>`;
       const warnEl=document.getElementById('modalWageWarn');if(warnEl){const noWage=!jobHasWage(currentSelectedJobKey);warnEl.classList.toggle('hidden',!noWage);if(noWage)warnEl.textContent='⚠️ このバイト先は時給が未設定です。設定タブで時給を入力してね♡';}
     }
 
@@ -2236,7 +2237,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     function renameJobPrompt(jk) {
       renamingJobKey = jk;
       const input = document.getElementById('renameJobInput');
-      const placeholderName = jk === 'job1' ? 'バイト名1' : (jk === 'job2' ? 'バイト名2' : 'バイト名3');
+      const placeholderName = '例：ほっしー';
       input.placeholder = placeholderName;
       const curName = configData[jk] && configData[jk].name;
       input.value = (curName && curName !== 'バイト') ? curName : '';
@@ -2454,6 +2455,21 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         updateModalSelectedDateSummary();
         refreshAll();
       });
+    }
+
+    // 名前のない（未登録の）バイト先枠に残っているシフトを消す
+    function hosshiiPurgeOrphanShifts() {
+      try {
+        if (window.hosshiiReadOnly === true) return;
+        const orphanKeys = ['job1','job2','job3'].filter(k => !String(configData[k]?.name || '').trim());
+        if (!orphanKeys.length) return;
+        let changed = false;
+        for (const dk of Object.keys(shiftsData)) {
+          orphanKeys.forEach(k => { if (shiftsData[dk] && k in shiftsData[dk]) { delete shiftsData[dk][k]; changed = true; } });
+          if (shiftsData[dk] && !Object.keys(shiftsData[dk]).length) { delete shiftsData[dk]; changed = true; }
+        }
+        if (changed) safeWriteAppJSON('mybasket_shifts_v23', shiftsData);
+      } catch (e) {}
     }
 
     function getActiveJobKeys() {
@@ -2771,6 +2787,21 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         <p class="text-xs text-stone-500 font-medium leading-relaxed pt-1">※1日8時間を超えた分の割増は、自動では計算されません。22時以降は、設定した時間帯の時給が反映されます。</p>`;
     }
 
+    function hosshiiJobSelectChanged(sel) {
+      if (sel.value === '__new__') {
+        setHosshiiJobMode(false);
+        setTimeout(() => document.getElementById('newJobNameInput')?.focus(), 30);
+        return;
+      }
+      window.hosshiiEditSelectedKey = sel.value;
+    }
+    function hosshiiOpenJobPicker() {
+      if (!getActiveJobKeys().length) return;
+      setHosshiiJobMode(true);
+      const sel = document.getElementById('hosshiiJobEditSelect');
+      if (!sel) return;
+      try { sel.focus(); if (typeof sel.showPicker === 'function') sel.showPicker(); } catch (e) {}
+    }
     function setHosshiiJobMode(edit) {
       window.hosshiiJobEditMode = Boolean(edit);
       renderSettingsJobTabs();
@@ -2805,19 +2836,23 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           option.selected = key === jk;
           selector.appendChild(option);
         });
-        selector.addEventListener('change', () => switchSettingsJobTab(selector.value));
+        if (keys.length <= 1) selector.disabled = true;
+        selector.addEventListener('change', () => { selector.blur(); switchSettingsJobTab(selector.value); });
         const suffix = document.createElement('span');
         suffix.textContent = 'の時給を設定中';
         pinnedJob.append(mark, selector, suffix);
       }
+      if (!keys.length) window.hosshiiJobEditMode = false;
       const editMode = window.hosshiiJobEditMode === true;
+      const dropBtn = document.getElementById('hosshiiJobDropBtn');
+      if (dropBtn) dropBtn.hidden = !keys.length;
       const row = document.getElementById('hosshiiJobEditRow');
       if (row) row.hidden = !editMode;
       const select = document.getElementById('hosshiiJobEditSelect');
       if (select) {
-        select.innerHTML = keys.map(k => `<option value="${k}">${esc(configData[k].name)}</option>`).join('');
-        if (keys.includes(window.hosshiiEditSelectedKey)) select.value = window.hosshiiEditSelectedKey;
-        else window.hosshiiEditSelectedKey = select.value || '';
+        select.innerHTML = '<option value="__new__">＋ 新しく登録する</option>' + keys.map(k => `<option value="${k}">${esc(configData[k].name)}</option>`).join('');
+        if (!keys.includes(window.hosshiiEditSelectedKey)) window.hosshiiEditSelectedKey = keys[0] || '';
+        select.value = window.hosshiiEditSelectedKey || '__new__';
       }
       const newRow = document.getElementById('hosshiiNewJobRow');
       if (newRow) newRow.hidden = editMode;
@@ -2850,6 +2885,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const oldConfig = JSON.parse(JSON.stringify(configData));
       const oldSettingsKey = currentSettingsJobKey;
       try {
+        hosshiiPurgeOrphanShifts();
         configData[targetKey] = createEmptyJobConfig();
         configData[targetKey].name = name;
         configData.jobCount = nextCount;
@@ -2890,8 +2926,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           if (!Object.keys(shiftsData[dk]).length) delete shiftsData[dk];
         }
         configData.jobCount = getActiveJobKeys().length;
-        if (!saveAllDataStorage()) {
+        // 設定とシフトの両方を保存する（片方だけだとシフトが復活するため）
+        const shiftsSaved = safeWriteAppJSON('mybasket_shifts_v23', shiftsData);
+        if (!shiftsSaved || !saveAllDataStorage()) {
           configData = previousConfig; shiftsData = previousShifts;
+          if (shiftsSaved) safeWriteAppJSON('mybasket_shifts_v23', shiftsData);
           showAlertModal('保存できなかったため、削除を取り消しました。'); return;
         }
         window.hosshiiEditSelectedKey = '';
@@ -2900,6 +2939,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         currentSelectedJobKey = getFirstActiveJobKey();
         renderSettingsJobTabs(); renderSettingsJobContent(currentSettingsJobKey);
         renderModalJobTabs(); refreshAll();
+        try {
+          const activeTab = document.querySelector('#appScroll > .tab-content:not(.hidden)');
+          if (activeTab && typeof window.updateItoStickyHeader === 'function') window.updateItoStickyHeader(activeTab.id.replace(/^tab-/, ''));
+        } catch (e) {}
         showToast(`「${name}」を削除しました`);
       });
     }
@@ -3940,7 +3983,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     function getPaydayJobs(d) {
       const y = d.getFullYear(), m = d.getMonth(), n = d.getDate();
       return getActiveJobKeys().filter(jk => {
-        const p = String(configData[jk].payDay || '5').trim();
+        const p = String(configData[jk].payDay || '').trim();
+        if (!p) return false; // 給料日が未設定なら表示しない
         return [getAdjustedPaydayDate(y, m, p), getAdjustedPaydayDate(y, m + 1, p)]
           .some(a => a.getFullYear() === y && a.getMonth() === m && a.getDate() === n);
       });
@@ -4033,7 +4077,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     function getJobDisplayName(jk) {
       const raw = configData[jk]?.name;
       if (raw) return raw;
-      return jk === 'job1' ? 'バイト名1' : (jk === 'job2' ? 'バイト名2' : 'バイト名3');
+      return 'バイト先を登録してね♡';
     }
 
     function hosshiiShiftTypeMark(jk, isPaid) {
@@ -4045,7 +4089,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const visual = getJobVisual(jk);
       const palette = getJobPalette(jk);
       const rawName = configData[jk]?.name;
-      const placeholderName = jk === 'job1' ? 'バイト名1' : (jk === 'job2' ? 'バイト名2' : 'バイト名3');
+      const placeholderName = 'バイト先を登録してね♡';
       const displayName = rawName ? esc(rawName) : `<span class="font-normal">${placeholderName}</span>`;
       const titleName = esc(rawName || placeholderName);
       const orb = `<span class="job-color-dot" aria-hidden="true" style="display:inline-block;flex:0 0 10px;width:10px;height:10px;min-width:10px;border-radius:50%;background:${palette.dot};border:1px solid ${palette.dot};box-sizing:border-box;margin-right:1px;"></span>`;
@@ -6587,6 +6631,42 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
   #tab-settings .hosshii-register-input-wrap .ito-job-register-button{padding:0 8px!important;}
   #tab-settings .hosshii-register-action{padding:7px 6px!important;}
 }
+</style>
+<style id="hosshii-20261105-pay-tab-fixes">
+/* ① 無料お試し終了日・準備中の案内を+1px */
+#hosshiiTrialBanner .hosshii-trial-status-line{font-size:16px!important;}
+#hosshiiTrialBanner .hosshii-payment-preparing{font-size:12px!important;}
+@media(max-width:360px){#hosshiiTrialBanner .hosshii-trial-status-line{font-size:14px!important;}}
+/* ② 円グラフの注記：少し大きく・濃い黒（3行になってもOK） */
+p.hosshii-ring-note{font-size:13px!important;line-height:1.6!important;color:#111!important;}
+/* ③ 来月入金予定・今月入金予定の見出しを少し小さく */
+#tab-clock .hc-cols,#tab-clock .hc-cols strong{font-size:14px!important;}
+/* バイト名の登録＆変更：新規登録は「入力欄＋登録」、修正＆削除は「選択欄＋修正＋削除」を1行で並べる */
+#tab-settings #hosshiiNewJobRow[hidden],
+#tab-settings #hosshiiJobEditRow[hidden],
+#tab-settings #settingsJobTabs[hidden]{display:none!important;}
+#tab-settings .hosshii-register-controls{display:flex!important;align-items:center!important;gap:6px!important;}
+#tab-settings #hosshiiNewJobRow,
+#tab-settings #hosshiiJobEditRow{flex:1 1 auto!important;min-width:0!important;}
+#tab-settings #settingsJobTabs{flex:0 0 auto!important;}
+#tab-settings #hosshiiJobEditSelect{width:100%!important;min-width:0!important;height:46px!important;min-height:46px!important;padding:7px 10px!important;border:1px solid #d6d3d1!important;border-radius:12px!important;background:#fff!important;font-size:15px!important;}
+#tab-settings .hosshii-register-action-row{display:flex!important;align-items:center!important;gap:6px!important;}
+/* バイト名の登録＆変更：タブをなくし、1つのプルダウンで切り替える */
+.hosshii-job-modes{display:none!important;}
+#tab-settings .hosshii-input-with-drop{position:relative;display:block;flex:1 1 auto;min-width:0;}
+#tab-settings .hosshii-input-with-drop #newJobNameInput{width:100%!important;box-sizing:border-box!important;padding-right:38px!important;}
+#tab-settings .hosshii-job-drop{position:absolute;right:4px;top:50%;transform:translateY(-50%);width:30px;height:34px;border:0;border-radius:8px;background:transparent;color:#881337;font-size:14px;line-height:1;}
+#tab-settings .hosshii-job-drop[hidden]{display:none!important;}
+/* バイト先プルダウン：選択後に出る枠をなくし、登録が1件以下のときは押せない（ポップアップなし）にする */
+#itoStickyHeaderHost .hosshii-settings-pinned-select:focus,
+#itoStickyHeaderHost .hosshii-settings-pinned-select:focus-visible,
+#tab-settings .hosshii-settings-pinned-select:focus,
+#tab-settings .hosshii-settings-pinned-select:focus-visible,
+#modalJobSelectContainer select:focus,
+#modalJobSelectContainer select:focus-visible{outline:none!important;box-shadow:none!important;}
+#itoStickyHeaderHost .hosshii-settings-pinned-select:disabled,
+#tab-settings .hosshii-settings-pinned-select:disabled{opacity:1!important;-webkit-appearance:none!important;appearance:none!important;color:#0c0a09!important;-webkit-text-fill-color:#0c0a09!important;padding:0 2px!important;}
+#modalJobSelectContainer select:disabled{opacity:1!important;-webkit-appearance:none!important;appearance:none!important;color:#242424!important;-webkit-text-fill-color:#242424!important;}
 </style>
 </body>
 </html>
