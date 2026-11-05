@@ -50,6 +50,14 @@
 #tab-clock .t13-wage-notice button{color:#8b0e33;font-weight:750;text-decoration:underline;text-underline-offset:3px;cursor:pointer;}
 #tab-clock #goalCurrentPay:disabled{opacity:1;}
 </style>
+  <style id="hosshii-job-mode-fix">
+  .hosshii-job-modes{display:grid;grid-template-columns:1fr 1fr;gap:5px;background:#f5f5f4;border-radius:14px;padding:4px}
+  .hosshii-job-modes button{border-radius:10px;padding:7px 3px;font-size:13px;font-weight:700;color:#57534e}
+  .hosshii-job-modes button.selected{background:#fff;color:#881337;box-shadow:0 1px 3px #0002}
+  #hosshiiJobEditRow select{width:100%;border:1px solid #ddd6d3;border-radius:12px;background:#fff;min-height:45px}
+  #settingsJobTabs[hidden],#hosshiiNewJobRow[hidden],#hosshiiJobEditRow[hidden]{display:none!important}
+  #settingsJobTabs button:disabled{opacity:.4}
+  </style>
   <style id="test37-pc-guide-scroll-fix">
   /* PC: prevent the app's flex scroll area from expanding past the card.
      The bottom tab bar remains unchanged, and mobile styles are untouched. */
@@ -1737,14 +1745,16 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         <div class="bg-white p-4 rounded-2xl border border-stone-100 shadow-sm space-y-3">
           <div class="space-y-2">
             <div class="hosshii-register-heading">
-              <label for="newJobNameInput" class="ito-job-register-label">【バイト先登録】</label>
+              <label for="newJobNameInput" class="ito-job-register-label">【バイト名の登録＆変更】</label>
               <span id="hosshiiRegisteredJobCount" class="hosshii-register-limit"></span>
             </div>
+            <div class="hosshii-job-modes"><button id="hosshiiModeNew" type="button" onclick="setHosshiiJobMode(false)">新規登録</button><button id="hosshiiModeEdit" type="button" onclick="setHosshiiJobMode(true)">修正＆削除</button></div>
             <div class="hosshii-register-controls">
-              <div class="hosshii-register-input-wrap">
+              <div id="hosshiiNewJobRow" class="hosshii-register-input-wrap">
                 <input id="newJobNameInput" type="text" maxlength="6" placeholder="例：ほっしー" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();registerNewJob();}">
                 <button type="button" onclick="registerNewJob()" class="ito-job-register-button">登録</button>
               </div>
+              <div id="hosshiiJobEditRow" class="hosshii-register-input-wrap" hidden><select id="hosshiiJobEditSelect" aria-label="修正・削除するバイト先" onchange="window.hosshiiEditSelectedKey=this.value"></select></div>
               <div id="settingsJobTabs" class="hosshii-register-actions"></div>
             </div>
             <div class="friend-job-hint hosshii-register-count"><span>※6文字以内で3件まで登録できます。</span></div>
@@ -1895,7 +1905,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function buildConfigData(savedWages) {
       return {
-        jobCount: savedWages.jobCount !== undefined ? Number(savedWages.jobCount) : 1,
+        jobCount: savedWages.jobCount !== undefined ? Number(savedWages.jobCount) : 0,
         job1: createDefaultJobConfig(savedWages.job1, '', defaultPresets1, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', ''),
         job2: createDefaultJobConfig(savedWages.job2, '', defaultPresets1, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', ''),
         job3: createDefaultJobConfig(savedWages.job3, '', defaultPresets1, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '')
@@ -1954,8 +1964,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
       return {
         name: savedJob?.name !== undefined ? savedJob.name : defName,
-        closeDay: normDay(savedJob?.closeDay, '20'),
-        payDay: normDay(savedJob?.payDay, '5'),
+        closeDay: savedJob?.closeDay ? normDay(savedJob.closeDay, '') : '',
+        payDay: savedJob?.payDay ? normDay(savedJob.payDay, '') : '',
         paid: numOr(savedJob?.paid, defPaid),
         paidHours: Number(savedJob?.paidHours) || 0,
         wageSlots: wageSlots,
@@ -2447,11 +2457,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function getActiveJobKeys() {
-      let count = Number(configData.jobCount) || 1;
-      let keys = ['job1'];
-      if (count >= 2) keys.push('job2');
-      if (count >= 3) keys.push('job3');
-      return keys;
+      // Names determine registration. Never create a phantom job when count is zero.
+      return ['job1','job2','job3'].filter(k => Boolean(String(configData[k]?.name || '').trim()));
     }
 
     function getFirstActiveJobKey() {
@@ -2764,6 +2771,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         <p class="text-xs text-stone-500 font-medium leading-relaxed pt-1">※1日8時間を超えた分の割増は、自動では計算されません。22時以降は、設定した時間帯の時給が反映されます。</p>`;
     }
 
+    function setHosshiiJobMode(edit) {
+      window.hosshiiJobEditMode = Boolean(edit);
+      renderSettingsJobTabs();
+    }
     function renderSettingsJobTabs() {
       const container = document.getElementById('settingsJobTabs');
       if (!container) return;
@@ -2786,6 +2797,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const selector = document.createElement('select');
         selector.className = 'hosshii-settings-pinned-select';
         selector.setAttribute('aria-label', '時給を設定するバイト先を選択');
+        if (!keys.length) { const o = document.createElement('option'); o.textContent = 'バイト先を登録してね'; o.value = ''; selector.appendChild(o); selector.disabled = true; }
         keys.forEach(key => {
           const option = document.createElement('option');
           option.value = key;
@@ -2798,10 +2810,24 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         suffix.textContent = 'の時給を設定中';
         pinnedJob.append(mark, selector, suffix);
       }
+      const editMode = window.hosshiiJobEditMode === true;
+      const row = document.getElementById('hosshiiJobEditRow');
+      if (row) row.hidden = !editMode;
+      const select = document.getElementById('hosshiiJobEditSelect');
+      if (select) {
+        select.innerHTML = keys.map(k => `<option value="${k}">${esc(configData[k].name)}</option>`).join('');
+        if (keys.includes(window.hosshiiEditSelectedKey)) select.value = window.hosshiiEditSelectedKey;
+        else window.hosshiiEditSelectedKey = select.value || '';
+      }
+      const newRow = document.getElementById('hosshiiNewJobRow');
+      if (newRow) newRow.hidden = editMode;
+      document.getElementById('hosshiiModeNew')?.classList.toggle('selected', !editMode);
+      document.getElementById('hosshiiModeEdit')?.classList.toggle('selected', editMode);
       container.innerHTML = `<div class="hosshii-register-action-row">
-        <button type="button" class="hosshii-register-action" onclick="renameJobPrompt(currentSettingsJobKey)">修正</button>
-        <button type="button" class="hosshii-register-action" onclick="deleteJob(currentSettingsJobKey)">削除</button>
+        <button type="button" class="hosshii-register-action" ${!keys.length?'disabled':''} onclick="renameJobPrompt(document.getElementById('hosshiiJobEditSelect').value)">修正</button>
+        <button type="button" class="hosshii-register-action" ${!keys.length?'disabled':''} onclick="deleteJob(document.getElementById('hosshiiJobEditSelect').value)">削除</button>
       </div>`;
+      container.hidden = !editMode;
     }
 
     function registerNewJob() {
@@ -2814,19 +2840,19 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (activeKeys.some(jk => configData[jk]?.name === name)) {
         showAlertModal('同じ名前のバイト先はすでに登録されています。'); return;
       }
-      let targetKey = activeKeys.find(jk => !configData[jk]?.name);
-      const nextCount = targetKey ? null : activeKeys.length + 1;
+      let targetKey = ['job1','job2','job3'].find(jk => !configData[jk]?.name);
+      const nextCount = activeKeys.length + 1;
       if (!targetKey && activeKeys.length >= 3) {
         showAlertModal('登録できるバイト先は3件までです。\n不要なバイト先を削除してから登録してね♡'); return;
       }
-      if (!targetKey) targetKey = 'job' + nextCount;
+      if (!targetKey) { showAlertModal('登録できるバイト先は3件までです。'); return; }
       syncSettingsFormToConfig(currentSettingsJobKey);
       const oldConfig = JSON.parse(JSON.stringify(configData));
       const oldSettingsKey = currentSettingsJobKey;
       try {
         configData[targetKey] = createEmptyJobConfig();
         configData[targetKey].name = name;
-        if (nextCount) configData.jobCount = nextCount;
+        configData.jobCount = nextCount;
         currentSettingsJobKey = targetKey;
         currentSelectedJobKey = targetKey;
         saveAllDataStorage();
@@ -2851,48 +2877,29 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function deleteJob(jk) {
       if (hosshiiBlockEdit()) return false;
-      const keys = getActiveJobKeys();
-      const idx = keys.indexOf(jk);
-      if (idx === -1) return;
-      if (keys.length <= 1) {
-        askConfirm('バイト名をクリアしますか？\nこのバイト先のシフト・設定もすべて削除されます。', () => {
-          configData[jk] = createEmptyJobConfig();
-          removeJobShifts(jk);
-          renderSettingsJobTabs();
-          renderSettingsJobContent(currentSettingsJobKey);
-          saveAllDataStorage();
-          refreshAll();
-          showToast('バイト名をクリアしました');
-        });
-        return;
-      }
-      const name = getJobDisplayName(jk);
+      if (!getActiveJobKeys().includes(jk)) { showAlertModal('登録済みのバイト先を選択してね♡'); return; }
+      const name = configData[jk].name;
       askConfirm(`「${name}」を削除しますか？\nこのバイト先のシフト・設定もすべて削除されます。`, () => {
-        syncSettingsFormToConfig(currentSettingsJobKey);
-
-        for (const dateKey of Object.keys(shiftsData)) {
-          const day = shiftsData[dateKey];
-          for (let i = idx; i < keys.length; i++) {
-            const nextKey = keys[i + 1];
-            if (nextKey && day[nextKey]) day[keys[i]] = day[nextKey];
-            else delete day[keys[i]];
-          }
-          if (Object.keys(day).length === 0) delete shiftsData[dateKey];
+        // Confirm that the target still exists. Never shift other jobs' keys or data.
+        if (configData[jk]?.name !== name) { showAlertModal('登録内容が変わりました。もう一度選択してね。'); return; }
+        const previousConfig = JSON.parse(JSON.stringify(configData));
+        const previousShifts = JSON.parse(JSON.stringify(shiftsData));
+        configData[jk] = createEmptyJobConfig();
+        for (const dk of Object.keys(shiftsData)) {
+          delete shiftsData[dk][jk];
+          if (!Object.keys(shiftsData[dk]).length) delete shiftsData[dk];
         }
-        for (let i = idx; i < keys.length - 1; i++) {
-          configData[keys[i]] = configData[keys[i + 1]];
+        configData.jobCount = getActiveJobKeys().length;
+        if (!saveAllDataStorage()) {
+          configData = previousConfig; shiftsData = previousShifts;
+          showAlertModal('保存できなかったため、削除を取り消しました。'); return;
         }
-        const lastKey = keys[keys.length - 1];
-        configData[lastKey] = createEmptyJobConfig();
-
-        configData.jobCount = keys.length - 1;
-        if (!safeWriteAppJSON('mybasket_shifts_v23', shiftsData)) return;
-
-        ensureValidSelectedJob();
-        renderSettingsJobTabs();
-        renderSettingsJobContent(currentSettingsJobKey);
-        saveAllDataStorage();
-        refreshAll();
+        window.hosshiiEditSelectedKey = '';
+        document.getElementById('newJobNameInput').value = '';
+        currentSettingsJobKey = getFirstActiveJobKey();
+        currentSelectedJobKey = getFirstActiveJobKey();
+        renderSettingsJobTabs(); renderSettingsJobContent(currentSettingsJobKey);
+        renderModalJobTabs(); refreshAll();
         showToast(`「${name}」を削除しました`);
       });
     }
@@ -2911,7 +2918,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       loadSettingsToUIForTab(jk);
     }
 
-    const DAY_OPTIONS = Array.from({ length: 28 }, (_, i) => `<option value="${i + 1}">${i + 1}日</option>`).join('') + '<option value="月末">月末</option>';
+    const DAY_OPTIONS = '<option value="">未設定</option>' + Array.from({ length: 28 }, (_, i) => `<option value="${i + 1}">${i + 1}日</option>`).join('') + '<option value="月末">月末</option>';
 
     function getSettingsFormHtml(jk) {
       const j = configData[jk];
@@ -3224,8 +3231,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const j = configData[jk];
       if (!document.getElementById('set_closeDay')) return;
 
-      document.getElementById('set_closeDay').value = j.closeDay || '20';
-      document.getElementById('set_payDay').value = j.payDay || '5';
+      document.getElementById('set_closeDay').value = j.closeDay || '';
+      document.getElementById('set_payDay').value = j.payDay || '';
       document.getElementById('set_wagePaid').value = j.paid ? j.paid.toLocaleString() : '';
       
 
@@ -3242,8 +3249,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const getVal = id => document.getElementById(id)?.value || '';
       const getNum = id => parseFormattedNumber(getVal(id));
 
-      j.closeDay = getVal('set_closeDay') || '20';
-      j.payDay = getVal('set_payDay') || '5';
+      j.closeDay = getVal('set_closeDay');
+      j.payDay = getVal('set_payDay');
       j.paid = getNum('set_wagePaid');
       // 旧有給時間は既存データの互換性のため保持
 
@@ -3835,9 +3842,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const a=current[i], b=previous[i];
         const color=getJobPalette(jk).dot;
         const name=esc(getJobDisplayName(jk));
-        const close = String(configData[jk]?.closeDay || '20').trim();
+        const close = String(configData[jk]?.closeDay || '').trim();
         const closeNum = close === '月末' ? 31 : (Number(close) || 20);
-        const period = closeNum >= 31 ? '1日〜末日' : `${closeNum + 1}日〜翌月${closeNum}日`;
+        const period = !close ? '' : (closeNum >= 31 ? '1日〜末日' : `${closeNum + 1}日〜翌月${closeNum}日`);
         return `<div class="hc-job-card"><div class="hc-job-title"><i class="hc-dot" style="background:${color}"></i><strong>${name}</strong><span>${period}</span></div>${heading}${rowsHtml({mins:a.mins,wage:a.wagePay,other:a.otherPay,wageMissing:a.wageMissing},{mins:b.mins,wage:b.wagePay,other:b.otherPay,wageMissing:b.wageMissing})}<div class="hc-row hc-grand-total"><span>合計</span><span>${a.wageMissing?'⚠️':yen(a.pay)}</span><span>${b.wageMissing?'⚠️':yen(b.pay)}</span></div></div>`;
       }).join('');
       return `<div class="hc-comparison">${totals}${cards}</div>`;
