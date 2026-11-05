@@ -1629,7 +1629,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         </div>
 
-        <p class="hosshii-ring-note">※この円グラフは、各バイト先の締め日に合わせて計算した、お給料見込額の合計を表しています。</p>
+        <p class="hosshii-ring-note">※この円グラフは、各バイト先の締め日に合わせて計算したお給料見込額の合計を表しています。</p>
 
         <div class="hosshii-monthly-detail-card bg-gradient-to-br from-rose-50/60 via-rose-50/30 to-amber-50/40 text-stone-900 p-4 rounded-2xl border border-rose-100 shadow-[0_1px_2px_rgba(0,0,0,0.05)] space-y-2.5">
           <div class="text-sm font-bold text-rose-950 border-b border-rose-200/60 pb-2 flex justify-between items-center tracking-wide">
@@ -1982,7 +1982,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     window.onload = function() {
-      hosshiiPurgeOrphanShifts();
+      // 未登録枠に残るデータは自動削除せず保護する。
       // 新しく起動したときは「お給料」画面を表示
       switchTab('clock');
       renderSettingsJobTabs();
@@ -2291,6 +2291,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         return;
       }
 
+      if (getActiveJobKeys().some(k => k !== jk && configData[k]?.name === newName)) {
+        showAlertModal('同じ名前のバイト先はすでに登録されています。'); return;
+      }
       const previousConfig = JSON.parse(JSON.stringify(configData));
       const previousSettingsJobKey = currentSettingsJobKey;
       const previousJobCount = configData.jobCount;
@@ -2307,7 +2310,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         }
 
         // データ保存だけをこの try で判定し、画面更新のエラーと区別する
-        saveAllDataStorage();
+        if (!saveAllDataStorage()) throw new Error("保存処理が完了しませんでした");
       } catch (error) {
         configData = previousConfig;
         currentSettingsJobKey = previousSettingsJobKey;
@@ -2502,17 +2505,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     // 名前のない（未登録の）バイト先枠に残っているシフトを消す
     function hosshiiPurgeOrphanShifts() {
-      try {
-        if (window.hosshiiReadOnly === true) return;
-        const orphanKeys = ['job1','job2','job3'].filter(k => !String(configData[k]?.name || '').trim());
-        if (!orphanKeys.length) return;
-        let changed = false;
-        for (const dk of Object.keys(shiftsData)) {
-          orphanKeys.forEach(k => { if (shiftsData[dk] && k in shiftsData[dk]) { delete shiftsData[dk][k]; changed = true; } });
-          if (shiftsData[dk] && !Object.keys(shiftsData[dk]).length) { delete shiftsData[dk]; changed = true; }
-        }
-        if (changed) safeWriteAppJSON('mybasket_shifts_v23', shiftsData);
-      } catch (e) {}
+      // 旧版との互換用。シフトの自動削除はデータ損失の原因になるため無効化。
+      return false;
     }
 
     function getActiveJobKeys() {
@@ -2941,13 +2935,13 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const oldConfig = JSON.parse(JSON.stringify(configData));
       const oldSettingsKey = currentSettingsJobKey;
       try {
-        hosshiiPurgeOrphanShifts();
+        // 過去の未登録枠データは自動削除しない。
         configData[targetKey] = createEmptyJobConfig();
         configData[targetKey].name = name;
         configData.jobCount = nextCount;
         currentSettingsJobKey = targetKey;
         currentSelectedJobKey = targetKey;
-        saveAllDataStorage();
+        if (!saveAllDataStorage()) throw new Error('登録内容を保存できませんでした');
       } catch (err) {
         configData = oldConfig;
         currentSettingsJobKey = oldSettingsKey;
@@ -2976,17 +2970,38 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         if (configData[jk]?.name !== name) { showAlertModal('登録内容が変わりました。もう一度選択してね。'); return; }
         const previousConfig = JSON.parse(JSON.stringify(configData));
         const previousShifts = JSON.parse(JSON.stringify(shiftsData));
+        const shiftKey = 'mybasket_shifts_v23';
+        const wagesKey = 'mybasket_wages_v77';
+        let rawShifts, rawWages;
+        try {
+          rawShifts = localStorage.getItem(shiftKey);
+          rawWages = localStorage.getItem(wagesKey);
+        } catch (error) {
+          showStorageSafetyWarning(); return;
+        }
         configData[jk] = createEmptyJobConfig();
         for (const dk of Object.keys(shiftsData)) {
-          delete shiftsData[dk][jk];
-          if (!Object.keys(shiftsData[dk]).length) delete shiftsData[dk];
+          if (shiftsData[dk]) {
+            delete shiftsData[dk][jk];
+            if (!Object.keys(shiftsData[dk]).length) delete shiftsData[dk];
+          }
         }
         configData.jobCount = getActiveJobKeys().length;
-        // 設定とシフトの両方を保存する（片方だけだとシフトが復活するため）
-        const shiftsSaved = safeWriteAppJSON('mybasket_shifts_v23', shiftsData);
-        if (!shiftsSaved || !saveAllDataStorage()) {
-          configData = previousConfig; shiftsData = previousShifts;
-          if (shiftsSaved) safeWriteAppJSON('mybasket_shifts_v23', shiftsData);
+        const shiftsSaved = safeWriteAppJSON(shiftKey, shiftsData);
+        const wagesSaved = shiftsSaved && saveAllDataStorage();
+        if (!shiftsSaved || !wagesSaved) {
+          configData = previousConfig;
+          shiftsData = previousShifts;
+          try {
+            if (rawShifts === null) localStorage.removeItem(shiftKey);
+            else localStorage.setItem(shiftKey, rawShifts);
+            if (rawWages === null) localStorage.removeItem(wagesKey);
+            else localStorage.setItem(wagesKey, rawWages);
+          } catch (restoreError) {
+            console.error('削除失敗時の復元に失敗:', restoreError);
+            storageWriteBlocked = true;
+            showStorageSafetyWarning();
+          }
           showAlertModal('保存できなかったため、削除を取り消しました。'); return;
         }
         window.hosshiiEditSelectedKey = '';
@@ -4309,7 +4324,6 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const activeKeys = getActiveJobKeys();
       let html = '';
       let hasShift = false;
-      const registerButton = `<button type="button" onclick="openShiftInputModal(calSelectedDateStr || formatDateKey(new Date()), true)" class="selected-register-button">＋シフト変更＆登録</button>`;
       activeKeys.forEach(jk => {
         const shifts = getDayShifts(dateStr, jk);
         const valid = shifts.filter(sh => sh && ((sh.start && sh.end) || (sh.isPaidLeave && ((Number(sh.hours) || Number(configData[jk]?.paidHours) || 0) > 0))));
@@ -4324,11 +4338,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           const breakHtml = breakMins > 0 ? `<span class="selected-shift-break">休憩${breakMins}分</span>` : '';
           const realIdx = shifts.indexOf(sh);
           const deleteBtn = `<button type="button" class="selected-shift-delete" onclick="deleteSelectedDayShift('${dateStr}','${jk}',${realIdx})">削除</button>`;
-          return `<div class="selected-shift-row"><span class="selected-shift-type">${type}</span><span class="job-time">${times}</span>${breakHtml}${deleteBtn}</div>`;
+          return `<div class="selected-shift-row"><span class="job-time">${times}</span><span class="selected-shift-type">${type}</span>${breakHtml}${deleteBtn}</div>`;
         }).join('');
-        html += `<div class="selected-job-group"><div class="selected-job-heading">${getJobLabelHtml(jk)}${registerButton}</div>${lines}</div>`;
+        html += `<div class="selected-job-group"><div class="selected-job-heading">${getJobLabelHtml(jk)}</div>${lines}</div>`;
       });
-      return hasShift ? html : `<div class="text-stone-500 font-bold py-2">シフトは登録されていません</div>${registerButton}`;
+      return hasShift ? html : `<div class="text-stone-500 font-bold py-2">シフトは登録されていません</div>`;
     }
 
     function changeListMonth(delta) {
