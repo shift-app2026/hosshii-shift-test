@@ -1707,6 +1707,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           <div id="calendarDays" class="grid grid-cols-7 gap-1 text-center text-sm"></div>
         </div>
 
+        <button type="button" id="calendarRegisterButton" onclick="openSelectedCalendarShift()" class="w-full py-3 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm">＋シフトを登録する</button>
+
         <div class="bg-white border border-rose-200 rounded-3xl px-3.5 py-2 shadow-sm space-y-2">
           <div class="flex items-center justify-between gap-2">
             <div class="flex items-center space-x-1.5 font-bold text-xs sm:text-sm text-stone-900 flex-1 min-w-0">
@@ -1836,7 +1838,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     <div class="fixed bottom-0 left-0 right-0 z-40 max-w-md mx-auto bg-stone-100/95 border-t border-stone-200 p-1.5 shadow-lg" style="padding-bottom: calc(0.625rem + env(safe-area-inset-bottom, 0px));">
       <div class="grid grid-cols-5 gap-1">
         <button type="button" onclick="switchTab('clock')" id="btn-clock" class="tab-btn active py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">お給料</button>
-        <button type="button" onclick="openShiftRegistration()" id="btn-calendar" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">シフト<wbr>登録</button>
+        <button type="button" onclick="switchTab('calendar')" id="btn-calendar" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">シフト<wbr>登録</button>
         <button type="button" onclick="switchTab('list')" id="btn-list" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">予定表</button>
         <button type="button" onclick="switchTab('settings')" id="btn-settings" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">設定</button>
         <button type="button" onclick="switchTab('guide')" id="btn-guide" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">はじめに</button>
@@ -2193,9 +2195,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       hint.classList.toggle('hidden', !canScroll || atBottom);
     }
 
-    function openShiftRegistration() {
-      const dateStr = selectedCalendarDateStr || calSelectedDateStr || formatDateKey(new Date());
-      switchTab('calendar');
+    function openSelectedCalendarShift() {
+      const dateStr = calSelectedDateStr || formatDateKey(new Date());
       openShiftInputModal(dateStr, true);
     }
 
@@ -2229,6 +2230,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       document.getElementById('breakSelectModal')?.classList.add('hidden');
       const modal = document.getElementById('shiftInputModal');
       if (modal) modal.classList.add('hidden');
+      if (shiftOpenedFromCalendar && selectedCalendarDateStr) {
+        const date = parseDateKey(selectedCalendarDateStr);
+        calSelectedDateStr = selectedCalendarDateStr;
+        currentPeriodDate = new Date(date.getFullYear(), date.getMonth(), 1);
+      }
       refreshAll();
     }
 
@@ -3476,7 +3482,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     function registerFromPresetList(start,end,breakMins) {
       if (hosshiiBlockEdit()) return false;
       const ok = registerModalPresetTime(start,end,breakMins);
-      if(ok) closePresetRegisterModal();
+      if(ok) {
+        closePresetRegisterModal();
+        if (shiftOpenedFromCalendar) closeShiftInputModal();
+      }
     }
     function deleteModalPresetRow(idx) {
       if (hosshiiBlockEdit()) return false;
@@ -3629,6 +3638,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       newPresetForm = { start: '00:00', end: '00:00', breakMins: 0 };
       setModalShiftTypeUIOnly(false);
       renderModalCustomPresets();
+      if (shiftOpenedFromCalendar) closeShiftInputModal();
     }
 
     function updateNewPresetForm() {
@@ -5037,7 +5047,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 <div id="incomeWallHelp" class="fixed inset-0 bg-stone-900/60 z-[90] hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" onclick="if(event.target===this)this.classList.add('hidden')"><div class="bg-white rounded-2xl p-4 max-w-sm w-full text-sm text-stone-800 space-y-3"><h3 class="font-bold text-rose-900 text-lg">🌷 年収の壁について</h3><p>お給料の見込みは税金や社会保険料が引かれる前の金額で、実際の手取りとは異なります。端数の処理や締め日などは勤務先によって異なります。</p><p>「年収の壁」に関する制度や基準額は変わることがあります。扶養・税金・社会保険の詳しい条件は、勤務先や公的機関にご確認ください。</p><button type="button" onclick="document.getElementById('incomeWallHelp').classList.add('hidden')" class="w-full rounded-xl p-3 bg-rose-900 text-white font-bold">閉じる</button></div></div>
 <script id="oct19-enhancement-scripts">
 (function(){
- window.shiftModalChangeDay=function(offset){if(!selectedCalendarDateStr)return;const [y,m,d]=selectedCalendarDateStr.split('-').map(Number);const next=new Date(y,m-1,d+offset);openShiftInputModal(formatDateKey(next));};
+ window.shiftModalChangeDay=function(offset){if(!selectedCalendarDateStr)return;const [y,m,d]=selectedCalendarDateStr.split('-').map(Number);const next=new Date(y,m-1,d+offset);openShiftInputModal(formatDateKey(next),shiftOpenedFromCalendar);};
  window.showShiftHelp=function(){document.getElementById('shiftUsageHelpModal')?.classList.remove('hidden');};
  window.closeShiftHelp=function(){document.getElementById('shiftUsageHelpModal')?.classList.add('hidden');};
  window.confirmShiftDeletion=function(jk,idx){deleteJobShiftIndexModal(jk,idx);};
