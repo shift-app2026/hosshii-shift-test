@@ -1379,6 +1379,21 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 #itoReceiveTable .hc-cols{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr);}
 #itoReceiveTable .hc-cols strong{font-size:clamp(10px,2.8vw,13px);white-space:nowrap;letter-spacing:-.04em;}
 </style>
+<style id="hosshii-shared-preset-layout">
+#shiftInputModal .shift-preset-section .preset-inline-heading.shift-time-heading {
+  font-size:17px!important;line-height:1.35!important;letter-spacing:-.035em!important;
+}
+@media(max-width:375px){
+  #shiftInputModal .shift-preset-section .preset-inline-heading.shift-time-heading {
+    font-size:16px!important;letter-spacing:-.065em!important;
+  }
+}
+/* The existing list is now also available inside the narrower shift dialog. */
+#modalInlinePresetContainer > div {flex-wrap:wrap;row-gap:6px;}
+#modalInlinePresetContainer .job-time {font-size:clamp(15px,4.2vw,18px);font-weight:800;}
+/* Confirmations must remain operable above either preset list. */
+#confirmModal {z-index:13000!important;}
+</style>
 </head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
@@ -1508,13 +1523,14 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       <div id="shiftInputScrollArea" class="space-y-3 overflow-y-auto pr-1 flex-1 no-scrollbar" onscroll="updateShiftScrollHint()">
         
         
+        <section class="shift-preset-section space-y-2 border-t border-stone-100 pt-2">
+          <div class="flex items-center justify-between gap-2"><span class="shift-section-title preset-inline-heading shift-time-heading">【ワンタッチ登録】</span><button type="button" onclick="openPresetRegisterModal()" class="px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0">＋登録</button></div>
+          <p class="ito-preset-desc font-bold text-stone-600">※よく使う勤務時間を登録して、<br>次回からワンタッチで選べるよ♡</p>
+          <div id="modalInlinePresetContainer" class="space-y-2 text-xs"></div>
+        </section>
         <div class="space-y-2 border-t border-stone-100 pt-2"><div class="flex items-center justify-between"><span class="shift-section-title shift-time-heading">【勤務時間を登録】</span><div class="shift-heading-actions"><span id="modalPaidToggleHeaderSlot"></span><button type="button" onclick="registerNewPresetAndRegister()" id="registerShiftButton" class="px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold">登録</button></div></div><div id="modalCustomPresetContainer" class="space-y-2"></div><p class="text-xs font-medium text-stone-600">※有給の場合は「有給」を選択してから登録してね。</p><div id="hosshiiShiftWageWarning" class="t13-wage-notice" hidden>⚠️ 時給が未設定の時間帯があります。<br>設定画面で確認してね♡ <button type="button" onclick="hosshiiOpenWageSettings()">［設定画面］</button></div></div>
         <div class="space-y-1.5 border-t border-stone-100 pt-2"><span id="modalShiftListHeading" class="shift-section-title">【シフト一覧】</span><div id="modalSelectedDateSummaryContent" class="space-y-2 pt-1"></div></div>
-        <section class="shift-preset-section space-y-2 border-t border-stone-100 pt-2">
-          <div class="flex items-center justify-between gap-2"><span class="shift-section-title preset-inline-heading">【ワンタッチ登録しましょ～♡】</span><button type="button" onclick="openPresetRegisterModal()" class="px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0">＋登録</button></div>
-          <p class="ito-preset-desc font-bold text-stone-600">※よく使う勤務時間を登録して、<br>次回からワンタッチで選べるよ♡</p>
 
-        </section>
       </div>
 
       <div id="shiftScrollHint" class="shrink-0 text-center text-[11px] font-bold text-stone-400 py-1 hidden" aria-hidden="true">↓ 下に続きがあります</div>
@@ -1820,7 +1836,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     <div class="fixed bottom-0 left-0 right-0 z-40 max-w-md mx-auto bg-stone-100/95 border-t border-stone-200 p-1.5 shadow-lg" style="padding-bottom: calc(0.625rem + env(safe-area-inset-bottom, 0px));">
       <div class="grid grid-cols-5 gap-1">
         <button type="button" onclick="switchTab('clock')" id="btn-clock" class="tab-btn active py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">お給料</button>
-        <button type="button" onclick="switchTab('calendar')" id="btn-calendar" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">シフト<wbr>登録</button>
+        <button type="button" onclick="openShiftRegistration()" id="btn-calendar" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">シフト<wbr>登録</button>
         <button type="button" onclick="switchTab('list')" id="btn-list" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">予定表</button>
         <button type="button" onclick="switchTab('settings')" id="btn-settings" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">設定</button>
         <button type="button" onclick="switchTab('guide')" id="btn-guide" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">はじめに</button>
@@ -2175,6 +2191,12 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const canScroll = area.scrollHeight > area.clientHeight + 4;
       const atBottom = area.scrollTop + area.clientHeight >= area.scrollHeight - 6;
       hint.classList.toggle('hidden', !canScroll || atBottom);
+    }
+
+    function openShiftRegistration() {
+      const dateStr = selectedCalendarDateStr || calSelectedDateStr || formatDateKey(new Date());
+      switchTab('calendar');
+      openShiftInputModal(dateStr, true);
     }
 
     let shiftOpenedFromCalendar = false;
@@ -2562,6 +2584,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function switchTab(tabName) {
+      cancelSalaryMarbleReplay();
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       document.querySelectorAll('.tab-btn').forEach(el => {
         el.classList.remove('active');
@@ -2595,6 +2618,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       // 登録済みシフトには触れず、時給未設定時の警告・勤務時間も再描画する。
       if (tabName === 'clock') {
         initOverviewPage();
+        requestSalaryMarbleReplay();
       }
     }
 
@@ -3414,9 +3438,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function renderModalPresetButtons() {
-      const container = document.getElementById('modalPresetContainer');
-      if (!container) return;
-      container.innerHTML = '';
+      const containers = ['modalPresetContainer', 'modalInlinePresetContainer']
+        .map(id => document.getElementById(id)).filter(Boolean);
+      let html = '';
 
       const currentJob = configData[currentSelectedJobKey] || configData.job1;
       const presets = currentJob.presets || [];
@@ -3427,7 +3451,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         if (p.start && p.end) {
           const breakMins = Number(p.breakMins) || 0;
 
-          container.innerHTML += `
+          html += `
             <div class="bg-white border border-stone-200 py-2.5 px-3 rounded-xl shadow-[0_1px_2px_rgba(0,0,0,0.05)] flex items-center gap-2 text-xs sm:text-sm">
               <span class="font-bold text-stone-800 job-time">${p.start} ～ ${p.end}</span>
               ${breakMins > 0 ? `<span class="font-bold text-stone-600 whitespace-nowrap">休憩${breakMins}分</span>` : ''}
@@ -3441,9 +3465,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           `;
         }
       });
-      if (!container.innerHTML.trim()) {
-        container.innerHTML = '<div class="text-stone-400 font-bold">「ワンタッチ時間登録」から追加できます</div>';
+      if (!html.trim()) {
+        html = '<div class="text-stone-400 font-bold">「ワンタッチ時間登録」から追加できます</div>';
       }
+      containers.forEach(container => { container.innerHTML = html; });
+      requestAnimationFrame(updateShiftScrollHint);
     }
 
 
@@ -3768,54 +3794,108 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       test7AnimateMarble(Math.max(0, Math.min(rawPercent, 100)), !missingWage && monthlyGoal > 0);
     }
 
-    // テスト⑦：ビー玉は輪の幅の中央を移動。初回は0%から、以降は前回位置から滑らかに移動。
+    // Animation state is presentation-only; the existing salary calculation supplies the target.
     let test7MarblePercent = 0;
     let test7MarbleFrame = 0;
-    let test7MarbleStarted = false;
-    function test7AnimateMarble(target, enabled) {
-      const progress = document.getElementById('goalProgressCircle');
-      const marble = document.getElementById('test7Marble');
-      if (!progress || !marble) return;
-      cancelAnimationFrame(test7MarbleFrame);
-      if (!enabled) {
-        test7MarblePercent = 0;
-        test7MarbleStarted = false;
-        progress.setAttribute('stroke-dasharray', '0 100');
-        progress.style.visibility = 'hidden';
-        marble.style.display = 'none';
-        return;
-      }
-      marble.style.display = '';
-      progress.style.visibility = 'hidden'; // ㉖: 輪の色は固定し、目盛りとビー玉で進捗を表現
-      const start = test7MarbleStarted ? test7MarblePercent : 0;
-      if (test7MarbleStarted && Math.abs(start - target) < .001) {
-        progress.setAttribute('stroke-dasharray', `${target} ${100-target}`);
-        return;
-      }
-      test7MarbleStarted = true;
-      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const duration = reduceMotion ? 0 : 1400;
-      const startTime = performance.now();
-      function paint(value) {
-        progress.style.visibility = 'hidden';
-        progress.setAttribute('stroke-dasharray', value <= 0.001 ? '0 100' : `${value} ${100 - value}`);
-        // ㉖: 12時を0%として時計回り。ビー玉の中心は輪の幅の中央（半径131）を走る。
-        const angle = (-90 + value * 3.6) * Math.PI / 180;
-        const x = 150 + 131 * Math.cos(angle);
-        const y = 150 + 131 * Math.sin(angle);
-        // ネストしたSVGの座標を直接動かす。CSS transformとの競合で左上に飛ぶのを防止。
-        marble.setAttribute('x', (x - 12).toFixed(3));
-        marble.setAttribute('y', (y - 12).toFixed(3));
-        test7MarblePercent = value;
-      }
-      function tick(now) {
-        const t = duration ? Math.min(1, (now - startTime) / duration) : 1;
-        const ease = 1 - Math.pow(1 - t, 3);
-        paint(start + (target - start) * ease);
-        if (t < 1) test7MarbleFrame = requestAnimationFrame(tick);
-      }
-      test7MarbleFrame = requestAnimationFrame(tick);
+    let salaryMarbleTimer = 0;
+    let salaryMarbleGeneration = 0;
+    let salaryMarbleTarget = 0;
+    let salaryMarbleEnabled = false;
+    let salaryMarbleState = 'idle';
+    const salaryMarbleMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function salaryMarbleIsVisible() {
+      const tab = document.getElementById('tab-clock');
+      const gate = document.getElementById('lineAuthGate');
+      return document.visibilityState === 'visible' && tab && !tab.classList.contains('hidden')
+        && (!gate || gate.hidden) && tab.getClientRects().length > 0;
     }
+
+    function paintSalaryMarble(value) {
+      const marble = document.getElementById('test7Marble');
+      const progress = document.getElementById('goalProgressCircle');
+      if (!marble || !progress) return;
+      progress.style.visibility = 'hidden';
+      progress.setAttribute('stroke-dasharray', `${value} ${100 - value}`);
+      const angle = (-90 + value * 3.6) * Math.PI / 180;
+      marble.setAttribute('x', (150 + 131 * Math.cos(angle) - 12).toFixed(3));
+      marble.setAttribute('y', (150 + 131 * Math.sin(angle) - 12).toFixed(3));
+      test7MarblePercent = value;
+    }
+
+    function cancelSalaryMarbleReplay() {
+      ++salaryMarbleGeneration;
+      clearTimeout(salaryMarbleTimer);
+      cancelAnimationFrame(test7MarbleFrame);
+      salaryMarbleTimer = 0;
+      test7MarbleFrame = 0;
+      salaryMarbleState = 'idle';
+    }
+
+    function test7AnimateMarble(target, enabled) {
+      salaryMarbleTarget = target;
+      salaryMarbleEnabled = enabled;
+      const marble = document.getElementById('test7Marble');
+      if (!marble) return;
+      marble.style.display = enabled ? '' : 'none';
+      if (!enabled) {
+        cancelSalaryMarbleReplay();
+        paintSalaryMarble(0);
+      } else if (salaryMarbleState === 'idle') {
+        paintSalaryMarble(target);
+      }
+    }
+
+    async function requestSalaryMarbleReplay() {
+      cancelSalaryMarbleReplay();
+      if (!salaryMarbleEnabled || !salaryMarbleIsVisible()) return;
+      if (salaryMarbleMotion.matches) {
+        paintSalaryMarble(salaryMarbleTarget);
+        return;
+      }
+      salaryMarbleState = 'waiting';
+      paintSalaryMarble(0);
+      const generation = salaryMarbleGeneration;
+      // Wait for the initial document/assets and fonts, then allow the layout to paint.
+      if (document.readyState !== 'complete') {
+        await new Promise(resolve => window.addEventListener('load', resolve, {once:true}));
+      }
+      if (document.fonts) await document.fonts.ready;
+      if (generation !== salaryMarbleGeneration || !salaryMarbleIsVisible()) return;
+      test7MarbleFrame = requestAnimationFrame(() => {
+        test7MarbleFrame = requestAnimationFrame(() => {
+          if (generation !== salaryMarbleGeneration || !salaryMarbleIsVisible()) return;
+          salaryMarbleTimer = setTimeout(() => {
+            salaryMarbleTimer = 0;
+            if (generation !== salaryMarbleGeneration || !salaryMarbleIsVisible()) return;
+            salaryMarbleState = 'playing';
+            const startTime = performance.now();
+            function tick(now) {
+              if (generation !== salaryMarbleGeneration) return;
+              if (!salaryMarbleIsVisible()) { cancelSalaryMarbleReplay(); return; }
+              const t = Math.min(1, Math.max(0, (now - startTime) / 3000));
+              paintSalaryMarble(salaryMarbleTarget * (1 - Math.pow(1 - t, 3)));
+              if (t < 1) test7MarbleFrame = requestAnimationFrame(tick);
+              else { test7MarbleFrame = 0; salaryMarbleState = 'idle'; }
+            }
+            test7MarbleFrame = requestAnimationFrame(tick);
+          }, 500);
+        });
+      });
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') requestSalaryMarbleReplay();
+      else cancelSalaryMarbleReplay();
+    });
+    const updateSalaryMarbleMotion = () => {
+      if (salaryMarbleMotion.matches) {
+        cancelSalaryMarbleReplay();
+        if (salaryMarbleEnabled) paintSalaryMarble(salaryMarbleTarget);
+      }
+    };
+    if (salaryMarbleMotion.addEventListener) salaryMarbleMotion.addEventListener('change', updateSalaryMarbleMotion);
+    else salaryMarbleMotion.addListener(updateSalaryMarbleMotion);
 
     function changePayPeriodOffset(delta) {
       payPeriodOffset += delta;
@@ -4285,6 +4365,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function selectCalendarDate(key) {
       calSelectedDateStr = key;
+      selectedCalendarDateStr = key;
       renderCalendar();
       renderCalendarTodayTomorrowSummary();
     }
@@ -5628,7 +5709,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   let idToken=null;
   let statusBusy=false;
   function showError(t){message.textContent=t;consent.hidden=true;retry.hidden=false;}
-  function hideGate(){gate.hidden=true;}
+  function hideGate(){
+    gate.hidden=true;
+    requestSalaryMarbleReplay();
+  }
   function consentView(){message.classList.add('consent-heading');message.textContent='「初回利用のご案内」';consent.hidden=false;retry.hidden=true;}
   // test⑭: 購入状態に合わせた2行案内。決済連携は未設定のため購入操作は開始しない。
   // LINE本人確認後に取得した申込み番号のみ表示する（決済の認証には使用しない）。
