@@ -1682,7 +1682,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
               <span id="itoWallRemainingLabel">130万円までの残り</span>
               <strong id="itoWallRemainingAmount">0円</strong>
             </div>
-            <p class="ito-wall-note">※登録済みシフトから計算した税金・社会保険料控除前の見込額です。選択肢は比較用の参考金額で、現在の税・社会保険制度上の適用基準を示すものではありません。条件は「見てね♡」から確認してね。</p>
+            <p class="ito-wall-note">※登録済みシフトから計算した税金・社会保険料控除前の見込額です。選択肢は比較用の参考金額で、現在の税・社会保険制度上の適用基準を示すものではありません。<span class="ito-wall-note-condition">条件は「見てね♡」から確認してね。</span><span class="ito-wall-note-law">※法律や制度の改正に伴い、表示内容や参考金額を変更する場合があります。</span></p>
           </div>
         </div>
       </div>
@@ -1707,7 +1707,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           <div id="calendarDays" class="grid grid-cols-7 gap-1 text-center text-sm"></div>
         </div>
 
-        <button type="button" id="calendarRegisterButton" onclick="openSelectedCalendarShift()" class="w-full py-3 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm">＋シフトを登録する</button>
+        <div class="calendar-registration-prompt flex items-center gap-2">
+          <p class="flex-1 min-w-0 text-xs text-stone-600 leading-relaxed">※カレンダーで日付を選んでから、<br>「＋シフトを登録する」を押してね♡</p>
+          <button type="button" id="calendarRegisterButton" onclick="openSelectedCalendarShift()" class="shrink-0 py-2.5 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm whitespace-nowrap">＋シフトを登録</button>
+        </div>
 
         <div class="bg-white border border-rose-200 rounded-3xl px-3.5 py-2 shadow-sm space-y-2">
           <div class="flex items-center justify-between gap-2">
@@ -6845,6 +6848,17 @@ p.hosshii-ring-note{font-size:13px!important;line-height:1.6!important;color:#11
 .hosshii-job-menu-item::before{content:"";flex:0 0 10px;width:10px;height:10px;border-radius:50%;background:var(--chip,#999);}
 .hosshii-job-menu-item.selected{background:#fff4f6;color:#881337;}
 .hosshii-job-menu-item.selected::after{content:"✓";margin-left:auto;padding-left:14px;}
+</style>
+<style id="hosshii-test-readability-adjustments">
+#tab-clock .hc-job-title > span {color:#374151!important;margin-left:5px;}
+#tab-clock .ito-wall-note {font-size:13px;line-height:1.7;color:#374151!important;}
+#tab-clock .ito-wall-note-condition {display:block;white-space:nowrap;}
+#tab-clock .ito-wall-note-law {display:block;margin-top:4px;}
+/* Enlarge only the glyphs; preserve the original line boxes and marker geometry. */
+#standaloneShiftListContainer .standalone-shift-line .job-time {font-size:18px!important;line-height:23.1875px;}
+@media(max-width:380px){
+  #standaloneShiftListContainer .standalone-shift-line .job-time {font-size:17px!important;line-height:21.75px;}
+}
 </style>
 </body>
 </html>
