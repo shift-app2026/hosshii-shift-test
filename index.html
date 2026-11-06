@@ -1525,10 +1525,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         
         <section class="shift-preset-section space-y-2 border-t border-stone-100 pt-2">
           <div class="flex items-center justify-between gap-2"><span class="shift-section-title preset-inline-heading shift-time-heading">【ワンタッチ登録】</span><button type="button" onclick="openPresetRegisterModal()" class="px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0">＋登録</button></div>
-          <p class="ito-preset-desc font-bold text-stone-600">※よく使う勤務時間を登録して、<br>次回からワンタッチで選べるよ♡</p>
+          <p class="ito-preset-desc font-bold text-stone-600">※よく使う勤務時間を登録して、<br>　次回からワンタッチで選べるよ♡</p>
           <div id="modalInlinePresetContainer" class="space-y-2 text-xs"></div>
         </section>
-        <div class="space-y-2 border-t border-stone-100 pt-2"><div class="flex items-center justify-between"><span class="shift-section-title shift-time-heading">【勤務時間を登録】</span><div class="shift-heading-actions"><span id="modalPaidToggleHeaderSlot"></span><button type="button" onclick="registerNewPresetAndRegister()" id="registerShiftButton" class="px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold">登録</button></div></div><div id="modalCustomPresetContainer" class="space-y-2"></div><p class="text-xs font-medium text-stone-600">※有給の場合は「有給」を選択してから登録してね。</p><div id="hosshiiShiftWageWarning" class="t13-wage-notice" hidden>⚠️ 時給が未設定の時間帯があります。<br>設定画面で確認してね♡ <button type="button" onclick="hosshiiOpenWageSettings()">［設定画面］</button></div></div>
+        <div class="space-y-2 border-t border-stone-100 pt-2"><div class="flex items-center justify-between"><span class="shift-section-title shift-time-heading">【勤務時間を登録】</span><div class="shift-heading-actions"><span id="modalPaidToggleHeaderSlot"></span><button type="button" onclick="registerNewPresetAndRegister()" id="registerShiftButton" class="px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold">登録</button></div></div><div id="modalCustomPresetContainer" class="space-y-2"></div><p class="hosshii-paid-entry-note text-xs font-medium text-stone-600">※有給の場合は「有給」を選択してから登録してね。</p><div id="hosshiiShiftWageWarning" class="t13-wage-notice" hidden>⚠️ 時給が未設定の時間帯があります。<br>設定画面で確認してね♡ <button type="button" onclick="hosshiiOpenWageSettings()">［設定画面］</button></div></div>
         <div class="space-y-1.5 border-t border-stone-100 pt-2"><span id="modalShiftListHeading" class="shift-section-title">【シフト一覧】</span><div id="modalSelectedDateSummaryContent" class="space-y-2 pt-1"></div></div>
 
       </div>
@@ -6859,6 +6859,19 @@ p.hosshii-ring-note{font-size:13px!important;line-height:1.6!important;color:#11
 @media(max-width:380px){
   #standaloneShiftListContainer .standalone-shift-line .job-time {font-size:17px!important;line-height:21.75px;}
 }
+</style>
+<style id="hosshii-test-clear-text-adjustments">
+/* Override the older important color rules only for the requested explanations. */
+#tab-clock #itoReceiveTable .hc-job-title > span {color:#333!important;margin-left:10px;}
+#tab-clock #incomeWallBox .ito-wall-note,
+#tab-clock #incomeWallBox .ito-wall-note span,
+#tab-calendar .calendar-registration-prompt > p,
+#shiftInputModal .hosshii-paid-entry-note {color:#333!important;}
+#shiftInputModal #shiftInputScrollArea .shift-preset-section .ito-preset-desc {
+  font-size:clamp(13px,calc(3.35vw + 1px),15px)!important;
+}
+/* Keep the existing empty-row box so dates and following rows do not move. */
+#standaloneShiftListContainer .standalone-empty {visibility:hidden;}
 </style>
 </body>
 </html>
