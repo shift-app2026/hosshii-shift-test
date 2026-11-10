@@ -235,3 +235,81 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
 @media (max-width: 359px) {
   #hosshiiBottomNav .hosshii-nav-icon { width: 19px; height: 19px; flex-basis: 19px; }
 }
+
+/* Review fixes: keep close controls outside scrolling text, and reserve the dock's
+   actual height in flex layout instead of covering the bottom of appScroll. */
+#hosshiiBottomNav {
+  position: relative !important;
+  inset: auto !important;
+  flex: 0 0 auto;
+  width: 100%;
+  margin: 0 !important;
+}
+#settingsFixedSave:not([hidden]) {
+  position: relative !important;
+  inset: auto !important;
+  transform: none !important;
+  flex: 0 0 auto;
+  width: 100%;
+}
+#appScroll {
+  padding-bottom: 16px !important;
+  scroll-padding-bottom: 16px;
+}
+#tab-settings { padding-bottom: 0 !important; }
+
+/* A modal must sit above the moved month header (z-index: 1000). */
+#breakdownModal { z-index: 1100 !important; }
+#breakdownModal > .bg-white {
+  min-height: 0;
+  max-height: calc(100vh - 24px) !important;
+  max-height: calc(100dvh - 24px) !important;
+}
+#overtimeInfoModal {
+  padding: max(12px, env(safe-area-inset-top, 0px)) 12px max(12px, env(safe-area-inset-bottom, 0px)) !important;
+}
+#overtimeInfoModal > .info-modal-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+  overflow: hidden;
+}
+#overtimeInfoModal .wage-info-header,
+#overtimeInfoModal .wage-info-close { flex: 0 0 auto; }
+#overtimeInfoModal .wage-info-header button { min-width: 44px; min-height: 44px; }
+#overtimeInfoModal .wage-info-scroll {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+#overtimeInfoModal .wage-info-scroll > * + * { margin-top: 16px; }
+#overtimeInfoModal .wage-info-close { min-height: 44px; }
+
+/* Clock icons keep their own space; never indent time digits into the icon. */
+#presetRegisterModal .preset-time-row .time-field-wrap > .wage-time[readonly] {
+  text-indent: 0 !important;
+  padding: 8px 32px 8px 8px !important;
+  font-size: 16px !important;
+  min-height: 48px;
+}
+#tab-settings #settingsJobContentArea .hosshii-allowance-section-title { white-space: normal !important; }
+#tab-settings #settingsJobContentArea .paid-sub {
+  display: block;
+  margin-left: 0 !important;
+  white-space: normal;
+  line-height: 1.5;
+}
+@media (max-width: 359px) {
+  #presetRegisterModal .preset-time-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 8px !important;
+  }
+  #presetRegisterModal .preset-time-row > button { grid-column: 1 / -1; justify-self: end; }
+}
+@media (max-height: 400px) {
+  #overtimeInfoModal > .info-modal-card { padding: 10px !important; }
+  #overtimeInfoModal > .info-modal-card > * + * { margin-top: 8px; }
+}

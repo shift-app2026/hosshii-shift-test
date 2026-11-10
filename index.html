@@ -1475,10 +1475,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   <!-- 時給入力・残業深夜の説明モーダル -->
   <div id="overtimeInfoModal" class="fixed inset-0 bg-stone-900/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 hidden" style="z-index:99999;">
     <div class="info-modal-card bg-white rounded-3xl p-4 sm:p-5 w-full max-w-sm shadow-2xl border border-stone-200 space-y-4 max-h-[90dvh] overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="wageInfoModalTitle">
-      <div class="flex justify-between items-start gap-3 border-b border-stone-200 pb-2.5">
+      <div class="wage-info-header flex justify-between items-start gap-3 border-b border-stone-200 pb-2.5">
         <h3 id="wageInfoModalTitle" class="text-sm font-bold text-stone-900 tracking-wide leading-relaxed">💡 時給入力の確認</h3>
         <button type="button" onclick="closeOvertimeInfoModal()" aria-label="説明を閉じる" class="shrink-0 text-stone-600 hover:text-stone-900 font-bold text-base px-2 py-1 rounded-lg">✕</button>
       </div>
+      <div class="wage-info-scroll">
       <section class="space-y-2 text-sm text-stone-700 font-medium leading-relaxed">
         <h4 class="font-bold text-stone-900">💡 時間帯に合わせた時給入力について</h4>
         <p>・各時間帯には、基本給に時間帯の加算額を足した時給を入力してね♡</p>
@@ -1496,7 +1497,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         <p>（例：時給1,200円の25％増し → 1,500円）</p>
         <p class="font-bold">・1日8時間を超えた分の割増も自動反映されません。実際のお給料は給与明細で確認してね♡</p><div class="border-t border-stone-200 pt-2"><h4 class="font-bold text-stone-900">【週40時間を超える勤務について】</h4><p>週40時間を超えた場合など、法律上の時間外労働に該当すると、割増賃金が発生することがあります。</p><p>このアプリでは、週40時間を超えた場合の割増賃金は自動計算されません。</p><p>掛け持ち勤務の場合も含め、実際の割増賃金については、勤務先の給与明細などで確認してね♡</p></div>
       </div>
-      <button type="button" onclick="closeOvertimeInfoModal()" class="w-full py-3 rounded-xl text-sm font-bold bg-rose-900 text-rose-50 hover:bg-rose-800 transition shadow-sm">閉じる</button>
+      </div>
+      <button type="button" onclick="closeOvertimeInfoModal()" class="wage-info-close w-full py-3 rounded-xl text-sm font-bold bg-rose-900 text-rose-50 hover:bg-rose-800 transition shadow-sm">閉じる</button>
     </div>
   </div>
 
