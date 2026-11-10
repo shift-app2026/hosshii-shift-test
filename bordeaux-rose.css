@@ -444,3 +444,19 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
 }
 #shiftInputModal .shift-date-nav button { color: #f4d99c !important; padding: 5px 4px !important; font-size: 12px; }
 #shiftInputModal .shift-preset-section, #shiftInputModal #modalSelectedDateSummaryContent > .bg-white { border-color: #eedde1; }
+/* Keep three workplace markers inside a narrow calendar tile; preserve all marks. */
+#calendarDays .hosshii-calendar-marks { flex-wrap: wrap; white-space: normal; }
+#calendarDays > div { padding-left: 0 !important; padding-right: 0 !important; }
+#calendarDays .hosshii-svg-mark, #calendarDays .hosshii-svg-mark svg {
+  width: 12px !important; height: 12px !important; min-width: 12px !important;
+}
+#calendarDays .hosshii-svg-mark { flex: 0 0 12px !important; }
+@media (max-width: 359px) {
+  #calendarDays > div { padding-left: 0 !important; padding-right: 0 !important; }
+  #calendarDays .hosshii-svg-mark, #calendarDays .hosshii-svg-mark svg {
+    width: 9px !important; height: 9px !important; min-width: 9px !important;
+  }
+  #calendarDays .hosshii-svg-mark { flex: 0 0 9px !important; }
+  #calendarDays .payday-pin-container { margin-left: 1px; }
+  #calendarDays .payday-pin-container span { font-size: 12px !important; }
+}

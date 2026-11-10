@@ -47,6 +47,7 @@ async function audit(page,scope){return page.evaluate(scope=>{
    await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(220);
    const check=await audit(page,scope);
    if(name==='shift-modal')assert(await page.locator('#shiftInputModal .shift-date-nav').evaluate(el=>getComputedStyle(el).backgroundImage.includes('linear-gradient')),'Date band must remain visibly Bordeaux');
+   if(name==='calendar')assert(await page.locator('#calendarDays .hosshii-calendar-mark').evaluateAll(els=>els.every(el=>{const a=el.getBoundingClientRect(),b=el.parentElement.parentElement.getBoundingClientRect();return a.left>=b.left-1&&a.right<=b.right+1})), 'Workplace markers leave their calendar tile');
    if(name==='clock')assert(await page.locator('#goalPercentText').evaluate(el=>el.hidden),'Do not add achievement-rate display');
    assert(!check.horizontalOverflow&&!check.appScrollOverflow&&!check.panelOutsideViewport, name+' viewport overflow');
    assert.equal(check.buttonOverlaps.length,0,name+' overlapping buttons');
