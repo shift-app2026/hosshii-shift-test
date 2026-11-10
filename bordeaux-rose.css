@@ -174,3 +174,64 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
 @media (prefers-reduced-motion: reduce) {
   #tab-clock #goalRing.t21-goal-sparkle { animation: none !important; }
 }
+
+
+/* Refinement: approved glossy Bordeaux button and more expressive Stitch typography.
+   Visual-only; no functional selectors, event handlers, or storage changes. */
+:root {
+  --hs-button-gloss: linear-gradient(170deg, #e5a9b4 0%, #ac3457 22%, #801330 52%, #49051d 100%);
+  --hs-button-gloss-edge: #d7a56d;
+}
+#calendarRegisterButton, #registerShiftButton, #registerPresetButton,
+#tab-calendar button[onclick^="copyLastMonthShifts"],
+#tab-list button[onclick^="copyLastMonthShifts"],
+#tab-settings button[id^="set_reg_btn_"], #tab-settings .ito-job-register-button,
+#settingsFixedSave button {
+  background: var(--hs-button-gloss) !important;
+  border: 1px solid var(--hs-button-gloss-edge) !important;
+  border-top-color: #f0c5b2 !important;
+  color: #fff7e7 !important;
+  -webkit-text-fill-color: #fff7e7 !important;
+  box-shadow: inset 0 2px 2px #fff3e888, inset 0 -3px 5px #24000966,
+              0 4px 11px #62102c40 !important;
+  text-shadow: 0 1px 1px #38001480;
+  border-radius: 13px !important;
+}
+#registerShiftButton.unsaved-registration, #registerPresetButton.unsaved-registration,
+#tab-settings button[id^="set_reg_btn_"].unsaved-registration,
+#tab-settings .ito-job-register-button.unsaved-registration {
+  color: #ffe3a1 !important;
+  -webkit-text-fill-color: #ffe3a1 !important;
+}
+#hosshiiBottomNav .tab-btn.active {
+  background: var(--hs-button-gloss) !important;
+  border-color: var(--hs-button-gloss-edge) !important;
+  box-shadow: inset 0 2px 2px #fff1e888, inset 0 -3px 4px #26000d66,
+              0 4px 12px #6d0a2c55 !important;
+}
+#hosshiiBottomNav .hosshii-nav-icon {
+  width: 22px; height: 22px; flex-basis: 22px;
+  stroke-width: 1.85;
+  filter: drop-shadow(0 1px 1px #4d092226);
+}
+#hosshiiBottomNav .tab-btn.active .hosshii-nav-icon {
+  filter: drop-shadow(0 1px 1px #28001288);
+}
+#hosshiiBottomNav .hosshii-nav-label {
+  font-size: 11px; letter-spacing: .01em;
+}
+#tab-clock #goalCurrentPay, #tab-clock #goalRemainText,
+#tab-clock #monthlyReceiveTitle, #yearlyTitleLabel,
+.wage-setting-title, #tab-guide h3 {
+  font-family: 'Noto Serif JP', serif !important;
+}
+#tab-clock #goalCurrentPay {
+  text-shadow: 0 1px 0 #ffffffcc;
+}
+#tab-clock .hosshii-monthly-detail-card,
+#standaloneShiftListContainer > div[id^="list-row-"] {
+  box-shadow: inset 0 1px 0 #ffffff, 0 5px 15px #63142d1c !important;
+}
+@media (max-width: 359px) {
+  #hosshiiBottomNav .hosshii-nav-icon { width: 19px; height: 19px; flex-basis: 19px; }
+}
