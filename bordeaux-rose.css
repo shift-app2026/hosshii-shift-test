@@ -313,3 +313,71 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
   #overtimeInfoModal > .info-modal-card { padding: 10px !important; }
   #overtimeInfoModal > .info-modal-card > * + * { margin-top: 8px; }
 }
+
+/* Stitch luxe finish: editorial serif titles, quiet UI typography, jewellery details.
+   Layout, status colours, glossy button surfaces and functional IDs stay intact. */
+#todayDate, #currentMonthLabel, #currentListMonthLabel {
+  font-weight: 600 !important;
+  letter-spacing: .045em !important;
+  line-height: 1.5;
+}
+.wage-setting-title, .ito-guide-heading > p,
+#tab-clock #monthlyReceiveTitle, #yearlyTitleLabel,
+#tab-settings .ito-job-register-label, #tab-settings .wage-head-title,
+#tab-guide h3, #customTimePickerModal .hclock-heading {
+  font-family: 'Noto Serif JP', serif !important;
+  font-weight: 600 !important;
+  letter-spacing: .035em;
+  line-height: 1.65;
+}
+#tab-clock #monthlyReceiveTitle { font-size: clamp(14px, 3.9vw, 16px); }
+#tab-clock #goalRing #goalCurrentPay {
+  font-size: clamp(25px, 7.8vw, 34px) !important;
+  letter-spacing: -.025em !important;
+  line-height: 1.45 !important;
+}
+#tab-clock #goalRemainText {
+  font-size: clamp(14px, 4vw, 16px) !important;
+  font-weight: 600 !important;
+  letter-spacing: .015em;
+}
+#goalRing .goal-label-text { font-size: 13px !important; font-weight: 500; letter-spacing: .035em; }
+#goalRing .t10-remaining-label { font-size: 12px !important; letter-spacing: .08em; }
+#goalRing .luxe-jewel-trim { pointer-events: none; }
+#goalRing #test27Ticks polygon { fill: url(#luxeChampagneRim); stroke: #b58745; }
+#goalRing #test27Ticks line { stroke: #f4d99c; }
+#tab-clock .t16-ring-card {
+  background: radial-gradient(ellipse at 35% 15%, #fff, #fff8fa 70%) !important;
+  border-color: #e7cbd2 !important;
+  box-shadow: inset 0 1px 0 #fff, 0 6px 22px #8018360d !important;
+}
+#tab-guide > .bg-white { font-size: 14px; line-height: 1.9; letter-spacing: .02em; }
+#tab-guide .guide-steps > p { align-items: center; line-height: 1.8; }
+#tab-settings .paid-sub, #tab-settings .paid-note,
+.job-time, #calendarDays, .hosshii-nav-label { font-family: var(--font-ui) !important; }
+#hosshiiBottomNav .hosshii-nav-label { letter-spacing: .015em; }
+/* Match the small header ornaments without widening the month navigator. */
+#itoStickyHeaderHost .luxe-header-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  flex: 0 0 18px; width: 18px; height: 18px;
+  color: var(--hs-gold-light); -webkit-text-fill-color: var(--hs-gold-light);
+  filter: drop-shadow(0 1px 2px #24000d35);
+}
+.luxe-header-icon > svg { display: block; width: 100%; height: 100%; }
+#itoStickyHeaderHost .ito-guide-heading > p {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 7px;
+}
+#itoStickyHeaderHost .luxe-guide-note {
+  font-family: var(--font-ui); font-size: 12px; font-weight: 500; letter-spacing: .015em;
+}
+#shiftInputModal .luxe-shift-icon {
+  width: 24px; height: 24px; padding: 3px;
+  color: #881337; background: #fff0f4; border: 1px solid #ead0d8;
+  border-radius: 7px; vertical-align: middle !important;
+}
+#shiftInputModal .shift-section-title { letter-spacing: .015em; line-height: 1.6; }
+@media (max-width: 359px) {
+  #itoStickyHeaderHost .luxe-header-icon { flex-basis: 15px; width: 15px; height: 15px; }
+  #itoStickyHeaderHost .ito-guide-heading > p { gap: 5px; }
+  #shiftInputModal .luxe-shift-icon { width: 21px; height: 21px; }
+}
