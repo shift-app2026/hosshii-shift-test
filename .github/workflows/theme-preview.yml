@@ -1,0 +1,25 @@
+
+name: Four Color Theme Preview
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout theme branch
+        uses: actions/checkout@v4
+
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: four-color-theme-preview
+          path: |
+            index.html
+            *.png
+            *.webmanifest
+          if-no-files-found: warn
