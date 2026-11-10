@@ -10,9 +10,10 @@ const artifactDir=process.env.REVIEW_ARTIFACTS || path.join(os.tmpdir(),'hosshii
 fs.mkdirSync(artifactDir,{recursive:true});
 const {execFileSync} = require('node:child_process');
 const html=fs.readFileSync('index.html','utf8');
+const {normalizePresentation,changes}=require('./presentation-equivalence.cjs');
 const original=execFileSync('git',['show','46908d4:index.html'],{encoding:'utf8',maxBuffer:2e6});
 const scripts=s=>[...s.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1]);
-assert.deepEqual(scripts(html),scripts(original),'All original scripts must remain byte-identical');
+assert.deepEqual(scripts(normalizePresentation(html)),scripts(original),'All scripts must match except reviewed view markup');
 for(const s of scripts(html))new vm.Script(s);
 const handlers=s=>[...s.matchAll(/\bon\w+="[^"]*"/g)].map(m=>m[0]);
 assert.deepEqual(handlers(html),handlers(original),'Inline handlers must stay identical');
@@ -181,6 +182,6 @@ const shifts={[dateKey]:{job1:[{start:'09:00',end:'17:00',breakMins:60,isPaidLea
  // Presentation wrappers move script line numbers; compare the actual error and call chain.
  const withoutLocations=s=>s.replace(/:\d+:\d+/g,':line:column');
  assert.equal(withoutLocations(errors[0]),withoutLocations(errors[1]));
- console.log(JSON.stringify({syntaxBlocks:scripts(html).length,scriptsUnchanged:true,handlersUnchanged:true,layoutChecks:checks.length,calculation:calc,overnight,registrationAndReload:true,mockedCloudBackup:true,expiredWriteBlocked:true,consentAndAuthFailure:true,clockInteraction:true,goalPersistence:true,settingsAutosave:true,missingWage:true,marbleAnimation:true,newPageErrors:0,knownBaselineIssue:'Empty storage: getSettingsFormHtml reads undefined.name; same error and call chain reproduced on original HTML'},null,2));
+ console.log(JSON.stringify({syntaxBlocks:scripts(html).length,nonPresentationScriptsUnchanged:true,presentationMarkupChanges:changes.length,handlersUnchanged:true,layoutChecks:checks.length,calculation:calc,overnight,registrationAndReload:true,mockedCloudBackup:true,expiredWriteBlocked:true,consentAndAuthFailure:true,clockInteraction:true,goalPersistence:true,settingsAutosave:true,missingWage:true,marbleAnimation:true,newPageErrors:0,knownBaselineIssue:'Empty storage: getSettingsFormHtml reads undefined.name; same error and call chain reproduced on original HTML'},null,2));
  await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});

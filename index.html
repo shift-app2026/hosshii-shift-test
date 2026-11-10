@@ -1594,7 +1594,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         <div class="flex justify-between items-center bg-gradient-to-br from-rose-950 via-rose-900 to-rose-950 text-rose-100 px-3 py-2 rounded-2xl shadow-md border border-rose-800/40 text-xs">
           <button type="button" onclick="changePayPeriodOffset(-1)" class="text-rose-100 font-bold px-3 py-1.5 hover:bg-white/10 rounded-xl transition text-sm">◀ 前月</button>
-          <div class="flex items-center gap-2"><span class="luxe-header-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M6 6V4h12v2M16 11h5v5h-5a2.5 2.5 0 0 1 0-5Z"/><circle cx="17" cy="13.5" r=".5"/></svg></span><h2 id="todayDate" onclick="payPeriodOffset=0;initOverviewPage();" title="タップで今月に戻る" class="cursor-pointer font-bold text-white text-base sm:text-lg tracking-wider font-serif-title">----</h2><span class="text-rose-300">✦</span></div>
+          <div class="flex items-center gap-2"><span class="text-rose-300">✦</span><h2 id="todayDate" onclick="payPeriodOffset=0;initOverviewPage();" title="タップで今月に戻る" class="cursor-pointer font-bold text-white text-base sm:text-lg tracking-wider font-serif-title">----</h2><span class="text-rose-300">✦</span></div>
           <button type="button" onclick="changePayPeriodOffset(1)" class="text-rose-100 font-bold px-3 py-1.5 hover:bg-white/10 rounded-xl transition text-sm">翌月 ▶</button>
         </div>
         </div>
@@ -1612,9 +1612,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             <div id="goalRing" class="relative flex items-center justify-center shrink-0">
               <svg class="w-full h-full" viewBox="0 0 300 300" aria-hidden="true" style="overflow:visible">
 <defs>
-<radialGradient id="t26PearlGold" cx="32%" cy="25%" r="78%"><stop offset="0%" stop-color="#ffffff"/><stop offset="28%" stop-color="#fffef7"/><stop offset="56%" stop-color="#f5e9d5"/><stop offset="80%" stop-color="#dfc38e"/><stop offset="100%" stop-color="#b88b52"/></radialGradient>
+<radialGradient id="t26PearlGold" cx="32%" cy="25%" r="78%"><stop offset="0%" stop-color="#ffffff"/><stop offset="28%" stop-color="#fff7df"/><stop offset="56%" stop-color="#f3d6a2"/><stop offset="80%" stop-color="#dba65c"/><stop offset="100%" stop-color="#ad753b"/></radialGradient>
 <linearGradient id="luxeChampagneRim" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#b58a4a"/><stop offset="25%" stop-color="#fff0c3"/><stop offset="52%" stop-color="#d4ac6b"/><stop offset="76%" stop-color="#fff4d6"/><stop offset="100%" stop-color="#bc9252"/></linearGradient>
-<radialGradient id="luxePorcelain" cx="40%" cy="30%" r="75%"><stop offset="0%" stop-color="#fffefd"/><stop offset="100%" stop-color="#fff3f6"/></radialGradient>
+<radialGradient id="luxePorcelain" cx="40%" cy="30%" r="75%"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#fffefd"/></radialGradient>
 <radialGradient id="t15Glass" cx="34%" cy="28%" r="74%">
 <stop offset="0%" stop-color="#ffffff" stop-opacity=".98"/>
 <stop offset="19%" stop-color="#faffd5" stop-opacity=".93"/>
@@ -1697,7 +1697,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 <div class="oct23-sticky-month hosshii-month-and-legend">
                   <div class="hosshii-month-row flex justify-between items-center bg-gradient-to-br from-rose-950 via-rose-900 to-rose-950 text-rose-100 px-3 py-2 rounded-2xl shadow-md border border-rose-800/40 text-xs">
           <button type="button" onclick="changeMonth(-1)" class="text-rose-100 font-bold px-3 py-1.5 hover:bg-white/10 rounded-xl transition text-sm">◀ 前月</button>
-          <div class="flex items-center gap-2"><span class="luxe-header-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4M17 3v4M3 10h18M8 14h2M14 14h2M8 17h2"/></svg></span><h2 id="currentMonthLabel" onclick="currentPeriodDate=new Date();renderCalendar();" title="タップで今月に戻る" class="cursor-pointer font-bold text-white text-base sm:text-lg tracking-wider font-serif-title">----</h2><span class="text-rose-300">✦</span></div>
+          <div class="flex items-center gap-2"><span class="text-rose-300">✦</span><h2 id="currentMonthLabel" onclick="currentPeriodDate=new Date();renderCalendar();" title="タップで今月に戻る" class="cursor-pointer font-bold text-white text-base sm:text-lg tracking-wider font-serif-title">----</h2><span class="text-rose-300">✦</span></div>
           <button type="button" onclick="changeMonth(1)" class="text-rose-100 font-bold px-3 py-1.5 hover:bg-white/10 rounded-xl transition text-sm">翌月 ▶</button>
         </div>
 
@@ -1742,7 +1742,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 <div class="hosshii-list-pinned hosshii-month-and-legend">
                   <div class="hosshii-month-row flex justify-between items-center bg-gradient-to-br from-rose-950 via-rose-900 to-rose-950 text-rose-100 px-3 py-2 rounded-2xl shadow-md border border-rose-800/40 text-xs">
           <button type="button" onclick="changeListMonth(-1)" class="text-rose-100 font-bold px-3 py-1.5 hover:bg-white/10 rounded-xl transition text-sm">◀ 前月</button>
-          <div class="flex items-center gap-2"><span class="luxe-header-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="4" y="4" width="16" height="17" rx="3"/><path d="M8 2v4M16 2v4M8 11h8M8 15h5"/><path d="m16 17 1 1 2-2"/></svg></span><h2 id="currentListMonthLabel" onclick="currentListDate=new Date();renderStandaloneShiftList('jump');" title="タップで今月に戻る" class="cursor-pointer font-bold text-white text-base sm:text-lg tracking-wider font-serif-title">----</h2><span class="text-rose-300">✦</span></div>
+          <div class="flex items-center gap-2"><span class="text-rose-300">✦</span><h2 id="currentListMonthLabel" onclick="currentListDate=new Date();renderStandaloneShiftList('jump');" title="タップで今月に戻る" class="cursor-pointer font-bold text-white text-base sm:text-lg tracking-wider font-serif-title">----</h2><span class="text-rose-300">✦</span></div>
           <button type="button" onclick="changeListMonth(1)" class="text-rose-100 font-bold px-3 py-1.5 hover:bg-white/10 rounded-xl transition text-sm">翌月 ▶</button>
         </div>
           <div id="standaloneJobLegend" class="hosshii-list-legend flex flex-wrap items-center gap-2.5 text-xs font-bold text-stone-700"></div>
@@ -1762,7 +1762,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         <div class="oct23-sticky-settings bg-gradient-to-br from-rose-950 via-rose-900 to-rose-950 text-rose-100 px-3 py-2 rounded-2xl text-center shadow-md border border-rose-800/40 relative overflow-hidden">
           <div class="absolute -top-6 -left-6 w-16 h-16 bg-rose-500/10 rounded-full blur-xl pointer-events-none"></div>
           <div class="text-center">
-            <p class="text-base sm:text-lg font-bold tracking-wider text-white wage-setting-title"><span class="wage-title-star luxe-header-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 9C7 0 2 7 8 12c-9 5-2 11 4 4 5 8 12 1 4-4 7-5 0-12-4-3Z"/><circle cx="12" cy="12" r="2"/></svg></span><span>お給料の設定</span><span class="wage-title-star">✦</span></p>
+            <p class="text-base sm:text-lg font-bold tracking-wider text-white wage-setting-title"><span class="wage-title-star">✦</span><span>お給料の設定</span><span class="wage-title-star">✦</span></p>
             
           </div>
           <div id="hosshiiSettingsPinnedJob" class="hosshii-settings-current-job" aria-live="polite"></div>
@@ -1806,18 +1806,18 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           <p class="text-base sm:text-lg font-bold text-white text-center w-full"><span class="luxe-header-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 6C9 3 5 3 2 4v15c4-1 7 0 10 2 3-2 6-3 10-2V4c-3-1-7-1-10 2Zm0 0v15M5 8l4 1M15 9l4-1M5 12l4 1M15 13l4-1"/></svg></span><span>はじめに</span><span class="luxe-guide-note">必ず読んでね♡</span></p>
         </div>
         <div class="bg-white p-4 rounded-2xl border border-stone-100 shadow-sm space-y-4 text-sm text-stone-800 leading-relaxed">
-          <p>このアプリは、毎日のバイトやお仕事で忙しい方でも、シフト登録やお給料の計算を簡単にできるように作ったアプリです♪</p>
-          <p>複数のバイトを掛け持ちしている方も、シフトやお給料の目安をまとめて確認できます。</p>
-          <section class="space-y-2"><h3 class="font-bold text-rose-900 text-base">🌸 この順番で進めてね♪</h3>
+          <div class="luxe-welcome-card"><p>このアプリは、毎日のバイトやお仕事で忙しい方でも、シフト登録やお給料の計算を簡単にできるように作ったアプリです♪</p>
+          <p>複数のバイトを掛け持ちしている方も、シフトやお給料の目安をまとめて確認できます。</p></div>
+          <section class="space-y-2"><h3 class="font-bold text-rose-900 text-base"><span class="luxe-section-icon" aria-hidden="true">🌸</span> この順番で進めてね♪</h3>
             <div class="guide-steps"><p><b>①</b><span>「設定」でバイト先名を登録します。</span></p>
             <p><b>②</b><span>時間帯ごとの時給や手当を設定します。</span></p>
             <p><b>③</b><span>「シフト登録」で勤務日時を登録します。</span></p></div>
             <div class="guide-extra">            <p>※「予定表」では、登録したシフトをカレンダーで確認できます。日付を押すと、シフトの確認・変更・削除もできます♡</p>
             <p>💡 詳しい使い方は、各画面の「見てね♡」「確認してね💡」をご覧ください。</p></div>
           </section>
-          <section class="space-y-3 border-t border-stone-200 pt-3"><h3 class="font-bold text-rose-900 text-base">🌷 その他のご案内</h3>
-            <div><h4 class="font-bold">【ホーム画面に追加すると便利です♪】</h4><p>ホーム画面に追加すると、次回からすぐに開けます♪</p><p>ブラウザのメニューから「ホーム画面に追加」を選んでね。</p><p>※操作方法は端末やブラウザによって異なります。</p></div>
-            <div><h4 class="font-bold">【データの保存・バックアップについて】</h4>
+          <section class="space-y-3 border-t border-stone-200 pt-3"><h3 class="font-bold text-rose-900 text-base"><span class="luxe-section-icon" aria-hidden="true">🌷</span> その他のご案内</h3>
+            <div><h4 class="font-bold"><span class="luxe-inline-icon" aria-hidden="true">📲</span>【ホーム画面に追加すると便利です♪】</h4><p>ホーム画面に追加すると、次回からすぐに開けます♪</p><p>ブラウザのメニューから「ホーム画面に追加」を選んでね。</p><p>※操作方法は端末やブラウザによって異なります。</p></div>
+            <div><h4 class="font-bold"><span class="luxe-inline-icon" aria-hidden="true">🔄</span>【データの保存・バックアップについて】</h4>
               <p>入力したシフトや給与のデータは、お使いの端末・ブラウザ等の保存領域に保存されます。</p>
               <p>機種変更やデータ削除などに備えて、「設定」画面の「データのバックアップ」から定期的に保存してね♪</p>
               <p>♡ <b>書き出す</b><br>LINEで本人確認後、Supabaseのサーバーにバックアップを保存します。</p>
@@ -1831,7 +1831,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
               <p>大切なデータを守るため、定期的にバックアップを保存してね♡</p>
             </div>
             <div><h4 class="font-bold">【お給料の計算について】</h4><p>アプリに表示されるお給料は、税金や社会保険料などを差し引く前の総支給額の目安です。</p><p>実際のお給料とは異なる場合がありますので、勤務先の給与明細などで確認してね。</p></div>
-            <div><h4 class="font-bold">【利用規約・プライバシーポリシーについて】</h4><p>本アプリの利用条件や個人情報の取り扱いについては、「利用規約」と「プライバシーポリシー」に記載しています。</p><p>アプリの利用開始時に同意いただいた内容は、アプリ内からいつでも確認できます。</p><p><a href="./terms.html" target="_blank" rel="noopener noreferrer" style="color:#881337;text-decoration:underline;font-weight:bold">利用規約を読む</a></p></div>
+            <div><h4 class="font-bold"><span class="luxe-inline-icon" aria-hidden="true">🧾</span>【利用規約・プライバシーポリシーについて】</h4><p>本アプリの利用条件や個人情報の取り扱いについては、「利用規約」と「プライバシーポリシー」に記載しています。</p><p>アプリの利用開始時に同意いただいた内容は、アプリ内からいつでも確認できます。</p><p><a href="./terms.html" target="_blank" rel="noopener noreferrer" style="color:#881337;text-decoration:underline;font-weight:bold">利用規約を読む</a></p></div>
           </section>
         </div>
       </div>
@@ -3115,7 +3115,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             <div class="grid grid-cols-1 gap-2">
               <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1.5">
                 <div class="flex items-center justify-between gap-2">
-                  <span class="hosshii-allowance-section-title flex-1 min-w-0 whitespace-nowrap">【有給休暇】<span class="paid-sub ml-1.5 text-stone-500 font-bold">1時間あたり</span></span>
+                  <span class="hosshii-allowance-section-title flex-1 min-w-0 whitespace-nowrap"><span class="luxe-inline-icon" aria-hidden="true">☂</span>【有給休暇】<span class="paid-sub ml-1.5 text-stone-500 font-bold">1時間あたり</span></span>
                   <div class="flex items-center gap-1 shrink-0"><input type="text" inputmode="numeric" id="set_wagePaid" oninput="formatInputNumber(this)" class="w-24 p-2 border rounded text-right font-bold bg-white text-sm"><span class="font-bold">円</span></div>
                 </div>
                 <p class="paid-note text-xs text-stone-500 font-medium text-left">※時給が異なる場合は、<br>　よく働く時給か平均時給を入力してね♡</p>
@@ -3125,14 +3125,14 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
             <div class="grid grid-cols-1 gap-2.5 pt-1">
               <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-2">
-                <span class="hosshii-allowance-section-title">【交通費】</span>
+                <span class="hosshii-allowance-section-title"><span class="luxe-inline-icon" aria-hidden="true">🚃</span>【交通費】</span>
                 <div class="grid grid-cols-2 gap-3 allowance-period-grid">
                   <div class="flex items-center gap-1.5 text-xs min-w-0 font-bold text-stone-700"><span class="shrink-0 whitespace-nowrap">1か月</span><input type="text" inputmode="numeric" id="set_transMonth" oninput="formatInputNumber(this)" class="flex-1 min-w-0 w-full p-1.5 border rounded text-center bg-white font-bold text-sm"><span class="shrink-0">円</span></div>
                   <div class="flex items-center gap-1.5 text-xs min-w-0 font-bold text-stone-700"><span class="shrink-0 whitespace-nowrap">1日</span><input type="text" inputmode="numeric" id="set_transDay" oninput="formatInputNumber(this)" class="flex-1 min-w-0 w-full p-1.5 border rounded text-center bg-white font-bold text-sm"><span class="shrink-0">円</span></div>
                 </div>
               </div>
               <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-2">
-                <span class="hosshii-allowance-section-title">【その他】</span>
+                <span class="hosshii-allowance-section-title"><span class="luxe-inline-icon" aria-hidden="true">⭐</span>【その他】</span>
                 <div class="grid grid-cols-2 gap-3 allowance-period-grid">
                   <div class="flex items-center gap-1.5 text-xs min-w-0 font-bold text-stone-700"><span class="shrink-0 whitespace-nowrap">1か月</span><input type="text" inputmode="numeric" id="set_allowanceMonth" oninput="formatInputNumber(this)" class="flex-1 min-w-0 w-full p-1.5 border rounded text-center bg-white font-bold text-sm"><span class="shrink-0">円</span></div>
                   <div class="flex items-center gap-1.5 text-xs min-w-0 font-bold text-stone-700"><span class="shrink-0 whitespace-nowrap">1日</span><input type="text" inputmode="numeric" id="set_allowanceDay" oninput="formatInputNumber(this)" class="flex-1 min-w-0 w-full p-1.5 border rounded text-center bg-white font-bold text-sm"><span class="shrink-0">円</span></div>
@@ -4043,9 +4043,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const summary = rows => ({mins: rows.reduce((a,r)=>a+r.mins,0), wage:rows.reduce((a,r)=>a+r.wagePay,0), other:rows.reduce((a,r)=>a+r.otherPay,0), missing:rows.some(r=>r.wageMissing)});
       const totalNow = summary(current), totalPrev = summary(previous);
       const rowsHtml = (a,b) => `
-        <div class="hc-row"><span>勤務時間</span><span>${hm(a.mins)}</span><span>${hm(b.mins)}</span></div>
-        <div class="hc-row"><span>時給・有給分</span><span>${a.wageMissing?'⚠️':yen(a.wage)}</span><span>${b.wageMissing?'⚠️':yen(b.wage)}</span></div>
-        <div class="hc-row"><span>交通費・手当</span><span>${yen(a.other)}</span><span>${yen(b.other)}</span></div>`;
+        <div class="hc-row"><span><span class="luxe-inline-icon" aria-hidden="true">🕒</span>勤務時間</span><span>${hm(a.mins)}</span><span>${hm(b.mins)}</span></div>
+        <div class="hc-row"><span><span class="luxe-inline-icon" aria-hidden="true">📋</span>時給・有給分</span><span>${a.wageMissing?'⚠️':yen(a.wage)}</span><span>${b.wageMissing?'⚠️':yen(b.wage)}</span></div>
+        <div class="hc-row"><span><span class="luxe-inline-icon" aria-hidden="true">🚃</span>交通費・手当</span><span>${yen(a.other)}</span><span>${yen(b.other)}</span></div>`;
       const heading = '<div class="hc-cols"><span></span><strong>来月入金予定</strong><strong>今月入金予定</strong></div>';
       const totalCell = r => r.missing ? '⚠️' : yen(r.wage + r.other);
        const totalRow = `<div class="hc-row hc-grand-total"><span>合計</span><span>${totalCell(totalNow)}</span><span>${totalCell(totalPrev)}</span></div>`;
@@ -4507,7 +4507,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         getPaydayJobs(d).forEach(jk => {
           const paydayDot = getJobLabelHtml(jk, 'standalone-job-label', true);
-          lineItems.push({ order: 9500, html: lineHtml(`${paydayDot}<span>お給料日</span>`) });
+          lineItems.push({ order: 9500, html: lineHtml(`${paydayDot}<span class="luxe-payday-label"><span class="luxe-payday-heart" aria-hidden="true">♥</span>お給料日</span>`) });
         });
 
         lineItems.sort((a, b) => a.order - b.order);
@@ -4532,11 +4532,12 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         container.innerHTML += `
           <div id="list-row-${dateStr}" onclick="openShiftInputModal('${dateStr}')" class="flex items-center px-2 py-2 rounded-2xl border transition ${bgStyle} space-x-2 overflow-hidden cursor-pointer" title="この日をタップしてシフトを追加・変更">
             <div class="standalone-date w-20 pl-0.5 shrink-0 text-left font-bold text-sm sm:text-base ${dayColor}">
-              ${d.getDate()}日(${dayOfWeek})
+              <span class="luxe-day-number">${d.getDate()}日</span><span class="luxe-day-week">(${dayOfWeek})</span>
             </div>
             <div class="flex-1 space-y-0 overflow-hidden">
               ${hasShift ? linesHtml : `<div class="standalone-empty text-sm text-stone-500 font-bold">予定なし</div>`}
             </div>
+            <span class="luxe-row-chevron" aria-hidden="true">›</span>
           </div>
         `;
       }

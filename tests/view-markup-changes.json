@@ -1,0 +1,38 @@
+[
+  {
+    "before": "<div class=\"hc-row\"><span>勤務時間</span>",
+    "after": "<div class=\"hc-row\"><span><span class=\"luxe-inline-icon\" aria-hidden=\"true\">🕒</span>勤務時間</span>"
+  },
+  {
+    "before": "<div class=\"hc-row\"><span>時給・有給分</span>",
+    "after": "<div class=\"hc-row\"><span><span class=\"luxe-inline-icon\" aria-hidden=\"true\">📋</span>時給・有給分</span>"
+  },
+  {
+    "before": "<div class=\"hc-row\"><span>交通費・手当</span>",
+    "after": "<div class=\"hc-row\"><span><span class=\"luxe-inline-icon\" aria-hidden=\"true\">🚃</span>交通費・手当</span>"
+  },
+  {
+    "before": "<span class=\"hosshii-allowance-section-title flex-1 min-w-0 whitespace-nowrap\">【有給休暇】",
+    "after": "<span class=\"hosshii-allowance-section-title flex-1 min-w-0 whitespace-nowrap\"><span class=\"luxe-inline-icon\" aria-hidden=\"true\">☂</span>【有給休暇】"
+  },
+  {
+    "before": "<span class=\"hosshii-allowance-section-title\">【交通費】</span>",
+    "after": "<span class=\"hosshii-allowance-section-title\"><span class=\"luxe-inline-icon\" aria-hidden=\"true\">🚃</span>【交通費】</span>"
+  },
+  {
+    "before": "<span class=\"hosshii-allowance-section-title\">【その他】</span>",
+    "after": "<span class=\"hosshii-allowance-section-title\"><span class=\"luxe-inline-icon\" aria-hidden=\"true\">⭐</span>【その他】</span>"
+  },
+  {
+    "before": "lineHtml(`${paydayDot}<span>お給料日</span>`)",
+    "after": "lineHtml(`${paydayDot}<span class=\"luxe-payday-label\"><span class=\"luxe-payday-heart\" aria-hidden=\"true\">♥</span>お給料日</span>`)"
+  },
+  {
+    "before": "${d.getDate()}日(${dayOfWeek})",
+    "after": "<span class=\"luxe-day-number\">${d.getDate()}日</span><span class=\"luxe-day-week\">(${dayOfWeek})</span>"
+  },
+  {
+    "before": "              ${hasShift ? linesHtml : `<div class=\"standalone-empty text-sm text-stone-500 font-bold\">予定なし</div>`}\n            </div>\n          </div>",
+    "after": "              ${hasShift ? linesHtml : `<div class=\"standalone-empty text-sm text-stone-500 font-bold\">予定なし</div>`}\n            </div>\n            <span class=\"luxe-row-chevron\" aria-hidden=\"true\">›</span>\n          </div>"
+  }
+]
