@@ -1,0 +1,176 @@
+/* Bordeaux & Rose Champagne. Presentation only; legacy state classes and IDs stay intact.
+   Loaded after legacy body styles so component overrides have one canonical location. */
+:root {
+  --hs-wine: #801836;
+  --hs-deep: #4c0519;
+  --hs-bordeaux-light: #a12b4e;
+  --hs-gold: #c5a36a;
+  --hs-gold-light: #f4d99c;
+  --hs-gold-track: #dfb76c;
+  --hs-pearl: #fcf9fa;
+  --hs-card-tint: #fff0f4;
+  --hs-rose-border: #eedde1;
+  --hs-card-bg-gradient: linear-gradient(140deg, #fff, #fffafa 55%, #fff7f8);
+  --hs-header-gradient: linear-gradient(155deg, #a12c4c, #881337 26%, #5c0722 70%, #4c0519);
+  --hs-button-gradient: linear-gradient(155deg, #a12b4e, #881337 32%, #4c0519);
+  --font-serif: 'Noto Serif JP', serif;
+  --font-ui: 'Noto Sans JP', system-ui, -apple-system, sans-serif;
+  --hs-nav-height: calc(80px + env(safe-area-inset-bottom, 0px));
+}
+body { background: var(--hs-pearl) !important; font-family: var(--font-ui); color: #2c151b; }
+#appCard { background: var(--hs-pearl) !important; }
+#appScroll { min-height: 0; padding-bottom: calc(var(--hs-nav-height) + 20px) !important; scroll-padding-bottom: var(--hs-nav-height); }
+#appScroll > .tab-content { min-width: 0; }
+/* Pinned headings live outside tabs after initialization. Target their real location. */
+#appCard > #itoStickyHeaderHost > .ito-pinned-heading > div.bg-gradient-to-br,
+#appCard > #itoStickyHeaderHost .hosshii-month-row,
+#appCard > #itoStickyHeaderHost > .oct23-sticky-settings,
+#appCard > #itoStickyHeaderHost > .ito-guide-heading {
+  background: var(--hs-header-gradient) !important;
+  border: 1px solid #781030 !important;
+  border-radius: 18px !important;
+  color: #fffaf0 !important;
+  box-shadow: inset 0 1px 1px #fff5e04d, inset 0 -2px 3px #23000d40, 0 5px 14px #5c08252e !important;
+}
+#appCard > #itoStickyHeaderHost { flex-shrink: 0; }
+#itoStickyHeaderHost .text-rose-300,
+#appCard > #itoStickyHeaderHost .wage-title-star {
+  color: var(--hs-gold-light) !important; -webkit-text-fill-color: var(--hs-gold-light) !important;
+}
+#todayDate, #currentMonthLabel, #currentListMonthLabel {
+  font-family: 'Cinzel', 'Noto Serif JP', serif !important;
+  letter-spacing: .04em !important;
+  font-size: clamp(14px, 4vw, 18px) !important;
+  white-space: nowrap;
+}
+.wage-setting-title, .ito-guide-heading > p,
+#tab-guide h3, #tab-clock #monthlyReceiveTitle, #yearlyTitleLabel {
+  font-family: var(--font-serif) !important;
+}
+/* Apply card surfaces to containers, not every nested .bg-white control. */
+#appScroll > .tab-content > .bg-white,
+#tab-clock .hosshii-monthly-detail-card {
+  background: var(--hs-card-bg-gradient) !important;
+  border: 1px solid var(--hs-rose-border) !important;
+  border-radius: 18px !important;
+  box-shadow: inset 0 1px 0 #fff, 0 3px 12px #63142d11 !important;
+}
+#tab-clock .hosshii-monthly-detail-card {
+  background: linear-gradient(135deg, #fff1f2cc, #fffafb 55%, #fffbeb80) !important;
+  border-color: #d4a8b2 !important;
+}
+#tab-clock .hc-job-card { background: #fffdfd; border-color: var(--hs-rose-border); }
+#tab-clock .hc-job-title strong { color: #2c151b !important; }
+#tab-clock .hc-job-title { flex-wrap: wrap; }
+/* Keep the original SVG, progress attributes and marble animation intact. */
+#tab-clock #goalRing { width: min(18.5rem, 78vw) !important; height: min(18.5rem, 78vw) !important; }
+#tab-clock #goalRing > svg { filter: drop-shadow(0 4px 5px #632b1c29) !important; overflow: visible !important; }
+#tab-clock #goalRing #goalCurrentPay {
+  font-family: var(--font-serif) !important;
+  color: var(--hs-deep) !important;
+  font-size: clamp(26px, 8vw, 38px) !important;
+  font-weight: 700 !important;
+  font-variant-numeric: tabular-nums;
+  max-width: 100%; line-height: 1.4 !important;
+}
+#tab-clock #goalRing #goalCurrentPay.test5-missing-ring { font-family: var(--font-ui) !important; font-size: clamp(14px, 4vw, 19px) !important; }
+#goalRing .goal-label-text { color: #6c4751 !important; font-family: var(--font-ui) !important; }
+#goalRemainText, .job-time, #calendarDays, .tab-btn { font-family: var(--font-ui) !important; font-variant-numeric: tabular-nums; }
+#test28GoalEdit { border-radius: 50%; }
+/* Preserve unsaved/saved, disabled and read-only states; never change visibility here. */
+#calendarRegisterButton, #registerShiftButton, #registerPresetButton,
+#tab-calendar button[onclick^="copyLastMonthShifts"],
+#tab-list button[onclick^="copyLastMonthShifts"],
+#tab-settings button[id^="set_reg_btn_"], #tab-settings .ito-job-register-button,
+#settingsFixedSave button,
+#shiftInputModal button[onclick="closeShiftInputModal()"],
+#presetRegisterModal #registerPresetButton {
+  background: var(--hs-button-gradient) !important;
+  border: 1px solid #781030 !important;
+  color: #fff !important; -webkit-text-fill-color: #fff !important;
+  border-radius: 12px !important;
+  box-shadow: inset 0 1px 1px #ffefd661, inset 0 -2px 2px #1e000d33, 0 3px 9px #88133738 !important;
+}
+#registerShiftButton.unsaved-registration, #registerPresetButton.unsaved-registration,
+#tab-settings button[id^="set_reg_btn_"].unsaved-registration,
+#tab-settings .ito-job-register-button.unsaved-registration {
+  color: #ffe082 !important; -webkit-text-fill-color: #ffe082 !important;
+}
+#tab-settings .wage-header-actions-row .wage-head-sub, #tab-guide .guide-extra {
+  background: #fff1f2 !important; border: 1px solid #e9bd9b !important; border-radius: 12px; color: var(--hs-wine);
+}
+#calendarDays .today-champagne-gold,
+#calendarDays .today-champagne-gold.calendar-selected-date {
+  background: #fff3c1 !important; border: 2px solid #d2a85d !important; border-radius: 12px !important;
+}
+#standaloneShiftListContainer { padding: 8px 2px 10px !important; }
+#standaloneShiftListContainer > div[id^="list-row-"] {
+  position: relative; min-height: 64px; margin-bottom: 10px; overflow: visible !important;
+  padding: 9px 8px !important; border: 1px solid var(--hs-rose-border) !important;
+  border-radius: 15px !important; background: var(--hs-card-bg-gradient) !important;
+  box-shadow: inset 0 1px 0 #fff, 0 3px 10px #61102d13;
+}
+#standaloneShiftListContainer > div[id^="list-row-"].bg-amber-100\/80 {
+  border: 2px solid #d2a85d !important; background: linear-gradient(135deg, #fffdf3, #fff8e8) !important;
+}
+#standaloneShiftListContainer > div[id^="list-row-"].bg-amber-100\/80::before {
+  content: 'TODAY ✦'; position: absolute; top: -8px; left: 10px;
+  padding: 0 6px; border-radius: 6px; font: 700 9px/1.5 'Cinzel', serif;
+  background: #8d6528; color: #fff;
+}
+/* Keep existing date text and renderer; a wider badge fits Japanese weekdays. */
+#standaloneShiftListContainer .standalone-date {
+  width: 76px !important; min-width: 76px; padding: 8px 3px !important;
+  border: 1px solid #f0dce1; border-radius: 10px; background: var(--hs-card-tint);
+  text-align: center !important; font-size: 14px !important;
+}
+#tab-guide .guide-steps > p {
+  padding: 12px !important; background: linear-gradient(135deg, #fff9fa, #fff0f3) !important;
+  border: 1px solid #efdce2; border-radius: 12px;
+}
+#tab-guide .guide-steps b {
+  display: inline-flex; align-items: center; justify-content: center; flex: 0 0 26px;
+  height: 26px; padding: 0 !important; border-radius: 50% !important;
+  background: var(--hs-button-gradient) !important; color: #fff;
+}
+/* Scoped modal surfaces preserve their existing display/scroll and z-index rules. */
+#shiftInputModal > .bg-white, #presetRegisterModal > .bg-white,
+#breakSelectModal > .bg-white, #breakdownModal > .bg-white {
+  background: var(--hs-card-bg-gradient) !important; border-color: var(--hs-rose-border) !important;
+  border-radius: 22px !important;
+}
+#hosshiiBottomNav {
+  min-height: var(--hs-nav-height); background: #faf5f6f5 !important;
+  border-top: 1px solid #e7dce0 !important;
+  box-shadow: 0 -4px 16px #4a0c2213 !important; backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+#hosshiiBottomNav > div { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; }
+#hosshiiBottomNav .tab-btn {
+  display: flex !important; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  height: 62px !important; min-height: 62px !important; min-width: 0; padding: 5px 1px !important;
+  background: linear-gradient(160deg, #fff, #fff9fa) !important;
+  border: 1px solid #e7dce0 !important; border-radius: 12px !important;
+  color: #51444a !important; -webkit-text-fill-color: #51444a !important;
+  box-shadow: inset 0 1px 0 #fff, 0 1px 3px #53122913 !important;
+}
+#hosshiiBottomNav .tab-btn.active {
+  background: var(--hs-button-gradient) !important; color: #fff !important; -webkit-text-fill-color: #fff !important;
+  border-color: #6b0c2a !important; box-shadow: inset 0 1px 0 #ffedd55c, 0 4px 12px #88133752 !important;
+}
+#hosshiiBottomNav .hosshii-nav-icon { display: block; flex: 0 0 19px; width: 19px; height: 19px; }
+#hosshiiBottomNav .hosshii-nav-label { font-size: 11px; font-weight: 700; line-height: 1.3; white-space: nowrap; }
+#settingsFixedSave:not([hidden]) { bottom: var(--hs-nav-height) !important; }
+#tab-settings { padding-bottom: 62px; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outline-offset: 3px; }
+@media (max-width: 359px) {
+  #shiftInputModal > .bg-white { padding: 14px !important; }
+  #shiftInputModal > .bg-white > div:first-child > span { font-size: 14px; white-space: nowrap; }
+  #shiftInputModal button[onclick="showShiftHelp()"] { font-size: 11px; padding-left: 6px; padding-right: 6px; white-space: nowrap; }
+  #itoStickyHeaderHost .hosshii-month-row button,
+  #itoStickyHeaderHost .oct23-sticky-pay button { padding-left: 6px; padding-right: 6px; font-size: 12px; }
+  #standaloneShiftListContainer .standalone-date { width: 65px !important; min-width: 65px; font-size: 13px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #tab-clock #goalRing.t21-goal-sparkle { animation: none !important; }
+}

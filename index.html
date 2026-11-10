@@ -93,7 +93,7 @@
 </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
   <style>
     body { 
       background-color: #f7f3f5; 
@@ -1838,13 +1838,13 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       <button type="button" onclick="saveAndCloseSettings()">閉じる（設定を保存します♡）</button>
     </div>
     <!-- 下部タブバー -->
-    <div class="fixed bottom-0 left-0 right-0 z-40 max-w-md mx-auto bg-stone-100/95 border-t border-stone-200 p-1.5 shadow-lg" style="padding-bottom: calc(0.625rem + env(safe-area-inset-bottom, 0px));">
+    <div id="hosshiiBottomNav" role="navigation" aria-label="メインメニュー" class="fixed bottom-0 left-0 right-0 z-40 max-w-md mx-auto bg-stone-100/95 border-t border-stone-200 p-1.5 shadow-lg" style="padding-bottom: calc(0.625rem + env(safe-area-inset-bottom, 0px));">
       <div class="grid grid-cols-5 gap-1">
-        <button type="button" onclick="switchTab('clock')" id="btn-clock" class="tab-btn active py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">お給料</button>
-        <button type="button" onclick="switchTab('calendar')" id="btn-calendar" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">シフト<wbr>登録</button>
-        <button type="button" onclick="switchTab('list')" id="btn-list" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">予定表</button>
-        <button type="button" onclick="switchTab('settings')" id="btn-settings" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">設定</button>
-        <button type="button" onclick="switchTab('guide')" id="btn-guide" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5">はじめに</button>
+        <button type="button" onclick="switchTab('clock')" id="btn-clock" class="tab-btn active py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5"><svg aria-hidden="true" focusable="false" class="hosshii-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="14" r="2"/></svg><span class="hosshii-nav-label">お給料</span></button>
+        <button type="button" onclick="switchTab('calendar')" id="btn-calendar" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5"><svg aria-hidden="true" focusable="false" class="hosshii-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg><span class="hosshii-nav-label">シフト<wbr>登録</span></button>
+        <button type="button" onclick="switchTab('list')" id="btn-list" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5"><svg aria-hidden="true" focusable="false" class="hosshii-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18"/></svg><span class="hosshii-nav-label">予定表</span></button>
+        <button type="button" onclick="switchTab('settings')" id="btn-settings" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5"><svg aria-hidden="true" focusable="false" class="hosshii-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l1.8 1.2 2.1-.3.9 2 2 .9-.3 2.1L20 11l-1.5 2.1.3 2.1-2 .9-.9 2-2.1-.3L12 19l-1.8-1.2-2.1.3-.9-2-2-.9.3-2.1L4 11l1.5-2.1-.3-2.1 2-.9.9-2 2.1.3z"/><circle cx="12" cy="11" r="2.5"/></svg><span class="hosshii-nav-label">設定</span></button>
+        <button type="button" onclick="switchTab('guide')" id="btn-guide" class="tab-btn bg-white text-stone-700 border border-stone-200 py-3 rounded-xl text-xs sm:text-sm font-bold text-center transition shadow-[0_1px_2px_rgba(0,0,0,0.05)] px-0.5"><svg aria-hidden="true" focusable="false" class="hosshii-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m12 2 1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5z"/></svg><span class="hosshii-nav-label">はじめに</span></button>
       </div>
     </div>
 
@@ -6880,5 +6880,7 @@ p.hosshii-ring-note{font-size:13px!important;line-height:1.6!important;color:#11
 #tab-calendar .calendar-registration-prompt > p,
 #shiftInputModal .hosshii-paid-entry-note {font-weight:600!important;}
 </style>
+<!-- Final presentation layer follows legacy styles, including styles in body. -->
+<link rel="stylesheet" href="./bordeaux-rose.css">
 </body>
 </html>
