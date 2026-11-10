@@ -1,0 +1,6 @@
+{
+  "staticConfirmedWordingPreserved": true,
+  "baseline": "6c9403e",
+  "excluded": "Whitespace and purely decorative stars/flowers, SVG and aria-hidden ornaments",
+  "firstDifference": null
+}

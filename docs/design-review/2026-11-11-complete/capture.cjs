@@ -62,9 +62,10 @@ async function audit(page,scope){return page.evaluate(scope=>{
    await page.evaluate(()=>{document.getElementById('appScroll').scrollTop=0;const list=document.getElementById('standaloneShiftListContainer');if(list)list.scrollTop=0});
    if(tab==='clock'){await page.waitForTimeout(600);await page.waitForFunction(()=>salaryMarbleState==='idle');}
    await capture(tab);
+   if(tab==='clock'){await page.locator('#itoReceiveTable').evaluate(el=>el.scrollIntoView({block:'start'}));await capture('clock-breakdown');}
    if(tab==='calendar'){await page.locator('#calendarRegisterButton').scrollIntoViewIfNeeded();await page.locator('#calendarRegisterButton').click({trial:true});await capture('calendar-register-visible');}
    if(tab==='list'){await page.locator('#list-row-'+key).scrollIntoViewIfNeeded();await capture('list-today');}
-   if(tab==='settings'){await page.locator('button[onclick="hosshiiCloudBackupSave(event)"]').scrollIntoViewIfNeeded();await capture('settings-backup');}
+   if(tab==='settings'){await page.locator('#set_transMonth').scrollIntoViewIfNeeded();await capture('settings-transport');await page.locator('#set_allowanceMonth').scrollIntoViewIfNeeded();await capture('settings-other');await page.locator('button[onclick="hosshiiCloudBackupSave(event)"]').scrollIntoViewIfNeeded();await capture('settings-backup');}
   }
   await page.locator('#btn-clock').click();await page.locator('#test28GoalEdit').click();await capture('goal-modal','#t31GoalModal');await page.evaluate(()=>closeMonthlyGoalDialog());
   await page.evaluate(()=>openBreakdownModal());await capture('breakdown-modal','#breakdownModal');await page.evaluate(()=>closeBreakdownModal());
