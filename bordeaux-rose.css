@@ -878,3 +878,34 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
   font-family: 'Noto Serif JP', serif !important;
   font-variant-numeric: tabular-nums;
 }
+
+/* Final font audit: one base serif for every non-salary view and app dialog.
+   Keep the approved salary page and its central ring typography unchanged. */
+:is(#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#t31GoalModal,#hosshiiJobMenu),
+:is(#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#t31GoalModal,#hosshiiJobMenu) * {
+  font-family: 'Noto Serif JP', serif !important;
+}
+#hosshiiSettingsPinnedJob, #hosshiiSettingsPinnedJob *,
+#hosshiiBottomNav .hosshii-nav-label {
+  font-family: 'Noto Serif JP', serif !important;
+}
+/* The shift calendar has one neutral, unfilled outline marker per payday.
+   It sits just over the number's right edge, above the digit ink. */
+#calendarDays .payday-date-number { position: relative; }
+#calendarDays .payday-pin-container {
+  position: absolute; left: calc(100% - 1px); top: -4px;
+  margin: 0 !important; pointer-events: none;
+}
+#calendarDays .payday-pin-container > .payday-outline-mark,
+#calendarJobLegend .calendar-payday-legend > .payday-outline-mark {
+  color: #302027 !important; -webkit-text-fill-color: #302027 !important;
+  background: none !important; filter: none !important; text-shadow: none !important;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+#calendarDays .payday-pin-container > span::after,
+#calendarJobLegend .calendar-payday-legend > span:first-child::after { content: none; }
+#calendarJobLegend .calendar-payday-legend .payday-outline { width: 15px; height: 15px; }
+#calendarJobLegend .calendar-payday-legend,
+#calendarJobLegend .calendar-payday-legend > span { font-family: 'Noto Serif JP', serif !important; }
+#shiftInputModal .hosshii-paid-entry-note { line-height: 1.7; }
+#shiftInputModal .hosshii-paid-entry-note > span { display: block; white-space: nowrap; }

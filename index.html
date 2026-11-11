@@ -1530,7 +1530,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           <p class="ito-preset-desc font-bold text-stone-600">※よく使う勤務時間を登録して、<br>　次回からワンタッチで選べるよ♡</p>
           <div id="modalInlinePresetContainer" class="space-y-2 text-xs"></div>
         </section>
-        <div class="space-y-2 border-t border-stone-100 pt-2"><div class="flex items-center justify-between"><span class="shift-section-title shift-time-heading">【勤務時間を登録】</span><div class="shift-heading-actions"><span id="modalPaidToggleHeaderSlot"></span><button type="button" onclick="registerNewPresetAndRegister()" id="registerShiftButton" class="px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold">登録</button></div></div><div id="modalCustomPresetContainer" class="space-y-2"></div><p class="hosshii-paid-entry-note text-xs font-medium text-stone-600">※有給の場合は「有給」を選択してから登録してね。</p><div id="hosshiiShiftWageWarning" class="t13-wage-notice" hidden>⚠️ 時給が未設定の時間帯があります。<br>設定画面で確認してね♡ <button type="button" onclick="hosshiiOpenWageSettings()">［設定画面］</button></div></div>
+        <div class="space-y-2 border-t border-stone-100 pt-2"><div class="flex items-center justify-between"><span class="shift-section-title shift-time-heading">【勤務時間を登録】</span><div class="shift-heading-actions"><span id="modalPaidToggleHeaderSlot"></span><button type="button" onclick="registerNewPresetAndRegister()" id="registerShiftButton" class="px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold">登録</button></div></div><div id="modalCustomPresetContainer" class="space-y-2"></div><p class="hosshii-paid-entry-note text-xs font-medium text-stone-600"><span>※有給の場合は「有給」を選択してから</span><span>　登録してね。</span></p><div id="hosshiiShiftWageWarning" class="t13-wage-notice" hidden>⚠️ 時給が未設定の時間帯があります。<br>設定画面で確認してね♡ <button type="button" onclick="hosshiiOpenWageSettings()">［設定画面］</button></div></div>
         <div class="space-y-1.5 border-t border-stone-100 pt-2"><span id="modalShiftListHeading" class="shift-section-title">【シフト一覧】</span><div id="modalSelectedDateSummaryContent" class="space-y-2 pt-1"></div></div>
 
       </div>
@@ -4330,7 +4330,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         if (isPayday) {
           paydayHtml = `
             <div class="payday-pin-container ml-0.5">
-              <span class="text-sm leading-none text-red-500 font-bold">❤</span>
+              <span class="payday-outline-mark" aria-hidden="true"><svg class="payday-outline" viewBox="0 0 24 24" width="11" height="11" aria-hidden="true" focusable="false"><path d="M12 21C9 18 2 13.5 2 7.5A5.5 5.5 0 0 1 12 4a5.5 5.5 0 0 1 10 3.5C22 13.5 15 18 12 21Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
             </div>
           `;
         }
@@ -4350,7 +4350,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         if (dateStr === calSelectedDateStr) dayClass += " calendar-selected-date";
 
         let dayNumDisplay = isPayday 
-          ? `<div class="flex items-center justify-center"><span class="text-base font-bold leading-tight">${d.getDate()}</span>${paydayHtml}</div>`
+          ? `<div class="payday-date-number flex items-center justify-center"><span class="text-base font-bold leading-tight">${d.getDate()}</span>${paydayHtml}</div>`
           : `<span class="text-base font-bold leading-tight">${d.getDate()}</span>`;
 
         calendarDays.innerHTML += `
@@ -4380,7 +4380,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const item = jk => jk
         ? `<div class="flex min-w-0 items-center justify-start">${getJobLabelHtml(jk, 'calendar-legend-label')}</div>`
         : `<div aria-hidden="true"></div>`;
-      const paydayDot = '<span aria-hidden="true" style="color:#ec4899;font-size:16px;line-height:1;">♥</span>';
+      const paydayDot = '<span class="payday-outline-mark" aria-hidden="true"><svg class="payday-outline" viewBox="0 0 24 24" width="11" height="11" aria-hidden="true" focusable="false"><path d="M12 21C9 18 2 13.5 2 7.5A5.5 5.5 0 0 1 12 4a5.5 5.5 0 0 1 10 3.5C22 13.5 15 18 12 21Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>';
       const payday = `<span class="calendar-payday-legend inline-flex items-center gap-1 whitespace-nowrap font-bold text-stone-900">${paydayDot}<span>お給料日</span></span>`;
       // 1行目はバイト先1・2と給料日。3つ目のバイト先だけ2行目へ。
       const firstRow = `<div class="calendar-legend-first-row">${keys.slice(0,2).map(item).join('')}${payday}</div>`;
@@ -4505,9 +4505,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             
             if (jobShift.start && jobShift.end) {
               // 予定表の日付内はバイト先名を省き、色付き●と勤務時間だけを表示して時間幅を確保
-              lineItems.push({ order: timeStrToMins(jobShift.start), html: lineHtml(`<span class="job-time">${jobShift.start}〜${jobShift.end}</span>${jobShift.isPaidLeave ? '<span class="standalone-paid-status">有給</span>' : ''}<span class="standalone-workplace-name">${esc(jName)}</span>`) });
+              lineItems.push({ order: timeStrToMins(jobShift.start), html: lineHtml(`${jobShift.isPaidLeave ? '<span class="standalone-paid-status">有給</span>' : ''}<span class="job-time">${jobShift.start}〜${jobShift.end}</span><span class="standalone-workplace-name">${esc(jName)}</span>`) });
             } else if (jobShift.isPaidLeave) {
-              lineItems.push({ order: 9000, html: lineHtml(`<span class="job-time">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span><span class="standalone-paid-status">有給</span><span class="standalone-workplace-name">${esc(jName)}</span>`) });
+              lineItems.push({ order: 9000, html: lineHtml(`<span class="standalone-paid-status">有給</span><span class="job-time">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span><span class="standalone-workplace-name">${esc(jName)}</span>`) });
             }
           });
         });
