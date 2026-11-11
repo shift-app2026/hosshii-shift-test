@@ -1526,7 +1526,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         
         
         <section class="shift-preset-section space-y-2 border-t border-stone-100 pt-2">
-          <div class="flex items-center justify-between gap-2"><span class="shift-section-title preset-inline-heading shift-time-heading">【ワンタッチ登録】</span><button type="button" onclick="openPresetRegisterModal()" class="px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0">＋登録</button></div>
+          <div class="flex items-center justify-between gap-2"><span class="shift-section-title preset-inline-heading shift-time-heading">【ワンタッチ登録】</span><button type="button" id="openPresetRegisterButton" onclick="openPresetRegisterModal()" class="px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0">＋登録</button></div>
           <p class="ito-preset-desc font-bold text-stone-600">※よく使う勤務時間を登録して、<br>　次回からワンタッチで選べるよ♡</p>
           <div id="modalInlinePresetContainer" class="space-y-2 text-xs"></div>
         </section>
@@ -2228,6 +2228,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       renderModalPresetButtons();
       newPresetForm = { start: '00:00', end: '00:00', breakMins: 0 };
       window.hosshiiRegisterState?.('registerShiftButton', false);
+      if (fromCalendar) window.hosshiiRegisterState?.('calendarRegisterButton', false);
       setModalShiftTypeUIOnly(false);
       renderModalCustomPresets();
       updateModalSelectedDateSummary();
@@ -2427,6 +2428,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function switchModalJobTab(jobKey) {
       currentSelectedJobKey = jobKey;
+      ['registerShiftButton','registerPresetButton','openPresetRegisterButton','calendarRegisterButton'].forEach(id => window.hosshiiRegisterState?.(id, false));
       renderModalJobTabs();
       updateShiftEntryLayout();
       renderModalPresetButtons();
@@ -3625,6 +3627,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const label = document.getElementById('presetRegisterJobName');
       if (label) label.innerHTML = '<span class="job-color-dot" style="width:10px;height:10px;border-radius:50%;background:'+getJobPalette(currentSelectedJobKey).dot+'"></span>' + esc(getJobDisplayName(currentSelectedJobKey));
       window.hosshiiRegisterState?.('registerPresetButton', false);
+      window.hosshiiRegisterState?.('openPresetRegisterButton', false);
       renderModalPresetButtons();
       document.getElementById('presetRegisterModal').classList.remove('hidden');
     }
@@ -3653,6 +3656,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       job.presets.push({ start, end, breakMins });
       if (!saveAllDataStorage()) { job.presets.pop(); return; }
       window.markRegisterSaved?.('registerPresetButton');
+      window.hosshiiRegisterState?.('openPresetRegisterButton', true);
       clearPresetRegisterForm();
       renderModalPresetButtons();
       showToast("ワンタッチ時間を登録しました♡");
@@ -3689,6 +3693,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const shifts = getDayShifts(selectedCalendarDateStr, currentSelectedJobKey);
       shifts.push({ start, end, breakMins, isPaidLeave: !!isPaidLeaveMode });
       if (!setDayShifts(selectedCalendarDateStr, currentSelectedJobKey, shifts)) return false;
+      if (selectedCalendarDateStr === calSelectedDateStr) window.hosshiiRegisterState?.('calendarRegisterButton', true);
       updateModalSelectedDateSummary();
       showToast("シフトに登録しました" + breakHint(start, end, breakMins));
       return true;
@@ -4409,6 +4414,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function selectCalendarDate(key) {
+      window.hosshiiRegisterState?.('calendarRegisterButton', false);
       calSelectedDateStr = key;
       selectedCalendarDateStr = key;
       renderCalendar();
@@ -5093,7 +5099,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 </script>
 <script id="accessible-registration-ui">
 (function(){
- const selector='#registerShiftButton,#registerPresetButton,#tab-settings button[id^="set_reg_btn_"],#tab-settings .ito-job-register-button,#saveRenameJobButton,#goalSubmitButton,#timeSelectionRegisterButton,#settingsSaveButton,[data-register-preset]';
+ const selector='#registerShiftButton,#registerPresetButton,#tab-settings button[id^="set_reg_btn_"],#tab-settings .ito-job-register-button,#saveRenameJobButton,#goalSubmitButton,#timeSelectionRegisterButton,#settingsSaveButton,#calendarRegisterButton,#openPresetRegisterButton,[data-register-preset]';
  window.hosshiiRegisterState=function(target,saved){
   const el=typeof target==='string'?document.getElementById(target):target;
   if(!el)return;
@@ -5101,11 +5107,16 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   el.classList.toggle('unsaved-registration',!saved);
  };
  function dirty(target){window.hosshiiRegisterState(target,false)}
- document.addEventListener('click',e=>{const button=e.target.closest?.(selector);if(button)dirty(button)},true);
+ document.addEventListener('click',e=>{
+  const button=e.target.closest?.(selector);if(button)dirty(button);
+  if(button?.id==='registerPresetButton')dirty('openPresetRegisterButton');
+  if((button?.id==='registerShiftButton'||button?.hasAttribute('data-register-preset'))&&selectedCalendarDateStr===calSelectedDateStr)dirty('calendarRegisterButton');
+  if(e.target.closest?.('button[onclick^="changeMonth("]'))dirty('calendarRegisterButton');
+ },true);
  ['input','change'].forEach(type=>document.addEventListener(type,e=>{
   const t=e.target;
-  if(t.closest?.('#shiftInputModal'))dirty('registerShiftButton');
-  if(t.closest?.('#presetRegisterModal'))dirty('registerPresetButton');
+  if(t.closest?.('#shiftInputModal')){dirty('registerShiftButton');if(selectedCalendarDateStr===calSelectedDateStr)dirty('calendarRegisterButton');}
+  if(t.closest?.('#presetRegisterModal')){dirty('registerPresetButton');dirty('openPresetRegisterButton');}
   if(t.id==='newJobNameInput')dirty(document.querySelector('#tab-settings .ito-job-register-button'));
   if(t.id==='renameJobInput')dirty('saveRenameJobButton');
   if(t.id==='t31GoalInput'){dirty('goalSubmitButton');document.getElementById('t31GoalError').textContent='';}

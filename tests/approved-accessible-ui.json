@@ -1,12 +1,12 @@
 [
   {
     "before": "      window.markRegisterSaved?.('registerPresetButton');\n      renderModalPresetButtons();\n      document.getElementById('presetRegisterModal').classList.remove('hidden');",
-    "after": "      window.hosshiiRegisterState?.('registerPresetButton', false);\n      renderModalPresetButtons();\n      document.getElementById('presetRegisterModal').classList.remove('hidden');",
+    "after": "      window.hosshiiRegisterState?.('registerPresetButton', false);\n      window.hosshiiRegisterState?.('openPresetRegisterButton', false);\n      renderModalPresetButtons();\n      document.getElementById('presetRegisterModal').classList.remove('hidden');",
     "reason": "Opening an empty preset form is not successful persistence"
   },
   {
     "before": "      newPresetForm = { start: '00:00', end: '00:00', breakMins: 0 };\n      setModalShiftTypeUIOnly(false);\n      renderModalCustomPresets();\n      updateModalSelectedDateSummary();",
-    "after": "      newPresetForm = { start: '00:00', end: '00:00', breakMins: 0 };\n      window.hosshiiRegisterState?.('registerShiftButton', false);\n      setModalShiftTypeUIOnly(false);\n      renderModalCustomPresets();\n      updateModalSelectedDateSummary();",
+    "after": "      newPresetForm = { start: '00:00', end: '00:00', breakMins: 0 };\n      window.hosshiiRegisterState?.('registerShiftButton', false);\n      if (fromCalendar) window.hosshiiRegisterState?.('calendarRegisterButton', false);\n      setModalShiftTypeUIOnly(false);\n      renderModalCustomPresets();\n      updateModalSelectedDateSummary();",
     "reason": "New shift action starts unsaved"
   },
   {
@@ -93,5 +93,30 @@
     "before": "      if(ok) {\n        closePresetRegisterModal();",
     "after": "      if(ok) {\n        closePresetRegisterModal();\n        const key = `${start}|${end}|${Number(breakMins) || 0}`;\n        document.querySelectorAll('[data-register-preset]').forEach(el => {\n          if (el.dataset.registerPreset === key) window.hosshiiRegisterState?.(el, true);\n        });",
     "reason": "Quick-register success follows actual registration result and refreshed controls"
+  },
+  {
+    "before": "onclick=\"openPresetRegisterModal()\" class=",
+    "after": "id=\"openPresetRegisterButton\" onclick=\"openPresetRegisterModal()\" class=",
+    "reason": "Identify preset entry action"
+  },
+  {
+    "before": "      window.markRegisterSaved?.('registerPresetButton');\n      clearPresetRegisterForm();",
+    "after": "      window.markRegisterSaved?.('registerPresetButton');\n      window.hosshiiRegisterState?.('openPresetRegisterButton', true);\n      clearPresetRegisterForm();",
+    "reason": "Preset entry follows checked successful persistence"
+  },
+  {
+    "before": "      if (!setDayShifts(selectedCalendarDateStr, currentSelectedJobKey, shifts)) return false;\n      updateModalSelectedDateSummary();",
+    "after": "      if (!setDayShifts(selectedCalendarDateStr, currentSelectedJobKey, shifts)) return false;\n      if (selectedCalendarDateStr === calSelectedDateStr) window.hosshiiRegisterState?.('calendarRegisterButton', true);\n      updateModalSelectedDateSummary();",
+    "reason": "Calendar entry follows successful persistence for its selected date"
+  },
+  {
+    "before": "    function selectCalendarDate(key) {\n      calSelectedDateStr = key;",
+    "after": "    function selectCalendarDate(key) {\n      window.hosshiiRegisterState?.('calendarRegisterButton', false);\n      calSelectedDateStr = key;",
+    "reason": "A new date resets the pending calendar action"
+  },
+  {
+    "before": "      currentSelectedJobKey = jobKey;\n      renderModalJobTabs();",
+    "after": "      currentSelectedJobKey = jobKey;\n      ['registerShiftButton','registerPresetButton','openPresetRegisterButton','calendarRegisterButton'].forEach(id => window.hosshiiRegisterState?.(id, false));\n      renderModalJobTabs();",
+    "reason": "A workplace context change invalidates old action indicators only"
   }
 ]

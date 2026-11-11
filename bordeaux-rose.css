@@ -1168,3 +1168,12 @@ html body #appCard #appScroll :is(#tab-clock,#tab-calendar,#tab-list,#tab-settin
  #appCard #tab-settings .allowance-period-grid { grid-template-columns:minmax(0,1fr) !important; row-gap:6px; }
  #appCard #tab-settings .allowance-period-grid > div > input { width:100px !important; min-width:100px !important; flex:0 0 100px !important; }
 }
+/* Entry actions show the result of a real registration, never merely opening. */
+#appCard #calendarRegisterButton,#shiftInputModal #openPresetRegisterButton {
+ background:var(--hs-button-gloss) !important; border-color:var(--hs-button-gloss-edge) !important;
+ color:#ffe082 !important; -webkit-text-fill-color:#ffe082 !important;
+}
+#appCard #calendarRegisterButton.registration-saved:not(.unsaved-registration),
+#shiftInputModal #openPresetRegisterButton.registration-saved:not(.unsaved-registration) {
+ color:#fff !important; -webkit-text-fill-color:#fff !important;
+}
