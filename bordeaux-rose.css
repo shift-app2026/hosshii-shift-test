@@ -805,3 +805,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
   border-top-color: #f0c5b2 !important;
   box-shadow: inset 0 2px 2px #fff3e888, inset 0 -3px 5px #24000966, 0 4px 11px #62102c40 !important;
 }
+/* Match the existing date-band selector specificity so Cinzel cannot win. */
+#shiftInputModal .shift-date-nav #modalDateTitle {
+  font-family: 'Noto Serif JP', serif !important;
+  font-variant-numeric: tabular-nums;
+}
