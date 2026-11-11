@@ -909,3 +909,9 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
 #calendarJobLegend .calendar-payday-legend > span { font-family: 'Noto Serif JP', serif !important; }
 #shiftInputModal .hosshii-paid-entry-note { line-height: 1.7; }
 #shiftInputModal .hosshii-paid-entry-note > span { display: block; white-space: nowrap; }
+/* Fixed headers leave their tab in the DOM: include every non-salary header. */
+#itoStickyHeaderHost > :not(.oct23-sticky-pay),
+#itoStickyHeaderHost > :not(.oct23-sticky-pay) *,
+#tab-settings .paid-note {
+  font-family: 'Noto Serif JP', serif !important;
+}
