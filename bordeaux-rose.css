@@ -625,6 +625,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
   background: #fff0f4 !important;
 }
 #tab-calendar .copy-label {
+  font-family: 'Noto Serif JP', serif !important;
   font-size: 14px !important; font-weight: 800 !important;
   color: #302027; line-height: 1.5;
 }
