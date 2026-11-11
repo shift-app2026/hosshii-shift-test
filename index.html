@@ -5114,6 +5114,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
  const wageValid=s=>!!(s?.start&&s?.end&&Number(s?.wage)>0);
  window.hosshiiResetWageUi=function(jk,saved){
   wageUi.set(jk,(configData[jk]?.wageSlots||[]).map(s=>({signature:wageSignature(s),saved:!!saved&&wageValid(s)})));
+  if(jk===currentSettingsJobKey)wageUi.get(jk).forEach((r,i)=>window.hosshiiRegisterState?.('set_reg_btn_'+i,r.saved));
  };
  ['job1','job2','job3'].forEach(jk=>window.hosshiiResetWageUi(jk,!!configData[jk]?.name));
  const uiRows=()=>{const jk=currentSettingsJobKey;if(!wageUi.has(jk))wageUi.set(jk,[]);return wageUi.get(jk)};
