@@ -1745,7 +1745,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           <div class="flex items-center gap-2"><span class="text-rose-300">✦</span><h2 id="currentListMonthLabel" onclick="currentListDate=new Date();renderStandaloneShiftList('jump');" title="タップで今月に戻る" class="cursor-pointer font-bold text-white text-base sm:text-lg tracking-wider font-serif-title">----</h2><span class="text-rose-300">✦</span></div>
           <button type="button" onclick="changeListMonth(1)" class="text-rose-100 font-bold px-3 py-1.5 hover:bg-white/10 rounded-xl transition text-sm">翌月 ▶</button>
         </div>
-          <div id="standaloneJobLegend" class="hosshii-list-legend flex flex-wrap items-center gap-2.5 text-xs font-bold text-stone-700"></div>
+          <div id="standaloneCopyCard" class="hosshii-list-copy flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 min-w-0 flex-1"><span class="copy-icon shrink-0" aria-hidden="true">📋</span><span class="copy-label">前月のシフトを曜日に合わせて一括コピー</span></div>
+            <button type="button" onclick="copyLastMonthShifts()" class="bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-xs sm:text-sm px-2.5 py-1.5 rounded-xl transition shadow-sm whitespace-nowrap shrink-0">実行</button>
+          </div>
         </div>
 
         <div class="bg-white p-3.5 rounded-2xl border border-stone-100 space-y-2.5 shadow-sm">
@@ -3671,13 +3674,16 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function copyLastMonthShifts() {
+      const copyTab = document.getElementById('tab-list').classList.contains('hidden') ? 'tab-calendar' : 'tab-list';
+      const copyDate = new Date(copyTab === 'tab-list' ? currentListDate : currentPeriodDate);
       if (hosshiiBlockEdit()) {
-        const btn = document.querySelector('#tab-calendar button[onclick="copyLastMonthShifts()"]');
+        const btn = copyTab === 'tab-list' ? document.querySelector('#standaloneCopyCard button') : document.querySelector('#tab-calendar button[onclick="copyLastMonthShifts()"]');
         const box = btn?.parentElement?.parentElement;
         if (box) {
-          let note = document.getElementById('hosshiiCopyNotice');
+          const noticeId = copyTab === 'tab-list' ? 'hosshiiListCopyNotice' : 'hosshiiCopyNotice';
+          let note = document.getElementById(noticeId);
           if (!note) {
-            note = document.createElement('div'); note.id='hosshiiCopyNotice';
+            note = document.createElement('div'); note.id=noticeId;
             note.style.cssText='white-space:pre-line;margin-top:8px;padding:10px;border:1px solid #fda4af;border-radius:10px;background:#fff1f2;color:#881337;font-size:13px;font-weight:bold;text-align:center;line-height:1.6';
             box.appendChild(note);
           }
@@ -3686,8 +3692,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         return false;
       }
       askConfirm('入力済みのシフトと有給休暇は\nコピーされません♡', () => {
-        let y = currentPeriodDate.getFullYear();
-        let m = currentPeriodDate.getMonth();
+        let y = copyDate.getFullYear();
+        let m = copyDate.getMonth();
 
         let prevYear = y;
         let prevMonth = m - 1;
@@ -4498,16 +4504,15 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             
             if (jobShift.start && jobShift.end) {
               // 予定表の日付内はバイト先名を省き、色付き●と勤務時間だけを表示して時間幅を確保
-              lineItems.push({ order: timeStrToMins(jobShift.start), html: lineHtml(`${hosshiiShiftTypeMark(jk, !!jobShift.isPaidLeave)}<span class="job-time">${jobShift.start}〜${jobShift.end}</span>`) });
+              lineItems.push({ order: timeStrToMins(jobShift.start), html: lineHtml(`<span class="job-time">${jobShift.start}〜${jobShift.end}</span><span class="standalone-workplace-name">${esc(jName)}${jobShift.isPaidLeave ? '（有給）' : ''}</span>`) });
             } else if (jobShift.isPaidLeave) {
-              lineItems.push({ order: 9000, html: lineHtml(`${hosshiiShiftTypeMark(jk, true)}<span class="job-time">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span>`) });
+              lineItems.push({ order: 9000, html: lineHtml(`<span class="job-time">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span><span class="standalone-workplace-name">${esc(jName)}（有給）</span>`) });
             }
           });
         });
 
         getPaydayJobs(d).forEach(jk => {
-          const paydayDot = getJobLabelHtml(jk, 'standalone-job-label', true);
-          lineItems.push({ order: 9500, html: lineHtml(`${paydayDot}<span class="luxe-payday-label"><span class="luxe-payday-heart" aria-hidden="true">♥</span>お給料日</span>`) });
+          lineItems.push({ order: 9500, html: lineHtml(`<span class="luxe-payday-label"><span class="luxe-payday-heart" aria-hidden="true">♡</span>${esc(getJobDisplayName(jk))}お給料日</span>`) });
         });
 
         lineItems.sort((a, b) => a.order - b.order);

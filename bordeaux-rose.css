@@ -80,7 +80,7 @@ body { background: var(--hs-pearl) !important; font-family: var(--font-ui); colo
 /* Preserve unsaved/saved, disabled and read-only states; never change visibility here. */
 #calendarRegisterButton, #registerShiftButton, #registerPresetButton,
 #tab-calendar button[onclick^="copyLastMonthShifts"],
-#tab-list button[onclick^="copyLastMonthShifts"],
+#tab-list button[onclick^="copyLastMonthShifts"], #standaloneCopyCard button,
 #tab-settings button[id^="set_reg_btn_"], #tab-settings .ito-job-register-button,
 #settingsFixedSave button,
 #shiftInputModal button[onclick="closeShiftInputModal()"],
@@ -184,7 +184,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
 }
 #calendarRegisterButton, #registerShiftButton, #registerPresetButton,
 #tab-calendar button[onclick^="copyLastMonthShifts"],
-#tab-list button[onclick^="copyLastMonthShifts"],
+#tab-list button[onclick^="copyLastMonthShifts"], #standaloneCopyCard button,
 #tab-settings button[id^="set_reg_btn_"], #tab-settings .ito-job-register-button,
 #settingsFixedSave button {
   background: var(--hs-button-gloss) !important;
@@ -644,3 +644,45 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
   color: #302027 !important;
 }
 #hosshiiSettingsPinnedJob .hosshii-pinned-trigger-name { -webkit-text-fill-color: #302027 !important; }
+
+/* Requested shift-dialog headings: one family and rhythm, independent of legacy
+   selector specificity. The existing heading/action flex rows stay intact. */
+#shiftInputModal #shiftInputScrollArea .shift-section-title {
+  font-family: 'Noto Serif JP', serif !important;
+  font-size: 16px !important; font-weight: 800 !important;
+  line-height: 1.5 !important; letter-spacing: .015em !important;
+  color: #302027 !important;
+}
+/* The production auth layer inserts a display:none notice before this section.
+   Explicit spacing prevents that hidden sibling adding 12px only in production. */
+#shiftInputScrollArea > .shift-preset-section { margin-top: 0 !important; }
+#standaloneCopyCard {
+  margin: 4px 0 0; padding: 8px 10px;
+  border: 1px solid #eedde1; border-radius: 12px; background: #fff0f4;
+}
+#standaloneCopyCard .copy-label {
+  font-family: 'Noto Serif JP', serif !important;
+  font-size: 14px; font-weight: 800; line-height: 1.5;
+  color: #302027; overflow-wrap: anywhere;
+}
+#standaloneCopyCard .copy-icon { font-size: 20px; }
+/* Date tiles are intentionally untouched. Time is 1px smaller than the existing
+   18px/17px rules; the workplace is exactly 2px below the new time size. */
+#standaloneShiftListContainer .standalone-shift-line .job-time {
+  font-size: 17px !important; font-weight: 600 !important; flex: 0 0 auto;
+}
+#standaloneShiftListContainer .standalone-shift-line > span {
+  width: 100%; align-items: baseline; gap: 6px;
+}
+#standaloneShiftListContainer .standalone-workplace-name {
+  font-family: 'Noto Serif JP', serif; font-size: 15px; font-weight: 500;
+  color: #302027; line-height: 1.5; flex: 1 1 0; min-width: 0;
+  white-space: normal; overflow-wrap: anywhere;
+}
+#standaloneShiftListContainer .luxe-payday-label {
+  min-width: 0; white-space: normal; overflow-wrap: anywhere; line-height: 1.6;
+}
+@media (max-width: 380px) {
+  #standaloneShiftListContainer .standalone-shift-line .job-time { font-size: 16px !important; }
+  #standaloneShiftListContainer .standalone-workplace-name { font-size: 14px; }
+}
