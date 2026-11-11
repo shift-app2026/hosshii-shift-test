@@ -460,3 +460,51 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
   #calendarDays .payday-pin-container { margin-left: 1px; }
   #calendarDays .payday-pin-container span { font-size: 12px !important; }
 }
+
+/* Salary screen only: echo the unchanged ring's Noto Serif JP in display text.
+   Controls, icons, short notes and all other tabs keep their UI sans-serif. */
+#todayDate {
+  font-family: 'Noto Serif JP', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: .035em !important;
+}
+#tab-clock #monthlyReceiveTitle,
+#tab-clock #yearlyTitleLabel,
+#tab-clock .hc-job-title strong,
+#tab-clock .hc-cols strong,
+#tab-clock #test8GoalLabel,
+#tab-clock #test30Yen,
+#tab-clock #test30GoalDisplay,
+#tab-clock #incomeWallBox .t23-wall-heading,
+#tab-clock #itoWallRemainingLabel {
+  font-family: 'Noto Serif JP', serif !important;
+  font-weight: 600 !important;
+  letter-spacing: .015em;
+}
+#tab-clock .hc-comparison .hc-row > span {
+  font-family: 'Noto Serif JP', serif !important;
+  font-weight: 600 !important;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+  line-height: 1.75 !important;
+}
+#tab-clock .hc-comparison .hc-row > span:first-child { font-size: 12px !important; }
+#tab-clock .hc-comparison .hc-grand-total > span,
+#tab-clock #yearlyTotalPay,
+#tab-clock #itoWallRemainingAmount {
+  font-family: 'Noto Serif JP', serif !important;
+  font-weight: 700 !important;
+  font-variant-numeric: tabular-nums;
+}
+#tab-clock .hc-job-title > span,
+#tab-clock #yearlySubLabel,
+#tab-clock .hosshii-ring-note,
+#tab-clock .ito-wall-note,
+#tab-clock .t13-wage-notice,
+#tab-clock .luxe-inline-icon,
+#tab-clock input,
+#tab-clock select,
+#tab-clock .test8-goal-row button,
+#tab-clock #incomeWallBox button {
+  font-family: var(--font-ui) !important;
+}
