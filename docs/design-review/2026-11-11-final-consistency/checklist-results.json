@@ -1,0 +1,540 @@
+[
+  {
+    "width": 320,
+    "samples": [
+      {
+        "selector": "#currentMonthLabel",
+        "text": "2026年11月",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "14px",
+        "weight": "600"
+      },
+      {
+        "selector": "#calendarDays",
+        "text": "1\n            \n          \n        \n          ",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "14px",
+        "weight": "400"
+      },
+      {
+        "selector": "#calendarJobLegend .job-label-pill",
+        "text": "ローズカフェ",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "13px",
+        "weight": "800"
+      },
+      {
+        "selector": "#calendarTodayDateLabel",
+        "text": "11月11日（水）",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "17px",
+        "weight": "700"
+      },
+      {
+        "selector": "#currentListMonthLabel",
+        "text": "2026年11月",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "14px",
+        "weight": "600"
+      },
+      {
+        "selector": ".luxe-day-number",
+        "text": "1日",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "15px",
+        "weight": "700"
+      },
+      {
+        "selector": ".luxe-day-week",
+        "text": "(日)",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "12px",
+        "weight": "500"
+      },
+      {
+        "selector": ".standalone-workplace-name",
+        "text": "ローズカフェ",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "13px",
+        "weight": "500"
+      },
+      {
+        "selector": ".standalone-shift-line .job-time",
+        "text": "09:00〜17:00",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "15px",
+        "weight": "600"
+      },
+      {
+        "selector": ".ito-job-register-label",
+        "text": "【バイト名の登録＆変更】",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "16px",
+        "weight": "800"
+      },
+      {
+        "selector": ".wage-head-title",
+        "text": "【時給入力】",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "16px",
+        "weight": "600"
+      },
+      {
+        "selector": ".hosshii-allowance-section-title",
+        "text": "☂【有給休暇】1時間あたり",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "12px",
+        "weight": "800"
+      },
+      {
+        "selector": ".hosshii-pinned-trigger-name",
+        "text": "ローズカフェ",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "16px",
+        "weight": "800"
+      },
+      {
+        "selector": "#newJobNameInput",
+        "text": "",
+        "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+        "size": "16px",
+        "weight": "400"
+      },
+      {
+        "selector": "#set_wage_0",
+        "text": "",
+        "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+        "size": "16px",
+        "weight": "700"
+      },
+      {
+        "selector": "#tab-guide h3",
+        "text": "🌸 この順番で進めてね♪",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "15px",
+        "weight": "600"
+      },
+      {
+        "selector": "#tab-guide h4",
+        "text": "📲【ホーム画面に追加すると便利です♪】",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "13.5px",
+        "weight": "700"
+      },
+      {
+        "selector": "#tab-guide .guide-steps b",
+        "text": "1",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "14px",
+        "weight": "700"
+      },
+      {
+        "selector": "#tab-guide .luxe-welcome-card p",
+        "text": "このアプリは、毎日のバイトやお仕事で忙しい方でも、シフト登録やお給料の計算を簡単にできるよ",
+        "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+        "size": "14px",
+        "weight": "500"
+      },
+      {
+        "selector": "#modalDateTitle",
+        "text": "11月11日（水）",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "14px",
+        "weight": "900"
+      },
+      {
+        "selector": ".shift-section-title",
+        "text": "【バイト先選択】",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "15px",
+        "weight": "800"
+      },
+      {
+        "selector": "#modalInlinePresetContainer .job-time",
+        "text": "09:00 ～ 17:00",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "15px",
+        "weight": "800"
+      },
+      {
+        "selector": "#new_preset_start",
+        "text": "",
+        "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+        "size": "15px",
+        "weight": "700"
+      },
+      {
+        "selector": ".ito-preset-desc",
+        "text": "※よく使う勤務時間を登録して、　次回からワンタッチで選べるよ♡",
+        "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+        "size": "13px",
+        "weight": "700"
+      },
+      {
+        "selector": "#customTimePickerTitle",
+        "text": "時間を選択",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "17px",
+        "weight": "600"
+      },
+      {
+        "selector": "#clockHourDisplay",
+        "text": "00",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "27px",
+        "weight": "850"
+      },
+      {
+        "selector": "#customClockFace text",
+        "text": "12",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "19px",
+        "weight": "700"
+      },
+      {
+        "selector": "#hclockDate",
+        "text": "11月11日（水）",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "10.304px",
+        "weight": "750"
+      },
+      {
+        "selector": "#hclockJobName",
+        "text": "ローズカフェ",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "11.2px",
+        "weight": "750"
+      },
+      {
+        "selector": "#presetRegisterModal h3",
+        "text": "ワンタッチ時間登録",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "16px",
+        "weight": "700"
+      },
+      {
+        "selector": "#presetRegisterJobName",
+        "text": "ローズカフェ",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "14px",
+        "weight": "700"
+      },
+      {
+        "selector": "#presetRegisterModal .border-t > p.font-bold",
+        "text": "【登録済み一覧】",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "14px",
+        "weight": "700"
+      },
+      {
+        "selector": "#pr_start",
+        "text": "",
+        "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+        "size": "16px",
+        "weight": "700"
+      }
+    ],
+    "guideCardsUnchanged": true,
+    "cards": [
+      {
+        "width": 266,
+        "height": 72.375,
+        "padding": "10px",
+        "border": "1px solid rgb(239, 220, 226)",
+        "bg": "rgba(0, 0, 0, 0) linear-gradient(135deg, rgb(255, 249, 250), rgb(255, 240, 243)) repeat scroll 0% 0% / auto padding-box border-box",
+        "shadow": "none",
+        "textOffset": 46,
+        "textWidth": 209
+      },
+      {
+        "width": 266,
+        "height": 72.375,
+        "padding": "10px",
+        "border": "1px solid rgb(239, 220, 226)",
+        "bg": "rgba(0, 0, 0, 0) linear-gradient(135deg, rgb(255, 249, 250), rgb(255, 240, 243)) repeat scroll 0% 0% / auto padding-box border-box",
+        "shadow": "none",
+        "textOffset": 46,
+        "textWidth": 209
+      },
+      {
+        "width": 266,
+        "height": 72.375,
+        "padding": "10px",
+        "border": "1px solid rgb(239, 220, 226)",
+        "bg": "rgba(0, 0, 0, 0) linear-gradient(135deg, rgb(255, 249, 250), rgb(255, 240, 243)) repeat scroll 0% 0% / auto padding-box border-box",
+        "shadow": "none",
+        "textOffset": 46,
+        "textWidth": 209
+      }
+    ]
+  },
+  {
+    "width": 375,
+    "samples": [
+      {
+        "selector": "#currentMonthLabel",
+        "text": "2026年11月",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "15px",
+        "weight": "600"
+      },
+      {
+        "selector": "#calendarDays",
+        "text": "1\n            \n          \n        \n          ",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "14px",
+        "weight": "400"
+      },
+      {
+        "selector": "#calendarJobLegend .job-label-pill",
+        "text": "ローズカフェ",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "14.25px",
+        "weight": "800"
+      },
+      {
+        "selector": "#calendarTodayDateLabel",
+        "text": "11月11日（水）",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "17px",
+        "weight": "700"
+      },
+      {
+        "selector": "#currentListMonthLabel",
+        "text": "2026年11月",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "15px",
+        "weight": "600"
+      },
+      {
+        "selector": ".luxe-day-number",
+        "text": "1日",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "15px",
+        "weight": "700"
+      },
+      {
+        "selector": ".luxe-day-week",
+        "text": "(日)",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "12px",
+        "weight": "500"
+      },
+      {
+        "selector": ".standalone-workplace-name",
+        "text": "ローズカフェ",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "14px",
+        "weight": "500"
+      },
+      {
+        "selector": ".standalone-shift-line .job-time",
+        "text": "09:00〜17:00",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "16px",
+        "weight": "600"
+      },
+      {
+        "selector": ".ito-job-register-label",
+        "text": "【バイト名の登録＆変更】",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "16px",
+        "weight": "800"
+      },
+      {
+        "selector": ".wage-head-title",
+        "text": "【時給入力】",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "16px",
+        "weight": "600"
+      },
+      {
+        "selector": ".hosshii-allowance-section-title",
+        "text": "☂【有給休暇】1時間あたり",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "12.75px",
+        "weight": "800"
+      },
+      {
+        "selector": ".hosshii-pinned-trigger-name",
+        "text": "ローズカフェ",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "17px",
+        "weight": "800"
+      },
+      {
+        "selector": "#newJobNameInput",
+        "text": "",
+        "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+        "size": "16px",
+        "weight": "400"
+      },
+      {
+        "selector": "#set_wage_0",
+        "text": "",
+        "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+        "size": "16px",
+        "weight": "700"
+      },
+      {
+        "selector": "#tab-guide h3",
+        "text": "🌸 この順番で進めてね♪",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "15px",
+        "weight": "600"
+      },
+      {
+        "selector": "#tab-guide h4",
+        "text": "📲【ホーム画面に追加すると便利です♪】",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "13.5px",
+        "weight": "700"
+      },
+      {
+        "selector": "#tab-guide .guide-steps b",
+        "text": "1",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "14px",
+        "weight": "700"
+      },
+      {
+        "selector": "#tab-guide .luxe-welcome-card p",
+        "text": "このアプリは、毎日のバイトやお仕事で忙しい方でも、シフト登録やお給料の計算を簡単にできるよ",
+        "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+        "size": "14px",
+        "weight": "500"
+      },
+      {
+        "selector": "#modalDateTitle",
+        "text": "11月11日（水）",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "14.25px",
+        "weight": "900"
+      },
+      {
+        "selector": ".shift-section-title",
+        "text": "【バイト先選択】",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "16px",
+        "weight": "800"
+      },
+      {
+        "selector": "#modalInlinePresetContainer .job-time",
+        "text": "09:00 ～ 17:00",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "15.75px",
+        "weight": "800"
+      },
+      {
+        "selector": "#new_preset_start",
+        "text": "",
+        "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+        "size": "15px",
+        "weight": "700"
+      },
+      {
+        "selector": ".ito-preset-desc",
+        "text": "※よく使う勤務時間を登録して、　次回からワンタッチで選べるよ♡",
+        "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+        "size": "13.5625px",
+        "weight": "700"
+      },
+      {
+        "selector": "#customTimePickerTitle",
+        "text": "時間を選択",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "17px",
+        "weight": "600"
+      },
+      {
+        "selector": "#clockHourDisplay",
+        "text": "00",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "30px",
+        "weight": "850"
+      },
+      {
+        "selector": "#customClockFace text",
+        "text": "12",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "19px",
+        "weight": "700"
+      },
+      {
+        "selector": "#hclockDate",
+        "text": "11月11日（水）",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "12.075px",
+        "weight": "750"
+      },
+      {
+        "selector": "#hclockJobName",
+        "text": "ローズカフェ",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "13.125px",
+        "weight": "750"
+      },
+      {
+        "selector": "#presetRegisterModal h3",
+        "text": "ワンタッチ時間登録",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "16px",
+        "weight": "700"
+      },
+      {
+        "selector": "#presetRegisterJobName",
+        "text": "ローズカフェ",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "14px",
+        "weight": "700"
+      },
+      {
+        "selector": "#presetRegisterModal .border-t > p.font-bold",
+        "text": "【登録済み一覧】",
+        "family": "\"Noto Serif JP\", serif",
+        "size": "14px",
+        "weight": "700"
+      },
+      {
+        "selector": "#pr_start",
+        "text": "",
+        "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+        "size": "16px",
+        "weight": "700"
+      }
+    ],
+    "guideCardsUnchanged": true,
+    "cards": [
+      {
+        "width": 321,
+        "height": 48,
+        "padding": "10px",
+        "border": "1px solid rgb(239, 220, 226)",
+        "bg": "rgba(0, 0, 0, 0) linear-gradient(135deg, rgb(255, 249, 250), rgb(255, 240, 243)) repeat scroll 0% 0% / auto padding-box border-box",
+        "shadow": "none",
+        "textOffset": 46,
+        "textWidth": 264
+      },
+      {
+        "width": 321,
+        "height": 48,
+        "padding": "10px",
+        "border": "1px solid rgb(239, 220, 226)",
+        "bg": "rgba(0, 0, 0, 0) linear-gradient(135deg, rgb(255, 249, 250), rgb(255, 240, 243)) repeat scroll 0% 0% / auto padding-box border-box",
+        "shadow": "none",
+        "textOffset": 46,
+        "textWidth": 264
+      },
+      {
+        "width": 321,
+        "height": 72.375,
+        "padding": "10px",
+        "border": "1px solid rgb(239, 220, 226)",
+        "bg": "rgba(0, 0, 0, 0) linear-gradient(135deg, rgb(255, 249, 250), rgb(255, 240, 243)) repeat scroll 0% 0% / auto padding-box border-box",
+        "shadow": "none",
+        "textOffset": 46,
+        "textWidth": 264
+      }
+    ]
+  }
+]

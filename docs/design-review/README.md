@@ -1,6 +1,6 @@
 # ボルドー＆ローズシャンパン：デザイン変更と検証
 
-> 最新：[ポップアップの見出し統一・予定表の勤務先名表示とコピー欄、320px / 375px比較](2026-11-11-modal-schedule/README.md)。前回の比較は [こちら](2026-11-11-app-typography/README.md)。
+> 最新：[予定表の1行表示・フォント・背景なし手順番号・登録文字色、320px / 375px比較](2026-11-11-final-consistency/README.md)。前回の比較は [こちら](2026-11-11-modal-schedule/README.md)。
 
 
 
