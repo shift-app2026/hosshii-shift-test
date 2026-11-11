@@ -1157,3 +1157,14 @@ html body #appCard #appScroll :is(#tab-clock,#tab-calendar,#tab-list,#tab-settin
 #calendarTodaySummaryContent .selected-shift-delete { font-size:15px !important; }
 #appCard #tab-calendar #calendarDays .text-base { font-size:19px !important; }
 #t31GoalModal .t31-error { font-size:14px; }
+/* Larger numbers must fit: spend vertical space before reducing the type. */
+#appCard #tab-settings .wage-rate-row { display:grid !important; grid-template-columns:minmax(0,1fr); row-gap:6px; }
+#appCard #tab-settings :is(.wage-base-rate,.wage-bonus-rate) { width:100% !important; flex:none !important; column-gap:4px !important; }
+#appCard #tab-settings .wage-base-input { width:90px !important; min-width:90px !important; flex:0 0 90px !important; }
+#appCard #tab-settings .wage-bonus-input { width:80px !important; min-width:80px !important; flex:0 0 80px !important; }
+#appCard #tab-settings .wage-bonus-select { width:84px !important; min-width:84px !important; flex:0 0 84px !important; }
+#appCard #tab-settings .allowance-period-grid > div > input { width:84px !important; min-width:84px !important; flex:0 0 84px !important; }
+@media(max-width:359px){
+ #appCard #tab-settings .allowance-period-grid { grid-template-columns:minmax(0,1fr) !important; row-gap:6px; }
+ #appCard #tab-settings .allowance-period-grid > div > input { width:100px !important; min-width:100px !important; flex:0 0 100px !important; }
+}
