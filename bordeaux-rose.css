@@ -686,3 +686,9 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
   #standaloneShiftListContainer .standalone-shift-line .job-time { font-size: 16px !important; }
   #standaloneShiftListContainer .standalone-workplace-name { font-size: 14px; }
 }
+/* Retain the existing font and clock-button position while fitting all five
+   time characters in narrow shift-entry fields (previously clipped at 320px). */
+@media (max-width: 359px) {
+  #shiftInputModal #new_preset_start,
+  #shiftInputModal #new_preset_end { padding-left: 2px !important; }
+}
