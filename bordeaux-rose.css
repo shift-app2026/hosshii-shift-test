@@ -921,3 +921,49 @@ body:has(#tab-clock.hidden) #itoStickyHeaderHost #hosshiiTrialBanner,
 body:has(#tab-clock.hidden) #itoStickyHeaderHost #hosshiiTrialBanner * {
   font-family: 'Noto Serif JP', serif !important;
 }
+
+/* Phone readability: darker neutral ink and firmer strokes. Semantic colours,
+   glossy/white controls and the approved ring centre remain unchanged. */
+:root { --hs-readable-ink: #24161c; }
+:is(#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#t31GoalModal,#hosshiiJobMenu) {
+  color: var(--hs-readable-ink); font-weight: 600;
+}
+#appCard #appScroll :is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#tab-guide)
+:is([class*="text-stone-"],[class*="text-gray-"],[class*="text-slate-"]):not(#goalRing,#goalRing *,button,button *,svg,svg *,[style*="color"]),
+:is(#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#t31GoalModal,#hosshiiJobMenu)
+:is([class*="text-stone-"],[class*="text-gray-"],[class*="text-slate-"]):not(button,button *,svg,svg *,[style*="color"]) {
+  color: var(--hs-readable-ink) !important;
+}
+:is(#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#t31GoalModal,#hosshiiJobMenu)
+:is(.font-normal,.font-medium,.font-light,p,label,small,.standalone-workplace-name,.luxe-day-week):not(button,button *,svg,svg *) {
+  font-weight: 600 !important;
+}
+:is(#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#t31GoalModal)
+:is(h2,h3,h4,.job-time) { font-weight: 700 !important; }
+#appCard #tab-clock :is(.hc-cols,.hc-cols strong,.hc-row > span,.hc-job-title strong,.hc-job-title > span,#yearlyTitleLabel,#yearlySubLabel,#yearlyTotalPay,.t23-wall-heading,.ito-wall-selector-row > label,#itoWallRemainingLabel,.hosshii-ring-note,.ito-wall-note,#itoWallThreshold,#test30GoalDisplay,#test30Yen) {
+  color: var(--hs-readable-ink) !important;
+}
+#appCard #tab-clock .hc-comparison .hc-row > span,
+#appCard #tab-clock :is(#monthlyReceiveTitle,#yearlyTitleLabel,.hc-job-title strong) { font-weight: 700 !important; }
+#appCard #tab-clock :is(.hosshii-ring-note,.ito-wall-note,#yearlySubLabel),
+#hosshiiTrialBanner :is(.hosshii-payment-preparing,.hosshii-trial-status-line),
+#itoStickyHeaderHost .luxe-guide-note { font-weight: 600 !important; }
+#hosshiiTrialBanner .hosshii-payment-preparing,
+#itoStickyHeaderHost #hosshiiSettingsPinnedJob,
+#itoStickyHeaderHost #hosshiiSettingsPinnedJob .hosshii-pinned-trigger-name,
+#shiftInputModal #shiftInputScrollArea .hosshii-paid-entry-note {
+  color: var(--hs-readable-ink) !important;
+}
+#itoStickyHeaderHost #hosshiiSettingsPinnedJob .hosshii-pinned-trigger-name {
+  -webkit-text-fill-color: var(--hs-readable-ink) !important;
+}
+:is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#shiftInputModal,#presetRegisterModal,#renameJobModal,#breakSelectModal,#t31GoalModal) :is(input,select,textarea,option) {
+  color: var(--hs-readable-ink) !important; -webkit-text-fill-color: var(--hs-readable-ink) !important;
+  font-weight: 600;
+}
+/* Single-line receipt headings: keep the table columns and salary values. */
+#appCard #tab-clock .hc-cols :is(.hc-receive-month,.hc-receive-kind) { display: inline; white-space: nowrap; }
+#appCard #tab-clock .hc-cols strong { white-space: nowrap; letter-spacing: -.04em; }
+@media (max-width: 359px) {
+  #appCard #tab-clock .hc-cols strong { font-size: 13px !important; }
+}
