@@ -1,0 +1,130 @@
+[
+  {
+    "width": 320,
+    "version": "before",
+    "states": [
+      {
+        "state": "new",
+        "color": "rgb(255, 255, 255)",
+        "fill": "rgb(255, 255, 255)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      },
+      {
+        "state": "success",
+        "color": "rgb(255, 255, 255)",
+        "fill": "rgb(255, 255, 255)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      },
+      {
+        "state": "edited",
+        "color": "rgb(255, 255, 255)",
+        "fill": "rgb(255, 255, 255)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      },
+      {
+        "state": "failure",
+        "color": "rgb(255, 255, 255)",
+        "fill": "rgb(255, 255, 255)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      }
+    ],
+    "storageUnchangedOnFailure": true,
+    "noPageErrors": true
+  },
+  {
+    "width": 320,
+    "version": "after",
+    "states": [
+      {
+        "state": "new",
+        "color": "rgb(255, 224, 130)",
+        "fill": "rgb(255, 224, 130)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      },
+      {
+        "state": "success",
+        "color": "rgb(255, 255, 255)",
+        "fill": "rgb(255, 255, 255)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      },
+      {
+        "state": "edited",
+        "color": "rgb(255, 224, 130)",
+        "fill": "rgb(255, 224, 130)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      },
+      {
+        "state": "failure",
+        "color": "rgb(255, 224, 130)",
+        "fill": "rgb(255, 224, 130)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      }
+    ],
+    "storageUnchangedOnFailure": true,
+    "noPageErrors": true
+  },
+  {
+    "width": 375,
+    "version": "before",
+    "states": [
+      {
+        "state": "new",
+        "color": "rgb(255, 255, 255)",
+        "fill": "rgb(255, 255, 255)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      },
+      {
+        "state": "success",
+        "color": "rgb(255, 255, 255)",
+        "fill": "rgb(255, 255, 255)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      },
+      {
+        "state": "edited",
+        "color": "rgb(255, 255, 255)",
+        "fill": "rgb(255, 255, 255)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      },
+      {
+        "state": "failure",
+        "color": "rgb(255, 255, 255)",
+        "fill": "rgb(255, 255, 255)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      }
+    ],
+    "storageUnchangedOnFailure": true,
+    "noPageErrors": true
+  },
+  {
+    "width": 375,
+    "version": "after",
+    "states": [
+      {
+        "state": "new",
+        "color": "rgb(255, 224, 130)",
+        "fill": "rgb(255, 224, 130)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      },
+      {
+        "state": "success",
+        "color": "rgb(255, 255, 255)",
+        "fill": "rgb(255, 255, 255)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      },
+      {
+        "state": "edited",
+        "color": "rgb(255, 224, 130)",
+        "fill": "rgb(255, 224, 130)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      },
+      {
+        "state": "failure",
+        "color": "rgb(255, 224, 130)",
+        "fill": "rgb(255, 224, 130)",
+        "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+      }
+    ],
+    "storageUnchangedOnFailure": true,
+    "noPageErrors": true
+  }
+]
