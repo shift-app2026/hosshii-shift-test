@@ -967,3 +967,5 @@ body:has(#tab-clock.hidden) #itoStickyHeaderHost #hosshiiTrialBanner * {
 @media (max-width: 359px) {
   #appCard #tab-clock .hc-cols strong { font-size: 12.5px !important; }
 }
+#standaloneShiftListContainer .standalone-shift-line .job-time { font-weight: 700 !important; }
+#standaloneShiftListContainer .standalone-workplace-name { color: var(--hs-readable-ink) !important; }
