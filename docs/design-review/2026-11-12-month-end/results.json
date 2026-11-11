@@ -1,0 +1,3369 @@
+{
+  "baseline": "3437a18",
+  "sourceCommit": "ae38efbfc5782ad8227d3f48b24fea9f255335d4",
+  "widths": [
+    {
+      "width": 320,
+      "runs": [
+        {
+          "variant": "before",
+          "months": [
+            {
+              "year": 2026,
+              "month": 1,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2025-12-31T15:00:00.000Z",
+                  "end": "2026-01-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-01-20T15:00:00.000Z",
+                  "end": "2026-02-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 2,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-01-31T15:00:00.000Z",
+                  "end": "2026-02-27T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-02-20T15:00:00.000Z",
+                  "end": "2026-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 3,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-02-28T15:00:00.000Z",
+                  "end": "2026-03-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-03-20T15:00:00.000Z",
+                  "end": "2026-04-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 4,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-03-31T15:00:00.000Z",
+                  "end": "2026-04-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-04-20T15:00:00.000Z",
+                  "end": "2026-05-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 5,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-04-30T15:00:00.000Z",
+                  "end": "2026-05-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-05-20T15:00:00.000Z",
+                  "end": "2026-06-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 6,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-05-31T15:00:00.000Z",
+                  "end": "2026-06-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-06-20T15:00:00.000Z",
+                  "end": "2026-07-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 7,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-06-30T15:00:00.000Z",
+                  "end": "2026-07-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-07-20T15:00:00.000Z",
+                  "end": "2026-08-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 8,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-07-31T15:00:00.000Z",
+                  "end": "2026-08-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-08-20T15:00:00.000Z",
+                  "end": "2026-09-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 9,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-08-31T15:00:00.000Z",
+                  "end": "2026-09-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-09-20T15:00:00.000Z",
+                  "end": "2026-10-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 10,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-09-30T15:00:00.000Z",
+                  "end": "2026-10-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-10-20T15:00:00.000Z",
+                  "end": "2026-11-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 11,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 16800,
+                  "wagePay": 16800,
+                  "otherPay": 0,
+                  "mins": 840,
+                  "days": 2,
+                  "start": "2026-10-31T15:00:00.000Z",
+                  "end": "2026-11-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-11-20T15:00:00.000Z",
+                  "end": "2026-12-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 12,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 9600,
+                  "wagePay": 9600,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 1,
+                  "start": "2026-11-30T15:00:00.000Z",
+                  "end": "2026-12-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-12-20T15:00:00.000Z",
+                  "end": "2027-01-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2024,
+              "month": 2,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2024-01-31T15:00:00.000Z",
+                  "end": "2024-02-28T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2024-02-20T15:00:00.000Z",
+                  "end": "2024-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2028,
+              "month": 2,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 8400,
+                  "wagePay": 8400,
+                  "otherPay": 0,
+                  "mins": 420,
+                  "days": 1,
+                  "start": "2028-01-31T15:00:00.000Z",
+                  "end": "2028-02-28T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2028-02-20T15:00:00.000Z",
+                  "end": "2028-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2000,
+              "month": 2,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2000-01-31T15:00:00.000Z",
+                  "end": "2000-02-28T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2000-02-20T15:00:00.000Z",
+                  "end": "2000-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2100,
+              "month": 2,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2100-01-31T15:00:00.000Z",
+                  "end": "2100-02-27T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2100-02-20T15:00:00.000Z",
+                  "end": "2100-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2027,
+              "month": 1,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-12-31T15:00:00.000Z",
+                  "end": "2027-01-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2027-01-20T15:00:00.000Z",
+                  "end": "2027-02-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            }
+          ],
+          "photos": [
+            {
+              "name": "2026-11",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "2026-12",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "2026-02",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "2028-02",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "settings",
+              "overflow": false,
+              "covered": false
+            }
+          ],
+          "functions": {
+            "getJobPayPeriodRangeForReceiveMonth": "function getJobPayPeriodRangeForReceiveMonth(job, offset = 0) {\n      const now = new Date();\n      let year = now.getFullYear();\n      let receiveMonth = now.getMonth() + offset;\n\n      let closeDayInput = String(job.closeDay || '20').trim();\n      let payDayInput = String(job.payDay || '5').trim();\n      \n      let closeNum = (closeDayInput === '月末') ? 31 : (Number(closeDayInput) || 20);\n      let isEndMonth = closeNum >= 31;\n      let payNum = (payDayInput === '月末') ? 31 : (Number(payDayInput) || 5);\n\n      let workMonth = receiveMonth - 1;\n      if (payNum >= closeNum) {\n        workMonth = receiveMonth;\n      }\n\n      let start, end;\n      if (isEndMonth) {\n        start = new Date(year, workMonth, 1);\n        end = new Date(year, workMonth + 1, 0);\n      } else {\n        const clampedClose = (y, m) => new Date(y, m, Math.min(closeNum, new Date(y, m + 1, 0).getDate()));\n        const prevClose = clampedClose(year, workMonth - 1);\n        start = new Date(prevClose.getFullYear(), prevClose.getMonth(), prevClose.getDate() + 1);\n        end = clampedClose(year, workMonth);\n      }\n      return { start, end };\n    }",
+            "calcJobCalendarMonthPay": "function calcJobCalendarMonthPay(jk, viewMonth) {\n      const job = configData[jk];\n      // 表示月の翌月に入金される予定の締め期間を、バイト先別に求める。\n      const todayMonth = new Date();\n      const receiveMonthOffset = (viewMonth.getFullYear() - todayMonth.getFullYear()) * 12\n        + (viewMonth.getMonth() - todayMonth.getMonth()) + 1;\n      const {start, end} = getJobPayPeriodRangeForReceiveMonth(job, receiveMonthOffset);\n      let mins = 0, pay = 0, days = 0, commutingDays = 0;\n      for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {\n        const r = calcJobDay(formatDateKey(d), jk, new Date(d));\n        mins += r.mins;\n        pay += r.pay;\n        if (r.worked) days++;\n        if (r.commuted) commutingDays++;\n      }\n      const other = (days > 0 ? (job.transMonth || 0) + (job.allowanceMonth || 0) : 0)\n        + commutingDays * ((job.transDay || 0) + (job.allowanceDay || 0));\n      if (days > 0) pay += (job.transMonth || 0) + (job.allowanceMonth || 0);\n      const roundPay = n => Math.floor(Math.round(n * 1000) / 1000);\n      return { pay: roundPay(pay), wagePay: roundPay(pay - other), otherPay: roundPay(other), mins, days, start, end, wageMissing: test5HasMissingWage(jk, start, end) };\n    }",
+            "calculateJobShiftMinutesAndPay": "function calculateJobShiftMinutesAndPay(jobShift, job, dateObj) {\n      if (!jobShift) return { totalMins: 0, totalPay: 0 };\n      if (jobShift.isPaidLeave) return { totalMins: 0, totalPay: paidLeaveAmount(job, jobShift) };\n      let rateSum = 0;\n      const totalMins = forEachWorkMinute(jobShift, min => { rateSum += getRateForMinuteDetailed(min, job, dateObj, false).rate; });\n      return { totalMins, totalPay: rateSum / 60 };\n    }",
+            "saveAllDataStorage": "function saveAllDataStorage() {\n      if (hosshiiBlockEdit()) return false;\n      let payload = JSON.parse(JSON.stringify(configData));\n      payload.monthlyGoal = monthlyGoal;\n      return safeWriteAppJSON('mybasket_wages_v77', payload);\n    }",
+            "": "function(key,value){\n     const result=original.apply(this,arguments);\n     if(key==='mybasket_shifts_v23' && result)copyButton()?.classList.add('copy-completed');\n     return result;\n   }",
+            "syncSettingsFormToConfig": "function syncSettingsFormToConfig(jk) {\n      const j = configData[jk];\n      if (!j || !document.getElementById('set_closeDay')) return;\n      const getVal = id => document.getElementById(id)?.value || '';\n      const getNum = id => parseFormattedNumber(getVal(id));\n\n      j.closeDay = getVal('set_closeDay');\n      j.payDay = getVal('set_payDay');\n      j.paid = getNum('set_wagePaid');\n      // 旧有給時間は既存データの互換性のため保持\n\n      if (document.getElementById('setWageSlotsContainer')) {\n        j.wageSlots = [...document.querySelectorAll('#setWageSlotsContainer [data-slot]')].map(r => {\n          const i = r.dataset.slot;\n          return { start: getVal(`set_time_${i}_start`), end: getVal(`set_time_${i}_end`), wage: getNum(`set_wage_${i}`), bType: getVal(`set_btype_${i}`) || 'weekday', bVal: getNum(`set_bval_${i}`) };\n        });\n      }\n\n      j.transMonth = getNum('set_transMonth');\n      j.transDay = getNum('set_transDay');\n      j.allowanceMonth = getNum('set_allowanceMonth');\n      j.allowanceDay = getNum('set_allowanceDay');\n      j.allowanceMemo = getVal('set_allowanceMemo');\n    }"
+          },
+          "rawBefore": [
+            "{\"jobCount\":2,\"monthlyGoal\":100000,\"job1\":{\"name\":\"ローズカフェ\",\"closeDay\":\"月末\",\"payDay\":\"10\",\"paid\":1200,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1200}],\"presets\":[]},\"job2\":{\"name\":\"月色ショップ\",\"closeDay\":\"20\",\"payDay\":\"25\",\"paid\":1300,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1300}],\"presets\":[]}}",
+            "{\"2026-11-1\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-11-30\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-12-31\":{\"job1\":[{\"hours\":8,\"isPaidLeave\":true}]},\"2028-2-29\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]}}"
+          ],
+          "edgeRanges": [
+            {
+              "close": "月末",
+              "pay": "10",
+              "end": "2028-02-28T15:00:00.000Z",
+              "actualLast": 29,
+              "label": "1日〜末日"
+            },
+            {
+              "close": "月末",
+              "pay": "月末",
+              "end": "2028-03-30T15:00:00.000Z",
+              "actualLast": 31,
+              "label": "1日〜末日"
+            },
+            {
+              "close": "31",
+              "pay": "10",
+              "end": "2028-02-28T15:00:00.000Z",
+              "actualLast": 29,
+              "label": "1日〜末日"
+            },
+            {
+              "close": "31",
+              "pay": "月末",
+              "end": "2028-03-30T15:00:00.000Z",
+              "actualLast": 31,
+              "label": "1日〜末日"
+            }
+          ],
+          "options": {
+            "close": [
+              {
+                "value": "",
+                "label": "未設定"
+              },
+              {
+                "value": "1",
+                "label": "1日"
+              },
+              {
+                "value": "2",
+                "label": "2日"
+              },
+              {
+                "value": "3",
+                "label": "3日"
+              },
+              {
+                "value": "4",
+                "label": "4日"
+              },
+              {
+                "value": "5",
+                "label": "5日"
+              },
+              {
+                "value": "6",
+                "label": "6日"
+              },
+              {
+                "value": "7",
+                "label": "7日"
+              },
+              {
+                "value": "8",
+                "label": "8日"
+              },
+              {
+                "value": "9",
+                "label": "9日"
+              },
+              {
+                "value": "10",
+                "label": "10日"
+              },
+              {
+                "value": "11",
+                "label": "11日"
+              },
+              {
+                "value": "12",
+                "label": "12日"
+              },
+              {
+                "value": "13",
+                "label": "13日"
+              },
+              {
+                "value": "14",
+                "label": "14日"
+              },
+              {
+                "value": "15",
+                "label": "15日"
+              },
+              {
+                "value": "16",
+                "label": "16日"
+              },
+              {
+                "value": "17",
+                "label": "17日"
+              },
+              {
+                "value": "18",
+                "label": "18日"
+              },
+              {
+                "value": "19",
+                "label": "19日"
+              },
+              {
+                "value": "20",
+                "label": "20日"
+              },
+              {
+                "value": "21",
+                "label": "21日"
+              },
+              {
+                "value": "22",
+                "label": "22日"
+              },
+              {
+                "value": "23",
+                "label": "23日"
+              },
+              {
+                "value": "24",
+                "label": "24日"
+              },
+              {
+                "value": "25",
+                "label": "25日"
+              },
+              {
+                "value": "26",
+                "label": "26日"
+              },
+              {
+                "value": "27",
+                "label": "27日"
+              },
+              {
+                "value": "28",
+                "label": "28日"
+              },
+              {
+                "value": "月末",
+                "label": "月末"
+              }
+            ],
+            "pay": [
+              {
+                "value": "",
+                "label": "未設定"
+              },
+              {
+                "value": "1",
+                "label": "1日"
+              },
+              {
+                "value": "2",
+                "label": "2日"
+              },
+              {
+                "value": "3",
+                "label": "3日"
+              },
+              {
+                "value": "4",
+                "label": "4日"
+              },
+              {
+                "value": "5",
+                "label": "5日"
+              },
+              {
+                "value": "6",
+                "label": "6日"
+              },
+              {
+                "value": "7",
+                "label": "7日"
+              },
+              {
+                "value": "8",
+                "label": "8日"
+              },
+              {
+                "value": "9",
+                "label": "9日"
+              },
+              {
+                "value": "10",
+                "label": "10日"
+              },
+              {
+                "value": "11",
+                "label": "11日"
+              },
+              {
+                "value": "12",
+                "label": "12日"
+              },
+              {
+                "value": "13",
+                "label": "13日"
+              },
+              {
+                "value": "14",
+                "label": "14日"
+              },
+              {
+                "value": "15",
+                "label": "15日"
+              },
+              {
+                "value": "16",
+                "label": "16日"
+              },
+              {
+                "value": "17",
+                "label": "17日"
+              },
+              {
+                "value": "18",
+                "label": "18日"
+              },
+              {
+                "value": "19",
+                "label": "19日"
+              },
+              {
+                "value": "20",
+                "label": "20日"
+              },
+              {
+                "value": "21",
+                "label": "21日"
+              },
+              {
+                "value": "22",
+                "label": "22日"
+              },
+              {
+                "value": "23",
+                "label": "23日"
+              },
+              {
+                "value": "24",
+                "label": "24日"
+              },
+              {
+                "value": "25",
+                "label": "25日"
+              },
+              {
+                "value": "26",
+                "label": "26日"
+              },
+              {
+                "value": "27",
+                "label": "27日"
+              },
+              {
+                "value": "28",
+                "label": "28日"
+              },
+              {
+                "value": "月末",
+                "label": "月末"
+              }
+            ],
+            "value": "月末"
+          },
+          "saved": [
+            "{\"jobCount\":2,\"job1\":{\"name\":\"ローズカフェ\",\"closeDay\":\"月末\",\"payDay\":\"10\",\"paid\":1200,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1200,\"bType\":\"weekday\",\"bVal\":0}],\"transMonth\":0,\"transDay\":0,\"allowanceMonth\":0,\"allowanceDay\":0,\"allowanceMemo\":\"\",\"hasBreakGlobal\":false,\"presets\":[]},\"job2\":{\"name\":\"月色ショップ\",\"closeDay\":\"20\",\"payDay\":\"25\",\"paid\":1300,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1300,\"bType\":\"weekday\",\"bVal\":0}],\"transMonth\":0,\"transDay\":0,\"allowanceMonth\":0,\"allowanceDay\":0,\"allowanceMemo\":\"\",\"hasBreakGlobal\":false,\"presets\":[]},\"job3\":{\"name\":\"\",\"closeDay\":\"\",\"payDay\":\"\",\"paid\":0,\"paidHours\":0,\"wageSlots\":[],\"transMonth\":0,\"transDay\":0,\"allowanceMonth\":0,\"allowanceDay\":0,\"allowanceMemo\":\"\",\"hasBreakGlobal\":false,\"presets\":[]},\"monthlyGoal\":100000}",
+            "{\"2026-11-1\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-11-30\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-12-31\":{\"job1\":[{\"hours\":8,\"isPaidLeave\":true}]},\"2028-2-29\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]}}"
+          ]
+        },
+        {
+          "variant": "after",
+          "months": [
+            {
+              "year": 2026,
+              "month": 1,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2025-12-31T15:00:00.000Z",
+                  "end": "2026-01-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-01-20T15:00:00.000Z",
+                  "end": "2026-02-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 2,
+              "labels": [
+                "1日〜28日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-01-31T15:00:00.000Z",
+                  "end": "2026-02-27T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-02-20T15:00:00.000Z",
+                  "end": "2026-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 3,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-02-28T15:00:00.000Z",
+                  "end": "2026-03-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-03-20T15:00:00.000Z",
+                  "end": "2026-04-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 4,
+              "labels": [
+                "1日〜30日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-03-31T15:00:00.000Z",
+                  "end": "2026-04-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-04-20T15:00:00.000Z",
+                  "end": "2026-05-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 5,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-04-30T15:00:00.000Z",
+                  "end": "2026-05-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-05-20T15:00:00.000Z",
+                  "end": "2026-06-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 6,
+              "labels": [
+                "1日〜30日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-05-31T15:00:00.000Z",
+                  "end": "2026-06-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-06-20T15:00:00.000Z",
+                  "end": "2026-07-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 7,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-06-30T15:00:00.000Z",
+                  "end": "2026-07-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-07-20T15:00:00.000Z",
+                  "end": "2026-08-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 8,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-07-31T15:00:00.000Z",
+                  "end": "2026-08-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-08-20T15:00:00.000Z",
+                  "end": "2026-09-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 9,
+              "labels": [
+                "1日〜30日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-08-31T15:00:00.000Z",
+                  "end": "2026-09-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-09-20T15:00:00.000Z",
+                  "end": "2026-10-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 10,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-09-30T15:00:00.000Z",
+                  "end": "2026-10-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-10-20T15:00:00.000Z",
+                  "end": "2026-11-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 11,
+              "labels": [
+                "1日〜30日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 16800,
+                  "wagePay": 16800,
+                  "otherPay": 0,
+                  "mins": 840,
+                  "days": 2,
+                  "start": "2026-10-31T15:00:00.000Z",
+                  "end": "2026-11-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-11-20T15:00:00.000Z",
+                  "end": "2026-12-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 12,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 9600,
+                  "wagePay": 9600,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 1,
+                  "start": "2026-11-30T15:00:00.000Z",
+                  "end": "2026-12-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-12-20T15:00:00.000Z",
+                  "end": "2027-01-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2024,
+              "month": 2,
+              "labels": [
+                "1日〜29日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2024-01-31T15:00:00.000Z",
+                  "end": "2024-02-28T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2024-02-20T15:00:00.000Z",
+                  "end": "2024-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2028,
+              "month": 2,
+              "labels": [
+                "1日〜29日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 8400,
+                  "wagePay": 8400,
+                  "otherPay": 0,
+                  "mins": 420,
+                  "days": 1,
+                  "start": "2028-01-31T15:00:00.000Z",
+                  "end": "2028-02-28T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2028-02-20T15:00:00.000Z",
+                  "end": "2028-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2000,
+              "month": 2,
+              "labels": [
+                "1日〜29日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2000-01-31T15:00:00.000Z",
+                  "end": "2000-02-28T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2000-02-20T15:00:00.000Z",
+                  "end": "2000-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2100,
+              "month": 2,
+              "labels": [
+                "1日〜28日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2100-01-31T15:00:00.000Z",
+                  "end": "2100-02-27T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2100-02-20T15:00:00.000Z",
+                  "end": "2100-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2027,
+              "month": 1,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-12-31T15:00:00.000Z",
+                  "end": "2027-01-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2027-01-20T15:00:00.000Z",
+                  "end": "2027-02-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            }
+          ],
+          "photos": [
+            {
+              "name": "2026-11",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "2026-12",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "2026-02",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "2028-02",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "settings",
+              "overflow": false,
+              "covered": false
+            }
+          ],
+          "functions": {
+            "getJobPayPeriodRangeForReceiveMonth": "function getJobPayPeriodRangeForReceiveMonth(job, offset = 0) {\n      const now = new Date();\n      let year = now.getFullYear();\n      let receiveMonth = now.getMonth() + offset;\n\n      let closeDayInput = String(job.closeDay || '20').trim();\n      let payDayInput = String(job.payDay || '5').trim();\n      \n      let closeNum = (closeDayInput === '月末') ? 31 : (Number(closeDayInput) || 20);\n      let isEndMonth = closeNum >= 31;\n      let payNum = (payDayInput === '月末') ? 31 : (Number(payDayInput) || 5);\n\n      let workMonth = receiveMonth - 1;\n      if (payNum >= closeNum) {\n        workMonth = receiveMonth;\n      }\n\n      let start, end;\n      if (isEndMonth) {\n        start = new Date(year, workMonth, 1);\n        end = new Date(year, workMonth + 1, 0);\n      } else {\n        const clampedClose = (y, m) => new Date(y, m, Math.min(closeNum, new Date(y, m + 1, 0).getDate()));\n        const prevClose = clampedClose(year, workMonth - 1);\n        start = new Date(prevClose.getFullYear(), prevClose.getMonth(), prevClose.getDate() + 1);\n        end = clampedClose(year, workMonth);\n      }\n      return { start, end };\n    }",
+            "calcJobCalendarMonthPay": "function calcJobCalendarMonthPay(jk, viewMonth) {\n      const job = configData[jk];\n      // 表示月の翌月に入金される予定の締め期間を、バイト先別に求める。\n      const todayMonth = new Date();\n      const receiveMonthOffset = (viewMonth.getFullYear() - todayMonth.getFullYear()) * 12\n        + (viewMonth.getMonth() - todayMonth.getMonth()) + 1;\n      const {start, end} = getJobPayPeriodRangeForReceiveMonth(job, receiveMonthOffset);\n      let mins = 0, pay = 0, days = 0, commutingDays = 0;\n      for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {\n        const r = calcJobDay(formatDateKey(d), jk, new Date(d));\n        mins += r.mins;\n        pay += r.pay;\n        if (r.worked) days++;\n        if (r.commuted) commutingDays++;\n      }\n      const other = (days > 0 ? (job.transMonth || 0) + (job.allowanceMonth || 0) : 0)\n        + commutingDays * ((job.transDay || 0) + (job.allowanceDay || 0));\n      if (days > 0) pay += (job.transMonth || 0) + (job.allowanceMonth || 0);\n      const roundPay = n => Math.floor(Math.round(n * 1000) / 1000);\n      return { pay: roundPay(pay), wagePay: roundPay(pay - other), otherPay: roundPay(other), mins, days, start, end, wageMissing: test5HasMissingWage(jk, start, end) };\n    }",
+            "calculateJobShiftMinutesAndPay": "function calculateJobShiftMinutesAndPay(jobShift, job, dateObj) {\n      if (!jobShift) return { totalMins: 0, totalPay: 0 };\n      if (jobShift.isPaidLeave) return { totalMins: 0, totalPay: paidLeaveAmount(job, jobShift) };\n      let rateSum = 0;\n      const totalMins = forEachWorkMinute(jobShift, min => { rateSum += getRateForMinuteDetailed(min, job, dateObj, false).rate; });\n      return { totalMins, totalPay: rateSum / 60 };\n    }",
+            "saveAllDataStorage": "function saveAllDataStorage() {\n      if (hosshiiBlockEdit()) return false;\n      let payload = JSON.parse(JSON.stringify(configData));\n      payload.monthlyGoal = monthlyGoal;\n      return safeWriteAppJSON('mybasket_wages_v77', payload);\n    }",
+            "": "function(key,value){\n     const result=original.apply(this,arguments);\n     if(key==='mybasket_shifts_v23' && result)copyButton()?.classList.add('copy-completed');\n     return result;\n   }",
+            "syncSettingsFormToConfig": "function syncSettingsFormToConfig(jk) {\n      const j = configData[jk];\n      if (!j || !document.getElementById('set_closeDay')) return;\n      const getVal = id => document.getElementById(id)?.value || '';\n      const getNum = id => parseFormattedNumber(getVal(id));\n\n      j.closeDay = getVal('set_closeDay');\n      j.payDay = getVal('set_payDay');\n      j.paid = getNum('set_wagePaid');\n      // 旧有給時間は既存データの互換性のため保持\n\n      if (document.getElementById('setWageSlotsContainer')) {\n        j.wageSlots = [...document.querySelectorAll('#setWageSlotsContainer [data-slot]')].map(r => {\n          const i = r.dataset.slot;\n          return { start: getVal(`set_time_${i}_start`), end: getVal(`set_time_${i}_end`), wage: getNum(`set_wage_${i}`), bType: getVal(`set_btype_${i}`) || 'weekday', bVal: getNum(`set_bval_${i}`) };\n        });\n      }\n\n      j.transMonth = getNum('set_transMonth');\n      j.transDay = getNum('set_transDay');\n      j.allowanceMonth = getNum('set_allowanceMonth');\n      j.allowanceDay = getNum('set_allowanceDay');\n      j.allowanceMemo = getVal('set_allowanceMemo');\n    }"
+          },
+          "rawBefore": [
+            "{\"jobCount\":2,\"monthlyGoal\":100000,\"job1\":{\"name\":\"ローズカフェ\",\"closeDay\":\"月末\",\"payDay\":\"10\",\"paid\":1200,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1200}],\"presets\":[]},\"job2\":{\"name\":\"月色ショップ\",\"closeDay\":\"20\",\"payDay\":\"25\",\"paid\":1300,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1300}],\"presets\":[]}}",
+            "{\"2026-11-1\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-11-30\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-12-31\":{\"job1\":[{\"hours\":8,\"isPaidLeave\":true}]},\"2028-2-29\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]}}"
+          ],
+          "edgeRanges": [
+            {
+              "close": "月末",
+              "pay": "10",
+              "end": "2028-02-28T15:00:00.000Z",
+              "actualLast": 29,
+              "label": "1日〜29日"
+            },
+            {
+              "close": "月末",
+              "pay": "月末",
+              "end": "2028-03-30T15:00:00.000Z",
+              "actualLast": 31,
+              "label": "1日〜31日"
+            },
+            {
+              "close": "31",
+              "pay": "10",
+              "end": "2028-02-28T15:00:00.000Z",
+              "actualLast": 29,
+              "label": "1日〜29日"
+            },
+            {
+              "close": "31",
+              "pay": "月末",
+              "end": "2028-03-30T15:00:00.000Z",
+              "actualLast": 31,
+              "label": "1日〜31日"
+            }
+          ],
+          "options": {
+            "close": [
+              {
+                "value": "",
+                "label": "未設定"
+              },
+              {
+                "value": "1",
+                "label": "1日"
+              },
+              {
+                "value": "2",
+                "label": "2日"
+              },
+              {
+                "value": "3",
+                "label": "3日"
+              },
+              {
+                "value": "4",
+                "label": "4日"
+              },
+              {
+                "value": "5",
+                "label": "5日"
+              },
+              {
+                "value": "6",
+                "label": "6日"
+              },
+              {
+                "value": "7",
+                "label": "7日"
+              },
+              {
+                "value": "8",
+                "label": "8日"
+              },
+              {
+                "value": "9",
+                "label": "9日"
+              },
+              {
+                "value": "10",
+                "label": "10日"
+              },
+              {
+                "value": "11",
+                "label": "11日"
+              },
+              {
+                "value": "12",
+                "label": "12日"
+              },
+              {
+                "value": "13",
+                "label": "13日"
+              },
+              {
+                "value": "14",
+                "label": "14日"
+              },
+              {
+                "value": "15",
+                "label": "15日"
+              },
+              {
+                "value": "16",
+                "label": "16日"
+              },
+              {
+                "value": "17",
+                "label": "17日"
+              },
+              {
+                "value": "18",
+                "label": "18日"
+              },
+              {
+                "value": "19",
+                "label": "19日"
+              },
+              {
+                "value": "20",
+                "label": "20日"
+              },
+              {
+                "value": "21",
+                "label": "21日"
+              },
+              {
+                "value": "22",
+                "label": "22日"
+              },
+              {
+                "value": "23",
+                "label": "23日"
+              },
+              {
+                "value": "24",
+                "label": "24日"
+              },
+              {
+                "value": "25",
+                "label": "25日"
+              },
+              {
+                "value": "26",
+                "label": "26日"
+              },
+              {
+                "value": "27",
+                "label": "27日"
+              },
+              {
+                "value": "28",
+                "label": "28日"
+              },
+              {
+                "value": "月末",
+                "label": "末日（毎月の最終日）"
+              }
+            ],
+            "pay": [
+              {
+                "value": "",
+                "label": "未設定"
+              },
+              {
+                "value": "1",
+                "label": "1日"
+              },
+              {
+                "value": "2",
+                "label": "2日"
+              },
+              {
+                "value": "3",
+                "label": "3日"
+              },
+              {
+                "value": "4",
+                "label": "4日"
+              },
+              {
+                "value": "5",
+                "label": "5日"
+              },
+              {
+                "value": "6",
+                "label": "6日"
+              },
+              {
+                "value": "7",
+                "label": "7日"
+              },
+              {
+                "value": "8",
+                "label": "8日"
+              },
+              {
+                "value": "9",
+                "label": "9日"
+              },
+              {
+                "value": "10",
+                "label": "10日"
+              },
+              {
+                "value": "11",
+                "label": "11日"
+              },
+              {
+                "value": "12",
+                "label": "12日"
+              },
+              {
+                "value": "13",
+                "label": "13日"
+              },
+              {
+                "value": "14",
+                "label": "14日"
+              },
+              {
+                "value": "15",
+                "label": "15日"
+              },
+              {
+                "value": "16",
+                "label": "16日"
+              },
+              {
+                "value": "17",
+                "label": "17日"
+              },
+              {
+                "value": "18",
+                "label": "18日"
+              },
+              {
+                "value": "19",
+                "label": "19日"
+              },
+              {
+                "value": "20",
+                "label": "20日"
+              },
+              {
+                "value": "21",
+                "label": "21日"
+              },
+              {
+                "value": "22",
+                "label": "22日"
+              },
+              {
+                "value": "23",
+                "label": "23日"
+              },
+              {
+                "value": "24",
+                "label": "24日"
+              },
+              {
+                "value": "25",
+                "label": "25日"
+              },
+              {
+                "value": "26",
+                "label": "26日"
+              },
+              {
+                "value": "27",
+                "label": "27日"
+              },
+              {
+                "value": "28",
+                "label": "28日"
+              },
+              {
+                "value": "月末",
+                "label": "月末"
+              }
+            ],
+            "value": "月末"
+          },
+          "optionFit": {
+            "textWidth": 160.015625,
+            "available": 176,
+            "font": "16px"
+          },
+          "saved": [
+            "{\"jobCount\":2,\"job1\":{\"name\":\"ローズカフェ\",\"closeDay\":\"月末\",\"payDay\":\"10\",\"paid\":1200,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1200,\"bType\":\"weekday\",\"bVal\":0}],\"transMonth\":0,\"transDay\":0,\"allowanceMonth\":0,\"allowanceDay\":0,\"allowanceMemo\":\"\",\"hasBreakGlobal\":false,\"presets\":[]},\"job2\":{\"name\":\"月色ショップ\",\"closeDay\":\"20\",\"payDay\":\"25\",\"paid\":1300,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1300,\"bType\":\"weekday\",\"bVal\":0}],\"transMonth\":0,\"transDay\":0,\"allowanceMonth\":0,\"allowanceDay\":0,\"allowanceMemo\":\"\",\"hasBreakGlobal\":false,\"presets\":[]},\"job3\":{\"name\":\"\",\"closeDay\":\"\",\"payDay\":\"\",\"paid\":0,\"paidHours\":0,\"wageSlots\":[],\"transMonth\":0,\"transDay\":0,\"allowanceMonth\":0,\"allowanceDay\":0,\"allowanceMemo\":\"\",\"hasBreakGlobal\":false,\"presets\":[]},\"monthlyGoal\":100000}",
+            "{\"2026-11-1\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-11-30\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-12-31\":{\"job1\":[{\"hours\":8,\"isPaidLeave\":true}]},\"2028-2-29\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]}}"
+          ]
+        }
+      ],
+      "calculationAndStorageUnchanged": true
+    },
+    {
+      "width": 375,
+      "runs": [
+        {
+          "variant": "before",
+          "months": [
+            {
+              "year": 2026,
+              "month": 1,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2025-12-31T15:00:00.000Z",
+                  "end": "2026-01-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-01-20T15:00:00.000Z",
+                  "end": "2026-02-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 2,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-01-31T15:00:00.000Z",
+                  "end": "2026-02-27T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-02-20T15:00:00.000Z",
+                  "end": "2026-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 3,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-02-28T15:00:00.000Z",
+                  "end": "2026-03-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-03-20T15:00:00.000Z",
+                  "end": "2026-04-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 4,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-03-31T15:00:00.000Z",
+                  "end": "2026-04-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-04-20T15:00:00.000Z",
+                  "end": "2026-05-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 5,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-04-30T15:00:00.000Z",
+                  "end": "2026-05-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-05-20T15:00:00.000Z",
+                  "end": "2026-06-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 6,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-05-31T15:00:00.000Z",
+                  "end": "2026-06-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-06-20T15:00:00.000Z",
+                  "end": "2026-07-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 7,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-06-30T15:00:00.000Z",
+                  "end": "2026-07-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-07-20T15:00:00.000Z",
+                  "end": "2026-08-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 8,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-07-31T15:00:00.000Z",
+                  "end": "2026-08-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-08-20T15:00:00.000Z",
+                  "end": "2026-09-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 9,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-08-31T15:00:00.000Z",
+                  "end": "2026-09-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-09-20T15:00:00.000Z",
+                  "end": "2026-10-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 10,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-09-30T15:00:00.000Z",
+                  "end": "2026-10-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-10-20T15:00:00.000Z",
+                  "end": "2026-11-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 11,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 16800,
+                  "wagePay": 16800,
+                  "otherPay": 0,
+                  "mins": 840,
+                  "days": 2,
+                  "start": "2026-10-31T15:00:00.000Z",
+                  "end": "2026-11-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-11-20T15:00:00.000Z",
+                  "end": "2026-12-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 12,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 9600,
+                  "wagePay": 9600,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 1,
+                  "start": "2026-11-30T15:00:00.000Z",
+                  "end": "2026-12-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-12-20T15:00:00.000Z",
+                  "end": "2027-01-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2024,
+              "month": 2,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2024-01-31T15:00:00.000Z",
+                  "end": "2024-02-28T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2024-02-20T15:00:00.000Z",
+                  "end": "2024-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2028,
+              "month": 2,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 8400,
+                  "wagePay": 8400,
+                  "otherPay": 0,
+                  "mins": 420,
+                  "days": 1,
+                  "start": "2028-01-31T15:00:00.000Z",
+                  "end": "2028-02-28T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2028-02-20T15:00:00.000Z",
+                  "end": "2028-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2000,
+              "month": 2,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2000-01-31T15:00:00.000Z",
+                  "end": "2000-02-28T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2000-02-20T15:00:00.000Z",
+                  "end": "2000-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2100,
+              "month": 2,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2100-01-31T15:00:00.000Z",
+                  "end": "2100-02-27T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2100-02-20T15:00:00.000Z",
+                  "end": "2100-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2027,
+              "month": 1,
+              "labels": [
+                "1日〜末日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-12-31T15:00:00.000Z",
+                  "end": "2027-01-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2027-01-20T15:00:00.000Z",
+                  "end": "2027-02-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            }
+          ],
+          "photos": [
+            {
+              "name": "2026-11",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "2026-12",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "2026-02",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "2028-02",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "settings",
+              "overflow": false,
+              "covered": false
+            }
+          ],
+          "functions": {
+            "getJobPayPeriodRangeForReceiveMonth": "function getJobPayPeriodRangeForReceiveMonth(job, offset = 0) {\n      const now = new Date();\n      let year = now.getFullYear();\n      let receiveMonth = now.getMonth() + offset;\n\n      let closeDayInput = String(job.closeDay || '20').trim();\n      let payDayInput = String(job.payDay || '5').trim();\n      \n      let closeNum = (closeDayInput === '月末') ? 31 : (Number(closeDayInput) || 20);\n      let isEndMonth = closeNum >= 31;\n      let payNum = (payDayInput === '月末') ? 31 : (Number(payDayInput) || 5);\n\n      let workMonth = receiveMonth - 1;\n      if (payNum >= closeNum) {\n        workMonth = receiveMonth;\n      }\n\n      let start, end;\n      if (isEndMonth) {\n        start = new Date(year, workMonth, 1);\n        end = new Date(year, workMonth + 1, 0);\n      } else {\n        const clampedClose = (y, m) => new Date(y, m, Math.min(closeNum, new Date(y, m + 1, 0).getDate()));\n        const prevClose = clampedClose(year, workMonth - 1);\n        start = new Date(prevClose.getFullYear(), prevClose.getMonth(), prevClose.getDate() + 1);\n        end = clampedClose(year, workMonth);\n      }\n      return { start, end };\n    }",
+            "calcJobCalendarMonthPay": "function calcJobCalendarMonthPay(jk, viewMonth) {\n      const job = configData[jk];\n      // 表示月の翌月に入金される予定の締め期間を、バイト先別に求める。\n      const todayMonth = new Date();\n      const receiveMonthOffset = (viewMonth.getFullYear() - todayMonth.getFullYear()) * 12\n        + (viewMonth.getMonth() - todayMonth.getMonth()) + 1;\n      const {start, end} = getJobPayPeriodRangeForReceiveMonth(job, receiveMonthOffset);\n      let mins = 0, pay = 0, days = 0, commutingDays = 0;\n      for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {\n        const r = calcJobDay(formatDateKey(d), jk, new Date(d));\n        mins += r.mins;\n        pay += r.pay;\n        if (r.worked) days++;\n        if (r.commuted) commutingDays++;\n      }\n      const other = (days > 0 ? (job.transMonth || 0) + (job.allowanceMonth || 0) : 0)\n        + commutingDays * ((job.transDay || 0) + (job.allowanceDay || 0));\n      if (days > 0) pay += (job.transMonth || 0) + (job.allowanceMonth || 0);\n      const roundPay = n => Math.floor(Math.round(n * 1000) / 1000);\n      return { pay: roundPay(pay), wagePay: roundPay(pay - other), otherPay: roundPay(other), mins, days, start, end, wageMissing: test5HasMissingWage(jk, start, end) };\n    }",
+            "calculateJobShiftMinutesAndPay": "function calculateJobShiftMinutesAndPay(jobShift, job, dateObj) {\n      if (!jobShift) return { totalMins: 0, totalPay: 0 };\n      if (jobShift.isPaidLeave) return { totalMins: 0, totalPay: paidLeaveAmount(job, jobShift) };\n      let rateSum = 0;\n      const totalMins = forEachWorkMinute(jobShift, min => { rateSum += getRateForMinuteDetailed(min, job, dateObj, false).rate; });\n      return { totalMins, totalPay: rateSum / 60 };\n    }",
+            "saveAllDataStorage": "function saveAllDataStorage() {\n      if (hosshiiBlockEdit()) return false;\n      let payload = JSON.parse(JSON.stringify(configData));\n      payload.monthlyGoal = monthlyGoal;\n      return safeWriteAppJSON('mybasket_wages_v77', payload);\n    }",
+            "": "function(key,value){\n     const result=original.apply(this,arguments);\n     if(key==='mybasket_shifts_v23' && result)copyButton()?.classList.add('copy-completed');\n     return result;\n   }",
+            "syncSettingsFormToConfig": "function syncSettingsFormToConfig(jk) {\n      const j = configData[jk];\n      if (!j || !document.getElementById('set_closeDay')) return;\n      const getVal = id => document.getElementById(id)?.value || '';\n      const getNum = id => parseFormattedNumber(getVal(id));\n\n      j.closeDay = getVal('set_closeDay');\n      j.payDay = getVal('set_payDay');\n      j.paid = getNum('set_wagePaid');\n      // 旧有給時間は既存データの互換性のため保持\n\n      if (document.getElementById('setWageSlotsContainer')) {\n        j.wageSlots = [...document.querySelectorAll('#setWageSlotsContainer [data-slot]')].map(r => {\n          const i = r.dataset.slot;\n          return { start: getVal(`set_time_${i}_start`), end: getVal(`set_time_${i}_end`), wage: getNum(`set_wage_${i}`), bType: getVal(`set_btype_${i}`) || 'weekday', bVal: getNum(`set_bval_${i}`) };\n        });\n      }\n\n      j.transMonth = getNum('set_transMonth');\n      j.transDay = getNum('set_transDay');\n      j.allowanceMonth = getNum('set_allowanceMonth');\n      j.allowanceDay = getNum('set_allowanceDay');\n      j.allowanceMemo = getVal('set_allowanceMemo');\n    }"
+          },
+          "rawBefore": [
+            "{\"jobCount\":2,\"monthlyGoal\":100000,\"job1\":{\"name\":\"ローズカフェ\",\"closeDay\":\"月末\",\"payDay\":\"10\",\"paid\":1200,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1200}],\"presets\":[]},\"job2\":{\"name\":\"月色ショップ\",\"closeDay\":\"20\",\"payDay\":\"25\",\"paid\":1300,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1300}],\"presets\":[]}}",
+            "{\"2026-11-1\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-11-30\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-12-31\":{\"job1\":[{\"hours\":8,\"isPaidLeave\":true}]},\"2028-2-29\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]}}"
+          ],
+          "edgeRanges": [
+            {
+              "close": "月末",
+              "pay": "10",
+              "end": "2028-02-28T15:00:00.000Z",
+              "actualLast": 29,
+              "label": "1日〜末日"
+            },
+            {
+              "close": "月末",
+              "pay": "月末",
+              "end": "2028-03-30T15:00:00.000Z",
+              "actualLast": 31,
+              "label": "1日〜末日"
+            },
+            {
+              "close": "31",
+              "pay": "10",
+              "end": "2028-02-28T15:00:00.000Z",
+              "actualLast": 29,
+              "label": "1日〜末日"
+            },
+            {
+              "close": "31",
+              "pay": "月末",
+              "end": "2028-03-30T15:00:00.000Z",
+              "actualLast": 31,
+              "label": "1日〜末日"
+            }
+          ],
+          "options": {
+            "close": [
+              {
+                "value": "",
+                "label": "未設定"
+              },
+              {
+                "value": "1",
+                "label": "1日"
+              },
+              {
+                "value": "2",
+                "label": "2日"
+              },
+              {
+                "value": "3",
+                "label": "3日"
+              },
+              {
+                "value": "4",
+                "label": "4日"
+              },
+              {
+                "value": "5",
+                "label": "5日"
+              },
+              {
+                "value": "6",
+                "label": "6日"
+              },
+              {
+                "value": "7",
+                "label": "7日"
+              },
+              {
+                "value": "8",
+                "label": "8日"
+              },
+              {
+                "value": "9",
+                "label": "9日"
+              },
+              {
+                "value": "10",
+                "label": "10日"
+              },
+              {
+                "value": "11",
+                "label": "11日"
+              },
+              {
+                "value": "12",
+                "label": "12日"
+              },
+              {
+                "value": "13",
+                "label": "13日"
+              },
+              {
+                "value": "14",
+                "label": "14日"
+              },
+              {
+                "value": "15",
+                "label": "15日"
+              },
+              {
+                "value": "16",
+                "label": "16日"
+              },
+              {
+                "value": "17",
+                "label": "17日"
+              },
+              {
+                "value": "18",
+                "label": "18日"
+              },
+              {
+                "value": "19",
+                "label": "19日"
+              },
+              {
+                "value": "20",
+                "label": "20日"
+              },
+              {
+                "value": "21",
+                "label": "21日"
+              },
+              {
+                "value": "22",
+                "label": "22日"
+              },
+              {
+                "value": "23",
+                "label": "23日"
+              },
+              {
+                "value": "24",
+                "label": "24日"
+              },
+              {
+                "value": "25",
+                "label": "25日"
+              },
+              {
+                "value": "26",
+                "label": "26日"
+              },
+              {
+                "value": "27",
+                "label": "27日"
+              },
+              {
+                "value": "28",
+                "label": "28日"
+              },
+              {
+                "value": "月末",
+                "label": "月末"
+              }
+            ],
+            "pay": [
+              {
+                "value": "",
+                "label": "未設定"
+              },
+              {
+                "value": "1",
+                "label": "1日"
+              },
+              {
+                "value": "2",
+                "label": "2日"
+              },
+              {
+                "value": "3",
+                "label": "3日"
+              },
+              {
+                "value": "4",
+                "label": "4日"
+              },
+              {
+                "value": "5",
+                "label": "5日"
+              },
+              {
+                "value": "6",
+                "label": "6日"
+              },
+              {
+                "value": "7",
+                "label": "7日"
+              },
+              {
+                "value": "8",
+                "label": "8日"
+              },
+              {
+                "value": "9",
+                "label": "9日"
+              },
+              {
+                "value": "10",
+                "label": "10日"
+              },
+              {
+                "value": "11",
+                "label": "11日"
+              },
+              {
+                "value": "12",
+                "label": "12日"
+              },
+              {
+                "value": "13",
+                "label": "13日"
+              },
+              {
+                "value": "14",
+                "label": "14日"
+              },
+              {
+                "value": "15",
+                "label": "15日"
+              },
+              {
+                "value": "16",
+                "label": "16日"
+              },
+              {
+                "value": "17",
+                "label": "17日"
+              },
+              {
+                "value": "18",
+                "label": "18日"
+              },
+              {
+                "value": "19",
+                "label": "19日"
+              },
+              {
+                "value": "20",
+                "label": "20日"
+              },
+              {
+                "value": "21",
+                "label": "21日"
+              },
+              {
+                "value": "22",
+                "label": "22日"
+              },
+              {
+                "value": "23",
+                "label": "23日"
+              },
+              {
+                "value": "24",
+                "label": "24日"
+              },
+              {
+                "value": "25",
+                "label": "25日"
+              },
+              {
+                "value": "26",
+                "label": "26日"
+              },
+              {
+                "value": "27",
+                "label": "27日"
+              },
+              {
+                "value": "28",
+                "label": "28日"
+              },
+              {
+                "value": "月末",
+                "label": "月末"
+              }
+            ],
+            "value": "月末"
+          },
+          "saved": [
+            "{\"jobCount\":2,\"job1\":{\"name\":\"ローズカフェ\",\"closeDay\":\"月末\",\"payDay\":\"10\",\"paid\":1200,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1200,\"bType\":\"weekday\",\"bVal\":0}],\"transMonth\":0,\"transDay\":0,\"allowanceMonth\":0,\"allowanceDay\":0,\"allowanceMemo\":\"\",\"hasBreakGlobal\":false,\"presets\":[]},\"job2\":{\"name\":\"月色ショップ\",\"closeDay\":\"20\",\"payDay\":\"25\",\"paid\":1300,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1300,\"bType\":\"weekday\",\"bVal\":0}],\"transMonth\":0,\"transDay\":0,\"allowanceMonth\":0,\"allowanceDay\":0,\"allowanceMemo\":\"\",\"hasBreakGlobal\":false,\"presets\":[]},\"job3\":{\"name\":\"\",\"closeDay\":\"\",\"payDay\":\"\",\"paid\":0,\"paidHours\":0,\"wageSlots\":[],\"transMonth\":0,\"transDay\":0,\"allowanceMonth\":0,\"allowanceDay\":0,\"allowanceMemo\":\"\",\"hasBreakGlobal\":false,\"presets\":[]},\"monthlyGoal\":100000}",
+            "{\"2026-11-1\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-11-30\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-12-31\":{\"job1\":[{\"hours\":8,\"isPaidLeave\":true}]},\"2028-2-29\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]}}"
+          ]
+        },
+        {
+          "variant": "after",
+          "months": [
+            {
+              "year": 2026,
+              "month": 1,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2025-12-31T15:00:00.000Z",
+                  "end": "2026-01-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-01-20T15:00:00.000Z",
+                  "end": "2026-02-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 2,
+              "labels": [
+                "1日〜28日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-01-31T15:00:00.000Z",
+                  "end": "2026-02-27T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-02-20T15:00:00.000Z",
+                  "end": "2026-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 3,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-02-28T15:00:00.000Z",
+                  "end": "2026-03-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-03-20T15:00:00.000Z",
+                  "end": "2026-04-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 4,
+              "labels": [
+                "1日〜30日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-03-31T15:00:00.000Z",
+                  "end": "2026-04-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-04-20T15:00:00.000Z",
+                  "end": "2026-05-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 5,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-04-30T15:00:00.000Z",
+                  "end": "2026-05-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-05-20T15:00:00.000Z",
+                  "end": "2026-06-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 6,
+              "labels": [
+                "1日〜30日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-05-31T15:00:00.000Z",
+                  "end": "2026-06-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-06-20T15:00:00.000Z",
+                  "end": "2026-07-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 7,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-06-30T15:00:00.000Z",
+                  "end": "2026-07-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-07-20T15:00:00.000Z",
+                  "end": "2026-08-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 8,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-07-31T15:00:00.000Z",
+                  "end": "2026-08-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-08-20T15:00:00.000Z",
+                  "end": "2026-09-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 9,
+              "labels": [
+                "1日〜30日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-08-31T15:00:00.000Z",
+                  "end": "2026-09-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-09-20T15:00:00.000Z",
+                  "end": "2026-10-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 10,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-09-30T15:00:00.000Z",
+                  "end": "2026-10-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-10-20T15:00:00.000Z",
+                  "end": "2026-11-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 11,
+              "labels": [
+                "1日〜30日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 16800,
+                  "wagePay": 16800,
+                  "otherPay": 0,
+                  "mins": 840,
+                  "days": 2,
+                  "start": "2026-10-31T15:00:00.000Z",
+                  "end": "2026-11-29T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-11-20T15:00:00.000Z",
+                  "end": "2026-12-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2026,
+              "month": 12,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 9600,
+                  "wagePay": 9600,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 1,
+                  "start": "2026-11-30T15:00:00.000Z",
+                  "end": "2026-12-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-12-20T15:00:00.000Z",
+                  "end": "2027-01-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2024,
+              "month": 2,
+              "labels": [
+                "1日〜29日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2024-01-31T15:00:00.000Z",
+                  "end": "2024-02-28T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2024-02-20T15:00:00.000Z",
+                  "end": "2024-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2028,
+              "month": 2,
+              "labels": [
+                "1日〜29日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 8400,
+                  "wagePay": 8400,
+                  "otherPay": 0,
+                  "mins": 420,
+                  "days": 1,
+                  "start": "2028-01-31T15:00:00.000Z",
+                  "end": "2028-02-28T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2028-02-20T15:00:00.000Z",
+                  "end": "2028-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2000,
+              "month": 2,
+              "labels": [
+                "1日〜29日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2000-01-31T15:00:00.000Z",
+                  "end": "2000-02-28T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2000-02-20T15:00:00.000Z",
+                  "end": "2000-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2100,
+              "month": 2,
+              "labels": [
+                "1日〜28日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2100-01-31T15:00:00.000Z",
+                  "end": "2100-02-27T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2100-02-20T15:00:00.000Z",
+                  "end": "2100-03-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            },
+            {
+              "year": 2027,
+              "month": 1,
+              "labels": [
+                "1日〜31日",
+                "21日〜翌月20日"
+              ],
+              "calculations": [
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2026-12-31T15:00:00.000Z",
+                  "end": "2027-01-30T15:00:00.000Z",
+                  "wageMissing": false
+                },
+                {
+                  "pay": 0,
+                  "wagePay": 0,
+                  "otherPay": 0,
+                  "mins": 0,
+                  "days": 0,
+                  "start": "2027-01-20T15:00:00.000Z",
+                  "end": "2027-02-19T15:00:00.000Z",
+                  "wageMissing": false
+                }
+              ]
+            }
+          ],
+          "photos": [
+            {
+              "name": "2026-11",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "2026-12",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "2026-02",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "2028-02",
+              "overflow": false,
+              "covered": false
+            },
+            {
+              "name": "settings",
+              "overflow": false,
+              "covered": false
+            }
+          ],
+          "functions": {
+            "getJobPayPeriodRangeForReceiveMonth": "function getJobPayPeriodRangeForReceiveMonth(job, offset = 0) {\n      const now = new Date();\n      let year = now.getFullYear();\n      let receiveMonth = now.getMonth() + offset;\n\n      let closeDayInput = String(job.closeDay || '20').trim();\n      let payDayInput = String(job.payDay || '5').trim();\n      \n      let closeNum = (closeDayInput === '月末') ? 31 : (Number(closeDayInput) || 20);\n      let isEndMonth = closeNum >= 31;\n      let payNum = (payDayInput === '月末') ? 31 : (Number(payDayInput) || 5);\n\n      let workMonth = receiveMonth - 1;\n      if (payNum >= closeNum) {\n        workMonth = receiveMonth;\n      }\n\n      let start, end;\n      if (isEndMonth) {\n        start = new Date(year, workMonth, 1);\n        end = new Date(year, workMonth + 1, 0);\n      } else {\n        const clampedClose = (y, m) => new Date(y, m, Math.min(closeNum, new Date(y, m + 1, 0).getDate()));\n        const prevClose = clampedClose(year, workMonth - 1);\n        start = new Date(prevClose.getFullYear(), prevClose.getMonth(), prevClose.getDate() + 1);\n        end = clampedClose(year, workMonth);\n      }\n      return { start, end };\n    }",
+            "calcJobCalendarMonthPay": "function calcJobCalendarMonthPay(jk, viewMonth) {\n      const job = configData[jk];\n      // 表示月の翌月に入金される予定の締め期間を、バイト先別に求める。\n      const todayMonth = new Date();\n      const receiveMonthOffset = (viewMonth.getFullYear() - todayMonth.getFullYear()) * 12\n        + (viewMonth.getMonth() - todayMonth.getMonth()) + 1;\n      const {start, end} = getJobPayPeriodRangeForReceiveMonth(job, receiveMonthOffset);\n      let mins = 0, pay = 0, days = 0, commutingDays = 0;\n      for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {\n        const r = calcJobDay(formatDateKey(d), jk, new Date(d));\n        mins += r.mins;\n        pay += r.pay;\n        if (r.worked) days++;\n        if (r.commuted) commutingDays++;\n      }\n      const other = (days > 0 ? (job.transMonth || 0) + (job.allowanceMonth || 0) : 0)\n        + commutingDays * ((job.transDay || 0) + (job.allowanceDay || 0));\n      if (days > 0) pay += (job.transMonth || 0) + (job.allowanceMonth || 0);\n      const roundPay = n => Math.floor(Math.round(n * 1000) / 1000);\n      return { pay: roundPay(pay), wagePay: roundPay(pay - other), otherPay: roundPay(other), mins, days, start, end, wageMissing: test5HasMissingWage(jk, start, end) };\n    }",
+            "calculateJobShiftMinutesAndPay": "function calculateJobShiftMinutesAndPay(jobShift, job, dateObj) {\n      if (!jobShift) return { totalMins: 0, totalPay: 0 };\n      if (jobShift.isPaidLeave) return { totalMins: 0, totalPay: paidLeaveAmount(job, jobShift) };\n      let rateSum = 0;\n      const totalMins = forEachWorkMinute(jobShift, min => { rateSum += getRateForMinuteDetailed(min, job, dateObj, false).rate; });\n      return { totalMins, totalPay: rateSum / 60 };\n    }",
+            "saveAllDataStorage": "function saveAllDataStorage() {\n      if (hosshiiBlockEdit()) return false;\n      let payload = JSON.parse(JSON.stringify(configData));\n      payload.monthlyGoal = monthlyGoal;\n      return safeWriteAppJSON('mybasket_wages_v77', payload);\n    }",
+            "": "function(key,value){\n     const result=original.apply(this,arguments);\n     if(key==='mybasket_shifts_v23' && result)copyButton()?.classList.add('copy-completed');\n     return result;\n   }",
+            "syncSettingsFormToConfig": "function syncSettingsFormToConfig(jk) {\n      const j = configData[jk];\n      if (!j || !document.getElementById('set_closeDay')) return;\n      const getVal = id => document.getElementById(id)?.value || '';\n      const getNum = id => parseFormattedNumber(getVal(id));\n\n      j.closeDay = getVal('set_closeDay');\n      j.payDay = getVal('set_payDay');\n      j.paid = getNum('set_wagePaid');\n      // 旧有給時間は既存データの互換性のため保持\n\n      if (document.getElementById('setWageSlotsContainer')) {\n        j.wageSlots = [...document.querySelectorAll('#setWageSlotsContainer [data-slot]')].map(r => {\n          const i = r.dataset.slot;\n          return { start: getVal(`set_time_${i}_start`), end: getVal(`set_time_${i}_end`), wage: getNum(`set_wage_${i}`), bType: getVal(`set_btype_${i}`) || 'weekday', bVal: getNum(`set_bval_${i}`) };\n        });\n      }\n\n      j.transMonth = getNum('set_transMonth');\n      j.transDay = getNum('set_transDay');\n      j.allowanceMonth = getNum('set_allowanceMonth');\n      j.allowanceDay = getNum('set_allowanceDay');\n      j.allowanceMemo = getVal('set_allowanceMemo');\n    }"
+          },
+          "rawBefore": [
+            "{\"jobCount\":2,\"monthlyGoal\":100000,\"job1\":{\"name\":\"ローズカフェ\",\"closeDay\":\"月末\",\"payDay\":\"10\",\"paid\":1200,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1200}],\"presets\":[]},\"job2\":{\"name\":\"月色ショップ\",\"closeDay\":\"20\",\"payDay\":\"25\",\"paid\":1300,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1300}],\"presets\":[]}}",
+            "{\"2026-11-1\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-11-30\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-12-31\":{\"job1\":[{\"hours\":8,\"isPaidLeave\":true}]},\"2028-2-29\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]}}"
+          ],
+          "edgeRanges": [
+            {
+              "close": "月末",
+              "pay": "10",
+              "end": "2028-02-28T15:00:00.000Z",
+              "actualLast": 29,
+              "label": "1日〜29日"
+            },
+            {
+              "close": "月末",
+              "pay": "月末",
+              "end": "2028-03-30T15:00:00.000Z",
+              "actualLast": 31,
+              "label": "1日〜31日"
+            },
+            {
+              "close": "31",
+              "pay": "10",
+              "end": "2028-02-28T15:00:00.000Z",
+              "actualLast": 29,
+              "label": "1日〜29日"
+            },
+            {
+              "close": "31",
+              "pay": "月末",
+              "end": "2028-03-30T15:00:00.000Z",
+              "actualLast": 31,
+              "label": "1日〜31日"
+            }
+          ],
+          "options": {
+            "close": [
+              {
+                "value": "",
+                "label": "未設定"
+              },
+              {
+                "value": "1",
+                "label": "1日"
+              },
+              {
+                "value": "2",
+                "label": "2日"
+              },
+              {
+                "value": "3",
+                "label": "3日"
+              },
+              {
+                "value": "4",
+                "label": "4日"
+              },
+              {
+                "value": "5",
+                "label": "5日"
+              },
+              {
+                "value": "6",
+                "label": "6日"
+              },
+              {
+                "value": "7",
+                "label": "7日"
+              },
+              {
+                "value": "8",
+                "label": "8日"
+              },
+              {
+                "value": "9",
+                "label": "9日"
+              },
+              {
+                "value": "10",
+                "label": "10日"
+              },
+              {
+                "value": "11",
+                "label": "11日"
+              },
+              {
+                "value": "12",
+                "label": "12日"
+              },
+              {
+                "value": "13",
+                "label": "13日"
+              },
+              {
+                "value": "14",
+                "label": "14日"
+              },
+              {
+                "value": "15",
+                "label": "15日"
+              },
+              {
+                "value": "16",
+                "label": "16日"
+              },
+              {
+                "value": "17",
+                "label": "17日"
+              },
+              {
+                "value": "18",
+                "label": "18日"
+              },
+              {
+                "value": "19",
+                "label": "19日"
+              },
+              {
+                "value": "20",
+                "label": "20日"
+              },
+              {
+                "value": "21",
+                "label": "21日"
+              },
+              {
+                "value": "22",
+                "label": "22日"
+              },
+              {
+                "value": "23",
+                "label": "23日"
+              },
+              {
+                "value": "24",
+                "label": "24日"
+              },
+              {
+                "value": "25",
+                "label": "25日"
+              },
+              {
+                "value": "26",
+                "label": "26日"
+              },
+              {
+                "value": "27",
+                "label": "27日"
+              },
+              {
+                "value": "28",
+                "label": "28日"
+              },
+              {
+                "value": "月末",
+                "label": "末日（毎月の最終日）"
+              }
+            ],
+            "pay": [
+              {
+                "value": "",
+                "label": "未設定"
+              },
+              {
+                "value": "1",
+                "label": "1日"
+              },
+              {
+                "value": "2",
+                "label": "2日"
+              },
+              {
+                "value": "3",
+                "label": "3日"
+              },
+              {
+                "value": "4",
+                "label": "4日"
+              },
+              {
+                "value": "5",
+                "label": "5日"
+              },
+              {
+                "value": "6",
+                "label": "6日"
+              },
+              {
+                "value": "7",
+                "label": "7日"
+              },
+              {
+                "value": "8",
+                "label": "8日"
+              },
+              {
+                "value": "9",
+                "label": "9日"
+              },
+              {
+                "value": "10",
+                "label": "10日"
+              },
+              {
+                "value": "11",
+                "label": "11日"
+              },
+              {
+                "value": "12",
+                "label": "12日"
+              },
+              {
+                "value": "13",
+                "label": "13日"
+              },
+              {
+                "value": "14",
+                "label": "14日"
+              },
+              {
+                "value": "15",
+                "label": "15日"
+              },
+              {
+                "value": "16",
+                "label": "16日"
+              },
+              {
+                "value": "17",
+                "label": "17日"
+              },
+              {
+                "value": "18",
+                "label": "18日"
+              },
+              {
+                "value": "19",
+                "label": "19日"
+              },
+              {
+                "value": "20",
+                "label": "20日"
+              },
+              {
+                "value": "21",
+                "label": "21日"
+              },
+              {
+                "value": "22",
+                "label": "22日"
+              },
+              {
+                "value": "23",
+                "label": "23日"
+              },
+              {
+                "value": "24",
+                "label": "24日"
+              },
+              {
+                "value": "25",
+                "label": "25日"
+              },
+              {
+                "value": "26",
+                "label": "26日"
+              },
+              {
+                "value": "27",
+                "label": "27日"
+              },
+              {
+                "value": "28",
+                "label": "28日"
+              },
+              {
+                "value": "月末",
+                "label": "月末"
+              }
+            ],
+            "value": "月末"
+          },
+          "optionFit": {
+            "textWidth": 160.015625,
+            "available": 228,
+            "font": "16px"
+          },
+          "saved": [
+            "{\"jobCount\":2,\"job1\":{\"name\":\"ローズカフェ\",\"closeDay\":\"月末\",\"payDay\":\"10\",\"paid\":1200,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1200,\"bType\":\"weekday\",\"bVal\":0}],\"transMonth\":0,\"transDay\":0,\"allowanceMonth\":0,\"allowanceDay\":0,\"allowanceMemo\":\"\",\"hasBreakGlobal\":false,\"presets\":[]},\"job2\":{\"name\":\"月色ショップ\",\"closeDay\":\"20\",\"payDay\":\"25\",\"paid\":1300,\"paidHours\":8,\"wageSlots\":[{\"start\":\"00:00\",\"end\":\"00:00\",\"wage\":1300,\"bType\":\"weekday\",\"bVal\":0}],\"transMonth\":0,\"transDay\":0,\"allowanceMonth\":0,\"allowanceDay\":0,\"allowanceMemo\":\"\",\"hasBreakGlobal\":false,\"presets\":[]},\"job3\":{\"name\":\"\",\"closeDay\":\"\",\"payDay\":\"\",\"paid\":0,\"paidHours\":0,\"wageSlots\":[],\"transMonth\":0,\"transDay\":0,\"allowanceMonth\":0,\"allowanceDay\":0,\"allowanceMemo\":\"\",\"hasBreakGlobal\":false,\"presets\":[]},\"monthlyGoal\":100000}",
+            "{\"2026-11-1\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-11-30\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]},\"2026-12-31\":{\"job1\":[{\"hours\":8,\"isPaidLeave\":true}]},\"2028-2-29\":{\"job1\":[{\"start\":\"09:00\",\"end\":\"17:00\",\"breakMins\":60,\"isPaidLeave\":false}]}}"
+          ]
+        }
+      ],
+      "calculationAndStorageUnchanged": true
+    }
+  ],
+  "errors": []
+}
