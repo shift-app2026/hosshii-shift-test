@@ -858,12 +858,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
 #calendarJobLegend .calendar-payday-legend > span:first-child { font-size: 11px !important; }
 #hosshiiSettingsPinnedJob,
 #hosshiiSettingsPinnedJob > span,
-#tab-settings #settingsJobContentArea > .space-y-3,
-#tab-settings .settings-job-card,
 #shiftInputModal #modalJobSelectContainer .modal-job-trigger,
 #shiftInputModal #modalJobSelectContainer .modal-job-trigger-name,
-#shiftInputModal #modalSelectedDateSummaryContent,
-#shiftInputModal #modalInlinePresetContainer,
 #hosshiiJobMenu .hosshii-job-menu-item {
   font-family: 'Noto Serif JP', serif !important;
   font-variant-numeric: tabular-nums;
