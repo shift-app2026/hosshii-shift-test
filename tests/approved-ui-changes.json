@@ -16,17 +16,17 @@
   },
   {
     "before": "lineHtml(`${hosshiiShiftTypeMark(jk, !!jobShift.isPaidLeave)}<span class=\"job-time\">${jobShift.start}〜${jobShift.end}</span>`)",
-    "after": "lineHtml(`<span class=\"job-time\">${jobShift.start}〜${jobShift.end}</span><span class=\"standalone-workplace-name\">${esc(jName)}</span>${jobShift.isPaidLeave ? '<span class=\"standalone-paid-status\">有給</span>' : ''}`)",
+    "after": "lineHtml(`<span class=\"job-time\">${jobShift.start}〜${jobShift.end}</span>${jobShift.isPaidLeave ? '<span class=\"standalone-paid-status\">有給</span>' : ''}<span class=\"standalone-workplace-name\">${esc(jName)}</span>`)",
     "reason": "Replace schedule-only shift dot with an escaped workplace name; retain paid-leave status"
   },
   {
     "before": "lineHtml(`${hosshiiShiftTypeMark(jk, true)}<span class=\"job-time\">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span>`)",
-    "after": "lineHtml(`<span class=\"job-time\">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span><span class=\"standalone-workplace-name\">${esc(jName)}</span><span class=\"standalone-paid-status\">有給</span>`)",
+    "after": "lineHtml(`<span class=\"job-time\">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span><span class=\"standalone-paid-status\">有給</span><span class=\"standalone-workplace-name\">${esc(jName)}</span>`)",
     "reason": "Name and paid status for paid leave without a time range; hours calculation untouched"
   },
   {
     "before": "          const paydayDot = getJobLabelHtml(jk, 'standalone-job-label', true);\n          lineItems.push({ order: 9500, html: lineHtml(`${paydayDot}<span class=\"luxe-payday-label\"><span class=\"luxe-payday-heart\" aria-hidden=\"true\">♥</span>お給料日</span>`) });",
-    "after": "          lineItems.push({ order: 9500, html: lineHtml(`<span class=\"luxe-payday-label\"><span class=\"luxe-payday-heart\" aria-hidden=\"true\">♡</span>${esc(getJobDisplayName(jk))}お給料日</span>`) });",
+    "after": "          lineItems.push({ order: 9500, html: lineHtml(`<span class=\"luxe-payday-label\"><span class=\"luxe-payday-heart\" style=\"--payday-color:${getJobPalette(jk).dot}\" aria-hidden=\"true\">♡</span>${esc(getJobDisplayName(jk))}お給料日</span>`) });",
     "reason": "Show heart + actual escaped workplace + payday; payday selection and ordering unchanged"
   },
   {
