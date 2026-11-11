@@ -855,7 +855,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
   filter: drop-shadow(0 1px 1px color-mix(in srgb,var(--payday-color) 35%,transparent));
 }
 #calendarDays .payday-pin-container > span { font-size: 11px !important; }
-#calendarJobLegend .calendar-payday-legend > span:first-child { font-size: 11px !important; }
+#calendarJobLegend .calendar-payday-legend > span:first-child { font-size: 15px !important; }
 #hosshiiSettingsPinnedJob,
 #hosshiiSettingsPinnedJob > span,
 #shiftInputModal #modalJobSelectContainer .modal-job-trigger,
