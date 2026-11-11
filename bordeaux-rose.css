@@ -576,3 +576,14 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
 #hosshiiTrialBanner .hosshii-payment-preparing {
   color: #302027 !important;
 }
+
+/* Annual-income card: one serif family, including controls and explanatory copy.
+   Keep existing size, weight, spacing, surfaces and red emphasis unchanged. */
+#tab-clock #incomeWallBox,
+#tab-clock #incomeWallBox *,
+#tab-clock #incomeWallBox button {
+  font-family: 'Noto Serif JP', serif !important;
+}
+#tab-clock #itoWallThreshold,
+#tab-clock #incomeWallBox .ito-wall-note,
+#tab-clock #incomeWallBox .ito-wall-note span { color: #302027 !important; }
