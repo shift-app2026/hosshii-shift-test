@@ -174,14 +174,12 @@ const shifts={[dateKey]:{job1:[{start:'09:00',end:'17:00',breakMins:60,isPaidLea
  await page.evaluate(()=>localStorage.clear());await page.reload();await page.waitForFunction(()=>window.hosshiiReadOnly===false);
  assert.equal(await page.evaluate(()=>getActiveJobKeys().length),0);
  for(const tab of ['clock','calendar','list','settings','guide'])await page.locator('#btn-'+tab).click();
- // Known pre-existing first-load error: reproduce on the exact original HTML as well.
- assert.equal(errors.length,1);assert(errors[0].includes('at getSettingsFormHtml'));
+ // Empty-state guards fix the current app; confirm the baseline still reproduces the old error.
+ assert.equal(errors.length,0);
  await page.route(process.env.REVIEW_URL||'http://127.0.0.1:8765/',r=>r.fulfill({contentType:'text/html',body:original}));
  await page.reload();await page.waitForFunction(()=>window.hosshiiReadOnly===false);
- assert.equal(errors.length,2);
- // Presentation wrappers move script line numbers; compare the actual error and call chain.
- const withoutLocations=s=>s.replace(/:\d+:\d+/g,':line:column');
- assert.equal(withoutLocations(errors[0]),withoutLocations(errors[1]));
- console.log(JSON.stringify({syntaxBlocks:scripts(html).length,nonPresentationScriptsUnchanged:true,presentationMarkupChanges:changes.length,approvedUiChanges:approvedUiChanges.length,existingHandlersUnchanged:true,layoutChecks:checks.length,calculation:calc,overnight,registrationAndReload:true,mockedCloudBackup:true,expiredWriteBlocked:true,consentAndAuthFailure:true,clockInteraction:true,goalPersistence:true,settingsAutosave:true,missingWage:true,marbleAnimation:true,newPageErrors:0,knownBaselineIssue:'Empty storage: getSettingsFormHtml reads undefined.name; same error and call chain reproduced on original HTML'},null,2));
+ assert.equal(errors.length,1);
+ assert(errors[0].includes('at getSettingsFormHtml'));
+ console.log(JSON.stringify({syntaxBlocks:scripts(html).length,scriptsMatchBaselineAfterApprovedChanges:true,emptyStateGuards:3,presentationMarkupChanges:changes.length,approvedUiChanges:approvedUiChanges.length,existingHandlersUnchanged:true,layoutChecks:checks.length,calculation:calc,overnight,registrationAndReload:true,mockedCloudBackup:true,expiredWriteBlocked:true,consentAndAuthFailure:true,clockInteraction:true,goalPersistence:true,settingsAutosave:true,missingWage:true,marbleAnimation:true,newPageErrors:0,emptyStateRegressionFixed:true,baselineErrorReproduced:true},null,2));
  await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});

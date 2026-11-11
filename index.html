@@ -3070,6 +3070,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     function renderSettingsJobContent(jk) {
       const container = document.getElementById('settingsJobContentArea');
       if (!container) return;
+      if (!configData[jk]?.name) {
+        container.innerHTML = '';
+        return;
+      }
       container.innerHTML = getSettingsFormHtml(jk);
       loadSettingsToUIForTab(jk);
     }
@@ -3078,7 +3082,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function getSettingsFormHtml(jk) {
       const j = configData[jk];
-      if (!j.name) return '';
+      if (!j?.name) return '';
       let slotsHtml = buildWageSlotsHtml(j);
 
       return `
@@ -3385,7 +3389,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function loadSettingsToUIForTab(jk) {
       const j = configData[jk];
-      if (!document.getElementById('set_closeDay')) return;
+      if (!j?.name || !document.getElementById('set_closeDay')) return;
 
       document.getElementById('set_closeDay').value = j.closeDay || '';
       document.getElementById('set_payDay').value = j.payDay || '';

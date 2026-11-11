@@ -27,6 +27,12 @@ window.previewStorage = Object.freeze({
     if(day===14)shifts[key(d)].job3=[{start:'',end:'',hours:8,breakMins:0,isPaidLeave:true}];
   }
   shifts[key(now)]={job1:[{start:'09:00',end:'17:00',breakMins:60,isPaidLeave:false}],job2:[{start:'18:00',end:'20:00',breakMins:0,isPaidLeave:false}]};
+  // Preview-only empty fixture: no persistent state and no source-app flag.
+  if (new URLSearchParams(location.search).get('data') === 'empty') {
+    for (const key of ['job1','job2','job3']) delete wages[key];
+    wages.jobCount = 0; wages.monthlyGoal = 0;
+    for (const key of Object.keys(shifts)) delete shifts[key];
+  }
   previewStorage.setItem('mybasket_wages_v77',JSON.stringify(wages));
   previewStorage.setItem('mybasket_shifts_v23',JSON.stringify(shifts));
   previewStorage.setItem('mybasket_last_backup',String(Date.now()));
