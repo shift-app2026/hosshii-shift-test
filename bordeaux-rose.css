@@ -182,7 +182,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
   --hs-button-gloss: linear-gradient(170deg, #e5a9b4 0%, #ac3457 22%, #801330 52%, #49051d 100%);
   --hs-button-gloss-edge: #d7a56d;
 }
-#calendarRegisterButton, #registerShiftButton, #registerPresetButton,
+#calendarRegisterButton, #registerShiftButton, #registerPresetButton, #presetRegisterModal #registerPresetButton,
 #tab-calendar button[onclick^="copyLastMonthShifts"],
 #tab-list button[onclick^="copyLastMonthShifts"], #standaloneCopyCard button,
 #tab-settings button[id^="set_reg_btn_"], #tab-settings .ito-job-register-button,
@@ -758,13 +758,13 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
   transform: rotate(-28deg); pointer-events: none;
 }
 /* Canonical registration-state text colours; glossy backgrounds stay intact. */
-#registerShiftButton.unsaved-registration, #registerPresetButton.unsaved-registration,
+#registerShiftButton.unsaved-registration, #presetRegisterModal #registerPresetButton.unsaved-registration,
 #tab-settings button[id^="set_reg_btn_"].unsaved-registration,
 #tab-settings .ito-job-register-button.unsaved-registration {
   color: #ffe082 !important; -webkit-text-fill-color: #ffe082 !important;
 }
 #registerShiftButton.registration-saved:not(.unsaved-registration),
-#registerPresetButton.registration-saved:not(.unsaved-registration),
+#presetRegisterModal #registerPresetButton.registration-saved:not(.unsaved-registration),
 #tab-settings button[id^="set_reg_btn_"].registration-saved:not(.unsaved-registration),
 #tab-settings .ito-job-register-button.registration-saved:not(.unsaved-registration) {
   color: #fff !important; -webkit-text-fill-color: #fff !important;
@@ -797,7 +797,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
 /* Legacy state selectors also removed gloss; keep the same adopted surface
    before and after registration, changing only the text colour. */
 #registerShiftButton:is(.unsaved-registration,.registration-saved),
-#registerPresetButton:is(.unsaved-registration,.registration-saved),
+#presetRegisterModal #registerPresetButton:is(.unsaved-registration,.registration-saved),
 #tab-settings button[id^="set_reg_btn_"]:is(.unsaved-registration,.registration-saved),
 #tab-settings .ito-job-register-button:is(.unsaved-registration,.registration-saved) {
   background: var(--hs-button-gloss) !important;
