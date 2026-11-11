@@ -1065,3 +1065,11 @@ body:has(#tab-clock.hidden) #itoStickyHeaderHost #hosshiiTrialBanner * {
 /* Unstyled text previously inherited 16px: raise it rather than reducing it. */
 :is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#hosshiiJobMenu) { font-size:17px; }
 #tab-clock #goalRing { font-size:16px; }
+#shiftInputModal button[onclick="closeShiftInputModal()"] { font-size:14px !important; line-height:1.5; }
+#settingsFixedSave #settingsSaveButton { font-size:16px; }
+#tab-calendar .copy-label,#standaloneCopyCard .copy-label { font-size:15px !important; }
+#calendarJobLegend .job-label-pill { font-size:14px !important; }
+@media(max-width:359px){
+ #shiftInputModal button[onclick="closeShiftInputModal()"] { font-size:13px !important; }
+ #shiftInputModal #modalJobSelectContainer .modal-job-trigger { font-size:15px !important; }
+}
