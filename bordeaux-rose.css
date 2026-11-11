@@ -820,3 +820,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
 
 /* Keep short guide verbs intact without changing the card columns or text. */
 #tab-guide .guide-steps .guide-keep { display: inline-block; white-space: nowrap; }
+#customTimePickerModal .hclock-identity,
+#presetRegisterModal .border-t > p.font-bold {
+  font-family: 'Noto Serif JP', serif !important;
+  font-variant-numeric: tabular-nums;
+}
