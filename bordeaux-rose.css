@@ -935,7 +935,7 @@ body:has(#tab-clock.hidden) #itoStickyHeaderHost #hosshiiTrialBanner * {
   color: var(--hs-readable-ink) !important;
 }
 :is(#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#t31GoalModal,#hosshiiJobMenu)
-:is(.font-normal,.font-medium,.font-light,p,label,small,.standalone-workplace-name,.luxe-day-week):not(button,button *,svg,svg *) {
+:is(.font-normal,.font-medium,.font-light,p,label,small,.standalone-workplace-name,.luxe-day-week):not(button,button *,svg,svg *,.font-bold,.font-semibold,.font-extrabold,.font-black) {
   font-weight: 600 !important;
 }
 :is(#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#t31GoalModal)
@@ -965,5 +965,5 @@ body:has(#tab-clock.hidden) #itoStickyHeaderHost #hosshiiTrialBanner * {
 #appCard #tab-clock .hc-cols :is(.hc-receive-month,.hc-receive-kind) { display: inline; white-space: nowrap; }
 #appCard #tab-clock .hc-cols strong { white-space: nowrap; letter-spacing: -.04em; }
 @media (max-width: 359px) {
-  #appCard #tab-clock .hc-cols strong { font-size: 13px !important; }
+  #appCard #tab-clock .hc-cols strong { font-size: 12.5px !important; }
 }
