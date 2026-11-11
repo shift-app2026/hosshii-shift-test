@@ -1092,3 +1092,59 @@ html body #presetRegisterModal #pr_start,html body #presetRegisterModal #pr_end,
  #customTimePickerModal .hclock-action { font-size:13px !important; }
  #hosshiiSettingsPinnedJob .hosshii-pinned-trigger { font-size:17px; }
 }
+/* Canonical text roles override old per-component utility sizes. */
+html body #appCard #appScroll :is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#tab-guide)
+:is(p,label,.text-sm):not(#goalRing,#goalRing *,h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *,.wage-setting-title) { font-size:16px !important; }
+html body #appCard #appScroll :is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#tab-guide)
+:is(.text-xs,small):not(#goalRing,#goalRing *,h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *) { font-size:15px !important; }
+/* Repeating the dialog scope beats legacy two-ID rules without touching data code. */
+:is(#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal)
+:is(p,label,.text-sm):not(h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *,.hosshii-paid-entry-note,.ito-preset-desc) { font-size:16px !important; }
+#shiftInputModal #shiftInputScrollArea .ito-preset-desc { font-size:15px !important; }
+#shiftInputModal #shiftInputScrollArea .hosshii-paid-entry-note { font-size:14px !important; }
+#shiftInputModal #modalPaidToggleHeaderSlot button,#shiftInputModal #registerShiftButton { font-size:15px !important; }
+#shiftInputModal #shiftScrollHint { font-size:13px !important; }
+#shiftInputModal #hosshiiShiftWageWarning,#shiftInputModal #hosshiiShiftWageWarning button { font-size:14px !important; }
+#shiftInputModal .shift-date-nav button { font-size:14px !important; }
+#shiftInputModal .shift-date-nav #modalDateTitle { font-size:15px !important; }
+#shiftInputModal > .bg-white > div:first-child > span { font-size:16px !important; }
+#appCard #tab-clock .hosshii-ring-note,#appCard #tab-clock .ito-wall-note { font-size:15px !important; }
+#appCard #tab-clock #incomeWallBox label { font-size:16px !important; }
+#appCard #tab-settings .wage-setting-title,#itoStickyHeaderHost .wage-setting-title { font-size:16px !important; }
+#appCard #tab-settings .wage-head-sub,#appCard #tab-settings .wage-head-btn { font-size:15px !important; }
+#appCard #tab-settings .wage-rate-row span { font-size:15px !important; }
+#appCard #tab-settings #settingsJobContentArea select { font-size:16px !important; }
+#appCard #tab-settings .friend-job-hint span { font-size:15px !important; }
+#appCard #tab-settings .hosshii-job-modes button { font-size:14px !important; }
+#appCard #tab-settings .hosshii-register-action { font-size:15px !important; }
+#appCard #tab-settings #hosshiiJobEditSelect { font-size:16px !important; }
+#appCard #tab-settings .oct23-backup-note ~ div > button { font-size:16px !important; }
+#appCard #tab-settings .wage-rate-row { column-gap:5px !important; }
+#appCard #tab-settings :is(.wage-base-rate,.wage-bonus-rate) { column-gap:3px !important; }
+#appCard #tab-settings .wage-bonus-select { min-width:70px !important; padding:2px 0 !important; }
+#appCard #tab-settings #settingsJobContentArea > .space-y-3 > .grid.grid-cols-2:first-child > div > span { font-size:16px !important; }
+#appCard #itoStickyHeaderHost #hosshiiSettingsPinnedJob > span { font-size:15px !important; }
+#appCard #tab-guide .guide-extra p { font-size:16px !important; }
+#appCard #tab-guide .guide-steps p { font-size:15px !important; }
+#hosshiiTrialBanner .hosshii-trial-status-line { font-size:16px !important; }
+#hosshiiTrialBanner .hosshii-payment-preparing { font-size:14px !important; }
+#appCard #tab-clock #test8GoalLabel { font-size:16px !important; }
+#appCard #tab-clock #test30GoalDisplay { font-size:19px !important; }
+#customTimePickerModal .hclock-action { font-size:14px !important; }
+#shiftInputModal #modalInlinePresetContainer > div > .job-time,#presetRegisterModal #modalPresetContainer > div > .job-time { font-size:18px !important; }
+/* Larger workplace chips share two clear columns, rather than being compressed. */
+#calendarJobLegend > div { display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px; }
+#calendarJobLegend :is(.calendar-legend-first-row,.calendar-legend-second-row) { display:contents !important; }
+#calendarJobLegend .calendar-payday-legend { grid-column:2; grid-row:2; font-size:16px !important; justify-self:start; }
+#calendarJobLegend .calendar-legend-second-row > div { grid-column:1; grid-row:2; }
+#calendarJobLegend .job-label-pill,#calendarJobLegend .job-label-pill .font-bold { font-size:16px !important; }
+@media(max-width:359px){
+ #appCard #tab-settings #settingsJobContentArea > .space-y-3 > .grid.grid-cols-2:first-child > div > span { font-size:15px !important; }
+ #hosshiiTrialBanner .hosshii-trial-status-line { font-size:15px !important; }
+ #appCard #tab-clock #test8GoalLabel { font-size:15px !important; }
+ #appCard #tab-clock #test30GoalDisplay { font-size:17px !important; }
+ #calendarJobLegend .job-label-pill,#calendarJobLegend .job-label-pill .font-bold { font-size:15px !important; }
+ #calendarJobLegend .calendar-payday-legend { font-size:15px !important; }
+ #shiftInputModal #modalInlinePresetContainer > div > .job-time,#presetRegisterModal #modalPresetContainer > div > .job-time { font-size:16px !important; }
+ #customTimePickerModal .hclock-action { font-size:13px !important; }
+}
