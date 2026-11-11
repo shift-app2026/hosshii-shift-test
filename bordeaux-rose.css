@@ -587,3 +587,59 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
 #tab-clock #itoWallThreshold,
 #tab-clock #incomeWallBox .ito-wall-note,
 #tab-clock #incomeWallBox .ito-wall-note span { color: #302027 !important; }
+
+/* App-wide display typography. Preserve practical UI/long-copy sans-serif,
+   semantic colours, all controls and the approved salary-ring typography. */
+#currentMonthLabel, #currentListMonthLabel,
+.hosshii-month-row button,
+#calendarJobLegend .job-label-pill,
+#standaloneJobLegend .job-label-pill,
+#tab-calendar #calendarDays,
+#tab-calendar #calendarTodayDateLabel,
+#tab-calendar #calendarTodaySummaryContent .job-label-pill,
+#tab-calendar #calendarTodaySummaryContent .job-time,
+#tab-list .standalone-date,
+#tab-list .standalone-shift-line .job-time,
+#tab-list .standalone-job-label,
+#tab-settings h3, #tab-settings h4,
+#tab-settings .wage-head-title,
+#tab-settings .hosshii-allowance-section-title,
+#tab-settings .settings-job-name,
+#hosshiiSettingsPinnedJob .hosshii-pinned-trigger-name,
+#tab-guide h4 {
+  font-family: 'Noto Serif JP', serif !important;
+}
+#tab-calendar, #tab-list, #tab-settings, #tab-guide { color: #302027; }
+/* Neutral utility text only: leave white/red/weekend/holiday/workplace colours
+   and the text inside controls untouched. Explicit state colours remain active. */
+#appCard #appScroll :is(#tab-calendar,#tab-list,#tab-settings,#tab-guide)
+:is([class*="text-stone-"],[class*="text-gray-"],[class*="text-slate-"]):not(button,button *,input,select,textarea,svg,svg *,[style*="color"]) {
+  color: #302027 !important;
+}
+#hosshiiSettingsPinnedJob .hosshii-pinned-trigger-name { color: #302027 !important; }
+#tab-guide .luxe-welcome-card, #tab-guide .guide-extra,
+#tab-guide section > div > p, #tab-settings .oct23-backup-note,
+#tab-settings .paid-sub, #tab-settings .paid-note { font-weight: 500; }
+/* Strengthen the copy callout without moving/restyling its execution button. */
+#tab-calendar > .bg-white:has(.copy-label) {
+  background: #fff0f4 !important;
+}
+#tab-calendar .copy-label {
+  font-size: 14px !important; font-weight: 800 !important;
+  color: #302027; line-height: 1.5;
+}
+#tab-calendar .copy-label { overflow-wrap: anywhere; }
+#tab-calendar > .bg-white:has(.copy-label) .text-base { font-size: 20px !important; }
+#tab-settings label:not(.paid-sub),
+#tab-settings .wage-base-rate > span,
+#tab-settings .wage-bonus-rate > span,
+#tab-settings .pt-2\.5 > .text-base.font-bold {
+  font-family: 'Noto Serif JP', serif !important;
+}
+/* Workplace names use ordinary ink; their coloured orbs remain untouched. */
+#calendarJobLegend .job-label-pill,
+#standaloneJobLegend .job-label-pill,
+#tab-calendar #calendarTodaySummaryContent .job-label-pill {
+  color: #302027 !important;
+}
+#hosshiiSettingsPinnedJob .hosshii-pinned-trigger-name { -webkit-text-fill-color: #302027 !important; }
