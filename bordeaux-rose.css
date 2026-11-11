@@ -508,3 +508,43 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
 #tab-clock #incomeWallBox button {
   font-family: var(--font-ui) !important;
 }
+
+/* Salary readability review: larger serif table text, with restrained weight.
+   Two deliberate heading lines keep 14px month/receipt labels readable at 320px. */
+#tab-clock .hc-cols, #tab-clock .hc-row {
+  grid-template-columns: minmax(0,40%) minmax(0,30%) minmax(0,30%);
+}
+#tab-clock .hc-cols, #tab-clock .hc-cols strong {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #42282f !important;
+  letter-spacing: .015em;
+  line-height: 1.4 !important;
+}
+#tab-clock .hc-cols .hc-receive-month,
+#tab-clock .hc-cols .hc-receive-kind { display: block; white-space: nowrap; }
+#tab-clock .hc-comparison .hc-row > span,
+#tab-clock .hc-comparison .hc-row > span:first-child {
+  font-size: clamp(13px, 3.75vw, 14px) !important;
+  font-weight: 600 !important;
+  color: #42282f !important;
+  line-height: 1.8 !important;
+}
+#tab-clock .hc-row .luxe-inline-icon { font-size: 12px; margin-right: 3px; }
+#tab-clock #monthlyReceiveTitle,
+#tab-clock #yearlyTitleLabel {
+  font-size: clamp(16px, 4.55vw, 17px) !important;
+  font-weight: 600 !important;
+  line-height: 1.7;
+}
+#tab-clock .hc-job-title strong { font-size: clamp(17px, 4.8vw, 18px) !important; font-weight: 600 !important; }
+#tab-clock .hosshii-ring-note,
+#tab-clock .ito-wall-note,
+#tab-clock .t13-wage-notice,
+#tab-clock #yearlySubLabel,
+#tab-clock .hc-job-title > span {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.8 !important;
+}
+#tab-clock .hosshii-ring-note, #tab-clock .ito-wall-note { color: #5d5054 !important; }

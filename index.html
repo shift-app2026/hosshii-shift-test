@@ -4046,7 +4046,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         <div class="hc-row"><span><span class="luxe-inline-icon" aria-hidden="true">🕒</span>勤務時間</span><span>${hm(a.mins)}</span><span>${hm(b.mins)}</span></div>
         <div class="hc-row"><span><span class="luxe-inline-icon" aria-hidden="true">📋</span>時給・有給分</span><span>${a.wageMissing?'⚠️':yen(a.wage)}</span><span>${b.wageMissing?'⚠️':yen(b.wage)}</span></div>
         <div class="hc-row"><span><span class="luxe-inline-icon" aria-hidden="true">🚃</span>交通費・手当</span><span>${yen(a.other)}</span><span>${yen(b.other)}</span></div>`;
-      const heading = '<div class="hc-cols"><span></span><strong>来月入金予定</strong><strong>今月入金予定</strong></div>';
+      const heading = '<div class="hc-cols"><span></span><strong><span class="hc-receive-month">来月</span><span class="hc-receive-kind">入金予定</span></strong><strong><span class="hc-receive-month">今月</span><span class="hc-receive-kind">入金予定</span></strong></div>';
       const totalCell = r => r.missing ? '⚠️' : yen(r.wage + r.other);
        const totalRow = `<div class="hc-row hc-grand-total"><span>合計</span><span>${totalCell(totalNow)}</span><span>${totalCell(totalPrev)}</span></div>`;
        const totals = `<div class="hc-summary" aria-label="今月と先月の全バイト先の集計">${heading}${rowsHtml(totalNow,totalPrev)}${totalRow}</div>`;
