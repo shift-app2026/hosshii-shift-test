@@ -1,6 +1,6 @@
 # ボルドー＆ローズシャンパン：デザイン変更と検証
 
-> 最新：[お給料画面の明朝体統一・文字色の最終調整と320px / 375px比較画像](2026-11-11-salary-final/README.md)。前回の文字サイズ調整は [こちら](2026-11-11-salary-readable/README.md)。
+> 最新：[年間収入カードの明朝体統一・320px / 375px比較画像](2026-11-11-salary-annual-serif/README.md)。前回の明朝体・文字色調整は [こちら](2026-11-11-salary-final/README.md)。
 
 
 
