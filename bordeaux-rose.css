@@ -692,3 +692,105 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
   #shiftInputModal #new_preset_start,
   #shiftInputModal #new_preset_end { padding-left: 2px !important; }
 }
+
+/* Schedule rows: keep the time and complete workplace name on one baseline.
+   Paid-leave status gets its own small badge, without splitting the name. */
+#standaloneShiftListContainer > div[id^="list-row-"] {
+  position: relative; padding-right: 14px !important;
+}
+#standaloneShiftListContainer .luxe-row-chevron {
+  position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  margin: 0; width: 8px; flex-basis: 8px;
+}
+#standaloneShiftListContainer .standalone-shift-line > span {
+  display: grid; grid-template-columns: max-content minmax(0,1fr);
+  column-gap: 4px; row-gap: 2px; align-items: baseline;
+}
+#standaloneShiftListContainer .job-time,
+#standaloneShiftListContainer .standalone-workplace-name {
+  white-space: nowrap !important; overflow-wrap: normal !important;
+  font-variant-numeric: tabular-nums;
+}
+#standaloneShiftListContainer .standalone-paid-status {
+  grid-column: 2; justify-self: start; padding: 0 4px;
+  border: 1px solid #e6c7b5; border-radius: 5px; background: #fff3f5;
+  font: 500 11px/1.5 var(--font-ui); color: #85304b; white-space: nowrap;
+}
+@media (max-width: 359px) {
+  #standaloneShiftListContainer .standalone-date { width: 44px !important; min-width: 44px; }
+  #standaloneShiftListContainer .standalone-shift-line .job-time { font-size: 15px !important; }
+  #standaloneShiftListContainer .standalone-workplace-name { font-size: 13px; }
+}
+#tab-list .schedule-instructions { line-height: 1.7; }
+#tab-list .schedule-instructions > span { display: block; white-space: nowrap; }
+
+/* Complete display typography outside the approved salary screen. Inputs and
+   long explanatory copy retain Noto Sans JP for legibility. */
+#shiftInputModal #modalDateTitle,
+#shiftInputModal .job-time,
+#shiftInputModal .shift-section-title,
+#presetRegisterModal h3, #presetRegisterJobName,
+#presetHelpTitle, #shiftUsageHelpModal h3, #breakSelectModal h3,
+#customTimePickerModal .hclock-heading,
+#customTimePickerModal .hclock-digital,
+#customTimePickerModal .hclock-digital button,
+#customClockFace text,
+#tab-guide .guide-steps b {
+  font-family: 'Noto Serif JP', serif !important;
+  font-variant-numeric: tabular-nums;
+}
+/* Gloss stays on the existing heart glyphs: no change to salary hearts or text. */
+#calendarDays .payday-pin-container > span,
+#calendarJobLegend .calendar-payday-legend > span:first-child,
+#standaloneShiftListContainer .luxe-payday-heart {
+  display: inline-block; position: relative;
+  background: linear-gradient(160deg,#ffe5ef 0%,#ffb4d0 25%,#df3e78 48%,#a82050 80%,#ef86b0 100%);
+  color: #d1396e;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 1px #9b1c5038);
+}
+#calendarDays .payday-pin-container > span::after,
+#calendarJobLegend .calendar-payday-legend > span:first-child::after,
+#standaloneShiftListContainer .luxe-payday-heart::after {
+  content: ''; position: absolute; left: 24%; top: 17%;
+  width: 24%; height: 9%; border-radius: 50%; background: #fff9;
+  transform: rotate(-28deg); pointer-events: none;
+}
+/* Canonical registration-state text colours; glossy backgrounds stay intact. */
+#registerShiftButton.unsaved-registration, #registerPresetButton.unsaved-registration,
+#tab-settings button[id^="set_reg_btn_"].unsaved-registration,
+#tab-settings .ito-job-register-button.unsaved-registration {
+  color: #ffe082 !important; -webkit-text-fill-color: #ffe082 !important;
+}
+#registerShiftButton.registration-saved:not(.unsaved-registration),
+#registerPresetButton.registration-saved:not(.unsaved-registration),
+#tab-settings button[id^="set_reg_btn_"].registration-saved:not(.unsaved-registration),
+#tab-settings .ito-job-register-button.registration-saved:not(.unsaved-registration) {
+  color: #fff !important; -webkit-text-fill-color: #fff !important;
+}
+/* Avoid accidental breaks in the short settings labels; the editable values
+   keep the UI font. Give the selected workplace its full six-character room. */
+#tab-settings #settingsJobContentArea > .space-y-3 > .grid.grid-cols-2:first-child > div > span {
+  white-space: nowrap; flex: 0 0 auto;
+  font-family: 'Noto Serif JP', serif !important;
+}
+#tab-settings #settingsJobContentArea > .space-y-3 > .grid.grid-cols-2:first-child > div {
+  min-width: 0; column-gap: 4px;
+}
+#tab-settings #settingsJobContentArea > .space-y-3 > .grid.grid-cols-2:first-child select {
+  min-width: 0; flex: 1 1 auto;
+}
+#itoStickyHeaderHost #hosshiiSettingsPinnedJob,
+#tab-settings #hosshiiSettingsPinnedJob { max-width: 100% !important; padding: 3px 8px !important; }
+@media (max-width: 359px) {
+  #tab-settings #settingsJobContentArea > .space-y-3 > .grid.grid-cols-2:first-child > div { padding: 6px !important; }
+  #tab-settings #settingsJobContentArea > .space-y-3 > .grid.grid-cols-2:first-child > div > span { font-size: 13px !important; }
+  #tab-settings #settingsJobContentArea > .space-y-3 > .grid.grid-cols-2:first-child select { padding: 2px !important; font-size: 14px !important; }
+  #hosshiiSettingsPinnedJob .hosshii-pinned-trigger { font-size: 16px; }
+}
+#shiftInputModal > .bg-white > div:first-child > span,
+#renameJobModal h3,
+#overtimeInfoModal h3, #overtimeInfoModal h4 {
+  font-family: 'Noto Serif JP', serif !important;
+}

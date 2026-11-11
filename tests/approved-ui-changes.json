@@ -16,12 +16,12 @@
   },
   {
     "before": "lineHtml(`${hosshiiShiftTypeMark(jk, !!jobShift.isPaidLeave)}<span class=\"job-time\">${jobShift.start}〜${jobShift.end}</span>`)",
-    "after": "lineHtml(`<span class=\"job-time\">${jobShift.start}〜${jobShift.end}</span><span class=\"standalone-workplace-name\">${esc(jName)}${jobShift.isPaidLeave ? '（有給）' : ''}</span>`)",
+    "after": "lineHtml(`<span class=\"job-time\">${jobShift.start}〜${jobShift.end}</span><span class=\"standalone-workplace-name\">${esc(jName)}</span>${jobShift.isPaidLeave ? '<span class=\"standalone-paid-status\">有給</span>' : ''}`)",
     "reason": "Replace schedule-only shift dot with an escaped workplace name; retain paid-leave status"
   },
   {
     "before": "lineHtml(`${hosshiiShiftTypeMark(jk, true)}<span class=\"job-time\">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span>`)",
-    "after": "lineHtml(`<span class=\"job-time\">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span><span class=\"standalone-workplace-name\">${esc(jName)}（有給）</span>`)",
+    "after": "lineHtml(`<span class=\"job-time\">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span><span class=\"standalone-workplace-name\">${esc(jName)}</span><span class=\"standalone-paid-status\">有給</span>`)",
     "reason": "Name and paid status for paid leave without a time range; hours calculation untouched"
   },
   {
@@ -33,5 +33,10 @@
     "before": "          let note = document.getElementById('hosshiiCopyNotice');\n          if (!note) {\n            note = document.createElement('div'); note.id='hosshiiCopyNotice';",
     "after": "          const noticeId = copyTab === 'tab-list' ? 'hosshiiListCopyNotice' : 'hosshiiCopyNotice';\n          let note = document.getElementById(noticeId);\n          if (!note) {\n            note = document.createElement('div'); note.id=noticeId;",
     "reason": "Keep the expiry copy notice in the invoking view; identical expiry guard and wording"
+  },
+  {
+    "before": "      document.querySelector('#tab-settings .ito-job-register-button')?.classList.add('registration-saved');",
+    "after": "      document.querySelector('#tab-settings .ito-job-register-button')?.classList.remove('unsaved-registration');\n      document.querySelector('#tab-settings .ito-job-register-button')?.classList.add('registration-saved');",
+    "reason": "Clear the dirty UI class only after successful workplace registration; saving and validation unchanged"
   }
 ]

@@ -1753,7 +1753,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         <div class="bg-white p-3.5 rounded-2xl border border-stone-100 space-y-2.5 shadow-sm">
           <div class="text-xs sm:text-sm font-bold text-stone-700 border-b border-stone-100 pb-2 flex flex-col items-start tracking-wide leading-relaxed pl-1 space-y-1">
-            <span class="t13 text-rose-900 font-bold">日付をタップすると、シフトを修正できます♡</span>
+            <span class="t13 schedule-instructions text-rose-900 font-bold"><span>日付をタップすると、</span><span>シフトを修正できます♡</span></span>
 
           </div>
           <div id="standaloneShiftListContainer" class="space-y-2 max-h-[62vh] overflow-y-auto pr-1 text-sm"></div>
@@ -1812,9 +1812,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           <div class="luxe-welcome-card"><p>このアプリは、毎日のバイトやお仕事で忙しい方でも、シフト登録やお給料の計算を簡単にできるように作ったアプリです♪</p>
           <p>複数のバイトを掛け持ちしている方も、シフトやお給料の目安をまとめて確認できます。</p></div>
           <section class="space-y-2"><h3 class="font-bold text-rose-900 text-base"><span class="luxe-section-icon" aria-hidden="true">🌸</span> この順番で進めてね♪</h3>
-            <div class="guide-steps"><p><b>①</b><span>「設定」でバイト先名を登録します。</span></p>
-            <p><b>②</b><span>時間帯ごとの時給や手当を設定します。</span></p>
-            <p><b>③</b><span>「シフト登録」で勤務日時を登録します。</span></p></div>
+            <div class="guide-steps"><p><b>1</b><span>「設定」でバイト先名を登録します。</span></p>
+            <p><b>2</b><span>時間帯ごとの時給や手当を設定します。</span></p>
+            <p><b>3</b><span>「シフト登録」で勤務日時を登録します。</span></p></div>
             <div class="guide-extra">            <p>※「予定表」では、登録したシフトをカレンダーで確認できます。日付を押すと、シフトの確認・変更・削除もできます♡</p>
             <p>💡 詳しい使い方は、各画面の「見てね♡」「確認してね💡」をご覧ください。</p></div>
           </section>
@@ -2990,6 +2990,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         return;
       }
       input.value = '';
+      document.querySelector('#tab-settings .ito-job-register-button')?.classList.remove('unsaved-registration');
       document.querySelector('#tab-settings .ito-job-register-button')?.classList.add('registration-saved');
       renderSettingsJobTabs();
       renderSettingsJobContent(currentSettingsJobKey);
@@ -4504,9 +4505,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             
             if (jobShift.start && jobShift.end) {
               // 予定表の日付内はバイト先名を省き、色付き●と勤務時間だけを表示して時間幅を確保
-              lineItems.push({ order: timeStrToMins(jobShift.start), html: lineHtml(`<span class="job-time">${jobShift.start}〜${jobShift.end}</span><span class="standalone-workplace-name">${esc(jName)}${jobShift.isPaidLeave ? '（有給）' : ''}</span>`) });
+              lineItems.push({ order: timeStrToMins(jobShift.start), html: lineHtml(`<span class="job-time">${jobShift.start}〜${jobShift.end}</span><span class="standalone-workplace-name">${esc(jName)}</span>${jobShift.isPaidLeave ? '<span class="standalone-paid-status">有給</span>' : ''}`) });
             } else if (jobShift.isPaidLeave) {
-              lineItems.push({ order: 9000, html: lineHtml(`<span class="job-time">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span><span class="standalone-workplace-name">${esc(jName)}（有給）</span>`) });
+              lineItems.push({ order: 9000, html: lineHtml(`<span class="job-time">${Number(jobShift.hours || configData[jk]?.paidHours || 0)}時間</span><span class="standalone-workplace-name">${esc(jName)}</span><span class="standalone-paid-status">有給</span>`) });
             }
           });
         });
