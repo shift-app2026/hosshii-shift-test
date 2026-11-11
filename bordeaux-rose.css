@@ -862,8 +862,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
 #tab-settings .settings-job-card,
 #shiftInputModal #modalJobSelectContainer .modal-job-trigger,
 #shiftInputModal #modalJobSelectContainer .modal-job-trigger-name,
-#shiftInputModal #modalShiftListContainer,
-#shiftInputModal #modalPresetContainer,
+#shiftInputModal #modalSelectedDateSummaryContent,
+#shiftInputModal #modalInlinePresetContainer,
 #hosshiiJobMenu .hosshii-job-menu-item {
   font-family: 'Noto Serif JP', serif !important;
   font-variant-numeric: tabular-nums;
@@ -875,7 +875,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
 #tab-settings #hosshiiRegisteredJobCount,
 #tab-settings .paid-sub,
 #shiftInputModal .shift-date-nav button,
-#shiftInputModal #modalPresetContainer .whitespace-nowrap:not(button),
+#shiftInputModal #modalInlinePresetContainer .whitespace-nowrap:not(button),
 #shiftInputModal #modalSelectedDateSummaryContent .job-time,
 #shiftInputModal #modalSelectedDateSummaryContent .whitespace-nowrap:not(button),
 #shiftInputModal #modalBreakDisplayVal {
