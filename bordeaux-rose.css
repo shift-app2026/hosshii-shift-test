@@ -794,3 +794,14 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
 #overtimeInfoModal h3, #overtimeInfoModal h4 {
   font-family: 'Noto Serif JP', serif !important;
 }
+/* Legacy state selectors also removed gloss; keep the same adopted surface
+   before and after registration, changing only the text colour. */
+#registerShiftButton:is(.unsaved-registration,.registration-saved),
+#registerPresetButton:is(.unsaved-registration,.registration-saved),
+#tab-settings button[id^="set_reg_btn_"]:is(.unsaved-registration,.registration-saved),
+#tab-settings .ito-job-register-button:is(.unsaved-registration,.registration-saved) {
+  background: var(--hs-button-gloss) !important;
+  border-color: var(--hs-button-gloss-edge) !important;
+  border-top-color: #f0c5b2 !important;
+  box-shadow: inset 0 2px 2px #fff3e888, inset 0 -3px 5px #24000966, 0 4px 11px #62102c40 !important;
+}
