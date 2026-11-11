@@ -1429,7 +1429,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       </div>
       <div class="flex space-x-2">
         <button type="button" onclick="closeRenameJobModal()" class="flex-1 py-2.5 rounded-xl text-sm font-bold bg-stone-200 text-stone-700 hover:bg-stone-300 transition">キャンセル</button>
-        <button type="button" onclick="submitRenameJobModal()" class="flex-1 py-2.5 rounded-xl text-sm font-bold bg-rose-900 text-rose-50 hover:bg-rose-800 transition shadow-sm">保存する</button>
+        <button type="button" id="saveRenameJobButton" onclick="submitRenameJobModal()" class="flex-1 py-2.5 rounded-xl text-sm font-bold bg-rose-900 text-rose-50 hover:bg-rose-800 transition shadow-sm">保存する</button>
       </div>
     </div>
   </div>
@@ -1843,7 +1843,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     <!-- 設定タブ専用の固定保存ボタン：下部ナビの直上 -->
     <div id="settingsFixedSave" hidden>
-      <button type="button" onclick="saveAndCloseSettings()">閉じる（設定を保存します♡）</button>
+      <button type="button" id="settingsSaveButton" onclick="saveAndCloseSettings()">閉じる（設定を保存します♡）</button>
     </div>
     <!-- 下部タブバー -->
     <div id="hosshiiBottomNav" role="navigation" aria-label="メインメニュー" class="fixed bottom-0 left-0 right-0 z-40 max-w-md mx-auto bg-stone-100/95 border-t border-stone-200 p-1.5 shadow-lg" style="padding-bottom: calc(0.625rem + env(safe-area-inset-bottom, 0px));">
@@ -2227,6 +2227,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       updateShiftEntryLayout();
       renderModalPresetButtons();
       newPresetForm = { start: '00:00', end: '00:00', breakMins: 0 };
+      window.hosshiiRegisterState?.('registerShiftButton', false);
       setModalShiftTypeUIOnly(false);
       renderModalCustomPresets();
       updateModalSelectedDateSummary();
@@ -2280,6 +2281,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       input.placeholder = placeholderName;
       const curName = configData[jk] && configData[jk].name;
       input.value = (curName && curName !== 'バイト') ? curName : '';
+      window.hosshiiRegisterState?.('saveRenameJobButton', false);
       document.getElementById('renameJobModal').classList.remove('hidden');
       setTimeout(() => { input.focus(); input.select(); }, 50);
     }
@@ -2363,6 +2365,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       }
 
       // 保存成功後の画面更新は、保存処理とは分けて実行する
+      window.hosshiiRegisterState?.('saveRenameJobButton', true);
       closeRenameJobModal();
       try {
         renderModalJobTabs();
@@ -2655,6 +2658,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (!modal || !field) return;
       field.value = monthlyGoal > 0 ? String(monthlyGoal) : '';
       document.getElementById('t31GoalError').textContent = '';
+      window.hosshiiRegisterState?.('goalSubmitButton', false);
       modal.hidden = false;
       requestAnimationFrame(() => field.focus());
     }
@@ -2679,7 +2683,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const input = document.getElementById('goalAmountHeader');
       if (!input) return;
       input.value = cleaned;
-      saveInlineMonthlyGoal(input);
+      if (!saveInlineMonthlyGoal(input)) return;
+      window.hosshiiRegisterState?.('goalSubmitButton', true);
       closeMonthlyGoalDialog();
     }
 
@@ -2688,7 +2693,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (!input) return;
       const clean = parseFormattedNumber(input.value);
       monthlyGoal = clean;
-      saveAllDataStorage();
+      const saved = saveAllDataStorage();
       updatePeriodProgressWidget();
       test8UpdateGoalLabel();
       if (clean > 0) {
@@ -2696,6 +2701,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       } else {
         input.value = '';
       }
+      return saved;
     }
 
     function getJobPayPeriodRangeForReceiveMonth(job, offset = 0) {
@@ -3259,6 +3265,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         } else { dateEl.textContent=''; }
       }
       renderClockDial();
+      window.hosshiiRegisterState?.('timeSelectionRegisterButton', false);
       modal.classList.remove('hidden');modal.classList.add('flex');
     }
     function closeCustomTimePicker() {
@@ -3273,6 +3280,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         el.value=String(dialHour).padStart(2,'0')+':'+String(dialMinute).padStart(2,'0');
         el.dispatchEvent(new Event('input',{bubbles:true}));
         el.dispatchEvent(new Event('change',{bubbles:true}));
+        window.hosshiiRegisterState?.('timeSelectionRegisterButton', true);
       }
       closeCustomTimePicker();
     }
@@ -3280,7 +3288,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function wageSlotRowHtml(i, s) {
       const ok = !!(s.start && s.end && s.wage > 0);
-      const regCls = ok ? "bg-rose-900 text-rose-50 hover:bg-rose-800" : "bg-stone-100 text-stone-600 hover:bg-stone-200 border border-stone-300";
+      const regCls = ok ? "bg-rose-900 text-rose-50 hover:bg-rose-800 registration-saved" : "bg-stone-100 text-stone-600 hover:bg-stone-200 border border-stone-300";
       const sel = v => (s.bType === v ? 'selected' : '');
       return `
         <div data-slot="${i}" class="p-2 rounded-xl border border-stone-200 bg-stone-50/40 space-y-2">
@@ -3478,7 +3486,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
               <span class="font-bold text-stone-800 job-time">${p.start} ～ ${p.end}</span>
               ${breakMins > 0 ? `<span class="font-bold text-stone-600 whitespace-nowrap">休憩${breakMins}分</span>` : ''}
               <div class="flex items-center gap-1.5 shrink-0">
-                <button type="button" onclick="registerFromPresetList('${p.start}', '${p.end}', ${breakMins})"
+                <button type="button" data-register-preset="${p.start}|${p.end}|${breakMins}" onclick="registerFromPresetList('${p.start}', '${p.end}', ${breakMins}, this)"
                         class="bg-rose-50 text-rose-900 border border-rose-200 hover:bg-rose-100 py-1.5 px-3 rounded-lg font-bold transition text-xs">登録</button>
                 <button type="button" onclick="deleteModalPresetRow(${idx})"
                         class="bg-stone-200 text-stone-700 hover:bg-stone-300 py-1.5 px-2.5 rounded-lg font-bold transition text-xs">削除</button>
@@ -3495,11 +3503,15 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
 
-    function registerFromPresetList(start,end,breakMins) {
+    function registerFromPresetList(start,end,breakMins,button) {
       if (hosshiiBlockEdit()) return false;
       const ok = registerModalPresetTime(start,end,breakMins);
       if(ok) {
         closePresetRegisterModal();
+        const key = `${start}|${end}|${Number(breakMins) || 0}`;
+        document.querySelectorAll('[data-register-preset]').forEach(el => {
+          if (el.dataset.registerPreset === key) window.hosshiiRegisterState?.(el, true);
+        });
         if (shiftOpenedFromCalendar) closeShiftInputModal();
       }
     }
@@ -3608,7 +3620,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       clearPresetRegisterForm();
       const label = document.getElementById('presetRegisterJobName');
       if (label) label.innerHTML = '<span class="job-color-dot" style="width:10px;height:10px;border-radius:50%;background:'+getJobPalette(currentSelectedJobKey).dot+'"></span>' + esc(getJobDisplayName(currentSelectedJobKey));
-      window.markRegisterSaved?.('registerPresetButton');
+      window.hosshiiRegisterState?.('registerPresetButton', false);
       renderModalPresetButtons();
       document.getElementById('presetRegisterModal').classList.remove('hidden');
     }
@@ -4653,7 +4665,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (window.hosshiiReadOnly === true) { switchTab('clock'); return true; }
       if (hosshiiBlockEdit()) return false;
       try {
-        if (saveSettings()) switchTab('clock');
+        if (saveSettings()) {
+          window.hosshiiRegisterState?.('settingsSaveButton', true);
+          switchTab('clock');
+        }
       } catch (error) {
         console.error('設定の保存に失敗しました', error);
         showToast('設定を保存できませんでした。入力内容を確認して、もう一度お試しください。');
@@ -5057,7 +5072,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         <div class="hclock-digital"><button type="button" id="clockHourDisplay" aria-label="時を選ぶ" aria-pressed="true" onclick="setClockMode('hour')">09</button><span>:</span><button type="button" id="clockMinuteDisplay" aria-label="分を選ぶ" aria-pressed="false" onclick="setClockMode('minute')">00</button></div>
         <div class="hclock-area">
           <svg id="customClockFace" viewBox="0 0 280 280" role="group" aria-label="24時間表示の時計文字盤" onpointerdown="clockPointerDown(event)" onpointermove="clockPointerMove(event)" onpointerup="clockPointerUp(event)" onpointercancel="clockPointerUp(event)"></svg>
-          <button type="button" class="hclock-action hclock-save" onclick="applyCustomTimePicker()">登録</button>
+          <button type="button" id="timeSelectionRegisterButton" class="hclock-action hclock-save" onclick="applyCustomTimePicker()">登録</button>
           <button type="button" class="hclock-action hclock-cancel" onclick="closeCustomTimePicker()">取消</button>
         </div>
       </div>
@@ -5070,6 +5085,33 @@ background:#881337!important;background-color:#881337!important;border-color:#88
  window.showShiftHelp=function(){document.getElementById('shiftUsageHelpModal')?.classList.remove('hidden');};
  window.closeShiftHelp=function(){document.getElementById('shiftUsageHelpModal')?.classList.add('hidden');};
  window.confirmShiftDeletion=function(jk,idx){deleteJobShiftIndexModal(jk,idx);};
+})();
+</script>
+<script id="accessible-registration-ui">
+(function(){
+ const selector='#registerShiftButton,#registerPresetButton,#tab-settings button[id^="set_reg_btn_"],#tab-settings .ito-job-register-button,#saveRenameJobButton,#goalSubmitButton,#timeSelectionRegisterButton,#settingsSaveButton,[data-register-preset]';
+ window.hosshiiRegisterState=function(target,saved){
+  const el=typeof target==='string'?document.getElementById(target):target;
+  if(!el)return;
+  el.classList.toggle('registration-saved',!!saved);
+  el.classList.toggle('unsaved-registration',!saved);
+ };
+ function dirty(target){window.hosshiiRegisterState(target,false)}
+ document.addEventListener('click',e=>{const button=e.target.closest?.(selector);if(button)dirty(button)},true);
+ ['input','change'].forEach(type=>document.addEventListener(type,e=>{
+  const t=e.target;
+  if(t.closest?.('#shiftInputModal'))dirty('registerShiftButton');
+  if(t.closest?.('#presetRegisterModal'))dirty('registerPresetButton');
+  if(t.id==='newJobNameInput')dirty(document.querySelector('#tab-settings .ito-job-register-button'));
+  if(t.id==='renameJobInput')dirty('saveRenameJobButton');
+  if(t.id==='t31GoalInput')dirty('goalSubmitButton');
+  if(t.closest?.('#settingsJobContentArea')){
+   dirty('settingsSaveButton');
+   const m=t.id?.match(/^set_(?:time|wage|btype|bval)_(\d+)(?:_(?:start|end))?$/);
+   if(m)dirty('set_reg_btn_'+m[1]);
+  }
+ },true));
+ document.addEventListener('pointerup',e=>{if(e.target.closest?.('#customClockFace'))dirty('timeSelectionRegisterButton')},true);
 })();
 </script>
 <script id="shared-oct22-registration-state">
@@ -5691,7 +5733,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     <p id="t31GoalError" class="t31-error" role="alert"></p>
     <div class="t31-actions">
       <button type="button" onclick="closeMonthlyGoalDialog()">キャンセル</button>
-      <button type="submit">登録</button>
+      <button type="submit" id="goalSubmitButton">登録</button>
     </div>
   </form>
 </div>

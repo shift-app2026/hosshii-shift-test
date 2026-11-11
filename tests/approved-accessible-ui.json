@@ -1,0 +1,97 @@
+[
+  {
+    "before": "      window.markRegisterSaved?.('registerPresetButton');\n      renderModalPresetButtons();\n      document.getElementById('presetRegisterModal').classList.remove('hidden');",
+    "after": "      window.hosshiiRegisterState?.('registerPresetButton', false);\n      renderModalPresetButtons();\n      document.getElementById('presetRegisterModal').classList.remove('hidden');",
+    "reason": "Opening an empty preset form is not successful persistence"
+  },
+  {
+    "before": "      newPresetForm = { start: '00:00', end: '00:00', breakMins: 0 };\n      setModalShiftTypeUIOnly(false);\n      renderModalCustomPresets();\n      updateModalSelectedDateSummary();",
+    "after": "      newPresetForm = { start: '00:00', end: '00:00', breakMins: 0 };\n      window.hosshiiRegisterState?.('registerShiftButton', false);\n      setModalShiftTypeUIOnly(false);\n      renderModalCustomPresets();\n      updateModalSelectedDateSummary();",
+    "reason": "New shift action starts unsaved"
+  },
+  {
+    "before": "onclick=\"submitRenameJobModal()\" class=",
+    "after": "id=\"saveRenameJobButton\" onclick=\"submitRenameJobModal()\" class=",
+    "reason": "Identify rename commit control"
+  },
+  {
+    "before": "onclick=\"saveAndCloseSettings()\">閉じる",
+    "after": "id=\"settingsSaveButton\" onclick=\"saveAndCloseSettings()\">閉じる",
+    "reason": "Identify existing settings save control"
+  },
+  {
+    "before": "class=\"hclock-action hclock-save\" onclick=",
+    "after": "id=\"timeSelectionRegisterButton\" class=\"hclock-action hclock-save\" onclick=",
+    "reason": "Identify time-selection confirmation"
+  },
+  {
+    "before": "<button type=\"submit\">登録</button>",
+    "after": "<button type=\"submit\" id=\"goalSubmitButton\">登録</button>",
+    "reason": "Identify goal commit control"
+  },
+  {
+    "before": "      document.getElementById('renameJobModal').classList.remove('hidden');",
+    "after": "      window.hosshiiRegisterState?.('saveRenameJobButton', false);\n      document.getElementById('renameJobModal').classList.remove('hidden');",
+    "reason": "Rename starts uncommitted"
+  },
+  {
+    "before": "      // 保存成功後の画面更新は、保存処理とは分けて実行する\n      closeRenameJobModal();",
+    "after": "      // 保存成功後の画面更新は、保存処理とは分けて実行する\n      window.hosshiiRegisterState?.('saveRenameJobButton', true);\n      closeRenameJobModal();",
+    "reason": "Rename success indication only after checked persistence"
+  },
+  {
+    "before": "      modal.hidden = false;\n      requestAnimationFrame(() => field.focus());",
+    "after": "      window.hosshiiRegisterState?.('goalSubmitButton', false);\n      modal.hidden = false;\n      requestAnimationFrame(() => field.focus());",
+    "reason": "Goal starts uncommitted"
+  },
+  {
+    "before": "      saveInlineMonthlyGoal(input);\n      closeMonthlyGoalDialog();",
+    "after": "      if (!saveInlineMonthlyGoal(input)) return;\n      window.hosshiiRegisterState?.('goalSubmitButton', true);\n      closeMonthlyGoalDialog();",
+    "reason": "Keep goal UI unsaved and open on persistence failure"
+  },
+  {
+    "before": "      monthlyGoal = clean;\n      saveAllDataStorage();\n      updatePeriodProgressWidget();",
+    "after": "      monthlyGoal = clean;\n      const saved = saveAllDataStorage();\n      updatePeriodProgressWidget();",
+    "reason": "Pass the unchanged save result to the goal UI"
+  },
+  {
+    "before": "        input.value = '';\n      }\n    }\n\n    function getJobPayPeriodRangeForReceiveMonth",
+    "after": "        input.value = '';\n      }\n      return saved;\n    }\n\n    function getJobPayPeriodRangeForReceiveMonth",
+    "reason": "Return save result without changing calculation or storage"
+  },
+  {
+    "before": "      renderClockDial();\n      modal.classList.remove('hidden');modal.classList.add('flex');",
+    "after": "      renderClockDial();\n      window.hosshiiRegisterState?.('timeSelectionRegisterButton', false);\n      modal.classList.remove('hidden');modal.classList.add('flex');",
+    "reason": "Time selection starts unconfirmed"
+  },
+  {
+    "before": "        el.dispatchEvent(new Event('change',{bubbles:true}));\n      }\n      closeCustomTimePicker();",
+    "after": "        el.dispatchEvent(new Event('change',{bubbles:true}));\n        window.hosshiiRegisterState?.('timeSelectionRegisterButton', true);\n      }\n      closeCustomTimePicker();",
+    "reason": "Confirm selection after a target value is applied"
+  },
+  {
+    "before": "        if (saveSettings()) switchTab('clock');",
+    "after": "        if (saveSettings()) {\n          window.hosshiiRegisterState?.('settingsSaveButton', true);\n          switchTab('clock');\n        }",
+    "reason": "Settings success indication follows the existing checked save"
+  },
+  {
+    "before": "      const regCls = ok ? \"bg-rose-900 text-rose-50 hover:bg-rose-800\"",
+    "after": "      const regCls = ok ? \"bg-rose-900 text-rose-50 hover:bg-rose-800 registration-saved\"",
+    "reason": "Existing persisted wage rows are saved until edited"
+  },
+  {
+    "before": "onclick=\"registerFromPresetList('${p.start}', '${p.end}', ${breakMins})\"",
+    "after": "data-register-preset=\"${p.start}|${p.end}|${breakMins}\" onclick=\"registerFromPresetList('${p.start}', '${p.end}', ${breakMins}, this)\"",
+    "reason": "Identify each quick register action"
+  },
+  {
+    "before": "    function registerFromPresetList(start,end,breakMins) {",
+    "after": "    function registerFromPresetList(start,end,breakMins,button) {",
+    "reason": "Accept UI source only"
+  },
+  {
+    "before": "      if(ok) {\n        closePresetRegisterModal();",
+    "after": "      if(ok) {\n        closePresetRegisterModal();\n        const key = `${start}|${end}|${Number(breakMins) || 0}`;\n        document.querySelectorAll('[data-register-preset]').forEach(el => {\n          if (el.dataset.registerPreset === key) window.hosshiiRegisterState?.(el, true);\n        });",
+    "reason": "Quick-register success follows actual registration result and refreshed controls"
+  }
+]

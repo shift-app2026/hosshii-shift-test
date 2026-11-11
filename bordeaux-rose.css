@@ -973,3 +973,92 @@ body:has(#tab-clock.hidden) #itoStickyHeaderHost #hosshiiTrialBanner * {
 #hosshiiTrialBanner .hosshii-trial-status-line { font-weight: 700 !important; }
 
 #appCard #tab-clock .hc-cols { grid-template-columns: minmax(0,4fr) repeat(2,minmax(0,3fr)); column-gap: 4px; }
+
+/* Mobile one-size typography. Fixed sizes per role avoid nested em scaling. */
+:root { --hs-readable-ink: #21151a; --hs-nav-height: calc(90px + env(safe-area-inset-bottom,0px)); }
+:is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#hosshiiJobMenu) { font-size: 15px; }
+:is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#t31GoalModal)
+:is(.text-xs,.t13,small):not(#goalRing,#goalRing *,h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *) { font-size:14px !important; }
+:is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#t31GoalModal)
+:is(.text-sm,p,label):not(#goalRing,#goalRing *,h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *) { font-size:15px; }
+:is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#t31GoalModal)
+:is(input,textarea) { font-size:17px !important; }
+:is(#tab-settings,#shiftInputModal,#presetRegisterModal,#breakSelectModal) :is(select,option) { font-size:15px !important; }
+#appCard #tab-clock :is(.hosshii-ring-note,.ito-wall-note,#yearlySubLabel) { font-size:15px !important; font-weight:700 !important; }
+#appCard #tab-clock .hc-comparison .hc-row > span { font-size:15px !important; }
+#appCard #tab-clock .hosshii-monthly-detail-card { padding:8px !important; }
+#appCard #tab-clock .hc-job-card { padding:8px 4px; }
+#appCard #tab-clock :is(.hc-cols,.hc-row) { grid-template-columns:minmax(0,38fr) repeat(2,minmax(0,31fr)); }
+#appCard #tab-clock .hc-cols strong { font-size:15px !important; letter-spacing:-.04em; }
+#appCard #tab-clock .hc-job-title > span { font-size:15px !important; }
+#tab-clock #incomeWallBox :is(label,select,.ito-wall-note,#itoWallRemainingLabel) { font-size:15px !important; }
+#tab-clock #itoWallRemainingAmount { font-size:17px !important; }
+#standaloneShiftListContainer .standalone-shift-line .job-time { font-size:16px !important; }
+#standaloneShiftListContainer .standalone-workplace-name { font-size:14px; font-weight:700 !important; }
+#standaloneShiftListContainer .luxe-day-number { font-size:16px; }
+#standaloneShiftListContainer .luxe-day-week { font-size:13px; }
+#standaloneShiftListContainer .standalone-paid-status { font-size:12px; padding:0 2px; }
+#standaloneShiftListContainer .standalone-shift-line > span { column-gap:3px; }
+#standaloneShiftListContainer .luxe-payday-label { font-size:15px; }
+#tab-list .schedule-instructions { font-size:14px !important; }
+#standaloneShiftListContainer > div[id^="list-row-"] { padding-right:10px !important; }
+#tab-settings :is(.paid-sub,.paid-note,.hosshii-register-limit) { font-size:14px !important; }
+#tab-settings .hosshii-allowance-section-title { font-size:14px !important; }
+#tab-settings #settingsJobContentArea > .space-y-3 > .grid.grid-cols-2:first-child > div { padding:6px !important; gap:3px; }
+#tab-settings #settingsJobContentArea > .space-y-3 > .grid.grid-cols-2:first-child > div > span { font-size:14px !important; }
+#tab-settings #settingsJobContentArea > .space-y-3 > .grid.grid-cols-2:first-child select { padding:2px !important; font-size:15px !important; }
+#tab-guide .luxe-welcome-card p { font-size:16px !important; }
+#tab-guide .guide-steps p { font-size:15px !important; }
+#tab-guide .guide-extra p { font-size:14px !important; line-height:1.8; }
+#shiftInputModal,#presetRegisterModal { padding:6px !important; }
+#shiftInputModal > .bg-white,#presetRegisterModal > .bg-white { padding:10px !important; max-height:calc(100dvh - 12px) !important; }
+#shiftInputScrollArea { padding-right:2px !important; }
+#shiftInputModal #modalJobSelectContainer .modal-job-trigger { font-size:16px !important; }
+#shiftInputModal #modalBreakDisplayVal,#presetRegisterModal #pr_break_disp { font-size:14px !important; }
+#shiftInputModal #shiftInputScrollArea .hosshii-paid-entry-note { font-size:14px !important; line-height:1.7; }
+#shiftInputModal #modalInlinePresetContainer > div,#presetRegisterModal #modalPresetContainer > div {
+ display:grid; grid-template-columns:minmax(0,1fr) auto; column-gap:6px; row-gap:2px; padding:8px 6px;
+}
+#shiftInputModal #modalInlinePresetContainer > div > .job-time,#presetRegisterModal #modalPresetContainer > div > .job-time { grid-column:1; grid-row:1; font-size:16px !important; }
+#shiftInputModal #modalInlinePresetContainer > div > span:not(.job-time),#presetRegisterModal #modalPresetContainer > div > span:not(.job-time) { grid-column:1; grid-row:2; font-size:14px !important; }
+#shiftInputModal #modalInlinePresetContainer > div > div,#presetRegisterModal #modalPresetContainer > div > div { grid-column:2; grid-row:1 / span 2; }
+#shiftInputModal #modalInlinePresetContainer button,#presetRegisterModal #modalPresetContainer button { font-size:14px !important; padding:6px !important; }
+#shiftInputModal #modalSelectedDateSummaryContent .job-time { font-size:17px !important; }
+#shiftInputModal #modalSelectedDateSummaryContent button { font-size:14px !important; }
+:is(#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#presetHelpModal,#shiftUsageHelpModal) > .bg-white { max-height:calc(100dvh - 16px); overflow-y:auto; }
+#customTimePickerModal .hclock-digital button { font-size:31px !important; }
+#customClockFace text { font-size:20px; }
+#customTimePickerModal .hclock-identity { font-size:14px !important; }
+#customTimePickerModal .hclock-action { font-size:15px !important; }
+#t31GoalModal #t31GoalInput { font-size:21px !important; }
+#hosshiiBottomNav .tab-btn { height:74px !important; min-height:74px !important; gap:4px; padding:4px 1px !important; }
+#hosshiiBottomNav .tab-btn:not(.active) { color:var(--hs-readable-ink) !important; -webkit-text-fill-color:var(--hs-readable-ink) !important; }
+#hosshiiBottomNav .hosshii-nav-label { font-size:13px !important; line-height:1.25; font-weight:800; letter-spacing:0; }
+#hosshiiBottomNav .hosshii-nav-icon { width:24px; height:24px; flex-basis:24px; stroke-width:2.05; }
+@media(max-width:359px){
+ #appCard #tab-clock .hc-cols strong { font-size:14px !important; }
+ #appCard #tab-clock .hc-comparison .hc-row > span { font-size:14px !important; }
+ #standaloneShiftListContainer .standalone-shift-line .job-time { font-size:15px !important; }
+ #standaloneShiftListContainer .standalone-workplace-name { font-size:13px; }
+ #tab-list > .bg-white:has(.schedule-instructions) { padding:4px !important; }
+ #hosshiiBottomNav .hosshii-nav-icon { width:21px; height:21px; flex-basis:21px; }
+ #shiftInputModal #modalSelectedDateSummaryContent .job-time { font-size:16px !important; }
+}
+/* All actual commit controls: gold until a checked save/selection succeeds. */
+#appCard #tab-settings .ito-job-register-button,
+#appCard #tab-settings button[id^="set_reg_btn_"],
+#shiftInputModal #registerShiftButton,#presetRegisterModal #registerPresetButton,
+#renameJobModal #saveRenameJobButton,#t31GoalModal #goalSubmitButton,
+#customTimePickerModal #timeSelectionRegisterButton,#settingsFixedSave #settingsSaveButton,
+#shiftInputModal [data-register-preset],#presetRegisterModal [data-register-preset] {
+ background:var(--hs-button-gloss) !important; border-color:var(--hs-button-gloss-edge) !important;
+ color:#ffe082 !important; -webkit-text-fill-color:#ffe082 !important;
+}
+#appCard #tab-settings .ito-job-register-button.registration-saved:not(.unsaved-registration),
+#appCard #tab-settings button[id^="set_reg_btn_"].registration-saved:not(.unsaved-registration),
+#shiftInputModal #registerShiftButton.registration-saved:not(.unsaved-registration),#presetRegisterModal #registerPresetButton.registration-saved:not(.unsaved-registration),
+#renameJobModal #saveRenameJobButton.registration-saved:not(.unsaved-registration),#t31GoalModal #goalSubmitButton.registration-saved:not(.unsaved-registration),
+#customTimePickerModal #timeSelectionRegisterButton.registration-saved:not(.unsaved-registration),#settingsFixedSave #settingsSaveButton.registration-saved:not(.unsaved-registration),
+#shiftInputModal [data-register-preset].registration-saved:not(.unsaved-registration),#presetRegisterModal [data-register-preset].registration-saved:not(.unsaved-registration) {
+ color:#fff !important; -webkit-text-fill-color:#fff !important;
+}
