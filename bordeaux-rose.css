@@ -978,9 +978,9 @@ body:has(#tab-clock.hidden) #itoStickyHeaderHost #hosshiiTrialBanner * {
 :root { --hs-readable-ink: #21151a; --hs-nav-height: calc(90px + env(safe-area-inset-bottom,0px)); }
 :is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#hosshiiJobMenu) { font-size: 15px; }
 :is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#t31GoalModal)
-:is(.text-xs,.t13,small):not(#goalRing,#goalRing *,h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *) { font-size:14px !important; }
+:is(.text-xs,.t13,small):not(input,select,textarea,option,#goalRing,#goalRing *,h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *) { font-size:14px !important; }
 :is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#t31GoalModal)
-:is(.text-sm,p,label):not(#goalRing,#goalRing *,h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *) { font-size:15px; }
+:is(.text-sm,p,label):not(input,select,textarea,option,#goalRing,#goalRing *,h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *) { font-size:15px; }
 :is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#tab-guide,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#t31GoalModal)
 :is(input,textarea) { font-size:17px !important; }
 :is(#tab-settings,#shiftInputModal,#presetRegisterModal,#breakSelectModal) :is(select,option) { font-size:15px !important; }
@@ -1094,12 +1094,12 @@ html body #presetRegisterModal #pr_start,html body #presetRegisterModal #pr_end,
 }
 /* Canonical text roles override old per-component utility sizes. */
 html body #appCard #appScroll :is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#tab-guide)
-:is(p,label,.text-sm):not(#goalRing,#goalRing *,h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *,.wage-setting-title) { font-size:16px !important; }
+:is(p,label,.text-sm):not(input,select,textarea,option,#goalRing,#goalRing *,h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *,.wage-setting-title) { font-size:16px !important; }
 html body #appCard #appScroll :is(#tab-clock,#tab-calendar,#tab-list,#tab-settings,#tab-guide)
-:is(.text-xs,small):not(#goalRing,#goalRing *,h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *) { font-size:15px !important; }
+:is(.text-xs,small):not(input,select,textarea,option,#goalRing,#goalRing *,h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *) { font-size:15px !important; }
 /* Repeating the dialog scope beats legacy two-ID rules without touching data code. */
 :is(#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal)
-:is(p,label,.text-sm):not(h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *,.hosshii-paid-entry-note,.ito-preset-desc) { font-size:16px !important; }
+:is(p,label,.text-sm):not(input,select,textarea,option,h1,h1 *,h2,h2 *,h3,h3 *,h4,h4 *,svg,svg *,.hosshii-paid-entry-note,.ito-preset-desc) { font-size:16px !important; }
 #shiftInputModal #shiftInputScrollArea .ito-preset-desc { font-size:15px !important; }
 #shiftInputModal #shiftInputScrollArea .hosshii-paid-entry-note { font-size:14px !important; }
 #shiftInputModal #modalPaidToggleHeaderSlot button,#shiftInputModal #registerShiftButton { font-size:15px !important; }
@@ -1148,3 +1148,10 @@ html body #appCard #appScroll :is(#tab-clock,#tab-calendar,#tab-list,#tab-settin
  #shiftInputModal #modalInlinePresetContainer > div > .job-time,#presetRegisterModal #modalPresetContainer > div > .job-time { font-size:16px !important; }
  #customTimePickerModal .hclock-action { font-size:13px !important; }
 }
+
+#overtimeInfoModal #wageInfoModalTitle { font-size:16px !important; }
+#shiftInputModal .ito-modal-job-row .shift-section-title { font-size:16px !important; }
+#itoStickyHeaderHost .luxe-guide-note { font-size:15px !important; }
+#appCard #tab-guide a { font-size:16px !important; }
+#appCard #tab-settings .allowance-period-grid > div > span { font-size:15px !important; }
+#calendarTodaySummaryContent .selected-shift-delete { font-size:15px !important; }
