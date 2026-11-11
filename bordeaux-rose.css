@@ -548,3 +548,31 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
   line-height: 1.8 !important;
 }
 #tab-clock .hosshii-ring-note, #tab-clock .ito-wall-note { color: #5d5054 !important; }
+
+/* Final salary typography: match the month serif; retain all sizing and geometry.
+   These pinned elements originate in the salary tab, even after reparenting. */
+.oct23-sticky-pay button[onclick^="changePayPeriodOffset"],
+#hosshiiTrialBanner .hosshii-trial-status-line,
+#tab-clock #itoReceiveTable .hc-job-title > span {
+  font-family: 'Noto Serif JP', serif !important;
+}
+/* Ordinary salary copy only. Ring centre, wine/white controls and red emphasis
+   deliberately keep their existing colours (including income-wall amounts). */
+#tab-clock #test30Yen,
+#tab-clock #test30GoalDisplay,
+#tab-clock .hc-cols,
+#tab-clock .hc-cols strong,
+#tab-clock .hc-comparison .hc-row > span,
+#tab-clock #itoReceiveTable .hc-job-title strong,
+#tab-clock #itoReceiveTable .hc-job-title > span,
+#tab-clock #yearlyTitleLabel,
+#tab-clock #yearlySubLabel,
+#tab-clock #yearlyTotalPay,
+#tab-clock #incomeWallBox .t23-wall-heading,
+#tab-clock .ito-wall-selector-row > label,
+#tab-clock #itoWallRemainingLabel,
+#tab-clock .hosshii-ring-note,
+#tab-clock .ito-wall-note,
+#hosshiiTrialBanner .hosshii-payment-preparing {
+  color: #302027 !important;
+}
