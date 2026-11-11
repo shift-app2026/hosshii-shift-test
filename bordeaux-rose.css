@@ -810,3 +810,10 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
   font-family: 'Noto Serif JP', serif !important;
   font-variant-numeric: tabular-nums;
 }
+/* Guide steps: plain wine-red numerals, with no round glyph or badge surface.
+   Keep the existing number-column width and the explanation-card geometry. */
+#tab-guide .guide-steps b {
+  background: none !important; border: 0 !important;
+  border-radius: 0 !important; box-shadow: none !important;
+  color: #881337 !important; -webkit-text-fill-color: #881337 !important;
+}
