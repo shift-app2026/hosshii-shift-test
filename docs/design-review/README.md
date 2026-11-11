@@ -1,6 +1,6 @@
 # ボルドー＆ローズシャンパン：デザイン変更と検証
 
-> 最新：[勤務先0件の起動修正・5項目検証・未公開の携帯用プレビューと安全性](2026-11-11-empty-workplace/README.md)。デザイン比較は [こちら](2026-11-11-final-additions/README.md)。
+> 最新：[携帯で読みやすい濃い文字・1行の入金予定見出し・最新版ZIP、320px / 375px比較](2026-11-11-readable-ink/README.md)。前回の起動修正は [こちら](2026-11-11-empty-workplace/README.md)。
 
 
 

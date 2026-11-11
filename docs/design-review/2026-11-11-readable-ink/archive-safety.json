@@ -1,0 +1,27 @@
+{
+  "archive": "hosshii-pr8-readable-23dffe8.zip",
+  "bytes": 13618303,
+  "sha256": "c9348a1c9efb4735c910b90dbdb6d5d4da1035d80004d72ac5982980ee9d80e3",
+  "files": 265,
+  "fontFiles": 250,
+  "unexpectedFiles": [],
+  "secretOrServiceEndpointFindings": [],
+  "crcCheck": "PASS",
+  "allFileHashes": "PASS",
+  "rootIndex": true,
+  "source": {
+    "sourceRepository": "shift-app2026/hosshii-shift-test",
+    "sourcePR": 8,
+    "sourceBranch": "design/bordeaux-rose-champagne",
+    "sourceCommit": "23dffe88b8849770223dd2bf480b64e2ed775fec",
+    "sourceHashes": {
+      "index.html": "8db00eb271db362d535ab6ad6938a4cffb3c4be218fe496e8e3d268bb78c54da",
+      "bordeaux-rose.css": "d67961e927450ab07ecfdc24847dcb15e4ff3db9adc738969638361778c0728f"
+    },
+    "fontFiles": 250,
+    "previewOnly": true,
+    "storage": "fresh in-memory fixtures per page load; no persistent storage",
+    "externalServices": "excluded; connect-src none"
+  },
+  "publication": "GitHub download-only branch download/pr8-readable-23dffe8; no Pages deployment"
+}
