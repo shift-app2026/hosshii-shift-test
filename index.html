@@ -2683,7 +2683,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const input = document.getElementById('goalAmountHeader');
       if (!input) return;
       input.value = cleaned;
-      if (!saveInlineMonthlyGoal(input)) return;
+      if (!saveInlineMonthlyGoal(input)) {
+        error.textContent = document.getElementById('alertModalText')?.textContent || '保存できませんでした。';
+        closeAlertModal();
+        return;
+      }
       window.hosshiiRegisterState?.('goalSubmitButton', true);
       closeMonthlyGoalDialog();
     }
@@ -5104,7 +5108,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   if(t.closest?.('#presetRegisterModal'))dirty('registerPresetButton');
   if(t.id==='newJobNameInput')dirty(document.querySelector('#tab-settings .ito-job-register-button'));
   if(t.id==='renameJobInput')dirty('saveRenameJobButton');
-  if(t.id==='t31GoalInput')dirty('goalSubmitButton');
+  if(t.id==='t31GoalInput'){dirty('goalSubmitButton');document.getElementById('t31GoalError').textContent='';}
   if(t.closest?.('#settingsJobContentArea')){
    dirty('settingsSaveButton');
    const m=t.id?.match(/^set_(?:time|wage|btype|bval)_(\d+)(?:_(?:start|end))?$/);

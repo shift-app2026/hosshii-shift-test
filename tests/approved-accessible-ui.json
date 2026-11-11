@@ -46,7 +46,7 @@
   },
   {
     "before": "      saveInlineMonthlyGoal(input);\n      closeMonthlyGoalDialog();",
-    "after": "      if (!saveInlineMonthlyGoal(input)) return;\n      window.hosshiiRegisterState?.('goalSubmitButton', true);\n      closeMonthlyGoalDialog();",
+    "after": "      if (!saveInlineMonthlyGoal(input)) {\n        error.textContent = document.getElementById('alertModalText')?.textContent || '保存できませんでした。';\n        closeAlertModal();\n        return;\n      }\n      window.hosshiiRegisterState?.('goalSubmitButton', true);\n      closeMonthlyGoalDialog();",
     "reason": "Keep goal UI unsaved and open on persistence failure"
   },
   {
