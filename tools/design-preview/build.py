@@ -39,7 +39,7 @@ for n in ['icon-192.png']:(OUT/n).write_bytes((ROOT/n).read_bytes())
 fdir=OUT/'fonts';fdir.mkdir(exist_ok=True)
 if args.font_cache:
  for file in args.font_cache.iterdir():
-  if file.is_file():shutil.copyfile(file,fdir/file.name)
+  if file.is_file() and (re.fullmatch(r'[0-9a-f]{20}\.woff2',file.name) or file.name in ['fonts.css','notosansjp-OFL.txt','notoserifjp-OFL.txt','cinzel-OFL.txt']):shutil.copyfile(file,fdir/file.name)
  css=(fdir/'fonts.css').read_text()
  assert not re.search(r'url\([\"\']?https?://',css), 'Cache must contain local fonts only'
  urls=list(fdir.glob('*.woff2'))

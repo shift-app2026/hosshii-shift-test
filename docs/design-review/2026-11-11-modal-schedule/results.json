@@ -1,0 +1,6853 @@
+{
+  "sourceCommit": "c2be24eeb225b5377fe1225ef5a068091c79341e",
+  "baselineCommit": "c6ca41b6912ff8b74d605910f4edf5d4751f97f4",
+  "modalHtmlIdentical": true,
+  "designCssIdentical": true,
+  "inlineStylesIdentical": true,
+  "states": [
+    {
+      "width": 320,
+      "variant": "preview-after",
+      "data": {
+        "readOnlyNotice": null,
+        "firstSectionMargin": "0px",
+        "presets": 2,
+        "scrollViewportHeight": 273.84375,
+        "scrollHeight": 503,
+        "headings": [
+          {
+            "selector": ".shift-preset-section .preset-inline-heading",
+            "text": "【ワンタッチ登録】",
+            "family": "\"Noto Serif JP\", serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(48, 32, 39)",
+            "lineHeight": "24px",
+            "letterSpacing": "0.24px",
+            "contentTop": 14,
+            "parentDisplay": "flex",
+            "parentJustify": "space-between",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": ".shift-preset-section .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(13px, 3.5vw, 16px)",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": ".preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(11px, 3.2vw, 15px)",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.045em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading.shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading.shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(15px, 3.85vw, 17px)",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.3",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.045em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(14px, 3.9vw, 15px)",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal #shiftInputScrollArea .shift-section-title",
+                "declarations": {
+                  "font-family": {
+                    "value": "\"Noto Serif JP\", serif",
+                    "priority": "important"
+                  },
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.5",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": "important"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "selector": ".shift-time-heading:not(.preset-inline-heading)",
+            "text": "【勤務時間を登録】",
+            "family": "\"Noto Serif JP\", serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(48, 32, 39)",
+            "lineHeight": "24px",
+            "letterSpacing": "0.24px",
+            "contentTop": 262.78125,
+            "parentDisplay": "flex",
+            "parentJustify": "space-between",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal #shiftInputScrollArea .shift-section-title",
+                "declarations": {
+                  "font-family": {
+                    "value": "\"Noto Serif JP\", serif",
+                    "priority": "important"
+                  },
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.5",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": "important"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "selector": "#modalShiftListHeading",
+            "text": "【11月11日（水）シフト一覧】",
+            "family": "\"Noto Serif JP\", serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(48, 32, 39)",
+            "lineHeight": "24px",
+            "letterSpacing": "0.24px",
+            "contentTop": 420.875,
+            "parentDisplay": "block",
+            "parentJustify": "normal",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal #shiftInputScrollArea .shift-section-title",
+                "declarations": {
+                  "font-family": {
+                    "value": "\"Noto Serif JP\", serif",
+                    "priority": "important"
+                  },
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.5",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": "important"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "dateStyles": [
+        [
+          "\n              1日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "1日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              2日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "2日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              3日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "3日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              4日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "4日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              5日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "5日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              6日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "6日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              7日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "7日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              8日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "8日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              9日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "9日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              10日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "10日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              11日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "11日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              12日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "12日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              13日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "13日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              14日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "14日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              15日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "15日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              16日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "16日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              17日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "17日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              18日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "18日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              19日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "19日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              20日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "20日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              21日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "21日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              22日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "22日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              23日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "23日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              24日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "24日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              25日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "25日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              26日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "26日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              27日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "27日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              28日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "28日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              29日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "29日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              30日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "30日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ]
+      ]
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "data": {
+        "readOnlyNotice": {
+          "display": "none",
+          "hiddenAttribute": false
+        },
+        "firstSectionMargin": "12px",
+        "presets": 2,
+        "scrollViewportHeight": 273.84375,
+        "scrollHeight": 514,
+        "headings": [
+          {
+            "selector": ".shift-preset-section .preset-inline-heading",
+            "text": "【ワンタッチ登録】",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(41, 37, 36)",
+            "lineHeight": "21.6px",
+            "letterSpacing": "-1.04px",
+            "contentTop": 27.203125,
+            "parentDisplay": "flex",
+            "parentJustify": "space-between",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": ".shift-preset-section .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(13px, 3.5vw, 16px)",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": ".preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(11px, 3.2vw, 15px)",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.045em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading.shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading.shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(15px, 3.85vw, 17px)",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.3",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.045em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(14px, 3.9vw, 15px)",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "selector": ".shift-time-heading:not(.preset-inline-heading)",
+            "text": "【勤務時間を登録】",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(41, 37, 36)",
+            "lineHeight": "25.6px",
+            "letterSpacing": "0.24px",
+            "contentTop": 273.984375,
+            "parentDisplay": "flex",
+            "parentJustify": "space-between",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "selector": "#modalShiftListHeading",
+            "text": "【11月11日（水）シフト一覧】",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "size": "17px",
+            "weight": "800",
+            "color": "rgb(41, 37, 36)",
+            "lineHeight": "22.95px",
+            "letterSpacing": "-0.595px",
+            "contentTop": 430.875,
+            "parentDisplay": "block",
+            "parentJustify": "normal",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "dateStyles": [
+        [
+          "\n              1日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "1日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              2日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "2日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              3日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "3日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              4日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "4日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              5日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "5日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              6日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "6日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              7日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "7日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              8日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "8日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              9日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "9日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              10日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "10日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              11日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "11日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              12日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "12日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              13日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "13日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              14日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "14日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              15日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "15日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              16日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "16日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              17日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "17日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              18日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "18日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              19日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "19日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              20日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "20日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              21日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "21日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              22日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "22日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              23日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "23日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              24日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "24日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              25日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "25日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              26日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "26日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              27日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "27日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              28日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "28日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              29日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "29日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              30日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "30日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ]
+      ]
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "data": {
+        "readOnlyNotice": {
+          "display": "none",
+          "hiddenAttribute": false
+        },
+        "firstSectionMargin": "0px",
+        "presets": 2,
+        "scrollViewportHeight": 273.84375,
+        "scrollHeight": 503,
+        "headings": [
+          {
+            "selector": ".shift-preset-section .preset-inline-heading",
+            "text": "【ワンタッチ登録】",
+            "family": "\"Noto Serif JP\", serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(48, 32, 39)",
+            "lineHeight": "24px",
+            "letterSpacing": "0.24px",
+            "contentTop": 14,
+            "parentDisplay": "flex",
+            "parentJustify": "space-between",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": ".shift-preset-section .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(13px, 3.5vw, 16px)",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": ".preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(11px, 3.2vw, 15px)",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.045em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading.shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading.shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(15px, 3.85vw, 17px)",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.3",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.045em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(14px, 3.9vw, 15px)",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal #shiftInputScrollArea .shift-section-title",
+                "declarations": {
+                  "font-family": {
+                    "value": "\"Noto Serif JP\", serif",
+                    "priority": "important"
+                  },
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.5",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": "important"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "selector": ".shift-time-heading:not(.preset-inline-heading)",
+            "text": "【勤務時間を登録】",
+            "family": "\"Noto Serif JP\", serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(48, 32, 39)",
+            "lineHeight": "24px",
+            "letterSpacing": "0.24px",
+            "contentTop": 262.78125,
+            "parentDisplay": "flex",
+            "parentJustify": "space-between",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal #shiftInputScrollArea .shift-section-title",
+                "declarations": {
+                  "font-family": {
+                    "value": "\"Noto Serif JP\", serif",
+                    "priority": "important"
+                  },
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.5",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": "important"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "selector": "#modalShiftListHeading",
+            "text": "【11月11日（水）シフト一覧】",
+            "family": "\"Noto Serif JP\", serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(48, 32, 39)",
+            "lineHeight": "24px",
+            "letterSpacing": "0.24px",
+            "contentTop": 420.875,
+            "parentDisplay": "block",
+            "parentJustify": "normal",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal #shiftInputScrollArea .shift-section-title",
+                "declarations": {
+                  "font-family": {
+                    "value": "\"Noto Serif JP\", serif",
+                    "priority": "important"
+                  },
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.5",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": "important"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "dateStyles": [
+        [
+          "\n              1日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "1日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              2日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "2日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              3日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "3日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              4日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "4日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              5日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "5日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              6日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "6日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              7日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "7日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              8日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "8日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              9日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "9日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              10日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "10日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              11日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "11日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              12日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "12日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              13日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "13日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              14日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "14日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              15日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "15日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              16日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "16日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              17日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "17日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              18日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "18日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              19日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "19日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              20日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "20日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              21日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "21日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              22日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "22日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              23日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "23日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              24日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "24日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              25日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "25日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              26日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "26日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              27日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "27日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              28日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "28日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              29日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "29日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              30日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "13px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "30日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ]
+      ]
+    },
+    {
+      "width": 375,
+      "variant": "preview-after",
+      "data": {
+        "readOnlyNotice": null,
+        "firstSectionMargin": "0px",
+        "presets": 2,
+        "scrollViewportHeight": 466.5,
+        "scrollHeight": 467,
+        "headings": [
+          {
+            "selector": ".shift-preset-section .preset-inline-heading",
+            "text": "【ワンタッチ登録】",
+            "family": "\"Noto Serif JP\", serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(48, 32, 39)",
+            "lineHeight": "24px",
+            "letterSpacing": "0.24px",
+            "contentTop": 14,
+            "parentDisplay": "flex",
+            "parentJustify": "space-between",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": ".shift-preset-section .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(13px, 3.5vw, 16px)",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": ".preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(11px, 3.2vw, 15px)",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.045em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading.shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading.shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(15px, 3.85vw, 17px)",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.3",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.045em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal #shiftInputScrollArea .shift-section-title",
+                "declarations": {
+                  "font-family": {
+                    "value": "\"Noto Serif JP\", serif",
+                    "priority": "important"
+                  },
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.5",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": "important"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "selector": ".shift-time-heading:not(.preset-inline-heading)",
+            "text": "【勤務時間を登録】",
+            "family": "\"Noto Serif JP\", serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(48, 32, 39)",
+            "lineHeight": "24px",
+            "letterSpacing": "0.24px",
+            "contentTop": 242.40625,
+            "parentDisplay": "flex",
+            "parentJustify": "space-between",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal #shiftInputScrollArea .shift-section-title",
+                "declarations": {
+                  "font-family": {
+                    "value": "\"Noto Serif JP\", serif",
+                    "priority": "important"
+                  },
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.5",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": "important"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "selector": "#modalShiftListHeading",
+            "text": "【11月11日（水）シフト一覧】",
+            "family": "\"Noto Serif JP\", serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(48, 32, 39)",
+            "lineHeight": "24px",
+            "letterSpacing": "0.24px",
+            "contentTop": 384.5,
+            "parentDisplay": "block",
+            "parentJustify": "normal",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal #shiftInputScrollArea .shift-section-title",
+                "declarations": {
+                  "font-family": {
+                    "value": "\"Noto Serif JP\", serif",
+                    "priority": "important"
+                  },
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.5",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": "important"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "dateStyles": [
+        [
+          "\n              1日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "1日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              2日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "2日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              3日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "3日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              4日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "4日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              5日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "5日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              6日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "6日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              7日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "7日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              8日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "8日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              9日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "9日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              10日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "10日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              11日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "11日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              12日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "12日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              13日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "13日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              14日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "14日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              15日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "15日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              16日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "16日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              17日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "17日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              18日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "18日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              19日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "19日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              20日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "20日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              21日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "21日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              22日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "22日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              23日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "23日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              24日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "24日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              25日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "25日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              26日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "26日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              27日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "27日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              28日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "28日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              29日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "29日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              30日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "30日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ]
+      ]
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "data": {
+        "readOnlyNotice": {
+          "display": "none",
+          "hiddenAttribute": false
+        },
+        "firstSectionMargin": "12px",
+        "presets": 2,
+        "scrollViewportHeight": 477.5,
+        "scrollHeight": 478,
+        "headings": [
+          {
+            "selector": ".shift-preset-section .preset-inline-heading",
+            "text": "【ワンタッチ登録】",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(41, 37, 36)",
+            "lineHeight": "21.6px",
+            "letterSpacing": "-1.04px",
+            "contentTop": 27.203125,
+            "parentDisplay": "flex",
+            "parentJustify": "space-between",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": ".shift-preset-section .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(13px, 3.5vw, 16px)",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": ".preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(11px, 3.2vw, 15px)",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.045em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading.shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading.shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(15px, 3.85vw, 17px)",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.3",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.045em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "selector": ".shift-time-heading:not(.preset-inline-heading)",
+            "text": "【勤務時間を登録】",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(41, 37, 36)",
+            "lineHeight": "25.6px",
+            "letterSpacing": "0.24px",
+            "contentTop": 253.609375,
+            "parentDisplay": "flex",
+            "parentJustify": "space-between",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "selector": "#modalShiftListHeading",
+            "text": "【11月11日（水）シフト一覧】",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "size": "17px",
+            "weight": "800",
+            "color": "rgb(41, 37, 36)",
+            "lineHeight": "22.95px",
+            "letterSpacing": "-0.595px",
+            "contentTop": 394.5,
+            "parentDisplay": "block",
+            "parentJustify": "normal",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "dateStyles": [
+        [
+          "\n              1日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "1日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              2日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "2日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              3日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "3日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              4日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "4日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              5日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "5日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              6日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "6日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              7日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "7日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              8日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "8日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              9日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "9日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              10日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "10日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              11日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "11日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              12日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "12日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              13日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "13日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              14日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "14日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              15日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "15日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              16日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "16日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              17日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "17日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              18日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "18日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              19日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "19日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              20日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "20日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              21日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "21日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              22日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "22日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              23日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "23日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              24日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "24日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              25日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "25日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              26日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "26日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              27日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "27日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              28日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "28日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              29日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "29日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              30日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "30日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ]
+      ]
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "data": {
+        "readOnlyNotice": {
+          "display": "none",
+          "hiddenAttribute": false
+        },
+        "firstSectionMargin": "0px",
+        "presets": 2,
+        "scrollViewportHeight": 466.5,
+        "scrollHeight": 467,
+        "headings": [
+          {
+            "selector": ".shift-preset-section .preset-inline-heading",
+            "text": "【ワンタッチ登録】",
+            "family": "\"Noto Serif JP\", serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(48, 32, 39)",
+            "lineHeight": "24px",
+            "letterSpacing": "0.24px",
+            "contentTop": 14,
+            "parentDisplay": "flex",
+            "parentJustify": "space-between",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": ".shift-preset-section .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(13px, 3.5vw, 16px)",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": ".preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(11px, 3.2vw, 15px)",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.045em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading.shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading.shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-preset-section .preset-inline-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "clamp(15px, 3.85vw, 17px)",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.3",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.045em",
+                    "priority": "important"
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal #shiftInputScrollArea .shift-section-title",
+                "declarations": {
+                  "font-family": {
+                    "value": "\"Noto Serif JP\", serif",
+                    "priority": "important"
+                  },
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.5",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": "important"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "selector": ".shift-time-heading:not(.preset-inline-heading)",
+            "text": "【勤務時間を登録】",
+            "family": "\"Noto Serif JP\", serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(48, 32, 39)",
+            "lineHeight": "24px",
+            "letterSpacing": "0.24px",
+            "contentTop": 242.40625,
+            "parentDisplay": "flex",
+            "parentJustify": "space-between",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading",
+                "declarations": {
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "-0.065em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal #shiftInputScrollArea .shift-section-title",
+                "declarations": {
+                  "font-family": {
+                    "value": "\"Noto Serif JP\", serif",
+                    "priority": "important"
+                  },
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.5",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": "important"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "selector": "#modalShiftListHeading",
+            "text": "【11月11日（水）シフト一覧】",
+            "family": "\"Noto Serif JP\", serif",
+            "size": "16px",
+            "weight": "800",
+            "color": "rgb(48, 32, 39)",
+            "lineHeight": "24px",
+            "letterSpacing": "0.24px",
+            "contentTop": 384.5,
+            "parentDisplay": "block",
+            "parentJustify": "normal",
+            "rules": [
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "font-size": {
+                    "value": "15px",
+                    "priority": ""
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-time-heading, #shiftInputModal #modalShiftListHeading",
+                "declarations": {
+                  "font-size": {
+                    "value": "17px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.35",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "-0.035em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal .shift-section-title",
+                "declarations": {
+                  "line-height": {
+                    "value": "1.6",
+                    "priority": ""
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": ""
+                  }
+                }
+              },
+              {
+                "selector": "#shiftInputModal #shiftInputScrollArea .shift-section-title",
+                "declarations": {
+                  "font-family": {
+                    "value": "\"Noto Serif JP\", serif",
+                    "priority": "important"
+                  },
+                  "font-size": {
+                    "value": "16px",
+                    "priority": "important"
+                  },
+                  "font-weight": {
+                    "value": "800",
+                    "priority": "important"
+                  },
+                  "line-height": {
+                    "value": "1.5",
+                    "priority": "important"
+                  },
+                  "letter-spacing": {
+                    "value": "0.015em",
+                    "priority": "important"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "dateStyles": [
+        [
+          "\n              1日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "1日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              2日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "2日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              3日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "3日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              4日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "4日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              5日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "5日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              6日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "6日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              7日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "7日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              8日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "8日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              9日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "9日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              10日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "10日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              11日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "11日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              12日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "12日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              13日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "13日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              14日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "14日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              15日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "15日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              16日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "16日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              17日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "17日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              18日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "18日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              19日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "19日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              20日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "20日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              21日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "21日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              22日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "22日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              23日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "23日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              24日(火)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "24日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(火)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              25日(水)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "25日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(水)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              26日(木)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "26日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(木)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              27日(金)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "27日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(金)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "\n              28日(土)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "28日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "(土)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(2, 132, 199)"
+        ],
+        [
+          "\n              29日(日)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "29日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "(日)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(225, 29, 72)"
+        ],
+        [
+          "\n              30日(月)\n            ",
+          "\"Noto Serif JP\", serif",
+          "14px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "30日",
+          "\"Noto Serif JP\", serif",
+          "15px",
+          "700",
+          "rgb(48, 32, 39)"
+        ],
+        [
+          "(月)",
+          "\"Noto Serif JP\", serif",
+          "12px",
+          "500",
+          "rgb(48, 32, 39)"
+        ]
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "width": 320,
+      "variant": "preview-after",
+      "name": "shift-top",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "preview-after",
+      "name": "shift-middle",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "preview-after",
+      "name": "shift-bottom",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "name": "shift-top",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "name": "shift-middle",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "name": "shift-bottom",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "name": "clock",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "name": "calendar",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "name": "settings",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "name": "guide",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "name": "list-top",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "name": "list-today",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "name": "list-payday",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "name": "list-paid",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "name": "shift-top",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "name": "shift-middle",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "name": "shift-bottom",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "name": "clock",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "name": "calendar",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "name": "settings",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "name": "guide",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "name": "list-top",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "name": "list-today",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "name": "list-payday",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "name": "list-paid",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "preview-after",
+      "name": "shift-top",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "preview-after",
+      "name": "shift-middle",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "preview-after",
+      "name": "shift-bottom",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "name": "shift-top",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "name": "shift-middle",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "name": "shift-bottom",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "name": "clock",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "name": "calendar",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "name": "settings",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "name": "guide",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "name": "list-top",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "name": "list-today",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "name": "list-payday",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "name": "list-paid",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "name": "shift-top",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "name": "shift-middle",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "name": "shift-bottom",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "name": "clock",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "name": "calendar",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "name": "settings",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "name": "guide",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "name": "list-top",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "name": "list-today",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "name": "list-payday",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "name": "list-paid",
+      "overflow": false,
+      "blocked": [],
+      "overlaps": [],
+      "navOverScroll": false
+    }
+  ],
+  "checks": [
+    {
+      "width": 320,
+      "variant": "preview-after",
+      "timeFits": [
+        {
+          "id": "new_preset_start",
+          "available": 41,
+          "maxTextWidth": 40.275299072265625,
+          "font": "15px",
+          "indent": "0px"
+        },
+        {
+          "id": "new_preset_end",
+          "available": 41,
+          "maxTextWidth": 40.275299072265625,
+          "font": "15px",
+          "indent": "0px"
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "variant": "preview-after",
+      "times": [
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜20:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜22:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "星空キッチン（有給）",
+          "time": "8時間"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜22:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜22:00"
+        }
+      ],
+      "paydays": [
+        "♡ローズカフェお給料日",
+        "♡月色ショップお給料日",
+        "♡星空キッチンお給料日"
+      ]
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "timeFits": [
+        {
+          "id": "new_preset_start",
+          "available": 37,
+          "maxTextWidth": 40.275299072265625,
+          "font": "15px",
+          "indent": "0px"
+        },
+        {
+          "id": "new_preset_end",
+          "available": 37,
+          "maxTextWidth": 40.275299072265625,
+          "font": "15px",
+          "indent": "0px"
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "timeFits": [
+        {
+          "id": "new_preset_start",
+          "available": 41,
+          "maxTextWidth": 40.275299072265625,
+          "font": "15px",
+          "indent": "0px"
+        },
+        {
+          "id": "new_preset_end",
+          "available": 41,
+          "maxTextWidth": 40.275299072265625,
+          "font": "15px",
+          "indent": "0px"
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "times": [
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜20:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜22:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "星空キッチン（有給）",
+          "time": "8時間"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜22:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜22:00"
+        }
+      ],
+      "paydays": [
+        "♡ローズカフェお給料日",
+        "♡月色ショップお給料日",
+        "♡星空キッチンお給料日"
+      ]
+    },
+    {
+      "width": 320,
+      "view": "list",
+      "copyYearRollover": true,
+      "usesViewMonth": true,
+      "existingEntriesPreserved": true,
+      "paidLeaveExcluded": true,
+      "sourceUnchanged": true,
+      "otherViewMonthUnchanged": true
+    },
+    {
+      "width": 320,
+      "view": "calendar",
+      "copyYearRollover": true,
+      "usesViewMonth": true,
+      "existingEntriesPreserved": true,
+      "paidLeaveExcluded": true,
+      "sourceUnchanged": true,
+      "otherViewMonthUnchanged": true
+    },
+    {
+      "width": 320,
+      "escapingSafe": true,
+      "expiredCopyBlocked": true
+    },
+    {
+      "width": 375,
+      "variant": "preview-after",
+      "timeFits": [
+        {
+          "id": "new_preset_start",
+          "available": 58,
+          "maxTextWidth": 40.275299072265625,
+          "font": "15px",
+          "indent": "0px"
+        },
+        {
+          "id": "new_preset_end",
+          "available": 58,
+          "maxTextWidth": 40.275299072265625,
+          "font": "15px",
+          "indent": "0px"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "variant": "preview-after",
+      "times": [
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜20:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜22:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "星空キッチン（有給）",
+          "time": "8時間"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜22:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜22:00"
+        }
+      ],
+      "paydays": [
+        "♡ローズカフェお給料日",
+        "♡月色ショップお給料日",
+        "♡星空キッチンお給料日"
+      ]
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "timeFits": [
+        {
+          "id": "new_preset_start",
+          "available": 58,
+          "maxTextWidth": 40.275299072265625,
+          "font": "15px",
+          "indent": "0px"
+        },
+        {
+          "id": "new_preset_end",
+          "available": 58,
+          "maxTextWidth": 40.275299072265625,
+          "font": "15px",
+          "indent": "0px"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "timeFits": [
+        {
+          "id": "new_preset_start",
+          "available": 58,
+          "maxTextWidth": 40.275299072265625,
+          "font": "15px",
+          "indent": "0px"
+        },
+        {
+          "id": "new_preset_end",
+          "available": 58,
+          "maxTextWidth": 40.275299072265625,
+          "font": "15px",
+          "indent": "0px"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "times": [
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜20:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜22:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "星空キッチン（有給）",
+          "time": "8時間"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜22:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "ローズカフェ",
+          "time": "09:00〜17:00"
+        },
+        {
+          "size": 16,
+          "weight": "600",
+          "nameSize": 14,
+          "name": "月色ショップ",
+          "time": "18:00〜22:00"
+        }
+      ],
+      "paydays": [
+        "♡ローズカフェお給料日",
+        "♡月色ショップお給料日",
+        "♡星空キッチンお給料日"
+      ]
+    },
+    {
+      "width": 375,
+      "view": "list",
+      "copyYearRollover": true,
+      "usesViewMonth": true,
+      "existingEntriesPreserved": true,
+      "paidLeaveExcluded": true,
+      "sourceUnchanged": true,
+      "otherViewMonthUnchanged": true
+    },
+    {
+      "width": 375,
+      "view": "calendar",
+      "copyYearRollover": true,
+      "usesViewMonth": true,
+      "existingEntriesPreserved": true,
+      "paidLeaveExcluded": true,
+      "sourceUnchanged": true,
+      "otherViewMonthUnchanged": true
+    },
+    {
+      "width": 375,
+      "escapingSafe": true,
+      "expiredCopyBlocked": true
+    }
+  ],
+  "errors": [],
+  "applicationHashes": {
+    "index.html": "42e8cbddb1e0129f583675eb827c1b270de5430bb24b3c362f9650396ed540ab",
+    "bordeaux-rose.css": "b8cf9d748c078d2d08e0e0821235303bfc0235d3138b14d6db01d246be7b57c1"
+  }
+}
