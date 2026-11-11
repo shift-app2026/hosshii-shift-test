@@ -1,0 +1,1783 @@
+{
+  "sourceCommit": "200804b3bd7c2ce4f719e7b985106a999d0ee36c",
+  "widths": [
+    {
+      "width": 320,
+      "allFiveTabs": true,
+      "backupDisabled": true,
+      "importDisabled": true,
+      "shiftRegistration": true,
+      "settingsEditing": true,
+      "goalDialog": true,
+      "salaryCalculation": true,
+      "reloadReset": true,
+      "resetButton": true,
+      "nativeStorageCanaryUnchanged": true,
+      "networkGuards": {
+        "fetchDenied": true,
+        "socketDenied": true
+      }
+    },
+    {
+      "width": 375,
+      "allFiveTabs": true,
+      "backupDisabled": true,
+      "importDisabled": true,
+      "shiftRegistration": true,
+      "settingsEditing": true,
+      "goalDialog": true,
+      "salaryCalculation": true,
+      "reloadReset": true,
+      "resetButton": true,
+      "nativeStorageCanaryUnchanged": true,
+      "networkGuards": {
+        "fetchDenied": true,
+        "socketDenied": true
+      }
+    }
+  ],
+  "requests": [
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/fonts.css"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/preview-bootstrap.js"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/929ea881e4ac38c5bbb8.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/4018a74149fd0d619277.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/1eac86f14942901d579a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/63bc942f0cc29132e4ed.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/8aaea7d5ef196c6e292b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/88b36db1de703a066b32.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/1fab5a5d9f0de1bbb31f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/192773d8da73d07aa890.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/cd36df33a882164a7af2.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/9d29c1f76d49c2f057e2.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/24ddf402156c3a8fbd0a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/1bb1552b93c25c28f701.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d9fabfc95dc2a4de3086.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/dc3765be55dd56eb0b4f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/5cee506f9a6f1193026b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/7017220718b4ae622e6a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/c699c8e487938d300969.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/bordeaux-rose.css"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/8669b33bb96e998fa8b2.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/5631adc8c5167c582e5e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/4f0a22629985b093a16b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/35f61456fe8cd7e45bac.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/fdde230514f052b0fa3e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/969b3475893dad42d68b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/05eb327616e48937147a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/380630c3cd11177bce17.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/e549e22fede94e3009bc.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/e8ae5f7fea7a7e3f78bc.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/375389c31458009da30f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/b3dfbca305af856e1590.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/preview-ui.js"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/44a26b4fab4a72d1c5bf.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/35fd84334171ce545e06.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/6ac66c766a6b401ae5e8.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/85b0822c00d8aeffcc18.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/804e56cf03239817ea95.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d2a80d6d5ca35212a7f4.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/5e28387a5bdf9d179c99.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/be837d5779790843282f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/9b50190ecb0b5dad3bd6.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/bfce3d93c291fda71b59.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/bd224ffdee13f0637c8a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/a0189c74b659187d5977.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/7379242e135eefbea50f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d68c3982426d30a3565a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/966e7b57cde94ffba49f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/f96e8f9cbc89cb56c28e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/1a9ffc439b2abe1c3f0e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d47a6c0555261d62e886.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/489a0e7da5abdfa63181.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/ed0a4d7a26acfadc81fd.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/a7255502a6b1149a696b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/f66ac5850c08beaa1b30.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/7fb049b965e61ad768cf.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/9e999f804450253bd346.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d91a281e99c4d2d9ced8.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/4a59da56f04e6ab1414b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/7189ef34e1cef92c085e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/a635c6da6401c3d4732e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/icon-192.png"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/c4a28b1a8c6b6bd6f661.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/b17c5bdfb38c6b2ce4ce.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/814d0a2d8008690df034.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/95a758656e7ca0c03c94.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/e3ff3a67aae4e86ee143.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/eb9603c5a68887f08293.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/3ec1b8fcee2a42e36cea.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/e2160cc753fa861d3d67.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/fonts.css"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/preview-bootstrap.js"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/4018a74149fd0d619277.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/929ea881e4ac38c5bbb8.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/192773d8da73d07aa890.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/8669b33bb96e998fa8b2.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/63bc942f0cc29132e4ed.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/cd36df33a882164a7af2.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/9d29c1f76d49c2f057e2.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/24ddf402156c3a8fbd0a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/1bb1552b93c25c28f701.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d9fabfc95dc2a4de3086.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/dc3765be55dd56eb0b4f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/5cee506f9a6f1193026b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/1eac86f14942901d579a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/7017220718b4ae622e6a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/c699c8e487938d300969.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/5631adc8c5167c582e5e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/4f0a22629985b093a16b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/35f61456fe8cd7e45bac.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/8aaea7d5ef196c6e292b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/fdde230514f052b0fa3e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/969b3475893dad42d68b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/1fab5a5d9f0de1bbb31f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/05eb327616e48937147a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/88b36db1de703a066b32.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/380630c3cd11177bce17.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/e549e22fede94e3009bc.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/e8ae5f7fea7a7e3f78bc.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/375389c31458009da30f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/b3dfbca305af856e1590.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/bordeaux-rose.css"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/44a26b4fab4a72d1c5bf.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/35fd84334171ce545e06.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/6ac66c766a6b401ae5e8.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/85b0822c00d8aeffcc18.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/804e56cf03239817ea95.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d2a80d6d5ca35212a7f4.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/5e28387a5bdf9d179c99.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/be837d5779790843282f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/9b50190ecb0b5dad3bd6.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/bfce3d93c291fda71b59.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/bd224ffdee13f0637c8a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/a0189c74b659187d5977.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/7379242e135eefbea50f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d68c3982426d30a3565a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/966e7b57cde94ffba49f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/f96e8f9cbc89cb56c28e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/1a9ffc439b2abe1c3f0e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d47a6c0555261d62e886.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/489a0e7da5abdfa63181.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/ed0a4d7a26acfadc81fd.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/a7255502a6b1149a696b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/f66ac5850c08beaa1b30.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/7fb049b965e61ad768cf.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/9e999f804450253bd346.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d91a281e99c4d2d9ced8.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/4a59da56f04e6ab1414b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/7189ef34e1cef92c085e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/preview-ui.js"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/a635c6da6401c3d4732e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/icon-192.png"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/fonts.css"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/preview-bootstrap.js"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/4018a74149fd0d619277.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/929ea881e4ac38c5bbb8.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/192773d8da73d07aa890.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/8669b33bb96e998fa8b2.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/63bc942f0cc29132e4ed.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/cd36df33a882164a7af2.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/9d29c1f76d49c2f057e2.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/24ddf402156c3a8fbd0a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/1bb1552b93c25c28f701.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d9fabfc95dc2a4de3086.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/dc3765be55dd56eb0b4f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/5cee506f9a6f1193026b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/1eac86f14942901d579a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/7017220718b4ae622e6a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/c699c8e487938d300969.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/5631adc8c5167c582e5e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/4f0a22629985b093a16b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/35f61456fe8cd7e45bac.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/8aaea7d5ef196c6e292b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/fdde230514f052b0fa3e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/969b3475893dad42d68b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/1fab5a5d9f0de1bbb31f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/05eb327616e48937147a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/88b36db1de703a066b32.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/380630c3cd11177bce17.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/e549e22fede94e3009bc.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/e8ae5f7fea7a7e3f78bc.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/375389c31458009da30f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/b3dfbca305af856e1590.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/bordeaux-rose.css"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/44a26b4fab4a72d1c5bf.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/35fd84334171ce545e06.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/6ac66c766a6b401ae5e8.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/85b0822c00d8aeffcc18.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/804e56cf03239817ea95.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d2a80d6d5ca35212a7f4.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/5e28387a5bdf9d179c99.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/be837d5779790843282f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/9b50190ecb0b5dad3bd6.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/bfce3d93c291fda71b59.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/bd224ffdee13f0637c8a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/a0189c74b659187d5977.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/7379242e135eefbea50f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d68c3982426d30a3565a.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/966e7b57cde94ffba49f.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/f96e8f9cbc89cb56c28e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/1a9ffc439b2abe1c3f0e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d47a6c0555261d62e886.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/489a0e7da5abdfa63181.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/ed0a4d7a26acfadc81fd.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/a7255502a6b1149a696b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/f66ac5850c08beaa1b30.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/7fb049b965e61ad768cf.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/9e999f804450253bd346.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/d91a281e99c4d2d9ced8.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/4a59da56f04e6ab1414b.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/7189ef34e1cef92c085e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/preview-ui.js"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/fonts/a635c6da6401c3d4732e.woff2"
+    },
+    {
+      "width": 320,
+      "url": "http://127.0.0.1:8804/icon-192.png"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/fonts.css"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/preview-bootstrap.js"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/929ea881e4ac38c5bbb8.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/4018a74149fd0d619277.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/192773d8da73d07aa890.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/cd36df33a882164a7af2.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/63bc942f0cc29132e4ed.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/9d29c1f76d49c2f057e2.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/24ddf402156c3a8fbd0a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/1bb1552b93c25c28f701.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d9fabfc95dc2a4de3086.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/dc3765be55dd56eb0b4f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/5cee506f9a6f1193026b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/1eac86f14942901d579a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/7017220718b4ae622e6a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/c699c8e487938d300969.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/8aaea7d5ef196c6e292b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/88b36db1de703a066b32.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/1fab5a5d9f0de1bbb31f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/8669b33bb96e998fa8b2.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/5631adc8c5167c582e5e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/4f0a22629985b093a16b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/35f61456fe8cd7e45bac.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/fdde230514f052b0fa3e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/969b3475893dad42d68b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/05eb327616e48937147a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/380630c3cd11177bce17.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/e549e22fede94e3009bc.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/e8ae5f7fea7a7e3f78bc.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/375389c31458009da30f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/b3dfbca305af856e1590.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/bordeaux-rose.css"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/44a26b4fab4a72d1c5bf.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/35fd84334171ce545e06.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/6ac66c766a6b401ae5e8.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/85b0822c00d8aeffcc18.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/804e56cf03239817ea95.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d2a80d6d5ca35212a7f4.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/5e28387a5bdf9d179c99.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/be837d5779790843282f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/9b50190ecb0b5dad3bd6.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/bfce3d93c291fda71b59.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/bd224ffdee13f0637c8a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/a0189c74b659187d5977.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/7379242e135eefbea50f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d68c3982426d30a3565a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/966e7b57cde94ffba49f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/f96e8f9cbc89cb56c28e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/1a9ffc439b2abe1c3f0e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d47a6c0555261d62e886.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/489a0e7da5abdfa63181.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/ed0a4d7a26acfadc81fd.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/a7255502a6b1149a696b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/f66ac5850c08beaa1b30.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/7fb049b965e61ad768cf.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/9e999f804450253bd346.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d91a281e99c4d2d9ced8.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/4a59da56f04e6ab1414b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/7189ef34e1cef92c085e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/preview-ui.js"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/a635c6da6401c3d4732e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/icon-192.png"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/c4a28b1a8c6b6bd6f661.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/b17c5bdfb38c6b2ce4ce.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/814d0a2d8008690df034.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/95a758656e7ca0c03c94.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/e3ff3a67aae4e86ee143.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/eb9603c5a68887f08293.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/3ec1b8fcee2a42e36cea.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/e2160cc753fa861d3d67.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/fonts.css"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/preview-bootstrap.js"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/929ea881e4ac38c5bbb8.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/4018a74149fd0d619277.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/1eac86f14942901d579a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/63bc942f0cc29132e4ed.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/8aaea7d5ef196c6e292b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/88b36db1de703a066b32.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/1fab5a5d9f0de1bbb31f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/192773d8da73d07aa890.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/8669b33bb96e998fa8b2.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/cd36df33a882164a7af2.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/9d29c1f76d49c2f057e2.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/24ddf402156c3a8fbd0a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/1bb1552b93c25c28f701.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d9fabfc95dc2a4de3086.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/dc3765be55dd56eb0b4f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/5cee506f9a6f1193026b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/7017220718b4ae622e6a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/c699c8e487938d300969.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/5631adc8c5167c582e5e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/4f0a22629985b093a16b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/35f61456fe8cd7e45bac.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/fdde230514f052b0fa3e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/969b3475893dad42d68b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/05eb327616e48937147a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/380630c3cd11177bce17.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/e549e22fede94e3009bc.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/e8ae5f7fea7a7e3f78bc.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/375389c31458009da30f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/b3dfbca305af856e1590.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/bordeaux-rose.css"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/44a26b4fab4a72d1c5bf.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/35fd84334171ce545e06.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/6ac66c766a6b401ae5e8.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/85b0822c00d8aeffcc18.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/804e56cf03239817ea95.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d2a80d6d5ca35212a7f4.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/5e28387a5bdf9d179c99.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/be837d5779790843282f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/9b50190ecb0b5dad3bd6.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/bfce3d93c291fda71b59.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/bd224ffdee13f0637c8a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/a0189c74b659187d5977.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/7379242e135eefbea50f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d68c3982426d30a3565a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/966e7b57cde94ffba49f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/f96e8f9cbc89cb56c28e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/1a9ffc439b2abe1c3f0e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d47a6c0555261d62e886.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/489a0e7da5abdfa63181.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/ed0a4d7a26acfadc81fd.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/a7255502a6b1149a696b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/f66ac5850c08beaa1b30.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/7fb049b965e61ad768cf.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/9e999f804450253bd346.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d91a281e99c4d2d9ced8.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/4a59da56f04e6ab1414b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/7189ef34e1cef92c085e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/preview-ui.js"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/a635c6da6401c3d4732e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/icon-192.png"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/fonts.css"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/preview-bootstrap.js"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/4018a74149fd0d619277.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/929ea881e4ac38c5bbb8.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/192773d8da73d07aa890.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/8669b33bb96e998fa8b2.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/63bc942f0cc29132e4ed.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/cd36df33a882164a7af2.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/9d29c1f76d49c2f057e2.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/24ddf402156c3a8fbd0a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/1bb1552b93c25c28f701.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d9fabfc95dc2a4de3086.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/dc3765be55dd56eb0b4f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/5cee506f9a6f1193026b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/1eac86f14942901d579a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/7017220718b4ae622e6a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/c699c8e487938d300969.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/5631adc8c5167c582e5e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/4f0a22629985b093a16b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/35f61456fe8cd7e45bac.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/8aaea7d5ef196c6e292b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/fdde230514f052b0fa3e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/969b3475893dad42d68b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/1fab5a5d9f0de1bbb31f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/05eb327616e48937147a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/88b36db1de703a066b32.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/380630c3cd11177bce17.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/e549e22fede94e3009bc.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/e8ae5f7fea7a7e3f78bc.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/375389c31458009da30f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/b3dfbca305af856e1590.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/bordeaux-rose.css"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/44a26b4fab4a72d1c5bf.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/35fd84334171ce545e06.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/6ac66c766a6b401ae5e8.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/85b0822c00d8aeffcc18.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/804e56cf03239817ea95.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d2a80d6d5ca35212a7f4.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/5e28387a5bdf9d179c99.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/be837d5779790843282f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/9b50190ecb0b5dad3bd6.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/bfce3d93c291fda71b59.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/bd224ffdee13f0637c8a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/a0189c74b659187d5977.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/7379242e135eefbea50f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d68c3982426d30a3565a.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/966e7b57cde94ffba49f.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/f96e8f9cbc89cb56c28e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/1a9ffc439b2abe1c3f0e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d47a6c0555261d62e886.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/489a0e7da5abdfa63181.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/ed0a4d7a26acfadc81fd.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/a7255502a6b1149a696b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/f66ac5850c08beaa1b30.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/7fb049b965e61ad768cf.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/9e999f804450253bd346.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/d91a281e99c4d2d9ced8.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/4a59da56f04e6ab1414b.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/7189ef34e1cef92c085e.woff2"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/preview-ui.js"
+    },
+    {
+      "width": 375,
+      "url": "http://127.0.0.1:8804/fonts/a635c6da6401c3d4732e.woff2"
+    }
+  ],
+  "externalRequests": [],
+  "errors": [],
+  "httpErrors": [],
+  "storageAccesses": [],
+  "checks": [
+    {
+      "width": 320,
+      "name": "clock",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "name": "calendar",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "name": "copy",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "name": "list",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "name": "settings",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "name": "settings-bottom",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "name": "guide",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "name": "guide-bottom",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "name": "shift-modal",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "name": "clock",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "name": "calendar",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "name": "copy",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "name": "list",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "name": "settings",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "name": "settings-bottom",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "name": "guide",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "name": "guide-bottom",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "name": "shift-modal",
+      "pageOverflow": false,
+      "contentOverflow": false,
+      "navOverScroll": false,
+      "blocked": [],
+      "overlap": []
+    }
+  ],
+  "externalRequestCount": 0,
+  "result": "PASS"
+}
