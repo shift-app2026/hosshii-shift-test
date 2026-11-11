@@ -1155,3 +1155,5 @@ html body #appCard #appScroll :is(#tab-clock,#tab-calendar,#tab-list,#tab-settin
 #appCard #tab-guide a { font-size:16px !important; }
 #appCard #tab-settings .allowance-period-grid > div > span { font-size:15px !important; }
 #calendarTodaySummaryContent .selected-shift-delete { font-size:15px !important; }
+#appCard #tab-calendar #calendarDays .text-base { font-size:17px !important; }
+#t31GoalModal .t31-error { font-size:14px; }
