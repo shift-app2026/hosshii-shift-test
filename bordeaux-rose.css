@@ -1177,3 +1177,8 @@ html body #appCard #appScroll :is(#tab-clock,#tab-calendar,#tab-list,#tab-settin
 #shiftInputModal #openPresetRegisterButton.registration-saved:not(.unsaved-registration) {
  color:#fff !important; -webkit-text-fill-color:#fff !important;
 }
+
+/* Keep the full close-day label readable; option values and calculations stay unchanged. */
+#appCard #tab-settings #settingsJobContentArea > .space-y-3 > .grid.grid-cols-2:first-child {
+  grid-template-columns:minmax(0,1fr) !important;
+}

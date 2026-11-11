@@ -3091,6 +3091,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     const DAY_OPTIONS = '<option value="">未設定</option>' + Array.from({ length: 28 }, (_, i) => `<option value="${i + 1}">${i + 1}日</option>`).join('') + '<option value="月末">月末</option>';
+    const CLOSE_DAY_OPTIONS = DAY_OPTIONS.replace('value="月末">月末</option>', 'value="月末">末日（毎月の最終日）</option>');
 
     function getSettingsFormHtml(jk) {
       const j = configData[jk];
@@ -3104,7 +3105,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             <div class="bg-stone-50 p-2 rounded-xl border border-stone-200 flex items-center justify-between px-2">
               <span class="font-bold text-stone-700">締め日</span>
               <select id="set_closeDay" class="p-1 border rounded-lg text-center font-bold bg-white border-stone-200 text-stone-900 text-sm">
-                ${DAY_OPTIONS}
+                ${CLOSE_DAY_OPTIONS}
               </select>
             </div>
             <div class="bg-stone-50 p-2 rounded-xl border border-stone-200 flex items-center justify-between px-2">
@@ -4088,7 +4089,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const name=esc(getJobDisplayName(jk));
         const close = String(configData[jk]?.closeDay || '').trim();
         const closeNum = close === '月末' ? 31 : (Number(close) || 20);
-        const period = !close ? '' : (closeNum >= 31 ? '1日〜末日' : `${closeNum + 1}日〜翌月${closeNum}日`);
+        const period = !close ? '' : (closeNum >= 31 ? `1日〜${a.end.getDate()}日` : `${closeNum + 1}日〜翌月${closeNum}日`);
         return `<div class="hc-job-card"><div class="hc-job-title"><i class="hc-dot" style="background:${color}"></i><strong>${name}</strong><span>${period}</span></div>${heading}${rowsHtml({mins:a.mins,wage:a.wagePay,other:a.otherPay,wageMissing:a.wageMissing},{mins:b.mins,wage:b.wagePay,other:b.otherPay,wageMissing:b.wageMissing})}<div class="hc-row hc-grand-total"><span>合計</span><span>${a.wageMissing?'⚠️':yen(a.pay)}</span><span>${b.wageMissing?'⚠️':yen(b.pay)}</span></div></div>`;
       }).join('');
       return `<div class="hc-comparison">${totals}${cards}</div>`;
