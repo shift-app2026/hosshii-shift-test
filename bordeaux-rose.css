@@ -1073,3 +1073,22 @@ body:has(#tab-clock.hidden) #itoStickyHeaderHost #hosshiiTrialBanner * {
  #shiftInputModal button[onclick="closeShiftInputModal()"] { font-size:13px !important; }
  #shiftInputModal #modalJobSelectContainer .modal-job-trigger { font-size:15px !important; }
 }
+/* Override legacy ID-specific 16px input rules; verify actual computed sizes. */
+#appCard #tab-settings #newJobNameInput,
+#appCard #tab-settings #settingsJobContentArea input,
+#shiftInputModal #modalCustomPresetContainer input,
+html body #presetRegisterModal #pr_start,html body #presetRegisterModal #pr_end,
+#renameJobModal #renameJobInput,#breakSelectModal #breakSelectInput { font-size:17px !important; }
+#appCard #tab-settings :is(.paid-note,.paid-sub,.hosshii-register-limit) { font-size:15px !important; }
+#appCard #tab-clock #yearlyTotalPay { font-size:19px !important; }
+#appCard #tab-clock #itoWallRemainingAmount { font-size:18px !important; }
+#appCard #tab-clock #test30GoalDisplay { font-size:17px !important; }
+#itoStickyHeaderHost #hosshiiSettingsPinnedJob > span { font-size:15px !important; }
+#hosshiiSettingsPinnedJob .hosshii-pinned-trigger { font-size:18px; }
+#t31GoalModal #goalSubmitButton { font-size:17px; }
+@media(max-width:359px){
+ #customTimePickerModal .hclock-digital button { font-size:28px !important; }
+ #customTimePickerModal .hclock-identity { font-size:13px !important; }
+ #customTimePickerModal .hclock-action { font-size:13px !important; }
+ #hosshiiSettingsPinnedJob .hosshii-pinned-trigger { font-size:17px; }
+}
