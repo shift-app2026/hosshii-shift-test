@@ -1,0 +1,47 @@
+[
+  {
+    "before": "      const regCls = ok ? \"bg-rose-900 text-rose-50 hover:bg-rose-800 registration-saved\"",
+    "after": "      const regCls = (ok && window.hosshiiWageRowIsSaved?.(i, s)) ? \"bg-rose-900 text-rose-50 hover:bg-rose-800 registration-saved\"",
+    "reason": "Valid fields alone do not prove row registration; consult session-only confirmation"
+  },
+  {
+    "before": "      configData[currentSettingsJobKey].wageSlots.push({ start: '', end: '', wage: 0, bType: 'weekday', bVal: 0 });\n      renderWageSlotRows();",
+    "after": "      configData[currentSettingsJobKey].wageSlots.push({ start: '', end: '', wage: 0, bType: 'weekday', bVal: 0 });\n      window.hosshiiWageRowAdded?.(configData[currentSettingsJobKey].wageSlots.length - 1);\n      renderWageSlotRows();",
+    "reason": "New wage row has no previous confirmation"
+  },
+  {
+    "before": "      configData[currentSettingsJobKey].wageSlots.splice(i, 1);\n      saveAllDataStorage();",
+    "after": "      configData[currentSettingsJobKey].wageSlots.splice(i, 1);\n      window.hosshiiWageRowRemoved?.(i);\n      saveAllDataStorage();",
+    "reason": "Keep UI records aligned when row indices shift"
+  },
+  {
+    "before": "    function saveSettingsWageSlotRow(i) {\n      if (hosshiiBlockEdit()) return false;",
+    "after": "    function saveSettingsWageSlotRow(i) {\n      if (hosshiiBlockEdit()) return false;\n      window.hosshiiWageRowDirty?.(i);",
+    "reason": "A validation or write failure must remain unconfirmed"
+  },
+  {
+    "before": "      if (!saveAllDataStorage()) return;\n      document.getElementById(`set_reg_btn_${i}`)?.classList.remove",
+    "after": "      if (!saveAllDataStorage()) return;\n      window.hosshiiWageRowConfirmed?.(i);\n      document.getElementById(`set_reg_btn_${i}`)?.classList.remove",
+    "reason": "Confirm the current values only after checked persistence"
+  },
+  {
+    "before": "      input.value = '';\n      document.querySelector('#tab-settings .ito-job-register-button')?.classList.remove('unsaved-registration');",
+    "after": "      input.value = '';\n      window.hosshiiResetWageUi?.(targetKey, false);\n      document.querySelector('#tab-settings .ito-job-register-button')?.classList.remove('unsaved-registration');",
+    "reason": "Do not reuse UI confirmation when a job key is registered again"
+  },
+  {
+    "before": "        window.hosshiiEditSelectedKey = '';\n        document.getElementById('newJobNameInput').value = '';",
+    "after": "        window.hosshiiResetWageUi?.(jk, false);\n        window.hosshiiEditSelectedKey = '';\n        document.getElementById('newJobNameInput').value = '';",
+    "reason": "Clear UI records only after successful deletion"
+  },
+  {
+    "before": "        if (saveSettings()) {\n          window.hosshiiRegisterState?.('settingsSaveButton', true);",
+    "after": "        if (saveSettings()) {\n          window.hosshiiResetWageUi?.(currentSettingsJobKey, true);\n          window.hosshiiRegisterState?.('settingsSaveButton', true);",
+    "reason": "Explicit whole-settings save also confirms its successfully stored wage rows"
+  },
+  {
+    "before": "              monthlyGoal = newGoal;\n              ensureValidSelectedJob();",
+    "after": "              monthlyGoal = newGoal;\n              ['job1','job2','job3'].forEach(jk => window.hosshiiResetWageUi?.(jk, true));\n              ensureValidSelectedJob();",
+    "reason": "Successfully restored data becomes the UI baseline; storage logic unchanged"
+  }
+]

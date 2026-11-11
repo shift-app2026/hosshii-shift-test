@@ -3002,6 +3002,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         return;
       }
       input.value = '';
+      window.hosshiiResetWageUi?.(targetKey, false);
       document.querySelector('#tab-settings .ito-job-register-button')?.classList.remove('unsaved-registration');
       document.querySelector('#tab-settings .ito-job-register-button')?.classList.add('registration-saved');
       renderSettingsJobTabs();
@@ -3058,6 +3059,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           }
           showAlertModal('保存できなかったため、削除を取り消しました。'); return;
         }
+        window.hosshiiResetWageUi?.(jk, false);
         window.hosshiiEditSelectedKey = '';
         document.getElementById('newJobNameInput').value = '';
         currentSettingsJobKey = getFirstActiveJobKey();
@@ -3295,7 +3297,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function wageSlotRowHtml(i, s) {
       const ok = !!(s.start && s.end && s.wage > 0);
-      const regCls = ok ? "bg-rose-900 text-rose-50 hover:bg-rose-800 registration-saved" : "bg-stone-100 text-stone-600 hover:bg-stone-200 border border-stone-300";
+      const regCls = (ok && window.hosshiiWageRowIsSaved?.(i, s)) ? "bg-rose-900 text-rose-50 hover:bg-rose-800 registration-saved" : "bg-stone-100 text-stone-600 hover:bg-stone-200 border border-stone-300";
       const sel = v => (s.bType === v ? 'selected' : '');
       return `
         <div data-slot="${i}" class="p-2 rounded-xl border border-stone-200 bg-stone-50/40 space-y-2">
@@ -3350,6 +3352,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (hosshiiBlockEdit()) return false;
       syncSettingsFormToConfig(currentSettingsJobKey);
       configData[currentSettingsJobKey].wageSlots.push({ start: '', end: '', wage: 0, bType: 'weekday', bVal: 0 });
+      window.hosshiiWageRowAdded?.(configData[currentSettingsJobKey].wageSlots.length - 1);
       renderWageSlotRows();
     }
 
@@ -3357,6 +3360,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (hosshiiBlockEdit()) return false;
       syncSettingsFormToConfig(currentSettingsJobKey);
       configData[currentSettingsJobKey].wageSlots.splice(i, 1);
+      window.hosshiiWageRowRemoved?.(i);
       saveAllDataStorage();
       renderWageSlotRows();
       showToast("時間帯を削除しました");
@@ -3382,6 +3386,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function saveSettingsWageSlotRow(i) {
       if (hosshiiBlockEdit()) return false;
+      window.hosshiiWageRowDirty?.(i);
       const st = document.getElementById(`set_time_${i}_start`)?.value || '';
       const ed = document.getElementById(`set_time_${i}_end`)?.value || '';
       const wg = parseFormattedNumber(document.getElementById(`set_wage_${i}`)?.value);
@@ -3396,6 +3401,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         return;
       }
       if (!saveAllDataStorage()) return;
+      window.hosshiiWageRowConfirmed?.(i);
       document.getElementById(`set_reg_btn_${i}`)?.classList.remove("unsaved-registration");
       document.getElementById(`set_reg_btn_${i}`)?.classList.add("registration-saved");
       initOverviewPage();
@@ -4677,6 +4683,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (hosshiiBlockEdit()) return false;
       try {
         if (saveSettings()) {
+          window.hosshiiResetWageUi?.(currentSettingsJobKey, true);
           window.hosshiiRegisterState?.('settingsSaveButton', true);
           switchTab('clock');
         }
@@ -5039,6 +5046,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
               shiftsData = newShifts;
               configData = newConfig;
               monthlyGoal = newGoal;
+              ['job1','job2','job3'].forEach(jk => window.hosshiiResetWageUi?.(jk, true));
               ensureValidSelectedJob();
               renderSettingsJobTabs();
               renderSettingsJobContent(currentSettingsJobKey);
@@ -5100,6 +5108,20 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 </script>
 <script id="accessible-registration-ui">
 (function(){
+ // UI-only records. Never write registration flags into saved application data.
+ const wageUi=new Map();
+ const wageSignature=s=>JSON.stringify([s?.start||'',s?.end||'',Number(s?.wage)||0,s?.bType||'weekday',Number(s?.bVal)||0]);
+ const wageValid=s=>!!(s?.start&&s?.end&&Number(s?.wage)>0);
+ window.hosshiiResetWageUi=function(jk,saved){
+  wageUi.set(jk,(configData[jk]?.wageSlots||[]).map(s=>({signature:wageSignature(s),saved:!!saved&&wageValid(s)})));
+ };
+ ['job1','job2','job3'].forEach(jk=>window.hosshiiResetWageUi(jk,!!configData[jk]?.name));
+ const uiRows=()=>{const jk=currentSettingsJobKey;if(!wageUi.has(jk))wageUi.set(jk,[]);return wageUi.get(jk)};
+ window.hosshiiWageRowIsSaved=(i,s)=>{const r=uiRows()[i];return !!(r?.saved&&r.signature===wageSignature(s))};
+ window.hosshiiWageRowDirty=function(i){const rows=uiRows();rows[i]={signature:rows[i]?.signature||'',saved:false};window.hosshiiRegisterState?.('set_reg_btn_'+i,false)};
+ window.hosshiiWageRowConfirmed=function(i){const s=configData[currentSettingsJobKey]?.wageSlots?.[i];uiRows()[i]={signature:wageSignature(s),saved:wageValid(s)}};
+ window.hosshiiWageRowAdded=i=>{uiRows()[i]={signature:'',saved:false}};
+ window.hosshiiWageRowRemoved=i=>{uiRows().splice(i,1)};
  const selector='#registerShiftButton,#registerPresetButton,#tab-settings button[id^="set_reg_btn_"],#tab-settings .ito-job-register-button,#saveRenameJobButton,#goalSubmitButton,#timeSelectionRegisterButton,#settingsSaveButton,#calendarRegisterButton,#openPresetRegisterButton,[data-register-preset]';
  window.hosshiiRegisterState=function(target,saved){
   const el=typeof target==='string'?document.getElementById(target):target;
@@ -5124,7 +5146,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   if(t.closest?.('#settingsJobContentArea')){
    dirty('settingsSaveButton');
    const m=t.id?.match(/^set_(?:time|wage|btype|bval)_(\d+)(?:_(?:start|end))?$/);
-   if(m)dirty('set_reg_btn_'+m[1]);
+   if(m)window.hosshiiWageRowDirty?.(Number(m[1]));
   }
  },true));
  document.addEventListener('pointerup',e=>{if(e.target.closest?.('#customClockFace'))dirty('timeSelectionRegisterButton')},true);
