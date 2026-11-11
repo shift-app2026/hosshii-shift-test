@@ -872,3 +872,13 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--hs-gold); outli
   #standaloneShiftListContainer .standalone-shift-line .job-time { font-size: 14px !important; }
   #standaloneShiftListContainer .standalone-workplace-name { font-size: 12px; }
 }
+#tab-settings #hosshiiRegisteredJobCount,
+#tab-settings .paid-sub,
+#shiftInputModal .shift-date-nav button,
+#shiftInputModal #modalPresetContainer .whitespace-nowrap:not(button),
+#shiftInputModal #modalSelectedDateSummaryContent .job-time,
+#shiftInputModal #modalSelectedDateSummaryContent .whitespace-nowrap:not(button),
+#shiftInputModal #modalBreakDisplayVal {
+  font-family: 'Noto Serif JP', serif !important;
+  font-variant-numeric: tabular-nums;
+}
