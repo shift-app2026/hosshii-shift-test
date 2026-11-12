@@ -1,0 +1,61 @@
+{
+  "cases": [
+    {
+      "name": "expired-direct-and-low-level-cloud-refused",
+      "width": 320
+    },
+    {
+      "name": "expired-device-export-exact-data-and-controls-usable",
+      "width": 320
+    },
+    {
+      "name": "open-21-days-exact-boundary-cloud-refused-local-export-works",
+      "width": 320
+    },
+    {
+      "name": "deadline-timer-refuses-both-cloud-actions",
+      "width": 320
+    },
+    {
+      "name": "inflight-save-expiry-no-success-or-restore",
+      "width": 320
+    },
+    {
+      "name": "inflight-load-expiry-no-success-or-restore",
+      "width": 320
+    },
+    {
+      "name": "active-cloud-save-still-works",
+      "width": 320
+    },
+    {
+      "name": "expired-direct-and-low-level-cloud-refused",
+      "width": 375
+    },
+    {
+      "name": "expired-device-export-exact-data-and-controls-usable",
+      "width": 375
+    },
+    {
+      "name": "open-21-days-exact-boundary-cloud-refused-local-export-works",
+      "width": 375
+    },
+    {
+      "name": "deadline-timer-refuses-both-cloud-actions",
+      "width": 375
+    },
+    {
+      "name": "inflight-save-expiry-no-success-or-restore",
+      "width": 375
+    },
+    {
+      "name": "inflight-load-expiry-no-success-or-restore",
+      "width": 375
+    },
+    {
+      "name": "active-cloud-save-still-works",
+      "width": 375
+    }
+  ],
+  "errors": []
+}

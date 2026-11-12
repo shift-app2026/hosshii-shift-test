@@ -1,0 +1,14 @@
+320 expired-direct-and-low-level-cloud-refused passed
+320 expired-device-export-exact-data-and-controls-usable passed
+320 open-21-days-exact-boundary-cloud-refused-local-export-works passed
+320 deadline-timer-refuses-both-cloud-actions passed
+320 inflight-save-expiry-no-success-or-restore passed
+320 inflight-load-expiry-no-success-or-restore passed
+320 active-cloud-save-still-works passed
+375 expired-direct-and-low-level-cloud-refused passed
+375 expired-device-export-exact-data-and-controls-usable passed
+375 open-21-days-exact-boundary-cloud-refused-local-export-works passed
+375 deadline-timer-refuses-both-cloud-actions passed
+375 inflight-save-expiry-no-success-or-restore passed
+375 inflight-load-expiry-no-success-or-restore passed
+375 active-cloud-save-still-works passed
