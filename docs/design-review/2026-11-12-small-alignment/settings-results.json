@@ -1,0 +1,923 @@
+{
+  "widths": [
+    {
+      "width": 320,
+      "states": [
+        {
+          "variant": "before",
+          "info": [
+            {
+              "selector": ".wage-setting-title>span:not(.wage-title-star)",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(255, 255, 255)",
+              "text": "お給料の設定",
+              "client": 99,
+              "scroll": 99
+            },
+            {
+              "selector": "#hosshiiSettingsPinnedJob>span",
+              "size": "15px",
+              "weight": "500",
+              "color": "rgb(12, 10, 9)",
+              "text": "の時給を設定中",
+              "client": 105,
+              "scroll": 105
+            },
+            {
+              "selector": ".hosshii-pinned-trigger-name",
+              "size": "17px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "ローズカフェ",
+              "client": 102,
+              "scroll": 102
+            },
+            {
+              "selector": ".friend-job-hint>span",
+              "size": "15px",
+              "weight": "500",
+              "color": "rgb(41, 37, 36)",
+              "text": "※6文字以内で3件まで登録できます。",
+              "client": 0,
+              "scroll": 0
+            },
+            {
+              "selector": ".ito-job-register-label",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "【バイト名の登録＆変更】",
+              "client": 195,
+              "scroll": 195
+            },
+            {
+              "selector": ".wage-head-title",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "【時給入力】",
+              "client": 0,
+              "scroll": 0
+            },
+            {
+              "selector": ".hosshii-allowance-section-title",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(75, 35, 49)",
+              "text": "☂【有給休暇】",
+              "client": 240,
+              "scroll": 240
+            },
+            {
+              "selector": ".hosshii-allowance-section-title",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(75, 35, 49)",
+              "text": "🚃【交通費】",
+              "client": 240,
+              "scroll": 240
+            },
+            {
+              "selector": ".hosshii-allowance-section-title",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(75, 35, 49)",
+              "text": "⭐【その他】",
+              "client": 240,
+              "scroll": 240
+            },
+            {
+              "selector": "label[for=\"set_allowanceMemo\"]",
+              "size": "16px",
+              "weight": "500",
+              "color": "rgb(33, 21, 26)",
+              "text": "手当の名称",
+              "client": 240,
+              "scroll": 240
+            },
+            {
+              "selector": "#set_wage_0",
+              "size": "17px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "1,200",
+              "client": 88,
+              "scroll": 88
+            },
+            {
+              "selector": "#set_time_0_start",
+              "size": "17px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "00:00",
+              "client": 108,
+              "scroll": 108
+            }
+          ],
+          "wage": [
+            {
+              "value": "1200",
+              "bonus": "100",
+              "parts": [
+                {
+                  "y": -117.734375,
+                  "left": 36,
+                  "right": 284
+                },
+                {
+                  "y": -81.53125,
+                  "left": 36,
+                  "right": 284
+                }
+              ],
+              "inputs": [
+                {
+                  "value": "1,200",
+                  "size": "17px",
+                  "available": 82,
+                  "textWidth": 36.73692321777344
+                },
+                {
+                  "value": "100",
+                  "size": "17px",
+                  "available": 74,
+                  "textWidth": 24.020950317382812
+                }
+              ]
+            },
+            {
+              "value": "9999",
+              "bonus": "999",
+              "parts": [
+                {
+                  "y": -117.734375,
+                  "left": 36,
+                  "right": 284
+                },
+                {
+                  "y": -81.53125,
+                  "left": 36,
+                  "right": 284
+                }
+              ],
+              "inputs": [
+                {
+                  "value": "9,999",
+                  "size": "17px",
+                  "available": 82,
+                  "textWidth": 37.65489196777344
+                },
+                {
+                  "value": "999",
+                  "size": "17px",
+                  "available": 74,
+                  "textWidth": 24.428924560546875
+                }
+              ]
+            },
+            {
+              "value": "100000",
+              "bonus": "10000",
+              "parts": [
+                {
+                  "y": -117.734375,
+                  "left": 36,
+                  "right": 284
+                },
+                {
+                  "y": -81.53125,
+                  "left": 36,
+                  "right": 284
+                }
+              ],
+              "inputs": [
+                {
+                  "value": "100,000",
+                  "size": "17px",
+                  "available": 82,
+                  "textWidth": 54.70588684082031
+                },
+                {
+                  "value": "10,000",
+                  "size": "17px",
+                  "available": 74,
+                  "textWidth": 46.171905517578125
+                }
+              ]
+            }
+          ],
+          "allowances": [
+            {
+              "id": "set_transMonth",
+              "available": 64,
+              "textWidth": 54.70588684082031
+            },
+            {
+              "id": "set_transDay",
+              "available": 65,
+              "textWidth": 54.70588684082031
+            },
+            {
+              "id": "set_allowanceMonth",
+              "available": 64,
+              "textWidth": 54.70588684082031
+            },
+            {
+              "id": "set_allowanceDay",
+              "available": 65,
+              "textWidth": 54.70588684082031
+            }
+          ]
+        },
+        {
+          "variant": "after",
+          "info": [
+            {
+              "selector": ".wage-setting-title>span:not(.wage-title-star)",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(255, 255, 255)",
+              "text": "お給料の設定",
+              "client": 112,
+              "scroll": 112
+            },
+            {
+              "selector": "#hosshiiSettingsPinnedJob>span",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(12, 10, 9)",
+              "text": "の時給を設定中",
+              "client": 112,
+              "scroll": 112
+            },
+            {
+              "selector": ".hosshii-pinned-trigger-name",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "ローズカフェ",
+              "client": 108,
+              "scroll": 108
+            },
+            {
+              "selector": ".friend-job-hint>span",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(41, 37, 36)",
+              "text": "※6文字以内で3件まで登録できます。",
+              "client": 0,
+              "scroll": 0
+            },
+            {
+              "selector": ".ito-job-register-label",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "【バイト名の登録＆変更】",
+              "client": 219,
+              "scroll": 219
+            },
+            {
+              "selector": ".wage-head-title",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "【時給入力】",
+              "client": 0,
+              "scroll": 0
+            },
+            {
+              "selector": ".hosshii-allowance-section-title",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(75, 35, 49)",
+              "text": "☂【有給休暇】",
+              "client": 240,
+              "scroll": 240
+            },
+            {
+              "selector": ".hosshii-allowance-section-title",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(75, 35, 49)",
+              "text": "🚃【交通費】",
+              "client": 240,
+              "scroll": 240
+            },
+            {
+              "selector": ".hosshii-allowance-section-title",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(75, 35, 49)",
+              "text": "⭐【その他】",
+              "client": 240,
+              "scroll": 240
+            },
+            {
+              "selector": "label[for=\"set_allowanceMemo\"]",
+              "size": "17px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "手当の名称",
+              "client": 240,
+              "scroll": 240
+            },
+            {
+              "selector": "#set_wage_0",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "1,200",
+              "client": 46,
+              "scroll": 46
+            },
+            {
+              "selector": "#set_time_0_start",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "00:00",
+              "client": 108,
+              "scroll": 108
+            }
+          ],
+          "wage": [
+            {
+              "value": "1200",
+              "bonus": "100",
+              "parts": [
+                {
+                  "y": -97.15625,
+                  "left": 36,
+                  "right": 133.03125
+                },
+                {
+                  "y": -97.15625,
+                  "left": 137.03125,
+                  "right": 277.0625
+                }
+              ],
+              "inputs": [
+                {
+                  "value": "1,200",
+                  "size": "18px",
+                  "available": 42,
+                  "textWidth": 38.89778137207031
+                },
+                {
+                  "value": "100",
+                  "size": "18px",
+                  "available": 28,
+                  "textWidth": 25.433853149414062
+                }
+              ]
+            },
+            {
+              "value": "9999",
+              "bonus": "999",
+              "parts": [
+                {
+                  "y": -97.15625,
+                  "left": 36,
+                  "right": 133.03125
+                },
+                {
+                  "y": -97.15625,
+                  "left": 137.03125,
+                  "right": 277.0625
+                }
+              ],
+              "inputs": [
+                {
+                  "value": "9,999",
+                  "size": "18px",
+                  "available": 42,
+                  "textWidth": 39.86976623535156
+                },
+                {
+                  "value": "999",
+                  "size": "18px",
+                  "available": 28,
+                  "textWidth": 25.8658447265625
+                }
+              ]
+            },
+            {
+              "value": "100000",
+              "bonus": "10000",
+              "parts": [
+                {
+                  "y": -134.15625,
+                  "left": 36,
+                  "right": 148.96875
+                },
+                {
+                  "y": -96.953125,
+                  "left": 36,
+                  "right": 196.921875
+                }
+              ],
+              "inputs": [
+                {
+                  "value": "100,000",
+                  "size": "18px",
+                  "available": 58,
+                  "textWidth": 57.923675537109375
+                },
+                {
+                  "value": "10,000",
+                  "size": "18px",
+                  "available": 49,
+                  "textWidth": 48.887725830078125
+                }
+              ]
+            }
+          ],
+          "allowances": [
+            {
+              "id": "set_transMonth",
+              "available": 66,
+              "textWidth": 57.923675537109375
+            },
+            {
+              "id": "set_transDay",
+              "available": 68,
+              "textWidth": 57.923675537109375
+            },
+            {
+              "id": "set_allowanceMonth",
+              "available": 66,
+              "textWidth": 57.923675537109375
+            },
+            {
+              "id": "set_allowanceDay",
+              "available": 68,
+              "textWidth": 57.923675537109375
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "states": [
+        {
+          "variant": "before",
+          "info": [
+            {
+              "selector": ".wage-setting-title>span:not(.wage-title-star)",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(255, 255, 255)",
+              "text": "お給料の設定",
+              "client": 99,
+              "scroll": 99
+            },
+            {
+              "selector": "#hosshiiSettingsPinnedJob>span",
+              "size": "15px",
+              "weight": "500",
+              "color": "rgb(12, 10, 9)",
+              "text": "の時給を設定中",
+              "client": 105,
+              "scroll": 105
+            },
+            {
+              "selector": ".hosshii-pinned-trigger-name",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "ローズカフェ",
+              "client": 108,
+              "scroll": 108
+            },
+            {
+              "selector": ".friend-job-hint>span",
+              "size": "15px",
+              "weight": "500",
+              "color": "rgb(41, 37, 36)",
+              "text": "※6文字以内で3件まで登録できます。",
+              "client": 0,
+              "scroll": 0
+            },
+            {
+              "selector": ".ito-job-register-label",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "【バイト名の登録＆変更】",
+              "client": 195,
+              "scroll": 195
+            },
+            {
+              "selector": ".wage-head-title",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "【時給入力】",
+              "client": 0,
+              "scroll": 0
+            },
+            {
+              "selector": ".hosshii-allowance-section-title",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(75, 35, 49)",
+              "text": "☂【有給休暇】",
+              "client": 295,
+              "scroll": 295
+            },
+            {
+              "selector": ".hosshii-allowance-section-title",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(75, 35, 49)",
+              "text": "🚃【交通費】",
+              "client": 295,
+              "scroll": 295
+            },
+            {
+              "selector": ".hosshii-allowance-section-title",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(75, 35, 49)",
+              "text": "⭐【その他】",
+              "client": 295,
+              "scroll": 295
+            },
+            {
+              "selector": "label[for=\"set_allowanceMemo\"]",
+              "size": "16px",
+              "weight": "500",
+              "color": "rgb(33, 21, 26)",
+              "text": "手当の名称",
+              "client": 295,
+              "scroll": 295
+            },
+            {
+              "selector": "#set_wage_0",
+              "size": "17px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "1,200",
+              "client": 88,
+              "scroll": 88
+            },
+            {
+              "selector": "#set_time_0_start",
+              "size": "17px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "00:00",
+              "client": 136,
+              "scroll": 136
+            }
+          ],
+          "wage": [
+            {
+              "value": "1200",
+              "bonus": "100",
+              "parts": [
+                {
+                  "y": -117.4375,
+                  "left": 36,
+                  "right": 339
+                },
+                {
+                  "y": -81.234375,
+                  "left": 36,
+                  "right": 339
+                }
+              ],
+              "inputs": [
+                {
+                  "value": "1,200",
+                  "size": "17px",
+                  "available": 82,
+                  "textWidth": 36.73692321777344
+                },
+                {
+                  "value": "100",
+                  "size": "17px",
+                  "available": 74,
+                  "textWidth": 24.020950317382812
+                }
+              ]
+            },
+            {
+              "value": "9999",
+              "bonus": "999",
+              "parts": [
+                {
+                  "y": -117.4375,
+                  "left": 36,
+                  "right": 339
+                },
+                {
+                  "y": -81.234375,
+                  "left": 36,
+                  "right": 339
+                }
+              ],
+              "inputs": [
+                {
+                  "value": "9,999",
+                  "size": "17px",
+                  "available": 82,
+                  "textWidth": 37.65489196777344
+                },
+                {
+                  "value": "999",
+                  "size": "17px",
+                  "available": 74,
+                  "textWidth": 24.428924560546875
+                }
+              ]
+            },
+            {
+              "value": "100000",
+              "bonus": "10000",
+              "parts": [
+                {
+                  "y": -117.4375,
+                  "left": 36,
+                  "right": 339
+                },
+                {
+                  "y": -81.234375,
+                  "left": 36,
+                  "right": 339
+                }
+              ],
+              "inputs": [
+                {
+                  "value": "100,000",
+                  "size": "17px",
+                  "available": 82,
+                  "textWidth": 54.70588684082031
+                },
+                {
+                  "value": "10,000",
+                  "size": "17px",
+                  "available": 74,
+                  "textWidth": 46.171905517578125
+                }
+              ]
+            }
+          ],
+          "allowances": [
+            {
+              "id": "set_transMonth",
+              "available": 93,
+              "textWidth": 54.70588684082031
+            },
+            {
+              "id": "set_transDay",
+              "available": 91,
+              "textWidth": 54.70588684082031
+            },
+            {
+              "id": "set_allowanceMonth",
+              "available": 93,
+              "textWidth": 54.70588684082031
+            },
+            {
+              "id": "set_allowanceDay",
+              "available": 91,
+              "textWidth": 54.70588684082031
+            }
+          ]
+        },
+        {
+          "variant": "after",
+          "info": [
+            {
+              "selector": ".wage-setting-title>span:not(.wage-title-star)",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(255, 255, 255)",
+              "text": "お給料の設定",
+              "client": 112,
+              "scroll": 112
+            },
+            {
+              "selector": "#hosshiiSettingsPinnedJob>span",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(12, 10, 9)",
+              "text": "の時給を設定中",
+              "client": 112,
+              "scroll": 112
+            },
+            {
+              "selector": ".hosshii-pinned-trigger-name",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "ローズカフェ",
+              "client": 108,
+              "scroll": 108
+            },
+            {
+              "selector": ".friend-job-hint>span",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(41, 37, 36)",
+              "text": "※6文字以内で3件まで登録できます。",
+              "client": 0,
+              "scroll": 0
+            },
+            {
+              "selector": ".ito-job-register-label",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "【バイト名の登録＆変更】",
+              "client": 219,
+              "scroll": 219
+            },
+            {
+              "selector": ".wage-head-title",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "【時給入力】",
+              "client": 0,
+              "scroll": 0
+            },
+            {
+              "selector": ".hosshii-allowance-section-title",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(75, 35, 49)",
+              "text": "☂【有給休暇】",
+              "client": 295,
+              "scroll": 295
+            },
+            {
+              "selector": ".hosshii-allowance-section-title",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(75, 35, 49)",
+              "text": "🚃【交通費】",
+              "client": 295,
+              "scroll": 295
+            },
+            {
+              "selector": ".hosshii-allowance-section-title",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(75, 35, 49)",
+              "text": "⭐【その他】",
+              "client": 295,
+              "scroll": 295
+            },
+            {
+              "selector": "label[for=\"set_allowanceMemo\"]",
+              "size": "17px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "手当の名称",
+              "client": 295,
+              "scroll": 295
+            },
+            {
+              "selector": "#set_wage_0",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "1,200",
+              "client": 46,
+              "scroll": 46
+            },
+            {
+              "selector": "#set_time_0_start",
+              "size": "18px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "text": "00:00",
+              "client": 135,
+              "scroll": 135
+            }
+          ],
+          "wage": [
+            {
+              "value": "1200",
+              "bonus": "100",
+              "parts": [
+                {
+                  "y": -97.15625,
+                  "left": 36,
+                  "right": 133.03125
+                },
+                {
+                  "y": -97.15625,
+                  "left": 137.03125,
+                  "right": 277.0625
+                }
+              ],
+              "inputs": [
+                {
+                  "value": "1,200",
+                  "size": "18px",
+                  "available": 42,
+                  "textWidth": 38.89778137207031
+                },
+                {
+                  "value": "100",
+                  "size": "18px",
+                  "available": 28,
+                  "textWidth": 25.433853149414062
+                }
+              ]
+            },
+            {
+              "value": "9999",
+              "bonus": "999",
+              "parts": [
+                {
+                  "y": -97.15625,
+                  "left": 36,
+                  "right": 133.03125
+                },
+                {
+                  "y": -97.15625,
+                  "left": 137.03125,
+                  "right": 277.0625
+                }
+              ],
+              "inputs": [
+                {
+                  "value": "9,999",
+                  "size": "18px",
+                  "available": 42,
+                  "textWidth": 39.86976623535156
+                },
+                {
+                  "value": "999",
+                  "size": "18px",
+                  "available": 28,
+                  "textWidth": 25.8658447265625
+                }
+              ]
+            },
+            {
+              "value": "100000",
+              "bonus": "10000",
+              "parts": [
+                {
+                  "y": -97.15625,
+                  "left": 36,
+                  "right": 148.96875
+                },
+                {
+                  "y": -97.15625,
+                  "left": 152.96875,
+                  "right": 313.890625
+                }
+              ],
+              "inputs": [
+                {
+                  "value": "100,000",
+                  "size": "18px",
+                  "available": 58,
+                  "textWidth": 57.923675537109375
+                },
+                {
+                  "value": "10,000",
+                  "size": "18px",
+                  "available": 49,
+                  "textWidth": 48.887725830078125
+                }
+              ]
+            }
+          ],
+          "allowances": [
+            {
+              "id": "set_transMonth",
+              "available": 96,
+              "textWidth": 57.923675537109375
+            },
+            {
+              "id": "set_transDay",
+              "available": 94,
+              "textWidth": 57.923675537109375
+            },
+            {
+              "id": "set_allowanceMonth",
+              "available": 96,
+              "textWidth": 57.923675537109375
+            },
+            {
+              "id": "set_allowanceDay",
+              "available": 94,
+              "textWidth": 57.923675537109375
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

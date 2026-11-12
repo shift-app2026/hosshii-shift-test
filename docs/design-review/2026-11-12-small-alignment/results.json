@@ -1,0 +1,1527 @@
+{
+  "widths": [
+    {
+      "width": 320,
+      "states": [
+        {
+          "variant": "before",
+          "note": [
+            {
+              "text": "※この円グラフは、各バイト先の締め日に",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "centreDelta": -4.9921875,
+              "lines": 1
+            },
+            {
+              "text": "　併せて計算してお給料見込額の合計を",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "centreDelta": -12.9921875,
+              "lines": 1
+            },
+            {
+              "text": "　表しています。",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "centreDelta": -92.9921875,
+              "lines": 1
+            }
+          ],
+          "totals": [
+            [
+              {
+                "text": "合計",
+                "x": 26,
+                "width": 28,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "73,600円",
+                "x": 143.484375,
+                "width": 51.765625,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "62,200円",
+                "x": 226.5625,
+                "width": 51.765625,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            [
+              {
+                "text": "合計",
+                "x": 26,
+                "width": 28,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "43,400円",
+                "x": 142.953125,
+                "width": 52.828125,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "35,000円",
+                "x": 226.140625,
+                "width": 52.609375,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            [
+              {
+                "text": "合計",
+                "x": 26,
+                "width": 28,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "19,000円",
+                "x": 143.515625,
+                "width": 51.703125,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "16,000円",
+                "x": 226.46875,
+                "width": 51.953125,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            [
+              {
+                "text": "合計",
+                "x": 26,
+                "width": 28,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "11,200円",
+                "x": 144.375,
+                "width": 49.984375,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "11,200円",
+                "x": 227.453125,
+                "width": 49.984375,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ]
+          ],
+          "calendar": {
+            "dates": [
+              {
+                "text": "1",
+                "size": "17px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "2",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "3",
+                "size": "17px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "4",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "5",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "6",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "7",
+                "size": "17px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "8",
+                "size": "17px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "9",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "10",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "11",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "12",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "13",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "14",
+                "size": "17px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "15",
+                "size": "17px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "16",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "17",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "18",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "19",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "20",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "21",
+                "size": "17px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "22",
+                "size": "17px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "23",
+                "size": "17px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "24",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "25",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "26",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "27",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "28",
+                "size": "17px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "29",
+                "size": "17px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "30",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            "hearts": [
+              {
+                "svg": "\n              <span class=\"payday-outline-mark\" aria-hidden=\"true\"><svg class=\"payday-outline\" viewBox=\"0 0 24 24\" width=\"11\" height=\"11\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 21C9 18 2 13.5 2 7.5A5.5 5.5 0 0 1 12 4a5.5 5.5 0 0 1 10 3.5C22 13.5 15 18 12 21Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"></path></svg></span>\n            ",
+                "z": "1"
+              }
+            ],
+            "overflow": false
+          },
+          "prompt": {
+            "kaX": 44,
+            "selectX": 19,
+            "right": 195.015625,
+            "buttonX": 210.984375,
+            "size": "16px"
+          },
+          "copy": [
+            {
+              "x": 267.984375,
+              "width": 48.015625,
+              "height": 30,
+              "background": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+              "color": "rgb(255, 224, 130)"
+            },
+            {
+              "x": 253,
+              "width": 46,
+              "height": 30,
+              "background": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+              "color": "rgb(255, 224, 130)"
+            }
+          ],
+          "headings": [
+            {
+              "size": "16px",
+              "weight": "700",
+              "family": "\"Zen Maru Gothic\", sans-serif",
+              "lineHeight": "24px",
+              "lines": 1
+            },
+            {
+              "size": "18px",
+              "weight": "700",
+              "family": "\"Zen Maru Gothic\", sans-serif",
+              "lineHeight": "27px",
+              "lines": 1
+            },
+            {
+              "size": "16px",
+              "weight": "500",
+              "family": "\"Zen Maru Gothic\", sans-serif",
+              "lineHeight": "20.8px",
+              "lines": 1
+            },
+            null
+          ]
+        },
+        {
+          "variant": "after",
+          "note": [
+            {
+              "text": "※この円グラフは、各バイト先の締め日に",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "centreDelta": -0.0078125,
+              "lines": 1
+            },
+            {
+              "text": "併せて計算してお給料見込額の合計を",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "centreDelta": -0.0078125,
+              "lines": 1
+            },
+            {
+              "text": "表しています。",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "centreDelta": -0.0078125,
+              "lines": 1
+            }
+          ],
+          "totals": [
+            [
+              {
+                "text": "合計",
+                "x": 54,
+                "width": 28,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "73,600円",
+                "x": 143.484375,
+                "width": 51.765625,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "62,200円",
+                "x": 226.5625,
+                "width": 51.765625,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            [
+              {
+                "text": "合計",
+                "x": 54,
+                "width": 28,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "43,400円",
+                "x": 142.953125,
+                "width": 52.828125,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "35,000円",
+                "x": 226.140625,
+                "width": 52.609375,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            [
+              {
+                "text": "合計",
+                "x": 54,
+                "width": 28,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "19,000円",
+                "x": 143.515625,
+                "width": 51.703125,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "16,000円",
+                "x": 226.46875,
+                "width": 51.953125,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            [
+              {
+                "text": "合計",
+                "x": 54,
+                "width": 28,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "11,200円",
+                "x": 144.375,
+                "width": 49.984375,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "11,200円",
+                "x": 227.453125,
+                "width": 49.984375,
+                "fontSize": 14,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ]
+          ],
+          "calendar": {
+            "dates": [
+              {
+                "text": "1",
+                "size": "18px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "2",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "3",
+                "size": "18px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "4",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "5",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "6",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "7",
+                "size": "18px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "8",
+                "size": "18px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "9",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "10",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "11",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "12",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "13",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "14",
+                "size": "18px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "15",
+                "size": "18px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "16",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "17",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "18",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "19",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "20",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "21",
+                "size": "18px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "22",
+                "size": "18px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "23",
+                "size": "18px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "24",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "25",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "26",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "27",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "28",
+                "size": "18px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "29",
+                "size": "18px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "30",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            "hearts": [
+              {
+                "svg": "\n              <span class=\"payday-outline-mark\" aria-hidden=\"true\"><svg class=\"payday-outline\" viewBox=\"0 0 24 24\" width=\"11\" height=\"11\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 21C9 18 2 13.5 2 7.5A5.5 5.5 0 0 1 12 4a5.5 5.5 0 0 1 10 3.5C22 13.5 15 18 12 21Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"></path></svg></span>\n            ",
+                "z": "1"
+              }
+            ],
+            "overflow": false
+          },
+          "prompt": {
+            "kaX": 44,
+            "selectX": 43.984375,
+            "right": 206.796875,
+            "buttonX": 210.984375,
+            "size": "16px"
+          },
+          "copy": [
+            {
+              "x": 259.984375,
+              "width": 48.015625,
+              "height": 30,
+              "background": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+              "color": "rgb(255, 224, 130)"
+            },
+            {
+              "x": 245,
+              "width": 46,
+              "height": 30,
+              "background": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+              "color": "rgb(255, 224, 130)"
+            }
+          ],
+          "headings": [
+            {
+              "size": "18px",
+              "weight": "700",
+              "family": "\"Zen Maru Gothic\", sans-serif",
+              "lineHeight": "27px",
+              "lines": 1
+            },
+            {
+              "size": "18px",
+              "weight": "700",
+              "family": "\"Zen Maru Gothic\", sans-serif",
+              "lineHeight": "27px",
+              "lines": 1
+            },
+            {
+              "size": "17px",
+              "weight": "700",
+              "family": "\"Zen Maru Gothic\", sans-serif",
+              "lineHeight": "22.1px",
+              "lines": 1
+            },
+            {
+              "size": "18px",
+              "weight": "700",
+              "family": "\"Zen Maru Gothic\", sans-serif",
+              "lineHeight": "27px",
+              "lines": 2
+            }
+          ]
+        }
+      ],
+      "noteCentred": true,
+      "totalLabelOnlyMovedTwoEm": true,
+      "datePlus1": true
+    },
+    {
+      "width": 375,
+      "states": [
+        {
+          "variant": "before",
+          "note": [
+            {
+              "text": "※この円グラフは、各バイト先の締め日に",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "centreDelta": -32.4921875,
+              "lines": 1
+            },
+            {
+              "text": "　併せて計算してお給料見込額の合計を",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "centreDelta": -40.4921875,
+              "lines": 1
+            },
+            {
+              "text": "　表しています。",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "centreDelta": -120.4921875,
+              "lines": 1
+            }
+          ],
+          "totals": [
+            [
+              {
+                "text": "合計",
+                "x": 26,
+                "width": 30.015625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "73,600円",
+                "x": 171.0625,
+                "width": 55.46875,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "62,200円",
+                "x": 271.1875,
+                "width": 55.46875,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            [
+              {
+                "text": "合計",
+                "x": 26,
+                "width": 30.015625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "43,400円",
+                "x": 170.484375,
+                "width": 56.609375,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "35,000円",
+                "x": 270.734375,
+                "width": 56.359375,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            [
+              {
+                "text": "合計",
+                "x": 26,
+                "width": 30.015625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "19,000円",
+                "x": 171.09375,
+                "width": 55.40625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "16,000円",
+                "x": 271.09375,
+                "width": 55.65625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            [
+              {
+                "text": "合計",
+                "x": 26,
+                "width": 30.015625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "11,200円",
+                "x": 172.015625,
+                "width": 53.5625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "11,200円",
+                "x": 272.140625,
+                "width": 53.5625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ]
+          ],
+          "calendar": {
+            "dates": [
+              {
+                "text": "1",
+                "size": "17px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "2",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "3",
+                "size": "17px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "4",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "5",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "6",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "7",
+                "size": "17px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "8",
+                "size": "17px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "9",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "10",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "11",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "12",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "13",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "14",
+                "size": "17px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "15",
+                "size": "17px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "16",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "17",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "18",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "19",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "20",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "21",
+                "size": "17px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "22",
+                "size": "17px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "23",
+                "size": "17px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "24",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "25",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "26",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "27",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "28",
+                "size": "17px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "29",
+                "size": "17px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "30",
+                "size": "17px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            "hearts": [
+              {
+                "svg": "\n              <span class=\"payday-outline-mark\" aria-hidden=\"true\"><svg class=\"payday-outline\" viewBox=\"0 0 24 24\" width=\"11\" height=\"11\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 21C9 18 2 13.5 2 7.5A5.5 5.5 0 0 1 12 4a5.5 5.5 0 0 1 10 3.5C22 13.5 15 18 12 21Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"></path></svg></span>\n            ",
+                "z": "1"
+              }
+            ],
+            "overflow": false
+          },
+          "prompt": {
+            "kaX": 44.984375,
+            "selectX": 19.984375,
+            "right": 207,
+            "buttonX": 265.984375,
+            "size": "17px"
+          },
+          "copy": [
+            {
+              "x": 322.984375,
+              "width": 48.015625,
+              "height": 30,
+              "background": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+              "color": "rgb(255, 224, 130)"
+            },
+            {
+              "x": 308,
+              "width": 46,
+              "height": 30,
+              "background": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+              "color": "rgb(255, 224, 130)"
+            }
+          ],
+          "headings": [
+            {
+              "size": "16px",
+              "weight": "700",
+              "family": "\"Zen Maru Gothic\", sans-serif",
+              "lineHeight": "24px",
+              "lines": 1
+            },
+            {
+              "size": "18px",
+              "weight": "700",
+              "family": "\"Zen Maru Gothic\", sans-serif",
+              "lineHeight": "27px",
+              "lines": 1
+            },
+            {
+              "size": "16px",
+              "weight": "500",
+              "family": "\"Zen Maru Gothic\", sans-serif",
+              "lineHeight": "20.8px",
+              "lines": 1
+            },
+            null
+          ]
+        },
+        {
+          "variant": "after",
+          "note": [
+            {
+              "text": "※この円グラフは、各バイト先の締め日に",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "centreDelta": -0.0078125,
+              "lines": 1
+            },
+            {
+              "text": "併せて計算してお給料見込額の合計を",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "centreDelta": -0.0078125,
+              "lines": 1
+            },
+            {
+              "text": "表しています。",
+              "size": "16px",
+              "weight": "700",
+              "color": "rgb(33, 21, 26)",
+              "centreDelta": -0.0078125,
+              "lines": 1
+            }
+          ],
+          "totals": [
+            [
+              {
+                "text": "合計",
+                "x": 56,
+                "width": 30.015625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "73,600円",
+                "x": 171.0625,
+                "width": 55.46875,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "62,200円",
+                "x": 271.1875,
+                "width": 55.46875,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            [
+              {
+                "text": "合計",
+                "x": 56,
+                "width": 30.015625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "43,400円",
+                "x": 170.484375,
+                "width": 56.609375,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "35,000円",
+                "x": 270.734375,
+                "width": 56.359375,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            [
+              {
+                "text": "合計",
+                "x": 56,
+                "width": 30.015625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "19,000円",
+                "x": 171.09375,
+                "width": 55.40625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "16,000円",
+                "x": 271.09375,
+                "width": 55.65625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            [
+              {
+                "text": "合計",
+                "x": 56,
+                "width": 30.015625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "11,200円",
+                "x": 172.015625,
+                "width": 53.5625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "11,200円",
+                "x": 272.140625,
+                "width": 53.5625,
+                "fontSize": 15,
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ]
+          ],
+          "calendar": {
+            "dates": [
+              {
+                "text": "1",
+                "size": "18px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "2",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "3",
+                "size": "18px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "4",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "5",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "6",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "7",
+                "size": "18px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "8",
+                "size": "18px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "9",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "10",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "11",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "12",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "13",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "14",
+                "size": "18px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "15",
+                "size": "18px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "16",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "17",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "18",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "19",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "20",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "21",
+                "size": "18px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "22",
+                "size": "18px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "23",
+                "size": "18px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "24",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "25",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "26",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "27",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              },
+              {
+                "text": "28",
+                "size": "18px",
+                "color": "rgb(2, 132, 199)",
+                "weight": "700"
+              },
+              {
+                "text": "29",
+                "size": "18px",
+                "color": "rgb(225, 29, 72)",
+                "weight": "700"
+              },
+              {
+                "text": "30",
+                "size": "18px",
+                "color": "rgb(33, 21, 26)",
+                "weight": "700"
+              }
+            ],
+            "hearts": [
+              {
+                "svg": "\n              <span class=\"payday-outline-mark\" aria-hidden=\"true\"><svg class=\"payday-outline\" viewBox=\"0 0 24 24\" width=\"11\" height=\"11\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 21C9 18 2 13.5 2 7.5A5.5 5.5 0 0 1 12 4a5.5 5.5 0 0 1 10 3.5C22 13.5 15 18 12 21Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"></path></svg></span>\n            ",
+                "z": "1"
+              }
+            ],
+            "overflow": false
+          },
+          "prompt": {
+            "kaX": 44.984375,
+            "selectX": 44.984375,
+            "right": 232,
+            "buttonX": 265.984375,
+            "size": "17px"
+          },
+          "copy": [
+            {
+              "x": 314.984375,
+              "width": 48.015625,
+              "height": 30,
+              "background": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+              "color": "rgb(255, 224, 130)"
+            },
+            {
+              "x": 300,
+              "width": 46,
+              "height": 30,
+              "background": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+              "color": "rgb(255, 224, 130)"
+            }
+          ],
+          "headings": [
+            {
+              "size": "18px",
+              "weight": "700",
+              "family": "\"Zen Maru Gothic\", sans-serif",
+              "lineHeight": "27px",
+              "lines": 1
+            },
+            {
+              "size": "18px",
+              "weight": "700",
+              "family": "\"Zen Maru Gothic\", sans-serif",
+              "lineHeight": "27px",
+              "lines": 1
+            },
+            {
+              "size": "17px",
+              "weight": "700",
+              "family": "\"Zen Maru Gothic\", sans-serif",
+              "lineHeight": "22.1px",
+              "lines": 1
+            },
+            {
+              "size": "19px",
+              "weight": "700",
+              "family": "\"Zen Maru Gothic\", sans-serif",
+              "lineHeight": "28.5px",
+              "lines": 2
+            }
+          ]
+        }
+      ],
+      "noteCentred": true,
+      "totalLabelOnlyMovedTwoEm": true,
+      "datePlus1": true
+    }
+  ],
+  "errors": [],
+  "external": [],
+  "allJavaScriptUnchanged": true
+}

@@ -6,7 +6,7 @@ html body :is(#appCard,#lineAuthGate,#toastMessage,#renameJobModal,#breakSelectM
 html body #appCard #itoStickyHeaderHost :is(#todayDate,#currentMonthLabel,#currentListMonthLabel) {font-size:17px!important;}
 html body #appCard #tab-clock #incomeWallBox .ito-annual-receive {margin-inline:-11px!important;}
 html body #appCard #tab-clock #incomeWallBox .ito-annual-receive #yearlySubLabel {font-size:16px!important;}
-html body #appCard #tab-clock .hosshii-ring-note {margin-inline:-9px!important;}
+html body #appCard #tab-clock .hosshii-ring-note {margin-inline:-9px!important;text-align:center!important;}
 html body #appCard #tab-clock .hosshii-ring-note>span {display:block!important;white-space:nowrap!important;}
 html body #appCard .hosshii-copy-card .copy-label {font-size:17px!important;line-height:1.6!important;}
 html body #appCard .hosshii-copy-card .copy-description {gap:1em!important;font-size:17px!important;}
@@ -78,7 +78,7 @@ html body #appCard .threshold-103 {display:none!important;}
 html body #appCard .wall-threshold-display:has(option[value="1030000"]:checked) .threshold-103 {display:inline!important;}
 html body #appCard .wall-threshold-display:has(option[value="1030000"]:checked) .threshold-130 {display:none!important;}
 html body #appCard #calendarDays>div>span:first-child,
-html body #appCard #calendarDays .payday-date-number>span:first-child {font-size:17px!important;}
+html body #appCard #calendarDays .payday-date-number>span:first-child {font-size:18px!important;}
 html body #appCard #calendarJobLegend .calendar-payday-legend>span:last-child {font-size:17px!important;}
 /* Equal text starts; clipboard sits in its own preserved leading gutter. */
 html body #appCard #calendarCopyCard {margin-inline:-9px!important;padding-inline:0!important;}
@@ -136,5 +136,53 @@ html body #appCard #standaloneShiftListContainer .standalone-shift-line:has(.sta
 
 html body #appCard .wall-threshold-display::after {content:""!important;display:block!important;position:absolute!important;pointer-events:none!important;right:12px!important;top:calc(50% - 5px)!important;width:6px!important;height:6px!important;border-right:2px solid currentColor!important;border-bottom:2px solid currentColor!important;transform:rotate(45deg)!important;color:var(--hs-readable-ink)!important;}
 @media(max-width:359px){html body #appCard .wall-threshold-display {width:100%!important;max-width:100%!important;flex:0 0 auto!important;}}
+
+/* Keep the salary amount columns fixed; indent only the total label. */
+html body #appCard #itoReceiveTable .hc-grand-total>span:first-child {padding-left:2em!important;}
+
+/* Follow-up: align the continuation with カ, and make modal headings explicit. */
+html body #appCard #tab-calendar .calendar-registration-prompt>p>span:nth-child(2) {padding-left:25px!important;}
+html body #shiftInputModal #modalShiftListHeading {font-size:18px!important;font-weight:700!important;line-height:1.5!important;}
+html body #shiftInputModal .ito-modal-job-row>.shift-section-title {font-size:17px!important;font-weight:700!important;}
+html body #shiftInputModal .shift-modal-title {font-size:19px!important;font-weight:700!important;line-height:1.5!important;}
+@media(max-width:359px){
+ html body #appCard #tab-calendar .calendar-registration-prompt>p>span:nth-child(2) {padding-left:calc(25px + .075em)!important;letter-spacing:-.075em!important;}
+ html body #shiftInputModal .shift-modal-title {font-size:18px!important;}
+}
+
+html body #appCard .hosshii-copy-card button[onclick="copyLastMonthShifts()"] {margin-right:8px!important;}
+/* Settings: enlarge role-specific text; strengthen the labels still rendered at 500. */
+html body #appCard #tab-settings :is(.ito-job-register-label,.wage-head-title,.hosshii-allowance-section-title,.text-base.font-bold) {font-size:18px!important;font-weight:700!important;}
+html body #appCard #hosshiiSettingsPinnedJob .hosshii-pinned-trigger-name {font-size:18px!important;}
+html body #appCard #hosshiiSettingsPinnedJob>span {font-size:16px!important;font-weight:700!important;}
+html body #appCard #tab-settings :is(.hosshii-register-limit,.friend-job-hint,.friend-job-hint>span) {font-size:16px!important;font-weight:700!important;}
+html body #appCard #settingsJobContentArea>div>div.grid-cols-2>div>span {font-size:16px!important;font-weight:700!important;}
+html body #appCard #tab-settings label[for="set_allowanceMemo"] {font-size:17px!important;font-weight:700!important;}
+html body #appCard #tab-settings input {font-size:18px!important;}
+html body #appCard #tab-settings :is(#set_closeDay,#set_payDay) {font-size:17px!important;}
+html body #appCard #tab-settings .allowance-period-grid span {font-size:16px!important;}
+html body #appCard #tab-settings .allowance-period-grid {margin-inline:-10px!important;column-gap:12px!important;}
+html body #appCard #tab-settings .allowance-period-grid>div {gap:2px!important;}
+html body #appCard #tab-settings .paid-sub {font-size:16px!important;}
+html body #appCard #tab-settings .paid-note,html body #appCard #tab-settings .paid-note>span {font-size:16px!important;}
+html body #appCard #tab-settings .paid-note {margin-inline:-9px!important;}
+html body #appCard #tab-settings .oct23-backup-note {font-size:16px!important;margin-inline:-6px!important;}
+html body #appCard #tab-settings :is(.wage-head-sub,.wage-head-btn,[id^="set_reg_btn_"],button[onclick^="removeSettingsWageSlot"],button[onclick^="hosshiiCloudBackup"]) {font-size:16px!important;}
+html body #appCard #tab-settings .ito-job-register-button {font-size:15px!important;}
+/* Keep ordinary wage + day-bonus inputs on a single row without reducing type size.
+   Longer values can grow and wrap as a group instead of clipping their digits. */
+html body #appCard #tab-settings .wage-rate-row {display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;gap:4px!important;}
+html body #appCard #tab-settings :is(.wage-base-rate,.wage-bonus-rate) {display:flex!important;flex:0 0 auto!important;width:max-content!important;max-width:100%!important;gap:2px!important;}
+html body #appCard #tab-settings :is(.wage-base-rate,.wage-bonus-rate)>span {font-size:15px!important;font-weight:700!important;}
+html body #appCard #tab-settings .wage-bonus-select {width:70px!important;min-width:70px!important;max-width:70px!important;font-size:16px!important;padding-inline:0!important;flex:0 0 70px!important;}
+html body #appCard #tab-settings :is(.wage-base-input,.wage-bonus-input) {field-sizing:content!important;width:auto!important;max-width:120px!important;flex:0 0 auto!important;padding-inline:2px!important;}
+html body #appCard #tab-settings .wage-base-input {min-width:48px!important;}
+html body #appCard #tab-settings .wage-bonus-input {min-width:34px!important;}
+
+html body #appCard #itoStickyHeaderHost .wage-setting-title,
+html body #appCard #itoStickyHeaderHost .wage-setting-title>span:not(.wage-title-star) {font-size:18px!important;font-weight:700!important;}
+html body #appCard #hosshiiSettingsPinnedJob {padding-inline:4px!important;gap:4px!important;}
+html body #appCard #tab-settings .friend-job-hint * {font-size:16px!important;font-weight:700!important;}
+html body #appCard #setWageSlotsContainer>[data-slot]>div:first-child>span {font-size:16px!important;font-weight:700!important;}
 
 }

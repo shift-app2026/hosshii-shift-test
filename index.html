@@ -1519,7 +1519,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   <!-- シフト入力・編集専用モーダル -->
   <div id="shiftInputModal" class="fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 hidden">
     <div class="bg-white rounded-3xl p-5 w-full max-w-sm shadow-2xl border border-stone-200 space-y-3.5 max-h-[92vh] flex flex-col overflow-hidden">
-      <div class="flex justify-between items-center gap-2 border-b border-stone-200 pb-2 shrink-0"><span class="font-bold text-stone-900"><svg class="luxe-shift-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.12em;flex-shrink:0" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></svg> シフト登録画面</span><button type="button" onclick="showShiftHelp()" class="px-2 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-xs">はじめに見てね♡</button></div><div class="shift-date-nav shrink-0"><button onclick="shiftModalChangeDay(-1)">◀ 前日</button><h3 id="modalDateTitle">日付</h3><button onclick="shiftModalChangeDay(1)">翌日 ▶</button></div>
+      <div class="flex justify-between items-center gap-2 border-b border-stone-200 pb-2 shrink-0"><span class="shift-modal-title font-bold text-stone-900"><svg class="luxe-shift-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.12em;flex-shrink:0" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></svg> シフト登録画面</span><button type="button" onclick="showShiftHelp()" class="px-2 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-xs">はじめに見てね♡</button></div><div class="shift-date-nav shrink-0"><button onclick="shiftModalChangeDay(-1)">◀ 前日</button><h3 id="modalDateTitle">日付</h3><button onclick="shiftModalChangeDay(1)">翌日 ▶</button></div>
 
       <div class="ito-modal-job-fixed shrink-0"><div class="ito-modal-job-row"><span class="shift-section-title">【バイト先選択】</span><div id="modalJobSelectContainer" class="min-w-0"></div></div></div>
       <div id="shiftInputScrollArea" class="space-y-3 overflow-y-auto pr-1 flex-1 no-scrollbar" onscroll="updateShiftScrollHint()">
@@ -1650,7 +1650,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         </div>
 
-        <p class="hosshii-ring-note"><span>※この円グラフは、各バイト先の締め日に</span><span>　併せて計算してお給料見込額の合計を</span><span>　表しています。</span></p>
+        <p class="hosshii-ring-note"><span>※この円グラフは、各バイト先の締め日に</span><span>併せて計算してお給料見込額の合計を</span><span>表しています。</span></p>
 
         <div class="hosshii-monthly-detail-card bg-gradient-to-br from-rose-50/60 via-rose-50/30 to-amber-50/40 text-stone-900 p-4 rounded-2xl border border-rose-100 shadow-[0_1px_2px_rgba(0,0,0,0.05)] space-y-2.5">
           <div class="text-sm font-bold text-rose-950 border-b border-rose-200/60 pb-2 flex justify-between items-center tracking-wide">
@@ -1789,7 +1789,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
               <div id="hosshiiJobEditRow" class="hosshii-register-input-wrap" hidden><select id="hosshiiJobEditSelect" aria-label="修正・削除するバイト先" onchange="hosshiiJobSelectChanged(this)"></select></div>
               <div id="settingsJobTabs" class="hosshii-register-actions"></div>
             </div>
-            <div class="friend-job-hint hosshii-register-count"><span>※6文字以内で3件まで登録できます。</span></div>
+            <div class="friend-job-hint hosshii-register-count"><span>※6文字以内で3件まで<span class="android-keep">登録できます。</span></span></div>
           </div>
 
           <div id="settingsJobContentArea" class="pt-2 border-t border-stone-200 space-y-3"></div>
