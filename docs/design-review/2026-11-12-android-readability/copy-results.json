@@ -1,0 +1,261 @@
+{
+  "copy": [
+    {
+      "width": 320,
+      "tab": "calendar",
+      "states": [
+        {
+          "name": "initial",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "unrelated-save",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "confirming",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "success",
+          "color": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "already-filled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "cancelled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "no-source",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "failure",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "month-changed",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        }
+      ],
+      "persistentDataUnchangedOnFailure": true,
+      "copyWeekdayMapping": true,
+      "paidExcluded": true,
+      "otherViewNotMarked": true
+    },
+    {
+      "width": 320,
+      "tab": "list",
+      "states": [
+        {
+          "name": "initial",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "unrelated-save",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "confirming",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "success",
+          "color": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "already-filled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "cancelled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "no-source",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "failure",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "month-changed",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        }
+      ],
+      "persistentDataUnchangedOnFailure": true,
+      "copyWeekdayMapping": true,
+      "paidExcluded": true,
+      "otherViewNotMarked": true
+    },
+    {
+      "width": 375,
+      "tab": "calendar",
+      "states": [
+        {
+          "name": "initial",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "unrelated-save",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "confirming",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "success",
+          "color": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "already-filled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "cancelled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "no-source",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "failure",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "month-changed",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        }
+      ],
+      "persistentDataUnchangedOnFailure": true,
+      "copyWeekdayMapping": true,
+      "paidExcluded": true,
+      "otherViewNotMarked": true
+    },
+    {
+      "width": 375,
+      "tab": "list",
+      "states": [
+        {
+          "name": "initial",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "unrelated-save",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "confirming",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "success",
+          "color": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "already-filled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "cancelled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "no-source",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "failure",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "month-changed",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        }
+      ],
+      "persistentDataUnchangedOnFailure": true,
+      "copyWeekdayMapping": true,
+      "paidExcluded": true,
+      "otherViewNotMarked": true
+    }
+  ],
+  "errors": []
+}

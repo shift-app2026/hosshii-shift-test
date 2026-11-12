@@ -12,7 +12,7 @@ for name in ['preview-bootstrap.js','preview-ui.js']:(OUT/name).write_bytes((Pat
 src=(ROOT/'index.html').read_text(); sha=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
 assert subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,text=True).strip()=='design/bordeaux-rose-champagne'
 font_assets=['fonts/ZenMaruGothic-Medium.woff2','fonts/ZenMaruGothic-Bold.woff2','fonts/zenmarugothic-OFL.txt']
-source_hashes={n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in ['index.html','bordeaux-rose.css','zen-maru.css',*font_assets]}
+source_hashes={n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in ['index.html','bordeaux-rose.css','zen-maru.css','android-readability.css',*font_assets]}
 s=src
 s,n=re.subn(r'<script id="line-auth-supabase-test-20261028">[\s\S]*?</script>','<!-- Preview: real authentication and trial code excluded. -->',s);assert n==1
 s,n=re.subn(r'<script src="https://static.line-scdn.net/[^>]+></script>','',s);assert n==1
@@ -32,7 +32,7 @@ s=s.replace('<head>', '<head>\n<meta http-equiv="Content-Security-Policy" conten
 s=s.replace('</body>','<script src="./preview-ui.js"></script>\n</body>')
 # Original application remains untouched. Only the isolated output has disabled I/O.
 (OUT/'index.html').write_text(s)
-for n in ['bordeaux-rose.css','zen-maru.css',*font_assets]:
+for n in ['bordeaux-rose.css','zen-maru.css','android-readability.css',*font_assets]:
  (OUT/n).parent.mkdir(parents=True,exist_ok=True)
  (OUT/n).write_bytes((ROOT/n).read_bytes())
 for n in ['icon-192.png']:(OUT/n).write_bytes((ROOT/n).read_bytes())

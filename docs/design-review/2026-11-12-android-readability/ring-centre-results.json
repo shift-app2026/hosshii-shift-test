@@ -1,0 +1,30 @@
+[
+  {
+    "width": 320,
+    "dimensions": [
+      476,
+      474
+    ],
+    "centralBox": [
+      95,
+      95,
+      381,
+      379
+    ],
+    "centralPixelsIdentical": true
+  },
+  {
+    "width": 375,
+    "dimensions": [
+      534,
+      534
+    ],
+    "centralBox": [
+      107,
+      107,
+      427,
+      427
+    ],
+    "centralPixelsIdentical": true
+  }
+]
