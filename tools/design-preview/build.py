@@ -61,12 +61,12 @@ else:
  (fdir/'fonts.css').write_text(css)
  for family in ['notosansjp','notoserifjp','cinzel']:
   subprocess.run(['curl','-fsSL','--retry','2','--max-time','40','https://raw.githubusercontent.com/google/fonts/main/ofl/'+family+'/OFL.txt','-o',str(fdir/(family+'-OFL.txt'))],check=True)
-manifest={'sourceRepository':'shift-app2026/hosshii-shift-test','sourcePR':8,'sourceBranch':'design/bordeaux-rose-champagne','sourceCommit':sha,'sourceHashes':source_hashes,'fontFiles':len(list(fdir.glob('*.woff2'))),'previewOnly':True,'storage':'fresh in-memory fixtures per page load; no persistent storage','externalServices':'excluded; connect-src none'}
+manifest={'sourceRepository':'shift-app2026/hosshii-shift-test','sourcePR':8,'sourceBranch':'design/bordeaux-rose-champagne','sourceCommit':sha,'sourceHashes':source_hashes,'fontFiles':len(list(fdir.glob('*.woff2'))),'previewOnly':True,'storage':'memory by default; device_test=1 persists synthetic fixtures only in a separate browser-storage namespace','externalServices':'excluded; connect-src none'}
 (OUT/'preview-source.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(manifest,ensure_ascii=False))
 
 # Local terms placeholder; never navigate to production policy pages.
 (OUT/'terms.html').write_text("""<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>デザイン確認専用</title></head><body><h1>デザイン確認専用の案内</h1><p>架空データを使ったデザイン見本です。認証・契約・決済・クラウド保存は実行しません。</p><a href="./">プレビューに戻る</a></body></html>""")
-(OUT/'UPLOAD-README.txt').write_text('デザイン確認専用。架空データのみ、外部通信なし、変更はメモリ内のみ。再読込でリセット。\nCloudflareへの再デプロイはユーザーの別途許可が出るまで行わないでください。既存プロジェクトへの上書きは禁止です。\n')
+(OUT/'UPLOAD-README.txt').write_text('デザイン確認専用。架空データのみ、外部通信なし、通常はメモリ内のみ。device_test=1 のURLは架空データだけを専用の端末内領域に保存。リセットで初期化。\nCloudflareへの再デプロイはユーザーの別途許可が出るまで行わないでください。既存プロジェクトへの上書きは禁止です。\n')
 files={p.relative_to(OUT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in OUT.rglob('*') if p.is_file()}
 (OUT/'file-integrity.json').write_text(json.dumps(files,ensure_ascii=False,indent=2)+'\n')

@@ -1,0 +1,32 @@
+{
+  "widths": [
+    {
+      "width": 320,
+      "namespacedSyntheticDataOnly": true,
+      "reloadPersists": true,
+      "failureRetainsInputAndRetryPersists": true,
+      "resetClearsOnlyPreviewNamespace": true,
+      "defaultModeStillEphemeral": true,
+      "realServiceTraffic": 0,
+      "errorStyle": {
+        "color": "rgb(255, 224, 130)",
+        "gloss": "linear-gradient(155deg, rgb(161, 43, 78), rgb(136, 19, 55) 32%, rgb(76, 5, 25))"
+      }
+    },
+    {
+      "width": 375,
+      "namespacedSyntheticDataOnly": true,
+      "reloadPersists": true,
+      "failureRetainsInputAndRetryPersists": true,
+      "resetClearsOnlyPreviewNamespace": true,
+      "defaultModeStillEphemeral": true,
+      "realServiceTraffic": 0,
+      "errorStyle": {
+        "color": "rgb(255, 224, 130)",
+        "gloss": "linear-gradient(155deg, rgb(161, 43, 78), rgb(136, 19, 55) 32%, rgb(76, 5, 25))"
+      }
+    }
+  ],
+  "requests": [],
+  "errors": []
+}

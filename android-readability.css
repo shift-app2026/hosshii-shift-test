@@ -184,5 +184,10 @@ html body #appCard #itoStickyHeaderHost .wage-setting-title>span:not(.wage-title
 html body #appCard #hosshiiSettingsPinnedJob {padding-inline:4px!important;gap:4px!important;}
 html body #appCard #tab-settings .friend-job-hint * {font-size:16px!important;font-weight:700!important;}
 html body #appCard #setWageSlotsContainer>[data-slot]>div:first-child>span {font-size:16px!important;font-weight:700!important;}
+/* Only shown for a failed settings write; successful writes keep the form uncluttered. */
+html body #appCard #settingsSaveStatus[hidden] {display:none!important;}
+html body #appCard #settingsSaveStatus {padding:12px!important;border:1px solid var(--hs-rose-line,#eadfe3)!important;border-radius:14px!important;background:var(--hs-pearl,#fffaf8)!important;}
+html body #appCard #settingsSaveStatus p {font-size:16px!important;line-height:1.7!important;font-weight:700!important;}
+html body #appCard #settingsRetryButton {background:var(--hs-button-gradient)!important;border:1px solid #781030!important;border-radius:12px!important;box-shadow:inset 0 1px 1px #ffefd661,inset 0 -2px 2px #1e000d33,0 3px 9px #88133738!important;font-size:16px!important;font-weight:700!important;margin-top:8px!important;color:#ffe082!important;-webkit-text-fill-color:#ffe082!important;}
 
 }

@@ -4,15 +4,30 @@ window.HOSSHII_DESIGN_PREVIEW = true;
 window.hosshiiReadOnly = false;
 window.previewBlockedCalls = [];
 const previewValues = new Map();
+const previewStoragePrefix = 'hosshii_pr8_synthetic_v4:';
+let previewDeviceStorage = new URLSearchParams(location.search).get('device_test') === '1';
+window.HOSSHII_PREVIEW_STORAGE_UNAVAILABLE = false;
+if (previewDeviceStorage) {
+  try {
+    localStorage.setItem(previewStoragePrefix + '__probe__', '1');
+    localStorage.removeItem(previewStoragePrefix + '__probe__');
+  } catch (_) {
+    previewDeviceStorage = false;
+    window.HOSSHII_PREVIEW_STORAGE_UNAVAILABLE = true;
+  }
+}
+window.HOSSHII_PREVIEW_DEVICE_STORAGE = previewDeviceStorage;
+const previewDeviceKeys = () => Object.keys(localStorage).filter(k => k.startsWith(previewStoragePrefix));
 window.previewStorage = Object.freeze({
-  getItem: key => previewValues.has(String(key)) ? previewValues.get(String(key)) : null,
-  setItem: (key, value) => previewValues.set(String(key), String(value)),
-  removeItem: key => previewValues.delete(String(key)),
-  clear: () => previewValues.clear(),
-  key: i => [...previewValues.keys()][i] ?? null,
-  get length() { return previewValues.size; }
+  getItem: key => previewDeviceStorage ? localStorage.getItem(previewStoragePrefix + String(key)) : (previewValues.has(String(key)) ? previewValues.get(String(key)) : null),
+  setItem: (key, value) => previewDeviceStorage ? localStorage.setItem(previewStoragePrefix + String(key), String(value)) : previewValues.set(String(key), String(value)),
+  removeItem: key => previewDeviceStorage ? localStorage.removeItem(previewStoragePrefix + String(key)) : previewValues.delete(String(key)),
+  clear: () => { if (previewDeviceStorage) previewDeviceKeys().forEach(k => localStorage.removeItem(k)); else previewValues.clear(); },
+  key: i => previewDeviceStorage ? (previewDeviceKeys()[i]?.slice(previewStoragePrefix.length) ?? null) : ([...previewValues.keys()][i] ?? null),
+  get length() { return previewDeviceStorage ? previewDeviceKeys().length : previewValues.size; }
 });
 (function seedFictionalData() {
+  if (previewDeviceStorage && previewStorage.getItem('mybasket_wages_v77') !== null) return;
   const now = new Date(), wages = {jobCount:3, monthlyGoal:100000}, shifts = {};
   ['ローズカフェ','月色ショップ','星空キッチン'].forEach((name, i) => {
     wages['job'+(i+1)] = {name, closeDay:'月末', payDay:'10', paid:1200+i*100, paidHours:8,
@@ -48,6 +63,6 @@ for(const api of ['XMLHttpRequest','WebSocket','EventSource','RTCPeerConnection'
 Object.defineProperty(navigator,'sendBeacon',{value:()=>{previewBlockedCalls.push('sendBeacon');return false;}});
 window.open = () => { previewBlockedCalls.push('window.open'); return null; };
 window.previewDisabled = function() {
-  const msg='デザイン確認専用のため、バックアップ・ファイルの読み込み・外部連携は実行しません。\n変更内容はこの画面内だけに反映され、再読み込みで架空データに戻ります。';
+  const msg='デザイン確認専用のため、バックアップ・ファイルの読み込み・外部連携は実行しません。\n'+(previewDeviceStorage ? '架空データの変更は、このテスト専用URLの端末内だけに保存されます。' : '変更内容はこの画面内だけに反映され、再読み込みで架空データに戻ります。');
   if(typeof showAlertModal==='function')showAlertModal(msg);else alert(msg);
 };

@@ -74,7 +74,7 @@ const shifts={[dateKey]:{job1:[{start:'09:00',end:'17:00',breakMins:60,isPaidLea
    assert.equal(geometry.visibleTabs,1);
    assert(geometry.buttons.every(b=>Math.abs(b.y-geometry.buttons[0].y)<1 && b.h>=44 && b.w>=44));
    if(tab==='settings'){
-    const save=await page.locator('#settingsFixedSave').boundingBox();assert(save.y+save.height<=geometry.navY+1,'save button overlaps navigation');
+    assert.equal(await page.locator('#settingsFixedSave').count(),0,'Settings footer removed after immediate autosave');
    }
    checks.push(`${width}:${tab}`);
   }
@@ -107,7 +107,8 @@ const shifts={[dateKey]:{job1:[{start:'09:00',end:'17:00',breakMins:60,isPaidLea
  await page.locator('#btn-settings').click();
  await page.locator('#set_transMonth').fill('1500');
  await page.waitForFunction(()=>JSON.parse(localStorage.getItem('mybasket_wages_v77')).job1.transMonth===1500);
- await page.locator('#settingsFixedSave button').click();
+ await page.locator('#btn-list').click();
+ assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('mybasket_wages_v77')).job1.transMonth),1500,'Settings persist across free tab navigation');
  // Goal editor and settings continue to persist through original handlers.
  await page.locator('#btn-clock').click();await page.locator('#test28GoalEdit').click();
  await page.locator('#t31GoalInput').fill('250000');

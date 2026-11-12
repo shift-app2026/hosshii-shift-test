@@ -1,0 +1,158 @@
+{
+  "baseline": "75d6ae11519d645aac39fce0fdcf504980b256b2",
+  "approvedSaveChangesReverseExactly": true,
+  "calculationCodeUnchanged": true,
+  "historyCases": [
+    {
+      "date": "2024-02-29",
+      "shift": {
+        "start": "09:00",
+        "end": "17:00",
+        "breakMins": 60
+      },
+      "pay": {
+        "totalMins": 420,
+        "totalPay": 8400
+      }
+    },
+    {
+      "date": "2024-02-29",
+      "shift": {
+        "start": "22:00",
+        "end": "02:00",
+        "breakMins": 0
+      },
+      "pay": {
+        "totalMins": 240,
+        "totalPay": 4800
+      }
+    },
+    {
+      "date": "2024-02-29",
+      "shift": {
+        "start": "",
+        "end": "",
+        "hours": 8,
+        "isPaidLeave": true
+      },
+      "pay": {
+        "totalMins": 0,
+        "totalPay": 9600
+      }
+    },
+    {
+      "date": "2025-01-01",
+      "shift": {
+        "start": "09:00",
+        "end": "17:00",
+        "breakMins": 60
+      },
+      "pay": {
+        "totalMins": 420,
+        "totalPay": 9100
+      }
+    },
+    {
+      "date": "2025-01-01",
+      "shift": {
+        "start": "22:00",
+        "end": "02:00",
+        "breakMins": 0
+      },
+      "pay": {
+        "totalMins": 240,
+        "totalPay": 5000
+      }
+    },
+    {
+      "date": "2025-01-01",
+      "shift": {
+        "start": "",
+        "end": "",
+        "hours": 8,
+        "isPaidLeave": true
+      },
+      "pay": {
+        "totalMins": 0,
+        "totalPay": 9600
+      }
+    },
+    {
+      "date": "2026-10-12",
+      "shift": {
+        "start": "09:00",
+        "end": "17:00",
+        "breakMins": 60
+      },
+      "pay": {
+        "totalMins": 420,
+        "totalPay": 9100
+      }
+    },
+    {
+      "date": "2026-10-12",
+      "shift": {
+        "start": "22:00",
+        "end": "02:00",
+        "breakMins": 0
+      },
+      "pay": {
+        "totalMins": 240,
+        "totalPay": 5000
+      }
+    },
+    {
+      "date": "2026-10-12",
+      "shift": {
+        "start": "",
+        "end": "",
+        "hours": 8,
+        "isPaidLeave": true
+      },
+      "pay": {
+        "totalMins": 0,
+        "totalPay": 9600
+      }
+    },
+    {
+      "date": "2026-11-12",
+      "shift": {
+        "start": "09:00",
+        "end": "17:00",
+        "breakMins": 60
+      },
+      "pay": {
+        "totalMins": 420,
+        "totalPay": 8400
+      }
+    },
+    {
+      "date": "2026-11-12",
+      "shift": {
+        "start": "22:00",
+        "end": "02:00",
+        "breakMins": 0
+      },
+      "pay": {
+        "totalMins": 240,
+        "totalPay": 4800
+      }
+    },
+    {
+      "date": "2026-11-12",
+      "shift": {
+        "start": "",
+        "end": "",
+        "hours": 8,
+        "isPaidLeave": true
+      },
+      "pay": {
+        "totalMins": 0,
+        "totalPay": 9600
+      }
+    }
+  ],
+  "all12ResultsEqual": true,
+  "effectiveDateOrWageHistoryAdded": false,
+  "note": "Existing app uses current job wage slots for past dates. This change does not add a wage-effective-date policy."
+}

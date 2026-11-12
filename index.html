@@ -1765,6 +1765,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
       <!-- タブ5: 設定 -->
       <div id="tab-settings" class="tab-content hidden space-y-3">
+        <div id="settingsSaveStatus" class="settings-save-status" role="alert" hidden>
+          <p>設定を保存できませんでした。入力内容はこの画面に残っています。</p>
+          <button type="button" id="settingsRetryButton" onclick="saveSettingsDraft()" class="bg-rose-900 text-rose-50 rounded-xl font-bold px-3 py-2">再保存</button>
+        </div>
         <div class="oct23-sticky-settings bg-gradient-to-br from-rose-950 via-rose-900 to-rose-950 text-rose-100 px-3 py-2 rounded-2xl text-center shadow-md border border-rose-800/40 relative overflow-hidden">
           <div class="absolute -top-6 -left-6 w-16 h-16 bg-rose-500/10 rounded-full blur-xl pointer-events-none"></div>
           <div class="text-center">
@@ -1844,10 +1848,6 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     </div>
 
-    <!-- 設定タブ専用の固定保存ボタン：下部ナビの直上 -->
-    <div id="settingsFixedSave" hidden>
-      <button type="button" id="settingsSaveButton" onclick="saveAndCloseSettings()">閉じる（設定を保存します♡）</button>
-    </div>
     <!-- 下部タブバー -->
     <div id="hosshiiBottomNav" role="navigation" aria-label="メインメニュー" class="fixed bottom-0 left-0 right-0 z-40 max-w-md mx-auto bg-stone-100/95 border-t border-stone-200 p-1.5 shadow-lg" style="padding-bottom: calc(0.625rem + env(safe-area-inset-bottom, 0px));">
       <div class="grid grid-cols-5 gap-1">
@@ -2013,6 +2013,35 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       };
     }
 
+    // Settings are persisted synchronously on each edit. The timer below is
+    // presentation-only; it never holds or writes an older settings snapshot.
+    let settingsDraftDirty = false;
+    function updateSettingsSaveStatus(saved) {
+      const box = document.getElementById('settingsSaveStatus');
+      if (box) box.hidden = saved;
+      if (saved) settingsDraftDirty = false;
+    }
+    function persistSettingsDraft() {
+      if (hosshiiBlockEdit()) return false;
+      settingsDraftDirty = true;
+      const saved = saveAllDataStorage();
+      updateSettingsSaveStatus(saved);
+      return saved;
+    }
+    function saveSettingsDraft() {
+      if (hosshiiBlockEdit()) return false;
+      syncSettingsFormToConfig(currentSettingsJobKey);
+      return persistSettingsDraft();
+    }
+    function flushSettingsDraft() {
+      return !settingsDraftDirty || saveSettingsDraft();
+    }
+    window.addEventListener('pagehide', flushSettingsDraft);
+    window.addEventListener('beforeunload', flushSettingsDraft);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') flushSettingsDraft();
+    });
+
     window.onload = function() {
       // 未登録枠に残るデータは自動削除せず保護する。
       // 新しく起動したときは「お給料」画面を表示
@@ -2024,9 +2053,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       let autoTimer = null;
       const settingsArea = document.getElementById('settingsJobContentArea');
       ['input', 'change'].forEach(ev => settingsArea.addEventListener(ev, () => {
-        syncSettingsFormToConfig(currentSettingsJobKey);
+        saveSettingsDraft();
         clearTimeout(autoTimer);
-        autoTimer = setTimeout(() => { saveAllDataStorage(); initOverviewPage(); }, 500);
+        autoTimer = setTimeout(() => { initOverviewPage(); }, 500);
       }));
       checkBackupReminder();
       
@@ -2609,6 +2638,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function switchTab(tabName) {
+      const leavingSettings = tabName !== 'settings' && !document.getElementById('tab-settings')?.classList.contains('hidden');
+      if (leavingSettings) flushSettingsDraft();
       cancelSalaryMarbleReplay();
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       document.querySelectorAll('.tab-btn').forEach(el => {
@@ -3356,16 +3387,25 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       configData[currentSettingsJobKey].wageSlots.push({ start: '', end: '', wage: 0, bType: 'weekday', bVal: 0 });
       window.hosshiiWageRowAdded?.(configData[currentSettingsJobKey].wageSlots.length - 1);
       renderWageSlotRows();
+      saveSettingsDraft();
     }
 
     function removeSettingsWageSlot(i) {
       if (hosshiiBlockEdit()) return false;
       syncSettingsFormToConfig(currentSettingsJobKey);
-      configData[currentSettingsJobKey].wageSlots.splice(i, 1);
+      const slots = configData[currentSettingsJobKey].wageSlots;
+      if (!slots[i]) return false;
+      const removed = slots.splice(i, 1)[0];
+      if (!saveAllDataStorage()) {
+        slots.splice(i, 0, removed);
+        showAlertModal('時間帯を削除できませんでした。入力内容は残しています。もう一度削除をお試しください。');
+        return false;
+      }
       window.hosshiiWageRowRemoved?.(i);
-      saveAllDataStorage();
+      updateSettingsSaveStatus(true);
       renderWageSlotRows();
       showToast("時間帯を削除しました");
+      return true;
     }
 
     function wageRangeToIntervals(start, end) {
@@ -4665,7 +4705,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (hosshiiBlockEdit()) return false;
       let payload = JSON.parse(JSON.stringify(configData));
       payload.monthlyGoal = monthlyGoal;
-      return safeWriteAppJSON('mybasket_wages_v77', payload);
+      const saved = safeWriteAppJSON('mybasket_wages_v77', payload);
+      if (settingsDraftDirty) updateSettingsSaveStatus(saved);
+      return saved;
     }
 
     function saveSettings() {

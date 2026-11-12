@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded',()=>{
   const file=document.getElementById('importFileInput');if(file)file.disabled=true;
   const notice=document.createElement('aside');notice.id='previewNotice';notice.setAttribute('aria-label','デザイン確認専用');
   notice.style.cssText="flex:none;display:flex;justify-content:space-between;align-items:center;gap:4px;padding:4px 10px;background:#fff0f4;color:#302027;font:500 11px/1.5 'Noto Sans JP',sans-serif;border-bottom:1px solid #eedde1;";
-  const text=document.createElement('span');text.textContent='デザイン確認専用・架空データ';
-  const reset=document.createElement('button');reset.id='previewReset';reset.type='button';reset.textContent='リセット';reset.style.cssText='padding:3px 7px;border:1px solid #d8b5bf;border-radius:6px;background:#fff;color:#302027;font:inherit;white-space:nowrap;';reset.addEventListener('click',()=>location.reload());
+  const text=document.createElement('span');text.textContent=window.HOSSHII_PREVIEW_STORAGE_UNAVAILABLE?'架空データ・端末内保存は利用不可':window.HOSSHII_PREVIEW_DEVICE_STORAGE?'デザイン確認専用・架空データ（端末内保存）':'デザイン確認専用・架空データ';
+  const reset=document.createElement('button');reset.id='previewReset';reset.type='button';reset.textContent='リセット';reset.style.cssText='padding:3px 7px;border:1px solid #d8b5bf;border-radius:6px;background:#fff;color:#302027;font:inherit;white-space:nowrap;';reset.addEventListener('click',()=>{previewStorage.clear();location.reload();});
   notice.append(text,reset);document.getElementById('appCard').prepend(notice);
   const banner=document.createElement('div');banner.id='hosshiiTrialBanner';
   const first=document.createElement('div');first.className='hosshii-trial-status-line';first.textContent='無料お試し終了日 ♡ サンプル';

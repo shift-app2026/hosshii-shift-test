@@ -1,0 +1,42 @@
+[
+  {
+    "before": "    window.onload = function() {\n",
+    "after": "    // Settings are persisted synchronously on each edit. The timer below is\n    // presentation-only; it never holds or writes an older settings snapshot.\n    let settingsDraftDirty = false;\n    function updateSettingsSaveStatus(saved) {\n      const box = document.getElementById('settingsSaveStatus');\n      if (box) box.hidden = saved;\n      if (saved) settingsDraftDirty = false;\n    }\n    function persistSettingsDraft() {\n      if (hosshiiBlockEdit()) return false;\n      settingsDraftDirty = true;\n      const saved = saveAllDataStorage();\n      updateSettingsSaveStatus(saved);\n      return saved;\n    }\n    function saveSettingsDraft() {\n      if (hosshiiBlockEdit()) return false;\n      syncSettingsFormToConfig(currentSettingsJobKey);\n      return persistSettingsDraft();\n    }\n    function flushSettingsDraft() {\n      return !settingsDraftDirty || saveSettingsDraft();\n    }\n    window.addEventListener('pagehide', flushSettingsDraft);\n    window.addEventListener('beforeunload', flushSettingsDraft);\n    document.addEventListener('visibilitychange', () => {\n      if (document.visibilityState === 'hidden') flushSettingsDraft();\n    });\n\n    window.onload = function() {\n",
+    "reason": "Immediate synchronous settings persistence, explicit retry and lifecycle fallback; no data schema changes"
+  },
+  {
+    "before": "        syncSettingsFormToConfig(currentSettingsJobKey);\n        clearTimeout(autoTimer);\n        autoTimer = setTimeout(() => { saveAllDataStorage(); initOverviewPage(); }, 500);",
+    "after": "        saveSettingsDraft();\n        clearTimeout(autoTimer);\n        autoTimer = setTimeout(() => { initOverviewPage(); }, 500);",
+    "reason": "Save each input/change immediately; debounce only salary presentation, never a stored snapshot"
+  },
+  {
+    "before": "    function switchTab(tabName) {\n      cancelSalaryMarbleReplay();",
+    "after": "    function switchTab(tabName) {\n      const leavingSettings = tabName !== 'settings' && !document.getElementById('tab-settings')?.classList.contains('hidden');\n      if (leavingSettings) flushSettingsDraft();\n      cancelSalaryMarbleReplay();",
+    "reason": "Retry a dirty settings draft before navigating; tab navigation remains available"
+  },
+  {
+    "before": "      renderWageSlotRows();\n    }\n\n    function removeSettingsWageSlot(i) {",
+    "after": "      renderWageSlotRows();\n      saveSettingsDraft();\n    }\n\n    function removeSettingsWageSlot(i) {",
+    "reason": "Persist adding a new wage row after its fields have been rendered"
+  },
+  {
+    "before": "      configData[currentSettingsJobKey].wageSlots.splice(i, 1);\n      window.hosshiiWageRowRemoved?.(i);\n      saveAllDataStorage();\n      renderWageSlotRows();\n      showToast(\"時間帯を削除しました\");",
+    "after": "      const slots = configData[currentSettingsJobKey].wageSlots;\n      if (!slots[i]) return false;\n      const removed = slots.splice(i, 1)[0];\n      if (!saveAllDataStorage()) {\n        slots.splice(i, 0, removed);\n        showAlertModal('時間帯を削除できませんでした。入力内容は残しています。もう一度削除をお試しください。');\n        return false;\n      }\n      window.hosshiiWageRowRemoved?.(i);\n      updateSettingsSaveStatus(true);\n      renderWageSlotRows();\n      showToast(\"時間帯を削除しました\");\n      return true;",
+    "reason": "Delete success only after verified write; restore removed row and keep all inputs on failure"
+  },
+  {
+    "before": "      return safeWriteAppJSON('mybasket_wages_v77', payload);",
+    "after": "      const saved = safeWriteAppJSON('mybasket_wages_v77', payload);\n      if (settingsDraftDirty) updateSettingsSaveStatus(saved);\n      return saved;",
+    "reason": "A successful explicit write also resolves a previous failed settings draft; payload unchanged"
+  },
+  {
+    "before": "      <div id=\"tab-settings\" class=\"tab-content hidden space-y-3\">",
+    "after": "      <div id=\"tab-settings\" class=\"tab-content hidden space-y-3\">\n        <div id=\"settingsSaveStatus\" class=\"settings-save-status\" role=\"alert\" hidden>\n          <p>設定を保存できませんでした。入力内容はこの画面に残っています。</p>\n          <button type=\"button\" id=\"settingsRetryButton\" onclick=\"saveSettingsDraft()\" class=\"bg-rose-900 text-rose-50 rounded-xl font-bold px-3 py-2\">再保存</button>\n        </div>",
+    "reason": "Visible failure message and retry action without a new success claim"
+  },
+  {
+    "before": "    <!-- 設定タブ専用の固定保存ボタン：下部ナビの直上 -->\n    <div id=\"settingsFixedSave\" hidden>\n      <button type=\"button\" id=\"settingsSaveButton\" onclick=\"saveAndCloseSettings()\">閉じる（設定を保存します♡）</button>\n    </div>\n    <!-- 下部タブバー -->",
+    "after": "    <!-- 下部タブバー -->",
+    "reason": "Remove redundant close/save control only after immediate persistence is in place"
+  }
+]
