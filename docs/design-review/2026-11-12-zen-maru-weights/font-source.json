@@ -1,0 +1,26 @@
+{
+  "metadataSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/zenmarugothic/METADATA.pb",
+  "officialWeights": [
+    300,
+    400,
+    500,
+    700,
+    900
+  ],
+  "faces": [
+    {
+      "weight": 500,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/zenmarugothic/ZenMaruGothic-Medium.ttf",
+      "filename": "ZenMaruGothic-Medium.ttf",
+      "sha256": "3cfdb98a13571ede17fcc769f5093a97c38b80a7b9b2ab754a26b4d822092b3b"
+    },
+    {
+      "weight": 700,
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/zenmarugothic/ZenMaruGothic-Bold.ttf",
+      "filename": "ZenMaruGothic-Bold.ttf",
+      "sha256": "fe24426b9c8b5523a0146a8235c8674eccf0493af354a53ec895c3596d9eb745"
+    }
+  ],
+  "requested600Available": false,
+  "approvedAlternative": "User approved 500/700 comparison; no app adoption"
+}

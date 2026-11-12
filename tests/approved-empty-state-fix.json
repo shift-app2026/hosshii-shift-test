@@ -1,0 +1,17 @@
+[
+  {
+    "before": "      if (!container) return;\n      container.innerHTML = getSettingsFormHtml(jk);",
+    "after": "      if (!container) return;\n      if (!configData[jk]?.name) {\n        container.innerHTML = '';\n        return;\n      }\n      container.innerHTML = getSettingsFormHtml(jk);",
+    "reason": "Empty or missing workplace: skip settings form rendering/loading; no storage, calculation or default-data mutation"
+  },
+  {
+    "before": "      const j = configData[jk];\n      if (!j.name) return '';",
+    "after": "      const j = configData[jk];\n      if (!j?.name) return '';",
+    "reason": "Empty or missing workplace: skip settings form rendering/loading; no storage, calculation or default-data mutation"
+  },
+  {
+    "before": "      const j = configData[jk];\n      if (!document.getElementById('set_closeDay')) return;",
+    "after": "      const j = configData[jk];\n      if (!j?.name || !document.getElementById('set_closeDay')) return;",
+    "reason": "Empty or missing workplace: skip settings form rendering/loading; no storage, calculation or default-data mutation"
+  }
+]

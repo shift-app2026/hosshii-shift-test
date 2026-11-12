@@ -1,0 +1,208 @@
+{
+  "widths": [
+    {
+      "width": 320,
+      "fields": [
+        {
+          "id": "set_closeDay",
+          "key": "closeDay",
+          "value": "20",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_payDay",
+          "key": "payDay",
+          "value": "15",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_wagePaid",
+          "key": "paid",
+          "value": "1500",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_transMonth",
+          "key": "transMonth",
+          "value": "10000",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_transDay",
+          "key": "transDay",
+          "value": "350",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_allowanceMonth",
+          "key": "allowanceMonth",
+          "value": "2500",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_allowanceDay",
+          "key": "allowanceDay",
+          "value": "200",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_allowanceMemo",
+          "key": "allowanceMemo",
+          "value": "役職手当",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_time_0_start",
+          "key": "wageSlots.0.start",
+          "value": "08:00",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_time_0_end",
+          "key": "wageSlots.0.end",
+          "value": "16:00",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_wage_0",
+          "key": "wageSlots.0.wage",
+          "value": "1600",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_btype_0",
+          "key": "wageSlots.0.bType",
+          "value": "holiday",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_bval_0",
+          "key": "wageSlots.0.bVal",
+          "value": "300",
+          "verifiedInSameInputEvent": true
+        }
+      ],
+      "immediateTabNavigation": true,
+      "immediateReloadPersists": true,
+      "orderedWrites": [
+        2,
+        20,
+        200,
+        2000
+      ],
+      "noOldTimerOverwrite": true,
+      "registeredWorkplaceSaved": true,
+      "failedInputsRetainedAcrossNavigation": true,
+      "retryVerified": true,
+      "failedDeletionRollsBackAndNoSuccessToast": true,
+      "successfulDeletionPersists": true,
+      "newWageRowPersists": true,
+      "wageRegistrationStatesPreserved": true,
+      "closeButtonAbsent": true,
+      "shiftDataAndSchemaUnchanged": true
+    },
+    {
+      "width": 375,
+      "fields": [
+        {
+          "id": "set_closeDay",
+          "key": "closeDay",
+          "value": "20",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_payDay",
+          "key": "payDay",
+          "value": "15",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_wagePaid",
+          "key": "paid",
+          "value": "1500",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_transMonth",
+          "key": "transMonth",
+          "value": "10000",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_transDay",
+          "key": "transDay",
+          "value": "350",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_allowanceMonth",
+          "key": "allowanceMonth",
+          "value": "2500",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_allowanceDay",
+          "key": "allowanceDay",
+          "value": "200",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_allowanceMemo",
+          "key": "allowanceMemo",
+          "value": "役職手当",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_time_0_start",
+          "key": "wageSlots.0.start",
+          "value": "08:00",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_time_0_end",
+          "key": "wageSlots.0.end",
+          "value": "16:00",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_wage_0",
+          "key": "wageSlots.0.wage",
+          "value": "1600",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_btype_0",
+          "key": "wageSlots.0.bType",
+          "value": "holiday",
+          "verifiedInSameInputEvent": true
+        },
+        {
+          "id": "set_bval_0",
+          "key": "wageSlots.0.bVal",
+          "value": "300",
+          "verifiedInSameInputEvent": true
+        }
+      ],
+      "immediateTabNavigation": true,
+      "immediateReloadPersists": true,
+      "orderedWrites": [
+        2,
+        20,
+        200,
+        2000
+      ],
+      "noOldTimerOverwrite": true,
+      "registeredWorkplaceSaved": true,
+      "failedInputsRetainedAcrossNavigation": true,
+      "retryVerified": true,
+      "failedDeletionRollsBackAndNoSuccessToast": true,
+      "successfulDeletionPersists": true,
+      "newWageRowPersists": true,
+      "wageRegistrationStatesPreserved": true,
+      "closeButtonAbsent": true,
+      "shiftDataAndSchemaUnchanged": true
+    }
+  ],
+  "errors": [],
+  "realBrowserProfileRestartPersists": true
+}

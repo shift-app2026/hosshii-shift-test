@@ -1,0 +1,24 @@
+{
+  "widths": [
+    {
+      "width": 320,
+      "emptyModeFiveScreens": true,
+      "registerFirst": true,
+      "emptyReloadResets": true,
+      "deleteAllThree": true,
+      "defaultReloadResets": true,
+      "persistentStorageCalls": 0
+    },
+    {
+      "width": 375,
+      "emptyModeFiveScreens": true,
+      "registerFirst": true,
+      "emptyReloadResets": true,
+      "deleteAllThree": true,
+      "defaultReloadResets": true,
+      "persistentStorageCalls": 0
+    }
+  ],
+  "externalRequests": [],
+  "errors": []
+}

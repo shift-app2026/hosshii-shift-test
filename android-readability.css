@@ -1,0 +1,193 @@
+/* Important declarations in this named layer override legacy unlayered important rules. */
+@layer android-readability {
+/* Android readability: strengthen small/operational text, not every 500 paragraph.
+   Colours, font family, glossy button surfaces and the jewel-ring subtree stay intact. */
+html body :is(#appCard,#lineAuthGate,#toastMessage,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#incomeWallHelp,#t31GoalModal,#hosshiiJobMenu) :not(#goalRing):not(#goalRing *):not(:has(#goalRing)):is(#itoReceiveTable .hc-row,#itoReceiveTable .hc-row *,#itoReceiveTable .hc-job-title>span,#test30GoalDisplay,#test30Yen,#goalAmountHeader,#t31GoalInput,#itoWallThreshold,#itoWallThreshold option,.ito-wall-selector-row label,#yearlySubLabel,#yearlyTotalPay,#itoWallRemainingLabel,#itoWallRemainingAmount,.ito-wall-note,.ito-wall-note *,.hosshii-ring-note,.hosshii-ring-note *,#calendarDays *,#tab-calendar .grid-cols-7>span,#tab-calendar .tracking-wide>span,#calendarTodaySummaryContent *,#standaloneShiftListContainer *, .schedule-instructions,.schedule-instructions *,.copy-label,.copy-label *,.calendar-registration-prompt p,.calendar-registration-prompt p *,#tab-settings input,#tab-settings select,#tab-settings option,#tab-settings .hosshii-paid-rate-row>span,#tab-settings .allowance-period-grid span,#tab-settings .wage-base-rate>span,#tab-settings .wage-bonus-rate>span,.paid-sub,.paid-note,.paid-note *,.oct23-backup-note,.hosshii-payment-preparing,.hosshii-payment-preparing *,#alertModalText,#confirmModalText,#renameJobHint,#overtimeInfoModal p,#presetHelpModal p,#shiftUsageHelpModal p,#incomeWallHelp p,#t31GoalError,.friend-job-hint,.hosshii-register-limit,#shiftInputModal p,#shiftInputModal p *,#shiftInputModal input,#shiftInputModal select,#shiftInputModal .job-time,#shiftInputModal .ito-preset-desc,#shiftInputModal .ito-preset-desc *,#shiftInputModal .preset-hint,#shiftInputModal .hosshii-paid-entry-note,#shiftInputModal .hosshii-paid-entry-note *,#presetRegisterModal input,#presetRegisterModal .job-time,#presetRegisterModal .preset-hint,#customClockFace text,#clockHourDisplay,#clockMinuteDisplay,#breakSelectModal input,#breakSelectModal p,.luxe-welcome-card p,.luxe-welcome-card p *,.guide-steps p,.guide-steps p *,.guide-extra p,.guide-extra p *) {font-weight:700!important;}
+html body #appCard #itoStickyHeaderHost :is(#todayDate,#currentMonthLabel,#currentListMonthLabel) {font-size:17px!important;}
+html body #appCard #tab-clock #incomeWallBox .ito-annual-receive {margin-inline:-11px!important;}
+html body #appCard #tab-clock #incomeWallBox .ito-annual-receive #yearlySubLabel {font-size:16px!important;}
+html body #appCard #tab-clock .hosshii-ring-note {margin-inline:-9px!important;text-align:center!important;}
+html body #appCard #tab-clock .hosshii-ring-note>span {display:block!important;white-space:nowrap!important;}
+html body #appCard .hosshii-copy-card .copy-label {font-size:17px!important;line-height:1.6!important;}
+html body #appCard .hosshii-copy-card .copy-description {gap:1em!important;font-size:17px!important;}
+html body #appCard #calendarCopyCard>div,html body #appCard #standaloneCopyCard {gap:12px!important;align-items:center!important;}
+html body #appCard #tab-calendar .calendar-registration-prompt {margin-inline:-4px!important;gap:6px!important;align-items:center!important;}
+html body #appCard #tab-calendar .calendar-registration-prompt>p,
+html body #appCard #tab-calendar .calendar-registration-prompt>p>span {font-size:17px!important;line-height:1.6!important;}
+html body #appCard #tab-calendar #calendarRegisterButton {padding-inline:4px!important;}
+html body #appCard #tab-list .schedule-instructions {font-size:15px!important;white-space:normal!important;line-height:1.6!important;}
+html body #appCard #standaloneShiftListContainer .standalone-date {width:48px!important;flex:0 0 48px!important;min-width:48px!important;}
+html body #appCard #standaloneShiftListContainer .luxe-day-number {font-size:18px!important;}
+html body #appCard #standaloneShiftListContainer .luxe-day-week {font-size:15px!important;}
+html body #appCard #standaloneShiftListContainer .standalone-shift-line .job-time {font-size:17px!important;}
+html body #appCard #standaloneShiftListContainer .standalone-workplace-name {font-size:15px!important;}
+html body #appCard #standaloneShiftListContainer .luxe-payday-label,
+html body #appCard #standaloneShiftListContainer .luxe-payday-heart {font-size:16px!important;}
+html body #appCard #calendarDays .payday-date-number {isolation:isolate!important;}
+html body #appCard #calendarDays .payday-date-number>span:first-child {position:relative!important;z-index:2!important;}
+html body #appCard #calendarDays .payday-pin-container {z-index:1!important;}
+html body #appCard #tab-settings .hosshii-paid-rate-row {gap:6px!important;}
+html body #appCard #tab-settings .hosshii-paid-rate-row .paid-sub {margin:0 4px 0 0!important;}
+html body #appCard #appScroll #tab-guide .luxe-welcome-card p:not(#goalRing),
+html body #appCard #appScroll #tab-guide .guide-extra p:not(#goalRing),
+html body #appCard #appScroll #tab-guide section:last-child p:not(#goalRing) {font-size:17px!important;line-height:1.8!important;text-wrap:pretty!important;}
+html body #appCard #tab-guide section:last-child h4 {white-space:normal!important;text-wrap:balance!important;}
+html body #appCard #tab-guide section:last-child>div:nth-of-type(1)>h4,
+html body #appCard #tab-guide section:last-child>div:nth-of-type(2)>h4 {white-space:nowrap!important;margin-inline:-17px!important;}
+html body #appCard .android-keep {white-space:nowrap!important;}
+html body #appCard .t23-wall-heading button,
+html body #shiftInputModal button[onclick="showShiftHelp()"] {white-space:nowrap!important;}
+html body #shiftInputModal #modalInlinePresetContainer>div>.job-time,
+html body #presetRegisterModal #modalPresetContainer>div>.job-time {font-size:19px!important;}
+html body #shiftInputModal .ito-preset-desc,
+html body #shiftInputModal .ito-preset-desc *,
+html body #presetRegisterModal .preset-hint {font-size:16px!important;line-height:1.65!important;}
+html body #shiftInputModal :is(#new_preset_start,#new_preset_end),
+html body #presetRegisterModal :is(#pr_start,#pr_end) {font-size:18px!important;}
+html body #shiftInputModal #modalBreakDisplayVal,
+html body #presetRegisterModal #pr_break_disp {font-size:15px!important;}
+@media(max-width:359px){
+ html body #appCard #itoStickyHeaderHost :is(#todayDate,#currentMonthLabel,#currentListMonthLabel) {font-size:16px!important;}
+ html body #appCard .hosshii-copy-card .copy-label,
+ html body #appCard .hosshii-copy-card .copy-description {font-size:16px!important;}
+ html body #appCard #tab-calendar .calendar-registration-prompt>p,
+ html body #appCard #tab-calendar .calendar-registration-prompt>p>span {font-size:16px!important;}
+ html body #appCard #standaloneShiftListContainer .standalone-shift-line .job-time {font-size:16px!important;}
+ html body #appCard #standaloneShiftListContainer .standalone-workplace-name {font-size:14px!important;}
+ html body #appCard #tab-guide section:last-child>div:nth-of-type(1)>h4,
+ html body #appCard #tab-guide section:last-child>div:nth-of-type(2)>h4 {font-size:14px!important;letter-spacing:-.02em!important;margin-inline:-20px!important;}
+ html body #shiftInputModal #modalInlinePresetContainer>div>.job-time,
+ html body #presetRegisterModal #modalPresetContainer>div>.job-time {font-size:18px!important;}
+}
+
+html body #appCard #tab-guide .android-privacy-title {display:block!important;white-space:nowrap!important;}
+@media(max-width:359px){html body #appCard #tab-guide .android-privacy-title {font-size:15.5px!important;letter-spacing:0!important;}}
+
+/* Android v3: requested details only; existing surfaces and colours are preserved. */
+html body #appCard #tab-clock #goalRing .goal-label-text {font-size:clamp(12px,calc(3.25vw + 1px),15px)!important;}
+html body #appCard #tab-clock #goalRing #goalCurrentPay {font-size:clamp(25px,calc(7.5vw + 1px),33px)!important;white-space:nowrap!important;}
+html body #appCard #tab-clock #goalRing .t10-remaining-label {font-size:clamp(13px,calc(3.5vw + 1px),16px)!important;}
+html body #appCard #tab-clock #goalRing #goalRemainText {font-size:clamp(16px,calc(4.25vw + 1px),22px)!important;font-weight:700!important;white-space:nowrap!important;}
+/* The native select still owns focus, accessibility and option selection. */
+html body #appCard .wall-threshold-display {position:relative!important;flex:0 0 153px!important;width:153px!important;max-width:64%!important;min-width:0!important;}
+html body #appCard #itoWallThreshold {width:100%!important;max-width:100%!important;height:41px!important;box-sizing:border-box!important;appearance:none!important;color:transparent!important;-webkit-text-fill-color:transparent!important;}
+html body #appCard #itoWallThreshold option {color:var(--hs-readable-ink)!important;-webkit-text-fill-color:currentColor!important;}
+html body #appCard .wall-threshold-label {position:absolute!important;inset:0 22px 0 10px!important;color:var(--hs-readable-ink)!important;-webkit-text-fill-color:var(--hs-readable-ink)!important;display:flex!important;align-items:center!important;justify-content:center!important;pointer-events:none!important;font-size:15px!important;font-weight:700!important;white-space:nowrap!important;}
+html body #appCard .wall-threshold-number {font-size:17px!important;}
+html body #appCard .threshold-103 {display:none!important;}
+html body #appCard .wall-threshold-display:has(option[value="1030000"]:checked) .threshold-103 {display:inline!important;}
+html body #appCard .wall-threshold-display:has(option[value="1030000"]:checked) .threshold-130 {display:none!important;}
+html body #appCard #calendarDays>div>span:first-child,
+html body #appCard #calendarDays .payday-date-number>span:first-child {font-size:18px!important;}
+html body #appCard #calendarJobLegend .calendar-payday-legend>span:last-child {font-size:17px!important;}
+/* Equal text starts; clipboard sits in its own preserved leading gutter. */
+html body #appCard #calendarCopyCard {margin-inline:-9px!important;padding-inline:0!important;}
+html body #appCard #calendarCopyCard .copy-description {position:relative!important;gap:0!important;}
+html body #appCard #calendarCopyCard .copy-icon {position:absolute!important;left:0!important;top:50%!important;transform:translateY(-50%)!important;}
+html body #appCard #tab-calendar .calendar-registration-prompt>p {padding-left:0!important;}
+html body #appCard #tab-calendar .calendar-registration-prompt>p>span:first-child {padding-left:25px!important;}
+html body #appCard #calendarCopyCard .copy-label {padding-left:24px!important;}
+html body #appCard #tab-calendar .calendar-registration-prompt {gap:4px!important;margin-inline:-9px!important;}
+html body #appCard #calendarCopyCard>div {gap:4px!important;}
+html body #appCard #calendarTodaySummaryContent .job-time {font-size:19px!important;}
+html body #appCard #calendarTodaySummaryContent .selected-shift-type {font-size:18px!important;}
+html body #appCard #calendarTodaySummaryContent .selected-shift-break {font-size:16px!important;font-weight:700!important;}
+/* Inline date tile; the complete card keeps its existing day-navigation handler. */
+html body #appCard #standaloneShiftListContainer>div {column-gap:7px!important;padding-inline:4px!important;}
+html body #appCard #standaloneShiftListContainer .standalone-date {flex:0 0 64px!important;width:64px!important;min-width:64px!important;flex-direction:row!important;gap:0!important;padding-inline:1px!important;white-space:nowrap!important;}
+html body #appCard #standaloneShiftListContainer .luxe-day-number {font-size:18px!important;}
+html body #appCard #standaloneShiftListContainer .luxe-day-week {font-size:15px!important;}
+html body #appCard #standaloneShiftListContainer .standalone-shift-line {padding-block:5px!important;}
+html body #appCard #standaloneShiftListContainer .standalone-shift-line>span {column-gap:5px!important;flex-wrap:nowrap!important;}
+html body #appCard #standaloneShiftListContainer .standalone-shift-line .job-time {font-size:17px!important;}
+html body #appCard #standaloneShiftListContainer .standalone-workplace-name {font-size:15px!important;}
+/* One-touch time / rest / actions on one row; no-rest rows have larger time. */
+html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div:has(.job-time) {display:flex!important;align-items:center!important;gap:5px!important;padding-inline:5px!important;min-height:46px!important;}
+html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div>.job-time {flex:1 1 auto!important;min-width:0!important;font-size:19px!important;line-height:1.4!important;white-space:nowrap!important;}
+html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div>.job-time+span {font-size:15px!important;font-weight:700!important;line-height:1.4!important;flex:0 0 auto!important;white-space:nowrap!important;}
+html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div:not(:has(>.job-time+span))>.job-time {font-size:21px!important;}
+html body #shiftInputModal .shift-time-heading {font-size:18px!important;font-weight:700!important;}
+html body #shiftInputModal #modalShiftListHeading {font-weight:700!important;}
+html body #shiftInputModal #shiftInputScrollArea .hosshii-paid-entry-note {font-size:15px!important;font-weight:700!important;}
+html body #shiftInputModal .hosshii-paid-entry-note>span {white-space:normal!important;text-wrap:pretty!important;}
+html body #shiftInputModal #modalSelectedDateSummaryContent .job-time {font-size:18px!important;}
+html body #shiftInputModal #modalSelectedDateSummaryContent .hosshii-shift-time-actions>span:not(.job-time) {font-size:16px!important;font-weight:700!important;}
+html body #shiftInputModal #modalSelectedDateSummaryContent .hosshii-shift-time-actions {column-gap:5px!important;}
+html body #shiftInputModal .shift-date-nav #modalDateTitle {font-size:16px!important;}
+html body #appCard #tab-settings .hosshii-allowance-section-title {font-size:16px!important;font-weight:700!important;}
+html body #appCard #tab-settings .allowance-period-grid span {font-size:15px!important;font-weight:700!important;}
+html body #appCard #tab-settings .allowance-period-grid>div {gap:3px!important;}
+html body #appCard #tab-settings .oct23-backup-note {text-align:center!important;}
+@media(max-width:359px){
+ html body #appCard #standaloneShiftListContainer .standalone-shift-line .job-time {font-size:16px!important;}
+ html body #appCard #standaloneShiftListContainer .standalone-workplace-name {font-size:14px!important;}
+ html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div>.job-time {font-size:17px!important;}
+ html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div>.job-time+span {font-size:14px!important;}
+ html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div:not(:has(>.job-time+span))>.job-time {font-size:20px!important;}
+ html body #shiftInputModal #modalSelectedDateSummaryContent .job-time {font-size:17px!important;}
+ html body #shiftInputModal #modalSelectedDateSummaryContent .hosshii-shift-time-actions>span:not(.job-time) {font-size:15px!important;}
+}
+
+html body #appCard #standaloneShiftListContainer>div>div {margin-left:0!important;}
+html body #appCard #standaloneShiftListContainer .luxe-payday-label {white-space:nowrap!important;}
+@media(max-width:359px){html body #appCard #standaloneShiftListContainer .luxe-payday-label {font-size:15px!important;}}
+
+html body #appCard #standaloneShiftListContainer .standalone-shift-line:has(.standalone-paid-status)>span {column-gap:2px!important;}
+
+html body #appCard .wall-threshold-display::after {content:""!important;display:block!important;position:absolute!important;pointer-events:none!important;right:12px!important;top:calc(50% - 5px)!important;width:6px!important;height:6px!important;border-right:2px solid currentColor!important;border-bottom:2px solid currentColor!important;transform:rotate(45deg)!important;color:var(--hs-readable-ink)!important;}
+@media(max-width:359px){html body #appCard .wall-threshold-display {width:100%!important;max-width:100%!important;flex:0 0 auto!important;}}
+
+/* Keep the salary amount columns fixed; indent only the total label. */
+html body #appCard #itoReceiveTable .hc-grand-total>span:first-child {padding-left:2em!important;}
+
+/* Follow-up: align the continuation with カ, and make modal headings explicit. */
+html body #appCard #tab-calendar .calendar-registration-prompt>p>span:nth-child(2) {padding-left:25px!important;}
+html body #shiftInputModal #modalShiftListHeading {font-size:18px!important;font-weight:700!important;line-height:1.5!important;}
+html body #shiftInputModal .ito-modal-job-row>.shift-section-title {font-size:17px!important;font-weight:700!important;}
+html body #shiftInputModal .shift-modal-title {font-size:19px!important;font-weight:700!important;line-height:1.5!important;}
+@media(max-width:359px){
+ html body #appCard #tab-calendar .calendar-registration-prompt>p>span:nth-child(2) {padding-left:calc(25px + .075em)!important;letter-spacing:-.075em!important;}
+ html body #shiftInputModal .shift-modal-title {font-size:18px!important;}
+}
+
+html body #appCard .hosshii-copy-card button[onclick="copyLastMonthShifts()"] {margin-right:8px!important;}
+/* Settings: enlarge role-specific text; strengthen the labels still rendered at 500. */
+html body #appCard #tab-settings :is(.ito-job-register-label,.wage-head-title,.hosshii-allowance-section-title,.text-base.font-bold) {font-size:18px!important;font-weight:700!important;}
+html body #appCard #hosshiiSettingsPinnedJob .hosshii-pinned-trigger-name {font-size:18px!important;}
+html body #appCard #hosshiiSettingsPinnedJob>span {font-size:16px!important;font-weight:700!important;}
+html body #appCard #tab-settings :is(.hosshii-register-limit,.friend-job-hint,.friend-job-hint>span) {font-size:16px!important;font-weight:700!important;}
+html body #appCard #settingsJobContentArea>div>div.grid-cols-2>div>span {font-size:16px!important;font-weight:700!important;}
+html body #appCard #tab-settings label[for="set_allowanceMemo"] {font-size:17px!important;font-weight:700!important;}
+html body #appCard #tab-settings input {font-size:18px!important;}
+html body #appCard #tab-settings :is(#set_closeDay,#set_payDay) {font-size:17px!important;}
+html body #appCard #tab-settings .allowance-period-grid span {font-size:16px!important;}
+html body #appCard #tab-settings .allowance-period-grid {margin-inline:-10px!important;column-gap:12px!important;}
+html body #appCard #tab-settings .allowance-period-grid>div {gap:2px!important;}
+html body #appCard #tab-settings .paid-sub {font-size:16px!important;}
+html body #appCard #tab-settings .paid-note,html body #appCard #tab-settings .paid-note>span {font-size:16px!important;}
+html body #appCard #tab-settings .paid-note {margin-inline:-9px!important;}
+html body #appCard #tab-settings .oct23-backup-note {font-size:16px!important;margin-inline:-6px!important;}
+html body #appCard #tab-settings :is(.wage-head-sub,.wage-head-btn,[id^="set_reg_btn_"],button[onclick^="removeSettingsWageSlot"],button[onclick^="hosshiiCloudBackup"]) {font-size:16px!important;}
+html body #appCard #tab-settings .ito-job-register-button {font-size:15px!important;}
+/* Keep ordinary wage + day-bonus inputs on a single row without reducing type size.
+   Longer values can grow and wrap as a group instead of clipping their digits. */
+html body #appCard #tab-settings .wage-rate-row {display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;gap:4px!important;}
+html body #appCard #tab-settings :is(.wage-base-rate,.wage-bonus-rate) {display:flex!important;flex:0 0 auto!important;width:max-content!important;max-width:100%!important;gap:2px!important;}
+html body #appCard #tab-settings :is(.wage-base-rate,.wage-bonus-rate)>span {font-size:15px!important;font-weight:700!important;}
+html body #appCard #tab-settings .wage-bonus-select {width:70px!important;min-width:70px!important;max-width:70px!important;font-size:16px!important;padding-inline:0!important;flex:0 0 70px!important;}
+html body #appCard #tab-settings :is(.wage-base-input,.wage-bonus-input) {field-sizing:content!important;width:auto!important;max-width:120px!important;flex:0 0 auto!important;padding-inline:2px!important;}
+html body #appCard #tab-settings .wage-base-input {min-width:48px!important;}
+html body #appCard #tab-settings .wage-bonus-input {min-width:34px!important;}
+
+html body #appCard #itoStickyHeaderHost .wage-setting-title,
+html body #appCard #itoStickyHeaderHost .wage-setting-title>span:not(.wage-title-star) {font-size:18px!important;font-weight:700!important;}
+html body #appCard #hosshiiSettingsPinnedJob {padding-inline:4px!important;gap:4px!important;}
+html body #appCard #tab-settings .friend-job-hint * {font-size:16px!important;font-weight:700!important;}
+html body #appCard #setWageSlotsContainer>[data-slot]>div:first-child>span {font-size:16px!important;font-weight:700!important;}
+/* Only shown for a failed settings write; successful writes keep the form uncluttered. */
+html body #appCard #settingsSaveStatus[hidden] {display:none!important;}
+html body #appCard #settingsSaveStatus {padding:12px!important;border:1px solid var(--hs-rose-line,#eadfe3)!important;border-radius:14px!important;background:var(--hs-pearl,#fffaf8)!important;}
+html body #appCard #settingsSaveStatus p {font-size:16px!important;line-height:1.7!important;font-weight:700!important;}
+html body #appCard #settingsRetryButton {background:var(--hs-button-gradient)!important;border:1px solid #781030!important;border-radius:12px!important;box-shadow:inset 0 1px 1px #ffefd661,inset 0 -2px 2px #1e000d33,0 3px 9px #88133738!important;font-size:16px!important;font-weight:700!important;margin-top:8px!important;color:#ffe082!important;-webkit-text-fill-color:#ffe082!important;}
+
+}

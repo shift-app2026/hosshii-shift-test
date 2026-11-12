@@ -1,0 +1,288 @@
+{
+  "widths": [
+    {
+      "width": 320,
+      "states": [
+        {
+          "state": "clock",
+          "buttonTextFits": true
+        },
+        {
+          "state": "clock-nav",
+          "buttonTextFits": true
+        },
+        {
+          "state": "calendar",
+          "buttonTextFits": true
+        },
+        {
+          "state": "calendar-nav",
+          "buttonTextFits": true
+        },
+        {
+          "state": "list",
+          "buttonTextFits": true
+        },
+        {
+          "state": "list-nav",
+          "buttonTextFits": true
+        },
+        {
+          "state": "settings",
+          "buttonTextFits": true
+        },
+        {
+          "state": "settings-nav",
+          "buttonTextFits": true
+        },
+        {
+          "state": "guide",
+          "buttonTextFits": true
+        },
+        {
+          "state": "guide-nav",
+          "buttonTextFits": true
+        },
+        {
+          "state": "settings-wage",
+          "buttonTextFits": true
+        },
+        {
+          "state": "shift",
+          "buttonTextFits": true
+        },
+        {
+          "state": "preset",
+          "buttonTextFits": true
+        },
+        {
+          "state": "break",
+          "buttonTextFits": true
+        },
+        {
+          "state": "rename",
+          "buttonTextFits": true
+        },
+        {
+          "state": "goal",
+          "buttonTextFits": true
+        },
+        {
+          "state": "wage-help",
+          "buttonTextFits": true
+        },
+        {
+          "state": "clock",
+          "buttonTextFits": true
+        }
+      ],
+      "values": [
+        {
+          "id": "set_time_0_start",
+          "value": "00:00",
+          "font": "17px",
+          "measured": 46.03125,
+          "available": 66
+        },
+        {
+          "id": "set_time_0_end",
+          "value": "00:00",
+          "font": "17px",
+          "measured": 46.03125,
+          "available": 67
+        },
+        {
+          "id": "set_wage_0",
+          "value": "10,000",
+          "font": "17px",
+          "measured": 53.953125,
+          "available": 82
+        },
+        {
+          "id": "set_bval_0",
+          "value": "1,000",
+          "font": "17px",
+          "measured": 43.875,
+          "available": 74
+        },
+        {
+          "id": "set_wagePaid",
+          "value": "10,000",
+          "font": "17px",
+          "measured": 53.953125,
+          "available": 62
+        },
+        {
+          "id": "set_transMonth",
+          "value": "100,000",
+          "font": "17px",
+          "measured": 64.03125,
+          "available": 94
+        },
+        {
+          "id": "set_transDay",
+          "value": "100,000",
+          "font": "17px",
+          "measured": 64.03125,
+          "available": 94
+        },
+        {
+          "id": "set_allowanceMonth",
+          "value": "100,000",
+          "font": "17px",
+          "measured": 64.03125,
+          "available": 94
+        },
+        {
+          "id": "set_allowanceDay",
+          "value": "100,000",
+          "font": "17px",
+          "measured": 64.03125,
+          "available": 94
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "states": [
+        {
+          "state": "clock",
+          "buttonTextFits": true
+        },
+        {
+          "state": "clock-nav",
+          "buttonTextFits": true
+        },
+        {
+          "state": "calendar",
+          "buttonTextFits": true
+        },
+        {
+          "state": "calendar-nav",
+          "buttonTextFits": true
+        },
+        {
+          "state": "list",
+          "buttonTextFits": true
+        },
+        {
+          "state": "list-nav",
+          "buttonTextFits": true
+        },
+        {
+          "state": "settings",
+          "buttonTextFits": true
+        },
+        {
+          "state": "settings-nav",
+          "buttonTextFits": true
+        },
+        {
+          "state": "guide",
+          "buttonTextFits": true
+        },
+        {
+          "state": "guide-nav",
+          "buttonTextFits": true
+        },
+        {
+          "state": "settings-wage",
+          "buttonTextFits": true
+        },
+        {
+          "state": "shift",
+          "buttonTextFits": true
+        },
+        {
+          "state": "preset",
+          "buttonTextFits": true
+        },
+        {
+          "state": "break",
+          "buttonTextFits": true
+        },
+        {
+          "state": "rename",
+          "buttonTextFits": true
+        },
+        {
+          "state": "goal",
+          "buttonTextFits": true
+        },
+        {
+          "state": "wage-help",
+          "buttonTextFits": true
+        },
+        {
+          "state": "clock",
+          "buttonTextFits": true
+        }
+      ],
+      "values": [
+        {
+          "id": "set_time_0_start",
+          "value": "00:00",
+          "font": "17px",
+          "measured": 46.03125,
+          "available": 94
+        },
+        {
+          "id": "set_time_0_end",
+          "value": "00:00",
+          "font": "17px",
+          "measured": 46.03125,
+          "available": 94
+        },
+        {
+          "id": "set_wage_0",
+          "value": "10,000",
+          "font": "17px",
+          "measured": 53.953125,
+          "available": 82
+        },
+        {
+          "id": "set_bval_0",
+          "value": "1,000",
+          "font": "17px",
+          "measured": 43.875,
+          "available": 74
+        },
+        {
+          "id": "set_wagePaid",
+          "value": "10,000",
+          "font": "17px",
+          "measured": 53.953125,
+          "available": 62
+        },
+        {
+          "id": "set_transMonth",
+          "value": "100,000",
+          "font": "17px",
+          "measured": 64.03125,
+          "available": 78
+        },
+        {
+          "id": "set_transDay",
+          "value": "100,000",
+          "font": "17px",
+          "measured": 64.03125,
+          "available": 78
+        },
+        {
+          "id": "set_allowanceMonth",
+          "value": "100,000",
+          "font": "17px",
+          "measured": 64.03125,
+          "available": 78
+        },
+        {
+          "id": "set_allowanceDay",
+          "value": "100,000",
+          "font": "17px",
+          "measured": 64.03125,
+          "available": 78
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+[
+  {
+    "before": "`${currentYear}年 ${lastReceivedMonth}月までに受け取った給料`",
+    "after": "`${currentYear}年${lastReceivedMonth}月までに受け取ったお給料`",
+    "reason": "Requested annual-received label wording; dynamic year and month unchanged"
+  }
+]

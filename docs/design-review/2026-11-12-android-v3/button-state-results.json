@@ -1,0 +1,1083 @@
+{
+  "cases": [
+    {
+      "width": 320,
+      "kind": "shift",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold registration-saved",
+          "visible": true
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 320,
+      "kind": "preset",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-4 py-2 bg-rose-900 text-white hover:bg-rose-800 rounded-xl font-bold text-sm transition shadow-sm whitespace-nowrap shrink-0 unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-4 py-2 bg-rose-900 text-white hover:bg-rose-800 rounded-xl font-bold text-sm transition shadow-sm whitespace-nowrap shrink-0 unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-4 py-2 bg-rose-900 text-white hover:bg-rose-800 rounded-xl font-bold text-sm transition shadow-sm whitespace-nowrap shrink-0 registration-saved",
+          "visible": true
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-4 py-2 bg-rose-900 text-white hover:bg-rose-800 rounded-xl font-bold text-sm transition shadow-sm whitespace-nowrap shrink-0 unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-4 py-2 bg-rose-900 text-white hover:bg-rose-800 rounded-xl font-bold text-sm transition shadow-sm whitespace-nowrap shrink-0 unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 320,
+      "kind": "wage",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-900 text-rose-50 hover:bg-rose-800 registration-saved font-bold px-3 py-1 rounded-lg text-xs transition shrink-0",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold px-3 py-1 rounded-lg text-xs transition shrink-0 unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold px-3 py-1 rounded-lg text-xs transition shrink-0 registration-saved",
+          "visible": true
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold px-3 py-1 rounded-lg text-xs transition shrink-0 unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold px-3 py-1 rounded-lg text-xs transition shrink-0 unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 320,
+      "kind": "workplace",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "ito-job-register-button",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "ito-job-register-button unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "ito-job-register-button registration-saved",
+          "visible": true
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "ito-job-register-button unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "ito-job-register-button unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 320,
+      "kind": "rename",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "flex-1 py-2.5 rounded-xl text-sm font-bold bg-rose-900 text-rose-50 hover:bg-rose-800 transition shadow-sm unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "flex-1 py-2.5 rounded-xl text-sm font-bold bg-rose-900 text-rose-50 hover:bg-rose-800 transition shadow-sm unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "flex-1 py-2.5 rounded-xl text-sm font-bold bg-rose-900 text-rose-50 hover:bg-rose-800 transition shadow-sm registration-saved",
+          "visible": false
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "flex-1 py-2.5 rounded-xl text-sm font-bold bg-rose-900 text-rose-50 hover:bg-rose-800 transition shadow-sm unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "flex-1 py-2.5 rounded-xl text-sm font-bold bg-rose-900 text-rose-50 hover:bg-rose-800 transition shadow-sm unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 320,
+      "kind": "goal",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "registration-saved",
+          "visible": false
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 320,
+      "kind": "settings",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "registration-saved",
+          "visible": false
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 320,
+      "kind": "clock",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "hclock-action hclock-save unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "hclock-action hclock-save unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "hclock-action hclock-save registration-saved",
+          "visible": false
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "hclock-action hclock-save unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "hclock-action hclock-save unsaved-registration",
+          "visible": false
+        }
+      ],
+      "storageFailureInjected": false,
+      "selectionTargetFailure": true,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 320,
+      "kind": "quick",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-50 text-rose-900 border border-rose-200 hover:bg-rose-100 py-1.5 px-3 rounded-lg font-bold transition text-xs",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-50 text-rose-900 border border-rose-200 hover:bg-rose-100 py-1.5 px-3 rounded-lg font-bold transition text-xs",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-50 text-rose-900 border border-rose-200 hover:bg-rose-100 py-1.5 px-3 rounded-lg font-bold transition text-xs registration-saved",
+          "visible": true
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-50 text-rose-900 border border-rose-200 hover:bg-rose-100 py-1.5 px-3 rounded-lg font-bold transition text-xs",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-50 text-rose-900 border border-rose-200 hover:bg-rose-100 py-1.5 px-3 rounded-lg font-bold transition text-xs unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 320,
+      "kind": "calendar-entry",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "shrink-0 py-2.5 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm whitespace-nowrap unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "shrink-0 py-2.5 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm whitespace-nowrap unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "shrink-0 py-2.5 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm whitespace-nowrap registration-saved",
+          "visible": true
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "shrink-0 py-2.5 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm whitespace-nowrap unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "shrink-0 py-2.5 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm whitespace-nowrap unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 320,
+      "kind": "preset-entry",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0 registration-saved",
+          "visible": true
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0 unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0 unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 375,
+      "kind": "shift",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold registration-saved",
+          "visible": true
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 bg-rose-900 text-white rounded-xl text-sm font-bold unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 375,
+      "kind": "preset",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-4 py-2 bg-rose-900 text-white hover:bg-rose-800 rounded-xl font-bold text-sm transition shadow-sm whitespace-nowrap shrink-0 unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-4 py-2 bg-rose-900 text-white hover:bg-rose-800 rounded-xl font-bold text-sm transition shadow-sm whitespace-nowrap shrink-0 unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-4 py-2 bg-rose-900 text-white hover:bg-rose-800 rounded-xl font-bold text-sm transition shadow-sm whitespace-nowrap shrink-0 registration-saved",
+          "visible": true
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-4 py-2 bg-rose-900 text-white hover:bg-rose-800 rounded-xl font-bold text-sm transition shadow-sm whitespace-nowrap shrink-0 unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-4 py-2 bg-rose-900 text-white hover:bg-rose-800 rounded-xl font-bold text-sm transition shadow-sm whitespace-nowrap shrink-0 unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 375,
+      "kind": "wage",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-900 text-rose-50 hover:bg-rose-800 registration-saved font-bold px-3 py-1 rounded-lg text-xs transition shrink-0",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold px-3 py-1 rounded-lg text-xs transition shrink-0 unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold px-3 py-1 rounded-lg text-xs transition shrink-0 registration-saved",
+          "visible": true
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold px-3 py-1 rounded-lg text-xs transition shrink-0 unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold px-3 py-1 rounded-lg text-xs transition shrink-0 unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 375,
+      "kind": "workplace",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "ito-job-register-button",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "ito-job-register-button unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "ito-job-register-button registration-saved",
+          "visible": true
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "ito-job-register-button unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "ito-job-register-button unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 375,
+      "kind": "rename",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "flex-1 py-2.5 rounded-xl text-sm font-bold bg-rose-900 text-rose-50 hover:bg-rose-800 transition shadow-sm unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "flex-1 py-2.5 rounded-xl text-sm font-bold bg-rose-900 text-rose-50 hover:bg-rose-800 transition shadow-sm unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "flex-1 py-2.5 rounded-xl text-sm font-bold bg-rose-900 text-rose-50 hover:bg-rose-800 transition shadow-sm registration-saved",
+          "visible": false
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "flex-1 py-2.5 rounded-xl text-sm font-bold bg-rose-900 text-rose-50 hover:bg-rose-800 transition shadow-sm unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "flex-1 py-2.5 rounded-xl text-sm font-bold bg-rose-900 text-rose-50 hover:bg-rose-800 transition shadow-sm unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 375,
+      "kind": "goal",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "registration-saved",
+          "visible": false
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 375,
+      "kind": "settings",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "registration-saved",
+          "visible": false
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 375,
+      "kind": "clock",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "hclock-action hclock-save unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "hclock-action hclock-save unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "hclock-action hclock-save registration-saved",
+          "visible": false
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "hclock-action hclock-save unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "hclock-action hclock-save unsaved-registration",
+          "visible": false
+        }
+      ],
+      "storageFailureInjected": false,
+      "selectionTargetFailure": true,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 375,
+      "kind": "quick",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-50 text-rose-900 border border-rose-200 hover:bg-rose-100 py-1.5 px-3 rounded-lg font-bold transition text-xs",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-50 text-rose-900 border border-rose-200 hover:bg-rose-100 py-1.5 px-3 rounded-lg font-bold transition text-xs",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-50 text-rose-900 border border-rose-200 hover:bg-rose-100 py-1.5 px-3 rounded-lg font-bold transition text-xs registration-saved",
+          "visible": true
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-50 text-rose-900 border border-rose-200 hover:bg-rose-100 py-1.5 px-3 rounded-lg font-bold transition text-xs",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "bg-rose-50 text-rose-900 border border-rose-200 hover:bg-rose-100 py-1.5 px-3 rounded-lg font-bold transition text-xs unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 375,
+      "kind": "calendar-entry",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "shrink-0 py-2.5 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm whitespace-nowrap unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "shrink-0 py-2.5 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm whitespace-nowrap unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "shrink-0 py-2.5 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm whitespace-nowrap registration-saved",
+          "visible": true
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "shrink-0 py-2.5 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm whitespace-nowrap unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "shrink-0 py-2.5 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm whitespace-nowrap unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    },
+    {
+      "width": 375,
+      "kind": "preset-entry",
+      "states": [
+        {
+          "name": "initial",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0",
+          "visible": true
+        },
+        {
+          "name": "unsaved",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0",
+          "visible": true
+        },
+        {
+          "name": "success",
+          "colour": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0 registration-saved",
+          "visible": true
+        },
+        {
+          "name": "edited",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0 unsaved-registration",
+          "visible": true
+        },
+        {
+          "name": "failure",
+          "colour": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)",
+          "classes": "px-3 py-1.5 rounded-xl bg-pink-50 text-rose-900 border border-rose-200 font-bold text-sm shrink-0 unsaved-registration",
+          "visible": true
+        }
+      ],
+      "storageFailureInjected": true,
+      "selectionTargetFailure": false,
+      "storedDataUnchangedOnFailure": true
+    }
+  ],
+  "errors": []
+}

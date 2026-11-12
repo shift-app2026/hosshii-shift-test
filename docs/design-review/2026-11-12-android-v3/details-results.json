@@ -1,0 +1,969 @@
+{
+  "widths": [
+    {
+      "width": 320,
+      "ring": [
+        [
+          {
+            "text": "来月のお給料見込額",
+            "size": "12px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(100, 18, 44)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "0円",
+            "size": "25px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(76, 5, 25)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "目標まで",
+            "size": "13px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(103, 17, 43)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "あと 0円",
+            "size": "16px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(133, 17, 47)",
+            "fits": true,
+            "oneLine": true
+          }
+        ],
+        [
+          {
+            "text": "来月のお給料見込額",
+            "size": "12px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(100, 18, 44)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "73,600円",
+            "size": "25px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(76, 5, 25)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "目標まで",
+            "size": "13px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(103, 17, 43)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "あと 73,600円",
+            "size": "16px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(133, 17, 47)",
+            "fits": true,
+            "oneLine": true
+          }
+        ],
+        [
+          {
+            "text": "来月のお給料見込額",
+            "size": "12px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(100, 18, 44)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "1,234,567円",
+            "size": "25px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(76, 5, 25)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "目標まで",
+            "size": "13px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(103, 17, 43)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "あと 1,234,567円",
+            "size": "16px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(133, 17, 47)",
+            "fits": true,
+            "oneLine": true
+          }
+        ],
+        [
+          {
+            "text": "来月のお給料見込額",
+            "size": "12px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(100, 18, 44)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "9,999,999円",
+            "size": "25px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(76, 5, 25)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "目標まで",
+            "size": "13px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(103, 17, 43)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "あと 9,999,999円",
+            "size": "16px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(133, 17, 47)",
+            "fits": true,
+            "oneLine": true
+          }
+        ]
+      ],
+      "native": [
+        {
+          "value": "1030000",
+          "width": 240,
+          "height": 41,
+          "label": "103万円（参考）",
+          "numberSize": "17px",
+          "referenceSize": "15px",
+          "color": "rgb(33, 21, 26)",
+          "pointer": "none",
+          "remaining": "103万円までの残り"
+        },
+        {
+          "value": "1300000",
+          "width": 240,
+          "height": 41,
+          "label": "130万円（参考）",
+          "numberSize": "17px",
+          "referenceSize": "15px",
+          "color": "rgb(33, 21, 26)",
+          "pointer": "none",
+          "remaining": "130万円までの残り"
+        }
+      ],
+      "alignment": {
+        "registerX": 28,
+        "copyX": 28,
+        "legendSize": "17px",
+        "dateSizes": [
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px"
+        ]
+      },
+      "schedule": [
+        {
+          "date": "15日(日)",
+          "dateCount": 1,
+          "chevrons": 0,
+          "dateInline": true,
+          "lines": 0,
+          "parts": [],
+          "tapNavigates": true
+        },
+        {
+          "date": "16日(月)",
+          "dateCount": 1,
+          "chevrons": 0,
+          "dateInline": true,
+          "lines": 1,
+          "parts": [
+            {
+              "text": "09:00〜17:00",
+              "width": 82,
+              "scroll": 82,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "ローズカフェ",
+              "width": 114,
+              "scroll": 114,
+              "fits": true,
+              "lines": 1
+            }
+          ],
+          "tapNavigates": true
+        },
+        {
+          "date": "17日(火)",
+          "dateCount": 1,
+          "chevrons": 0,
+          "dateInline": true,
+          "lines": 2,
+          "parts": [
+            {
+              "text": "09:00〜17:00",
+              "width": 82,
+              "scroll": 82,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "ローズカフェ",
+              "width": 114,
+              "scroll": 114,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "09:00〜17:00",
+              "width": 82,
+              "scroll": 82,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "月色ショップ",
+              "width": 114,
+              "scroll": 114,
+              "fits": true,
+              "lines": 1
+            }
+          ],
+          "tapNavigates": true
+        },
+        {
+          "date": "18日(水)",
+          "dateCount": 1,
+          "chevrons": 0,
+          "dateInline": true,
+          "lines": 3,
+          "parts": [
+            {
+              "text": "09:00〜17:00",
+              "width": 82,
+              "scroll": 82,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "ローズカフェ",
+              "width": 114,
+              "scroll": 114,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "09:00〜17:00",
+              "width": 82,
+              "scroll": 82,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "月色ショップ",
+              "width": 114,
+              "scroll": 114,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "09:00〜17:00",
+              "width": 82,
+              "scroll": 82,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "星空キッチン",
+              "width": 114,
+              "scroll": 114,
+              "fits": true,
+              "lines": 1
+            }
+          ],
+          "tapNavigates": true
+        },
+        {
+          "date": "19日(木)",
+          "dateCount": 1,
+          "chevrons": 0,
+          "dateInline": true,
+          "lines": 3,
+          "parts": [
+            {
+              "text": "有給",
+              "width": 28,
+              "scroll": 28,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "09:00〜17:00",
+              "width": 82,
+              "scroll": 82,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "月色ショップ",
+              "width": 85,
+              "scroll": 85,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "18:00〜22:00",
+              "width": 82,
+              "scroll": 82,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "星空キッチン",
+              "width": 114,
+              "scroll": 114,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "有給",
+              "width": 28,
+              "scroll": 28,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "8時間",
+              "width": 39,
+              "scroll": 39,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "ローズカフェ",
+              "width": 128,
+              "scroll": 128,
+              "fits": true,
+              "lines": 1
+            }
+          ],
+          "tapNavigates": true
+        }
+      ],
+      "presets": [
+        {
+          "text": "09:00〜17:00 休憩60分 登録 削除",
+          "centres": [
+            302.2734375,
+            302.28125,
+            302.28125
+          ],
+          "timeSize": "17px",
+          "buttons": [
+            {
+              "width": 42,
+              "height": 30,
+              "size": "14px",
+              "padding": "6px"
+            },
+            {
+              "width": 40,
+              "height": 28,
+              "size": "14px",
+              "padding": "6px"
+            }
+          ],
+          "fit": true,
+          "nonOverlapping": true
+        },
+        {
+          "text": "18:00〜22:00 登録 削除",
+          "centres": [
+            358.28125,
+            358.28125
+          ],
+          "timeSize": "20px",
+          "buttons": [
+            {
+              "width": 42,
+              "height": 30,
+              "size": "14px",
+              "padding": "6px"
+            },
+            {
+              "width": 40,
+              "height": 28,
+              "size": "14px",
+              "padding": "6px"
+            }
+          ],
+          "fit": true,
+          "nonOverlapping": true
+        }
+      ],
+      "settings": {
+        "titles": [
+          {
+            "text": "☂【有給休暇】",
+            "size": "16px",
+            "weight": "700"
+          },
+          {
+            "text": "🚃【交通費】",
+            "size": "16px",
+            "weight": "700"
+          },
+          {
+            "text": "⭐【その他】",
+            "size": "16px",
+            "weight": "700"
+          }
+        ],
+        "removed": true,
+        "backupAlign": "center",
+        "closeRetained": true
+      }
+    },
+    {
+      "width": 375,
+      "ring": [
+        [
+          {
+            "text": "来月のお給料見込額",
+            "size": "13.1875px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(100, 18, 44)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "0円",
+            "size": "29.125px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(76, 5, 25)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "目標まで",
+            "size": "14.125px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(103, 17, 43)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "あと 0円",
+            "size": "16.9375px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(133, 17, 47)",
+            "fits": true,
+            "oneLine": true
+          }
+        ],
+        [
+          {
+            "text": "来月のお給料見込額",
+            "size": "13.1875px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(100, 18, 44)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "73,600円",
+            "size": "29.125px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(76, 5, 25)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "目標まで",
+            "size": "14.125px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(103, 17, 43)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "あと 73,600円",
+            "size": "16.9375px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(133, 17, 47)",
+            "fits": true,
+            "oneLine": true
+          }
+        ],
+        [
+          {
+            "text": "来月のお給料見込額",
+            "size": "13.1875px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(100, 18, 44)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "1,234,567円",
+            "size": "29.125px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(76, 5, 25)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "目標まで",
+            "size": "14.125px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(103, 17, 43)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "あと 1,234,567円",
+            "size": "16.9375px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(133, 17, 47)",
+            "fits": true,
+            "oneLine": true
+          }
+        ],
+        [
+          {
+            "text": "来月のお給料見込額",
+            "size": "13.1875px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(100, 18, 44)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "9,999,999円",
+            "size": "29.125px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(76, 5, 25)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "目標まで",
+            "size": "14.125px",
+            "weight": "800",
+            "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+            "color": "rgb(103, 17, 43)",
+            "fits": true,
+            "oneLine": true
+          },
+          {
+            "text": "あと 9,999,999円",
+            "size": "16.9375px",
+            "weight": "700",
+            "family": "\"Noto Serif JP\", serif",
+            "color": "rgb(133, 17, 47)",
+            "fits": true,
+            "oneLine": true
+          }
+        ]
+      ],
+      "native": [
+        {
+          "value": "1030000",
+          "width": 153,
+          "height": 41,
+          "label": "103万円（参考）",
+          "numberSize": "17px",
+          "referenceSize": "15px",
+          "color": "rgb(33, 21, 26)",
+          "pointer": "none",
+          "remaining": "103万円までの残り"
+        },
+        {
+          "value": "1300000",
+          "width": 153,
+          "height": 41,
+          "label": "130万円（参考）",
+          "numberSize": "17px",
+          "referenceSize": "15px",
+          "color": "rgb(33, 21, 26)",
+          "pointer": "none",
+          "remaining": "130万円までの残り"
+        }
+      ],
+      "alignment": {
+        "registerX": 28,
+        "copyX": 28,
+        "legendSize": "17px",
+        "dateSizes": [
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px",
+          "17px"
+        ]
+      },
+      "schedule": [
+        {
+          "date": "15日(日)",
+          "dateCount": 1,
+          "chevrons": 0,
+          "dateInline": true,
+          "lines": 0,
+          "parts": [],
+          "tapNavigates": true
+        },
+        {
+          "date": "16日(月)",
+          "dateCount": 1,
+          "chevrons": 0,
+          "dateInline": true,
+          "lines": 1,
+          "parts": [
+            {
+              "text": "09:00〜17:00",
+              "width": 87,
+              "scroll": 87,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "ローズカフェ",
+              "width": 144,
+              "scroll": 144,
+              "fits": true,
+              "lines": 1
+            }
+          ],
+          "tapNavigates": true
+        },
+        {
+          "date": "17日(火)",
+          "dateCount": 1,
+          "chevrons": 0,
+          "dateInline": true,
+          "lines": 2,
+          "parts": [
+            {
+              "text": "09:00〜17:00",
+              "width": 87,
+              "scroll": 87,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "ローズカフェ",
+              "width": 144,
+              "scroll": 144,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "09:00〜17:00",
+              "width": 87,
+              "scroll": 87,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "月色ショップ",
+              "width": 144,
+              "scroll": 144,
+              "fits": true,
+              "lines": 1
+            }
+          ],
+          "tapNavigates": true
+        },
+        {
+          "date": "18日(水)",
+          "dateCount": 1,
+          "chevrons": 0,
+          "dateInline": true,
+          "lines": 3,
+          "parts": [
+            {
+              "text": "09:00〜17:00",
+              "width": 87,
+              "scroll": 87,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "ローズカフェ",
+              "width": 144,
+              "scroll": 144,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "09:00〜17:00",
+              "width": 87,
+              "scroll": 87,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "月色ショップ",
+              "width": 144,
+              "scroll": 144,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "09:00〜17:00",
+              "width": 87,
+              "scroll": 87,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "星空キッチン",
+              "width": 144,
+              "scroll": 144,
+              "fits": true,
+              "lines": 1
+            }
+          ],
+          "tapNavigates": true
+        },
+        {
+          "date": "19日(木)",
+          "dateCount": 1,
+          "chevrons": 0,
+          "dateInline": true,
+          "lines": 3,
+          "parts": [
+            {
+              "text": "有給",
+              "width": 28,
+              "scroll": 28,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "09:00〜17:00",
+              "width": 87,
+              "scroll": 87,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "月色ショップ",
+              "width": 115,
+              "scroll": 115,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "18:00〜22:00",
+              "width": 87,
+              "scroll": 87,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "星空キッチン",
+              "width": 144,
+              "scroll": 144,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "有給",
+              "width": 28,
+              "scroll": 28,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "8時間",
+              "width": 42,
+              "scroll": 42,
+              "fits": true,
+              "lines": 1
+            },
+            {
+              "text": "ローズカフェ",
+              "width": 160,
+              "scroll": 160,
+              "fits": true,
+              "lines": 1
+            }
+          ],
+          "tapNavigates": true
+        }
+      ],
+      "presets": [
+        {
+          "text": "09:00〜17:00 休憩60分 登録 削除",
+          "centres": [
+            334.640625,
+            334.640625,
+            334.640625
+          ],
+          "timeSize": "19px",
+          "buttons": [
+            {
+              "width": 42,
+              "height": 30,
+              "size": "14px",
+              "padding": "6px"
+            },
+            {
+              "width": 40,
+              "height": 28,
+              "size": "14px",
+              "padding": "6px"
+            }
+          ],
+          "fit": true,
+          "nonOverlapping": true
+        },
+        {
+          "text": "18:00〜22:00 登録 削除",
+          "centres": [
+            390.6328125,
+            390.640625
+          ],
+          "timeSize": "21px",
+          "buttons": [
+            {
+              "width": 42,
+              "height": 30,
+              "size": "14px",
+              "padding": "6px"
+            },
+            {
+              "width": 40,
+              "height": 28,
+              "size": "14px",
+              "padding": "6px"
+            }
+          ],
+          "fit": true,
+          "nonOverlapping": true
+        }
+      ],
+      "settings": {
+        "titles": [
+          {
+            "text": "☂【有給休暇】",
+            "size": "16px",
+            "weight": "700"
+          },
+          {
+            "text": "🚃【交通費】",
+            "size": "16px",
+            "weight": "700"
+          },
+          {
+            "text": "⭐【その他】",
+            "size": "16px",
+            "weight": "700"
+          }
+        ],
+        "removed": true,
+        "backupAlign": "center",
+        "closeRetained": true
+      }
+    }
+  ],
+  "errors": []
+}

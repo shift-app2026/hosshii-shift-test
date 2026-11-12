@@ -1,0 +1,14 @@
+{
+  "baseline": "1e3f53f2c81bdbc516394176dae962db9b646ca5",
+  "htmlChange": "one stylesheet link only",
+  "allJavaScriptUnchanged": true,
+  "existingInlineCssUnchanged": true,
+  "noSizeColorSpacingOrLayoutDeclarationsInNewCss": true,
+  "sourceAndPreviewCssFontAssetsIdentical": true,
+  "sha256": {
+    "index.html": "f981e04c6db6ceb9834b5e46388f501017ea44fb0c221b614e8966308906b25e",
+    "zen-maru.css": "f85dd78f60e34e7368922665478a895a10239a3c20f53c01e8d924bf4044acd2",
+    "fonts/ZenMaruGothic-Medium.woff2": "8ded1275bbc81e3eaf5c30acf46e3ca90c7de150d189bba987a7c14be99fc1a4",
+    "fonts/ZenMaruGothic-Bold.woff2": "b7ae87113c9ad9aea0507d4f373dcafd4edb1b37cc4b04ddd5645656fd306cd1"
+  }
+}

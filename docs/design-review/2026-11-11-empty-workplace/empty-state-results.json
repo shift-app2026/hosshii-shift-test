@@ -1,0 +1,69 @@
+{
+  "baseline": "1e4d58c",
+  "source": "dfbba2ca27646d7e27c68251a70760d6585d509a",
+  "widths": [
+    {
+      "width": 320,
+      "checks": [
+        {
+          "case": "初回0件",
+          "pass": true,
+          "noPhantomWorkplace": true,
+          "noConfigurationWrite": true
+        },
+        {
+          "case": "0件からの新規登録",
+          "pass": true,
+          "firstKey": "job1"
+        },
+        {
+          "case": "最後の勤務先削除",
+          "pass": true,
+          "registrationAvailable": true
+        },
+        {
+          "case": "再起動",
+          "pass": true,
+          "bothRegisteredAndEmptyStates": true
+        },
+        {
+          "case": "既存データあり",
+          "pass": true,
+          "storageAndSettingsHtmlAndDesignEqualToBaseline": true
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "checks": [
+        {
+          "case": "初回0件",
+          "pass": true,
+          "noPhantomWorkplace": true,
+          "noConfigurationWrite": true
+        },
+        {
+          "case": "0件からの新規登録",
+          "pass": true,
+          "firstKey": "job1"
+        },
+        {
+          "case": "最後の勤務先削除",
+          "pass": true,
+          "registrationAvailable": true
+        },
+        {
+          "case": "再起動",
+          "pass": true,
+          "bothRegisteredAndEmptyStates": true
+        },
+        {
+          "case": "既存データあり",
+          "pass": true,
+          "storageAndSettingsHtmlAndDesignEqualToBaseline": true
+        }
+      ]
+    }
+  ],
+  "unexpectedRequests": []
+}

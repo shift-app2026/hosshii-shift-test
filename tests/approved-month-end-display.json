@@ -1,0 +1,17 @@
+[
+  {
+    "before": "    const DAY_OPTIONS = '<option value=\"\">未設定</option>' + Array.from({ length: 28 }, (_, i) => `<option value=\"${i + 1}\">${i + 1}日</option>`).join('') + '<option value=\"月末\">月末</option>';",
+    "after": "    const DAY_OPTIONS = '<option value=\"\">未設定</option>' + Array.from({ length: 28 }, (_, i) => `<option value=\"${i + 1}\">${i + 1}日</option>`).join('') + '<option value=\"月末\">月末</option>';\n    const CLOSE_DAY_OPTIONS = DAY_OPTIONS.replace('value=\"月末\">月末</option>', 'value=\"月末\">末日（毎月の最終日）</option>');",
+    "reason": "Close-day label only; option value remains 月末 and payday options are unchanged"
+  },
+  {
+    "before": "              <select id=\"set_closeDay\" class=\"p-1 border rounded-lg text-center font-bold bg-white border-stone-200 text-stone-900 text-sm\">\n                ${DAY_OPTIONS}",
+    "after": "              <select id=\"set_closeDay\" class=\"p-1 border rounded-lg text-center font-bold bg-white border-stone-200 text-stone-900 text-sm\">\n                ${CLOSE_DAY_OPTIONS}",
+    "reason": "Use close-only display labels"
+  },
+  {
+    "before": "        const period = !close ? '' : (closeNum >= 31 ? '1日〜末日' : `${closeNum + 1}日〜翌月${closeNum}日`);",
+    "after": "        const period = !close ? '' : (closeNum >= 31 ? `1日〜${a.end.getDate()}日` : `${closeNum + 1}日〜翌月${closeNum}日`);",
+    "reason": "Format the existing computed end date; do not change date calculations"
+  }
+]

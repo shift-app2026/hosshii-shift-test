@@ -1,0 +1,470 @@
+{
+  "widths": [
+    {
+      "width": 320,
+      "prompt": [
+        {
+          "t": "※カレンダーで日付を",
+          "width": 180,
+          "scroll": 180,
+          "lines": 1
+        },
+        {
+          "t": "　選択してから押してね♡",
+          "width": 180,
+          "scroll": 180,
+          "lines": 1
+        }
+      ],
+      "calendarCopy": [
+        {
+          "t": "※前月のシフトを曜日に合わせて",
+          "width": 210,
+          "scroll": 210,
+          "lines": 1
+        },
+        {
+          "t": "　一括コピー",
+          "width": 210,
+          "scroll": 210,
+          "lines": 1
+        }
+      ],
+      "listCopy": [
+        {
+          "t": "※前月のシフトを曜日に合わせて",
+          "width": 210,
+          "scroll": 210,
+          "lines": 1
+        },
+        {
+          "t": "　一括コピー",
+          "width": 210,
+          "scroll": 210,
+          "lines": 1
+        }
+      ],
+      "paid": [
+        {
+          "t": "※時給が異なる場合は、よく働く",
+          "width": 240,
+          "scroll": 240,
+          "lines": 1
+        },
+        {
+          "t": "　時給か平均時給を入力してね♡",
+          "width": 240,
+          "scroll": 240,
+          "lines": 1
+        }
+      ],
+      "centerDeltas": [
+        0,
+        0
+      ],
+      "fields": [
+        {
+          "gap": 14,
+          "font": "14px",
+          "sameRow": true,
+          "inputs": [
+            {
+              "id": "set_transMonth",
+              "value": "100,000",
+              "available": 69,
+              "textWidth": 66.84388732910156
+            },
+            {
+              "id": "set_transDay",
+              "value": "100,000",
+              "available": 69,
+              "textWidth": 66.84388732910156
+            }
+          ]
+        },
+        {
+          "gap": 14,
+          "font": "14px",
+          "sameRow": true,
+          "inputs": [
+            {
+              "id": "set_allowanceMonth",
+              "value": "100,000",
+              "available": 69,
+              "textWidth": 66.84388732910156
+            },
+            {
+              "id": "set_allowanceDay",
+              "value": "100,000",
+              "available": 69,
+              "textWidth": 66.84388732910156
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "prompt": [
+        {
+          "t": "※カレンダーで日付を",
+          "width": 235,
+          "scroll": 235,
+          "lines": 1
+        },
+        {
+          "t": "　選択してから押してね♡",
+          "width": 235,
+          "scroll": 235,
+          "lines": 1
+        }
+      ],
+      "calendarCopy": [
+        {
+          "t": "※前月のシフトを曜日に合わせて",
+          "width": 225,
+          "scroll": 225,
+          "lines": 1
+        },
+        {
+          "t": "　一括コピー",
+          "width": 225,
+          "scroll": 225,
+          "lines": 1
+        }
+      ],
+      "listCopy": [
+        {
+          "t": "※前月のシフトを曜日に合わせて",
+          "width": 225,
+          "scroll": 225,
+          "lines": 1
+        },
+        {
+          "t": "　一括コピー",
+          "width": 225,
+          "scroll": 225,
+          "lines": 1
+        }
+      ],
+      "paid": [
+        {
+          "t": "※時給が異なる場合は、よく働く",
+          "width": 295,
+          "scroll": 295,
+          "lines": 1
+        },
+        {
+          "t": "　時給か平均時給を入力してね♡",
+          "width": 295,
+          "scroll": 295,
+          "lines": 1
+        }
+      ],
+      "centerDeltas": [
+        0,
+        0
+      ],
+      "fields": [
+        {
+          "gap": 14,
+          "font": "14px",
+          "sameRow": true,
+          "inputs": [
+            {
+              "id": "set_transMonth",
+              "value": "100,000",
+              "available": 98,
+              "textWidth": 66.84388732910156
+            },
+            {
+              "id": "set_transDay",
+              "value": "100,000",
+              "available": 95,
+              "textWidth": 66.84388732910156
+            }
+          ]
+        },
+        {
+          "gap": 14,
+          "font": "14px",
+          "sameRow": true,
+          "inputs": [
+            {
+              "id": "set_allowanceMonth",
+              "value": "100,000",
+              "available": 98,
+              "textWidth": 66.84388732910156
+            },
+            {
+              "id": "set_allowanceDay",
+              "value": "100,000",
+              "available": 95,
+              "textWidth": 66.84388732910156
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "copy": [
+    {
+      "width": 320,
+      "tab": "calendar",
+      "states": [
+        {
+          "name": "initial",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "unrelated-save",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "confirming",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "success",
+          "color": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "already-filled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "cancelled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "no-source",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "failure",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "month-changed",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        }
+      ],
+      "persistentDataUnchangedOnFailure": true,
+      "copyWeekdayMapping": true,
+      "paidExcluded": true,
+      "otherViewNotMarked": true
+    },
+    {
+      "width": 320,
+      "tab": "list",
+      "states": [
+        {
+          "name": "initial",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "unrelated-save",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "confirming",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "success",
+          "color": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "already-filled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "cancelled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "no-source",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "failure",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "month-changed",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        }
+      ],
+      "persistentDataUnchangedOnFailure": true,
+      "copyWeekdayMapping": true,
+      "paidExcluded": true,
+      "otherViewNotMarked": true
+    },
+    {
+      "width": 375,
+      "tab": "calendar",
+      "states": [
+        {
+          "name": "initial",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "unrelated-save",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "confirming",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "success",
+          "color": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "already-filled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "cancelled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "no-source",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "failure",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "month-changed",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        }
+      ],
+      "persistentDataUnchangedOnFailure": true,
+      "copyWeekdayMapping": true,
+      "paidExcluded": true,
+      "otherViewNotMarked": true
+    },
+    {
+      "width": 375,
+      "tab": "list",
+      "states": [
+        {
+          "name": "initial",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "unrelated-save",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "confirming",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "success",
+          "color": "rgb(255, 255, 255)",
+          "fill": "rgb(255, 255, 255)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "already-filled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "cancelled",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "no-source",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "failure",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        },
+        {
+          "name": "month-changed",
+          "color": "rgb(255, 224, 130)",
+          "fill": "rgb(255, 224, 130)",
+          "gloss": "linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%)"
+        }
+      ],
+      "persistentDataUnchangedOnFailure": true,
+      "copyWeekdayMapping": true,
+      "paidExcluded": true,
+      "otherViewNotMarked": true
+    }
+  ],
+  "errors": [],
+  "externalRequests": []
+}

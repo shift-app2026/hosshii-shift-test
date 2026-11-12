@@ -1,0 +1,10 @@
+{
+  "baseline": "918563bd00c0dd88865a115b2ba2668abee19f77",
+  "allScriptsEqualAfterReversingPaidMarkupOnly": true,
+  "fontFacesAndExistingStylesUnchanged": true,
+  "noColourDeclarationsAdded": true,
+  "fontWeightsUsed": [
+    500,
+    700
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "syntaxBlocks": 13,
+  "scriptsUnchanged": true,
+  "handlersUnchanged": true,
+  "layoutChecks": 25,
+  "calculation": {
+    "totalMins": 420,
+    "totalPay": 8400
+  },
+  "overnight": {
+    "totalMins": 240,
+    "totalPay": 4800
+  },
+  "registrationAndReload": true,
+  "mockedCloudBackup": true,
+  "expiredWriteBlocked": true,
+  "consentAndAuthFailure": true,
+  "clockInteraction": true,
+  "goalPersistence": true,
+  "settingsAutosave": true,
+  "missingWage": true,
+  "marbleAnimation": true,
+  "newPageErrors": 0,
+  "knownBaselineIssue": "Empty storage: getSettingsFormHtml reads undefined.name; identical stack reproduced on original HTML"
+}

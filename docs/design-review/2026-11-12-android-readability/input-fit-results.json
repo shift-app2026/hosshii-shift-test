@@ -1,0 +1,68 @@
+[
+  {
+    "width": 320,
+    "fields": [
+      {
+        "id": "set_transMonth",
+        "text": "100,000",
+        "weight": "700",
+        "needed": 54.70588684082031,
+        "available": 71
+      },
+      {
+        "id": "set_transDay",
+        "text": "100,000",
+        "weight": "700",
+        "needed": 54.70588684082031,
+        "available": 71
+      },
+      {
+        "id": "set_allowanceMonth",
+        "text": "100,000",
+        "weight": "700",
+        "needed": 54.70588684082031,
+        "available": 71
+      },
+      {
+        "id": "set_allowanceDay",
+        "text": "100,000",
+        "weight": "700",
+        "needed": 54.70588684082031,
+        "available": 71
+      }
+    ]
+  },
+  {
+    "width": 375,
+    "fields": [
+      {
+        "id": "set_transMonth",
+        "text": "100,000",
+        "weight": "700",
+        "needed": 54.70588684082031,
+        "available": 100
+      },
+      {
+        "id": "set_transDay",
+        "text": "100,000",
+        "weight": "700",
+        "needed": 54.70588684082031,
+        "available": 97
+      },
+      {
+        "id": "set_allowanceMonth",
+        "text": "100,000",
+        "weight": "700",
+        "needed": 54.70588684082031,
+        "available": 100
+      },
+      {
+        "id": "set_allowanceDay",
+        "text": "100,000",
+        "weight": "700",
+        "needed": 54.70588684082031,
+        "available": 97
+      }
+    ]
+  }
+]

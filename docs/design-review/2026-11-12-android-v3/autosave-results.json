@@ -1,0 +1,181 @@
+{
+  "widths": [
+    {
+      "width": 320,
+      "autoFields": [
+        {
+          "id": "set_closeDay",
+          "key": "closeDay",
+          "value": "20",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_payDay",
+          "key": "payDay",
+          "value": "15",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_wagePaid",
+          "key": "paid",
+          "value": "1500",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_transMonth",
+          "key": "transMonth",
+          "value": "10000",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_transDay",
+          "key": "transDay",
+          "value": "350",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_allowanceMonth",
+          "key": "allowanceMonth",
+          "value": "2500",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_allowanceDay",
+          "key": "allowanceDay",
+          "value": "200",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_allowanceMemo",
+          "key": "allowanceMemo",
+          "value": "役職手当",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_wage_0",
+          "key": "wageSlots.0.wage",
+          "value": "1600",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_bval_0",
+          "key": "wageSlots.0.bVal",
+          "value": "300",
+          "persistedWithoutClose": true
+        }
+      ],
+      "tabSwitchPersists": true,
+      "restartAfterAutosavePersists": true,
+      "workplaceRequiresRegister": true,
+      "workplaceRegisterPersists": true,
+      "immediateRestartLosesPendingChange": {
+        "memory": 999,
+        "persisted": 450
+      },
+      "explicitCloseFlushes": true,
+      "autoFailure": {
+        "persisted": 550,
+        "warning": "データを保存できませんでした。保存は完了していません。アプリやブラウザのデータを削除せず、管理者にご相談ください。",
+        "color": "rgb(255, 224, 130)"
+      },
+      "explicitFailureStaysOpen": true,
+      "existingDeleteFailure": {
+        "persistedSlots": 1,
+        "memorySlots": 0,
+        "toast": "\n    時間帯を削除しました\n  ",
+        "alert": "データを保存できませんでした。保存は完了していません。アプリやブラウザのデータを削除せず、管理者にご相談ください。"
+      },
+      "closeButtonRetained": true,
+      "persistenceCodeUnchanged": true
+    },
+    {
+      "width": 375,
+      "autoFields": [
+        {
+          "id": "set_closeDay",
+          "key": "closeDay",
+          "value": "20",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_payDay",
+          "key": "payDay",
+          "value": "15",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_wagePaid",
+          "key": "paid",
+          "value": "1500",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_transMonth",
+          "key": "transMonth",
+          "value": "10000",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_transDay",
+          "key": "transDay",
+          "value": "350",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_allowanceMonth",
+          "key": "allowanceMonth",
+          "value": "2500",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_allowanceDay",
+          "key": "allowanceDay",
+          "value": "200",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_allowanceMemo",
+          "key": "allowanceMemo",
+          "value": "役職手当",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_wage_0",
+          "key": "wageSlots.0.wage",
+          "value": "1600",
+          "persistedWithoutClose": true
+        },
+        {
+          "id": "set_bval_0",
+          "key": "wageSlots.0.bVal",
+          "value": "300",
+          "persistedWithoutClose": true
+        }
+      ],
+      "tabSwitchPersists": true,
+      "restartAfterAutosavePersists": true,
+      "workplaceRequiresRegister": true,
+      "workplaceRegisterPersists": true,
+      "immediateRestartLosesPendingChange": {
+        "memory": 999,
+        "persisted": 450
+      },
+      "explicitCloseFlushes": true,
+      "autoFailure": {
+        "persisted": 550,
+        "warning": "データを保存できませんでした。保存は完了していません。アプリやブラウザのデータを削除せず、管理者にご相談ください。",
+        "color": "rgb(255, 224, 130)"
+      },
+      "explicitFailureStaysOpen": true,
+      "existingDeleteFailure": {
+        "persistedSlots": 1,
+        "memorySlots": 0,
+        "toast": "\n    時間帯を削除しました\n  ",
+        "alert": "データを保存できませんでした。保存は完了していません。アプリやブラウザのデータを削除せず、管理者にご相談ください。"
+      },
+      "closeButtonRetained": true,
+      "persistenceCodeUnchanged": true
+    }
+  ],
+  "errors": []
+}

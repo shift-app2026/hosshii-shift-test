@@ -1,0 +1,1427 @@
+{
+  "widths": [
+    {
+      "width": 320,
+      "note": [
+        {
+          "text": "※この円グラフは、各バイト先の締め日に",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 314,
+          "scroll": 314
+        },
+        {
+          "text": "　併せて計算してお給料見込額の合計を",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 314,
+          "scroll": 314
+        },
+        {
+          "text": "　表しています。",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 314,
+          "scroll": 314
+        }
+      ],
+      "moneyWeights": [
+        {
+          "text": "100,000",
+          "weight": "700"
+        },
+        {
+          "text": "🕒勤務時間",
+          "weight": "700"
+        },
+        {
+          "text": "42h00m",
+          "weight": "700"
+        },
+        {
+          "text": "40h00m",
+          "weight": "700"
+        },
+        {
+          "text": "📋時給・有給分",
+          "weight": "700"
+        },
+        {
+          "text": "65,200円",
+          "weight": "700"
+        },
+        {
+          "text": "62,200円",
+          "weight": "700"
+        },
+        {
+          "text": "🚃交通費・手当",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "合計",
+          "weight": "700"
+        },
+        {
+          "text": "65,200円",
+          "weight": "700"
+        },
+        {
+          "text": "62,200円",
+          "weight": "700"
+        },
+        {
+          "text": "🕒勤務時間",
+          "weight": "700"
+        },
+        {
+          "text": "28h00m",
+          "weight": "700"
+        },
+        {
+          "text": "28h00m",
+          "weight": "700"
+        },
+        {
+          "text": "📋時給・有給分",
+          "weight": "700"
+        },
+        {
+          "text": "35,000円",
+          "weight": "700"
+        },
+        {
+          "text": "35,000円",
+          "weight": "700"
+        },
+        {
+          "text": "🚃交通費・手当",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "合計",
+          "weight": "700"
+        },
+        {
+          "text": "35,000円",
+          "weight": "700"
+        },
+        {
+          "text": "35,000円",
+          "weight": "700"
+        },
+        {
+          "text": "🕒勤務時間",
+          "weight": "700"
+        },
+        {
+          "text": "14h00m",
+          "weight": "700"
+        },
+        {
+          "text": "12h00m",
+          "weight": "700"
+        },
+        {
+          "text": "📋時給・有給分",
+          "weight": "700"
+        },
+        {
+          "text": "19,000円",
+          "weight": "700"
+        },
+        {
+          "text": "16,000円",
+          "weight": "700"
+        },
+        {
+          "text": "🚃交通費・手当",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "合計",
+          "weight": "700"
+        },
+        {
+          "text": "19,000円",
+          "weight": "700"
+        },
+        {
+          "text": "16,000円",
+          "weight": "700"
+        },
+        {
+          "text": "🕒勤務時間",
+          "weight": "700"
+        },
+        {
+          "text": "0h00m",
+          "weight": "700"
+        },
+        {
+          "text": "0h00m",
+          "weight": "700"
+        },
+        {
+          "text": "📋時給・有給分",
+          "weight": "700"
+        },
+        {
+          "text": "11,200円",
+          "weight": "700"
+        },
+        {
+          "text": "11,200円",
+          "weight": "700"
+        },
+        {
+          "text": "🚃交通費・手当",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "合計",
+          "weight": "700"
+        },
+        {
+          "text": "11,200円",
+          "weight": "700"
+        },
+        {
+          "text": "11,200円",
+          "weight": "700"
+        },
+        {
+          "text": "¥62,200",
+          "weight": "700"
+        }
+      ],
+      "inputWeights": [
+        {
+          "id": "newJobNameInput",
+          "weight": "700"
+        },
+        {
+          "id": "set_time_0_start",
+          "weight": "700"
+        },
+        {
+          "id": "set_time_0_end",
+          "weight": "700"
+        },
+        {
+          "id": "set_wage_0",
+          "weight": "700"
+        },
+        {
+          "id": "set_bval_0",
+          "weight": "700"
+        },
+        {
+          "id": "set_wagePaid",
+          "weight": "700"
+        },
+        {
+          "id": "set_transMonth",
+          "weight": "700"
+        },
+        {
+          "id": "set_transDay",
+          "weight": "700"
+        },
+        {
+          "id": "set_allowanceMonth",
+          "weight": "700"
+        },
+        {
+          "id": "set_allowanceDay",
+          "weight": "700"
+        },
+        {
+          "id": "set_allowanceMemo",
+          "weight": "700"
+        }
+      ],
+      "yearly": [
+        {
+          "text": "2026年11月までに受け取ったお給料",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 262,
+          "scroll": 262
+        }
+      ],
+      "months": [
+        {
+          "tab": "clock",
+          "size": "16px"
+        },
+        {
+          "tab": "calendar",
+          "size": "16px"
+        },
+        {
+          "tab": "list",
+          "size": "16px"
+        }
+      ],
+      "prompt": [
+        {
+          "text": "※カレンダーで日付を",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 192,
+          "scroll": 192
+        },
+        {
+          "text": "　選択してから押してね♡",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 192,
+          "scroll": 192
+        }
+      ],
+      "copy1": [
+        {
+          "text": "※前月のシフトを曜日に",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 176,
+          "scroll": 176
+        },
+        {
+          "text": "　合わせて　一括コピー",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 176,
+          "scroll": 176
+        }
+      ],
+      "copy2": [
+        {
+          "text": "※前月のシフトを曜日に",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 176,
+          "scroll": 176
+        },
+        {
+          "text": "　合わせて　一括コピー",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 176,
+          "scroll": 176
+        }
+      ],
+      "heart": [
+        {
+          "numberZ": "2",
+          "heartZ": "1",
+          "fill": "none",
+          "colour": "rgb(48, 32, 39)",
+          "count": 1
+        }
+      ],
+      "schedule": [
+        {
+          "text": "♡ローズカフェお給料日",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 180,
+          "scroll": 180
+        },
+        {
+          "text": "♡月色ショップお給料日",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 180,
+          "scroll": 180
+        },
+        {
+          "text": "♡星空キッチンお給料日",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 180,
+          "scroll": 180
+        },
+        {
+          "text": "09:00〜17:00",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "text": "ローズカフェ",
+          "size": "14px",
+          "weight": "700",
+          "lines": 1,
+          "client": 119,
+          "scroll": 119
+        },
+        {
+          "text": "18:00〜20:00",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 83,
+          "scroll": 83
+        },
+        {
+          "text": "月色ショップ",
+          "size": "14px",
+          "weight": "700",
+          "lines": 1,
+          "client": 118,
+          "scroll": 118
+        },
+        {
+          "text": "09:00〜17:00",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "text": "ローズカフェ",
+          "size": "14px",
+          "weight": "700",
+          "lines": 1,
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "text": "18:00〜22:00",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "text": "月色ショップ",
+          "size": "14px",
+          "weight": "700",
+          "lines": 1,
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "text": "8時間",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 39,
+          "scroll": 39
+        },
+        {
+          "text": "星空キッチン",
+          "size": "14px",
+          "weight": "700",
+          "lines": 1,
+          "client": 131,
+          "scroll": 131
+        },
+        {
+          "text": "09:00〜17:00",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "text": "ローズカフェ",
+          "size": "14px",
+          "weight": "700",
+          "lines": 1,
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "text": "18:00〜22:00",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "text": "月色ショップ",
+          "size": "14px",
+          "weight": "700",
+          "lines": 1,
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "text": "09:00〜17:00",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "text": "ローズカフェ",
+          "size": "14px",
+          "weight": "700",
+          "lines": 1,
+          "client": 121,
+          "scroll": 121
+        },
+        {
+          "text": "18:00〜22:00",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 82,
+          "scroll": 82
+        },
+        {
+          "text": "月色ショップ",
+          "size": "14px",
+          "weight": "700",
+          "lines": 1,
+          "client": 121,
+          "scroll": 121
+        }
+      ],
+      "paid": {
+        "title": "☂【有給休暇】",
+        "label": "1時間あたり",
+        "titleBottom": 766.46875,
+        "labelTop": 788.21875,
+        "sameRow": true,
+        "labelInputGap": 10
+      },
+      "headers": [
+        {
+          "text": "📲【ホーム画面に追加すると便利です♪】",
+          "lines": [
+            1
+          ],
+          "client": 282,
+          "scroll": 282,
+          "size": "14px"
+        },
+        {
+          "text": "🔄【データの保存・バックアップについて】",
+          "lines": [
+            1
+          ],
+          "client": 282,
+          "scroll": 282,
+          "size": "14px"
+        }
+      ],
+      "prose": [
+        {
+          "text": "このアプリは、毎日のバイトやお仕事で忙しい方でも、シフト登録やお給料の計算を簡単にできるように作ったアプリです♪",
+          "last": "アプリです♪",
+          "size": "17px",
+          "weight": "700",
+          "multiline": true
+        },
+        {
+          "text": "複数のバイトを掛け持ちしている方も、シフトやお給料の目安をまとめて確認できます。",
+          "last": "確認できます。",
+          "size": "17px",
+          "weight": "700",
+          "multiline": true
+        },
+        {
+          "text": "※「予定表」では、登録したシフトをカレンダーで確認できます。日付を押すと、シフトの確認・変更・削除もできます♡",
+          "last": "更・削除もできます♡",
+          "size": "17px",
+          "weight": "700",
+          "multiline": true
+        },
+        {
+          "text": "💡 詳しい使い方は、各画面の「見てね♡」「確認してね💡」をご覧ください。",
+          "last": "ご覧ください。",
+          "size": "17px",
+          "weight": "700",
+          "multiline": true
+        },
+        {
+          "text": "ホーム画面に追加すると、次回からすぐに開けます♪",
+          "last": "からすぐに開けます♪",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "ブラウザのメニューから「ホーム画面に追加」を選んでね。",
+          "last": "ム画面に追加」を選んでね。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "※操作方法は端末やブラウザによって異なります。",
+          "last": "よって異なります。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "入力したシフトや給与のデータは、お使いの端末・ブラウザ等の保存領域に保存されます。",
+          "last": "の保存領域に保存されます。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "機種変更やデータ削除などに備えて、「設定」画面の「データのバックアップ」から定期的に保存してね♪",
+          "last": "保存してね♪",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "♡ 書き出すLINEで本人確認後、Supabaseのサーバーにバックアップを保存します。",
+          "last": "保存します。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "♡ 読み込む保存したバックアップを、同じLINEアカウントで復元できます。",
+          "last": "復元できます。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "※「読み込む」と、現在のデータは保存したデータに上書きされます。",
+          "last": "上書きされます。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "※バックアップは自動では行われません。保存・復元は手動で行ってね。",
+          "last": "手動で行ってね。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "※通信障害などにより、保存・復元ができない場合があります。",
+          "last": "場合があります。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "より使いやすいアプリにするため、無料お試し期間中も、表示や機能の改善・修正を行う場合があります。",
+          "last": "場合があります。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "大切なデータを守るため、定期的にバックアップを保存してね♡",
+          "last": "保存してね♡",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "アプリに表示されるお給料は、税金や社会保険料などを差し引く前の総支給額の目安です。",
+          "last": "く前の総支給額の目安です。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "実際のお給料とは異なる場合がありますので、勤務先の給与明細などで確認してね。",
+          "last": "細などで確認してね。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "本アプリの利用条件や個人情報の取り扱いについては、「利用規約」と「プライバシーポリシー」に記載しています。",
+          "last": "記載しています。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "アプリの利用開始時に同意いただいた内容は、アプリ内からいつでも確認できます。",
+          "last": "つでも確認できます。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "利用規約を読む",
+          "last": "利用規約を読む",
+          "size": "17px",
+          "weight": "500",
+          "multiline": false
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "note": [
+        {
+          "text": "※この円グラフは、各バイト先の締め日に",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 369,
+          "scroll": 369
+        },
+        {
+          "text": "　併せて計算してお給料見込額の合計を",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 369,
+          "scroll": 369
+        },
+        {
+          "text": "　表しています。",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 369,
+          "scroll": 369
+        }
+      ],
+      "moneyWeights": [
+        {
+          "text": "100,000",
+          "weight": "700"
+        },
+        {
+          "text": "🕒勤務時間",
+          "weight": "700"
+        },
+        {
+          "text": "42h00m",
+          "weight": "700"
+        },
+        {
+          "text": "40h00m",
+          "weight": "700"
+        },
+        {
+          "text": "📋時給・有給分",
+          "weight": "700"
+        },
+        {
+          "text": "65,200円",
+          "weight": "700"
+        },
+        {
+          "text": "62,200円",
+          "weight": "700"
+        },
+        {
+          "text": "🚃交通費・手当",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "合計",
+          "weight": "700"
+        },
+        {
+          "text": "65,200円",
+          "weight": "700"
+        },
+        {
+          "text": "62,200円",
+          "weight": "700"
+        },
+        {
+          "text": "🕒勤務時間",
+          "weight": "700"
+        },
+        {
+          "text": "28h00m",
+          "weight": "700"
+        },
+        {
+          "text": "28h00m",
+          "weight": "700"
+        },
+        {
+          "text": "📋時給・有給分",
+          "weight": "700"
+        },
+        {
+          "text": "35,000円",
+          "weight": "700"
+        },
+        {
+          "text": "35,000円",
+          "weight": "700"
+        },
+        {
+          "text": "🚃交通費・手当",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "合計",
+          "weight": "700"
+        },
+        {
+          "text": "35,000円",
+          "weight": "700"
+        },
+        {
+          "text": "35,000円",
+          "weight": "700"
+        },
+        {
+          "text": "🕒勤務時間",
+          "weight": "700"
+        },
+        {
+          "text": "14h00m",
+          "weight": "700"
+        },
+        {
+          "text": "12h00m",
+          "weight": "700"
+        },
+        {
+          "text": "📋時給・有給分",
+          "weight": "700"
+        },
+        {
+          "text": "19,000円",
+          "weight": "700"
+        },
+        {
+          "text": "16,000円",
+          "weight": "700"
+        },
+        {
+          "text": "🚃交通費・手当",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "合計",
+          "weight": "700"
+        },
+        {
+          "text": "19,000円",
+          "weight": "700"
+        },
+        {
+          "text": "16,000円",
+          "weight": "700"
+        },
+        {
+          "text": "🕒勤務時間",
+          "weight": "700"
+        },
+        {
+          "text": "0h00m",
+          "weight": "700"
+        },
+        {
+          "text": "0h00m",
+          "weight": "700"
+        },
+        {
+          "text": "📋時給・有給分",
+          "weight": "700"
+        },
+        {
+          "text": "11,200円",
+          "weight": "700"
+        },
+        {
+          "text": "11,200円",
+          "weight": "700"
+        },
+        {
+          "text": "🚃交通費・手当",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "0円",
+          "weight": "700"
+        },
+        {
+          "text": "合計",
+          "weight": "700"
+        },
+        {
+          "text": "11,200円",
+          "weight": "700"
+        },
+        {
+          "text": "11,200円",
+          "weight": "700"
+        },
+        {
+          "text": "¥62,200",
+          "weight": "700"
+        }
+      ],
+      "inputWeights": [
+        {
+          "id": "newJobNameInput",
+          "weight": "700"
+        },
+        {
+          "id": "set_time_0_start",
+          "weight": "700"
+        },
+        {
+          "id": "set_time_0_end",
+          "weight": "700"
+        },
+        {
+          "id": "set_wage_0",
+          "weight": "700"
+        },
+        {
+          "id": "set_bval_0",
+          "weight": "700"
+        },
+        {
+          "id": "set_wagePaid",
+          "weight": "700"
+        },
+        {
+          "id": "set_transMonth",
+          "weight": "700"
+        },
+        {
+          "id": "set_transDay",
+          "weight": "700"
+        },
+        {
+          "id": "set_allowanceMonth",
+          "weight": "700"
+        },
+        {
+          "id": "set_allowanceDay",
+          "weight": "700"
+        },
+        {
+          "id": "set_allowanceMemo",
+          "weight": "700"
+        }
+      ],
+      "yearly": [
+        {
+          "text": "2026年11月までに受け取ったお給料",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 317,
+          "scroll": 317
+        }
+      ],
+      "months": [
+        {
+          "tab": "clock",
+          "size": "17px"
+        },
+        {
+          "tab": "calendar",
+          "size": "17px"
+        },
+        {
+          "tab": "list",
+          "size": "17px"
+        }
+      ],
+      "prompt": [
+        {
+          "text": "※カレンダーで日付を",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 247,
+          "scroll": 247
+        },
+        {
+          "text": "　選択してから押してね♡",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 247,
+          "scroll": 247
+        }
+      ],
+      "copy1": [
+        {
+          "text": "※前月のシフトを曜日に",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 187,
+          "scroll": 187
+        },
+        {
+          "text": "　合わせて　一括コピー",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 187,
+          "scroll": 187
+        }
+      ],
+      "copy2": [
+        {
+          "text": "※前月のシフトを曜日に",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 187,
+          "scroll": 187
+        },
+        {
+          "text": "　合わせて　一括コピー",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 187,
+          "scroll": 187
+        }
+      ],
+      "heart": [
+        {
+          "numberZ": "2",
+          "heartZ": "1",
+          "fill": "none",
+          "colour": "rgb(48, 32, 39)",
+          "count": 1
+        }
+      ],
+      "schedule": [
+        {
+          "text": "♡ローズカフェお給料日",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 180,
+          "scroll": 180
+        },
+        {
+          "text": "♡月色ショップお給料日",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 180,
+          "scroll": 180
+        },
+        {
+          "text": "♡星空キッチンお給料日",
+          "size": "16px",
+          "weight": "700",
+          "lines": 1,
+          "client": 180,
+          "scroll": 180
+        },
+        {
+          "text": "09:00〜17:00",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 87,
+          "scroll": 87
+        },
+        {
+          "text": "ローズカフェ",
+          "size": "15px",
+          "weight": "700",
+          "lines": 1,
+          "client": 149,
+          "scroll": 149
+        },
+        {
+          "text": "18:00〜20:00",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 88,
+          "scroll": 88
+        },
+        {
+          "text": "月色ショップ",
+          "size": "15px",
+          "weight": "700",
+          "lines": 1,
+          "client": 148,
+          "scroll": 148
+        },
+        {
+          "text": "09:00〜17:00",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 87,
+          "scroll": 87
+        },
+        {
+          "text": "ローズカフェ",
+          "size": "15px",
+          "weight": "700",
+          "lines": 1,
+          "client": 151,
+          "scroll": 151
+        },
+        {
+          "text": "18:00〜22:00",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 87,
+          "scroll": 87
+        },
+        {
+          "text": "月色ショップ",
+          "size": "15px",
+          "weight": "700",
+          "lines": 1,
+          "client": 151,
+          "scroll": 151
+        },
+        {
+          "text": "8時間",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 42,
+          "scroll": 42
+        },
+        {
+          "text": "星空キッチン",
+          "size": "15px",
+          "weight": "700",
+          "lines": 1,
+          "client": 163,
+          "scroll": 163
+        },
+        {
+          "text": "09:00〜17:00",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 87,
+          "scroll": 87
+        },
+        {
+          "text": "ローズカフェ",
+          "size": "15px",
+          "weight": "700",
+          "lines": 1,
+          "client": 151,
+          "scroll": 151
+        },
+        {
+          "text": "18:00〜22:00",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 87,
+          "scroll": 87
+        },
+        {
+          "text": "月色ショップ",
+          "size": "15px",
+          "weight": "700",
+          "lines": 1,
+          "client": 151,
+          "scroll": 151
+        },
+        {
+          "text": "09:00〜17:00",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 87,
+          "scroll": 87
+        },
+        {
+          "text": "ローズカフェ",
+          "size": "15px",
+          "weight": "700",
+          "lines": 1,
+          "client": 151,
+          "scroll": 151
+        },
+        {
+          "text": "18:00〜22:00",
+          "size": "17px",
+          "weight": "700",
+          "lines": 1,
+          "client": 87,
+          "scroll": 87
+        },
+        {
+          "text": "月色ショップ",
+          "size": "15px",
+          "weight": "700",
+          "lines": 1,
+          "client": 151,
+          "scroll": 151
+        }
+      ],
+      "paid": {
+        "title": "☂【有給休暇】",
+        "label": "1時間あたり",
+        "titleBottom": 767.765625,
+        "labelTop": 789.515625,
+        "sameRow": true,
+        "labelInputGap": 10
+      },
+      "headers": [
+        {
+          "text": "📲【ホーム画面に追加すると便利です♪】",
+          "lines": [
+            1
+          ],
+          "client": 331,
+          "scroll": 331,
+          "size": "16px"
+        },
+        {
+          "text": "🔄【データの保存・バックアップについて】",
+          "lines": [
+            1
+          ],
+          "client": 331,
+          "scroll": 331,
+          "size": "16px"
+        }
+      ],
+      "prose": [
+        {
+          "text": "このアプリは、毎日のバイトやお仕事で忙しい方でも、シフト登録やお給料の計算を簡単にできるように作ったアプリです♪",
+          "last": "アプリです♪",
+          "size": "17px",
+          "weight": "700",
+          "multiline": true
+        },
+        {
+          "text": "複数のバイトを掛け持ちしている方も、シフトやお給料の目安をまとめて確認できます。",
+          "last": "確認できます。",
+          "size": "17px",
+          "weight": "700",
+          "multiline": true
+        },
+        {
+          "text": "※「予定表」では、登録したシフトをカレンダーで確認できます。日付を押すと、シフトの確認・変更・削除もできます♡",
+          "last": "削除もできます♡",
+          "size": "17px",
+          "weight": "700",
+          "multiline": true
+        },
+        {
+          "text": "💡 詳しい使い方は、各画面の「見てね♡」「確認してね💡」をご覧ください。",
+          "last": "ご覧ください。",
+          "size": "17px",
+          "weight": "700",
+          "multiline": true
+        },
+        {
+          "text": "ホーム画面に追加すると、次回からすぐに開けます♪",
+          "last": "ぐに開けます♪",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "ブラウザのメニューから「ホーム画面に追加」を選んでね。",
+          "last": "に追加」を選んでね。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "※操作方法は端末やブラウザによって異なります。",
+          "last": "異なります。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "入力したシフトや給与のデータは、お使いの端末・ブラウザ等の保存領域に保存されます。",
+          "last": "保存されます。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "機種変更やデータ削除などに備えて、「設定」画面の「データのバックアップ」から定期的に保存してね♪",
+          "last": "プ」から定期的に保存してね♪",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "♡ 書き出すLINEで本人確認後、Supabaseのサーバーにバックアップを保存します。",
+          "last": "バーにバックアップを保存します。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "♡ 読み込む保存したバックアップを、同じLINEアカウントで復元できます。",
+          "last": "カウントで復元できます。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "※「読み込む」と、現在のデータは保存したデータに上書きされます。",
+          "last": "存したデータに上書きされます。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "※バックアップは自動では行われません。保存・復元は手動で行ってね。",
+          "last": "ん。保存・復元は手動で行ってね。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "※通信障害などにより、保存・復元ができない場合があります。",
+          "last": "できない場合があります。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "より使いやすいアプリにするため、無料お試し期間中も、表示や機能の改善・修正を行う場合があります。",
+          "last": "善・修正を行う場合があります。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "大切なデータを守るため、定期的にバックアップを保存してね♡",
+          "last": "ックアップを保存してね♡",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "アプリに表示されるお給料は、税金や社会保険料などを差し引く前の総支給額の目安です。",
+          "last": "額の目安です。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "実際のお給料とは異なる場合がありますので、勤務先の給与明細などで確認してね。",
+          "last": "確認してね。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "本アプリの利用条件や個人情報の取り扱いについては、「利用規約」と「プライバシーポリシー」に記載しています。",
+          "last": "記載しています。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "アプリの利用開始時に同意いただいた内容は、アプリ内からいつでも確認できます。",
+          "last": "確認できます。",
+          "size": "17px",
+          "weight": "500",
+          "multiline": true
+        },
+        {
+          "text": "利用規約を読む",
+          "last": "利用規約を読む",
+          "size": "17px",
+          "weight": "500",
+          "multiline": false
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

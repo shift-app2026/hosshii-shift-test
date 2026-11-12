@@ -1,0 +1,14 @@
+{
+  "baseline": "8a49a20f00fff39bc412076c764e1ecf4c7170c7",
+  "applicationFilesByteIdentical": true,
+  "sha256": {
+    "index.html": "297630ed18f451a69e5a1d143b6cf28b31a1ccf38b3bbc0d2e0b8c12fdec136e",
+    "bordeaux-rose.css": "69bb9825bd9101c74ea5088db62afdf42f1db9db6a260ce339d7ad6f2f286b14",
+    "tools/design-preview/build.py": "8c329153381729f95b8c5615e4f07fa3f78c748398acbe3eb44a5703c3aee94b",
+    "tools/design-preview/preview-bootstrap.js": "b21d8e79a684b9773123f94b0a794f63f4cac3418bde4ce68bdd08db1855fda9",
+    "tools/design-preview/preview-ui.js": "d1066b34eca9175a45a79c986c8e693b788e047ba7c7f00185c58d988dc7ca86"
+  },
+  "fontAdopted": false,
+  "zipCreated": false,
+  "deployment": false
+}

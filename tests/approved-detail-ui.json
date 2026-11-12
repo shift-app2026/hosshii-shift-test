@@ -1,0 +1,37 @@
+[
+  {
+    "before": "<div class=\"flex items-center justify-between gap-2\">\n                  <span class=\"hosshii-allowance-section-title flex-1",
+    "after": "<div class=\"hosshii-paid-header flex items-center justify-between gap-2\">\n                  <span class=\"hosshii-allowance-section-title flex-1",
+    "reason": "Requested presentation and copy-result indicator only; algorithm and persistence unchanged"
+  },
+  {
+    "before": "class=\"paid-sub ml-1.5 text-stone-500 font-bold\">1時間あたり",
+    "after": "class=\"paid-sub ml-1.5 text-stone-500 font-bold\">　　1時間あたり",
+    "reason": "Requested presentation and copy-result indicator only; algorithm and persistence unchanged"
+  },
+  {
+    "before": "※時給が異なる場合は、<br>　よく働く時給か平均時給を入力してね♡",
+    "after": "<span>※時給が異なる場合は、よく働く</span><span>　時給か平均時給を入力してね♡</span>",
+    "reason": "Requested presentation and copy-result indicator only; algorithm and persistence unchanged"
+  },
+  {
+    "before": "      const copyDate = new Date(copyTab === 'tab-list' ? currentListDate : currentPeriodDate);",
+    "after": "      const copyDate = new Date(copyTab === 'tab-list' ? currentListDate : currentPeriodDate);\n      window.hosshiiCopyState?.(copyTab, false);",
+    "reason": "Requested presentation and copy-result indicator only; algorithm and persistence unchanged"
+  },
+  {
+    "before": "          if (!safeWriteAppJSON('mybasket_shifts_v23', shiftsData)) return;\n          refreshAll();",
+    "after": "          if (!safeWriteAppJSON('mybasket_shifts_v23', shiftsData)) return;\n          window.hosshiiCopyState?.(copyTab, true);\n          refreshAll();",
+    "reason": "Requested presentation and copy-result indicator only; algorithm and persistence unchanged"
+  },
+  {
+    "before": " const copyButton=()=>document.querySelector('#tab-calendar button[onclick=\"copyLastMonthShifts()\"]');\n // Month navigation changes the action context: offer the gold prompt again.\n document.addEventListener('click',function(e){\n   if(e.target.closest('#tab-calendar button[onclick^=\"changeMonth(\"]'))copyButton()?.classList.remove('copy-completed');\n },true);\n // Mark copy complete only on the actual successful persistence path.\n const original=window.safeWriteAppJSON;\n if(typeof original==='function'){\n   window.safeWriteAppJSON=function(key,value){\n     const result=original.apply(this,arguments);\n     if(key==='mybasket_shifts_v23' && result)copyButton()?.classList.add('copy-completed');\n     return result;\n   };\n }",
+    "after": " // A successful unrelated write must never mark a copy action complete.\n document.addEventListener('click',function(e){\n   if(e.target.closest('button[onclick^=\"changeMonth(\"],#currentMonthLabel'))window.hosshiiCopyState?.('tab-calendar',false);\n   if(e.target.closest('button[onclick^=\"changeListMonth(\"],#currentListMonthLabel'))window.hosshiiCopyState?.('tab-list',false);\n },true);",
+    "reason": "Requested presentation and copy-result indicator only; algorithm and persistence unchanged"
+  },
+  {
+    "before": "          <div id=\"standaloneCopyCard\" class=\"hosshii-list-copy flex items-center justify-between gap-2\">\n            <div class=\"flex items-center gap-1.5 min-w-0 flex-1\"><span class=\"copy-icon shrink-0\" aria-hidden=\"true\">📋</span><span class=\"copy-label\">前月のシフトを曜日に合わせて一括コピー</span></div>\n            <button type=\"button\" onclick=\"copyLastMonthShifts()\" class=\"bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-xs sm:text-sm px-2.5 py-1.5 rounded-xl transition shadow-sm whitespace-nowrap shrink-0\">実行</button>\n          </div>",
+    "after": "          <div id=\"standaloneCopyCard\" class=\"hosshii-list-copy hosshii-copy-card flex items-center justify-between gap-2\">\n            <div class=\"copy-description flex items-center min-w-0 flex-1\"><span class=\"copy-icon shrink-0\" aria-hidden=\"true\">📋</span><span class=\"copy-label\"><span>※前月のシフトを曜日に合わせて</span><span>　一括コピー</span></span></div>\n            <button type=\"button\" onclick=\"copyLastMonthShifts()\" class=\"bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-xs sm:text-sm px-2.5 py-1.5 rounded-xl transition shadow-sm whitespace-nowrap shrink-0\">実行</button>\n          </div>",
+    "reason": "Requested two-line list copy card; reverse its markup before older UI normalization"
+  }
+]

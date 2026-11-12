@@ -1,0 +1,26 @@
+{
+  "syntaxBlocks": 13,
+  "nonPresentationScriptsUnchanged": true,
+  "presentationMarkupChanges": 9,
+  "handlersUnchanged": true,
+  "layoutChecks": 25,
+  "calculation": {
+    "totalMins": 420,
+    "totalPay": 8400
+  },
+  "overnight": {
+    "totalMins": 240,
+    "totalPay": 4800
+  },
+  "registrationAndReload": true,
+  "mockedCloudBackup": true,
+  "expiredWriteBlocked": true,
+  "consentAndAuthFailure": true,
+  "clockInteraction": true,
+  "goalPersistence": true,
+  "settingsAutosave": true,
+  "missingWage": true,
+  "marbleAnimation": true,
+  "newPageErrors": 0,
+  "knownBaselineIssue": "Empty storage: getSettingsFormHtml reads undefined.name; same error and call chain reproduced on original HTML"
+}
