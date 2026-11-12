@@ -1,0 +1,28 @@
+{
+  "pr9_commit": "3a1e7748c4cef28a2bd4a056b150baa70679ac4d",
+  "tests": 38,
+  "live_connections": 0,
+  "production_changes": 0,
+  "files": {
+    "README.md": "6a19690a7ffb0a9a472f69d614d8a23dd352a89733f1091a6acb7b1b2209dbd1",
+    "RELEASE_CHECKLIST.md": "3b77238a56a627cfda445b9fa66c6fe352cfcfabc530ead3431ed0bc899690db",
+    "SECRET_CHECK.md": "6859b966adf80d87f8d65ac3130420e33b6cb4f12331c5f8a50c677f86ee6bf0",
+    "SERVER_HANDOFF.md": "73de4595c6daf1a4ef85e818317f1a72f4c9fc16e6c8a897f816393f341c25f1",
+    "client-guard.patch": "af251191965ea6852ada3f59ea37a47ccb2a9f3259a9c014689909a79e66c9b6",
+    "hosshii-backup/handler.mjs": "705735a2c6ccdc1777dd2292d31c6dd95b9fdd55e8baf211532df719d28fb352",
+    "hosshii-backup/index.ts": "c18b90058e822f752a69e07ed8b215d1be795028ea3a7a870afe1a909beccd5b",
+    "hosshii-backup.single.ts": "96647a1411eabce0b36414d91b399340ee4181a0c6775e61742f6ff25661990f",
+    "single-file-results.txt": "a98f68a8120e64092bbe29fbba13fdde9f7dc6e584c9e581a585295d452fc98b",
+    "test-results.txt": "43bf9f3516bc9e56324f8de2c78ed875cda90f2bf2700e468a158fa8b5ba878c",
+    "tests/backup.test.mjs": "f3b17729284ffcf56fee2aa10341e9d663029f4297a390667160f2825b40898f",
+    "tests/client-guard.test.mjs": "f58a056cc1e6476c31ff94285f773fb110724a30e2b6dabc9eb6adb3382e14b3",
+    "tests/edge-adapter.test.mjs": "2e286dd26d25ec3c88595dd65fd93089bacc4a88954d987161f3d54c2405b8c9",
+    "tests/reference/prelaunch-core.js": "3cc32c9cd552dc964347bab7f670aceeb79a72426999fefc854f89143a0678d6",
+    "tests/reference/prelaunch-model.js": "ea48aeeef9d0627304cf49591ff8700661ee59bbbae7cd9d7d3922aa061c3185",
+    "tests/reference/ui-functions.json": "43c86d592c5a60d2cd88a97be2ad744a6f34c9e6ce461b310a8f7f59980d8c77",
+    "tests/single-file.test.mjs": "32e376b41a24a857e185449d40ac37f12583feec01728c715c465390418ba978"
+  },
+  "single_file_smoke_tests": 3,
+  "design_reported_ref": "verify/trial-launch-isolated / d3f33a4 (not retrievable via connected GitHub)",
+  "client_patch_status": "reference only; do not apply over design completed fixes"
+}

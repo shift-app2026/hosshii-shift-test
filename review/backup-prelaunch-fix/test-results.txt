@@ -1,0 +1,48 @@
+✔ schema v2 saves and loads without transforming history or state (60.848051ms)
+✔ real PR9 backup generator envelope accepted (2.260852ms)
+✔ legacy stored data loads unchanged and PR9 parser accepts (6.688471ms)
+✔ legacy v21/v76 compatibility (3.769108ms)
+✔ active legacy save remains supported (1.657551ms)
+✔ unsupported version cannot fall through to legacy (1.533086ms)
+✔ missing history/config rejected without overwriting old data (1.56164ms)
+✔ negative goal and array state rejected (4.020376ms)
+✔ expired save and load denied before backup access (1.893278ms)
+✔ one millisecond before expiry allowed (1.658965ms)
+✔ expires during read: backup is not returned (1.15641ms)
+✔ purchased_at does not bypass free trial scope (2.601816ms)
+✔ unconsented / future / missing / malformed dates fail closed (3.365414ms)
+✔ missing registration denied (0.573581ms)
+✔ spoofed user IDs ignored in save and load (1.291455ms)
+✔ different verified identity cannot read A (0.801138ms)
+✔ invalid/expired/wrong channel identity does not access DB (1.986158ms)
+✔ LINE rejection and service errors separated (2.298558ms)
+✔ LINE timeout fails closed (21.816194ms)
+✔ LINE network error fails closed (0.89916ms)
+✔ DB/config errors sanitized and no false save success (1.396675ms)
+✔ load DB error never leaks stored data (0.462868ms)
+✔ stored invalid backup is not migrated or overwritten (0.61875ms)
+✔ missing backup returns compatible 404 (0.5215ms)
+✔ origin methods and preflight (0.597027ms)
+✔ malformed JSON and missing token/action (0.732332ms)
+✔ UTF8 bytes limit, not UTF16 length (4.86469ms)
+✔ declared too-large content denied before reading (0.446ms)
+✔ dangerous keys / deeply nested data rejected (1.594948ms)
+✔ responses have no-store and correct CORS (0.38464ms)
+✔ save checks current expiry before request (4.302238ms)
+✔ load checks current expiry before request (1.454952ms)
+✔ active save works through guard (1.077749ms)
+✔ active load retains existing restore path (0.911015ms)
+✔ local export entry retains no read-only rejection (0.204081ms)
+(node:3612) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ actual Edge adapter save uses verified owner and existing conflict key (149.078697ms)
+✔ actual Edge adapter load filters owner and retains response contract (8.066341ms)
+✔ missing fake default key fails safely without DB call (3.567793ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 574.936573

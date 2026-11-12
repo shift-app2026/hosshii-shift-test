@@ -1,0 +1,154 @@
+{
+  "app": "d3f33a4",
+  "server": "1e3f0e5",
+  "liveServices": false,
+  "cases": [
+    {
+      "name": "v2-real-app-save-and-restore-preserves-history-baseline-draft",
+      "width": 320
+    },
+    {
+      "name": "mybasket_shifts_v23-load-migrate-resave-v2",
+      "width": 320
+    },
+    {
+      "name": "mybasket_shifts_v22-load-migrate-resave-v2",
+      "width": 320
+    },
+    {
+      "name": "mybasket_shifts_v21-load-migrate-resave-v2",
+      "width": 320
+    },
+    {
+      "name": "server-403-expiry-rejected-without-false-success-or-mutation",
+      "width": 320
+    },
+    {
+      "name": "client-expiry-blocks-cloud-and-device-export-stays-local",
+      "width": 320
+    },
+    {
+      "name": "second-identity-cannot-restore-first-identity-backup",
+      "width": 320
+    },
+    {
+      "name": "v2-real-app-save-and-restore-preserves-history-baseline-draft",
+      "width": 375
+    },
+    {
+      "name": "mybasket_shifts_v23-load-migrate-resave-v2",
+      "width": 375
+    },
+    {
+      "name": "mybasket_shifts_v22-load-migrate-resave-v2",
+      "width": 375
+    },
+    {
+      "name": "mybasket_shifts_v21-load-migrate-resave-v2",
+      "width": 375
+    },
+    {
+      "name": "server-403-expiry-rejected-without-false-success-or-mutation",
+      "width": 375
+    },
+    {
+      "name": "client-expiry-blocks-cloud-and-device-export-stays-local",
+      "width": 375
+    },
+    {
+      "name": "second-identity-cannot-restore-first-identity-backup",
+      "width": 375
+    }
+  ],
+  "errors": [],
+  "responses": [
+    {
+      "width": 320,
+      "status": 200
+    },
+    {
+      "width": 320,
+      "status": 200
+    },
+    {
+      "width": 320,
+      "status": 200
+    },
+    {
+      "width": 320,
+      "status": 200
+    },
+    {
+      "width": 320,
+      "status": 200
+    },
+    {
+      "width": 320,
+      "status": 200
+    },
+    {
+      "width": 320,
+      "status": 200
+    },
+    {
+      "width": 320,
+      "status": 200
+    },
+    {
+      "width": 320,
+      "status": 403
+    },
+    {
+      "width": 320,
+      "status": 403
+    },
+    {
+      "width": 320,
+      "status": 404
+    },
+    {
+      "width": 375,
+      "status": 200
+    },
+    {
+      "width": 375,
+      "status": 200
+    },
+    {
+      "width": 375,
+      "status": 200
+    },
+    {
+      "width": 375,
+      "status": 200
+    },
+    {
+      "width": 375,
+      "status": 200
+    },
+    {
+      "width": 375,
+      "status": 200
+    },
+    {
+      "width": 375,
+      "status": 200
+    },
+    {
+      "width": 375,
+      "status": 200
+    },
+    {
+      "width": 375,
+      "status": 403
+    },
+    {
+      "width": 375,
+      "status": 403
+    },
+    {
+      "width": 375,
+      "status": 404
+    }
+  ]
+}
