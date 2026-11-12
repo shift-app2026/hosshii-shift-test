@@ -15,3 +15,5 @@ python tools/design-preview/build.py --output /workspace/pr8-local-preview
 Cloudflare再デプロイ、mainへのマージ、本番公開は別途ユーザーの許可が必要です。このビルドはそれらを実行しません。
 
 通常は架空の勤務先3件で起動します。`?data=empty` を付けると0件から登録を確認できます。いずれも再読込で初期状態へ戻り、実データの読み書きはしません。
+
+正式採用したZen Maru Gothic 500／700は、元アプリの `zen-maru.css` と同梱WOFF2・OFLライセンスをそのままコピーします。円グラフ用の既存フォントは従来どおり同梱します。フォント指定をプレビュー独自に差し替える方式ではありません。

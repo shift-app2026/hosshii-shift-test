@@ -1,0 +1,32 @@
+[
+  {
+    "width": 320,
+    "ringDimensions": [
+      476,
+      474
+    ],
+    "centralTextRegion": [
+      95,
+      95,
+      381,
+      379
+    ],
+    "centralPixelsIdentical": true,
+    "note": "Animated pearl outside central region is not used for pixel equality"
+  },
+  {
+    "width": 375,
+    "ringDimensions": [
+      534,
+      534
+    ],
+    "centralTextRegion": [
+      107,
+      107,
+      427,
+      427
+    ],
+    "centralPixelsIdentical": true,
+    "note": "Animated pearl outside central region is not used for pixel equality"
+  }
+]
