@@ -1677,10 +1677,13 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             </div>
             <div class="ito-wall-selector-row">
               <label for="itoWallThreshold" class="text-sm font-bold text-stone-700">確認する金額</label>
+              <div class="wall-threshold-display">
               <select id="itoWallThreshold" aria-label="確認する年収の目安金額" onchange="updateItoWallSelection()" class="ito-wall-select">
                 <option value="1030000">103万円（参考）</option>
                 <option value="1300000" selected>130万円（参考）</option>
               </select>
+              <span class="wall-threshold-label" aria-hidden="true"><span class="wall-threshold-number threshold-103">103万円</span><span class="wall-threshold-number threshold-130">130万円</span><span class="wall-threshold-reference">（参考）</span></span>
+              </div>
             </div>
             <div class="ito-wall-progress" id="itoWallProgress" role="progressbar" aria-label="選択した金額への到達率" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="itoWallProgressFill"></div></div>
             <div class="ito-wall-remaining">
@@ -1793,7 +1796,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
           <div class="pt-2.5 border-t border-stone-200 space-y-2">
             <div class="text-base font-bold text-stone-800">【データのバックアップ】</div>
-            <p class="oct23-backup-note note-fit text-xs text-stone-500 font-bold leading-relaxed">※LINEで本人確認して、データを<br>　クラウドに保存・復元できます♡</p>
+            <p class="oct23-backup-note note-fit text-xs text-stone-500 font-bold leading-relaxed">※LINEで本人確認して、データを<br>クラウドに保存・復元できます♡</p>
             <div class="flex space-x-2">
               <button type="button" onclick="hosshiiCloudBackupSave(event)" class="flex-1 bg-rose-50 hover:bg-rose-100 text-rose-900 font-bold py-3 rounded-xl text-xs sm:text-sm transition border border-rose-200 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">⬇️ 書き出す</button>
               <button type="button" onclick="hosshiiCloudBackupLoad(event)" class="flex-1 bg-rose-50 hover:bg-rose-100 text-rose-900 font-bold py-3 rounded-xl text-xs sm:text-sm transition border border-rose-200 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">⬆ 読み込む</button>
@@ -3134,7 +3137,6 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           </div>
 
           <div class="pt-2 border-t border-stone-200 space-y-2.5">
-            <span class="font-bold text-stone-900 text-sm sm:text-base">【有給・交通費・その他】</span>
             <div class="grid grid-cols-1 gap-2">
               <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1.5">
                 <div class="hosshii-paid-header flex items-center justify-between gap-2">
@@ -3496,7 +3498,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
           html += `
             <div class="bg-white border border-stone-200 py-2.5 px-3 rounded-xl shadow-[0_1px_2px_rgba(0,0,0,0.05)] flex items-center gap-2 text-xs sm:text-sm">
-              <span class="font-bold text-stone-800 job-time">${p.start} ～ ${p.end}</span>
+              <span class="font-bold text-stone-800 job-time">${p.start}〜${p.end}</span>
               ${breakMins > 0 ? `<span class="font-bold text-stone-600 whitespace-nowrap">休憩${breakMins}分</span>` : ''}
               <div class="flex items-center gap-1.5 shrink-0">
                 <button type="button" data-register-preset="${p.start}|${p.end}|${breakMins}" onclick="registerFromPresetList('${p.start}', '${p.end}', ${breakMins}, this)"
@@ -4578,7 +4580,6 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             <div class="flex-1 space-y-0 overflow-hidden">
               ${hasShift ? linesHtml : `<div class="standalone-empty text-sm text-stone-500 font-bold">予定なし</div>`}
             </div>
-            <span class="luxe-row-chevron" aria-hidden="true">›</span>
           </div>
         `;
       }

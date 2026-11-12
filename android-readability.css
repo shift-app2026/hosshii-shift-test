@@ -63,4 +63,78 @@ html body #presetRegisterModal #pr_break_disp {font-size:15px!important;}
 html body #appCard #tab-guide .android-privacy-title {display:block!important;white-space:nowrap!important;}
 @media(max-width:359px){html body #appCard #tab-guide .android-privacy-title {font-size:15.5px!important;letter-spacing:0!important;}}
 
+/* Android v3: requested details only; existing surfaces and colours are preserved. */
+html body #appCard #tab-clock #goalRing .goal-label-text {font-size:clamp(12px,calc(3.25vw + 1px),15px)!important;}
+html body #appCard #tab-clock #goalRing #goalCurrentPay {font-size:clamp(25px,calc(7.5vw + 1px),33px)!important;white-space:nowrap!important;}
+html body #appCard #tab-clock #goalRing .t10-remaining-label {font-size:clamp(13px,calc(3.5vw + 1px),16px)!important;}
+html body #appCard #tab-clock #goalRing #goalRemainText {font-size:clamp(16px,calc(4.25vw + 1px),22px)!important;font-weight:700!important;white-space:nowrap!important;}
+/* The native select still owns focus, accessibility and option selection. */
+html body #appCard .wall-threshold-display {position:relative!important;flex:0 0 153px!important;width:153px!important;max-width:64%!important;min-width:0!important;}
+html body #appCard #itoWallThreshold {width:100%!important;max-width:100%!important;height:41px!important;box-sizing:border-box!important;appearance:none!important;color:transparent!important;-webkit-text-fill-color:transparent!important;}
+html body #appCard #itoWallThreshold option {color:var(--hs-readable-ink)!important;-webkit-text-fill-color:currentColor!important;}
+html body #appCard .wall-threshold-label {position:absolute!important;inset:0 22px 0 10px!important;color:var(--hs-readable-ink)!important;-webkit-text-fill-color:var(--hs-readable-ink)!important;display:flex!important;align-items:center!important;justify-content:center!important;pointer-events:none!important;font-size:15px!important;font-weight:700!important;white-space:nowrap!important;}
+html body #appCard .wall-threshold-number {font-size:17px!important;}
+html body #appCard .threshold-103 {display:none!important;}
+html body #appCard .wall-threshold-display:has(option[value="1030000"]:checked) .threshold-103 {display:inline!important;}
+html body #appCard .wall-threshold-display:has(option[value="1030000"]:checked) .threshold-130 {display:none!important;}
+html body #appCard #calendarDays>div>span:first-child,
+html body #appCard #calendarDays .payday-date-number>span:first-child {font-size:17px!important;}
+html body #appCard #calendarJobLegend .calendar-payday-legend>span:last-child {font-size:17px!important;}
+/* Equal text starts; clipboard sits in its own preserved leading gutter. */
+html body #appCard #calendarCopyCard {margin-inline:-9px!important;padding-inline:0!important;}
+html body #appCard #calendarCopyCard .copy-description {position:relative!important;gap:0!important;}
+html body #appCard #calendarCopyCard .copy-icon {position:absolute!important;left:0!important;top:50%!important;transform:translateY(-50%)!important;}
+html body #appCard #tab-calendar .calendar-registration-prompt>p {padding-left:0!important;}
+html body #appCard #tab-calendar .calendar-registration-prompt>p>span:first-child {padding-left:25px!important;}
+html body #appCard #calendarCopyCard .copy-label {padding-left:24px!important;}
+html body #appCard #tab-calendar .calendar-registration-prompt {gap:4px!important;margin-inline:-9px!important;}
+html body #appCard #calendarCopyCard>div {gap:4px!important;}
+html body #appCard #calendarTodaySummaryContent .job-time {font-size:19px!important;}
+html body #appCard #calendarTodaySummaryContent .selected-shift-type {font-size:18px!important;}
+html body #appCard #calendarTodaySummaryContent .selected-shift-break {font-size:16px!important;font-weight:700!important;}
+/* Inline date tile; the complete card keeps its existing day-navigation handler. */
+html body #appCard #standaloneShiftListContainer>div {column-gap:7px!important;padding-inline:4px!important;}
+html body #appCard #standaloneShiftListContainer .standalone-date {flex:0 0 64px!important;width:64px!important;min-width:64px!important;flex-direction:row!important;gap:0!important;padding-inline:1px!important;white-space:nowrap!important;}
+html body #appCard #standaloneShiftListContainer .luxe-day-number {font-size:18px!important;}
+html body #appCard #standaloneShiftListContainer .luxe-day-week {font-size:15px!important;}
+html body #appCard #standaloneShiftListContainer .standalone-shift-line {padding-block:5px!important;}
+html body #appCard #standaloneShiftListContainer .standalone-shift-line>span {column-gap:5px!important;flex-wrap:nowrap!important;}
+html body #appCard #standaloneShiftListContainer .standalone-shift-line .job-time {font-size:17px!important;}
+html body #appCard #standaloneShiftListContainer .standalone-workplace-name {font-size:15px!important;}
+/* One-touch time / rest / actions on one row; no-rest rows have larger time. */
+html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div:has(.job-time) {display:flex!important;align-items:center!important;gap:5px!important;padding-inline:5px!important;min-height:46px!important;}
+html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div>.job-time {flex:1 1 auto!important;min-width:0!important;font-size:19px!important;line-height:1.4!important;white-space:nowrap!important;}
+html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div>.job-time+span {font-size:15px!important;font-weight:700!important;line-height:1.4!important;flex:0 0 auto!important;white-space:nowrap!important;}
+html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div:not(:has(>.job-time+span))>.job-time {font-size:21px!important;}
+html body #shiftInputModal .shift-time-heading {font-size:18px!important;font-weight:700!important;}
+html body #shiftInputModal #modalShiftListHeading {font-weight:700!important;}
+html body #shiftInputModal #shiftInputScrollArea .hosshii-paid-entry-note {font-size:15px!important;font-weight:700!important;}
+html body #shiftInputModal .hosshii-paid-entry-note>span {white-space:normal!important;text-wrap:pretty!important;}
+html body #shiftInputModal #modalSelectedDateSummaryContent .job-time {font-size:18px!important;}
+html body #shiftInputModal #modalSelectedDateSummaryContent .hosshii-shift-time-actions>span:not(.job-time) {font-size:16px!important;font-weight:700!important;}
+html body #shiftInputModal #modalSelectedDateSummaryContent .hosshii-shift-time-actions {column-gap:5px!important;}
+html body #shiftInputModal .shift-date-nav #modalDateTitle {font-size:16px!important;}
+html body #appCard #tab-settings .hosshii-allowance-section-title {font-size:16px!important;font-weight:700!important;}
+html body #appCard #tab-settings .allowance-period-grid span {font-size:15px!important;font-weight:700!important;}
+html body #appCard #tab-settings .allowance-period-grid>div {gap:3px!important;}
+html body #appCard #tab-settings .oct23-backup-note {text-align:center!important;}
+@media(max-width:359px){
+ html body #appCard #standaloneShiftListContainer .standalone-shift-line .job-time {font-size:16px!important;}
+ html body #appCard #standaloneShiftListContainer .standalone-workplace-name {font-size:14px!important;}
+ html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div>.job-time {font-size:17px!important;}
+ html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div>.job-time+span {font-size:14px!important;}
+ html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div:not(:has(>.job-time+span))>.job-time {font-size:20px!important;}
+ html body #shiftInputModal #modalSelectedDateSummaryContent .job-time {font-size:17px!important;}
+ html body #shiftInputModal #modalSelectedDateSummaryContent .hosshii-shift-time-actions>span:not(.job-time) {font-size:15px!important;}
+}
+
+html body #appCard #standaloneShiftListContainer>div>div {margin-left:0!important;}
+html body #appCard #standaloneShiftListContainer .luxe-payday-label {white-space:nowrap!important;}
+@media(max-width:359px){html body #appCard #standaloneShiftListContainer .luxe-payday-label {font-size:15px!important;}}
+
+html body #appCard #standaloneShiftListContainer .standalone-shift-line:has(.standalone-paid-status)>span {column-gap:2px!important;}
+
+html body #appCard .wall-threshold-display::after {content:""!important;display:block!important;position:absolute!important;pointer-events:none!important;right:12px!important;top:calc(50% - 5px)!important;width:6px!important;height:6px!important;border-right:2px solid currentColor!important;border-bottom:2px solid currentColor!important;transform:rotate(45deg)!important;color:var(--hs-readable-ink)!important;}
+@media(max-width:359px){html body #appCard .wall-threshold-display {width:100%!important;max-width:100%!important;flex:0 0 auto!important;}}
+
 }

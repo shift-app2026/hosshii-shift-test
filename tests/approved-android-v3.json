@@ -1,0 +1,22 @@
+[
+  {
+    "before": "          <div class=\"pt-2 border-t border-stone-200 space-y-2.5\">\n            <span class=\"font-bold text-stone-900 text-sm sm:text-base\">【有給・交通費・その他】</span>\n            <div class=\"grid grid-cols-1 gap-2\">",
+    "after": "          <div class=\"pt-2 border-t border-stone-200 space-y-2.5\">\n            <div class=\"grid grid-cols-1 gap-2\">",
+    "reason": "Remove requested redundant heading only"
+  },
+  {
+    "before": "            </div>\n            <span class=\"luxe-row-chevron\" aria-hidden=\"true\">›</span>\n          </div>\n        `;\n      }\n\n      if (scrollMode",
+    "after": "            </div>\n          </div>\n        `;\n      }\n\n      if (scrollMode",
+    "reason": "Remove chevron; parent onclick stays intact"
+  },
+  {
+    "before": "<span class=\"font-bold text-stone-800 job-time\">${p.start} ～ ${p.end}</span>",
+    "after": "<span class=\"font-bold text-stone-800 job-time\">${p.start}〜${p.end}</span>",
+    "reason": "Compact time typography only; actual start/end and handlers unchanged"
+  },
+  {
+    "before": "              <select id=\"itoWallThreshold\" aria-label=\"確認する年収の目安金額\" onchange=\"updateItoWallSelection()\" class=\"ito-wall-select\">\n                <option value=\"1030000\">103万円（参考）</option>\n                <option value=\"1300000\" selected>130万円（参考）</option>\n              </select>",
+    "after": "              <div class=\"wall-threshold-display\">\n              <select id=\"itoWallThreshold\" aria-label=\"確認する年収の目安金額\" onchange=\"updateItoWallSelection()\" class=\"ito-wall-select\">\n                <option value=\"1030000\">103万円（参考）</option>\n                <option value=\"1300000\" selected>130万円（参考）</option>\n              </select>\n              <span class=\"wall-threshold-label\" aria-hidden=\"true\"><span class=\"wall-threshold-number threshold-103\">103万円</span><span class=\"wall-threshold-number threshold-130\">130万円</span><span class=\"wall-threshold-reference\">（参考）</span></span>\n              </div>",
+    "reason": "Native select retained; CSS-only visual label enlarges amount separately from reference"
+  }
+]

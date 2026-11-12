@@ -1,0 +1,426 @@
+{
+  "widths": [
+    {
+      "width": 320,
+      "ringGeometryAndSurfaceUnchanged": true,
+      "centreFamiliesAndColorsUnchanged": true,
+      "allFourSizesPlus1": true,
+      "remainderWeight": "600→700",
+      "nativeSelectFrameUnchanged": true,
+      "presetButtonsAndDateBarPreserved": true,
+      "states": [
+        {
+          "salary": {
+            "ring": {
+              "width": 236.796875,
+              "height": 236.796875,
+              "border": "0px solid rgb(229, 231, 235)",
+              "bg": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+              "padding": "0px",
+              "color": "rgb(44, 21, 27)",
+              "font": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+              "shadow": "none"
+            },
+            "centre": [
+              {
+                "id": "",
+                "class": "goal-label-text",
+                "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+                "color": "rgb(100, 18, 44)",
+                "size": 11,
+                "weight": "800"
+              },
+              {
+                "id": "goalCurrentPay",
+                "class": "",
+                "family": "\"Noto Serif JP\", serif",
+                "color": "rgb(76, 5, 25)",
+                "size": 24,
+                "weight": "700"
+              },
+              {
+                "id": "",
+                "class": "t10-remaining-label",
+                "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+                "color": "rgb(103, 17, 43)",
+                "size": 12,
+                "weight": "800"
+              },
+              {
+                "id": "goalRemainText",
+                "class": "",
+                "family": "\"Noto Serif JP\", serif",
+                "color": "rgb(133, 17, 47)",
+                "size": 15,
+                "weight": "600"
+              }
+            ],
+            "select": {
+              "width": 240,
+              "height": 41,
+              "border": "1px solid rgb(214, 182, 189)",
+              "bg": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box",
+              "padding": "8px 10px",
+              "color": "rgb(33, 21, 26)",
+              "font": "\"Zen Maru Gothic\", sans-serif",
+              "shadow": "none"
+            },
+            "visualSelectColor": "rgb(33, 21, 26)"
+          },
+          "shift": {
+            "height": 49,
+            "background": "rgba(0, 0, 0, 0) linear-gradient(155deg, rgb(161, 44, 76), rgb(136, 19, 55) 26%, rgb(92, 7, 34) 70%, rgb(76, 5, 25)) repeat scroll 0% 0% / auto padding-box border-box",
+            "border": "1px solid rgb(120, 16, 48)",
+            "titleColor": "rgb(255, 250, 240)",
+            "buttons": [
+              {
+                "width": 42,
+                "height": 30,
+                "bg": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "1px solid rgb(215, 165, 109)",
+                "radius": "8px",
+                "color": "rgb(255, 224, 130)"
+              },
+              {
+                "width": 40,
+                "height": 28,
+                "bg": "rgb(231, 229, 228) none repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "0px solid rgb(229, 231, 235)",
+                "radius": "8px",
+                "color": "rgb(68, 64, 60)"
+              },
+              {
+                "width": 42,
+                "height": 30,
+                "bg": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "1px solid rgb(215, 165, 109)",
+                "radius": "8px",
+                "color": "rgb(255, 224, 130)"
+              },
+              {
+                "width": 40,
+                "height": 28,
+                "bg": "rgb(231, 229, 228) none repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "0px solid rgb(229, 231, 235)",
+                "radius": "8px",
+                "color": "rgb(68, 64, 60)"
+              }
+            ]
+          }
+        },
+        {
+          "salary": {
+            "ring": {
+              "width": 236.796875,
+              "height": 236.796875,
+              "border": "0px solid rgb(229, 231, 235)",
+              "bg": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+              "padding": "0px",
+              "color": "rgb(44, 21, 27)",
+              "font": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+              "shadow": "none"
+            },
+            "centre": [
+              {
+                "id": "",
+                "class": "goal-label-text",
+                "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+                "color": "rgb(100, 18, 44)",
+                "size": 12,
+                "weight": "800"
+              },
+              {
+                "id": "goalCurrentPay",
+                "class": "",
+                "family": "\"Noto Serif JP\", serif",
+                "color": "rgb(76, 5, 25)",
+                "size": 25,
+                "weight": "700"
+              },
+              {
+                "id": "",
+                "class": "t10-remaining-label",
+                "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+                "color": "rgb(103, 17, 43)",
+                "size": 13,
+                "weight": "800"
+              },
+              {
+                "id": "goalRemainText",
+                "class": "",
+                "family": "\"Noto Serif JP\", serif",
+                "color": "rgb(133, 17, 47)",
+                "size": 16,
+                "weight": "700"
+              }
+            ],
+            "select": {
+              "width": 240,
+              "height": 41,
+              "border": "1px solid rgb(214, 182, 189)",
+              "bg": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box",
+              "padding": "8px 10px",
+              "color": "rgba(0, 0, 0, 0)",
+              "font": "\"Zen Maru Gothic\", sans-serif",
+              "shadow": "none"
+            },
+            "visualSelectColor": "rgb(33, 21, 26)"
+          },
+          "shift": {
+            "height": 49,
+            "background": "rgba(0, 0, 0, 0) linear-gradient(155deg, rgb(161, 44, 76), rgb(136, 19, 55) 26%, rgb(92, 7, 34) 70%, rgb(76, 5, 25)) repeat scroll 0% 0% / auto padding-box border-box",
+            "border": "1px solid rgb(120, 16, 48)",
+            "titleColor": "rgb(255, 250, 240)",
+            "buttons": [
+              {
+                "width": 42,
+                "height": 30,
+                "bg": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "1px solid rgb(215, 165, 109)",
+                "radius": "8px",
+                "color": "rgb(255, 224, 130)"
+              },
+              {
+                "width": 40,
+                "height": 28,
+                "bg": "rgb(231, 229, 228) none repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "0px solid rgb(229, 231, 235)",
+                "radius": "8px",
+                "color": "rgb(68, 64, 60)"
+              },
+              {
+                "width": 42,
+                "height": 30,
+                "bg": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "1px solid rgb(215, 165, 109)",
+                "radius": "8px",
+                "color": "rgb(255, 224, 130)"
+              },
+              {
+                "width": 40,
+                "height": 28,
+                "bg": "rgb(231, 229, 228) none repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "0px solid rgb(229, 231, 235)",
+                "radius": "8px",
+                "color": "rgb(68, 64, 60)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "ringGeometryAndSurfaceUnchanged": true,
+      "centreFamiliesAndColorsUnchanged": true,
+      "allFourSizesPlus1": true,
+      "remainderWeight": "600→700",
+      "nativeSelectFrameUnchanged": true,
+      "presetButtonsAndDateBarPreserved": true,
+      "states": [
+        {
+          "salary": {
+            "ring": {
+              "width": 265.59375,
+              "height": 265.59375,
+              "border": "0px solid rgb(229, 231, 235)",
+              "bg": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+              "padding": "0px",
+              "color": "rgb(44, 21, 27)",
+              "font": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+              "shadow": "none"
+            },
+            "centre": [
+              {
+                "id": "",
+                "class": "goal-label-text",
+                "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+                "color": "rgb(100, 18, 44)",
+                "size": 12.1875,
+                "weight": "800"
+              },
+              {
+                "id": "goalCurrentPay",
+                "class": "",
+                "family": "\"Noto Serif JP\", serif",
+                "color": "rgb(76, 5, 25)",
+                "size": 28.125,
+                "weight": "700"
+              },
+              {
+                "id": "",
+                "class": "t10-remaining-label",
+                "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+                "color": "rgb(103, 17, 43)",
+                "size": 13.125,
+                "weight": "800"
+              },
+              {
+                "id": "goalRemainText",
+                "class": "",
+                "family": "\"Noto Serif JP\", serif",
+                "color": "rgb(133, 17, 47)",
+                "size": 15.9375,
+                "weight": "600"
+              }
+            ],
+            "select": {
+              "width": 153,
+              "height": 41,
+              "border": "1px solid rgb(214, 182, 189)",
+              "bg": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box",
+              "padding": "8px 10px",
+              "color": "rgb(33, 21, 26)",
+              "font": "\"Zen Maru Gothic\", sans-serif",
+              "shadow": "none"
+            },
+            "visualSelectColor": "rgb(33, 21, 26)"
+          },
+          "shift": {
+            "height": 49,
+            "background": "rgba(0, 0, 0, 0) linear-gradient(155deg, rgb(161, 44, 76), rgb(136, 19, 55) 26%, rgb(92, 7, 34) 70%, rgb(76, 5, 25)) repeat scroll 0% 0% / auto padding-box border-box",
+            "border": "1px solid rgb(120, 16, 48)",
+            "titleColor": "rgb(255, 250, 240)",
+            "buttons": [
+              {
+                "width": 42,
+                "height": 30,
+                "bg": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "1px solid rgb(215, 165, 109)",
+                "radius": "8px",
+                "color": "rgb(255, 224, 130)"
+              },
+              {
+                "width": 40,
+                "height": 28,
+                "bg": "rgb(231, 229, 228) none repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "0px solid rgb(229, 231, 235)",
+                "radius": "8px",
+                "color": "rgb(68, 64, 60)"
+              },
+              {
+                "width": 42,
+                "height": 30,
+                "bg": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "1px solid rgb(215, 165, 109)",
+                "radius": "8px",
+                "color": "rgb(255, 224, 130)"
+              },
+              {
+                "width": 40,
+                "height": 28,
+                "bg": "rgb(231, 229, 228) none repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "0px solid rgb(229, 231, 235)",
+                "radius": "8px",
+                "color": "rgb(68, 64, 60)"
+              }
+            ]
+          }
+        },
+        {
+          "salary": {
+            "ring": {
+              "width": 265.59375,
+              "height": 265.59375,
+              "border": "0px solid rgb(229, 231, 235)",
+              "bg": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+              "padding": "0px",
+              "color": "rgb(44, 21, 27)",
+              "font": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+              "shadow": "none"
+            },
+            "centre": [
+              {
+                "id": "",
+                "class": "goal-label-text",
+                "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+                "color": "rgb(100, 18, 44)",
+                "size": 13.1875,
+                "weight": "800"
+              },
+              {
+                "id": "goalCurrentPay",
+                "class": "",
+                "family": "\"Noto Serif JP\", serif",
+                "color": "rgb(76, 5, 25)",
+                "size": 29.125,
+                "weight": "700"
+              },
+              {
+                "id": "",
+                "class": "t10-remaining-label",
+                "family": "\"Noto Sans JP\", system-ui, -apple-system, sans-serif",
+                "color": "rgb(103, 17, 43)",
+                "size": 14.125,
+                "weight": "800"
+              },
+              {
+                "id": "goalRemainText",
+                "class": "",
+                "family": "\"Noto Serif JP\", serif",
+                "color": "rgb(133, 17, 47)",
+                "size": 16.9375,
+                "weight": "700"
+              }
+            ],
+            "select": {
+              "width": 153,
+              "height": 41,
+              "border": "1px solid rgb(214, 182, 189)",
+              "bg": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box",
+              "padding": "8px 10px",
+              "color": "rgba(0, 0, 0, 0)",
+              "font": "\"Zen Maru Gothic\", sans-serif",
+              "shadow": "none"
+            },
+            "visualSelectColor": "rgb(33, 21, 26)"
+          },
+          "shift": {
+            "height": 49,
+            "background": "rgba(0, 0, 0, 0) linear-gradient(155deg, rgb(161, 44, 76), rgb(136, 19, 55) 26%, rgb(92, 7, 34) 70%, rgb(76, 5, 25)) repeat scroll 0% 0% / auto padding-box border-box",
+            "border": "1px solid rgb(120, 16, 48)",
+            "titleColor": "rgb(255, 250, 240)",
+            "buttons": [
+              {
+                "width": 42,
+                "height": 30,
+                "bg": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "1px solid rgb(215, 165, 109)",
+                "radius": "8px",
+                "color": "rgb(255, 224, 130)"
+              },
+              {
+                "width": 40,
+                "height": 28,
+                "bg": "rgb(231, 229, 228) none repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "0px solid rgb(229, 231, 235)",
+                "radius": "8px",
+                "color": "rgb(68, 64, 60)"
+              },
+              {
+                "width": 42,
+                "height": 30,
+                "bg": "rgba(0, 0, 0, 0) linear-gradient(170deg, rgb(229, 169, 180) 0%, rgb(172, 52, 87) 22%, rgb(128, 19, 48) 52%, rgb(73, 5, 29) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "1px solid rgb(215, 165, 109)",
+                "radius": "8px",
+                "color": "rgb(255, 224, 130)"
+              },
+              {
+                "width": 40,
+                "height": 28,
+                "bg": "rgb(231, 229, 228) none repeat scroll 0% 0% / auto padding-box border-box",
+                "border": "0px solid rgb(229, 231, 235)",
+                "radius": "8px",
+                "color": "rgb(68, 64, 60)"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "scriptsUnchangedAfterExactViewReversal": true,
+  "onlyScriptEdits": "Remove redundant allowance heading, compact preset separator, remove schedule chevron; handlers and data untouched",
+  "svgUnchanged": true,
+  "existingFontsAndCSSUnchanged": true
+}
