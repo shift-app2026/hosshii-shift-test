@@ -4179,7 +4179,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (yl) yl.innerText = `年間収入合計 ${currentYear}年 1/1 〜 12/31`;
       if (yearlySubLabel) {
         yearlySubLabel.innerText = lastReceivedMonth > 0
-          ? `${currentYear}年 ${lastReceivedMonth}月までに受け取った給料`
+          ? `${currentYear}年${lastReceivedMonth}月までに受け取ったお給料`
           : `${currentYear}年はまだ受け取りがありません`;
       }
 
@@ -6979,5 +6979,46 @@ p.hosshii-ring-note{font-size:13px!important;line-height:1.6!important;color:#11
 </style>
 <!-- Final presentation layer follows legacy styles, including styles in body. -->
 <link rel="stylesheet" href="./bordeaux-rose.css">
+<style id="hosshii-readable-sans-unification">
+/* Android readability: use the ring-note's solid strokes throughout the UI.
+   The complete jewel-ring subtree is intentionally excluded. */
+html body :is([role="dialog"],#appCard,#lineAuthGate,#toastMessage,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#incomeWallHelp,#t31GoalModal,#hosshiiJobMenu),
+html body :is([role="dialog"],#appCard,#lineAuthGate,#toastMessage,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#incomeWallHelp,#t31GoalModal,#hosshiiJobMenu) :not(#goalRing):not(#goalRing *) {
+  font-family:"Noto Sans JP",system-ui,-apple-system,sans-serif!important;
+  font-weight:700!important;
+}
+html body :is([role="dialog"],#appCard,#lineAuthGate,#toastMessage,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#incomeWallHelp,#t31GoalModal,#hosshiiJobMenu) :is(h1,h2,h3,h4,strong,b,.font-bold,.font-extrabold):not(#goalRing):not(#goalRing *) {
+  font-weight:800!important;
+}
+/* Only neutral text utilities are darkened. State, job and weekend colours stay intact. */
+html body :is([role="dialog"],#appCard,#renameJobModal,#breakSelectModal,#alertModal,#confirmModal,#overtimeInfoModal,#presetHelpModal,#shiftUsageHelpModal,#shiftInputModal,#presetRegisterModal,#breakdownModal,#customTimePickerModal,#incomeWallHelp,#t31GoalModal)
+ :is(.text-stone-400,.text-stone-500,.text-stone-600,.text-stone-700,.text-gray-400,.text-gray-500,.text-gray-600,.text-gray-700):not(button):not(button *):not(#goalRing):not(#goalRing *) {
+  color:#21151a!important;
+}
+html body #appCard #hosshiiBottomNav button span {font-weight:800!important;}
+/* Separate the existing calculated year/month label and amount without changing data. */
+html body #appCard #tab-clock #incomeWallBox .ito-annual-receive {margin-inline:-8px!important;}
+html body #appCard #tab-clock #incomeWallBox .ito-annual-receive > div {display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:4px!important;}
+html body #appCard #tab-clock #incomeWallBox #yearlySubLabel {display:block!important;white-space:nowrap!important;letter-spacing:-.02em!important;}
+html body #appCard #tab-clock #incomeWallBox #yearlyTotalPay {display:block!important;width:100%!important;text-align:right!important;}
+html body #appCard #hosshiiBottomNav .hosshii-nav-icon {stroke-width:2.3!important;}
+/* Give the preset hint the remaining width; never push its save action outside 320px. */
+html body #presetRegisterModal .preset-hint {flex:1 1 0!important;min-width:0!important;white-space:normal!important;text-wrap:pretty;}
+/* At 375px use the existing outer gutter before considering a smaller font.
+   At 320px the requested lines exceed even the viewport; retain readable wrapping. */
+@media(min-width:375px){
+ html body #appCard #tab-clock p.hosshii-ring-note {margin-inline:-9px!important;}
+}
+@media(max-width:359px){
+ html body #appCard #tab-clock #incomeWallBox .ito-wall-selector-row,
+ html body #appCard #tab-clock #incomeWallBox .ito-wall-remaining {display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:4px!important;}
+ html body #appCard #tab-clock #incomeWallBox .ito-wall-selector-row label,
+ html body #appCard #tab-clock #incomeWallBox #itoWallRemainingLabel {white-space:nowrap!important;}
+ html body #appCard #tab-clock #incomeWallBox .ito-wall-select {width:100%!important;max-width:100%!important;}
+ html body #appCard #tab-clock #incomeWallBox #itoWallRemainingAmount {text-align:right!important;}
+}
+/* Keep the original inherited weight inside decorative ring elements, too. */
+html body #appCard #tab-clock #goalRing {font-weight:400!important;}
+</style>
 </body>
 </html>
