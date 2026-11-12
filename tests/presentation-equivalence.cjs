@@ -8,11 +8,13 @@ const approvedUiChanges=require('./approved-ui-changes.json');
 const emptyStateFix=require('./approved-empty-state-fix.json');
 const accessibleUi=require('./approved-accessible-ui.json');
 const monthEndDisplay=require('./approved-month-end-display.json');
+const detailUi=require('./approved-detail-ui.json');
 const sansDisplay=require('./approved-sans-display.json');
 const wageStateFix=require('./approved-wage-state-fix.json');
 const wording=s=>s.replace(/<span\b[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/span>/g,'').replace(/<[^>]+>/g,'').replace(/\s/g,'');
 for(const {before,after} of changes)assert.equal(wording(after),wording(before),'View markup must preserve confirmed wording');
 function normalizePresentation(source){
+ for(const {before,after} of detailUi)source=source.split(after).join(before);
  for(const {before,after} of sansDisplay)source=source.split(after).join(before);
  for(const {before,after} of wageStateFix)source=source.split(after).join(before);
  for(const {before,after} of monthEndDisplay)source=source.split(after).join(before);

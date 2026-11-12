@@ -1713,15 +1713,15 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         </div>
 
         <div class="calendar-registration-prompt flex items-center gap-2">
-          <p class="flex-1 min-w-0 text-xs text-stone-600 leading-relaxed">※カレンダーで日付を選んでから、<br>「＋シフトを登録する」を押してね♡</p>
-          <button type="button" id="calendarRegisterButton" onclick="openSelectedCalendarShift()" class="shrink-0 py-2.5 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm whitespace-nowrap">＋シフトを登録</button>
+          <p class="flex-1 min-w-0 text-xs text-stone-600 leading-relaxed"><span>※カレンダーで日付を</span><span>　選択してから押してね♡</span></p>
+          <button type="button" id="calendarRegisterButton" onclick="openSelectedCalendarShift()" class="shrink-0 py-2.5 px-3 rounded-xl bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-sm shadow-sm whitespace-nowrap">＋シフト登録</button>
         </div>
 
-        <div class="bg-white border border-rose-200 rounded-3xl px-3.5 py-2 shadow-sm space-y-2">
+        <div id="calendarCopyCard" class="hosshii-copy-card bg-white border border-rose-200 rounded-3xl px-3.5 py-2 shadow-sm space-y-2">
           <div class="flex items-center justify-between gap-2">
-            <div class="flex items-center space-x-1.5 font-bold text-xs sm:text-sm text-stone-900 flex-1 min-w-0">
-              <span class="text-base shrink-0">📋</span>
-              <span class="leading-snug copy-label">前月のシフトを曜日に合わせて一括コピー</span>
+            <div class="copy-description flex items-center font-bold text-xs sm:text-sm text-stone-900 flex-1 min-w-0">
+              <span class="copy-icon shrink-0" aria-hidden="true">📋</span>
+              <span class="leading-snug copy-label"><span>※前月のシフトを曜日に合わせて</span><span>　一括コピー</span></span>
             </div>
             <button type="button" onclick="copyLastMonthShifts()" class="bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-xs sm:text-sm px-2.5 py-1.5 rounded-xl transition shadow-sm whitespace-nowrap shrink-0">実行</button>
           </div>
@@ -1745,8 +1745,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           <div class="flex items-center gap-2"><span class="text-rose-300">✦</span><h2 id="currentListMonthLabel" onclick="currentListDate=new Date();renderStandaloneShiftList('jump');" title="タップで今月に戻る" class="cursor-pointer font-bold text-white text-base sm:text-lg tracking-wider font-serif-title">----</h2><span class="text-rose-300">✦</span></div>
           <button type="button" onclick="changeListMonth(1)" class="text-rose-100 font-bold px-3 py-1.5 hover:bg-white/10 rounded-xl transition text-sm">翌月 ▶</button>
         </div>
-          <div id="standaloneCopyCard" class="hosshii-list-copy flex items-center justify-between gap-2">
-            <div class="flex items-center gap-1.5 min-w-0 flex-1"><span class="copy-icon shrink-0" aria-hidden="true">📋</span><span class="copy-label">前月のシフトを曜日に合わせて一括コピー</span></div>
+          <div id="standaloneCopyCard" class="hosshii-list-copy hosshii-copy-card flex items-center justify-between gap-2">
+            <div class="copy-description flex items-center min-w-0 flex-1"><span class="copy-icon shrink-0" aria-hidden="true">📋</span><span class="copy-label"><span>※前月のシフトを曜日に合わせて</span><span>　一括コピー</span></span></div>
             <button type="button" onclick="copyLastMonthShifts()" class="bg-rose-900 text-rose-50 hover:bg-rose-800 font-bold text-xs sm:text-sm px-2.5 py-1.5 rounded-xl transition shadow-sm whitespace-nowrap shrink-0">実行</button>
           </div>
         </div>
@@ -3137,11 +3137,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             <span class="font-bold text-stone-900 text-sm sm:text-base">【有給・交通費・その他】</span>
             <div class="grid grid-cols-1 gap-2">
               <div class="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1.5">
-                <div class="flex items-center justify-between gap-2">
-                  <span class="hosshii-allowance-section-title flex-1 min-w-0 whitespace-nowrap"><span class="luxe-inline-icon" aria-hidden="true">☂</span>【有給休暇】<span class="paid-sub ml-1.5 text-stone-500 font-bold">1時間あたり</span></span>
+                <div class="hosshii-paid-header flex items-center justify-between gap-2">
+                  <span class="hosshii-allowance-section-title flex-1 min-w-0 whitespace-nowrap"><span class="luxe-inline-icon" aria-hidden="true">☂</span>【有給休暇】<span class="paid-sub ml-1.5 text-stone-500 font-bold">　　1時間あたり</span></span>
                   <div class="flex items-center gap-1 shrink-0"><input type="text" inputmode="numeric" id="set_wagePaid" oninput="formatInputNumber(this)" class="w-24 p-2 border rounded text-right font-bold bg-white text-sm"><span class="font-bold">円</span></div>
                 </div>
-                <p class="paid-note text-xs text-stone-500 font-medium text-left">※時給が異なる場合は、<br>　よく働く時給か平均時給を入力してね♡</p>
+                <p class="paid-note text-xs text-stone-500 font-medium text-left"><span>※時給が異なる場合は、よく働く</span><span>　時給か平均時給を入力してね♡</span></p>
 
               </div>
             </div>
@@ -3709,6 +3709,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     function copyLastMonthShifts() {
       const copyTab = document.getElementById('tab-list').classList.contains('hidden') ? 'tab-calendar' : 'tab-list';
       const copyDate = new Date(copyTab === 'tab-list' ? currentListDate : currentPeriodDate);
+      window.hosshiiCopyState?.(copyTab, false);
       if (hosshiiBlockEdit()) {
         const btn = copyTab === 'tab-list' ? document.querySelector('#standaloneCopyCard button') : document.querySelector('#tab-calendar button[onclick="copyLastMonthShifts()"]');
         const box = btn?.parentElement?.parentElement;
@@ -3761,6 +3762,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         if (copiedCount > 0) {
           if (!safeWriteAppJSON('mybasket_shifts_v23', shiftsData)) return;
+          window.hosshiiCopyState?.(copyTab, true);
           refreshAll();
           showToast(skippedCount > 0
             ? `前月と同じ曜日でコピーしました（入力済みの${skippedCount}日はそのまま）`
@@ -5110,6 +5112,13 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 (function(){
  // UI-only records. Never write registration flags into saved application data.
  const wageUi=new Map();
+ // Fixed headers are detached/reused when tabs switch; retain their button nodes.
+ const copyButtons={'tab-calendar':document.querySelector('#calendarCopyCard button'),'tab-list':document.querySelector('#standaloneCopyCard button')};
+ window.hosshiiCopyState=function(tab,saved){
+  const button=copyButtons[tab];
+  if(!button)return;
+  button.classList.toggle('copy-completed',!!saved);
+ };
  const wageSignature=s=>JSON.stringify([s?.start||'',s?.end||'',Number(s?.wage)||0,s?.bType||'weekday',Number(s?.bVal)||0]);
  const wageValid=s=>!!(s?.start&&s?.end&&Number(s?.wage)>0);
  window.hosshiiResetWageUi=function(jk,saved){
@@ -5212,20 +5221,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
      if(field && !field.value.trim()) mark(e.target.closest('button'),false);
    }
  },false);
- const copyButton=()=>document.querySelector('#tab-calendar button[onclick="copyLastMonthShifts()"]');
- // Month navigation changes the action context: offer the gold prompt again.
+ // A successful unrelated write must never mark a copy action complete.
  document.addEventListener('click',function(e){
-   if(e.target.closest('#tab-calendar button[onclick^="changeMonth("]'))copyButton()?.classList.remove('copy-completed');
+   if(e.target.closest('button[onclick^="changeMonth("],#currentMonthLabel'))window.hosshiiCopyState?.('tab-calendar',false);
+   if(e.target.closest('button[onclick^="changeListMonth("],#currentListMonthLabel'))window.hosshiiCopyState?.('tab-list',false);
  },true);
- // Mark copy complete only on the actual successful persistence path.
- const original=window.safeWriteAppJSON;
- if(typeof original==='function'){
-   window.safeWriteAppJSON=function(key,value){
-     const result=original.apply(this,arguments);
-     if(key==='mybasket_shifts_v23' && result)copyButton()?.classList.add('copy-completed');
-     return result;
-   };
- }
 })();
 </script>
 <style id="ito-20261023-button-font-final">
@@ -7019,6 +7019,35 @@ html body #presetRegisterModal .preset-hint {flex:1 1 0!important;min-width:0!im
 }
 /* Keep the original inherited weight inside decorative ring elements, too. */
 html body #appCard #tab-clock #goalRing {font-weight:400!important;}
+</style>
+
+<style id="hosshii-detail-layout-20261112">
+/* The font family and global weights remain undecided; no new family is applied here. */
+html body #appCard #tab-calendar .calendar-registration-prompt {display:flex!important;align-items:center!important;gap:4px!important;}
+html body #appCard #tab-calendar .calendar-registration-prompt>p {margin:0!important;font-size:15px!important;line-height:1.65!important;}
+html body #appCard #tab-calendar .calendar-registration-prompt>p>span,
+html body #appCard .hosshii-copy-card .copy-label>span,
+html body #appCard #tab-settings .paid-note>span {display:block!important;white-space:nowrap!important;}
+html body #appCard #tab-calendar #calendarRegisterButton {padding-inline:7px!important;}
+html body #appCard :is(#calendarCopyCard,#standaloneCopyCard) {padding:10px 8px!important;}
+html body #appCard #calendarCopyCard>div,
+html body #appCard #standaloneCopyCard {gap:4px!important;align-items:center!important;}
+html body #appCard .hosshii-copy-card .copy-description {gap:2px!important;}
+html body #appCard .hosshii-copy-card .copy-icon {font-size:16px!important;flex:0 0 16px!important;width:16px!important;}
+html body #appCard .hosshii-copy-card .copy-label {font-size:15px!important;line-height:1.6!important;text-wrap:initial!important;overflow-wrap:normal!important;}
+html body #appCard :is(#calendarCopyCard,#standaloneCopyCard) button {font-size:14px!important;padding-inline:8px!important;color:#ffe082!important;-webkit-text-fill-color:#ffe082!important;}
+html body #appCard :is(#calendarCopyCard,#standaloneCopyCard) button.copy-completed {color:#fff!important;-webkit-text-fill-color:#fff!important;}
+html body #appCard #tab-settings .hosshii-paid-header {flex-wrap:wrap!important;}
+html body #appCard #tab-settings .hosshii-paid-header>.hosshii-allowance-section-title {flex:1 0 100%!important;}
+html body #appCard #tab-settings .hosshii-paid-header>div {margin-left:auto!important;}
+html body #appCard #tab-settings .paid-sub {display:inline!important;white-space:pre!important;margin-left:0!important;}
+html body #appCard #tab-settings .paid-note {font-size:14px!important;line-height:1.65!important;}
+html body #appCard #tab-settings .allowance-period-grid {display:grid!important;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr)!important;column-gap:1em!important;font-size:14px!important;margin-inline:-7px!important;}
+html body #appCard #tab-settings .allowance-period-grid>div,
+html body #appCard #tab-settings .allowance-period-grid>div:nth-child(2) {display:grid!important;grid-template-columns:max-content minmax(0,1fr) max-content!important;column-gap:1px!important;min-width:0!important;}
+html body #appCard #tab-settings .allowance-period-grid input {width:100%!important;min-width:0!important;max-width:none!important;padding-inline:2px!important;}
+html body #appCard #tab-settings .allowance-period-grid span {font-size:14px!important;white-space:nowrap!important;}
+@media(max-width:359px){html body #appCard .hosshii-copy-card .copy-label {font-size:14px!important;}}
 </style>
 </body>
 </html>

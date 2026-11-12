@@ -1,0 +1,17 @@
+{
+  "cssSource": "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600;700&family=Zen+Kaku+Gothic+New:wght@700&family=Zen+Maru+Gothic:wght@700&display=swap",
+  "fontFiles": 4,
+  "weights": {
+    "Noto Sans JP": [
+      600,
+      700
+    ],
+    "Zen Kaku Gothic New": [
+      700
+    ],
+    "Zen Maru Gothic": [
+      700
+    ]
+  },
+  "usage": "comparison only; not applied to source application"
+}
