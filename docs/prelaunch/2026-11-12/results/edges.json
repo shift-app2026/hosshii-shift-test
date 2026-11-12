@@ -1,0 +1,13 @@
+{
+  "cases": [
+    "initial-explicit-date-and-cancel",
+    "retroactive-consent-and-immutable-revisions",
+    "history-stripping-backup-rejected",
+    "overnight-retroactive-consent",
+    "monthly-period-retroactive-consent",
+    "failed-first-migration-preserves-legacy",
+    "actual-deadline-timer",
+    "real-browser-restart"
+  ],
+  "errors": []
+}

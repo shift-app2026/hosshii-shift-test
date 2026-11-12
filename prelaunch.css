@@ -1,0 +1,20 @@
+@layer prelaunch-ui {
+#payHistoryDialog[hidden],#payHistoryDialog [hidden]{display:none!important;}
+#payHistoryDialog{position:fixed!important;inset:0!important;z-index:100010!important;background:rgba(28,25,23,.65)!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:10px!important;}
+#payHistoryDialog,#payHistoryDialog *{box-sizing:border-box!important;font-family:'Zen Maru Gothic',sans-serif!important;}
+#payHistoryForm{background:#fffaf8!important;border:1px solid #d6b6bd!important;border-radius:22px!important;width:100%!important;max-width:390px!important;max-height:calc(100dvh - 20px)!important;overflow:auto!important;box-shadow:0 10px 35px #30081740!important;color:#21151a!important;}
+#payHistoryForm header,#payHistoryForm footer{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;padding:12px!important;background:#fffaf8!important;position:sticky!important;z-index:1!important;}
+#payHistoryForm header{top:0!important;border-bottom:1px solid #eadfe3!important;}
+#payHistoryForm footer{bottom:0!important;border-top:1px solid #eadfe3!important;}
+#payHistoryTitle{font-size:18px!important;font-weight:700!important;}
+#payHistoryClose{font-size:24px!important;min-width:40px!important;min-height:40px!important;}
+#payHistoryForm .history-body{padding:12px!important;font-size:16px!important;line-height:1.7!important;}
+#payHistoryForm p{margin-bottom:12px!important;font-size:16px!important;font-weight:500!important;line-height:1.7!important;}
+#payHistoryJob,#payHistoryForm label{font-size:16px!important;font-weight:700!important;}
+#payEffectiveFrom{display:block!important;width:100%!important;min-width:0!important;min-height:46px!important;padding:8px!important;margin:8px 0!important;border:1px solid #d6b6bd!important;border-radius:10px!important;background:white!important;font-size:18px!important;color:#21151a!important;}
+#payHistoryPastConsent{width:20px!important;height:20px!important;vertical-align:middle!important;margin-right:6px!important;}
+#payHistoryError{color:#9f1239!important;font-weight:700!important;}
+#payHistoryForm footer button{min-height:44px!important;padding:9px 12px!important;font-size:16px!important;font-weight:700!important;border-radius:12px!important;border:1px solid #d6b6bd!important;}
+#payHistoryApply{background:var(--hs-button-gradient,#881337)!important;color:#ffe082!important;}
+#payHistoryApply:disabled{opacity:.5!important;}
+}

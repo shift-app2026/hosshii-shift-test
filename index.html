@@ -1394,6 +1394,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 /* Confirmations must remain operable above either preset list. */
 #confirmModal {z-index:13000!important;}
 </style>
+<script src="./prelaunch-model.js"></script>
+<script src="./prelaunch-core.js"></script>
+<link rel="stylesheet" href="./prelaunch.css">
 </head>
 <body class="flex justify-center p-1 sm:p-2 relative min-h-screen items-center">
 <div id="lineAuthGate" role="dialog" aria-modal="true" aria-labelledby="lineAuthTitle">
@@ -1895,12 +1898,15 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       }
     }
     function hosshiiBlockEdit() {
+      window.hosshiiCheckEntitlementClock?.();
       if (window.hosshiiReadOnly !== true) return false;
       // 期限切れの案内は各画面の上部に常設。入力欄に重なる通知は出さない。
       if (typeof hosshiiSyncExpiredUI === 'function') hosshiiSyncExpiredUI();
       return true;
     }
     function safeWriteAppJSON(key, value) {
+      if (key === 'mybasket_shifts_v23') return prelaunchWrite(prelaunchState(configData, value));
+      if (key === 'mybasket_wages_v77') return prelaunchWrite(prelaunchState(value, shiftsData, value.monthlyGoal ?? monthlyGoal));
       if (window.hosshiiReadOnly === true) {
         hosshiiBlockEdit();
         return false;
@@ -1927,13 +1933,14 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (typeof showAlertModal === 'function' && document.readyState !== 'loading') showAlertModal(msg);
       else window.alert(msg);
     }
-    let shiftsData = safeReadAppJSON('mybasket_shifts_v23');
-    let savedWages = safeReadAppJSON('mybasket_wages_v77');
+    const prelaunchLoadedState = prelaunchReadStored();
+    let shiftsData = prelaunchLoadedState ? prelaunchLoadedState.shifts : safeReadAppJSON('mybasket_shifts_v23');
+    let savedWages = prelaunchLoadedState ? prelaunchLoadedState.config : safeReadAppJSON('mybasket_wages_v77');
     if (storageWriteBlocked) {
       window.addEventListener('load', () => showStorageSafetyWarning(), { once: true });
     }
 
-    let monthlyGoal = Number(savedWages.monthlyGoal) || 0;
+    let monthlyGoal = Number(prelaunchLoadedState ? prelaunchLoadedState.monthlyGoal : savedWages.monthlyGoal) || 0;
 
     function buildConfigData(savedWages) {
       return {
@@ -1944,6 +1951,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       };
     }
     let configData = buildConfigData(savedWages);
+    try {shiftsData=HosshiiPayModel.normalizeShifts(shiftsData,configData);}catch(error){storageWriteBlocked=true;storageProblems.push('shift migration');console.error(error);}
 
     function createEmptyJobConfig() {
       return createDefaultJobConfig(undefined, '', defaultPresets1, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '');
@@ -1994,7 +2002,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         });
       }
 
-      return {
+      return HosshiiPayModel.normalizeJobHistory({
         name: savedJob?.name !== undefined ? savedJob.name : defName,
         closeDay: savedJob?.closeDay ? normDay(savedJob.closeDay, '') : '',
         payDay: savedJob?.payDay ? normDay(savedJob.payDay, '') : '',
@@ -2010,7 +2018,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
         hasBreakGlobal: hasBreakGlobal,
         presets: loadedPresets
-      };
+      }, savedJob);
     }
 
     // Settings are persisted synchronously on each edit. The timer below is
@@ -2073,7 +2081,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     });
 
     function getDayShifts(dateStr, jobKey) {
-      const dayData = shiftsData[dateStr] || {};
+      if(!dateStr)return [];
+      const dayData = shiftsData[HosshiiPayModel.dayKey(dateStr)] || {};
       let jobVal = dayData[jobKey];
       if (!jobVal) return [];
       // 呼び出し側で配列を変更しても、保存成功前の元データは変えない。
@@ -2082,6 +2091,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function setDayShifts(dateStr, jobKey, shiftsArr) {
       if (hosshiiBlockEdit()) return false;
+      try{dateStr=HosshiiPayModel.dayKey(dateStr);shiftsArr.forEach(sh=>HosshiiPayModel.validateShift(sh));}catch(error){showAlertModal(error.message);return false;}
       const nextData = JSON.parse(JSON.stringify(shiftsData));
       if (!nextData[dateStr]) nextData[dateStr] = {};
       if (shiftsArr.length === 0) {
@@ -2114,13 +2124,16 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-    function paidLeaveAmount(job, sh){
-      const h = sh && sh.start && sh.end ? forEachWorkMinute(sh, () => {}) / 60 : (Number(sh && sh.hours) > 0 ? Number(sh.hours) : (Number(job.paidHours) || 0));
-      return (Number(job.paid) || 0) * h;
+    function paidLeaveAmount(job, sh, dateObj = new Date()){
+      const date=formatDateKey(dateObj);
+      if(sh?.start && sh?.end){let sum=0;forEachWorkMinute(sh,min=>{const d=new Date(dateObj.getFullYear(),dateObj.getMonth(),dateObj.getDate()+Math.floor(min/1440));sum+=(Number(HosshiiPayModel.ratesFor(job,formatDateKey(d)).paid)||0);});return sum/60;}
+      const h=Number(sh?.hours)>0?Number(sh.hours):(Number(job.paidHours)||0);
+      return (Number(HosshiiPayModel.ratesFor(job,date).paid)||0)*h;
     }
+
     function calculateJobShiftMinutesAndPay(jobShift, job, dateObj) {
       if (!jobShift) return { totalMins: 0, totalPay: 0 };
-      if (jobShift.isPaidLeave) return { totalMins: 0, totalPay: paidLeaveAmount(job, jobShift) };
+      if (jobShift.isPaidLeave) return { totalMins: 0, totalPay: paidLeaveAmount(job, jobShift, dateObj) };
       let rateSum = 0;
       const totalMins = forEachWorkMinute(jobShift, min => { rateSum += getRateForMinuteDetailed(min, job, dateObj, false).rate; });
       return { totalMins, totalPay: rateSum / 60 };
@@ -2134,7 +2147,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         if (sh.isPaidLeave) { pay += r.totalPay; worked = true; }
         else if (r.totalMins > 0) { mins += r.totalMins; pay += r.totalPay; worked = true; commuted = true; }
       });
-      if (commuted) pay += (job.transDay || 0) + (job.allowanceDay || 0);
+      const dayRates = HosshiiPayModel.ratesFor(job, dateKey);
+      if (commuted) pay += (dayRates.transDay || 0) + (dayRates.allowanceDay || 0);
       return { mins, pay, worked, commuted };
     }
     function calcJobPeriodPay(jk, offset) {
@@ -2145,7 +2159,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const r = calcJobDay(formatDateKey(d), jk, new Date(d));
         mins += r.mins; pay += r.pay; if (r.worked) days++;
       }
-      if (days > 0) pay += (job.transMonth || 0) + (job.allowanceMonth || 0);
+      const benefits = getMonthlyHistoryBenefits(job,start,end,days>0);
+      pay += benefits.trans + benefits.allow;
       return { pay: Math.floor(Math.round(pay * 1000) / 1000), mins, days };
     }
     function getSlotRate(s, dateObj) {
@@ -2637,7 +2652,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       }, undoFn ? 5000 : 2500);
     }
 
-    function switchTab(tabName) {
+    function switchTab(tabName, skipPayDialog = false) {
+      if(!skipPayDialog && tabName!=='settings' && !document.getElementById('tab-settings')?.classList.contains('hidden') && hasPendingPay(currentSettingsJobKey) && !hosshiiBlockEdit()){openPayHistoryDialog(currentSettingsJobKey,()=>switchTab(tabName,true));return;}
       const leavingSettings = tabName !== 'settings' && !document.getElementById('tab-settings')?.classList.contains('hidden');
       if (leavingSettings) flushSettingsDraft();
       cancelSalaryMarbleReplay();
@@ -2853,35 +2869,37 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const fmtD = d => `${d.getMonth() + 1}月${d.getDate()}日`;
       const fmtHM = m => (m >= 60 ? Math.floor(m / 60) + '時間' : '') + (m % 60 ? (m % 60) + '分' : '');
       const catMap = {};
-      let paidDays = 0, paidPay = 0, paidHours = 0, workDays = 0;
+      let paidDays = 0, paidPay = 0, paidHours = 0, workDays = 0, dailyTrans = 0, dailyAllow = 0;
       for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
         let worked = false;
         getDayShifts(formatDateKey(d), jobKey).forEach(sh => {
           if (!sh) return;
           if (sh.isPaidLeave) {
-            paidDays++; paidPay += paidLeaveAmount(job, sh);
+            paidDays++; paidPay += paidLeaveAmount(job, sh, new Date(d));
             paidHours += sh.start && sh.end ? forEachWorkMinute(sh, () => {}) / 60 : (Number(sh.hours) > 0 ? Number(sh.hours) : (Number(job.paidHours) || 0));
             return;
           }
           const dateObj = new Date(d);
           const m = forEachWorkMinute(sh, min => {
             const ri = getRateForMinuteDetailed(min, job, dateObj, false);
-            const c = catMap[ri.category] = catMap[ri.category] || { mins: 0, rateSum: 0 };
+            const key=ri.category+'|'+(ri.label||'');
+            const c = catMap[key] = catMap[key] || { mins: 0, rateSum: 0, label:ri.label };
             c.mins++; c.rateSum += ri.rate;
           });
           if (m > 0) worked = true;
         });
-        if (worked) workDays++;
+        if (worked) {workDays++;const r=HosshiiPayModel.ratesFor(job,formatDateKey(d));dailyTrans+=r.transDay||0;dailyAllow+=r.allowanceDay||0;}
       }
       const any = workDays > 0 || paidDays > 0;
       const rows = [];
       if (paidDays > 0) rows.push({ label: '有給休暇', mid: `${paidDays}日（${paidHours}時間）`, amt: paidPay });
       Object.keys(catMap).sort((a, b) => (a === 'other') - (b === 'other') || parseInt(a.slice(4)) - parseInt(b.slice(4))).forEach(c => {
         const sl = job.wageSlots[parseInt(c.slice(4))], m = catMap[c];
-        rows.push({ label: (c === 'other' || !sl) ? 'その他の時間' : `${sl.start}〜${sl.end}`, mid: fmtHM(m.mins), amt: m.rateSum / 60, rate: Math.round(m.rateSum / m.mins) });
+        rows.push({ label: m.label || 'その他の時間', mid: fmtHM(m.mins), amt: m.rateSum / 60, rate: Math.round(m.rateSum / m.mins) });
       });
-      const trans = (any ? (job.transMonth || 0) : 0) + (job.transDay || 0) * workDays;
-      const allow = (any ? (job.allowanceMonth || 0) : 0) + (job.allowanceDay || 0) * workDays;
+      const monthly = getMonthlyHistoryBenefits(job,start,end,any);
+      const trans = monthly.trans + dailyTrans;
+      const allow = monthly.allow + dailyAllow;
       if (trans > 0) rows.push({ label: '交通費', mid: `${workDays}日`, amt: trans });
       if (allow > 0) rows.push({ label: esc(job.allowanceMemo || 'その他手当'), mid: `${workDays}日`, amt: allow });
       const fl = x => Math.floor(Math.round(x * 1000) / 1000);
@@ -3059,40 +3077,14 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         if (configData[jk]?.name !== name) { showAlertModal('登録内容が変わりました。もう一度選択してね。'); return; }
         const previousConfig = JSON.parse(JSON.stringify(configData));
         const previousShifts = JSON.parse(JSON.stringify(shiftsData));
-        const shiftKey = 'mybasket_shifts_v23';
-        const wagesKey = 'mybasket_wages_v77';
-        let rawShifts, rawWages;
-        try {
-          rawShifts = localStorage.getItem(shiftKey);
-          rawWages = localStorage.getItem(wagesKey);
-        } catch (error) {
-          showStorageSafetyWarning(); return;
-        }
         configData[jk] = createEmptyJobConfig();
-        for (const dk of Object.keys(shiftsData)) {
-          if (shiftsData[dk]) {
-            delete shiftsData[dk][jk];
-            if (!Object.keys(shiftsData[dk]).length) delete shiftsData[dk];
-          }
+        for(const dk of Object.keys(shiftsData)){delete shiftsData[dk][jk];if(!Object.keys(shiftsData[dk]).length)delete shiftsData[dk];}
+        configData.jobCount=getActiveJobKeys().length;
+        if(!saveAllDataStorage()){
+          configData=previousConfig;shiftsData=previousShifts;
+          showAlertModal('保存できなかったため、削除を取り消しました。');return;
         }
-        configData.jobCount = getActiveJobKeys().length;
-        const shiftsSaved = safeWriteAppJSON(shiftKey, shiftsData);
-        const wagesSaved = shiftsSaved && saveAllDataStorage();
-        if (!shiftsSaved || !wagesSaved) {
-          configData = previousConfig;
-          shiftsData = previousShifts;
-          try {
-            if (rawShifts === null) localStorage.removeItem(shiftKey);
-            else localStorage.setItem(shiftKey, rawShifts);
-            if (rawWages === null) localStorage.removeItem(wagesKey);
-            else localStorage.setItem(wagesKey, rawWages);
-          } catch (restoreError) {
-            console.error('削除失敗時の復元に失敗:', restoreError);
-            storageWriteBlocked = true;
-            showStorageSafetyWarning();
-          }
-          showAlertModal('保存できなかったため、削除を取り消しました。'); return;
-        }
+
         window.hosshiiResetWageUi?.(jk, false);
         window.hosshiiEditSelectedKey = '';
         document.getElementById('newJobNameInput').value = '';
@@ -3108,7 +3100,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       });
     }
 
-    function switchSettingsJobTab(jk) {
+    function switchSettingsJobTab(jk, skipPayDialog = false) {
+      if(!skipPayDialog && jk!==currentSettingsJobKey && hasPendingPay(currentSettingsJobKey) && !hosshiiBlockEdit()){openPayHistoryDialog(currentSettingsJobKey,()=>switchSettingsJobTab(jk,true));return;}
       syncSettingsFormToConfig(currentSettingsJobKey);
       currentSettingsJobKey = jk;
       renderSettingsJobTabs();
@@ -3130,7 +3123,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     const CLOSE_DAY_OPTIONS = DAY_OPTIONS.replace('value="月末">月末</option>', 'value="月末">末日（毎月の最終日）</option>');
 
     function getSettingsFormHtml(jk) {
-      const j = configData[jk];
+      const j = settingsPayJob(jk);
       if (!j?.name) return '';
       let slotsHtml = buildWageSlotsHtml(j);
 
@@ -3378,33 +3371,31 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function renderWageSlotRows() {
       const c = document.getElementById('setWageSlotsContainer');
-      if (c) c.innerHTML = buildWageSlotsHtml(configData[currentSettingsJobKey]);
+      if (c) c.innerHTML = buildWageSlotsHtml(settingsPayJob(currentSettingsJobKey));
     }
 
     function addSettingsWageSlot() {
       if (hosshiiBlockEdit()) return false;
       syncSettingsFormToConfig(currentSettingsJobKey);
-      configData[currentSettingsJobKey].wageSlots.push({ start: '', end: '', wage: 0, bType: 'weekday', bVal: 0 });
-      window.hosshiiWageRowAdded?.(configData[currentSettingsJobKey].wageSlots.length - 1);
+      const job=configData[currentSettingsJobKey];
+      job.payDraft ||= {rates:HosshiiPayModel.snapshot(job)};
+      job.payDraft.rates.wageSlots.push({ start: '', end: '', wage: 0, bType: 'weekday', bVal: 0 });
+      window.hosshiiWageRowAdded?.(job.payDraft.rates.wageSlots.length - 1);
       renderWageSlotRows();
       saveSettingsDraft();
     }
 
     function removeSettingsWageSlot(i) {
-      if (hosshiiBlockEdit()) return false;
+      if(hosshiiBlockEdit())return false;
       syncSettingsFormToConfig(currentSettingsJobKey);
-      const slots = configData[currentSettingsJobKey].wageSlots;
-      if (!slots[i]) return false;
-      const removed = slots.splice(i, 1)[0];
-      if (!saveAllDataStorage()) {
-        slots.splice(i, 0, removed);
-        showAlertModal('時間帯を削除できませんでした。入力内容は残しています。もう一度削除をお試しください。');
-        return false;
-      }
-      window.hosshiiWageRowRemoved?.(i);
-      updateSettingsSaveStatus(true);
+      const job=configData[currentSettingsJobKey];
+      job.payDraft ||= {rates:HosshiiPayModel.snapshot(job)};
+      if(!job.payDraft.rates.wageSlots[i])return false;
+      const before=HosshiiPayModel.clone(job.payDraft);
+      job.payDraft.rates.wageSlots.splice(i,1);
+      if(!saveAllDataStorage()){job.payDraft=before;return false;}
       renderWageSlotRows();
-      showToast("時間帯を削除しました");
+      openPayHistoryDialog(currentSettingsJobKey);
       return true;
     }
 
@@ -3427,31 +3418,16 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function saveSettingsWageSlotRow(i) {
-      if (hosshiiBlockEdit()) return false;
-      window.hosshiiWageRowDirty?.(i);
-      const st = document.getElementById(`set_time_${i}_start`)?.value || '';
-      const ed = document.getElementById(`set_time_${i}_end`)?.value || '';
-      const wg = parseFormattedNumber(document.getElementById(`set_wage_${i}`)?.value);
-      if (!st || !ed || !(wg > 0)) { showAlertModal("開始・終了時間と時給を確認してね♡"); return; }
-      if (st === ed) { showAlertModal('開始と終了が同じ時間になっています。\n時間を確認してね。'); return; }
+      if(hosshiiBlockEdit())return false;
       syncSettingsFormToConfig(currentSettingsJobKey);
-      const slots = configData[currentSettingsJobKey].wageSlots;
-      const dupIdx = slots.findIndex((s, k) => k !== i && s.start && s.end && s.start !== s.end && wageRangesOverlap(st, ed, s.start, s.end));
-      if (dupIdx !== -1) {
-        const d = slots[dupIdx];
-        showAlertModal(`時間帯が重なっています。\n${d.start}〜${d.end}（時給${Number(d.wage).toLocaleString()}円）と重なっているよ。\n重なった時間は計算が正しくならないので、時間を分けてね。`);
-        return;
-      }
-      if (!saveAllDataStorage()) return;
-      window.hosshiiWageRowConfirmed?.(i);
-      document.getElementById(`set_reg_btn_${i}`)?.classList.remove("unsaved-registration");
-      document.getElementById(`set_reg_btn_${i}`)?.classList.add("registration-saved");
-      initOverviewPage();
-      // 設定保存時の完了ポップは表示しない。
+      const row=settingsPayJob(currentSettingsJobKey)?.wageSlots[i];
+      if(!row?.start||!row?.end||!(row.wage>0)){showAlertModal('開始・終了時間と時給を確認してね♡');return false;}
+      try{HosshiiPayModel.validateRates(settingsPayJob(currentSettingsJobKey));}catch(error){showAlertModal(error.message);return false;}
+      return openPayHistoryDialog(currentSettingsJobKey);
     }
 
     function loadSettingsToUIForTab(jk) {
-      const j = configData[jk];
+      const j = settingsPayJob(jk);
       if (!j?.name || !document.getElementById('set_closeDay')) return;
 
       document.getElementById('set_closeDay').value = j.closeDay || '';
@@ -3467,28 +3443,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function syncSettingsFormToConfig(jk) {
-      const j = configData[jk];
-      if (!j || !document.getElementById('set_closeDay')) return;
-      const getVal = id => document.getElementById(id)?.value || '';
-      const getNum = id => parseFormattedNumber(getVal(id));
-
-      j.closeDay = getVal('set_closeDay');
-      j.payDay = getVal('set_payDay');
-      j.paid = getNum('set_wagePaid');
-      // 旧有給時間は既存データの互換性のため保持
-
-      if (document.getElementById('setWageSlotsContainer')) {
-        j.wageSlots = [...document.querySelectorAll('#setWageSlotsContainer [data-slot]')].map(r => {
-          const i = r.dataset.slot;
-          return { start: getVal(`set_time_${i}_start`), end: getVal(`set_time_${i}_end`), wage: getNum(`set_wage_${i}`), bType: getVal(`set_btype_${i}`) || 'weekday', bVal: getNum(`set_bval_${i}`) };
-        });
-      }
-
-      j.transMonth = getNum('set_transMonth');
-      j.transDay = getNum('set_transDay');
-      j.allowanceMonth = getNum('set_allowanceMonth');
-      j.allowanceDay = getNum('set_allowanceDay');
-      j.allowanceMemo = getVal('set_allowanceMemo');
+      captureSettingsPayDraft(jk);
     }
 
     function setModalShiftTypeUIOnly(isPaid) {
@@ -3576,8 +3531,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const p = currentJob && currentJob.presets && currentJob.presets[idx];
       if (!p) return;
       askConfirm(`${p.start}〜${p.end} 休憩${Number(p.breakMins) || 0}分\nこのワンタッチ時間を削除しますか？`, () => {
+        const previous=HosshiiPayModel.clone(currentJob.presets);
         currentJob.presets.splice(idx, 1);
-        saveAllDataStorage();
+        if(!saveAllDataStorage()){currentJob.presets=previous;return false;}
         renderModalPresetButtons();
         showToast("時間を削除しました");
       });
@@ -3652,7 +3608,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     function submitBreakSelectModal() {
       const raw = document.getElementById('breakSelectInput').value;
       const val = raw === '' ? 0 : Number(raw);
-      if (isNaN(val) || val < 0) { showAlertModal("休憩時間は数字で入力してね♡"); return; }
+      if (!Number.isInteger(val) || val < 0) { showAlertModal("休憩時間は数字で入力してね♡"); return; }
+      const start=document.getElementById(breakTarget==='preset'?'pr_start':'new_preset_start')?.value;
+      const end=document.getElementById(breakTarget==='preset'?'pr_end':'new_preset_end')?.value;
+      if(start&&end&&start!==end&&!validateShiftInput(start,end,val))return;
       if (breakTarget === 'preset') {
         prBreakMins = val;
         document.getElementById('pr_break_disp').textContent = val + '分';
@@ -3700,6 +3659,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (start === end) { showToast("開始と終了が同じ時間だよ。変えてね♡"); return; }
       const job = configData[currentSelectedJobKey] || configData.job1;
       if (!job.presets) job.presets = [];
+      if(!validateShiftInput(start,end,breakMins))return false;
       const exists = job.presets.some(p => p.start === start && p.end === end && Number(p.breakMins || 0) === breakMins);
       if (exists) { showToast("すでに登録されている時間だよ"); return; }
       job.presets.push({ start, end, breakMins });
@@ -3737,6 +3697,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     function registerModalPresetTime(start, end, breakMins) {
       if (hosshiiBlockEdit()) return false;
       if (!selectedCalendarDateStr) { showToast("日付を選んでね♡"); return false; }
+      if(!validateShiftInput(start,end,breakMins,isPaidLeaveMode))return false;
       const dup = findOverlap(selectedCalendarDateStr, start, end);
       if (dup) { showOverlapAlert(dup); return false; }
       const shifts = getDayShifts(selectedCalendarDateStr, currentSelectedJobKey);
@@ -3778,6 +3739,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           prevYear--;
         }
 
+        const nextShifts=HosshiiPayModel.clone(shiftsData);
         let copiedCount = 0;
         let skippedCount = 0;
         let targetDaysInMonth = new Date(y, m + 1, 0).getDate();
@@ -3798,12 +3760,14 @@ background:#881337!important;background-color:#881337!important;border-color:#88
           const cp = JSON.parse(JSON.stringify(prevDayData));
           Object.keys(cp).forEach(k => { cp[k] = [].concat(cp[k]).filter(s => s && !s.isPaidLeave); if (!cp[k].length) delete cp[k]; });
           if (!Object.keys(cp).length) continue;
-          shiftsData[targetDateStr] = cp;
+          try {HosshiiPayModel.normalizeShifts({[targetDateStr]:cp});}catch(error){showAlertModal(error.message);return false;}
+          nextShifts[targetDateStr] = cp;
           copiedCount++;
         }
 
         if (copiedCount > 0) {
-          if (!safeWriteAppJSON('mybasket_shifts_v23', shiftsData)) return;
+          if (!safeWriteAppJSON('mybasket_shifts_v23', nextShifts)) return;
+          shiftsData=nextShifts;
           window.hosshiiCopyState?.(copyTab, true);
           refreshAll();
           showToast(skippedCount > 0
@@ -4069,7 +4033,14 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const day = new Date(d);
         const shifts = getDayShifts(formatDateKey(day), jk);
         for (const sh of shifts) {
-          if (!sh || sh.isPaidLeave) continue;
+          if (!sh) continue;
+          if(sh.isPaidLeave){
+            let missingPaid=false;
+            if(sh.start&&sh.end)forEachWorkMinute(sh,min=>{const at=new Date(day.getFullYear(),day.getMonth(),day.getDate()+Math.floor(min/1440));if(!(HosshiiPayModel.ratesFor(job,formatDateKey(at)).paid>0))missingPaid=true;});
+            else missingPaid=!(HosshiiPayModel.ratesFor(job,formatDateKey(day)).paid>0);
+            if(missingPaid)return true;
+            continue;
+          }
           let missing = false;
           forEachWorkMinute(sh, min => {
             if (!missing && getRateForMinuteDetailed(min, job, day, false).category === 'unconfigured') missing = true;
@@ -4087,19 +4058,19 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       const receiveMonthOffset = (viewMonth.getFullYear() - todayMonth.getFullYear()) * 12
         + (viewMonth.getMonth() - todayMonth.getMonth()) + 1;
       const {start, end} = getJobPayPeriodRangeForReceiveMonth(job, receiveMonthOffset);
-      let mins = 0, pay = 0, days = 0, commutingDays = 0;
+      let mins = 0, pay = 0, days = 0, commutingDays = 0, dailyOther = 0;
       for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
         const r = calcJobDay(formatDateKey(d), jk, new Date(d));
         mins += r.mins;
         pay += r.pay;
         if (r.worked) days++;
-        if (r.commuted) commutingDays++;
+        if (r.commuted) {commutingDays++;const rates=HosshiiPayModel.ratesFor(job,formatDateKey(d));dailyOther+=(rates.transDay||0)+(rates.allowanceDay||0);}
       }
-      const other = (days > 0 ? (job.transMonth || 0) + (job.allowanceMonth || 0) : 0)
-        + commutingDays * ((job.transDay || 0) + (job.allowanceDay || 0));
-      if (days > 0) pay += (job.transMonth || 0) + (job.allowanceMonth || 0);
+      const monthly = getMonthlyHistoryBenefits(job,start,end,days>0);
+      const other = monthly.trans + monthly.allow + dailyOther;
+      pay += monthly.trans + monthly.allow;
       const roundPay = n => Math.floor(Math.round(n * 1000) / 1000);
-      return { pay: roundPay(pay), wagePay: roundPay(pay - other), otherPay: roundPay(other), mins, days, start, end, wageMissing: test5HasMissingWage(jk, start, end) };
+      return { pay: roundPay(pay), wagePay: roundPay(pay - other), otherPay: roundPay(pay) - roundPay(pay - other), mins, days, start, end, wageMissing: test5HasMissingWage(jk, start, end) };
     }
 
     function t10TogglePrevious() {
@@ -4641,16 +4612,16 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }
 
     function getRateForMinuteDetailed(min, currentJob, dateObj, isPaid) {
-      if (isPaid) return { rate: currentJob.paid ?? 1650, category: 'paid' };
       const curMins = min % 1440;
-      if (min >= 1440) dateObj = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate() + 1);
-      const slots = currentJob.wageSlots || [];
+      if (min >= 1440) dateObj = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate() + Math.floor(min/1440));
+      if (isPaid) return { rate: HosshiiPayModel.ratesFor(currentJob,formatDateKey(dateObj)).paid || 0, category: 'paid' };
+      const slots = HosshiiPayModel.ratesFor(currentJob,formatDateKey(dateObj)).wageSlots || [];
       let best = null;
       slots.forEach((s, i) => {
         if (!s.start || !s.end || !(s.wage > 0)) return;
         if (!isMinuteInRange(curMins, timeStrToMins(s.start), timeStrToMins(s.end))) return;
         const rate = getSlotRate(s, dateObj);
-        if (!best || rate > best.rate) best = { rate, category: 'slot' + i };
+        if (!best || rate > best.rate) best = { rate, category: 'slot' + i, label:`${s.start}〜${s.end}` };
       });
       if (best) return best;
       return { rate: 0, category: 'unconfigured' };
@@ -4679,11 +4650,13 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     function removeJobShifts(jk) {
       if (hosshiiBlockEdit()) return false;
-      for (const dateKey of Object.keys(shiftsData)) {
-        delete shiftsData[dateKey][jk];
-        if (Object.keys(shiftsData[dateKey]).length === 0) delete shiftsData[dateKey];
+      const next=HosshiiPayModel.clone(shiftsData);
+      for (const dateKey of Object.keys(next)) {
+        delete next[dateKey][jk];
+        if (Object.keys(next[dateKey]).length === 0) delete next[dateKey];
       }
-      safeWriteAppJSON('mybasket_shifts_v23', shiftsData);
+      if(!safeWriteAppJSON('mybasket_shifts_v23', next))return false;
+      shiftsData=next;return true;
     }
 
     function formatInputNumber(input) {
@@ -4788,11 +4761,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (backupButton) { backupButton.disabled = true; backupButton.textContent = '保存中…'; }
       try {
         if (window.hosshiiReadOnly !== true) syncSettingsFormToConfig(currentSettingsJobKey);
-        const backupData = {
-          exportedAt: new Date().toISOString(),
-          mybasket_shifts_v23: shiftsData,
-          mybasket_wages_v77: {...JSON.parse(JSON.stringify(configData)), monthlyGoal}
-        };
+        const backupData = prelaunchBackup();
+
         await hosshiiBackupRequest('save', backupData);
         localStorage.setItem('mybasket_last_backup', String(Date.now()));
         showAlertModal('バックアップをSupabaseに保存しました\n同じLINEアカウントで復元できます♡');
@@ -4834,15 +4804,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if (event) event.preventDefault();
       if (storageWriteBlocked) { showStorageSafetyWarning(); return; }
       if (window.hosshiiReadOnly !== true) syncSettingsFormToConfig(currentSettingsJobKey);
-      const payload = {
-        exportedAt: new Date().toISOString(),
-        mybasket_shifts_v23: shiftsData,
-        mybasket_wages_v77: (() => {
-          const p = JSON.parse(JSON.stringify(configData));
-          p.monthlyGoal = monthlyGoal;
-          return p;
-        })()
-      };
+      const payload = prelaunchBackup();
+
       const json = JSON.stringify(payload, null, 2);
       const filename = `maishift_backup_${formatDateKey(new Date()).replace(/-/g, '')}.json`;
       const blob = new Blob([json], {type:'application/json'});
@@ -5003,24 +4966,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       }, 800);
     }
 
-    function sanitizeShifts(obj) {
-      const out = {};
-      if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return out;
-      const okT = t => (typeof t === 'string' && /^\d{1,2}:\d{2}$/.test(t)) ? t : '';
-      Object.keys(obj).forEach(dk => {
-        if (!/^\d{4}-\d{1,2}-\d{1,2}$/.test(dk) || !obj[dk] || typeof obj[dk] !== 'object') return;
-        ['job1', 'job2', 'job3'].forEach(jk => {
-          const arr = [].concat(obj[dk][jk] || []).filter(x => x && typeof x === 'object').map(x => ({
-            start: okT(x.start), end: okT(x.end),
-            breakMins: Math.max(0, Number(x.breakMins) || 0),
-            isPaidLeave: !!x.isPaidLeave,
-            hours: Math.max(0, Number(x.hours) || 0)
-          })).filter(x => x.isPaidLeave ? ((x.hours || 0) > 0 || true) : (x.start && x.end));
-          if (arr.length) { out[dk] = out[dk] || {}; out[dk][jk] = arr; }
-        });
-      });
-      return out;
-    }
+    function sanitizeShifts(obj) {return HosshiiPayModel.normalizeShifts(obj);}
 
     function importAppData(event) {
       const input = event.target;
@@ -5044,85 +4990,25 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       reader.readAsText(file);
     }
 
-    function processBackupText(backupText, input) {
-        if (window.hosshiiReadOnly === true) { hosshiiBlockEdit(); return; }
-        if (storageWriteBlocked) { showStorageSafetyWarning(); return; }
-        try {
-          const data = JSON.parse(backupText);
-
-          if (!data.mybasket_shifts_v23 && !data.mybasket_shifts_v22 && !data.mybasket_shifts_v21) {
-            showAlertModal('このファイルはバックアップとして読み込めなかったよ。');
-            return;
-          }
-
-          askConfirm('今のデータに、読み込んだバックアップの内容を上書きします。よろしいですか？', () => {
-            // 確認ダイアログを開いている間に閲覧専用へ切り替わった場合も拒否。
-            if (window.hosshiiReadOnly === true) {
-              showToast('閲覧専用です。バックアップの書き出しは利用できます。');
-              return;
-            }
-            const oldShifts = shiftsData;
-            const oldConfig = configData;
-            const oldGoal = monthlyGoal;
-            const shiftKey = 'mybasket_shifts_v23';
-            const wagesKey = 'mybasket_wages_v77';
-            const oldStoredShifts = localStorage.getItem(shiftKey);
-            const oldStoredWages = localStorage.getItem(wagesKey);
-            try {
-              const newShifts = sanitizeShifts(data.mybasket_shifts_v23 || data.mybasket_shifts_v22 || data.mybasket_shifts_v21 || {});
-              const loadedWages = data.mybasket_wages_v77 || data.mybasket_wages_v76 || {};
-              const newGoal = Number(loadedWages.monthlyGoal) || 0;
-              const newConfig = buildConfigData(loadedWages);
-
-              // 保存が完了するまで画面用のデータは確定させない。
-              if (!safeWriteAppJSON(shiftKey, newShifts)) return;
-              if (!safeWriteAppJSON(wagesKey, { ...newConfig, monthlyGoal: newGoal })) {
-                // 2件目が失敗した場合、1件目の保存を元に戻す。
-                try {
-                  if (oldStoredShifts === null) localStorage.removeItem(shiftKey);
-                  else localStorage.setItem(shiftKey, oldStoredShifts);
-                } catch (restoreError) {
-                  console.error('バックアップ読み込みの復元に失敗:', restoreError);
-                  showStorageSafetyWarning();
-                }
-                return;
-              }
-
-              shiftsData = newShifts;
-              configData = newConfig;
-              monthlyGoal = newGoal;
-              ['job1','job2','job3'].forEach(jk => window.hosshiiResetWageUi?.(jk, true));
-              ensureValidSelectedJob();
-              renderSettingsJobTabs();
-              renderSettingsJobContent(currentSettingsJobKey);
-              renderCalendar();
-              renderStandaloneShiftList();
-              initOverviewPage();
-              showAlertModal('バックアップから読み込みました♡');
-            } catch (err) {
-              shiftsData = oldShifts;
-              configData = oldConfig;
-              monthlyGoal = oldGoal;
-              try {
-                if (oldStoredShifts === null) localStorage.removeItem(shiftKey);
-                else localStorage.setItem(shiftKey, oldStoredShifts);
-                if (oldStoredWages === null) localStorage.removeItem(wagesKey);
-                else localStorage.setItem(wagesKey, oldStoredWages);
-              } catch (restoreError) {
-                console.error('バックアップ読み込みの復元に失敗:', restoreError);
-                showStorageSafetyWarning();
-              }
-              showAlertModal('ファイルを読み込めなかったよ。バックアップファイルか確認してね♡');
-            }
-          });
-        } catch (err) {
-          showAlertModal('ファイルを読み込めなかったよ。バックアップファイルか確認してね♡');
-        } finally {
-          if (input) input.value = '';
-        }
+    function processBackupText(backupText,input) {
+      if(hosshiiBlockEdit()||storageWriteBlocked)return;
+      let next;
+      try{next=prelaunchParseBackup(JSON.parse(backupText));}catch(error){showAlertModal('バックアップを読み込めませんでした。'+error.message);if(input)input.value='';return;}
+      askConfirm('今のデータに、読み込んだバックアップの内容を上書きします。よろしいですか？',()=>{
+        if(hosshiiBlockEdit())return;
+        if(!prelaunchWrite(prelaunchState(next.config,next.shifts,next.goal)))return;
+        configData=next.config;shiftsData=next.shifts;monthlyGoal=next.goal;
+        settingsDraftDirty=false;updateSettingsSaveStatus(true);
+        ['job1','job2','job3'].forEach(jk=>window.hosshiiResetWageUi?.(jk,true));
+        ensureValidSelectedJob();renderSettingsJobTabs();renderSettingsJobContent(currentSettingsJobKey);refreshAll();
+        showAlertModal('バックアップから読み込みました♡');
+      });
+      if(input)input.value='';
     }
+
   </script>
 
+  <script src="./prelaunch-ui.js"></script>
   <!-- test②-20261101-backup-paste-restore -->
   <!-- アプリ専用の24時間時計：完成した第4弾デザイン -->
   <div id="customTimePickerModal" style="z-index:9999;background:rgba(28,25,23,.75)" class="fixed inset-0 backdrop-blur-sm hidden items-center justify-center p-3" role="dialog" aria-modal="true" aria-labelledby="customTimePickerTitle" onclick="if(event.target===this)closeCustomTimePicker()">
@@ -5861,10 +5747,29 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   const retry=document.getElementById('lineAuthRetry');
   let idToken=null;
   let statusBusy=false;
+  let entitlementUntil=0, entitlementPaid=false, entitlementVerifiedAt=0, expiryTimer=null;
+  const inactiveMessage=()=>window.hosshiiStatusReason==='checking'
+    ? '利用状況を確認しています。確認が完了するまで登録・変更はできません。'
+    :window.hosshiiStatusReason==='unavailable'
+      ? '利用状況を確認できませんでした。通信を確認して再確認してください。データは閲覧できます。'
+      : '無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。';
+  window.hosshiiCheckEntitlementClock=function(){
+    const stale=entitlementPaid && Date.now()-entitlementVerifiedAt>300000;
+    if(stale || (!entitlementPaid && (!entitlementUntil || Date.now()>=entitlementUntil))){
+      window.hosshiiReadOnly=true;
+      window.hosshiiStatusReason=stale?'checking':entitlementUntil?'expired':'unavailable';
+      if(!gate.hidden&&!entitlementVerifiedAt)return false;
+      if(!statusBusy)void check(false);
+      return false;
+    }
+    return window.hosshiiReadOnly!==true;
+  };
+  window.hosshiiRefreshEntitlement=()=>check(false);
+
   function showError(t){message.textContent=t;consent.hidden=true;retry.hidden=false;}
   function hideGate(){
-    gate.hidden=true;
-    requestSalaryMarbleReplay();
+    const wasHidden=gate.hidden;gate.hidden=true;
+    if(!wasHidden)requestSalaryMarbleReplay();
   }
   function consentView(){message.classList.add('consent-heading');message.textContent='「初回利用のご案内」';consent.hidden=false;retry.hidden=true;}
   // test⑭: 購入状態に合わせた2行案内。決済連携は未設定のため購入操作は開始しない。
@@ -5949,7 +5854,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       if(active)window.updateItoStickyHeader(active.id.replace(/^tab-/,''));
     }
   }
-  const hosshiiExpiredMessage = '無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。';
+  const hosshiiExpiredMessage = inactiveMessage;
   function hosshiiSyncExpiredUI(){
     const readOnly = window.hosshiiReadOnly === true;
     for(const tab of document.querySelectorAll('#appScroll > .tab-content')){
@@ -5961,7 +5866,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const header=tab.querySelector(':scope > .oct23-sticky-month, :scope > .oct23-sticky-settings, :scope > .oct23-sticky-pay');
         if(header)header.insertAdjacentElement('afterend',note);else tab.prepend(note);
       }
-      if(note){if(note.textContent!==hosshiiExpiredMessage)note.textContent=hosshiiExpiredMessage;const visibility=(readOnly && tab.id!=='tab-clock' && tab.id!=='tab-guide')?'block':'none';if(note.style.display!==visibility)note.style.display=visibility;}
+      if(note){const text=hosshiiExpiredMessage();if(note.dataset.message!==text){note.textContent=text;note.dataset.message=text;if(window.hosshiiStatusReason!=='checking'){const retryStatus=document.createElement('button');retryStatus.textContent='再確認';retryStatus.type='button';retryStatus.onclick=()=>check(false);retryStatus.setAttribute('data-entitlement-retry','');note.append(document.createElement('br'),retryStatus);}}const visibility=(readOnly && (window.hosshiiStatusReason!=='expired'||tab.id!=='tab-clock' && tab.id!=='tab-guide'))?'block':'none';if(note.style.display!==visibility)note.style.display=visibility;}
     }
     // 期限切れ時も日付移動・バイト先切替・登録済みシフトの閲覧は許可。
     const shiftModal=document.getElementById('shiftInputModal');
@@ -5975,7 +5880,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const area=document.getElementById('shiftInputScrollArea');
         if(area)area.prepend(notice);
       }
-      notice.textContent='無料期間終了のため閲覧のみできます。登録・変更・削除はできません。';
+      notice.textContent=inactiveMessage();
       notice.style.display=readOnly?'block':'none';
     }
     // 設定の入力欄は閲覧専用。バックアップ書き出し・画面移動は妨げない。
@@ -5998,8 +5903,17 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     }).observe(hosshiiSettingsNode,{childList:true,subtree:true});
   }
   function applyStatus(data){
-    window.hosshiiReadOnly=!(data.status==='paid'||data.status==='trialing'||data.status==='active'||data.trialActive===true);
-    setTrialBanner(data);
+    const expired=['expired','blocked','past_due'].includes(data.status);
+    entitlementPaid=!expired&&data.status==='paid';
+    const end=data.trialExpiresAt||data.trial_ends_at||data.trialEndsAt||data.trialEndAt;
+    entitlementUntil=end?Date.parse(end):0;
+    const trial=!expired&&!entitlementPaid&&(data.status==='trialing'||data.status==='active'||data.trialActive===true)&&Number.isFinite(entitlementUntil)&&entitlementUntil>Date.now();
+    entitlementVerifiedAt=Date.now();
+    window.hosshiiReadOnly=!(entitlementPaid||trial);
+    window.hosshiiStatusReason=window.hosshiiReadOnly?(expired||entitlementUntil&&entitlementUntil<=Date.now()?'expired':'unavailable'):'active';
+    clearTimeout(expiryTimer);
+    if(trial)expiryTimer=setTimeout(()=>{window.hosshiiReadOnly=true;window.hosshiiStatusReason='expired';hosshiiSyncExpiredUI();void check(false);},Math.min(2147483647,entitlementUntil-Date.now()+1));
+    setTrialBanner(window.hosshiiReadOnly&&window.hosshiiStatusReason==='expired'?{...data,status:'expired',trialActive:false}:data);
     hosshiiSyncExpiredUI();
     if (window.hosshiiReadOnly) {
       // 閲覧中のシフト画面は閉じない。
@@ -6019,7 +5933,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         const action=b.getAttribute('onclick')||'';
         const isCopy=action.includes('copyLastMonthShifts');
         if(isCopy)return; // copyLastMonthShifts 自体が拒否し、直下に専用案内を表示
-        if(action.includes('exportAppData'))return;
+        if(action.includes('exportAppData')||action.includes('hosshiiCloudBackupSave')||b.hasAttribute('data-entitlement-retry'))return;
         if(action.includes('importFileInput') || /読み込む/.test(label)){
           ev.preventDefault();ev.stopImmediatePropagation();hosshiiBlockEdit();return;
         }
@@ -6046,7 +5960,8 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     const freshToken=window.liff?.getIDToken?.();
     if(!freshToken)throw Error('LINEの認証情報を取得できません。LINE公式アカウントのトークからアプリを開き直してください。');
     idToken=freshToken;
-    const r=await fetch(STATUS_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({idToken,...(accept?{consentAccepted:true,termsVersion:'2026-10-29',privacyVersion:'2026-10-29'}: {})})});
+    const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),10000);
+    let r;try{r=await fetch(STATUS_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,body:JSON.stringify({idToken,...(accept?{consentAccepted:true,termsVersion:'2026-10-29',privacyVersion:'2026-10-29'}: {})})});}finally{clearTimeout(timeout);}
     let data;try{data=await r.json();}catch(_){throw Error('サーバーの応答を読み取れませんでした（HTTP '+r.status+'）。');}
     if(!r.ok){
       if(r.status===401)throw Error('LINE認証がサーバーで拒否されました（401）。LINE公式アカウントのトークからアプリを開き直してください。繰り返す場合はサーバー側のLINEトークン検証を確認する必要があります。');
@@ -6057,17 +5972,19 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   async function check(accept){
     if(statusBusy)return;
     statusBusy=true;
+    if(gate.hidden){window.hosshiiReadOnly=true;window.hosshiiStatusReason='checking';hosshiiSyncExpiredUI();}
     message.textContent=accept?'同意内容を保存しています…':'LINEの利用状況を確認中';
     consent.hidden=true;retry.hidden=true;
     try{
       const data=await callStatus(accept);
       const state=parseStatus(data);
       if(state==='active'){applyStatus(data);hideGate();return;}
-      if(state==='new'){consentView();return;}
+      if(state==='new'){window.hosshiiReadOnly=true;window.hosshiiStatusReason='checking';gate.hidden=false;consentView();return;}
       if(state==='expired'){applyStatus(data);hideGate();return;}
+      window.hosshiiReadOnly=true;window.hosshiiStatusReason='unavailable';hosshiiSyncExpiredUI();
       showError('サーバーからの利用状態を確認できませんでした。接続仕様を確認してください。');
       console.info('LINE status response keys:',Object.keys(data||{}));
-    }catch(e){showError('LINE・無料体験の確認ができません。\n'+e.message);}
+    }catch(e){window.hosshiiReadOnly=true;window.hosshiiStatusReason='unavailable';hosshiiSyncExpiredUI();showError('LINE・無料体験の確認ができません。\n'+e.message);}
     finally{statusBusy=false;}
   }
   async function initialize(){
@@ -6087,6 +6004,10 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   updateStart();
   start.addEventListener('click',async()=>{if(!docsReady||!agree.checked||!ageAgree.checked||!idToken)return;start.disabled=true;await check(true);updateStart();});
   retry.addEventListener('click',initialize);
+  window.addEventListener('focus',()=>{if(gate.hidden)void check(false);});
+  window.addEventListener('pageshow',e=>{if(e.persisted&&gate.hidden)void check(false);});
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&gate.hidden)void check(false);});
+  setInterval(()=>{if(document.visibilityState==='visible'&&gate.hidden)void check(false);},300000);
   initialize();
 })();
 </script>

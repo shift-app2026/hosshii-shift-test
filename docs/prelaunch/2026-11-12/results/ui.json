@@ -1,0 +1,460 @@
+{
+  "screenshots": 56,
+  "widths": [
+    320,
+    375
+  ],
+  "stylesEqualAfterTransitions": true,
+  "errors": [],
+  "externalRequests": [],
+  "screens": [
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "salary",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "salary-table",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "annual",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "calendar",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "list",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "settings",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "settings-wage",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "settings-paid",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "guide",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "shift",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "shift-bottom",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "clock",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "break",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "salary",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "salary-table",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "annual",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "calendar",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "list",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "settings",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "settings-wage",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "settings-paid",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "guide",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "shift",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "shift-bottom",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "clock",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "break",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "effective-date-empty",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "effective-date-retroactive",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "salary",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "salary-table",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "annual",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "calendar",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "list",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "settings",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "settings-wage",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "settings-paid",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "guide",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "shift",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "shift-bottom",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "clock",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "break",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "salary",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "salary-table",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "annual",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "calendar",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "list",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "settings",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "settings-wage",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "settings-paid",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "guide",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "shift",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "shift-bottom",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "clock",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "break",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "effective-date-empty",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "effective-date-retroactive",
+      "overflow": false,
+      "blocked": [],
+      "overlap": []
+    }
+  ]
+}

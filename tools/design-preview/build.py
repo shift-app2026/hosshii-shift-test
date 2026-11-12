@@ -10,9 +10,10 @@ OUT.mkdir(parents=True,exist_ok=True)
 assert not any(OUT.iterdir()), 'Use an empty output directory to avoid obsolete files'
 for name in ['preview-bootstrap.js','preview-ui.js']:(OUT/name).write_bytes((Path(__file__).parent/name).read_bytes())
 src=(ROOT/'index.html').read_text(); sha=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
-assert subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,text=True).strip()=='design/bordeaux-rose-champagne'
+branch=subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,text=True).strip()
+assert branch in ['design/bordeaux-rose-champagne','fix/prelaunch-integrity']
 font_assets=['fonts/ZenMaruGothic-Medium.woff2','fonts/ZenMaruGothic-Bold.woff2','fonts/zenmarugothic-OFL.txt']
-source_hashes={n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in ['index.html','bordeaux-rose.css','zen-maru.css','android-readability.css',*font_assets]}
+source_hashes={n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in ['index.html','bordeaux-rose.css','zen-maru.css','android-readability.css','prelaunch-model.js','prelaunch-core.js','prelaunch-ui.js','prelaunch.css',*font_assets]}
 s=src
 s,n=re.subn(r'<script id="line-auth-supabase-test-20261028">[\s\S]*?</script>','<!-- Preview: real authentication and trial code excluded. -->',s);assert n==1
 s,n=re.subn(r'<script src="https://static.line-scdn.net/[^>]+></script>','',s);assert n==1
@@ -32,9 +33,10 @@ s=s.replace('<head>', '<head>\n<meta http-equiv="Content-Security-Policy" conten
 s=s.replace('</body>','<script src="./preview-ui.js"></script>\n</body>')
 # Original application remains untouched. Only the isolated output has disabled I/O.
 (OUT/'index.html').write_text(s)
-for n in ['bordeaux-rose.css','zen-maru.css','android-readability.css',*font_assets]:
+for n in ['bordeaux-rose.css','zen-maru.css','android-readability.css','prelaunch-model.js','prelaunch-core.js','prelaunch-ui.js','prelaunch.css',*font_assets]:
  (OUT/n).parent.mkdir(parents=True,exist_ok=True)
  (OUT/n).write_bytes((ROOT/n).read_bytes())
+ if n=='prelaunch-core.js':(OUT/n).write_text((ROOT/n).read_text().replace('localStorage','previewStorage'))
 for n in ['icon-192.png']:(OUT/n).write_bytes((ROOT/n).read_bytes())
 (OUT/'_headers').write_text('/*\n  Content-Security-Policy: '+csp+"; frame-ancestors 'none'\n  Referrer-Policy: no-referrer\n  X-Content-Type-Options: nosniff\n  X-Robots-Tag: noindex, nofollow, noarchive\n  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()\n  Cache-Control: no-store\n")
 (OUT/'robots.txt').write_text('User-agent: *\nDisallow: /\n')
@@ -61,7 +63,7 @@ else:
  (fdir/'fonts.css').write_text(css)
  for family in ['notosansjp','notoserifjp','cinzel']:
   subprocess.run(['curl','-fsSL','--retry','2','--max-time','40','https://raw.githubusercontent.com/google/fonts/main/ofl/'+family+'/OFL.txt','-o',str(fdir/(family+'-OFL.txt'))],check=True)
-manifest={'sourceRepository':'shift-app2026/hosshii-shift-test','sourcePR':8,'sourceBranch':'design/bordeaux-rose-champagne','sourceCommit':sha,'sourceHashes':source_hashes,'fontFiles':len(list(fdir.glob('*.woff2'))),'previewOnly':True,'storage':'memory by default; device_test=1 persists synthetic fixtures only in a separate browser-storage namespace','externalServices':'excluded; connect-src none'}
+manifest={'sourceRepository':'shift-app2026/hosshii-shift-test','sourcePR':None if branch=='fix/prelaunch-integrity' else 8,'baseDesignPR':8,'sourceBranch':branch,'sourceCommit':sha,'sourceHashes':source_hashes,'fontFiles':len(list(fdir.glob('*.woff2'))),'previewOnly':True,'storage':'memory by default; device_test=1 persists synthetic fixtures only in a separate browser-storage namespace','externalServices':'excluded; connect-src none'}
 (OUT/'preview-source.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(manifest,ensure_ascii=False))
 
