@@ -5961,8 +5961,12 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     if(!freshToken)throw Error('LINEの認証情報を取得できません。LINE公式アカウントのトークからアプリを開き直してください。');
     idToken=freshToken;
     const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),10000);
-    let r;try{r=await fetch(STATUS_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,body:JSON.stringify({idToken,...(accept?{consentAccepted:true,termsVersion:'2026-10-29',privacyVersion:'2026-10-29'}: {})})});}finally{clearTimeout(timeout);}
-    let data;try{data=await r.json();}catch(_){throw Error('サーバーの応答を読み取れませんでした（HTTP '+r.status+'）。');}
+    let r,data;
+    try {
+      r=await fetch(STATUS_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,body:JSON.stringify({idToken,...(accept?{consentAccepted:true,termsVersion:'2026-10-29',privacyVersion:'2026-10-29'}: {})})});
+      // Keep the deadline active until the response body has finished too.
+      try {data=await r.json();}catch(_){throw Error('サーバーの応答を読み取れませんでした（HTTP '+r.status+'）。');}
+    } finally {clearTimeout(timeout);}
     if(!r.ok){
       if(r.status===401)throw Error('LINE認証がサーバーで拒否されました（401）。LINE公式アカウントのトークからアプリを開き直してください。繰り返す場合はサーバー側のLINEトークン検証を確認する必要があります。');
       throw Error('接続に失敗しました（HTTP '+r.status+'：'+String(data.error||'確認できません')+'）。');

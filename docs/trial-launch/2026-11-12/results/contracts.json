@@ -1,0 +1,263 @@
+{
+  "kind": "mock-client-contracts-not-live-integration",
+  "cases": [
+    {
+      "name": "future-trial-allowed",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "expiry-field-trialExpiresAt",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "expiry-field-trial_ends_at",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "expiry-field-trialEndsAt",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "expiry-field-trialEndAt",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "exactExpiry-denies-write",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "missingExpiry-denies-write",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "invalidExpiry-denies-write",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "expiredConflict-denies-write",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "blocked-denies-write",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "pastDue-denies-write",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "recover-with-valid-trial",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "explicit-consent-request-and-age-gate",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "status-http-401-denied",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "status-http-403-denied",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "status-http-500-denied",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "malformed-and-unknown-status-denied",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "fresh-line-token-after-retry",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "missing-token-no-server-request",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "mock-save-preserves-v2-envelope",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "backup-failure-401-no-success",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "backup-failure-500-no-success",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "stripped-history-rejected-without-overwrite",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "expired-export-allowed-restore-denied",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "future-trial-allowed",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "expiry-field-trialExpiresAt",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "expiry-field-trial_ends_at",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "expiry-field-trialEndsAt",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "expiry-field-trialEndAt",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "exactExpiry-denies-write",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "missingExpiry-denies-write",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "invalidExpiry-denies-write",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "expiredConflict-denies-write",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "blocked-denies-write",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "pastDue-denies-write",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "recover-with-valid-trial",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "explicit-consent-request-and-age-gate",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "status-http-401-denied",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "status-http-403-denied",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "status-http-500-denied",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "malformed-and-unknown-status-denied",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "fresh-line-token-after-retry",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "missing-token-no-server-request",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "mock-save-preserves-v2-envelope",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "backup-failure-401-no-success",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "backup-failure-500-no-success",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "stripped-history-rejected-without-overwrite",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "expired-export-allowed-restore-denied",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "name": "line-logged-out",
+      "passed": true
+    },
+    {
+      "name": "line-init-failure",
+      "passed": true
+    },
+    {
+      "name": "line-missing-initial-token",
+      "passed": true
+    },
+    {
+      "name": "status-timeout-and-retry",
+      "passed": true
+    }
+  ],
+  "unexpectedRequests": [],
+  "pageErrors": []
+}

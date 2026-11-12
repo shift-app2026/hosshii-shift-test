@@ -1,0 +1,1 @@
+BEFORE: partial HTTP body bypasses the 10s timeout; checking remains stuck. Reproduced.
