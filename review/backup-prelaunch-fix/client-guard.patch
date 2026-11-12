@@ -1,0 +1,19 @@
+--- a/index.html
++++ b/index.html
+@@ -4754,6 +4754,7 @@
+     async function hosshiiCloudBackupSave(event) {
+       if (event) event.preventDefault();
+       if (hosshiiCloudBackupBusy) return;
++      if (hosshiiBlockEdit()) return;
+       if (storageWriteBlocked) { showStorageSafetyWarning(); return; }
+       hosshiiCloudBackupBusy = true;
+       const backupButton = event?.currentTarget;
+@@ -4778,7 +4779,7 @@
+     async function hosshiiCloudBackupLoad(event) {
+       if (event) event.preventDefault();
+       if (hosshiiCloudBackupBusy) return;
+-      if (window.hosshiiReadOnly === true) { hosshiiBlockEdit(); return; }
++      if (hosshiiBlockEdit()) return;
+       if (storageWriteBlocked) { showStorageSafetyWarning(); return; }
+       hosshiiCloudBackupBusy = true;
+       const backupButton = event?.currentTarget;
