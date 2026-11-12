@@ -1,0 +1,8 @@
+initial-explicit-date-and-cancel passed
+retroactive-consent-and-immutable-revisions passed
+history-stripping-backup-rejected passed
+overnight-retroactive-consent passed
+monthly-period-retroactive-consent passed
+failed-first-migration-preserves-legacy passed
+actual-deadline-timer passed
+real-browser-restart passed

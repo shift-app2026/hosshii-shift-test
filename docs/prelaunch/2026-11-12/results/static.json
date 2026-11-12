@@ -1,0 +1,13 @@
+{
+  "inlineScriptSyntaxPassed": 13,
+  "externalScriptsPassed": 3,
+  "unchangedAssets": [
+    "bordeaux-rose.css",
+    "zen-maru.css",
+    "android-readability.css",
+    "fonts/ZenMaruGothic-Medium.woff2",
+    "fonts/ZenMaruGothic-Bold.woff2"
+  ],
+  "allExistingInlineStylesIdentical": true,
+  "baseline": "0801e96568684b45444cee9033d200bc2501099e"
+}

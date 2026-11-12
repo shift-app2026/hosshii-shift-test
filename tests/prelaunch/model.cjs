@@ -1,0 +1,15 @@
+const assert=require('assert/strict'),M=require('../../prelaunch-model.js');
+const base={name:'ローズ',wageSlots:[{start:'00:00',end:'00:00',wage:1200,bType:'weekend',bVal:100}],paid:1100,transMonth:3100,transDay:100,allowanceMonth:6200,allowanceDay:50,allowanceMemo:'手当'};
+const legacy=M.normalizeJobHistory({...base},base),old=JSON.stringify(legacy.payBaseline),next={...M.snapshot(base),paid:1500,transMonth:6200,transDay:200,allowanceMonth:9300,allowanceDay:150,wageSlots:[{start:'00:00',end:'00:00',wage:1500,bType:'weekend',bVal:200}]};
+legacy.payHistory.push({id:'v1',effectiveFrom:'2026-11-01',rates:M.validateRates(next)});
+assert.equal(M.ratesFor(legacy,'2026-10-31').paid,1100);assert.equal(M.ratesFor(legacy,'2026-11-01').paid,1500);assert.equal(JSON.stringify(legacy.payBaseline),old);
+assert.deepEqual(M.monthlyBenefits(legacy,'2026-10-21','2026-11-20',true),{trans:5100,allow:8200});assert.deepEqual(M.monthlyBenefits(legacy,'2026-10-21','2026-11-20',false),{trans:0,allow:0});
+const initial=M.normalizeJobHistory({name:'新規',...M.snapshot({})},undefined);assert.equal(initial.payBaseline,null);assert.equal(M.ratesFor(initial,'2026-11-1').paid,0);
+for(const date of ['2026-2-29','2026-13-1','2026-0-1','2026-11-31','01-01-2026'])assert.throws(()=>M.isoDate(date));assert.equal(M.isoDate('2024-2-29'),'2024-02-29');assert.equal(M.dayKey('2026-11-01'),'2026-11-1');
+const normal={start:'09:00',end:'17:00',breakMins:60};assert(M.validateShift(normal));for(const rest of [-1,480,600,1.5,Infinity])assert.throws(()=>M.validateShift({...normal,breakMins:rest}));assert.throws(()=>M.validateShift({...normal,start:'99:99'}));assert.throws(()=>M.validateShift({...normal,end:'09:00'}));assert(M.validateShift({start:'22:00',end:'02:00',breakMins:30}));
+assert.throws(()=>M.validateRates({...base,wageSlots:[...base.wageSlots,{start:'09:00',end:'17:00',wage:2000,bType:'weekday',bVal:0}]}));
+const validSlots=[{start:'22:00',end:'02:00',wage:1500,bType:'weekday',bVal:0},{start:'02:00',end:'06:00',wage:1400,bType:'weekday',bVal:0}];assert(M.validateRates({...base,wageSlots:validSlots}));assert.throws(()=>M.validateRates({...base,wageSlots:[validSlots[0],{...validSlots[1],start:'01:59'}]}));
+const n=M.normalizeShifts({'2026-11-01':{job1:[normal]},'2026-11-1':{job1:[normal]}});assert.deepEqual(Object.keys(n),['2026-11-1']);assert.throws(()=>M.normalizeShifts({'2026-11-01':{job1:[normal]},'2026-11-1':{job1:[{...normal,end:'18:00'}]}}));
+const paid=M.normalizeShifts({'2026-11-01':{job1:[{isPaidLeave:true,hours:0}]}},{job1:{paidHours:8}});assert.equal(paid['2026-11-1'].job1[0].hours,8);
+const restored=M.normalizeJobHistory({...base},JSON.parse(JSON.stringify(legacy)));assert.deepEqual(restored.payHistory,legacy.payHistory);assert.equal(M.ratesFor(restored,'2026-10-31').transMonth,3100);
+console.log('Pure model: dates, shifts, overlapping rates, complete pay history, legacy migration, monthly proration, roundtrip passed');
