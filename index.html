@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta http-equiv="Content-Security-Policy" content="connect-src 'none'; form-action 'none'; base-uri 'self'">
+<script src="./isolated-config.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>ほっしーシフト</title>
@@ -17,7 +19,7 @@
   
   <link rel="apple-touch-icon" href="./icon-192.png">
   <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
-  <link rel="manifest" href="./manifest.webmanifest">
+  <!-- Optional manifest omitted: no manifest file exists in fixed source. -->
   <meta name="theme-color" content="#881337">
 
   <style>/* Tailwind CSS（ビルド済み） */
@@ -4722,7 +4724,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     // 2026-11-02: テスト用のLINE認証付きSupabaseバックアップ。
     // ブラウザからサービスキーは絶対に送らない。LINE IDトークンだけをサーバーで検証する。
-    const HOSSHII_BACKUP_ENDPOINT = 'https://urwmuafkmlgzanpiksfv.supabase.co/functions/v1/hosshii-backup';
+    const HOSSHII_BACKUP_ENDPOINT = window.HOSSHII_ISOLATED_CONFIG.backupEndpoint;
     let hosshiiCloudBackupBusy = false;
     function hosshiiBackupToken() {
       if (!window.liff || typeof window.liff.getIDToken !== 'function') {
@@ -4733,6 +4735,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
       return token;
     }
     async function hosshiiBackupRequest(action, backupData) {
+      if (!window.hosshiiIsolatedReady()) throw Error('隔離環境の接続先は未設定です。');
       if (hosshiiBlockEdit()) throw new Error('現在はクラウド保存・復元を利用できません。端末への書き出しは利用できます。');
       const idToken = hosshiiBackupToken();
       const body = {action, idToken};
@@ -5734,16 +5737,16 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 /* LINE版 初回同意: サーバーに同意日時・文書版を保存。利用制限の全経路検証は別途必要。 */
 (function(){
   'use strict';
-  const LIFF_ID = '2011929118-Fyk1pdlU';
-  const STATUS_ENDPOINT = 'https://urwmuafkmlgzanpiksfv.supabase.co/functions/v1/line-trial-status';
+  const LIFF_ID = window.HOSSHII_ISOLATED_CONFIG.liffId;
+  const STATUS_ENDPOINT = window.HOSSHII_ISOLATED_CONFIG.statusEndpoint;
   const gate=document.getElementById('lineAuthGate');
   const message=document.getElementById('lineAuthMessage');
   const consent=document.getElementById('lineAuthConsent');
   const agree=document.getElementById('lineAuthAgree');
   const ageAgree=document.getElementById('lineAuthAgeAgree');
   // 公開済みの正式なURLを設定してください（未設定時は同意開始不可）。
-  const TERMS_URL = 'https://shift-app2026.github.io/hosshii-shift-line/terms.html';
-  const PRIVACY_URL = 'https://shift-app2026.github.io/hosshii-shift-line/privacy.html';
+  const TERMS_URL = new URL('./terms.html', location.href).href;
+  const PRIVACY_URL = new URL('./privacy.html', location.href).href;
   const docsReady = /^https:\/\//.test(TERMS_URL) && /^https:\/\//.test(PRIVACY_URL);
   if (docsReady) {
     document.getElementById('lineAuthTermsLink').href=TERMS_URL;
@@ -5967,6 +5970,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     return null;
   }
   async function callStatus(accept){
+    if (!window.hosshiiIsolatedReady()) throw Error('隔離環境の接続先は未設定です。');
     // Always read the current LIFF token, including after consent is displayed.
     const freshToken=window.liff?.getIDToken?.();
     if(!freshToken)throw Error('LINEの認証情報を取得できません。LINE公式アカウントのトークからアプリを開き直してください。');
@@ -6003,6 +6007,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
     finally{statusBusy=false;}
   }
   async function initialize(){
+    if (!window.hosshiiIsolatedReady()) { showError('隔離環境の接続先は未設定です。接続は行いません。'); return; }
     consent.hidden=true;retry.hidden=true;
     try{
       if(!window.liff)throw Error('LINE認証の読み込みに失敗しました。');

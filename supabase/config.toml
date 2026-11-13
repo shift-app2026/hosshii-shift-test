@@ -1,0 +1,6 @@
+# Isolated preparation only. Not linked to any Supabase project.
+project_id = "hosshii-shift-trial-verify-unconfigured"
+[functions.line-trial-status]
+verify_jwt = false
+[functions.hosshii-backup]
+verify_jwt = false

@@ -1,0 +1,112 @@
+{
+  "baseCommit": "ebfaae68d6726844da1a55f7dbd1767db0928e8c",
+  "sourceFiles": [
+    {
+      "path": "android-readability.css",
+      "gitBlob": "4b3ef77bd1279d19c3ed91233b1a90a6d824bca3",
+      "type": "blob"
+    },
+    {
+      "path": "apple-touch-icon.png",
+      "gitBlob": "f05d7e8a47949307c17eb7d536f60d94da71671d",
+      "type": "blob"
+    },
+    {
+      "path": "bordeaux-rose.css",
+      "gitBlob": "14ed80bf689778e457a2296ad75f56143433134d",
+      "type": "blob"
+    },
+    {
+      "path": "fonts/README.md",
+      "gitBlob": "93cebc97da45d1ac7732740db3681259e1094886",
+      "type": "blob"
+    },
+    {
+      "path": "fonts/ZenMaruGothic-Bold.woff2",
+      "gitBlob": "2d1ae4bddd816b89c376cc0901be24765064bc6a",
+      "type": "blob"
+    },
+    {
+      "path": "fonts/ZenMaruGothic-Medium.woff2",
+      "gitBlob": "42e8ff0a61984dfcc33061f1a99bcbd94b0eff0f",
+      "type": "blob"
+    },
+    {
+      "path": "fonts/zenmarugothic-OFL.txt",
+      "gitBlob": "7dc44f8017161dc4e1346b24cfd6e195c402633a",
+      "type": "blob"
+    },
+    {
+      "path": "icon-192.png",
+      "gitBlob": "f69b5f7a21956904836cc4fb5b7283025cd4c43f",
+      "type": "blob"
+    },
+    {
+      "path": "icon-512.png",
+      "gitBlob": "0a4f5d99c4088eb78f428a904633f2a1411d56bc",
+      "type": "blob"
+    },
+    {
+      "path": "icon-maskable-512.png",
+      "gitBlob": "0a4f5d99c4088eb78f428a904633f2a1411d56bc",
+      "type": "blob"
+    },
+    {
+      "path": "index.html",
+      "gitBlob": "7181f2abd23fcfd96902b5c9b5ca7f87bf790153",
+      "type": "blob"
+    },
+    {
+      "path": "paid-terms.html",
+      "gitBlob": "a3ad9395ad8242b11c90407d4de4114541f990c2",
+      "type": "blob"
+    },
+    {
+      "path": "prelaunch-core.js",
+      "gitBlob": "0cef553d930d7216466263d619b7ad94dade89ab",
+      "type": "blob"
+    },
+    {
+      "path": "prelaunch-model.js",
+      "gitBlob": "182dfc745fb61b562bc9d508ffe110a9ca76e4bf",
+      "type": "blob"
+    },
+    {
+      "path": "prelaunch-ui.js",
+      "gitBlob": "7bf68137b5ad70000c03cbaee9c9f227f5b6767e",
+      "type": "blob"
+    },
+    {
+      "path": "prelaunch.css",
+      "gitBlob": "2119e0ea977a0c3af0d8b95eb0a49c01b469b711",
+      "type": "blob"
+    },
+    {
+      "path": "privacy.html",
+      "gitBlob": "37c44c309fcb86ae7c07b57ca1a4f1f4b8079dc9",
+      "type": "blob"
+    },
+    {
+      "path": "terms.html",
+      "gitBlob": "831f17a10154926f881dff1204620154a95c12e8",
+      "type": "blob"
+    },
+    {
+      "path": "zen-maru.css",
+      "gitBlob": "8f1a0c2522c4bdedfe6bfca0f82a701cbf8a72ca",
+      "type": "blob"
+    }
+  ],
+  "newFiles": [
+    "isolated-config.js"
+  ],
+  "mode": "unconfigured-no-publish",
+  "exclude": [
+    "review/",
+    "tests/",
+    "docs/",
+    "supabase/",
+    "tools/",
+    "test_初回同意_連携版_index_20261029.html"
+  ]
+}

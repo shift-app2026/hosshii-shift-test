@@ -1,0 +1,22 @@
+(node:1003) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ all connection values empty and disabled (3.53025ms)
+✔ unconfigured app has network-blocking CSP before SDK (0.374454ms)
+✔ HTML has no production connection literals or existing LIFF ID (1.014448ms)
+✔ production endpoints and existing LIFF explicitly denied (1.621455ms)
+✔ LIFF initialization stops before consent or SDK access (2.137324ms)
+✔ backup request stops before token read or network (2.843685ms)
+✔ backend readiness never requests credentials (0.337532ms)
+✔ backend denies production project and mismatched project URL (0.419763ms)
+✔ backend metadata can match only an explicitly enabled test project (0.374544ms)
+✔ line-trial-status: unset config returns 503 without LINE/DB/secret access (65.397719ms)
+✔ hosshii-backup: unset config returns 503 without LINE/DB/secret access (11.761261ms)
+✔ static manifest includes required assets but excludes legacy test HTML (0.543278ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 339.827313
