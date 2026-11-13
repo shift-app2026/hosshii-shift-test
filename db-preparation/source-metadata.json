@@ -1,0 +1,400 @@
+{
+  "①.csv": [
+    {
+      "table_name": "app_backups",
+      "column_order": "1",
+      "column_name": "id",
+      "column_type": "bigint",
+      "not_null": "true",
+      "default_expression": "null",
+      "identity_kind": "a",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_backups",
+      "column_order": "2",
+      "column_name": "line_user_id",
+      "column_type": "text",
+      "not_null": "true",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_backups",
+      "column_order": "3",
+      "column_name": "backup_data",
+      "column_type": "jsonb",
+      "not_null": "true",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_backups",
+      "column_order": "4",
+      "column_name": "updated_at",
+      "column_type": "timestamp with time zone",
+      "not_null": "true",
+      "default_expression": "now()",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "1",
+      "column_name": "id",
+      "column_type": "bigint",
+      "not_null": "true",
+      "default_expression": "null",
+      "identity_kind": "d",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "2",
+      "column_name": "created_at",
+      "column_type": "timestamp with time zone",
+      "not_null": "true",
+      "default_expression": "now()",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "3",
+      "column_name": "line_user_id",
+      "column_type": "text",
+      "not_null": "true",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "4",
+      "column_name": "trial_started_at",
+      "column_type": "timestamp with time zone",
+      "not_null": "false",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "5",
+      "column_name": "purchased_at",
+      "column_type": "timestamp with time zone",
+      "not_null": "false",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "6",
+      "column_name": "square_payment_id",
+      "column_type": "text",
+      "not_null": "false",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "7",
+      "column_name": "subscription_status",
+      "column_type": "text",
+      "not_null": "false",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "8",
+      "column_name": "subscription_id",
+      "column_type": "text",
+      "not_null": "false",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "9",
+      "column_name": "subscription_ends_at",
+      "column_type": "timestamp with time zone",
+      "not_null": "false",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "10",
+      "column_name": "last_payment_at",
+      "column_type": "timestamp with time zone",
+      "not_null": "false",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "11",
+      "column_name": "payment_status",
+      "column_type": "text",
+      "not_null": "false",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "12",
+      "column_name": "trial_ends_at",
+      "column_type": "timestamp with time zone",
+      "not_null": "false",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "13",
+      "column_name": "consent_accepted_at",
+      "column_type": "timestamp with time zone",
+      "not_null": "false",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "14",
+      "column_name": "terms_version",
+      "column_type": "text",
+      "not_null": "false",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "15",
+      "column_name": "privacy_version",
+      "column_type": "text",
+      "not_null": "false",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "16",
+      "column_name": "application_code",
+      "column_type": "text",
+      "not_null": "true",
+      "default_expression": "generate_application_code()",
+      "identity_kind": "",
+      "generated_kind": ""
+    },
+    {
+      "table_name": "app_users",
+      "column_order": "17",
+      "column_name": "square_customer_id",
+      "column_type": "text",
+      "not_null": "false",
+      "default_expression": "null",
+      "identity_kind": "",
+      "generated_kind": ""
+    }
+  ],
+  "②.csv": [
+    {
+      "table_name": "app_backups",
+      "constraint_name": "app_backups_line_user_id_key",
+      "constraint_type": "UNIQUE",
+      "definition": "UNIQUE (line_user_id)",
+      "validated": "true",
+      "deferrable": "false",
+      "initially_deferred": "false"
+    },
+    {
+      "table_name": "app_backups",
+      "constraint_name": "app_backups_pkey",
+      "constraint_type": "PRIMARY KEY",
+      "definition": "PRIMARY KEY (id)",
+      "validated": "true",
+      "deferrable": "false",
+      "initially_deferred": "false"
+    },
+    {
+      "table_name": "app_users",
+      "constraint_name": "app_users_line_user_id_key",
+      "constraint_type": "UNIQUE",
+      "definition": "UNIQUE (line_user_id)",
+      "validated": "true",
+      "deferrable": "false",
+      "initially_deferred": "false"
+    },
+    {
+      "table_name": "app_users",
+      "constraint_name": "app_users_pkey",
+      "constraint_type": "PRIMARY KEY",
+      "definition": "PRIMARY KEY (id)",
+      "validated": "true",
+      "deferrable": "false",
+      "initially_deferred": "false"
+    },
+    {
+      "table_name": "app_users",
+      "constraint_name": "app_users_square_payment_id_key",
+      "constraint_type": "UNIQUE",
+      "definition": "UNIQUE (square_payment_id)",
+      "validated": "true",
+      "deferrable": "false",
+      "initially_deferred": "false"
+    },
+    {
+      "table_name": "app_users",
+      "constraint_name": "trial_dates_check",
+      "constraint_type": "CHECK",
+      "definition": "CHECK (trial_started_at IS NULL OR trial_ends_at IS NULL OR trial_ends_at = (trial_started_at + '21 days'::interval))",
+      "validated": "true",
+      "deferrable": "false",
+      "initially_deferred": "false"
+    }
+  ],
+  "③.csv": [
+    {
+      "table_name": "app_backups",
+      "index_name": "app_backups_line_user_id_key",
+      "is_primary": "false",
+      "is_unique": "true",
+      "is_valid": "true",
+      "definition": "CREATE UNIQUE INDEX app_backups_line_user_id_key ON public.app_backups USING btree (line_user_id)"
+    },
+    {
+      "table_name": "app_backups",
+      "index_name": "app_backups_pkey",
+      "is_primary": "true",
+      "is_unique": "true",
+      "is_valid": "true",
+      "definition": "CREATE UNIQUE INDEX app_backups_pkey ON public.app_backups USING btree (id)"
+    },
+    {
+      "table_name": "app_users",
+      "index_name": "app_users_application_code_unique",
+      "is_primary": "false",
+      "is_unique": "true",
+      "is_valid": "true",
+      "definition": "CREATE UNIQUE INDEX app_users_application_code_unique ON public.app_users USING btree (application_code)"
+    },
+    {
+      "table_name": "app_users",
+      "index_name": "app_users_line_user_id_key",
+      "is_primary": "false",
+      "is_unique": "true",
+      "is_valid": "true",
+      "definition": "CREATE UNIQUE INDEX app_users_line_user_id_key ON public.app_users USING btree (line_user_id)"
+    },
+    {
+      "table_name": "app_users",
+      "index_name": "app_users_line_user_id_unique",
+      "is_primary": "false",
+      "is_unique": "true",
+      "is_valid": "true",
+      "definition": "CREATE UNIQUE INDEX app_users_line_user_id_unique ON public.app_users USING btree (line_user_id)"
+    },
+    {
+      "table_name": "app_users",
+      "index_name": "app_users_pkey",
+      "is_primary": "true",
+      "is_unique": "true",
+      "is_valid": "true",
+      "definition": "CREATE UNIQUE INDEX app_users_pkey ON public.app_users USING btree (id)"
+    },
+    {
+      "table_name": "app_users",
+      "index_name": "app_users_square_customer_id_unique",
+      "is_primary": "false",
+      "is_unique": "true",
+      "is_valid": "true",
+      "definition": "CREATE UNIQUE INDEX app_users_square_customer_id_unique ON public.app_users USING btree (square_customer_id)"
+    },
+    {
+      "table_name": "app_users",
+      "index_name": "app_users_square_payment_id_key",
+      "is_primary": "false",
+      "is_unique": "true",
+      "is_valid": "true",
+      "definition": "CREATE UNIQUE INDEX app_users_square_payment_id_key ON public.app_users USING btree (square_payment_id)"
+    }
+  ],
+  "④.csv": [
+    {
+      "table_name": "app_users",
+      "trigger_name": "protect_trial_start",
+      "enabled_state": "通常有効",
+      "function_schema": "public",
+      "function_name": "prevent_trial_start_change",
+      "definition": "CREATE TRIGGER protect_trial_start BEFORE UPDATE ON app_users FOR EACH ROW EXECUTE FUNCTION prevent_trial_start_change()"
+    },
+    {
+      "table_name": "app_users",
+      "trigger_name": "set_trial_end_date_trigger",
+      "enabled_state": "通常有効",
+      "function_schema": "public",
+      "function_name": "set_trial_end_date",
+      "definition": "CREATE TRIGGER set_trial_end_date_trigger BEFORE INSERT OR UPDATE OF trial_started_at ON app_users FOR EACH ROW EXECUTE FUNCTION set_trial_end_date()"
+    }
+  ],
+  "➄.csv": [
+    {
+      "function_schema": "public",
+      "function_name": "generate_application_code",
+      "arguments": "",
+      "language": "sql",
+      "security_definer": "false",
+      "function_settings": "[\"search_path=\\\"\\\"\"]",
+      "review_status": "定義表示",
+      "definition": "CREATE OR REPLACE FUNCTION public.generate_application_code()\n RETURNS text\n LANGUAGE sql\n SET search_path TO ''\nAS $function$\r\n  SELECT upper(encode(extensions.gen_random_bytes(12), 'hex'));\r\n$function$\n"
+    },
+    {
+      "function_schema": "public",
+      "function_name": "prevent_trial_start_change",
+      "arguments": "",
+      "language": "plpgsql",
+      "security_definer": "false",
+      "function_settings": "null",
+      "review_status": "定義表示",
+      "definition": "CREATE OR REPLACE FUNCTION public.prevent_trial_start_change()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\r\nBEGIN\r\n  IF OLD.trial_started_at IS NOT NULL\r\n     AND NEW.trial_started_at IS DISTINCT FROM OLD.trial_started_at THEN\r\n    RAISE EXCEPTION 'Trial start date cannot be changed';\r\n  END IF;\r\n\r\n  RETURN NEW;\r\nEND;\r\n$function$\n"
+    },
+    {
+      "function_schema": "public",
+      "function_name": "set_trial_end_date",
+      "arguments": "",
+      "language": "plpgsql",
+      "security_definer": "false",
+      "function_settings": "[\"search_path=\\\"\\\"\"]",
+      "review_status": "定義表示",
+      "definition": "CREATE OR REPLACE FUNCTION public.set_trial_end_date()\n RETURNS trigger\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\r\nBEGIN\r\n  IF NEW.trial_started_at IS NOT NULL THEN\r\n    NEW.trial_ends_at := NEW.trial_started_at + INTERVAL '21 days';\r\n  END IF;\r\n\r\n  RETURN NEW;\r\nEND;\r\n$function$\n"
+    }
+  ],
+  "⑥.csv": [
+    {
+      "table_name": "app_backups",
+      "rls_enabled": "true",
+      "force_rls": "false",
+      "policy_count": "0"
+    },
+    {
+      "table_name": "app_users",
+      "rls_enabled": "true",
+      "force_rls": "false",
+      "policy_count": "0"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+test_column_compatibility_with_functions (__main__.Checks.test_column_compatibility_with_functions) ... ok
+test_creation_lexical_structure_and_no_row_writes (__main__.Checks.test_creation_lexical_structure_and_no_row_writes) ... ok
+test_exact_function_bodies_preserved (__main__.Checks.test_exact_function_bodies_preserved) ... ok
+test_identity_modes_not_uuid_guesses (__main__.Checks.test_identity_modes_not_uuid_guesses) ... ok
+test_indexes_preserved_not_deduplicated (__main__.Checks.test_indexes_preserved_not_deduplicated) ... ok
+test_jsonb_and_conflict_target (__main__.Checks.test_jsonb_and_conflict_target) ... ok
+test_metadata_counts (__main__.Checks.test_metadata_counts) ... ok
+test_no_replacement_of_existing_tables_or_functions (__main__.Checks.test_no_replacement_of_existing_tables_or_functions) ... ok
+test_no_sensitive_literals (__main__.Checks.test_no_sensitive_literals) ... ok
+test_no_user_rows_or_current_sequence_counters (__main__.Checks.test_no_user_rows_or_current_sequence_counters) ... ok
+test_readonly_queries_select_only (__main__.Checks.test_readonly_queries_select_only) ... ok
+test_required_unresolved_inputs_block_creation (__main__.Checks.test_required_unresolved_inputs_block_creation) ... ok
+test_rls_no_policies (__main__.Checks.test_rls_no_policies) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.013s
+
+OK
