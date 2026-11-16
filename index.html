@@ -1900,6 +1900,20 @@ background:#881337!important;background-color:#881337!important;border-color:#88
         return {};
       }
     }
+    function hosshiiEditBlockedMessage() {
+      switch (window.hosshiiStatusReason) {
+        case 'local-storage':
+          return window.hosshiiStorageMessage?.() || '端末の保存状態を確認できません。データを消去せず、再確認してください。';
+        case 'checking':
+          return '利用状況を確認しています。確認が完了するまで登録・変更はできません。';
+        case 'unavailable':
+          return '利用状況を確認できませんでした。通信を確認して再確認してください。データは閲覧できます。';
+        case 'expired':
+          return '無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。';
+        default:
+          return '現在は編集できません。利用状況と端末の保存状態を再確認してください。データは閲覧できます。';
+      }
+    }
     function hosshiiBlockEdit() {
       window.hosshiiCheckEntitlementClock?.();
       if(window.hosshiiStorageCanEdit && !window.hosshiiStorageCanEdit())return true;
@@ -3753,7 +3767,9 @@ background:#881337!important;background-color:#881337!important;border-color:#88
             note.style.cssText='white-space:pre-line;margin-top:8px;padding:10px;border:1px solid #fda4af;border-radius:10px;background:#fff1f2;color:#881337;font-size:13px;font-weight:bold;text-align:center;line-height:1.6';
             box.appendChild(note);
           }
-          note.textContent='無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。';
+          note.setAttribute('role', 'status');
+          note.textContent=hosshiiEditBlockedMessage();
+          note.hidden=false;
         }
         return false;
       }
@@ -5815,13 +5831,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   let idToken=null;
   let statusBusy=false;
   let entitlementUntil=0, entitlementPaid=false, entitlementVerifiedAt=0, expiryTimer=null;
-  const inactiveMessage=()=>window.hosshiiStatusReason==='local-storage'
-    ? window.hosshiiStorageMessage()
-    :window.hosshiiStatusReason==='checking'
-    ? '利用状況を確認しています。確認が完了するまで登録・変更はできません。'
-    :window.hosshiiStatusReason==='unavailable'
-      ? '利用状況を確認できませんでした。通信を確認して再確認してください。データは閲覧できます。'
-      : '無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。';
+  const inactiveMessage=hosshiiEditBlockedMessage;
   window.hosshiiCheckEntitlementClock=function(){
     const stale=entitlementPaid && Date.now()-entitlementVerifiedAt>300000;
     if(stale || (!entitlementPaid && (!entitlementUntil || Date.now()>=entitlementUntil))){
@@ -5925,6 +5935,11 @@ background:#881337!important;background-color:#881337!important;border-color:#88
   const hosshiiExpiredMessage = inactiveMessage;
   function hosshiiSyncExpiredUI(){
     const readOnly = window.hosshiiReadOnly === true;
+    for (const note of document.querySelectorAll('#hosshiiCopyNotice, #hosshiiListCopyNotice')) {
+      const message=hosshiiEditBlockedMessage();
+      if(note.textContent!==message)note.textContent=message;
+      if(note.hidden!==!readOnly)note.hidden=!readOnly;
+    }
     for(const tab of document.querySelectorAll('#appScroll > .tab-content')){
       let note=tab.querySelector('.hosshii-expired-permanent');
       if(readOnly && !note){

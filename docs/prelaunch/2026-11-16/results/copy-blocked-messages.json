@@ -1,0 +1,186 @@
+{
+  "scope": "Mobile Chromium; mock LINE/status; real shared-context Web Locks and localStorage; no physical Android or live cloud",
+  "cases": [
+    {
+      "width": 320,
+      "reason": "busy",
+      "tab": "calendar",
+      "text": "別の画面でこのアプリを編集中です。そちらを閉じてから「再確認」を押してください。この画面は閲覧できます。",
+      "unchanged": true
+    },
+    {
+      "width": 320,
+      "reason": "busy",
+      "tab": "list",
+      "text": "別の画面でこのアプリを編集中です。そちらを閉じてから「再確認」を押してください。この画面は閲覧できます。",
+      "unchanged": true
+    },
+    {
+      "width": 320,
+      "reason": "lock-recovered",
+      "staleNoticesHidden": true,
+      "copyConfirmation": true
+    },
+    {
+      "width": 320,
+      "reason": "conflict",
+      "tab": "calendar",
+      "text": "別の画面で保存内容が更新されています。入力内容はこの画面に保持しています。必要な入力を書き出してから「再確認」で保存済みデータを読み直してください。",
+      "unchanged": true
+    },
+    {
+      "width": 320,
+      "reason": "conflict",
+      "tab": "list",
+      "text": "別の画面で保存内容が更新されています。入力内容はこの画面に保持しています。必要な入力を書き出してから「再確認」で保存済みデータを読み直してください。",
+      "unchanged": true
+    },
+    {
+      "width": 320,
+      "reason": "expired",
+      "tab": "calendar",
+      "text": "無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。",
+      "unchanged": true
+    },
+    {
+      "width": 320,
+      "reason": "expired",
+      "tab": "list",
+      "text": "無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。",
+      "unchanged": true
+    },
+    {
+      "width": 320,
+      "reason": "checking",
+      "tab": "calendar",
+      "text": "利用状況を確認しています。確認が完了するまで登録・変更はできません。",
+      "unchanged": true
+    },
+    {
+      "width": 320,
+      "reason": "checking",
+      "tab": "list",
+      "text": "利用状況を確認しています。確認が完了するまで登録・変更はできません。",
+      "unchanged": true
+    },
+    {
+      "width": 320,
+      "reason": "unavailable",
+      "tab": "calendar",
+      "text": "利用状況を確認できませんでした。通信を確認して再確認してください。データは閲覧できます。",
+      "unchanged": true
+    },
+    {
+      "width": 320,
+      "reason": "unavailable",
+      "tab": "list",
+      "text": "利用状況を確認できませんでした。通信を確認して再確認してください。データは閲覧できます。",
+      "unchanged": true
+    },
+    {
+      "width": 320,
+      "reason": "unknown",
+      "tab": "calendar",
+      "text": "現在は編集できません。利用状況と端末の保存状態を再確認してください。データは閲覧できます。",
+      "unchanged": true
+    },
+    {
+      "width": 320,
+      "reason": "unknown",
+      "tab": "list",
+      "text": "現在は編集できません。利用状況と端末の保存状態を再確認してください。データは閲覧できます。",
+      "unchanged": true
+    },
+    {
+      "width": 375,
+      "reason": "busy",
+      "tab": "calendar",
+      "text": "別の画面でこのアプリを編集中です。そちらを閉じてから「再確認」を押してください。この画面は閲覧できます。",
+      "unchanged": true
+    },
+    {
+      "width": 375,
+      "reason": "busy",
+      "tab": "list",
+      "text": "別の画面でこのアプリを編集中です。そちらを閉じてから「再確認」を押してください。この画面は閲覧できます。",
+      "unchanged": true
+    },
+    {
+      "width": 375,
+      "reason": "lock-recovered",
+      "staleNoticesHidden": true,
+      "copyConfirmation": true
+    },
+    {
+      "width": 375,
+      "reason": "conflict",
+      "tab": "calendar",
+      "text": "別の画面で保存内容が更新されています。入力内容はこの画面に保持しています。必要な入力を書き出してから「再確認」で保存済みデータを読み直してください。",
+      "unchanged": true
+    },
+    {
+      "width": 375,
+      "reason": "conflict",
+      "tab": "list",
+      "text": "別の画面で保存内容が更新されています。入力内容はこの画面に保持しています。必要な入力を書き出してから「再確認」で保存済みデータを読み直してください。",
+      "unchanged": true
+    },
+    {
+      "width": 375,
+      "reason": "expired",
+      "tab": "calendar",
+      "text": "無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。",
+      "unchanged": true
+    },
+    {
+      "width": 375,
+      "reason": "expired",
+      "tab": "list",
+      "text": "無料お試し期間が終了しました。\n新規の登録・修正・削除はできません。",
+      "unchanged": true
+    },
+    {
+      "width": 375,
+      "reason": "checking",
+      "tab": "calendar",
+      "text": "利用状況を確認しています。確認が完了するまで登録・変更はできません。",
+      "unchanged": true
+    },
+    {
+      "width": 375,
+      "reason": "checking",
+      "tab": "list",
+      "text": "利用状況を確認しています。確認が完了するまで登録・変更はできません。",
+      "unchanged": true
+    },
+    {
+      "width": 375,
+      "reason": "unavailable",
+      "tab": "calendar",
+      "text": "利用状況を確認できませんでした。通信を確認して再確認してください。データは閲覧できます。",
+      "unchanged": true
+    },
+    {
+      "width": 375,
+      "reason": "unavailable",
+      "tab": "list",
+      "text": "利用状況を確認できませんでした。通信を確認して再確認してください。データは閲覧できます。",
+      "unchanged": true
+    },
+    {
+      "width": 375,
+      "reason": "unknown",
+      "tab": "calendar",
+      "text": "現在は編集できません。利用状況と端末の保存状態を再確認してください。データは閲覧できます。",
+      "unchanged": true
+    },
+    {
+      "width": 375,
+      "reason": "unknown",
+      "tab": "list",
+      "text": "現在は編集できません。利用状況と端末の保存状態を再確認してください。データは閲覧できます。",
+      "unchanged": true
+    }
+  ],
+  "errors": []
+}
