@@ -1,0 +1,27 @@
+[
+  {
+    "file": "prelaunch-core.js",
+    "deployedSHA256": "ee1bb403ebe19db9699f3ec1047aeb57e616de2f5aad0e41b6ef4af9129b273d",
+    "matchesPublicCommit1ef93b0": true
+  },
+  {
+    "file": "prelaunch-model.js",
+    "deployedSHA256": "bd7a03fd75c3a93fb78cebabee00f540073f3a12d7e95a108843cbef74fd3d6f",
+    "matchesPublicCommit1ef93b0": true
+  },
+  {
+    "file": "prelaunch-ui.js",
+    "deployedSHA256": "d8f0a8835fbb91a18362997501996b7ace4a699e46711ca0831b98d3d042cd5c",
+    "matchesPublicCommit1ef93b0": true
+  },
+  {
+    "file": "isolated-config.js",
+    "deployedSHA256": "24b7493a3b81c58af31c9086e0b7fbfa4cdd49685631a924825dc1189e82798c",
+    "matchesPublicCommit1ef93b0": true
+  },
+  {
+    "file": "android-readability.css",
+    "deployedSHA256": "fc676c4572f69c30fe5794deb7a3482b30f57b24f8229be07dec281025992544",
+    "matchesPublicCommit1ef93b0": true
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "scope": "Functional working copy; no browser, network or user storage",
+  "passed": [
+    {
+      "name": "Independent wage/time calculation",
+      "cases": 144
+    },
+    {
+      "name": "Effective-date split at midnight for ordinary and paid shifts"
+    },
+    {
+      "name": "31-day payroll-period monthly benefit proration"
+    },
+    {
+      "id": "A1",
+      "name": "Fixed regression: Previous-year payment is counted in current-year received total",
+      "shift": "2025-12-15 09:00–10:00",
+      "scheduledPayday": "2026-01-01",
+      "actualPayday": "2025-12-31",
+      "expected2026": 0,
+      "actual2026": 0,
+      "reverseCase": {
+        "scheduledPayday": "2027-01-01",
+        "actualPayday": "2026-12-31",
+        "expected2026": 1200,
+        "actual2026": 1200
+      }
+    },
+    {
+      "id": "A2",
+      "name": "Fixed regression: Missing-rate guard bypassed through month copy",
+      "normalRegistration": "rejected",
+      "copied": "2026-10-15 → 2026-11-12 18:00–22:00",
+      "copySaved": false
+    },
+    {
+      "id": "A2-extra",
+      "name": "Fixed regression: Same guard bypassed by paid-to-ordinary toggle",
+      "convertedWithoutRate": false
+    },
+    {
+      "id": "A3",
+      "name": "Fixed regression: Month copy allows overlap with previous-day overnight shift",
+      "existing": "2026-11-11 22:00–02:00",
+      "copied": "2026-11-12 01:00–03:00",
+      "overlapMinutes": 60
+    },
+    {
+      "name": "A3 overlap among copy candidates rejected atomically"
+    },
+    {
+      "name": "A3 later conflict leaves no earlier day partially saved"
+    },
+    {
+      "name": "A2 existing unconfigured data can be restored and deleted"
+    },
+    {
+      "id": "A4",
+      "name": "Fixed regression: Second open instance overwrites newer shifts with an old snapshot",
+      "firstWindowSavedShift": true,
+      "secondWindowSavedName": false,
+      "newerShiftLost": false
+    },
+    {
+      "name": "Shift save failure rollback and retry"
+    },
+    {
+      "name": "Preset delete failure has no false success and can retry"
+    },
+    {
+      "name": "schemaVersion 2 history roundtrip and legacy date normalization"
+    }
+  ],
+  "findings": [
+    {
+      "id": "B1",
+      "name": "Unset close/pay day silently calculated as 20th-close/5th-pay",
+      "closeDay": "",
+      "payDay": "",
+      "assumedPeriod": "2026-09-21–2026-10-20",
+      "classification": "requires initial-settings policy confirmation"
+    },
+    {
+      "id": "B2",
+      "name": "Close/pay-day changes are not versioned and regroup earlier payroll periods",
+      "beforeNovember": 1200,
+      "afterNovember": 2400,
+      "classification": "existing agreed policy intentionally unchanged"
+    }
+  ]
+}

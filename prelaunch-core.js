@@ -1,5 +1,6 @@
 /* New versioned storage; legacy keys are read-only migration sources. */
-const PRELAUNCH_STATE_KEY='hosshii_prelaunch_state_v2';
+let PRELAUNCH_STATE_KEY='hosshii_prelaunch_state_v2';
+let prelaunchExpectedRevision=0,prelaunchExpectedRaw=null;
 function validatePrelaunchEnvelope(state){
  if(state?.schemaVersion!==2||!state.config||typeof state.config!=='object'||Array.isArray(state.config)||!state.shifts||typeof state.shifts!=='object'||Array.isArray(state.shifts))throw Error('対応していない保存形式です。');
  if(!Number.isSafeInteger(state.monthlyGoal)||state.monthlyGoal<0)throw Error('目標金額を確認してください。');
@@ -7,8 +8,10 @@ function validatePrelaunchEnvelope(state){
  return true;
 }
 function prelaunchReadStored(){
- try {const raw=localStorage.getItem(PRELAUNCH_STATE_KEY);if(raw===null)return null;
+ try {const raw=localStorage.getItem(PRELAUNCH_STATE_KEY);prelaunchExpectedRaw=raw;prelaunchExpectedRevision=0;if(raw===null)return null;
   const state=JSON.parse(raw);validatePrelaunchEnvelope(state);
+  if(state.storageRevision!==undefined&&(!Number.isSafeInteger(state.storageRevision)||state.storageRevision<0))throw Error('保存版番号を確認してください。');
+  prelaunchExpectedRevision=state.storageRevision||0;
   state.shifts=HosshiiPayModel.normalizeShifts(state.shifts,state.config);buildConfigData(state.config);return state;
  } catch(error){storageWriteBlocked=true;storageProblems.push(PRELAUNCH_STATE_KEY);return {schemaVersion:2,config:{jobCount:0},shifts:{},monthlyGoal:0};}
 }
@@ -19,8 +22,17 @@ function prelaunchWrite(state){
   validatePrelaunchEnvelope(state);
   HosshiiPayModel.normalizeShifts(state.shifts,state.config);
   for(const jk of ['job1','job2','job3'])if(state.config[jk])HosshiiPayModel.normalizeJobHistory({...state.config[jk]},state.config[jk]);
-  const raw=JSON.stringify(state);localStorage.setItem(PRELAUNCH_STATE_KEY,raw);
+  const currentRaw=localStorage.getItem(PRELAUNCH_STATE_KEY);
+  if(currentRaw!==prelaunchExpectedRaw){
+   window.hosshiiMarkStorageConflict?.();
+   if(!window.hosshiiMarkStorageConflict)showAlertModal('別の画面で更新されています。入力内容はこの画面に保持しています。保存済みデータを確認してください。');
+   return false;
+  }
+  if(prelaunchExpectedRevision>=Number.MAX_SAFE_INTEGER)throw Error('保存版番号の上限に達しました。');
+  const revision=prelaunchExpectedRevision+1;
+  const raw=JSON.stringify({...state,storageRevision:revision});localStorage.setItem(PRELAUNCH_STATE_KEY,raw);
   if(localStorage.getItem(PRELAUNCH_STATE_KEY)!==raw){storageWriteBlocked=true;throw Error('保存内容の確認に失敗しました。');}
+  prelaunchExpectedRaw=raw;prelaunchExpectedRevision=revision;
   return true;
  }catch(error){console.error('設定・シフトの保存に失敗しました',error);showStorageSafetyWarning();return false;}
 }
@@ -54,3 +66,5 @@ function getMonthlyHistoryBenefits(job,start,end,any){return HosshiiPayModel.mon
 function validateShiftInput(start,end,rest,isPaid=false,hours){
  try{HosshiiPayModel.validateShift({start,end,breakMins:rest,isPaidLeave:isPaid,hours});return true;}catch(error){showAlertModal(error.message);return false;}
 }
+
+function prelaunchMetaKey(name){return PRELAUNCH_STATE_KEY+':meta:'+name;}

@@ -1,0 +1,13 @@
+{
+  "kind": "real-Chromium-Web-Locks-and-storage-with-mocked-LINE-not-Android-hardware",
+  "cases": [
+    "one-editor-lock-second-tab-read-only-and-recovery",
+    "account-change-during-activation-cannot-reveal-or-claim-old-data",
+    "revision-conflict-preserves-input-cancel-keeps-input-explicit-reload",
+    "account-switch-conceals-old-data-blocks-export-and-isolates-storage",
+    "unattributed-legacy-data-needs-explicit-owner-confirmation",
+    "migration-write-failure-retains-original-and-retries",
+    "no-Web-Locks-safe-read-only-fallback"
+  ],
+  "errors": []
+}

@@ -1,0 +1,1743 @@
+{
+  "cases": [
+    {
+      "date": "2026-11-03",
+      "start": "05:00",
+      "end": "07:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 2799.999999999997,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 2800
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "05:00",
+      "end": "07:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 2100.0000000000027,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 2100
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "05:00",
+      "end": "07:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1400.000000000001,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1400
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "11:00",
+      "end": "13:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 2899.9999999999977,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 2900
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "11:00",
+      "end": "13:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 2175.0000000000014,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 2175
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "11:00",
+      "end": "13:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1450.0000000000005,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1450
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "17:00",
+      "end": "19:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 3499.9999999999955,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 3500
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "17:00",
+      "end": "19:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 2624.999999999999,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 2625
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "17:00",
+      "end": "19:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1750.0000000000011,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1750
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "23:00",
+      "end": "01:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 3300.000000000009,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 3300
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "23:00",
+      "end": "01:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 2475.0000000000014,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 2475
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "23:00",
+      "end": "01:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1649.9999999999977,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1650
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "09:00",
+      "end": "17:00",
+      "rest": 0,
+      "mins": 480,
+      "expected": 11899.99999999995,
+      "actual": {
+        "totalMins": 480,
+        "totalPay": 11900
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "09:00",
+      "end": "17:00",
+      "rest": 30,
+      "mins": 450,
+      "expected": 11099.999999999969,
+      "actual": {
+        "totalMins": 450,
+        "totalPay": 11100
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "09:00",
+      "end": "17:00",
+      "rest": 60,
+      "mins": 420,
+      "expected": 10299.999999999987,
+      "actual": {
+        "totalMins": 420,
+        "totalPay": 10300
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "22:00",
+      "end": "06:00",
+      "rest": 0,
+      "mins": 480,
+      "expected": 12200.000000000045,
+      "actual": {
+        "totalMins": 480,
+        "totalPay": 12200
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "22:00",
+      "end": "06:00",
+      "rest": 30,
+      "mins": 450,
+      "expected": 11500.000000000027,
+      "actual": {
+        "totalMins": 450,
+        "totalPay": 11500
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "22:00",
+      "end": "06:00",
+      "rest": 60,
+      "mins": 420,
+      "expected": 10800.00000000001,
+      "actual": {
+        "totalMins": 420,
+        "totalPay": 10800
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "00:00",
+      "end": "06:00",
+      "rest": 0,
+      "mins": 360,
+      "expected": 9000,
+      "actual": {
+        "totalMins": 360,
+        "totalPay": 9000
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "00:00",
+      "end": "06:00",
+      "rest": 30,
+      "mins": 330,
+      "expected": 8250,
+      "actual": {
+        "totalMins": 330,
+        "totalPay": 8250
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "00:00",
+      "end": "06:00",
+      "rest": 60,
+      "mins": 300,
+      "expected": 7500,
+      "actual": {
+        "totalMins": 300,
+        "totalPay": 7500
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "06:00",
+      "end": "12:00",
+      "rest": 0,
+      "mins": 360,
+      "expected": 7800.00000000004,
+      "actual": {
+        "totalMins": 360,
+        "totalPay": 7800
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "06:00",
+      "end": "12:00",
+      "rest": 30,
+      "mins": 330,
+      "expected": 7150.000000000031,
+      "actual": {
+        "totalMins": 330,
+        "totalPay": 7150
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "06:00",
+      "end": "12:00",
+      "rest": 60,
+      "mins": 300,
+      "expected": 6500.000000000022,
+      "actual": {
+        "totalMins": 300,
+        "totalPay": 6500
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "12:00",
+      "end": "18:00",
+      "rest": 0,
+      "mins": 360,
+      "expected": 9600.000000000005,
+      "actual": {
+        "totalMins": 360,
+        "totalPay": 9600
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "12:00",
+      "end": "18:00",
+      "rest": 30,
+      "mins": 330,
+      "expected": 8800.000000000024,
+      "actual": {
+        "totalMins": 330,
+        "totalPay": 8800
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "12:00",
+      "end": "18:00",
+      "rest": 60,
+      "mins": 300,
+      "expected": 8000.0000000000355,
+      "actual": {
+        "totalMins": 300,
+        "totalPay": 8000
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "18:00",
+      "end": "23:59",
+      "rest": 0,
+      "mins": 359,
+      "expected": 11368.333333333303,
+      "actual": {
+        "totalMins": 359,
+        "totalPay": 11368.333333333334
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "18:00",
+      "end": "23:59",
+      "rest": 30,
+      "mins": 329,
+      "expected": 10418.333333333321,
+      "actual": {
+        "totalMins": 329,
+        "totalPay": 10418.333333333334
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "18:00",
+      "end": "23:59",
+      "rest": 60,
+      "mins": 299,
+      "expected": 9468.33333333334,
+      "actual": {
+        "totalMins": 299,
+        "totalPay": 9468.333333333334
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "23:55",
+      "end": "00:05",
+      "rest": 0,
+      "mins": 10,
+      "expected": 275.00000000000006,
+      "actual": {
+        "totalMins": 10,
+        "totalPay": 275
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "23:55",
+      "end": "00:05",
+      "rest": 30,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "23:55",
+      "end": "00:05",
+      "rest": 60,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "09:00",
+      "end": "09:01",
+      "rest": 0,
+      "mins": 1,
+      "expected": 21.666666666666668,
+      "actual": {
+        "totalMins": 1,
+        "totalPay": 21.666666666666668
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "09:00",
+      "end": "09:01",
+      "rest": 30,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "start": "09:00",
+      "end": "09:01",
+      "rest": 60,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "05:00",
+      "end": "07:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 2599.999999999999,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 2600
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "05:00",
+      "end": "07:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 1950.0000000000005,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 1950
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "05:00",
+      "end": "07:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1300,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1300
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "11:00",
+      "end": "13:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 2700,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 2700
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "11:00",
+      "end": "13:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 2025,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 2025
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "11:00",
+      "end": "13:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1350,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1350
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "17:00",
+      "end": "19:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 3300,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 3300
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "17:00",
+      "end": "19:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 2475,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 2475
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "17:00",
+      "end": "19:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1650,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1650
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "23:00",
+      "end": "01:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 3200.000000000007,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 3200
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "23:00",
+      "end": "01:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 2400,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 2400
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "23:00",
+      "end": "01:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1599.9999999999984,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1600
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "09:00",
+      "end": "17:00",
+      "rest": 0,
+      "mins": 480,
+      "expected": 11100,
+      "actual": {
+        "totalMins": 480,
+        "totalPay": 11100
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "09:00",
+      "end": "17:00",
+      "rest": 30,
+      "mins": 450,
+      "expected": 10350,
+      "actual": {
+        "totalMins": 450,
+        "totalPay": 10350
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "09:00",
+      "end": "17:00",
+      "rest": 60,
+      "mins": 420,
+      "expected": 9600,
+      "actual": {
+        "totalMins": 420,
+        "totalPay": 9600
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "22:00",
+      "end": "06:00",
+      "rest": 0,
+      "mins": 480,
+      "expected": 12000.00000000005,
+      "actual": {
+        "totalMins": 480,
+        "totalPay": 12000
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "22:00",
+      "end": "06:00",
+      "rest": 30,
+      "mins": 450,
+      "expected": 11300.000000000031,
+      "actual": {
+        "totalMins": 450,
+        "totalPay": 11300
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "22:00",
+      "end": "06:00",
+      "rest": 60,
+      "mins": 420,
+      "expected": 10600.000000000013,
+      "actual": {
+        "totalMins": 420,
+        "totalPay": 10600
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "00:00",
+      "end": "06:00",
+      "rest": 0,
+      "mins": 360,
+      "expected": 8399.999999999962,
+      "actual": {
+        "totalMins": 360,
+        "totalPay": 8400
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "00:00",
+      "end": "06:00",
+      "rest": 30,
+      "mins": 330,
+      "expected": 7699.999999999964,
+      "actual": {
+        "totalMins": 330,
+        "totalPay": 7700
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "00:00",
+      "end": "06:00",
+      "rest": 60,
+      "mins": 300,
+      "expected": 6999.999999999973,
+      "actual": {
+        "totalMins": 300,
+        "totalPay": 7000
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "06:00",
+      "end": "12:00",
+      "rest": 0,
+      "mins": 360,
+      "expected": 7200,
+      "actual": {
+        "totalMins": 360,
+        "totalPay": 7200
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "06:00",
+      "end": "12:00",
+      "rest": 30,
+      "mins": 330,
+      "expected": 6600,
+      "actual": {
+        "totalMins": 330,
+        "totalPay": 6600
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "06:00",
+      "end": "12:00",
+      "rest": 60,
+      "mins": 300,
+      "expected": 6000,
+      "actual": {
+        "totalMins": 300,
+        "totalPay": 6000
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "12:00",
+      "end": "18:00",
+      "rest": 0,
+      "mins": 360,
+      "expected": 9000,
+      "actual": {
+        "totalMins": 360,
+        "totalPay": 9000
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "12:00",
+      "end": "18:00",
+      "rest": 30,
+      "mins": 330,
+      "expected": 8250,
+      "actual": {
+        "totalMins": 330,
+        "totalPay": 8250
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "12:00",
+      "end": "18:00",
+      "rest": 60,
+      "mins": 300,
+      "expected": 7500,
+      "actual": {
+        "totalMins": 300,
+        "totalPay": 7500
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "18:00",
+      "end": "23:59",
+      "rest": 0,
+      "mins": 359,
+      "expected": 10770,
+      "actual": {
+        "totalMins": 359,
+        "totalPay": 10770
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "18:00",
+      "end": "23:59",
+      "rest": 30,
+      "mins": 329,
+      "expected": 9870,
+      "actual": {
+        "totalMins": 329,
+        "totalPay": 9870
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "18:00",
+      "end": "23:59",
+      "rest": 60,
+      "mins": 299,
+      "expected": 8970,
+      "actual": {
+        "totalMins": 299,
+        "totalPay": 8970
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "23:55",
+      "end": "00:05",
+      "rest": 0,
+      "mins": 10,
+      "expected": 266.6666666666667,
+      "actual": {
+        "totalMins": 10,
+        "totalPay": 266.6666666666667
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "23:55",
+      "end": "00:05",
+      "rest": 30,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "23:55",
+      "end": "00:05",
+      "rest": 60,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "09:00",
+      "end": "09:01",
+      "rest": 0,
+      "mins": 1,
+      "expected": 20,
+      "actual": {
+        "totalMins": 1,
+        "totalPay": 20
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "09:00",
+      "end": "09:01",
+      "rest": 30,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "start": "09:00",
+      "end": "09:01",
+      "rest": 60,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "05:00",
+      "end": "07:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 2599.999999999999,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 2600
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "05:00",
+      "end": "07:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 1950.0000000000005,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 1950
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "05:00",
+      "end": "07:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1300,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1300
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "11:00",
+      "end": "13:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 2700,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 2700
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "11:00",
+      "end": "13:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 2025,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 2025
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "11:00",
+      "end": "13:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1350,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1350
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "17:00",
+      "end": "19:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 3300,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 3300
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "17:00",
+      "end": "19:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 2475,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 2475
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "17:00",
+      "end": "19:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1650,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1650
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "23:00",
+      "end": "01:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 3300,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 3300
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "23:00",
+      "end": "01:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 2475,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 2475
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "23:00",
+      "end": "01:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1650,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1650
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "09:00",
+      "end": "17:00",
+      "rest": 0,
+      "mins": 480,
+      "expected": 11100,
+      "actual": {
+        "totalMins": 480,
+        "totalPay": 11100
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "09:00",
+      "end": "17:00",
+      "rest": 30,
+      "mins": 450,
+      "expected": 10350,
+      "actual": {
+        "totalMins": 450,
+        "totalPay": 10350
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "09:00",
+      "end": "17:00",
+      "rest": 60,
+      "mins": 420,
+      "expected": 9600,
+      "actual": {
+        "totalMins": 420,
+        "totalPay": 9600
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "22:00",
+      "end": "06:00",
+      "rest": 0,
+      "mins": 480,
+      "expected": 12600,
+      "actual": {
+        "totalMins": 480,
+        "totalPay": 12600
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "22:00",
+      "end": "06:00",
+      "rest": 30,
+      "mins": 450,
+      "expected": 11850,
+      "actual": {
+        "totalMins": 450,
+        "totalPay": 11850
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "22:00",
+      "end": "06:00",
+      "rest": 60,
+      "mins": 420,
+      "expected": 11100,
+      "actual": {
+        "totalMins": 420,
+        "totalPay": 11100
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "00:00",
+      "end": "06:00",
+      "rest": 0,
+      "mins": 360,
+      "expected": 8399.999999999962,
+      "actual": {
+        "totalMins": 360,
+        "totalPay": 8400
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "00:00",
+      "end": "06:00",
+      "rest": 30,
+      "mins": 330,
+      "expected": 7699.999999999964,
+      "actual": {
+        "totalMins": 330,
+        "totalPay": 7700
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "00:00",
+      "end": "06:00",
+      "rest": 60,
+      "mins": 300,
+      "expected": 6999.999999999973,
+      "actual": {
+        "totalMins": 300,
+        "totalPay": 7000
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "06:00",
+      "end": "12:00",
+      "rest": 0,
+      "mins": 360,
+      "expected": 7200,
+      "actual": {
+        "totalMins": 360,
+        "totalPay": 7200
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "06:00",
+      "end": "12:00",
+      "rest": 30,
+      "mins": 330,
+      "expected": 6600,
+      "actual": {
+        "totalMins": 330,
+        "totalPay": 6600
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "06:00",
+      "end": "12:00",
+      "rest": 60,
+      "mins": 300,
+      "expected": 6000,
+      "actual": {
+        "totalMins": 300,
+        "totalPay": 6000
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "12:00",
+      "end": "18:00",
+      "rest": 0,
+      "mins": 360,
+      "expected": 9000,
+      "actual": {
+        "totalMins": 360,
+        "totalPay": 9000
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "12:00",
+      "end": "18:00",
+      "rest": 30,
+      "mins": 330,
+      "expected": 8250,
+      "actual": {
+        "totalMins": 330,
+        "totalPay": 8250
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "12:00",
+      "end": "18:00",
+      "rest": 60,
+      "mins": 300,
+      "expected": 7500,
+      "actual": {
+        "totalMins": 300,
+        "totalPay": 7500
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "18:00",
+      "end": "23:59",
+      "rest": 0,
+      "mins": 359,
+      "expected": 10770,
+      "actual": {
+        "totalMins": 359,
+        "totalPay": 10770
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "18:00",
+      "end": "23:59",
+      "rest": 30,
+      "mins": 329,
+      "expected": 9870,
+      "actual": {
+        "totalMins": 329,
+        "totalPay": 9870
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "18:00",
+      "end": "23:59",
+      "rest": 60,
+      "mins": 299,
+      "expected": 8970,
+      "actual": {
+        "totalMins": 299,
+        "totalPay": 8970
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "23:55",
+      "end": "00:05",
+      "rest": 0,
+      "mins": 10,
+      "expected": 275,
+      "actual": {
+        "totalMins": 10,
+        "totalPay": 275
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "23:55",
+      "end": "00:05",
+      "rest": 30,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "23:55",
+      "end": "00:05",
+      "rest": 60,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "09:00",
+      "end": "09:01",
+      "rest": 0,
+      "mins": 1,
+      "expected": 20,
+      "actual": {
+        "totalMins": 1,
+        "totalPay": 20
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "09:00",
+      "end": "09:01",
+      "rest": 30,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "start": "09:00",
+      "end": "09:01",
+      "rest": 60,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "05:00",
+      "end": "07:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 2799.999999999997,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 2800
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "05:00",
+      "end": "07:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 2100.0000000000027,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 2100
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "05:00",
+      "end": "07:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1400.000000000001,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1400
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "11:00",
+      "end": "13:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 2899.9999999999977,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 2900
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "11:00",
+      "end": "13:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 2175.0000000000014,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 2175
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "11:00",
+      "end": "13:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1450.0000000000005,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1450
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "17:00",
+      "end": "19:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 3499.9999999999955,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 3500
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "17:00",
+      "end": "19:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 2624.999999999999,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 2625
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "17:00",
+      "end": "19:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1750.0000000000011,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1750
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "23:00",
+      "end": "01:00",
+      "rest": 0,
+      "mins": 120,
+      "expected": 3400.000000000002,
+      "actual": {
+        "totalMins": 120,
+        "totalPay": 3400
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "23:00",
+      "end": "01:00",
+      "rest": 30,
+      "mins": 90,
+      "expected": 2550.0000000000005,
+      "actual": {
+        "totalMins": 90,
+        "totalPay": 2550
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "23:00",
+      "end": "01:00",
+      "rest": 60,
+      "mins": 60,
+      "expected": 1699.9999999999995,
+      "actual": {
+        "totalMins": 60,
+        "totalPay": 1700
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "09:00",
+      "end": "17:00",
+      "rest": 0,
+      "mins": 480,
+      "expected": 11899.99999999995,
+      "actual": {
+        "totalMins": 480,
+        "totalPay": 11900
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "09:00",
+      "end": "17:00",
+      "rest": 30,
+      "mins": 450,
+      "expected": 11099.999999999969,
+      "actual": {
+        "totalMins": 450,
+        "totalPay": 11100
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "09:00",
+      "end": "17:00",
+      "rest": 60,
+      "mins": 420,
+      "expected": 10299.999999999987,
+      "actual": {
+        "totalMins": 420,
+        "totalPay": 10300
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "22:00",
+      "end": "06:00",
+      "rest": 0,
+      "mins": 480,
+      "expected": 12799.999999999993,
+      "actual": {
+        "totalMins": 480,
+        "totalPay": 12800
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "22:00",
+      "end": "06:00",
+      "rest": 30,
+      "mins": 450,
+      "expected": 12049.999999999993,
+      "actual": {
+        "totalMins": 450,
+        "totalPay": 12050
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "22:00",
+      "end": "06:00",
+      "rest": 60,
+      "mins": 420,
+      "expected": 11299.999999999993,
+      "actual": {
+        "totalMins": 420,
+        "totalPay": 11300
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "00:00",
+      "end": "06:00",
+      "rest": 0,
+      "mins": 360,
+      "expected": 9000,
+      "actual": {
+        "totalMins": 360,
+        "totalPay": 9000
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "00:00",
+      "end": "06:00",
+      "rest": 30,
+      "mins": 330,
+      "expected": 8250,
+      "actual": {
+        "totalMins": 330,
+        "totalPay": 8250
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "00:00",
+      "end": "06:00",
+      "rest": 60,
+      "mins": 300,
+      "expected": 7500,
+      "actual": {
+        "totalMins": 300,
+        "totalPay": 7500
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "06:00",
+      "end": "12:00",
+      "rest": 0,
+      "mins": 360,
+      "expected": 7800.00000000004,
+      "actual": {
+        "totalMins": 360,
+        "totalPay": 7800
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "06:00",
+      "end": "12:00",
+      "rest": 30,
+      "mins": 330,
+      "expected": 7150.000000000031,
+      "actual": {
+        "totalMins": 330,
+        "totalPay": 7150
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "06:00",
+      "end": "12:00",
+      "rest": 60,
+      "mins": 300,
+      "expected": 6500.000000000022,
+      "actual": {
+        "totalMins": 300,
+        "totalPay": 6500
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "12:00",
+      "end": "18:00",
+      "rest": 0,
+      "mins": 360,
+      "expected": 9600.000000000005,
+      "actual": {
+        "totalMins": 360,
+        "totalPay": 9600
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "12:00",
+      "end": "18:00",
+      "rest": 30,
+      "mins": 330,
+      "expected": 8800.000000000024,
+      "actual": {
+        "totalMins": 330,
+        "totalPay": 8800
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "12:00",
+      "end": "18:00",
+      "rest": 60,
+      "mins": 300,
+      "expected": 8000.0000000000355,
+      "actual": {
+        "totalMins": 300,
+        "totalPay": 8000
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "18:00",
+      "end": "23:59",
+      "rest": 0,
+      "mins": 359,
+      "expected": 11368.333333333303,
+      "actual": {
+        "totalMins": 359,
+        "totalPay": 11368.333333333334
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "18:00",
+      "end": "23:59",
+      "rest": 30,
+      "mins": 329,
+      "expected": 10418.333333333321,
+      "actual": {
+        "totalMins": 329,
+        "totalPay": 10418.333333333334
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "18:00",
+      "end": "23:59",
+      "rest": 60,
+      "mins": 299,
+      "expected": 9468.33333333334,
+      "actual": {
+        "totalMins": 299,
+        "totalPay": 9468.333333333334
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "23:55",
+      "end": "00:05",
+      "rest": 0,
+      "mins": 10,
+      "expected": 283.33333333333337,
+      "actual": {
+        "totalMins": 10,
+        "totalPay": 283.3333333333333
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "23:55",
+      "end": "00:05",
+      "rest": 30,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "23:55",
+      "end": "00:05",
+      "rest": 60,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "09:00",
+      "end": "09:01",
+      "rest": 0,
+      "mins": 1,
+      "expected": 21.666666666666668,
+      "actual": {
+        "totalMins": 1,
+        "totalPay": 21.666666666666668
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "09:00",
+      "end": "09:01",
+      "rest": 30,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "start": "09:00",
+      "end": "09:01",
+      "rest": 60,
+      "mins": 0,
+      "expected": 0,
+      "actual": {
+        "totalMins": 0,
+        "totalPay": 0
+      }
+    }
+  ],
+  "rounding": {
+    "pay": 20,
+    "wagePay": 19,
+    "otherPay": 1,
+    "mins": 1,
+    "days": 1,
+    "start": "2026-10-20T15:00:00.000Z",
+    "end": "2026-11-19T15:00:00.000Z",
+    "wageMissing": false
+  },
+  "errors": []
+}

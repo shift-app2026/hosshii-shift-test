@@ -68,6 +68,7 @@ html body #appCard #tab-clock #goalRing .goal-label-text {font-size:clamp(12px,c
 html body #appCard #tab-clock #goalRing #goalCurrentPay {font-size:clamp(25px,calc(7.5vw + 1px),33px)!important;white-space:nowrap!important;}
 html body #appCard #tab-clock #goalRing .t10-remaining-label {font-size:clamp(13px,calc(3.5vw + 1px),16px)!important;}
 html body #appCard #tab-clock #goalRing #goalRemainText {font-size:clamp(16px,calc(4.25vw + 1px),22px)!important;font-weight:700!important;white-space:nowrap!important;}
+html body #appCard #tab-clock #goalRing #goalRemainText.goal-unset-prompt {white-space:pre-line!important;text-align:center!important;}
 /* The native select still owns focus, accessibility and option selection. */
 html body #appCard .wall-threshold-display {position:relative!important;flex:0 0 153px!important;width:153px!important;max-width:64%!important;min-width:0!important;}
 html body #appCard #itoWallThreshold {width:100%!important;max-width:100%!important;height:41px!important;box-sizing:border-box!important;appearance:none!important;color:transparent!important;-webkit-text-fill-color:transparent!important;}
@@ -167,7 +168,7 @@ html body #appCard #tab-settings .paid-sub {font-size:16px!important;}
 html body #appCard #tab-settings .paid-note,html body #appCard #tab-settings .paid-note>span {font-size:16px!important;}
 html body #appCard #tab-settings .paid-note {margin-inline:-9px!important;}
 html body #appCard #tab-settings .oct23-backup-note {font-size:16px!important;margin-inline:-6px!important;}
-html body #appCard #tab-settings :is(.wage-head-sub,.wage-head-btn,[id^="set_reg_btn_"],button[onclick^="removeSettingsWageSlot"],button[onclick^="hosshiiCloudBackup"]) {font-size:16px!important;}
+html body #appCard #tab-settings :is(.wage-head-sub,.wage-head-btn,[id^="set_reg_btn_"],button[onclick^="removeSettingsWageSlot"],button[onclick^="hosshiiCloudBackup"],.backup-export-button) {font-size:16px!important;}
 html body #appCard #tab-settings .ito-job-register-button {font-size:15px!important;}
 /* Keep ordinary wage + day-bonus inputs on a single row without reducing type size.
    Longer values can grow and wrap as a group instead of clipping their digits. */
@@ -190,4 +191,155 @@ html body #appCard #settingsSaveStatus {padding:12px!important;border:1px solid 
 html body #appCard #settingsSaveStatus p {font-size:16px!important;line-height:1.7!important;font-weight:700!important;}
 html body #appCard #settingsRetryButton {background:var(--hs-button-gradient)!important;border:1px solid #781030!important;border-radius:12px!important;box-shadow:inset 0 1px 1px #ffefd661,inset 0 -2px 2px #1e000d33,0 3px 9px #88133738!important;font-size:16px!important;font-weight:700!important;margin-top:8px!important;color:#ffe082!important;-webkit-text-fill-color:#ffe082!important;}
 
+
+/* November 16 review: user-requested adjustments only. */
+html body #appCard #tab-clock #test30GoalDisplay {font-size:22px!important;}
+html body #appCard #tab-clock .hosshii-ring-note {text-align:left!important;}
+html body #appCard #tab-clock .hc-comparison .hc-row>span {font-size:16px!important;}
+html body #appCard #tab-clock .hc-job-title,html body #appCard #tab-clock .hc-job-title strong {font-size:18px!important;}
+html body #appCard #tab-clock .hc-job-title>span {font-size:16px!important;}
+html body #appCard #tab-clock #incomeWallBox #yearlyTotalPay {padding-right:.5em!important;box-sizing:border-box!important;}
+html body #appCard #tab-clock #goalRing .goal-label-text {font-size:clamp(13px,calc(3.25vw + 2px),16px)!important;}
+html body #appCard #tab-clock #goalRing #goalCurrentPay {font-size:clamp(26px,calc(7.5vw + 2px),34px)!important;}
+html body #appCard #tab-clock #goalRing .t10-remaining-label {font-size:clamp(14px,calc(3.5vw + 2px),17px)!important;}
+html body #appCard #tab-clock #goalRing #goalRemainText {font-size:clamp(17px,calc(4.25vw + 2px),23px)!important;}
+html body #appCard #calendarJobLegend .calendar-payday-legend>span:last-child {font-family:"Zen Maru Gothic",sans-serif!important;font-weight:700!important;}
+html body #appCard #calendarDays .payday-pin-container {left:calc(100% - 8px)!important;top:-1px!important;}
+html body #appCard #calendarCopyCard button {margin-right:12px!important;}
+html body #appCard #standaloneCopyCard button {font-size:16px!important;padding:8px 11px!important;}
+html body #appCard #tab-calendar span:has(#calendarTodayDateLabel),html body #appCard #calendarTodayDateLabel {font-weight:700!important;color:#21151a!important;}
+html body #appCard #standaloneShiftListContainer>div {column-gap:11px!important;}
+html body #appCard #tab-settings .wage-rate-row {column-gap:10px!important;}
+html body #appCard #tab-settings .hosshii-paid-rate-row>span,html body #appCard #tab-settings .hosshii-paid-rate-row .paid-sub {font-size:18px!important;}
+html body #appCard #tab-settings .hosshii-paid-rate-row input {font-size:20px!important;}
+html body #appCard #tab-settings .allowance-period-grid {margin-inline:0!important;padding-inline:.5em!important;column-gap:10px!important;box-sizing:border-box!important;}
+html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div:not(:has(>.job-time+span))>.job-time {font-size:19px!important;}
+html body #shiftInputModal .ito-preset-desc,html body #shiftInputModal .ito-preset-desc * {font-size:15.5px!important;letter-spacing:-.025em!important;line-height:1.65!important;}
+html body #shiftInputModal .ito-preset-desc {margin-inline:-6px!important;}
+html body #shiftInputModal #shiftInputScrollArea .hosshii-paid-entry-note {letter-spacing:-.025em!important;margin-inline:-10px!important;}
+html body #appCard #appScroll #tab-guide .luxe-welcome-card p:not(#goalRing),html body #appCard #appScroll #tab-guide .guide-extra p:not(#goalRing),html body #appCard #appScroll #tab-guide section:last-child p:not(#goalRing),html body #appCard #tab-guide .guide-steps p {line-height:1.65!important;text-wrap:pretty!important;}
+@media(max-width:359px){
+ html body #appCard #tab-clock .hc-comparison .hc-row>span {font-size:15px!important;}
+ html body #appCard #tab-clock .hc-job-title,html body #appCard #tab-clock .hc-job-title strong {font-size:17px!important;}
+ html body #appCard #tab-clock .hc-job-title>span {font-size:15px!important;}
+ html body :is(#shiftInputModal #modalInlinePresetContainer,#presetRegisterModal #modalPresetContainer)>div:not(:has(>.job-time+span))>.job-time {font-size:17px!important;}
+ html body #appCard #tab-settings .wage-rate-row {column-gap:6px!important;}
+}
+
+/* Final request audit: actual date overlap, matched currency type, narrow-width fallback. */
+html body #appCard #tab-clock #test30Yen {font-size:22px!important;}
+html body #appCard #tab-clock #monthlyReceiveTitle {font-size:18px!important;font-weight:700!important;}
+html body #appCard #calendarDays .payday-date-number {min-width:28px!important;min-height:28px!important;}
+html body #appCard #calendarDays .payday-pin-container {left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;line-height:1!important;}
+html body #appCard #calendarDays .payday-pin-container .payday-outline {width:28px!important;height:28px!important;}
+html body #appCard #calendarDays .payday-date-number>span:first-child {z-index:2!important;}
+html body #appCard #tab-guide .guide-steps {row-gap:7px!important;}
+html body #appCard #tab-guide .guide-extra {row-gap:4px!important;}
+html body #appCard #standaloneShiftListContainer .standalone-workplace-name {max-width:100%!important;}
+@media(max-width:359px){
+ html body #appCard #tab-clock #monthlyReceiveTitle {font-size:17px!important;}
+ html body #appCard #standaloneShiftListContainer .standalone-shift-line>span {flex-wrap:wrap!important;row-gap:2px!important;}
+ html body #appCard #standaloneShiftListContainer .standalone-workplace-name {white-space:normal!important;overflow-wrap:anywhere!important;}
+}
+
+/* Round 2: explicit user requests collected on November 16. */
+html body #appCard #tab-clock .hosshii-ring-note {margin-inline:-3px!important;padding-inline-start:.5em!important;text-align:left!important;line-height:1.75!important;}
+html body #appCard #tab-clock .hosshii-ring-note>span:not(:first-child) {padding-inline-start:1em!important;}
+html body #appCard #tab-clock .hc-comparison .hc-row>span:not(:first-child) {text-align:right!important;padding-inline-end:.45em!important;font-variant-numeric:tabular-nums!important;}
+html body #appCard .wall-threshold-label,html body #appCard .wall-threshold-label>span {font-weight:700!important;color:#21151a!important;-webkit-text-fill-color:#21151a!important;}
+html body #appCard #tab-clock #yearlyTotalPay {font-size:20px!important;}
+html body #appCard #tab-clock #itoWallRemainingLabel {font-size:16px!important;}
+html body #appCard #tab-clock #itoWallRemainingAmount {font-size:19px!important;}
+html body #appCard #calendarDays>div>span:first-child,html body #appCard #calendarDays .payday-date-number>span:first-child {font-size:19px!important;}
+html body #appCard #calendarDays .payday-date-number {min-width:32px!important;min-height:32px!important;}
+html body #appCard #calendarDays .payday-pin-container .payday-outline {width:32px!important;height:32px!important;}
+html body #appCard #calendarDays .payday-pin-container>.payday-outline-mark,html body #appCard #calendarJobLegend .calendar-payday-legend>.payday-outline-mark {color:#bba2aa!important;-webkit-text-fill-color:#bba2aa!important;}
+html body #appCard #calendarCopyCard button {margin-right:46px!important;}
+html body #appCard #calendarCopyCard .copy-label>span {white-space:normal!important;}
+html body #appCard #calendarTodayDateLabel,html body #appCard #tab-calendar span:has(#calendarTodayDateLabel) {font-size:18px!important;font-weight:700!important;color:#21151a!important;}
+html body #shiftInputModal #modalShiftListHeading {font-size:19px!important;font-weight:700!important;color:#21151a!important;}
+html body #appCard #calendarTodaySummaryContent .selected-shift-break {font-size:17px!important;font-weight:700!important;color:#21151a!important;}
+html body #appCard #calendarTodaySummaryContent .selected-shift-delete {font-size:16px!important;font-weight:700!important;color:#21151a!important;}
+html body #shiftInputModal #modalSelectedDateSummaryContent .hosshii-shift-time-actions>span:not(.job-time),html body #shiftInputModal #modalSelectedDateSummaryContent button[onclick^="confirmShiftDeletion"] {font-size:17px!important;font-weight:700!important;color:#21151a!important;}
+html body #appCard #standaloneShiftListContainer .standalone-shift-line {padding-block:3px!important;line-height:1.45!important;}
+html body #appCard #standaloneShiftListContainer .standalone-shift-line .job-time {font-size:18px!important;line-height:1.45!important;}
+html body #appCard #standaloneShiftListContainer .standalone-workplace-name {font-size:16px!important;line-height:1.45!important;}
+html body #appCard #standaloneShiftListContainer .luxe-day-number {font-size:19px!important;}
+html body #appCard #standaloneShiftListContainer .luxe-day-week {font-size:16px!important;}
+html body #appCard #standaloneShiftListContainer :is(.luxe-payday-label,.luxe-payday-heart) {font-size:17px!important;}
+html body #appCard #tab-settings .settings-payday-row {display:grid!important;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)!important;gap:6px!important;}
+html body #appCard #tab-settings .settings-payday-row>div {position:relative!important;display:flex!important;flex-direction:row!important;align-items:center!important;min-width:0!important;gap:3px!important;padding:6px 4px!important;}
+html body #appCard #tab-settings .settings-payday-row>div>span:first-child {flex:0 0 auto!important;white-space:nowrap!important;font-size:16px!important;}
+html body #appCard #tab-settings .settings-payday-row :is(#set_closeDay,#set_payDay) {min-width:0!important;max-width:100%!important;width:0!important;flex:1 1 0!important;font-size:17px!important;padding:4px 13px 4px 0!important;appearance:none!important;}
+html body #appCard #tab-settings .settings-payday-row>div::after {content:"";position:absolute;right:9px;top:calc(50% - 4px);width:5px;height:5px;border-right:1.5px solid #21151a;border-bottom:1.5px solid #21151a;transform:rotate(45deg);pointer-events:none;}
+html body #appCard #tab-settings .settings-end-day-short {display:none!important;}
+html body #appCard #tab-settings .settings-payday-row>div:has(#set_closeDay option[value="月末"]:checked) .settings-end-day-short {display:block!important;position:absolute!important;left:55px!important;right:19px!important;top:50%!important;transform:translateY(-50%)!important;text-align:center!important;white-space:nowrap!important;font-size:17px!important;font-weight:700!important;pointer-events:none!important;}
+html body #appCard #tab-settings #set_closeDay:has(option[value="月末"]:checked) {color:transparent!important;-webkit-text-fill-color:transparent!important;}
+html body #appCard #tab-settings #set_closeDay option {color:#21151a!important;-webkit-text-fill-color:#21151a!important;}
+html body #appCard #tab-settings #setWageSlotsContainer :is(.wage-time,.wage-base-input,.wage-bonus-input) {font-size:19px!important;}
+html body #appCard #tab-settings #setWageSlotsContainer :is(.wage-base-rate,.wage-bonus-rate)>span {font-size:16px!important;}
+html body #appCard #tab-settings #setWageSlotsContainer .wage-bonus-select {font-size:17px!important;}
+html body #appCard #tab-settings #setWageSlotsContainer :is([id^="set_reg_btn_"],button[onclick^="removeSettingsWageSlot"]) {font-size:17px!important;}
+html body #appCard #tab-settings .wage-rate-row {column-gap:4px!important;}
+html body #appCard #tab-settings .hosshii-paid-rate-row>span,html body #appCard #tab-settings .hosshii-paid-rate-row .paid-sub {font-size:19px!important;}
+html body #appCard #tab-settings .hosshii-paid-rate-row input {font-size:21px!important;}
+html body #appCard #tab-settings .allowance-period-grid span {font-size:17px!important;}
+html body #appCard #tab-settings .allowance-period-grid input {font-size:19px!important;}
+html body #appCard #appScroll #tab-guide .luxe-welcome-card p:not(#goalRing),html body #appCard #appScroll #tab-guide .guide-extra p:not(#goalRing),html body #appCard #appScroll #tab-guide section:last-child p:not(#goalRing),html body #appCard #tab-guide .guide-steps p {line-height:1.6!important;}
+html body #appCard #tab-guide .guide-backup-title {font-weight:700!important;color:#21151a!important;-webkit-text-fill-color:#21151a!important;}
+html body #shiftInputModal #shiftInputScrollArea .hosshii-paid-entry-note {margin-left:12.5px!important;margin-right:0!important;white-space:normal!important;}
+html body #shiftInputModal .hosshii-paid-entry-note>span {white-space:normal!important;overflow-wrap:anywhere!important;}
+@media(max-width:359px){
+ html body #appCard #tab-clock .hosshii-ring-note {font-size:14px!important;}
+ html body #appCard #standaloneShiftListContainer .standalone-shift-line .job-time {font-size:17px!important;}
+ html body #appCard #standaloneShiftListContainer .standalone-workplace-name {font-size:15px!important;}
+ html body #appCard #tab-settings #setWageSlotsContainer .wage-bonus-select {width:67px!important;min-width:67px!important;max-width:67px!important;flex-basis:67px!important;}
+ html body #appCard #tab-settings .wage-rate-row {column-gap:2px!important;}
+}
+html body #appCard #setWageSlotsContainer>[data-slot]>div:first-child>span {font-size:17px!important;}
+
+/* Round 4: aligned label starts and contained guide copy; no business changes. */
+html body #appCard #calendarJobLegend .calendar-legend-label {padding:4px 6px!important;gap:6px!important;}
+html body #appCard #calendarJobLegend .calendar-legend-label>.job-color-dot {margin-right:0!important;flex:0 0 10px!important;width:10px!important;min-width:10px!important;}
+/* 65.9px maximum glyph advances + 6px inset + 2px border fit in 74px. */
+html body #appCard #standaloneShiftListContainer .standalone-date {width:74px!important;min-width:74px!important;flex:0 0 74px!important;padding-inline:3px!important;box-sizing:border-box!important;}
+html body #appCard #tab-list .schedule-instructions {display:block!important;white-space:nowrap!important;font-size:clamp(13px,3.75vw,14px)!important;letter-spacing:-.02em!important;}
+html body #appCard #tab-list .schedule-instructions>span {display:inline!important;white-space:nowrap!important;}
+/* Reserve the chevron's width explicitly so the final 祝 remains visible. */
+html body #appCard #tab-settings #setWageSlotsContainer .wage-bonus-select {width:76px!important;min-width:76px!important;max-width:76px!important;flex:0 0 76px!important;padding-left:2px!important;padding-right:14px!important;box-sizing:border-box!important;appearance:none!important;background-color:#fff!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 6'%3E%3Cpath d='M1 1l3 3 3-3' fill='none' stroke='%2321151a' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E")!important;background-position:right 4px center!important;background-repeat:no-repeat!important;background-size:8px 6px!important;}
+html body #appCard #tab-guide :is(.luxe-welcome-card,.guide-extra,.guide-steps,section:last-child) {padding-inline:6px!important;box-sizing:border-box!important;}
+html body #appCard #appScroll #tab-guide .luxe-welcome-card p:not(#goalRing),
+html body #appCard #appScroll #tab-guide .guide-extra p:not(#goalRing),
+html body #appCard #appScroll #tab-guide section:last-child p:not(#goalRing),
+html body #appCard #tab-guide .guide-steps p {font-size:16px!important;margin-inline:0!important;line-height:1.6!important;line-break:strict!important;text-wrap:pretty!important;}
+/* Undo legacy negative margins/nowrap; these caused the exposed icons. */
+html body #appCard #tab-guide section:last-child>div:nth-of-type(1)>h4,
+html body #appCard #tab-guide section:last-child>div:nth-of-type(2)>h4 {margin-inline:0!important;white-space:normal!important;max-width:100%!important;font-size:16px!important;line-height:1.6!important;text-wrap:balance!important;overflow-wrap:anywhere!important;}
+html body #appCard #tab-guide .guide-contained-title {box-sizing:border-box!important;}
+@media(max-width:359px){
+ html body #appCard #tab-settings :is(.wage-base-rate,.wage-bonus-rate) {gap:1px!important;}
+ html body #appCard #tab-settings .wage-rate-row {column-gap:1px!important;}
+ html body #appCard #appScroll #tab-guide .luxe-welcome-card p:not(#goalRing),
+ html body #appCard #appScroll #tab-guide .guide-extra p:not(#goalRing),
+ html body #appCard #appScroll #tab-guide section:last-child p:not(#goalRing),
+ html body #appCard #tab-guide .guide-steps p {font-size:15.5px!important;}
+ html body #appCard #tab-guide section:last-child>div:nth-of-type(1)>h4,
+ html body #appCard #tab-guide section:last-child>div:nth-of-type(2)>h4 {font-size:15px!important;margin-inline:0!important;white-space:normal!important;}
+}
+html body #appCard #standaloneShiftListContainer .standalone-date>span {letter-spacing:0!important;}
+
+/* User follow-up: list copy label, paid-rate gap and readable guide line groups. */
+html body #appCard #tab-settings .hosshii-paid-header {row-gap:2px!important;}
+html body #appCard #tab-settings .hosshii-paid-header>.hosshii-allowance-section-title {line-height:1.4!important;}
+html body #appCard #tab-settings .hosshii-paid-rate-row {margin-top:0!important;}
+html body #appCard #appScroll #tab-guide .guide-calendar-help {padding-inline:2px!important;row-gap:9px!important;}
+html body #appCard #appScroll #tab-guide .guide-calendar-help p:not(#goalRing) {font-size:clamp(13.3px,4vw,15px)!important;letter-spacing:-.025em!important;line-height:1.65!important;}
+html body #appCard #tab-guide .guide-help-line {display:block!important;white-space:normal!important;}
+html body #appCard #tab-guide .guide-keep-word {white-space:nowrap!important;}
+html body #appCard #tab-guide .guide-contained-title {text-wrap:pretty!important;line-height:1.6!important;}
+html body #appCard #appScroll #tab-guide section:last-child p:not(#goalRing) {letter-spacing:-.01em!important;line-height:1.65!important;text-wrap:pretty!important;}
+@media(min-width:375px){html body #appCard #tab-guide .guide-help-line {white-space:nowrap!important;}}
+@media(max-width:359px){html body #appCard #appScroll #tab-guide .guide-home-card p:not(#goalRing) {font-size:14.5px!important;}}
+html body #appCard #appScroll #tab-guide .guide-home-card .guide-home-action:not(#goalRing) {font-size:clamp(13.5px,4vw,16px)!important;letter-spacing:-.015em!important;}
+html body #appCard #tab-guide .guide-home-action>span {display:block!important;white-space:nowrap!important;}
 }
