@@ -1,18 +1,19 @@
 // Loopback HTTP transport fixture. This is NOT the Supabase implementation.
 const http=require('node:http'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
-const {chromium}=require('playwright');const root=path.resolve(__dirname,'../..');let mode='complete',requests=0,origin;
+const {chromium}=require('playwright');const {makeToken}=require('../prelaunch/browser-helper.cjs');const root=path.resolve(__dirname,'../..');let mode='complete',requests=0,origin;
 const server=http.createServer((req,res)=>{
  if(req.url==='/status'){
   requests++;req.resume();res.writeHead(200,{'Content-Type':'application/json'});
   if(mode==='partial'){res.write('{');return;}
   res.end(JSON.stringify({status:'trialing',trialExpiresAt:'2026-12-03T03:00:00Z'}));return;
  }
- if(req.url==='/liff.js'){res.writeHead(200,{'Content-Type':'text/javascript'});res.end("window.liff={init:async()=>{},isLoggedIn:()=>true,getIDToken:()=>'synthetic-test-token'}");return;}
+ if(req.url==='/isolated-config.js'){res.writeHead(200,{'Content-Type':'text/javascript'});res.end(`window.HOSSHII_ISOLATED_CONFIG={enabled:true,storageNamespace:'timeout-fixture',liffId:'fixture',statusEndpoint:'${origin}/status',backupEndpoint:'${origin}/backup'};window.hosshiiReadOnly=true;window.hosshiiIsolatedReady=()=>true;`);return;}
+ if(req.url==='/liff.js'){res.writeHead(200,{'Content-Type':'text/javascript'});res.end("window.liff={init:async()=>{},isLoggedIn:()=>true,getIDToken:()=>"+JSON.stringify(makeToken())+"}");return;}
  const p=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));
  if(p!==root&&!p.startsWith(root+path.sep)){res.writeHead(403).end();return;}
  const file=p===root?path.join(root,'index.html'):p;
  if(!fs.existsSync(file)||!fs.statSync(file).isFile()){res.writeHead(404).end();return;}
- let data=fs.readFileSync(file);if(file.endsWith('index.html'))data=Buffer.from(data.toString().replace(/const STATUS_ENDPOINT = '[^']+';/,`const STATUS_ENDPOINT = '${origin}/status';`).replace(/https:\/\/static.line-scdn.net\/liff\/edge\/2\/sdk.js/g,origin+'/liff.js'));
+ let data=fs.readFileSync(file);if(file.endsWith('index.html'))data=Buffer.from(data.toString().replace('content="connect-src ','content="connect-src '+origin+' ').replace(/const STATUS_ENDPOINT = '[^']+';/,`const STATUS_ENDPOINT = '${origin}/status';`).replace(/https:\/\/static.line-scdn.net\/liff\/edge\/2\/sdk.js/g,origin+'/liff.js'));
  const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.woff2':'font/woff2','.png':'image/png'};res.writeHead(200,{'Content-Type':mime[path.extname(file)]||'application/octet-stream'});res.end(data);
 });
 (async()=>{await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));origin=`http://127.0.0.1:${server.address().port}`;const browser=await chromium.launch({executablePath:'/usr/bin/chromium'});try{

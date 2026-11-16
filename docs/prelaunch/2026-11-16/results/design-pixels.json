@@ -1,0 +1,41 @@
+[
+  {
+    "width": 320,
+    "scene": "salary",
+    "bbox": [
+      138,
+      138,
+      311,
+      802
+    ],
+    "pixels": 2414
+  },
+  {
+    "width": 320,
+    "scene": "calendar",
+    "bbox": [
+      258,
+      728,
+      311,
+      802
+    ],
+    "pixels": 24
+  },
+  {
+    "width": 375,
+    "scene": "salary",
+    "bbox": [
+      148,
+      157,
+      361,
+      802
+    ],
+    "pixels": 4849
+  },
+  {
+    "width": 375,
+    "scene": "calendar",
+    "bbox": null,
+    "pixels": 0
+  }
+]

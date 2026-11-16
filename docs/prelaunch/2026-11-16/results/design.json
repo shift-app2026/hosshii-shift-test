@@ -1,0 +1,422 @@
+{
+  "scope": "Functional-project Chromium screenshots, mocked services, same synthetic data. Not real Android/LINE.",
+  "screens": [
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "salary"
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "calendar"
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "schedule"
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "settings"
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "settings-paid"
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "guide-top"
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "guide-help"
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "guide-backup-title"
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "scene": "guide-bottom"
+    },
+    {
+      "width": 320,
+      "variant": "before",
+      "metrics": {
+        "copy": {
+          "width": 294,
+          "scroll": 294,
+          "label": "※前月のシフトを曜日に\n　合わせて　一括コピー",
+          "rect": {
+            "x": 12,
+            "y": 66,
+            "width": 296,
+            "height": 73.1875,
+            "top": 66,
+            "right": 308,
+            "bottom": 139.1875,
+            "left": 12
+          },
+          "button": {
+            "x": 234.984375,
+            "y": 85.59375,
+            "width": 56.015625,
+            "height": 34,
+            "top": 85.59375,
+            "right": 291,
+            "bottom": 119.59375,
+            "left": 234.984375
+          }
+        },
+        "paid": {
+          "gap": "8px",
+          "titleBottom": 659.9375,
+          "rowTop": 673.9375
+        },
+        "help": {
+          "width": 264,
+          "scroll": 264,
+          "lines": []
+        }
+      }
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "salary"
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "calendar"
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "schedule"
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "settings"
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "settings-paid"
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "guide-top"
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "guide-help"
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "guide-backup-title"
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "scene": "guide-bottom"
+    },
+    {
+      "width": 320,
+      "variant": "after",
+      "metrics": {
+        "copy": {
+          "width": 294,
+          "scroll": 294,
+          "label": "※前月のシフトを曜日に\n　合わせて　『一括コピー』",
+          "rect": {
+            "x": 12,
+            "y": 81,
+            "width": 296,
+            "height": 73.1875,
+            "top": 81,
+            "right": 308,
+            "bottom": 154.1875,
+            "left": 12
+          },
+          "button": {
+            "x": 234.984375,
+            "y": 100.59375,
+            "width": 56.015625,
+            "height": 34,
+            "top": 100.59375,
+            "right": 291,
+            "bottom": 134.59375,
+            "left": 234.984375
+          }
+        },
+        "paid": {
+          "gap": "2px",
+          "titleBottom": 658.125,
+          "rowTop": 666.125
+        },
+        "help": {
+          "width": 264,
+          "scroll": 264,
+          "lines": [
+            {
+              "text": "※「予定表」では、登録したシフトを",
+              "height": 21.9375,
+              "lineHeight": 21.945,
+              "width": 260,
+              "scroll": 260
+            },
+            {
+              "text": "カレンダーで確認できます。日付を押すと、",
+              "height": 21.9375,
+              "lineHeight": 21.945,
+              "width": 260,
+              "scroll": 260
+            },
+            {
+              "text": "シフトの確認・変更・削除もできます♡",
+              "height": 21.9375,
+              "lineHeight": 21.945,
+              "width": 260,
+              "scroll": 260
+            },
+            {
+              "text": "💡 詳しい使い方は、各画面の「見てね♡」",
+              "height": 21.9375,
+              "lineHeight": 21.945,
+              "width": 260,
+              "scroll": 260
+            },
+            {
+              "text": "「確認してね💡」をご覧ください。",
+              "height": 21.9375,
+              "lineHeight": 21.945,
+              "width": 260,
+              "scroll": 260
+            }
+          ]
+        }
+      }
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "salary"
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "calendar"
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "schedule"
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "settings"
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "settings-paid"
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "guide-top"
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "guide-help"
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "guide-backup-title"
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "scene": "guide-bottom"
+    },
+    {
+      "width": 375,
+      "variant": "before",
+      "metrics": {
+        "copy": {
+          "width": 349,
+          "scroll": 349,
+          "label": "※前月のシフトを曜日に\n　合わせて　一括コピー",
+          "rect": {
+            "x": 12,
+            "y": 66,
+            "width": 351,
+            "height": 76.375,
+            "top": 66,
+            "right": 363,
+            "bottom": 142.375,
+            "left": 12
+          },
+          "button": {
+            "x": 289.984375,
+            "y": 87.1875,
+            "width": 56.015625,
+            "height": 34,
+            "top": 87.1875,
+            "right": 346,
+            "bottom": 121.1875,
+            "left": 289.984375
+          }
+        },
+        "paid": {
+          "gap": "8px",
+          "titleBottom": 635.9375,
+          "rowTop": 649.9375
+        },
+        "help": {
+          "width": 319,
+          "scroll": 319,
+          "lines": []
+        }
+      }
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "salary"
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "calendar"
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "schedule"
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "settings"
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "settings-paid"
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "guide-top"
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "guide-help"
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "guide-backup-title"
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "scene": "guide-bottom"
+    },
+    {
+      "width": 375,
+      "variant": "after",
+      "metrics": {
+        "copy": {
+          "width": 349,
+          "scroll": 349,
+          "label": "※前月のシフトを曜日に\n　合わせて　『一括コピー』",
+          "rect": {
+            "x": 12,
+            "y": 81,
+            "width": 351,
+            "height": 76.375,
+            "top": 81,
+            "right": 363,
+            "bottom": 157.375,
+            "left": 12
+          },
+          "button": {
+            "x": 289.984375,
+            "y": 102.1875,
+            "width": 56.015625,
+            "height": 34,
+            "top": 102.1875,
+            "right": 346,
+            "bottom": 136.1875,
+            "left": 289.984375
+          }
+        },
+        "paid": {
+          "gap": "2px",
+          "titleBottom": 634.125,
+          "rowTop": 642.125
+        },
+        "help": {
+          "width": 319,
+          "scroll": 319,
+          "lines": [
+            {
+              "text": "※「予定表」では、登録したシフトを",
+              "height": 24.75,
+              "lineHeight": 24.75,
+              "width": 315,
+              "scroll": 315
+            },
+            {
+              "text": "カレンダーで確認できます。日付を押すと、",
+              "height": 24.75,
+              "lineHeight": 24.75,
+              "width": 315,
+              "scroll": 315
+            },
+            {
+              "text": "シフトの確認・変更・削除もできます♡",
+              "height": 24.75,
+              "lineHeight": 24.75,
+              "width": 315,
+              "scroll": 315
+            },
+            {
+              "text": "💡 詳しい使い方は、各画面の「見てね♡」",
+              "height": 24.75,
+              "lineHeight": 24.75,
+              "width": 315,
+              "scroll": 315
+            },
+            {
+              "text": "「確認してね💡」をご覧ください。",
+              "height": 24.75,
+              "lineHeight": 24.75,
+              "width": 315,
+              "scroll": 315
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "errors": []
+}

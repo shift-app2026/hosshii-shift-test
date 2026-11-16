@@ -1,0 +1,63 @@
+{
+  "cases": [
+    {
+      "name": "history-and-migration-320",
+      "result": {
+        "past": 8550,
+        "current": 10850,
+        "night": 2700,
+        "paidPast": 8800,
+        "paidNow": 12000,
+        "paidNight": 2600,
+        "period": 32700,
+        "card": {
+          "pay": 32700,
+          "wagePay": 18900,
+          "otherPay": 13800,
+          "mins": 840,
+          "days": 2,
+          "start": "2026-10-20T15:00:00.000Z",
+          "end": "2026-11-19T15:00:00.000Z",
+          "wageMissing": false
+        },
+        "history": 1
+      },
+      "legacyKeysUntouched": true,
+      "reload": true
+    },
+    {
+      "name": "draft-validation-and-rest-320",
+      "pass": true
+    },
+    {
+      "name": "history-and-migration-375",
+      "result": {
+        "past": 8550,
+        "current": 10850,
+        "night": 2700,
+        "paidPast": 8800,
+        "paidNow": 12000,
+        "paidNight": 2600,
+        "period": 32700,
+        "card": {
+          "pay": 32700,
+          "wagePay": 18900,
+          "otherPay": 13800,
+          "mins": 840,
+          "days": 2,
+          "start": "2026-10-20T15:00:00.000Z",
+          "end": "2026-11-19T15:00:00.000Z",
+          "wageMissing": false
+        },
+        "history": 1
+      },
+      "legacyKeysUntouched": true,
+      "reload": true
+    },
+    {
+      "name": "draft-validation-and-rest-375",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

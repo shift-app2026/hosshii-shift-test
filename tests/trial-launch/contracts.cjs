@@ -3,6 +3,7 @@ const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
+const {makeToken}=require('../prelaunch/browser-helper.cjs');
 const origin=process.env.TRIAL_TEST_ORIGIN||'http://127.0.0.1:8910';
 assert.equal(new URL(origin).hostname,'127.0.0.1','Local copy only');
 const out='/workspace/trial-launch-verification';fs.mkdirSync(out,{recursive:true});
@@ -13,14 +14,20 @@ async function fixture(browser,width=375){
  const control={status:{status:'trialing',trialExpiresAt:future},http:200,raw:null,loggedIn:true,token:'synthetic-test-token',statusRequests:[],backupRequests:[],backup:null,backupHttp:200,backupOk:true};
  await context.route('**/*',async route=>{
   const req=route.request(),url=req.url();
-  if(url.startsWith(origin+'/'))return route.continue();
-  if(url.startsWith('https://static.line-scdn.net/'))return route.fulfill({contentType:'application/javascript',body:`window.liff={init:async()=>{if(window.__initError)throw Error('mock init failure')},isLoggedIn:()=>window.__loggedIn!==false,login:opts=>{window.__loginRedirect=opts.redirectUri},getIDToken:()=>window.__token===null?null:window.__token||'synthetic-test-token'}`});
-  if(url==='https://urwmuafkmlgzanpiksfv.supabase.co/functions/v1/line-trial-status'){
+  if(url===origin+'/'||url===origin+'/index.html'){
+   // The deployed app uses HTTPS documents. Keep the production guard intact;
+   // only this loopback response points its consent links at those HTTPS files.
+   const html=fs.readFileSync(path.resolve('index.html'),'utf8').replace("new URL('./terms.html', location.href).href","'https://shift-app2026.github.io/hosshii-shift-trial-verify/terms.html'").replace("new URL('./privacy.html', location.href).href","'https://shift-app2026.github.io/hosshii-shift-trial-verify/privacy.html'");
+   return route.fulfill({contentType:'text/html',body:html});
+  }
+  if(url===origin+'/isolated-config.js')return route.fulfill({contentType:'text/javascript',body:fs.readFileSync(path.resolve('isolated-config.js'),'utf8')+'\nwindow.hosshiiIsolatedReady=()=>true; // loopback fixture only'});if(url.startsWith(origin+'/'))return route.continue();
+  if(url.startsWith('https://static.line-scdn.net/'))return route.fulfill({contentType:'application/javascript',body:`window.liff={init:async()=>{if(window.__initError)throw Error('mock init failure')},isLoggedIn:()=>window.__loggedIn!==false,login:opts=>{window.__loginRedirect=opts.redirectUri},getIDToken:()=>window.__token===null?null:window.__token||${JSON.stringify(makeToken())}}`});
+  if(url.includes('/functions/v1/line-trial-status')){
    control.statusRequests.push(req.postDataJSON());
    if(control.hang)return;
    return route.fulfill({status:control.http,contentType:'application/json',body:control.raw??JSON.stringify(control.status)});
   }
-  if(url==='https://urwmuafkmlgzanpiksfv.supabase.co/functions/v1/hosshii-backup'){
+  if(url.includes('/functions/v1/hosshii-backup')){
    const body=req.postDataJSON();control.backupRequests.push(body);
    if(control.backupOk&&control.backupHttp===200&&body.action==='save')control.backup=structuredClone(body.backupData);
    return route.fulfill({status:control.backupHttp,json:{ok:control.backupOk,backupData:control.backup,error:control.backupOk?undefined:'mock rejected'}});
@@ -42,16 +49,16 @@ function pass(name,width){report.cases.push({name,width,passed:true});console.lo
  for(const width of [320,375]){
   const f=await fixture(browser,width),{page:p,control:c}=f;await f.load();await p.waitForFunction(()=>document.getElementById('lineAuthGate').hidden);assert.equal((await f.state()).readOnly,false);pass('future-trial-allowed',width);
   for(const field of ['trialExpiresAt','trial_ends_at','trialEndsAt','trialEndAt']){c.status={status:'trialing',[field]:future};await f.refresh();assert.equal((await f.state()).readOnly,false);pass('expiry-field-'+field,width);}
-  for(const [name,status] of Object.entries({exactExpiry:{status:'trialing',trialExpiresAt:now},missingExpiry:{status:'trialing'},invalidExpiry:{status:'active',trialExpiresAt:'invalid'},expiredConflict:{status:'expired',trialActive:true,trialExpiresAt:future},blocked:{status:'blocked',trialExpiresAt:future},pastDue:{status:'past_due',trialActive:true}})){
+  for(const [name,status] of Object.entries({exactExpiry:{status:'trialing',trialExpiresAt:now},missingExpiry:{status:'trialing'},invalidExpiry:{status:'active',trialExpiresAt:'invalid'},expiredConflict:{status:'expired',trialActive:true,trialExpiresAt:future},blocked:{status:'blocked',trialExpiresAt:future},unauthenticated:{status:'paid',authenticated:false},pastDue:{status:'past_due',trialActive:true}})){
    c.status=status;await f.refresh();assert.equal((await f.state()).readOnly,true,name);assert.equal(await p.evaluate(()=>setDayShifts('2026-11-12','job1',[{start:'09:00',end:'17:00',breakMins:60}])),false);pass(name+'-denies-write',width);
   }
   c.status={status:'trialing',trialExpiresAt:future};await f.refresh();assert.equal((await f.state()).readOnly,false);pass('recover-with-valid-trial',width);
   c.status={status:'new',consentRequired:true};await f.refresh();assert.equal((await f.state()).gate,true);assert.equal((await f.state()).readOnly,true);assert(await p.locator('#lineAuthStart').isDisabled());await p.locator('#lineAuthAgree').check();assert(await p.locator('#lineAuthStart').isDisabled());await p.locator('#lineAuthAgeAgree').check();assert(await p.locator('#lineAuthStart').isEnabled());
-  const before=c.statusRequests.length;c.status={status:'trialing',trialExpiresAt:future};await p.locator('#lineAuthStart').click();await p.waitForFunction(()=>document.getElementById('lineAuthGate').hidden);assert.equal(c.statusRequests.length,before+1);assert.deepEqual(c.statusRequests.at(-1),{idToken:'synthetic-test-token',consentAccepted:true,termsVersion:'2026-10-29',privacyVersion:'2026-10-29'});pass('explicit-consent-request-and-age-gate',width);
+  const before=c.statusRequests.length;c.status={status:'trialing',trialExpiresAt:future};await p.locator('#lineAuthStart').click();await p.waitForFunction(()=>document.getElementById('lineAuthGate').hidden);assert.equal(c.statusRequests.length,before+1);assert.deepEqual(c.statusRequests.at(-1),{idToken:makeToken(),consentAccepted:true,termsVersion:'2026-10-29',privacyVersion:'2026-10-29'});pass('explicit-consent-request-and-age-gate',width);
   for(const http of [401,403,500]){c.http=http;c.status={error:'mock authentication/server failure'};await f.refresh();assert.equal((await f.state()).readOnly,true);assert(await p.locator('[data-entitlement-retry]').first().isVisible());pass('status-http-'+http+'-denied',width);}
   c.http=200;c.raw='{';await f.refresh();assert.equal((await f.state()).readOnly,true);c.raw=null;c.status={status:'unknown'};await f.refresh();assert.equal((await f.state()).readOnly,true);pass('malformed-and-unknown-status-denied',width);
-  c.status={status:'trialing',trialExpiresAt:future};await p.evaluate(()=>window.__token='synthetic-refreshed-token');await f.refresh();assert.equal(c.statusRequests.at(-1).idToken,'synthetic-refreshed-token');assert.equal((await f.state()).readOnly,false);pass('fresh-line-token-after-retry',width);
-  await p.evaluate(()=>window.__token=null);const n=c.statusRequests.length;await f.refresh();assert.equal(c.statusRequests.length,n);assert.equal((await f.state()).readOnly,true);pass('missing-token-no-server-request',width);await p.evaluate(()=>window.__token='synthetic-test-token');await f.refresh();
+  c.status={status:'trialing',trialExpiresAt:future};await p.evaluate(token=>window.__token=token,makeToken(undefined,'refreshed'));await f.refresh();assert.equal(c.statusRequests.at(-1).idToken,makeToken(undefined,'refreshed'));assert.equal((await f.state()).readOnly,false);pass('fresh-line-token-after-retry',width);
+  await p.evaluate(()=>window.__token=null);const n=c.statusRequests.length;await f.refresh();assert.equal(c.statusRequests.length,n);assert.equal((await f.state()).readOnly,true);pass('missing-token-no-server-request',width);await p.evaluate(token=>window.__token=token,makeToken());await f.refresh();
   // Server ACK and preserved envelope, not real Supabase storage semantics.
   const backup=await p.evaluate(()=>prelaunchBackup());await p.evaluate(()=>hosshiiCloudBackupSave());assert.equal(c.backup.schemaVersion,2);assert.deepEqual(c.backup.state,backup.state);assert((await p.locator('#alertModalText').textContent()).includes('Supabaseに保存しました'));await p.evaluate(()=>closeAlertModal());pass('mock-save-preserves-v2-envelope',width);
   for(const http of [401,500]){c.backupHttp=http;c.backupOk=false;await p.evaluate(()=>hosshiiCloudBackupSave());assert(!(await p.locator('#alertModalText').textContent()).includes('Supabaseに保存しました'));assert((await p.locator('#alertModalText').textContent()).includes('保存できませんでした'));await p.evaluate(()=>closeAlertModal());pass('backup-failure-'+http+'-no-success',width);}

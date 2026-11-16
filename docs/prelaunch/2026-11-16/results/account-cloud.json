@@ -1,0 +1,9 @@
+{
+  "kind": "mocked-cloud-with-real-browser-account-change-guards",
+  "cases": [
+    "changed-account-cannot-send-old-local-backup",
+    "account-change-during-save-blocks-completion-and-restore",
+    "account-change-during-load-blocks-completion-and-restore"
+  ],
+  "errors": []
+}
