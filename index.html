@@ -4655,7 +4655,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 
     // 2026-11-02: テスト用のLINE認証付きSupabaseバックアップ。
     // ブラウザからサービスキーは絶対に送らない。LINE IDトークンだけをサーバーで検証する。
-    const HOSSHII_BACKUP_ENDPOINT = 'https://urwmuafkmlgzanpiksfv.supabase.co/functions/v1/hosshii-backup';
+    const HOSSHII_BACKUP_ENDPOINT = 'https://ssfjopzfzsuwcxwirggv.supabase.co/functions/v1/hosshii-backup';
     let hosshiiCloudBackupBusy = false;
     function hosshiiBackupToken() {
       if (!window.liff || typeof window.liff.getIDToken !== 'function') {
@@ -5700,7 +5700,7 @@ background:#881337!important;background-color:#881337!important;border-color:#88
 (function(){
   'use strict';
   const LIFF_ID = '2011929118-Fyk1pdlU';
-  const STATUS_ENDPOINT = 'https://urwmuafkmlgzanpiksfv.supabase.co/functions/v1/line-trial-status';
+  const STATUS_ENDPOINT = 'https://ssfjopzfzsuwcxwirggv.supabase.co/functions/v1/line-trial-status';
   const gate=document.getElementById('lineAuthGate');
   const message=document.getElementById('lineAuthMessage');
   const consent=document.getElementById('lineAuthConsent');
